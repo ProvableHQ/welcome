@@ -13,3 +13,5 @@ members = ["accounts"]
 
 [dependencies]
 aleo-accounts = { path = "./accounts", version = "0.1.0" }
+
+rand = { version = "0.7" }
