@@ -6,3 +6,7 @@ edition = "2018"
 
 [dependencies]
 snarkos-objects = { path = "../../snarkOS/objects", version = "0.8.0" }
+
+image = { version = "0.23" }
+qrcode = { version = "0.12" }
+thiserror = { version = "1.0" }

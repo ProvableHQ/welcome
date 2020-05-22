@@ -19,15 +19,17 @@ dependencies = [
 name = "aleo"
 version = "0.1.0"
 dependencies = [
- "image 0.23.4",
- "qrcode",
+ "aleo-accounts",
 ]
 
 [[package]]
 name = "aleo-accounts"
 version = "0.1.0"
 dependencies = [
+ "image",
+ "qrcode",
  "snarkos-objects",
+ "thiserror",
 ]
 
 [[package]]
@@ -422,18 +424,6 @@ dependencies = [
 
 [[package]]
 name = "image"
-version = "0.22.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "08ed2ada878397b045454ac7cfb011d73132c59f31a955d230bd1f1c2e68eb4a"
-dependencies = [
- "byteorder",
- "num-iter",
- "num-rational",
- "num-traits",
-]
-
-[[package]]
-name = "image"
 version = "0.23.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9117f4167a8f21fa2bb3f17a652a760acd7572645281c98e3b612a26242c96ee"
@@ -699,12 +689,12 @@ dependencies = [
 
 [[package]]
 name = "qrcode"
-version = "0.11.2"
+version = "0.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f5b09efe9b8aa5d34d310a0bfd76122cd6f7d0c91016a5fe928635eab033eb8a"
+checksum = "16d2f1455f3630c6e5107b4f2b94e74d76dea80736de0981fd27644216cff57f"
 dependencies = [
  "checked_int_cast",
- "image 0.22.5",
+ "image",
 ]
 
 [[package]]

@@ -1,8 +1,7 @@
-
-use qrcode::QrCode;
+use aleo_accounts::qrcode::QRCode;
 
 fn main() {
-    let code = QrCode::new(b"Hello").unwrap();
-    let string = code.render::<char>().quiet_zone(true).module_dimensions(2, 1).build();
-    println!("{}", string);
+    let qr = QRCode::new(&vec![1u8; 20]);
+    qr.save_png("qrcode");
+    println!("{}", qr);
 }
