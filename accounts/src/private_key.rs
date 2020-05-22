@@ -25,6 +25,10 @@ impl PrivateKey {
         let private_key = AccountPrivateKey::<Components>::new(parameters.signature_parameters(), &metadata, rng)?;
         Ok(Self { private_key })
     }
+
+    pub(crate) fn to_inner_ref(&self) -> &AccountPrivateKey<Components> {
+        &self.private_key
+    }
 }
 
 impl fmt::Display for PrivateKey {

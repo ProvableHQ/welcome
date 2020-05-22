@@ -33,6 +33,7 @@ dependencies = [
  "snarkos-dpc",
  "snarkos-errors",
  "snarkos-objects",
+ "snarkos-utilities",
  "thiserror",
 ]
 

@@ -8,6 +8,7 @@ edition = "2018"
 snarkos-dpc = { path = "../../snarkOS/dpc", version = "0.8.0" }
 snarkos-errors = { path = "../../snarkOS/errors", version = "0.8.0" }
 snarkos-objects = { path = "../../snarkOS/objects", version = "0.8.0" }
+snarkos-utilities = { path = "../../snarkOS/utilities", version = "0.8.0" }
 
 image = { version = "0.23" }
 qrcode = { version = "0.12" }
