@@ -22,7 +22,7 @@ impl PrivateKey {
             None => [0u8; 32],
         };
 
-        let private_key = AccountPrivateKey::<Components>::new(parameters.signature_parameters(), &metadata, rng)?;
+        let private_key = AccountPrivateKey::<Components>::new(parameters.account_signature_parameters(), &metadata, rng)?;
         Ok(Self { private_key })
     }
 
