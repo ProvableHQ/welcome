@@ -12,7 +12,7 @@ fn main() {
     println!("\n{}", public_key);
 
     let qr = QRCode::new(&public_key.to_bytes());
-    let filename = public_key.to_string();
-    qr.save_png(&filename);
+    // let filename = public_key.to_string();
+    // qr.save_png(&filename);
     println!("{}", qr);
 }
