@@ -980,6 +980,7 @@ dependencies = [
  "snarkos-gadgets",
  "snarkos-models",
  "snarkos-objects",
+ "snarkos-parameters",
  "snarkos-profiler",
  "snarkos-storage",
  "snarkos-utilities",
@@ -1042,6 +1043,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "snarkos-parameters"
+version = "0.8.0"
+dependencies = [
+ "snarkos-models",
+]
+
+[[package]]
 name = "snarkos-profiler"
 version = "0.8.0"
 
@@ -1059,6 +1067,7 @@ dependencies = [
  "snarkos-errors",
  "snarkos-models",
  "snarkos-objects",
+ "snarkos-parameters",
  "snarkos-utilities",
 ]
 
