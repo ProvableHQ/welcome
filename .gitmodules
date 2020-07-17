@@ -1,0 +1,3 @@
+[submodule "snarkOS"]
+	path = snarkOS
+	url = https://github.com/AleoHQ/snarkOS.git
