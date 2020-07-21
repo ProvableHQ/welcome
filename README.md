@@ -4,6 +4,4 @@
 
 ## Getting Started
 
-## Development
-
 ## Technical Support
