@@ -6,12 +6,14 @@ on:
 
 jobs:
   sync:
-    - name: Sync `aleo` repository
-      run: |
-        curl -i -H 'authorization: Bearer ${{ secrets.SYNC_TOKEN }}' \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -d '{"event_type": "publish", "client_payload": {}}' \
-          -X POST https://api.github.com/repos/${{ secrets.SYNC_ORGANIZATION }}/${{ secrets.SYNC_REPOSITORY }}/dispatches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync `aleo` repository
+        run: |
+          curl -i -H 'authorization: Bearer ${{ secrets.SYNC_TOKEN }}' \
+            -H 'Accept: application/vnd.github.everest-preview+json' \
+            -d '{"event_type": "publish", "client_payload": {}}' \
+            -X POST https://api.github.com/repos/${{ secrets.SYNC_ORGANIZATION }}/${{ secrets.SYNC_REPOSITORY }}/dispatches
 
 
 #      export DISPATCH_URL="https://api.github.com/repos/${{ secrets.SYNC_ORGANIZATION }}/${{ secrets.SYNC_APPLICATION }}/dispatches"
