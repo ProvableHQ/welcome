@@ -3,7 +3,7 @@ title: The Leo Language Book
 sidebar_label: Overview
 ---
 
-Welcome to the Leo langauge. A simple, easy-to-use programming language for writing apps on Aleo.
+Welcome to the Leo language. A simple, easy-to-use programming language for writing apps on Aleo.
 
 ### What is Aleo?
 Checkout the company [website](https://aleo.org)
