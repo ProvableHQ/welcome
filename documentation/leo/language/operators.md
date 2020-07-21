@@ -58,8 +58,11 @@ Operators will prioritize evaluation according to:
 |             \| \|             | left to right |
 | `=` `+=` `-=` `*=` `/=` `**=` |               |
 
+### Parentheses
+
 To prioritize a different evaluation use parentheses `()` around the expression.
 
-```leo title="evaluate addition before multiplication"
+```leo"
 let result = (a + 1) * 2; 
 ```
+`(a + 1)` will be evaluated before multiplying by two `* 2`
