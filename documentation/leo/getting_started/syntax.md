@@ -38,7 +38,7 @@ function main(a: u32) -> u32 {
 The `main.leo` file is the entry point of a Leo project. It should contain a function named `main`. 
 Let's break down the structure of a Leo file.
 
-```leo title="main function definition"
+```leo title="src/main.leo"
 function main(a: u32) -> u32 {
 ```
 
@@ -47,7 +47,7 @@ Our **hello_world** `main` function takes one input `a` with type `u32` and retu
 The function body is enclosed in curly braces `{ }`. It is a common convention in Leo to place the opening curly 
 bracket on the same line as the function definition, adding one space in between.
 
-```leo title="return statement"
+```leo title="src/main.leo"
     return a
 ```
 
@@ -67,7 +67,7 @@ a: u32 = 1;
 
 The `hello_world.in` file defines all **hello_world** program inputs. 
 
-```leo title="input section"
+```leo title="inputs/hello_world.in"
 [main]
 ```
 
@@ -75,7 +75,7 @@ Similar to our manifest `Leo.toml`, an input file begins with a section enclosed
 
 `main` indicates the file that we are configuring inputs for.
 
-```leo title="input assignment"
+```leo title="inputs/hello_world.in"
 a: u32 = 1;
 ```
 

@@ -3,7 +3,7 @@ title: CLI Commands
 sidebar_label: CLI Commands
 ---
 
-In the quick start guide we called
+In the [hello world](./hello_world.md) guide we called
 ```bash
 leo run
 ```

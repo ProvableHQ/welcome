@@ -28,29 +28,27 @@ Computations are expressed in terms of arithmetic circuits, in particular rank-1
 * Variables can be made mutable with the `mut` keyword.
 
 ```leo
-function main() {
-    let a = 0u32;
-    //a = 1 <- Will fail
-    
-    let mut b = 0u32;
-    b = 1; // <- Ok
-}
+let a = 0u32;
+//a = 1 <- Will fail
+
+let mut b = 0u32;
+b = 1; // <- Ok
 ```
 
 ## Booleans
-
-Explicit types are optional.
+* Keywords: `true` and `false`
+* Explicit type is optional in statements.
 ```leo
 function main() -> bool {
-    let a: bool = true || false;
-    let b = false && false;
-    let c = 1u32 == 1u32;
+    let a = true; // implict type
+    let a: bool = true; // explicit type
+    
     return a
 }
 ```
 
 ## Numbers
-* The definition of a number must include an explicit type.
+* The definition of a number **must** include an explicit type.
 * After assignment, you can choose to explicitly add the type or let the compiler interpret implicitly.
 * Type casting is not yet supported.
 
@@ -60,6 +58,7 @@ Supported unsigned integer types: `u8`, `u16`, `u32`, `u64`, `u128`
 Supported signed integer types: `i8`, `i16`, `i32`, `i64`, `i128`
 ```leo
 function main() {
+    let a: u32 = 2; // explicit type
     let a = 2u32; // explicit type    
     let b = a - 1; // implicit type
 }
@@ -71,13 +70,13 @@ Leo supports a `field` type for native field elements as unsigned numbers up to 
 
 ```leo
 function main() -> field {
-    let a = 1000field; // explicit type
-    let a: field = 21888242871839275222246405745257275088548364400416034343698204186575808495617; // explicit type
+    let a: = field = 1; // explicit type
+    let a = 1field; // explicit type
     let b = a + 1; // implicit type
-    let c = b - 1; 
-    let d = c * 4;
-    let e = d / 2;
-    return e
+
+    let a: field = 21888242871839275222246405745257275088548364400416034343698204186575808495617; // explicit type
+
+    return b
 }
 ```
 
@@ -87,12 +86,13 @@ Leo supports this set as a primitive data type.
 
 ```leo
 function main() -> group {
-    let a = 1group; // explicit type
+    let a: group = 1; // explicit type
     let a = 0group; // explicit type
+    let b = a + 1; // implicit type
+
     let a = (21888242871839275222246405745257275088548364400416034343698204186575808495617, 21888242871839275222246405745257275088548364400416034343698204186575808495617)group; // explicit type
-    let b = a + 0; // implicit type
-    let c = b - 0; 
-    return c
+    
+    return b
 }
 ```
 
