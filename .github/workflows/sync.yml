@@ -7,7 +7,7 @@ on:
 jobs:
   sync:
     - name: Sync `aleo` repository
-    - run: |
+      run: |
       curl -i -H 'authorization: Bearer ${{ secrets.SYNC_TOKEN }}' \
         -H 'Accept: application/vnd.github.everest-preview+json' \
         -d '{"event_type": "publish", "client_payload": {}}' \
