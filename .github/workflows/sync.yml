@@ -9,8 +9,4 @@ jobs:
     - name: Sync `aleo` repository
     - run: |
       export DISPATCH_URL="https://api.github.com/repos/${{ secrets.SYNC_ORGANIZATION }}/${{ secrets.SYNC_APPLICATION }}/dispatches"
-      curl \
-        -X POST \
-        -u "${{ secrets.SYNC_USERNAME }}:${{ secrets.SYNC_TOKEN }}" \
-        -H "Accept: application/vnd.github.v3+json" $DISPATCH_URL \
-        -d '{"event_type": "publish"}'
+      curl -X POST -u "${{ secrets.SYNC_USERNAME }}:${{ secrets.SYNC_TOKEN }}" -H "Accept: application/vnd.github.v3+json" $DISPATCH_URL -d '{"event_type": "publish"}'
