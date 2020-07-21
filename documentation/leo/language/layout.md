@@ -3,17 +3,14 @@ title: Layout of a Leo File
 sidebar_label: Layout of a Leo File
 ---
 
-Leo files have four core parts: [`imports`](./imports), [`circuits`](./circuits), [`functions`](./functions), and [`tests`](./testing)
+Leo files have four core parts:
+1. [`imports`](./imports)
 
-```leo
-imports
+2. [`circuits`](./circuits)
 
-circuits
+3. [`functions`](./functions)
 
-functions
-
-tests
-```
+4. [`tests`](./testing)
 
 This order is strictly enforced. If you try and define a part out of order a syntax error will occur.
 This design choice is to improve readability for other Leo developers viewing your code.

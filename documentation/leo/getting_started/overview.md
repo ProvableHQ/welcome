@@ -1,5 +1,5 @@
 ---
-title: The Leo Language Book
+title: Leo Language Documentation
 sidebar_label: Overview
 ---
 
