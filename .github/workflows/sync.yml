@@ -8,13 +8,13 @@ jobs:
   sync:
     - name: Sync `aleo` repository
     - run: |
-      export DISPATCH_URL="https://api.github.com/repos/${{ secrets.SYNC_ORGANIZATION }}/${{ secrets.SYNC_APPLICATION }}/dispatches"
       curl -i -H 'authorization: Bearer ${{ secrets.SYNC_TOKEN }}' \
         -H 'Accept: application/vnd.github.everest-preview+json' \
         -d '{"event_type": "publish", "client_payload": {}}' \
         -X POST https://api.github.com/repos/${{ secrets.SYNC_ORGANIZATION }}/${{ secrets.SYNC_REPOSITORY }}/dispatches
 
 
+#      export DISPATCH_URL="https://api.github.com/repos/${{ secrets.SYNC_ORGANIZATION }}/${{ secrets.SYNC_APPLICATION }}/dispatches"
 #      curl -X POST -u "${{ secrets.SYNC_USERNAME }}:${{ secrets.SYNC_TOKEN }}" -H "Accept: application/vnd.github.v3+json" \
 #        https://api.github.com/repos/octocat/hello-world/dispatches \
 #        -d '{"event_type":"event_type"}'
