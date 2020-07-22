@@ -5,10 +5,10 @@ sidebar_label: Records
 
 ## What are Records?
 
-Records are a core data structure in the Aleo protocol that represent state on the ledger - Aleo credits and arbitrary application state.
+Records are core data structures in the Aleo protocol that represent state on the ledger - Aleo credits and arbitrary application state.
 
 Records are spent and created via [transactions](./transactions.md) and are analogous to UTXOs, as they can only be spent once. However unlike UTXOs, records are fully private. 
-Records are encrypted on the blockchain, and only the record owners can decrypt the record contents.
+Records are encrypted on the ledger, and only the record owners can decrypt the record contents.
 
 ## Components
 
@@ -18,7 +18,7 @@ The account address of the record owner that can spend the record.
 
 #### Value
 
-The amount of Aleo credits that this record holds.
+The amount of Aleo credits this record holds.
 
 #### Payload
 
@@ -34,11 +34,11 @@ The id of the [death predicate](./glossary.md#Death Predicate) that must be spec
 
 #### Serial Number Nonce
 
-The nonce used to generate the record [serial number](./glossary.md#Serial Number) when the record is being spent.
+The nonce used to generate the record [serial number](./glossary.md#Record Serial Number) when the record is being spent.
 
-#### Commitment
+#### Record Commitment
 
-The commitment that binds all the other attributes of the record without revealing the actual record data. This commitment is included in the transaction that created the record, which demonstrates the existence of the record without revealing its contents.
+The [commitment](./glossary.md#Record Commitment) on the contents of the record.
 
 #### Commitment Randomness
 
@@ -53,9 +53,9 @@ Records are serialized in the format below:
 |          `address`          |                     variable                     |      32      |
 |           `value`           |                        u64                       |       8      |
 |          `payload`          |                       bytes                      |      32      |
-| `birth_predicate_hash` size | [var_int](./glossary.md#Variable Length Integer) |      1+      |
+| `birth_predicate_hash` len  | [var_int](./glossary.md#Variable Length Integer) |      1+      |
 |    `birth_predicate_hash`   |                       bytes                      |      48+     |
-| `death_predicate_hash` size | [var_int](./glossary.md#Variable Length Integer) |      1+      |
+| `death_predicate_hash` len  | [var_int](./glossary.md#Variable Length Integer) |      1+      |
 |    `death_predicate_hash`   |                       bytes                      |      48+     |
 |    `serial_number_nonce`    |                     variable                     |      32      |
 |         `commitment`        |                     variable                     |      32      |

@@ -5,7 +5,7 @@ sidebar_label: Networking
 
 # Networking
 
-The snarkOS network protocol establishes a peer-to-peer network of nodes that maintain the liveness of the blockchain by actively exchanging transactions and blocks.
+The snarkOS network protocol establishes a peer-to-peer network of nodes that maintain the liveness of the ledger by actively exchanging transactions and blocks.
 
 ## Introduction
 
@@ -39,7 +39,7 @@ Peer connections are maintained with a Ping-Pong Protocol that relays `Ping` and
 
 ## Block Download/Sync
 
-Before nodes can actively participate in the network, it must have the latest state of the blockchain. Whether a node is newly connecting to the network or just has stale state, it must download it's missing blocks by syncing with another node. 
+Before nodes can actively participate in the network, it must have the latest state of the ledger. Whether a node is newly connecting to the network or just has stale state, it must download it's missing blocks by syncing with another node. 
 
 snarkOS uses a "Header-First" approach to block syncing, where the node downloads and validates the block headers before downloading the full blocks in parallel. 
  
@@ -58,7 +58,7 @@ Here is a basic iteration of the sync protocol:
 
 ## Memory Pool
 
-Full nodes need to keep track of transactions that are eligible to be included in future blocks. Because these unconfirmed transactions are not yet included in the blockchain, the node stores them in memory, hence the memory pool.
+Full nodes need to keep track of transactions that are eligible to be included in future blocks. Because these unconfirmed transactions are not yet included in the ledger, the node stores them in memory, hence the memory pool.
 
 Transactions are removed from the memory pool when the node is shut down or when the transactions are included in valid blocks. 
 
