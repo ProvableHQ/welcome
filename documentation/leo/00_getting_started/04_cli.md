@@ -5,7 +5,7 @@ sidebar_label: CLI Commands
 
 # CLI Comands
 
-In the [hello world](./hello_world.md) guide we called
+In the [hello world](aleo/documentation/leo/00_getting_started/02_hello_world.md) guide we called
 ```bash
 leo run
 ```
