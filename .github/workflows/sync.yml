@@ -8,6 +8,8 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+
       - name: Update the Aleo documentation to reflect the latest changes
         run: |
           cd internal/parser && yarn install && yarn start
