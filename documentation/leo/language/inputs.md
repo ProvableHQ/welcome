@@ -1,7 +1,9 @@
 ---
-title: Leo Inputs
+hide_title: true
 sidebar_label: Leo Inputs
 ---
+
+# Leo Inputs
 
 Private inputs for a Leo program are specified in the `inputs/` directory. 
 The syntax for an input file is a limited subset of the Leo program syntax. 

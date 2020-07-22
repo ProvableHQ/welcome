@@ -1,7 +1,9 @@
 ---
-title: Generate a Proof
+hide_title: true
 sidebar_label: leo prove
 ---
+
+# Generate a Proof
 
 ### `leo prove`
 

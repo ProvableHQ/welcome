@@ -1,7 +1,9 @@
 ---
-title: CLI Commands
+hide_title: true
 sidebar_label: CLI Commands
 ---
+
+# CLI Comands
 
 In the [hello world](./hello_world.md) guide we called
 ```bash

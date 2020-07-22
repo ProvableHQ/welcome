@@ -1,7 +1,9 @@
 ---
-title: Imports
+hide_title: true
 sidebar_label: Imports
 ---
+
+# Imports
 
 Leo supports importing functions and circuits by name into the current file with the following syntax:
 

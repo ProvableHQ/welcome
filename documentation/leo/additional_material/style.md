@@ -1,7 +1,8 @@
 ---
-title: Style Guide
+hide_title: true
 sidebar_label: Style Guide
 ---
+# Style Guide
 
 This guide is provided to point developers in the right direction when writing Leo code.
 There are many conventions that are unique to Leo language and the circuits it generates.

@@ -1,7 +1,9 @@
 ---
-title: Layout of a Leo File
+hide_title: true
 sidebar_label: Layout of a Leo File
 ---
+
+# Layout of a Leo File
 
 Leo files have four core parts:
 1. [`imports`](./imports)

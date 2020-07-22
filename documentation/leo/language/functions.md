@@ -1,7 +1,9 @@
 ---
-title: Functions
+hide_title: true
 sidebar_label: Functions
 ---
+
+# Functions
 
 ### Basic Syntax
 Leo supports named function definitions that can contain one or more statements. Function names should be lowercase.

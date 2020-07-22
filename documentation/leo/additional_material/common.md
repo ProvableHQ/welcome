@@ -1,7 +1,9 @@
 ---
-title: Common Patterns
+hide_title: true
 sidebar_label: Common Patterns
 ---
+
+# Common Patterns
 
 Building off of the style guide, here is a list of common patterns that a Leo developer may encounter
 as well as the recommended code solution.

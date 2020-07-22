@@ -1,7 +1,10 @@
 ---
-title: Perform the Program Setup
+hide_title: true
 sidebar_label: leo setup
 ---
+
+# Perform the Program Setup
+
 ### `leo setup`
 
 To perform the program setup, producing a proving key and verification key, run:

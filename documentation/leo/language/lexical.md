@@ -1,7 +1,9 @@
 ---
-title: Lexical Structure
+hide_title: true
 sidebar_label: Lexical Structure
 ---
+
+# Lexical Structure
 
 ## Comments
 Leo supports in **line comments** using:

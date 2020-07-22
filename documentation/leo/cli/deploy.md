@@ -1,7 +1,9 @@
 ---
-title: Deploy
+hide_title: true
 sidebar_label: leo deploy
 ---
+
+# Deploy
 
 :::caution
 Warning! This feature is still in development and is not yet supported.

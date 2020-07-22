@@ -1,7 +1,9 @@
 ---
-title: Verify the Program
+hide_title: true
 sidebar_label: leo run
 ---
+
+# Verify the Program
 
 ### `leo run`
 

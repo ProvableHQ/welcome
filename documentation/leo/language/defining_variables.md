@@ -1,7 +1,9 @@
 ---
-title: Defining Variables
+hide_title: true
 sidebar_label: Defining Variables
 ---
+
+# Defining Variables
 
 Leo supports `let` and `const` keywords for variable definition.
 

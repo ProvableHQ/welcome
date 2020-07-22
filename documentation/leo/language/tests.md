@@ -1,7 +1,9 @@
 ---
-title: Writing Tests
+hide_title: true
 sidebar_label: Writing Tests
 ---
+
+# Writing Tests
 
 Use the `test` keyword to define tests in a leo program. Tests must have zero function inputs and zero function returns.
 

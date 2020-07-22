@@ -1,7 +1,9 @@
 ---
-title: Arrays
+hide_title: true
 sidebar_label: Arrays
 ---
+
+# Arrays
 
 Leo supports static arrays with fixed size. 
 **Dynamic arrays do not exist in Leo**. 

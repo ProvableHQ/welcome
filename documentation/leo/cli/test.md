@@ -1,7 +1,9 @@
 ---
-title: Test a Package
+hide_title: true
 sidebar_label: leo test
 ---
+
+# Test a Package
 
 ### `leo test`
 

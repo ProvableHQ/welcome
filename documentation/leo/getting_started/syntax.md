@@ -1,7 +1,9 @@
 ---
-title: File Syntax
+hide_title: true
 sidebar_label: File Syntax
 ---
+
+# File Syntax
 
 First, Open up `Leo.toml` in Aleo Studio or your text editor of choice.
 

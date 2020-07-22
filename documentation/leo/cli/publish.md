@@ -1,7 +1,9 @@
 ---
-title: Publish a Package to APM
+hide_title: true
 sidebar_label: leo publish
 ---
+
+# Publish a Package to APM
 
 :::caution
 Warning! This feature is still in development and is not yet supported.

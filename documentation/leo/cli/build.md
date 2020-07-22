@@ -1,7 +1,8 @@
 ---
-title: Build a Package
+hide_title: true
 sidebar_label: leo build
 ---
+# Build a Package
 
 ### `leo build`
 

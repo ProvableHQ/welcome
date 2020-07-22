@@ -1,9 +1,9 @@
 ---
-title: Create a Package
+hide_title: true
 sidebar_label: leo new / init
 ---
 
-
+# Create a Package
 
 ## `leo new`
 
@@ -42,7 +42,6 @@ package_name/
   └── lib.leo # Your program library
 ```
 
----
 
 ## `leo init`
 

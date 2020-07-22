@@ -1,7 +1,9 @@
 ---
-title: Data Types
+hide_title: true
 sidebar_label: Data Types
 ---
+
+# Data Types
 
 Leo is a **statically typed language**, which means we must know the type of each variable before executing a circuit.
 

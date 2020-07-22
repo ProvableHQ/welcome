@@ -1,7 +1,9 @@
 ---
-title: Circuits
+hide_title: true
 sidebar_label: Circuits
 ---
+
+# Circuits
 
 Circuits are a powerful complex data type in Leo. 
 Circuit names should be CamelCase.

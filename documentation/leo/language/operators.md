@@ -1,7 +1,9 @@
 ---
-title: Operators
+hide_title: true
 sidebar_label: Operators
 ---
+
+# Operators
 
 Operators in Leo compute a value based off of one or more expressions.
 

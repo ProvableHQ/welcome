@@ -1,7 +1,9 @@
 ---
-title: Login to Your Aleo Account
+hide_title: true
 sidebar_label: leo login
 ---
+
+# Login to Your Aleo Account
 
 :::caution
 Warning! This feature is still in development and is not yet supported.

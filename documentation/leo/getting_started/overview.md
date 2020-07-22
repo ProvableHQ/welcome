@@ -1,7 +1,9 @@
 ---
-title: Leo Language Documentation
+hide_title: true
 sidebar_label: Overview
 ---
+
+# Leo Language Documentation
 
 Welcome to the Leo language. A simple, easy-to-use programming language for writing apps on Aleo.
 

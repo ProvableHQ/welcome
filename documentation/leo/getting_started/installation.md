@@ -1,7 +1,9 @@
 ---
-title: Installation
+hide_title: true
 sidebar_label: Installation
 ---
+
+# Installation
 
 ## Getting the binaries
 

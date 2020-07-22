@@ -1,7 +1,9 @@
 ---
-title: Logging
+hide_title: true
 sidebar_label: Logging
 ---
+
+# Logging
 
 Leo supports `print!`, `debug!`, and `error!` logging macros.
 

@@ -1,7 +1,9 @@
 ---
-title: Hello World in Leo
+hide_title: true
 sidebar_label: Hello World
 ---
+
+# Hello World in Leo
 
 Use the Leo CLI to create a new project
 

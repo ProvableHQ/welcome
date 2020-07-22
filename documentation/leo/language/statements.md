@@ -1,8 +1,9 @@
 ---
-title: Statements
+hide_title: true
 sidebar_label: Statements
 ---
 
+# Statements
 
 ## Conditionals
 
