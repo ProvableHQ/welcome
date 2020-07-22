@@ -2,6 +2,8 @@
 
 ## Welcome to Aleo.
 
+### Preamble
+
 - [What is Aleo?](./aleo/00_overview.md)
 
 
