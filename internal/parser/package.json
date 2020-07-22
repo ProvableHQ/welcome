@@ -1,0 +1,13 @@
+{
+  "name": "parser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "node parser.js"
+  },
+  "dependencies": {
+    "glob": "^7.1.6",
+    "parse-md": "^2.0.4"
+  }
+}

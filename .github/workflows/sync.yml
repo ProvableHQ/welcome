@@ -8,6 +8,11 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      - name: Update the Aleo documentation to reflect the latest changes
+        run: |
+          cd internal/parser && yarn install && yarn start
+          cd ../..
+
       - name: Sync `aleo` repository
         run: |
           curl \
