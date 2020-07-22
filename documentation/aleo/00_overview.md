@@ -1,6 +1,4 @@
 ---
-sidebar_label: What is Aleo?
-hide_title: true
+id: overview
+title: What is Aleo?
 ---
-
-# What is Aleo?
