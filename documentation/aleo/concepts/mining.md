@@ -8,7 +8,7 @@ sidebar_label: Mining
 Mining is the process of generating a [blocks](./blocks.md) to be added to the Aleo blockchain. Miners compete to process pending [transactions](./transactions.md) to form blocks and are compensated for each valid block generated. 
 Generating blocks is a computationally intensive operation and is regulated by the block difficulty established by the Aleo network. 
 
-The consensus mechanism that Aleo uses for mining is [Proof of Succinct Work](). 
+The consensus mechanism that Aleo uses for mining is [Proof of Succinct Work](./consensus.md#Proof of Succinct Work). 
 
 ### Who can mine on Aleo?
 
@@ -22,6 +22,3 @@ A block reward is the total amount of Aleo Credits rewarded to the address that 
 
 The block time is the amount of time it takes for the network to produce a valid block. This block time is variable and based on the network's hashrate, but regulated by the block difficulty. 
 The block difficulty is adjusted according to the most recent block times in order to regulate and stabilize the average block time of the network.
-
-
-

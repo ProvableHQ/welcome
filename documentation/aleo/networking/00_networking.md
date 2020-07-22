@@ -74,4 +74,4 @@ A node can broadcast a block in the same way it broadcasts a transaction by usin
 
 ## Message Types
 
-A list of message types can be found [here](message_types.md).
+A list of message types can be found [here](01_message_types.md).
