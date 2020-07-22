@@ -1,4 +1,7 @@
-# Message Types
+---
+title: Message Types
+sidebar_label: Message Types
+---
 
 All messages are serialized into bytes when sent and deserialized into a message payload when received.
 

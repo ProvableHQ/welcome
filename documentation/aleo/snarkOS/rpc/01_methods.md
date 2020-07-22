@@ -3,8 +3,6 @@ title: snarkOS JSON-RPC Methods
 sidebar_label: RPC Methods
 ---
 
-# snarkOS JSON-RPC Methods
-
 ## Public Methods
 
 These RPC methods are public and do not require authentication.

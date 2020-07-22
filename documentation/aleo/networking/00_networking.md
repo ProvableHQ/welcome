@@ -3,8 +3,6 @@ title: Networking
 sidebar_label: Networking
 ---
 
-# Networking
-
 The snarkOS network protocol establishes a peer-to-peer network of nodes that maintain the liveness of the ledger by actively exchanging transactions and blocks.
 
 ## Introduction

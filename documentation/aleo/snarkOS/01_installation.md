@@ -7,6 +7,21 @@ sidebar_label: Installation
 
 ### Install Rust
 
+We recommend installing Rust using [rustup](https://www.rustup.rs/). You can install `rustup` as follows:
+
+- macOS or Linux:
+  ```bash
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  ```
+
+- Windows (64-bit):  
+  
+  Download the [Windows 64-bit executable](https://win.rustup.rs/x86_64) and follow the on-screen instructions.
+
+- Windows (32-bit):  
+  
+  Download the [Windows 32-bit executable](https://win.rustup.rs/i686) and follow the on-screen instructions.
+  
 ### Build from Source Code
 
 ```
@@ -36,7 +51,7 @@ Additionally, the client can be run in quiet mode with the `--quiet` flag:
 
 To run a client with custom settings, refer to the full list of options and flags available in the CLI.
 
-### Command line interface
+### Command Line Interface
 
 Full list of CLI flags and options can be viewed with `./target/release/snarkOS --help`:
 

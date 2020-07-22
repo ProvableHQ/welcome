@@ -3,7 +3,6 @@ title: snarkOS
 sidebar_label: What is snarkOS?
 ---
 
-### What is snarkOS?
 snarkOS is the official rust implementation of the Aleo Protocol.
 
 This software is the Aleo client. It downloads and stores the entire history of Aleo transactions

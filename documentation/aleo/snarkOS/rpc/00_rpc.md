@@ -1,5 +1,5 @@
 ---
-title: snarkOS JSON-RPC 2.0 API
+title: snarkOS JSON-RPC API Reference
 sidebar_label: RPC Interface
 ---
 
