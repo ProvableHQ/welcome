@@ -65,6 +65,8 @@ getDirectories('../../documentation', async (err, list) => {
 
             "## Welcome to Aleo.\n\n",
 
+            "### Preamble\n\n",
+
             await generateChapterDocumentation(markdownFiles, '/aleo/'),
 
             "## Hello Leo\n\n",
