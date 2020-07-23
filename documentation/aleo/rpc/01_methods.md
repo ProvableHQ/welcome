@@ -360,7 +360,6 @@ curl --user username:password --data-binary '{
                 "address": "address_string",
                 "amount": amount
         }],
-        "auxiliary": "auxiliary_hexstring",
         "memo": "memo_hexstring",
         "network_id": 0
        }
