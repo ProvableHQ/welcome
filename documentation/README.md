@@ -2,13 +2,13 @@
 
 ## Welcome to Aleo.
 
-### Chapter 0: Getting Started
+## Chapter 0: Getting Started
 
 - [Aleo Documentation](./aleo/getting_started/00_overview.md)
 - [Install snarkOS](./aleo/getting_started/01_installation.md)
 
 
-### Chapter 1: Concepts
+## Chapter 1: Concepts
 
 - [Aleo Accounts](./aleo/concepts/00_account.md)
 - [Aleo Records](./aleo/concepts/01_records.md)
@@ -20,21 +20,21 @@
 - [Glossary](./aleo/concepts/07_glossary.md)
 
 
-### Chapter 2: Networking
+## Chapter 2: Networking
 
 - [Networking](./aleo/networking/00_networking.md)
 - [Message Types](./aleo/networking/01_message_types.md)
 
 
-### Chapter 3: RPC
+## Chapter 3: RPC
 
 - [snarkOS JSON-RPC API Reference](./aleo/rpc/00_rpc.md)
 - [snarkOS JSON-RPC Methods](./aleo/rpc/01_methods.md)
 
 
-## Hello Leo
+## Hello Leo!
 
-### Chapter 0: Getting Started
+## Chapter 0: Getting Started
 
 - [Leo Language Documentation](./leo/getting_started/00_overview.md)
 - [Installation](./leo/getting_started/01_installation.md)
@@ -44,7 +44,7 @@
 - [Pedersen Hash Example](./leo/getting_started/05_example.md)
 
 
-### Chapter 1: Language
+## Chapter 1: Language
 
 - [Layout of a Leo File](./leo/language/00_layout.md)
 - [Defining Variables](./leo/language/01_variables.md)
@@ -61,7 +61,7 @@
 - [Lexical Structure](./leo/language/12_lexical.md)
 
 
-### Chapter 2: CLI
+## Chapter 2: CLI
 
 - [Create a Package](./leo/cli/00_new.md)
 - [Build a Package](./leo/cli/01_build.md)
@@ -74,7 +74,7 @@
 - [Deploy](./leo/cli/08_deploy.md)
 
 
-### Chapter 3: Additional Material
+## Chapter 3: Additional Material
 
 - [Style Guide](./leo/additional_material/00_style.md)
 - [Common Patterns](./leo/additional_material/01_common.md)

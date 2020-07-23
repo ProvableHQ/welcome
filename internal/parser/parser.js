@@ -2,6 +2,65 @@ const fs = require('fs');
 const glob = require("glob");
 const parseMD = require('parse-md').default;
 
+/**************************************************************
+ ************************* UPDATE THIS ************************
+ **************************************************************/
+
+/**
+ * Edit this section to update the documentation README.
+ * The rendered README will display in the order shown below.
+ */
+const DOCUMENTATION = [
+    {
+        title: 'Welcome to Aleo.',
+        folderName: 'aleo',
+        chapters: [
+            {
+                title: 'Getting Started',
+                folderName: 'getting_started'
+            },
+            {
+                title: 'Concepts',
+                folderName: 'concepts'
+            },
+            {
+                title: 'Networking',
+                folderName: 'networking'
+            },
+            {
+                title: 'RPC',
+                folderName: 'rpc'
+            }
+        ]
+    },
+    {
+        title: 'Hello Leo!',
+        folderName: 'leo',
+        chapters: [
+            {
+                title: 'Getting Started',
+                folderName: 'getting_started'
+            },
+            {
+                title: 'Language',
+                folderName: 'language'
+            },
+            {
+                title: 'CLI',
+                folderName: 'cli'
+            },
+            {
+                title: 'Additional Material',
+                folderName: 'additional_material'
+            },
+        ]
+    }
+];
+
+/**************************************************************
+ ********************* DO NOT CHANGE BELOW ********************
+ **************************************************************/
+
 const getDirectories = (src, callback) => {
     glob(src + '/**/*', callback);
 };
@@ -60,53 +119,42 @@ getDirectories('../../documentation', async (err, list) => {
             return filepath.indexOf(extension) !== -1;
         });
 
-        const documentation = [
-            "# Aleo Documentation\n\n",
+        let documentation = ["# Aleo Documentation\n\n"];
 
+        // Get the total number of sections.
+        let numSections = DOCUMENTATION.length;
+        // Iterate through all sections.
+        let i = 0;
+        for await (let section of DOCUMENTATION) {
 
-            "## Welcome to Aleo.\n\n",
+            // Add the section title to documentation.
+            let title = section.title;
+            documentation.push("## " + title + "\n\n");
 
-            "### Chapter 0: Getting Started\n\n",
+            // Get the total number of chapters per section.
+            let numChapters = section.chapters.length;
+            // Iterate through all chapters per section.
+            let j = 0;
+            for await (let chapter of section.chapters) {
 
-            await generateChapterDocumentation(markdownFiles, '/aleo/getting_started'),
+                // Add the chapter title to documentation.
+                let chapterTitle = chapter.title;
+                documentation.push("## Chapter " + j + ": " + chapterTitle + "\n\n");
 
-            "### Chapter 1: Concepts\n\n",
+                // Add the chapter topics to documentation.
+                let chapterFolder = chapter.folderName;
+                documentation.push(await generateChapterDocumentation(markdownFiles, "/" + section.folderName + "/" + chapterFolder));
 
-            await generateChapterDocumentation(markdownFiles, '/aleo/concepts'),
+                j++;
+            }
 
-            "### Chapter 2: Networking\n\n",
+            i++;
+        }
 
-            await generateChapterDocumentation(markdownFiles, '/aleo/networking'),
+        // Add the Contributing section.
+        documentation.push("## Contributing\n\n");
+        documentation.push("This README is auto-generated during continuous integration. To update this README, click [here](../internal/parser/parser.js) to see the source code that generates this document.\n\n");
 
-            "### Chapter 3: RPC\n\n",
-
-            await generateChapterDocumentation(markdownFiles, '/aleo/rpc'),
-            
-
-            "## Hello Leo\n\n",
-
-            "### Chapter 0: Getting Started\n\n",
-
-            await generateChapterDocumentation(markdownFiles, '/leo/getting_started'),
-
-            "### Chapter 1: Language\n\n",
-
-            await generateChapterDocumentation(markdownFiles, '/leo/language'),
-
-            "### Chapter 2: CLI\n\n",
-
-            await generateChapterDocumentation(markdownFiles, '/leo/cli'),
-
-            "### Chapter 3: Additional Material\n\n",
-
-            await generateChapterDocumentation(markdownFiles, '/leo/additional_material'),
-
-            "## Contributing\n\n",
-
-            "This README is auto-generated during continuous integration. To update this README, click [here](../internal/parser/parser.js) to see the source code that generates this document.\n\n"
-
-        ].join("");
-
-        fs.writeFileSync('../../documentation/README.md', documentation, { encoding: 'utf8', flag: 'w' });
+        fs.writeFileSync('../../documentation/README.md', documentation.join(''), { encoding: 'utf8', flag: 'w' });
     }
 });
