@@ -68,8 +68,6 @@ getDirectories('../../documentation', async (err, list) => {
 
         let documentation = ["# Aleo Documentation\n\n"];
 
-        // Get the total number of sections.
-        let numSections = DOCUMENTATION.length;
         // Iterate through all sections.
         let i = 0;
         for await (let section of DOCUMENTATION) {
@@ -78,8 +76,6 @@ getDirectories('../../documentation', async (err, list) => {
             let title = section.title;
             documentation.push("## " + title + "\n\n");
 
-            // Get the total number of chapters per section.
-            let numChapters = section.chapters.length;
             // Iterate through all chapters per section.
             let j = 0;
             for await (let chapter of section.chapters) {
