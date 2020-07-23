@@ -12,7 +12,7 @@ A block is a data structure containing Aleo [transactions](02_transactions.md). 
 
 #### Block Header
 
-The [block header](#Block Header) describing the block.
+The [block header](#block-header) describing the block.
 
 #### Transactions
 
@@ -23,7 +23,7 @@ The transactions included in the block.
 |     Parameter    |                       Type                       | Size (bytes) |
 |:----------------:|:------------------------------------------------:|:------------:|
 |     `header`     |                    BlockHeader                   |      503     |
-| num transactions | [var_int](07_glossary.md#Variable Length Integer) |      1+      |
+| num transactions | [var_int](07_glossary.md#variable-length-integer)|      1+      |
 |  `transactions`  |                array[Transaction]                |       ?      |
 
 ## Verifying Blocks

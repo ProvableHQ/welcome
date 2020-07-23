@@ -6,7 +6,7 @@ title: Glossary
 ### Record Serial Number
 
 A record serial number is the evaluation of a PRF on a spent record's serial number nonce and corresponding secret key. 
-This means every record has a unique serial number, which will allow the Aleo network to prevent [double spends](01_records.md#Double Spends) without revealing any information about the record contents.
+This means every record has a unique serial number, which will allow the Aleo network to prevent [double spends](01_records.md#double-spends) without revealing any information about the record contents.
 
 ### Record Commitment
 

@@ -15,7 +15,7 @@ Records are encrypted on the ledger, and only the record owners can decrypt the 
 
 #### Account Address
 
-The [account address](00_account.md#Address) of the record owner that can spend the record.
+The [account address](00_account.md#address) of the record owner that can spend the record.
 
 #### Value
 
@@ -27,19 +27,19 @@ A record payload that encodes arbitrary application information.
 
 #### Birth Predicate Hash
 
-The id of the [birth predicate](07_glossary.md#Birth Predicate) that must be satisfied when the record is created.
+The id of the [birth predicate](07_glossary.md#birth-predicate) that must be satisfied when the record is created.
 
 #### Death Predicate Hash
 
-The id of the [death predicate](07_glossary.md#Death Predicate) that must be specified when the record is spent.
+The id of the [death predicate](07_glossary.md#death-predicate) that must be specified when the record is spent.
 
 #### Serial Number Nonce
 
-The nonce used to generate the record [serial number](07_glossary.md#Record Serial Number) when the record is being spent.
+The nonce used to generate the record [serial number](07_glossary.md#record-serial-number) when the record is being spent.
 
 #### Record Commitment
 
-The [commitment](07_glossary.md#Record Commitment) on the contents of the record.
+The [commitment](07_glossary.md#record-commitment) on the contents of the record.
 
 #### Commitment Randomness
 
@@ -54,9 +54,9 @@ Records are serialized in the format below:
 |          `address`          |                     variable                      |      32      |
 |           `value`           |                        u64                        |       8      |
 |          `payload`          |                       bytes                       |      32      |
-| `birth_predicate_hash` len  | [var_int](07_glossary.md#Variable Length Integer) |      1+      |
+| `birth_predicate_hash` len  | [var_int](07_glossary.md#variable-length-integer) |      1+      |
 |    `birth_predicate_hash`   |                       bytes                       |      48+     |
-| `death_predicate_hash` len  | [var_int](07_glossary.md#Variable Length Integer) |      1+      |
+| `death_predicate_hash` len  | [var_int](07_glossary.md#variable-length-integer) |      1+      |
 |    `death_predicate_hash`   |                       bytes                       |      48+     |
 |    `serial_number_nonce`    |                     variable                      |      32      |
 |         `commitment`        |                     variable                      |      32      |

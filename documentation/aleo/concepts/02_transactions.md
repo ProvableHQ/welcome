@@ -19,11 +19,11 @@ The root of the commitment Merkle tree used at the time of transaction generatio
 
 #### Old Record Serial Numbers
 
-The [serial numbers](07_glossary.md#Record Serial Number) of the records being spent by the transaction.
+The [serial numbers](07_glossary.md#record-serial-number) of the records being spent by the transaction.
 
 #### New Record Commitments
 
-The [commitments](07_glossary.md#Record Commitment) of the new records being created by the transaction.
+The [commitments](07_glossary.md#record-commitment) of the new records being created by the transaction.
 
 #### Predicate Commitment
 
@@ -40,7 +40,7 @@ Only coinbase transactions can have a negative value balance representing Aleo c
 
 #### Signatures
 
-The [randomized signatures](07_glossary.md#Randomized Signature) used by the record spenders to allow for authorized delegation of transaction generation.
+The [randomized signatures](07_glossary.md#randomized-signature) used by the record spenders to allow for authorized delegation of transaction generation.
 
 #### Record Ciphertexts
 
@@ -69,7 +69,7 @@ Transactions are serialized in the format below:
 | `local_data_commitment` |                     variable                     |      32      |
 |     `value_balance`     |                        i64                       |       8      |
 |       `signatures`      |                  array[variable]                 |      128     |
-|     `ciphertext` len    | [var_int](07_glossary.md#Variable Length Integer) |      1+      |
+|     `ciphertext` len    | [var_int](07_glossary.md#variable-length-integer)|      1+      |
 |       `ciphertext`      |                  array[variable]                 |     512+     |
 
 ## Creating Transactions
@@ -81,7 +81,7 @@ The steps to create a transaction are as follows:
 3. Generate the predicate commitment
 4. Generate the local data commitment
 5. Generate the transaction signatures
-6. Generate the ledger digest and [ledger membership witnesses](07_glossary.md#Ledger Membership Witness) for the input record commitments 
+6. Generate the ledger digest and [ledger membership witnesses](07_glossary.md#ledger-membership-witness) for the input record commitments 
 7. Generate the inner SNARK proof
 8. Generate the predicate SNARK proofs
 9. Generate the transaction proof

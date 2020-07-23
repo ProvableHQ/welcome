@@ -14,7 +14,7 @@ An Aleo account private key is the secret key that allows a user to spend a reco
 
 #### Format 
 
-The output format of an Aleo private key is a 49 character string composed of a Base58 encoded [private key prefix](#Key Prefixes) and the seed.
+The output format of an Aleo private key is a 49 character string composed of a Base58 encoded [private key prefix](#key-prefixes) and the seed.
 
 #### Example:
 ```
@@ -23,7 +23,7 @@ AKEY1b47dMA8f9GfXPsW9s16qWfiYYmWGAAcorK9RkaVpBeFA
 
 ### Account View Key
 
-An Aleo account view key is derived from the Aleo private key and allows users to decrypt the [record ciphertexts](02_transactions.md#Record Ciphertexts) of the records with the corresponding Aleo address.
+An Aleo account view key is derived from the Aleo private key and allows users to decrypt the [record ciphertexts](02_transactions.md#record-ciphertexts) of the records with the corresponding Aleo address.
 
 ## Account Address
 
@@ -31,7 +31,7 @@ An Aleo address is the identifier used to denote a recipient/owner of new record
 
 #### Format 
 
-The output format of an Aleo address is a 63 character string composed of an [address prefix](#Key Prefixes) and a Bech32 encoded public key
+The output format of an Aleo address is a 63 character string composed of an [address prefix](#key-prefixes) and a Bech32 encoded public key
 
 #### Example:
 ```
