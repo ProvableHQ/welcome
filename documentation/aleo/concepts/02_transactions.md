@@ -39,7 +39,7 @@ Only coinbase transactions can have a negative value balance representing Aleo c
 
 #### Signatures
 
-The signatures used by the record spenders to allow for authorized delegation of transaction generation.
+The [randomized signatures](./glossary.md#Randomized Signature) used by the record spenders to allow for authorized delegation of transaction generation.
 
 #### Record Ciphertexts
 
@@ -73,7 +73,7 @@ Transactions are serialized in the format below:
 
 ## Creating Transactions
 
-The high level steps to create a transaction are as follows:
+The steps to create a transaction are as follows:
 
 1. Generate the serial numbers of the records being spent
 2. Generate the new records
@@ -89,7 +89,7 @@ The high level steps to create a transaction are as follows:
 
 ## Verifying Transactions
 
-The high level steps to verify a transaction are as follows:
+The steps to verify a transaction are as follows:
 
 1. Verify that each serial number in `old_serial_numbers` does not already exist in the ledger.
 2. Verify that each commitment in `new_commitments` does not already exist in the ledger.

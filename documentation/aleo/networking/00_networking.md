@@ -7,9 +7,7 @@ The snarkOS network protocol establishes a peer-to-peer network of nodes that ma
 
 ## Introduction
 
-snarkOS is a simple broadcast network that uses TCP to handle all data transfers. snarkOS full nodes download and verify all blocks and transactions before becoming an active node in the network. 
-
-The verification of these blocks and transactions are explained in the [consensus documentation](TODO Add link).
+snarkOS creates a simple broadcast network that uses TCP to handle all data transfers. snarkOS full nodes download and verify all blocks and transactions before becoming an active node in the network. 
 
 ## Node/Peer Discovery
 

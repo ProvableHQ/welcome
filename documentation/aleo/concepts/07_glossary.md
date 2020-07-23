@@ -33,6 +33,10 @@ A death predicate is a predicate associated with the death/spending of a record
 
 The ledger membership witness is the merkle path proving that a record commitment exists in the global commitment Merkle tree.
 
+### Randomized Signature
+
+A randomized signature is a randomized Schnorr signature over the transaction contents that allows senders to delegate proof generation to third parties without revealing the private key authorized to spend the record.
+
 ### Variable Length Integer
 
 A variable length integer is an encoding of 64-bit unsigned integers into variable length integers to save space when storing or transmitting numbers.
