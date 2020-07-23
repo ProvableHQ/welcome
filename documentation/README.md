@@ -2,7 +2,13 @@
 
 ## Welcome to Aleo.
 
-### Preamble
+### Chapter 0: Getting Started
+
+- [Aleo Documentation](./aleo/getting_started/00_overview.md)
+- [Install snarkOS](./aleo/getting_started/01_installation.md)
+
+
+### Chapter 1: Concepts
 
 - [Aleo Accounts](./aleo/concepts/00_account.md)
 - [Aleo Records](./aleo/concepts/01_records.md)
@@ -12,10 +18,16 @@
 - [Mining on Aleo](./aleo/concepts/05_mining.md)
 - [Parameters](./aleo/concepts/06_parameters.md)
 - [Glossary](./aleo/concepts/07_glossary.md)
-- [Aleo Documentation](./aleo/getting_started/00_overview.md)
-- [Install snarkOS](./aleo/getting_started/01_installation.md)
+
+
+### Chapter 2: Networking
+
 - [Networking](./aleo/networking/00_networking.md)
 - [Message Types](./aleo/networking/01_message_types.md)
+
+
+### Chapter 3: RPC
+
 - [snarkOS JSON-RPC API Reference](./aleo/rpc/00_rpc.md)
 - [snarkOS JSON-RPC Methods](./aleo/rpc/01_methods.md)
 
