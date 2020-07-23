@@ -84,5 +84,5 @@
 
 ## Contributing
 
-This README is auto-generated during continuous integration. To update this README, click [here](../internal/parser/parser.js) to see the source code that generates this document.
+This README is auto-generated during continuous integration. To update this README, update the layout configuration [here](./config.js).
 
