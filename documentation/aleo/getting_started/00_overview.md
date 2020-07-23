@@ -1,10 +1,8 @@
 ---
 id: overview
-title: Aleo Documentation
+title: Welcome to Aleo.
 sidebar_label: Overview
 ---
-
-Welcome to Aleo.
 
 [INSERT OVERVIEW]
 
