@@ -100,7 +100,7 @@ getDirectories('../../documentation', async (err, list) => {
 
         // Add the Contributing section.
         documentation.push("## Contributing\n\n");
-        documentation.push("This README is auto-generated during continuous integration. To update this README, click [here](../internal/parser/parser.js) to see the source code that generates this document.\n\n");
+        documentation.push("This README is auto-generated during continuous integration. To update this README, update the layout configuration [here](./config.js).\n\n");
 
         fs.writeFileSync('../../documentation/README.md', documentation.join(''), { encoding: 'utf8', flag: 'w' });
     }
