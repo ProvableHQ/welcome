@@ -20,7 +20,17 @@
 - [Glossary](./aleo/concepts/07_glossary.md)
 
 
-## Chapter 2: Language
+## Chapter 2: Hello Leo!
+
+- [Leo Language Documentation](./aleo/leo_getting_started/00_overview.md)
+- [Installation](./aleo/leo_getting_started/01_installation.md)
+- [Hello World in Leo](./aleo/leo_getting_started/02_hello_world.md)
+- [File Syntax](./aleo/leo_getting_started/03_syntax.md)
+- [CLI Commands](./aleo/leo_getting_started/04_cli.md)
+- [Pedersen Hash Example](./aleo/leo_getting_started/05_example.md)
+
+
+## Chapter 3: Language
 
 - [Layout of a Leo File](./aleo/language/00_layout.md)
 - [Defining Variables](./aleo/language/01_variables.md)
@@ -35,15 +45,9 @@
 - [Writing Tests](./aleo/language/10_tests.md)
 - [Logging](./aleo/language/11_logging.md)
 - [Lexical Structure](./aleo/language/12_lexical.md)
-- [Leo Language Documentation](./aleo/language/getting_started/00_overview.md)
-- [Installation](./aleo/language/getting_started/01_installation.md)
-- [Hello World in Leo](./aleo/language/getting_started/02_hello_world.md)
-- [File Syntax](./aleo/language/getting_started/03_syntax.md)
-- [CLI Commands](./aleo/language/getting_started/04_cli.md)
-- [Pedersen Hash Example](./aleo/language/getting_started/05_example.md)
 
 
-## Chapter 3: CLI
+## Chapter 4: CLI
 
 - [Create a Package](./aleo/cli/00_new.md)
 - [Build a Package](./aleo/cli/01_build.md)
@@ -56,19 +60,19 @@
 - [Deploy](./aleo/cli/08_deploy.md)
 
 
-## Chapter 4: Networking
+## Chapter 5: Networking
 
 - [Networking](./aleo/networking/00_networking.md)
 - [Message Types](./aleo/networking/01_message_types.md)
 
 
-## Chapter 5: RPC
+## Chapter 6: RPC
 
 - [snarkOS JSON-RPC API Reference](./aleo/rpc/00_rpc.md)
 - [snarkOS JSON-RPC Methods](./aleo/rpc/01_methods.md)
 
 
-## Chapter 6: Additional Material
+## Chapter 7: Additional Material
 
 - [Style Guide](./aleo/additional_material/00_style.md)
 - [Common Patterns](./aleo/additional_material/01_common.md)
