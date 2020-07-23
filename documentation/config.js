@@ -20,6 +20,10 @@ module.exports = [
                 folderName: 'concepts'
             },
             {
+                title: 'Hello Leo!',
+                folderName: 'leo_getting_started'
+            },
+            {
                 title: 'Language',
                 folderName: 'language'
             },
