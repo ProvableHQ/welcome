@@ -504,15 +504,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "itertools"
-version = "0.9.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "284f18f85651fe11e8a991b2adb42cb078325c996ed026d994719efcfca1d54b"
-dependencies = [
- "either",
-]
-
-[[package]]
 name = "itoa"
 version = "0.4.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1007,7 +998,6 @@ dependencies = [
  "blake2",
  "derivative",
  "digest 0.8.1",
- "itertools",
  "rand",
  "rand_chacha",
  "rayon",
@@ -1048,7 +1038,6 @@ dependencies = [
  "blake2",
  "derivative",
  "hex",
- "itertools",
  "rand",
  "snarkos-algorithms",
  "snarkos-curves",
@@ -1081,7 +1070,6 @@ version = "0.8.0"
 dependencies = [
  "derivative",
  "digest 0.8.1",
- "itertools",
  "snarkos-algorithms",
  "snarkos-curves",
  "snarkos-errors",
@@ -1095,7 +1083,6 @@ version = "0.8.0"
 dependencies = [
  "bincode",
  "derivative",
- "itertools",
  "rand",
  "rand_xorshift",
  "serde",

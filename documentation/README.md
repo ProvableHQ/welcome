@@ -13,12 +13,12 @@
 - [Parameters](./aleo/concepts/06_parameters.md)
 - [Glossary](./aleo/concepts/07_glossary.md)
 - [Aleo Documentation](./aleo/getting_started/00_overview.md)
-- [Networking](./aleo/networking/00_networking.md)
-- [Message Types](./aleo/networking/01_message_types.md)
+- [Networking](aleo/networking/00_networking.md)
+- [Message Types](aleo/networking/01_message_types.md)
 - [snarkOS](./aleo/snarkOS/00_overview.md)
-- [Install snarkOS](./aleo/snarkOS/01_installation.md)
-- [snarkOS JSON-RPC API Reference](./aleo/snarkOS/rpc/00_rpc.md)
-- [snarkOS JSON-RPC Methods](./aleo/snarkOS/rpc/01_methods.md)
+- [Install snarkOS](aleo/getting_started/01_installation.md)
+- [snarkOS JSON-RPC API Reference](aleo/rpc/00_rpc.md)
+- [snarkOS JSON-RPC Methods](aleo/rpc/01_methods.md)
 
 
 ## Hello Leo
