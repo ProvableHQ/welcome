@@ -3,63 +3,10 @@ const glob = require("glob");
 const parseMD = require('parse-md').default;
 
 /**************************************************************
- ************************* UPDATE THIS ************************
- **************************************************************/
-
-/**
- * Edit this section to update the documentation README.
- * The rendered README will display in the order shown below.
- */
-const DOCUMENTATION = [
-    {
-        title: 'Welcome to Aleo.',
-        folderName: 'aleo',
-        chapters: [
-            {
-                title: 'Getting Started',
-                folderName: 'getting_started'
-            },
-            {
-                title: 'Concepts',
-                folderName: 'concepts'
-            },
-            {
-                title: 'Networking',
-                folderName: 'networking'
-            },
-            {
-                title: 'RPC',
-                folderName: 'rpc'
-            }
-        ]
-    },
-    {
-        title: 'Hello Leo!',
-        folderName: 'leo',
-        chapters: [
-            {
-                title: 'Getting Started',
-                folderName: 'getting_started'
-            },
-            {
-                title: 'Language',
-                folderName: 'language'
-            },
-            {
-                title: 'CLI',
-                folderName: 'cli'
-            },
-            {
-                title: 'Additional Material',
-                folderName: 'additional_material'
-            },
-        ]
-    }
-];
-
-/**************************************************************
  ********************* DO NOT CHANGE BELOW ********************
  **************************************************************/
+
+const DOCUMENTATION = require('../../documentation/config');
 
 const getDirectories = (src, callback) => {
     glob(src + '/**/*', callback);
