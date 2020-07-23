@@ -1,4 +1,5 @@
 ---
+id: installation
 title: Install snarkOS
 sidebar_label: Installation
 ---

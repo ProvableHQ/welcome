@@ -1,9 +1,8 @@
 ---
+id: rpc
 title: snarkOS JSON-RPC API Reference
 sidebar_label: RPC Interface
 ---
-
-# snarkOS JSON-RPC API Reference
 
 The snarkOS RPC is a [JSON-RPC 2.0](https://www.jsonrpc.org/specification) protocol that enables API calls to fetch data and interact with the network.
 

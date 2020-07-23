@@ -1,4 +1,5 @@
 ---
+id: blocks
 title: Aleo Blocks
 sidebar_label: Blocks
 ---

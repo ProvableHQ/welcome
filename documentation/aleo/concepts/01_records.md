@@ -1,4 +1,5 @@
 ---
+id: records
 title: Aleo Records
 sidebar_label: Records
 ---

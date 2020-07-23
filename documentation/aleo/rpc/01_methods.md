@@ -1,4 +1,5 @@
 ---
+id: methods
 title: snarkOS JSON-RPC Methods
 sidebar_label: RPC Methods
 ---

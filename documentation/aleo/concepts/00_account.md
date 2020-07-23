@@ -1,9 +1,8 @@
 ---
-title: Aleo Accounts
+id: account
+title: Aleo Account
 sidebar_label: Accounts
 ---
-
-# Aleo Account 
 
 An Aleo account is the set of keys used to sign messages, spend records, and interact with the Aleo network.
 

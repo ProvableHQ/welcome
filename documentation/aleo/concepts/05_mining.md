@@ -1,4 +1,5 @@
 ---
+id: mining
 title: Mining on Aleo
 sidebar_label: Mining
 ---

@@ -1,4 +1,5 @@
 ---
+id: message_types
 title: Message Types
 sidebar_label: Message Types
 ---

@@ -1,4 +1,5 @@
 ---
+id: transactions
 title: Aleo Transactions
 sidebar_label: Transactions
 ---
