@@ -4,7 +4,21 @@
 
 ### Preamble
 
-- [What is Aleo?](./aleo/00_overview.md)
+- [Aleo Accounts](./aleo/concepts/00_account.md)
+- [Aleo Records](./aleo/concepts/01_records.md)
+- [Aleo Transactions](./aleo/concepts/02_transactions.md)
+- [Aleo Blocks](./aleo/concepts/03_blocks.md)
+- [Consensus](./aleo/concepts/04_consensus.md)
+- [Mining on Aleo](./aleo/concepts/05_mining.md)
+- [Parameters](./aleo/concepts/06_parameters.md)
+- [Glossary](./aleo/concepts/07_glossary.md)
+- [Aleo Documentation](./aleo/getting_started/00_overview.md)
+- [Networking](./aleo/networking/00_networking.md)
+- [Message Types](./aleo/networking/01_message_types.md)
+- [snarkOS](./aleo/snarkOS/00_overview.md)
+- [Install snarkOS](./aleo/snarkOS/01_installation.md)
+- [snarkOS JSON-RPC API Reference](./aleo/snarkOS/rpc/00_rpc.md)
+- [snarkOS JSON-RPC Methods](./aleo/snarkOS/rpc/01_methods.md)
 
 
 ## Hello Leo
