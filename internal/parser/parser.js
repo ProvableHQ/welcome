@@ -63,11 +63,25 @@ getDirectories('../../documentation', async (err, list) => {
         const documentation = [
             "# Aleo Documentation\n\n",
 
+
             "## Welcome to Aleo.\n\n",
 
-            "### Preamble\n\n",
+            "### Chapter 0: Getting Started\n\n",
 
-            await generateChapterDocumentation(markdownFiles, '/aleo/'),
+            await generateChapterDocumentation(markdownFiles, '/aleo/getting_started'),
+
+            "### Chapter 1: Concepts\n\n",
+
+            await generateChapterDocumentation(markdownFiles, '/aleo/concepts'),
+
+            "### Chapter 2: Networking\n\n",
+
+            await generateChapterDocumentation(markdownFiles, '/aleo/networking'),
+
+            "### Chapter 3: RPC\n\n",
+
+            await generateChapterDocumentation(markdownFiles, '/aleo/rpc'),
+            
 
             "## Hello Leo\n\n",
 
