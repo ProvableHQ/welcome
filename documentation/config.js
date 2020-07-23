@@ -20,30 +20,20 @@ module.exports = [
                 folderName: 'concepts'
             },
             {
-                title: 'Networking',
-                folderName: 'networking'
-            },
-            {
-                title: 'RPC',
-                folderName: 'rpc'
-            }
-        ]
-    },
-    {
-        title: 'Hello Leo!',
-        folderName: 'leo',
-        chapters: [
-            {
-                title: 'Getting Started',
-                folderName: 'getting_started'
-            },
-            {
                 title: 'Language',
                 folderName: 'language'
             },
             {
                 title: 'CLI',
                 folderName: 'cli'
+            },
+            {
+                title: 'Networking',
+                folderName: 'networking'
+            },
+            {
+                title: 'RPC',
+                folderName: 'rpc'
             },
             {
                 title: 'Additional Material',

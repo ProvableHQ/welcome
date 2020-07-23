@@ -66,7 +66,7 @@ getDirectories('../../documentation', async (err, list) => {
             return filepath.indexOf(extension) !== -1;
         });
 
-        let documentation = ["# Aleo Documentation\n\n"];
+        let documentation = ["# Aleo Developer\n\n"];
 
         // Iterate through all sections.
         let i = 0;
