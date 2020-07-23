@@ -1,10 +1,10 @@
-# Aleo Documentation
+# Aleo Developer
 
 ## Welcome to Aleo.
 
 ## Chapter 0: Getting Started
 
-- [Aleo Documentation](./aleo/getting_started/00_overview.md)
+- [Welcome to Aleo.](./aleo/getting_started/00_overview.md)
 - [Install snarkOS](./aleo/getting_started/01_installation.md)
 
 
@@ -20,66 +20,60 @@
 - [Glossary](./aleo/concepts/07_glossary.md)
 
 
-## Chapter 2: Networking
+## Chapter 2: Language
+
+- [Layout of a Leo File](./aleo/language/00_layout.md)
+- [Defining Variables](./aleo/language/01_variables.md)
+- [Data Types](./aleo/language/02_types.md)
+- [Arrays](./aleo/language/03_arrays.md)
+- [Operators](./aleo/language/04_operators.md)
+- [Statements](./aleo/language/05_statements.md)
+- [Functions](./aleo/language/06_functions.md)
+- [Leo Inputs](./aleo/language/07_inputs.md)
+- [Circuits](./aleo/language/08_circuits.md)
+- [Imports](./aleo/language/09_imports.md)
+- [Writing Tests](./aleo/language/10_tests.md)
+- [Logging](./aleo/language/11_logging.md)
+- [Lexical Structure](./aleo/language/12_lexical.md)
+- [Leo Language Documentation](./aleo/language/getting_started/00_overview.md)
+- [Installation](./aleo/language/getting_started/01_installation.md)
+- [Hello World in Leo](./aleo/language/getting_started/02_hello_world.md)
+- [File Syntax](./aleo/language/getting_started/03_syntax.md)
+- [CLI Commands](./aleo/language/getting_started/04_cli.md)
+- [Pedersen Hash Example](./aleo/language/getting_started/05_example.md)
+
+
+## Chapter 3: CLI
+
+- [Create a Package](./aleo/cli/00_new.md)
+- [Build a Package](./aleo/cli/01_build.md)
+- [Test a Package](./aleo/cli/02_test.md)
+- [Perform the Program Setup](./aleo/cli/03_setup.md)
+- [Generate a Proof](./aleo/cli/04_prove.md)
+- [Verify the Program](./aleo/cli/05_run.md)
+- [Login to Your Aleo Account](./aleo/cli/06_login.md)
+- [Publish a Package to APM](./aleo/cli/07_publish.md)
+- [Deploy](./aleo/cli/08_deploy.md)
+
+
+## Chapter 4: Networking
 
 - [Networking](./aleo/networking/00_networking.md)
 - [Message Types](./aleo/networking/01_message_types.md)
 
 
-## Chapter 3: RPC
+## Chapter 5: RPC
 
 - [snarkOS JSON-RPC API Reference](./aleo/rpc/00_rpc.md)
 - [snarkOS JSON-RPC Methods](./aleo/rpc/01_methods.md)
 
 
-## Hello Leo!
+## Chapter 6: Additional Material
 
-## Chapter 0: Getting Started
-
-- [Leo Language Documentation](./leo/getting_started/00_overview.md)
-- [Installation](./leo/getting_started/01_installation.md)
-- [Hello World in Leo](./leo/getting_started/02_hello_world.md)
-- [File Syntax](./leo/getting_started/03_syntax.md)
-- [CLI Commands](./leo/getting_started/04_cli.md)
-- [Pedersen Hash Example](./leo/getting_started/05_example.md)
-
-
-## Chapter 1: Language
-
-- [Layout of a Leo File](./leo/language/00_layout.md)
-- [Defining Variables](./leo/language/01_variables.md)
-- [Data Types](./leo/language/02_types.md)
-- [Arrays](./leo/language/03_arrays.md)
-- [Operators](./leo/language/04_operators.md)
-- [Statements](./leo/language/05_statements.md)
-- [Functions](./leo/language/06_functions.md)
-- [Leo Inputs](./leo/language/07_inputs.md)
-- [Circuits](./leo/language/08_circuits.md)
-- [Imports](./leo/language/09_imports.md)
-- [Writing Tests](./leo/language/10_tests.md)
-- [Logging](./leo/language/11_logging.md)
-- [Lexical Structure](./leo/language/12_lexical.md)
-
-
-## Chapter 2: CLI
-
-- [Create a Package](./leo/cli/00_new.md)
-- [Build a Package](./leo/cli/01_build.md)
-- [Test a Package](./leo/cli/02_test.md)
-- [Perform the Program Setup](./leo/cli/03_setup.md)
-- [Generate a Proof](./leo/cli/04_prove.md)
-- [Verify the Program](./leo/cli/05_run.md)
-- [Login to Your Aleo Account](./leo/cli/06_login.md)
-- [Publish a Package to APM](./leo/cli/07_publish.md)
-- [Deploy](./leo/cli/08_deploy.md)
-
-
-## Chapter 3: Additional Material
-
-- [Style Guide](./leo/additional_material/00_style.md)
-- [Common Patterns](./leo/additional_material/01_common.md)
-- [List of Known Bugs](./leo/additional_material/02_bugs.md)
-- [Contributing](./leo/additional_material/03_contributing.md)
+- [Style Guide](./aleo/additional_material/00_style.md)
+- [Common Patterns](./aleo/additional_material/01_common.md)
+- [List of Known Bugs](./aleo/additional_material/02_bugs.md)
+- [Contributing](./aleo/additional_material/03_contributing.md)
 
 
 ## Contributing
