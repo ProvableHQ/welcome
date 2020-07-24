@@ -15,7 +15,7 @@ Records are encrypted on the ledger, and only the record owners can decrypt the 
 
 #### Account Address
 
-The [account address](00_account.md#address) of the record owner that can spend the record.
+The [account address](00_account.md#account-address) of the record owner that can spend the record.
 
 #### Value
 
