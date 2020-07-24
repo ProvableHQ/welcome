@@ -10,7 +10,7 @@
 
 ## Chapter 1: Concepts
 
-- [Aleo Account](aleo/concepts/00_accounts.md)
+- [Accounts](./aleo/concepts/00_accounts.md)
 - [Aleo Records](./aleo/concepts/01_records.md)
 - [Aleo Transactions](./aleo/concepts/02_transactions.md)
 - [Aleo Blocks](./aleo/concepts/03_blocks.md)
