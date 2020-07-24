@@ -32,6 +32,10 @@ module.exports = [
                 folderName: 'cli'
             },
             {
+                title: 'Programming Model',
+                folderName: 'programming_model'
+            },
+            {
                 title: 'Networking',
                 folderName: 'networking'
             },
