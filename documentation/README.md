@@ -11,8 +11,8 @@
 ## Chapter 1: Concepts
 
 - [Accounts](./aleo/concepts/00_accounts.md)
-- [Aleo Records](./aleo/concepts/01_records.md)
-- [Aleo Transactions](./aleo/concepts/02_transactions.md)
+- [Records](./aleo/concepts/01_records.md)
+- [Transactions](./aleo/concepts/02_transactions.md)
 - [Aleo Blocks](./aleo/concepts/03_blocks.md)
 - [Consensus](./aleo/concepts/04_consensus.md)
 - [Mining on Aleo](./aleo/concepts/05_mining.md)
@@ -20,7 +20,16 @@
 - [Glossary](./aleo/concepts/07_glossary.md)
 
 
-## Chapter 2: Hello Leo!
+## Chapter 2: The Aleo Curves
+
+- [Overview](./aleo/curves/00_overview.md)
+- [Edwards BLS12](./aleo/curves/01_edwards_bls12.md)
+- [BLS12-377](./aleo/curves/02_bls12_377.md)
+- [Edwards BW6](./aleo/curves/03_edwards_bw6.md)
+- [BW6](./aleo/curves/04_bw6.md)
+
+
+## Chapter 3: Hello Leo!
 
 - [Leo Language Documentation](./aleo/leo_getting_started/00_overview.md)
 - [Installation](./aleo/leo_getting_started/01_installation.md)
@@ -30,7 +39,7 @@
 - [Pedersen Hash Example](./aleo/leo_getting_started/05_example.md)
 
 
-## Chapter 3: Language
+## Chapter 4: Language
 
 - [Layout of a Leo File](./aleo/language/00_layout.md)
 - [Defining Variables](./aleo/language/01_variables.md)
@@ -47,7 +56,7 @@
 - [Lexical Structure](./aleo/language/12_lexical.md)
 
 
-## Chapter 4: CLI
+## Chapter 5: CLI
 
 - [Create a Package](./aleo/cli/00_new.md)
 - [Build a Package](./aleo/cli/01_build.md)
@@ -60,19 +69,19 @@
 - [Deploy](./aleo/cli/08_deploy.md)
 
 
-## Chapter 5: Networking
+## Chapter 6: Networking
 
 - [Networking](./aleo/networking/00_networking.md)
 - [Message Types](./aleo/networking/01_message_types.md)
 
 
-## Chapter 6: RPC
+## Chapter 7: RPC
 
 - [snarkOS JSON-RPC API Reference](./aleo/rpc/00_rpc.md)
 - [snarkOS JSON-RPC Methods](./aleo/rpc/01_methods.md)
 
 
-## Chapter 7: Additional Material
+## Chapter 8: Additional Material
 
 - [Style Guide](./aleo/additional_material/00_style.md)
 - [Common Patterns](./aleo/additional_material/01_common.md)
