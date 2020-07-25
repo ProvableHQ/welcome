@@ -6,46 +6,43 @@ sidebar_label: Blocks
 
 # Block 
 
-A block is a data structure containing Aleo [transactions](02_transactions.md). Blocks are generated via [mining](05_mining.md) and blocks accepted by the network denote the official state in the network.
+A *block* is a fundamental data structure for organizing Aleo [transactions](02_transactions.md) by time.
+Blocks are generated through a process called [mining](05_mining.md) and blocks accepted by the network
+denote the official state in the network.
 
-## Components
+## Components of a Block
+
+An Aleo block is serialized in the following format:
+
+|     Parameter    |                       Type                       | Size (bytes) |
+|:----------------:|:------------------------------------------------:|:------------:|
+|     `header`     |                    BlockHeader                   |      503     |
+| num transactions | [variable_length_integer](07_glossary.md#variable-length-integer)|      1+      |
+|  `transactions`  |                array[Transaction]                |       ?      |
 
 #### Block Header
 
-The [block header](#block-header) describing the block.
+The [block header](#block-header) is the information describing the block.
 
 #### Transactions
 
 The transactions included in the block.
 
-## Serialization
 
-|     Parameter    |                       Type                       | Size (bytes) |
-|:----------------:|:------------------------------------------------:|:------------:|
-|     `header`     |                    BlockHeader                   |      503     |
-| num transactions | [var_int](07_glossary.md#variable-length-integer)|      1+      |
-|  `transactions`  |                array[Transaction]                |       ?      |
+## Components of a Block Header
 
-## Verifying Blocks
+An Aleo block header is serialized in the following format:
 
-The steps to verify a block are as follows:
+|          Parameter          |   Type   | Size (bytes) |
+|:---------------------------:|:--------:|:------------:|
+|    `previous_block_hash`    |   bytes  |      32      |
+|      `merkle_root_hash`     |   bytes  |      32      |
+| `pedersen_merkle_root_hash` |   bytes  |      32      |
+|           `proof`           | variable |      387     |
+|            `time`           |    i64   |       8      |
+|     `difficulty_target`     |    u64   |       8      |
+|           `nonce`           |    u32   |       4      |
 
-1. Validate the block header 
-    - Check that the `merkle_root_hash` is derived correctly
-    - Check that the `pedersen_merkle_root_hash` is derived correctly
-    - Check that the block timestamp is not more than 2 hours into the future
-    - Check that the block's difficulty target matches the expected difficulty target
-    - Check that the difficulty hash is less than or equal to the difficulty target
-    - Verify the PoSW proof
-2. Verify that there is only 1 coinbase transaction included in the block
-3. Verify that the sum of all transaction value balances are equal to the expected block reward
-4. Verify each transaction included i the block
- 
-# Block Header
- 
-A block header is the information describing the block.
- 
-## Components
  
 #### Previous Block Hash
  
@@ -75,16 +72,21 @@ The PoSW difficulty target for this block.
 
 The nonce for solving the PoSW puzzle.
  
-## Serialization
- 
-Block headers are serialized in the format below:
 
-|          Parameter          |   Type   | Size (bytes) |
-|:---------------------------:|:--------:|:------------:|
-|    `previous_block_hash`    |   bytes  |      32      |
-|      `merkle_root_hash`     |   bytes  |      32      |
-| `pedersen_merkle_root_hash` |   bytes  |      32      |
-|           `proof`           | variable |      387     |
-|            `time`           |    i64   |       8      |
-|     `difficulty_target`     |    u64   |       8      |
-|           `nonce`           |    u32   |       4      |
+## Advanced Topics
+
+### Verifying Blocks
+
+The steps to verify a block are as follows:
+
+1. Validate the block header 
+    - Check that the `merkle_root_hash` is derived correctly
+    - Check that the `pedersen_merkle_root_hash` is derived correctly
+    - Check that the block timestamp is not more than 2 hours into the future
+    - Check that the block's difficulty target matches the expected difficulty target
+    - Check that the difficulty hash is less than or equal to the difficulty target
+    - Verify the PoSW proof
+2. Verify that there is only 1 coinbase transaction included in the block
+3. Verify that the sum of all transaction value balances are equal to the expected block reward
+4. Verify each transaction included i the block
+ 
