@@ -1,0 +1,20 @@
+graph TD
+    A("Account Seed (32 Bytes)")
+    A --> |"Blake2s(Seed, 0)"| B(sk_sig)
+    A --> |"Blake2s(Seed, 1)"| C(sk_prf)
+    A --> |"Blake2s(Seed, 2)"| D(r_pk)
+
+    B --> E(Account Private Key)
+    C --> E(Account Private Key)
+    D --> E(Account Private Key)
+
+    E --> F(Account View Key)
+    F --> G(Account Address)
+
+    style A fill:#232526,stroke:#2aba9a,stroke-width:3px,color:#51c8ab
+    style B fill:#232526,stroke:#2aba9a,stroke-width:3px,color:#51c8ab
+    style C fill:#232526,stroke:#2aba9a,stroke-width:3px,color:#51c8ab
+    style D fill:#232526,stroke:#2aba9a,stroke-width:3px,color:#51c8ab
+    style E fill:#232526,stroke:#2aba9a,stroke-width:3px,color:#51c8ab
+    style F fill:#232526,stroke:#2aba9a,stroke-width:3px,color:#51c8ab
+    style G fill:#232526,stroke:#2aba9a,stroke-width:3px,color:#51c8ab
