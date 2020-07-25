@@ -140,3 +140,35 @@ Add a second `one` as input to the function call to `add_one`.
 
 As expected, the test fails telling us that we incorrectly provided 2 inputs to the `add_one` function.
 Since we failed before running the circuit, there is no output about the constraint system.
+
+## Integration Tests
+For integration tests, one can invoke `.in` and `.state` files to load the correct input and state as follows:
+ 
+ ```leo
+ #[({USER_DEFINED_1}.in, {USER_DEFINED_2}.state, {USER_DEFINED_3}.out)]
+ test function token_withdraw() {
+     ...
+ } 
+```
+
+For example, one could invoke it as any of the following examples:
+```leo
+#[(token_withdraw.in, token_withdraw.state, token_withdraw.out)]
+test function token_withdraw() {
+    ...
+}
+
+#[(test_input.in, test_state.state, test_output.out)]
+test function token_withdraw() {
+    ...
+}
+
+#[
+    mainnet.in,
+    mainnet.state,
+    mainnet.out
+]
+test function token_withdraw() {
+    ...
+}
+``` 

@@ -43,3 +43,12 @@ e: address = aleo1qnr4dkkvkgfqph0vzc3y6z2eu975wnpz2925ntjccd5cfqxtyu8sta57j8 // 
 a: u8[4]    = [0u8; 4];      // <- single
 b: u8[2][3] = [[0u8; 2]; 3]; // <- multi-dimensional
 ```
+
+## `.in` `.state` and `.out` files
+
+In addition to normal program inputs, the Leo runtime gives developers access to register and state variables.
+These state variables are loaded with record and merkle leaf state information.
+
+:::note
+To learn more about runtime files checkout the Leo runtime [**Model**](../programming_model/00_model.md#in-and-out-files).
+:::
