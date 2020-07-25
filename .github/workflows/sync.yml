@@ -20,7 +20,7 @@ jobs:
           git add documentation/README.md
           git config --local user.email "action@github.com"
           git config --local user.name "Github Action"
-          git commit -m "Updates Aleo documentation" -a
+          git diff-index --quiet HEAD || git commit -m "Updates Aleo documentation"
 
       - name: Push to Github
         uses: ad-m/github-push-action@master
