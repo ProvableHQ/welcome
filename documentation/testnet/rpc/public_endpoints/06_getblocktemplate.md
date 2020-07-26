@@ -4,8 +4,6 @@ title: getblocktemplate
 sidebar_label: getblocktemplate
 ---
 
-## getblocktemplate
-
 Returns the current mempool and consensus information known by this node.
 
 ### Arguments

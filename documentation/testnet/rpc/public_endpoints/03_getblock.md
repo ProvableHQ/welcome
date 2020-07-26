@@ -4,8 +4,6 @@ title: getblock
 sidebar_label: getblock
 ---
 
-## getblock
-
 Returns information about a block from a block hash.
 
 ### Arguments

@@ -4,8 +4,6 @@ title: getrawrecord
 sidebar_label: getrawrecord
 ---
 
-## getrawrecord
-
 Returns the hex encoded bytes of a record from its record commitment.
 
 ### Protected Endpoint

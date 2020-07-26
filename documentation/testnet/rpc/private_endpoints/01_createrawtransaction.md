@@ -4,8 +4,6 @@ title: createrawtransaction
 sidebar_label: createrawtransaction
 ---
 
-## createrawtransaction
-
 Create a new transaction, returning the encoded transaction and the new records.
 
 ### Protected Endpoint

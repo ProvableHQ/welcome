@@ -4,8 +4,6 @@ title: fetchrecordcommitments
 sidebar_label: fetchrecordcommitments
 ---
 
-## fetchrecordcommitments
-
 Returns a list of record commitments that are stored on the full node.
 
 ### Protected Endpoint

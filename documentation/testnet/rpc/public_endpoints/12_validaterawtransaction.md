@@ -4,8 +4,6 @@ title: validaterawtransaction
 sidebar_label: validaterawtransaction
 ---
 
-## validaterawtransaction
-
 Validate and return if the transaction is valid.
 
 ### Arguments

@@ -4,8 +4,6 @@ title: decoderecord
 sidebar_label: decoderecord
 ---
 
-## decoderecord
-
 Returns information about a record from serialized record hex.
 
 ### Arguments

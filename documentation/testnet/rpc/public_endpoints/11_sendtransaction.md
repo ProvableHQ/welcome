@@ -4,8 +4,6 @@ title: sendtransaction
 sidebar_label: sendtransaction
 ---
 
-## sendtransaction
-
 Send raw transaction bytes to this node to be added into the mempool. If valid, the transaction will be stored and propagated to all peers.
 
 ### Arguments

@@ -4,8 +4,6 @@ title: getblockcount
 sidebar_label: getblockcount
 ---
 
-## getblockcount
-
 Returns the number of blocks in the best valid chain.
 
 ### Arguments

@@ -4,8 +4,6 @@ title: getpeerinfo
 sidebar_label: getpeerinfo
 ---
 
-## getpeerinfo
-
 Returns the node's connected peers.
 
 ### Arguments

@@ -4,8 +4,6 @@ title: getrawtransaction
 sidebar_label: getrawtransaction
 ---
 
-## getrawtransaction
-
 Returns hex encoded bytes of a transaction from its transaction id.
 
 ### Arguments
