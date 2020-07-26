@@ -79,7 +79,7 @@ Similar to our manifest `Leo.toml`, an input file begins with a section enclosed
 a: u32 = 1;
 ```
 
-An input assignment shares syntax with an explicit variable [assignment](../../aleo/language/defining-variables.md) in normal `.leo` files.
+An input assignment shares syntax with an explicit variable [assignment](../language/defining-variables.md) in normal `.leo` files.
 Here we assign the input named `a` with type `u32` to the value `1`. 
 
 Leo's compiler will fetch these values and provide them as inputs to the circuit at proving time.

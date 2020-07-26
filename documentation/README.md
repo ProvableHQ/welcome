@@ -31,42 +31,42 @@
 
 ## Chapter 3: Hello Leo!
 
-- [Leo Language Documentation](./aleo/leo_getting_started/00_overview.md)
-- [Installation](./aleo/leo_getting_started/01_installation.md)
-- [Hello World in Leo](./aleo/leo_getting_started/02_hello_world.md)
-- [File Syntax](./aleo/leo_getting_started/03_syntax.md)
-- [CLI Commands](./aleo/leo_getting_started/04_cli.md)
-- [Pedersen Hash Example](./aleo/leo_getting_started/05_example.md)
+- [Leo Language Documentation](developer/getting_started/00_overview.md)
+- [Installation](developer/getting_started/01_installation.md)
+- [Hello World in Leo](developer/getting_started/02_hello_world.md)
+- [File Syntax](developer/getting_started/03_syntax.md)
+- [CLI Commands](developer/getting_started/04_cli.md)
+- [Pedersen Hash Example](developer/getting_started/05_example.md)
 
 
 ## Chapter 4: Language
 
-- [Layout of a Leo File](./aleo/language/00_layout.md)
-- [Defining Variables](./aleo/language/01_variables.md)
-- [Data Types](./aleo/language/02_types.md)
-- [Arrays](./aleo/language/03_arrays.md)
-- [Operators](./aleo/language/04_operators.md)
-- [Statements](./aleo/language/05_statements.md)
-- [Functions](./aleo/language/06_functions.md)
-- [Leo Inputs](./aleo/language/07_inputs.md)
-- [Circuits](./aleo/language/08_circuits.md)
-- [Imports](./aleo/language/09_imports.md)
-- [Writing Tests](./aleo/language/10_tests.md)
-- [Logging](./aleo/language/11_logging.md)
-- [Lexical Structure](./aleo/language/12_lexical.md)
+- [Layout of a Leo File](developer/language/00_layout.md)
+- [Defining Variables](developer/language/01_variables.md)
+- [Data Types](developer/language/02_types.md)
+- [Arrays](developer/language/03_arrays.md)
+- [Operators](developer/language/04_operators.md)
+- [Statements](developer/language/05_statements.md)
+- [Functions](developer/language/06_functions.md)
+- [Leo Inputs](developer/language/07_inputs.md)
+- [Circuits](developer/language/08_circuits.md)
+- [Imports](developer/language/09_imports.md)
+- [Writing Tests](developer/language/10_tests.md)
+- [Logging](developer/language/11_logging.md)
+- [Lexical Structure](developer/language/12_lexical.md)
 
 
 ## Chapter 5: CLI
 
-- [Create a Package](./aleo/cli/00_new.md)
-- [Build a Package](./aleo/cli/01_build.md)
-- [Test a Package](./aleo/cli/02_test.md)
-- [Perform the Program Setup](./aleo/cli/03_setup.md)
-- [Generate a Proof](./aleo/cli/04_prove.md)
-- [Verify the Program](./aleo/cli/05_run.md)
-- [Login to Your Aleo Account](./aleo/cli/06_login.md)
-- [Publish a Package to APM](./aleo/cli/07_publish.md)
-- [Deploy](./aleo/cli/08_deploy.md)
+- [Create a Package](developer/cli/00_new.md)
+- [Build a Package](developer/cli/01_build.md)
+- [Test a Package](developer/cli/02_test.md)
+- [Perform the Program Setup](developer/cli/03_setup.md)
+- [Generate a Proof](developer/cli/04_prove.md)
+- [Verify the Program](developer/cli/05_run.md)
+- [Login to Your Aleo Account](developer/cli/06_login.md)
+- [Publish a Package to APM](developer/cli/07_publish.md)
+- [Deploy](developer/cli/08_deploy.md)
 
 
 ## Chapter 6: Networking
@@ -77,42 +77,42 @@
 
 ## Chapter 7: Additional Material
 
-- [Style Guide](./aleo/additional_material/00_style.md)
-- [Common Patterns](./aleo/additional_material/01_common.md)
-- [List of Known Bugs](./aleo/additional_material/02_bugs.md)
-- [Contributing](./aleo/additional_material/03_contributing.md)
+- [Style Guide](developer/additional_material/00_style.md)
+- [Common Patterns](developer/additional_material/01_common.md)
+- [List of Known Bugs](developer/additional_material/02_bugs.md)
+- [Contributing](developer/additional_material/03_contributing.md)
 
 
 ## RPC
 
 ## Chapter 0: Getting Started
 
-- [Overview](./rpc/getting_started/00_overview.md)
+- [Overview](testnet/rpc/getting_started/00_overview.md)
 
 
 ## Chapter 1: Public Endpoints
 
-- [decoderawtransaction](./rpc/public_endpoints/00_decoderawtransaction.md)
-- [decoderecord](./rpc/public_endpoints/01_decoderecord.md)
-- [getbestblockhash](./rpc/public_endpoints/02_getbestblockhash.md)
-- [getblock](./rpc/public_endpoints/03_getblock.md)
-- [getblockcount](./rpc/public_endpoints/04_getblockcount.md)
-- [getblockhash](./rpc/public_endpoints/05_getblockhash.md)
-- [getblocktemplate](./rpc/public_endpoints/06_getblocktemplate.md)
-- [getconnectioncount](./rpc/public_endpoints/07_getconnectioncount.md)
-- [getpeerinfo](./rpc/public_endpoints/08_getpeerinfo.md)
-- [getrawtransaction](./rpc/public_endpoints/09_getrawtransaction.md)
-- [gettransactioninfo](./rpc/public_endpoints/10_gettransactioninfo.md)
-- [sendtransaction](./rpc/public_endpoints/11_sendtransaction.md)
-- [validaterawtransaction](./rpc/public_endpoints/12_validaterawtransaction.md)
+- [decoderawtransaction](testnet/rpc/public_endpoints/00_decoderawtransaction.md)
+- [decoderecord](testnet/rpc/public_endpoints/01_decoderecord.md)
+- [getbestblockhash](testnet/rpc/public_endpoints/02_getbestblockhash.md)
+- [getblock](testnet/rpc/public_endpoints/03_getblock.md)
+- [getblockcount](testnet/rpc/public_endpoints/04_getblockcount.md)
+- [getblockhash](testnet/rpc/public_endpoints/05_getblockhash.md)
+- [getblocktemplate](testnet/rpc/public_endpoints/06_getblocktemplate.md)
+- [getconnectioncount](testnet/rpc/public_endpoints/07_getconnectioncount.md)
+- [getpeerinfo](testnet/rpc/public_endpoints/08_getpeerinfo.md)
+- [getrawtransaction](testnet/rpc/public_endpoints/09_getrawtransaction.md)
+- [gettransactioninfo](testnet/rpc/public_endpoints/10_gettransactioninfo.md)
+- [sendtransaction](testnet/rpc/public_endpoints/11_sendtransaction.md)
+- [validaterawtransaction](testnet/rpc/public_endpoints/12_validaterawtransaction.md)
 
 
 ## Chapter 2: Private Endpoints
 
-- [createaccount](./rpc/private_endpoints/00_createaccount.md)
-- [createrawtransaction](./rpc/private_endpoints/01_createrawtransaction.md)
-- [fetchrecordcommitments](./rpc/private_endpoints/02_fetchrecordcommitments.md)
-- [getrawrecord](./rpc/private_endpoints/03_getrawrecord.md)
+- [createaccount](testnet/rpc/private_endpoints/00_createaccount.md)
+- [createrawtransaction](testnet/rpc/private_endpoints/01_createrawtransaction.md)
+- [fetchrecordcommitments](testnet/rpc/private_endpoints/02_fetchrecordcommitments.md)
+- [getrawrecord](testnet/rpc/private_endpoints/03_getrawrecord.md)
 
 
 ## Contributing

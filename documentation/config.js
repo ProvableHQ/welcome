@@ -23,9 +23,21 @@ module.exports = [
                 title: 'The Aleo Curves',
                 folderName: 'curves'
             },
+
+            {
+                title: 'Networking',
+                folderName: 'networking'
+            },
+
+        ]
+    },
+    {
+        title: 'Developer Preview I',
+        folderName: 'developer',
+        chapters: [
             {
                 title: 'Hello Leo!',
-                folderName: 'leo_getting_started'
+                folderName: 'getting_started'
             },
             {
                 title: 'Language',
@@ -36,30 +48,32 @@ module.exports = [
                 folderName: 'cli'
             },
             {
-                title: 'Networking',
-                folderName: 'networking'
-            },
-            {
                 title: 'Additional Material',
                 folderName: 'additional_material'
             },
         ]
     },
     {
-        title: 'RPC',
-        folderName: 'rpc',
+        title: 'Setup I',
+        folderName: 'setup',
+        chapters: [
+        ]
+    },
+    {
+        title: 'Testnet I',
+        folderName: 'testnet',
         chapters: [
             {
                 title: 'Getting Started',
-                folderName: 'getting_started'
+                folderName: 'rpc/getting_started'
             },
             {
-                title: 'Public Endpoints',
-                folderName: 'public_endpoints'
+                title: 'Public RPC Endpoints',
+                folderName: 'rpc/public_endpoints'
             },
             {
-                title: 'Private Endpoints',
-                folderName: 'private_endpoints'
+                title: 'Private RPC Endpoints',
+                folderName: 'rpcprivate_endpoints'
             }
         ]
     },
