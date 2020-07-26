@@ -40,13 +40,27 @@ module.exports = [
                 folderName: 'networking'
             },
             {
-                title: 'RPC',
-                folderName: 'rpc'
-            },
-            {
                 title: 'Additional Material',
                 folderName: 'additional_material'
             },
         ]
-    }
+    },
+    {
+        title: 'RPC',
+        folderName: 'rpc',
+        chapters: [
+            {
+                title: 'Getting Started',
+                folderName: 'getting_started'
+            },
+            {
+                title: 'Public Endpoints',
+                folderName: 'public_endpoints'
+            },
+            {
+                title: 'Private Endpoints',
+                folderName: 'private_endpoints'
+            }
+        ]
+    },
 ];
