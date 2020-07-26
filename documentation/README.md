@@ -20,16 +20,7 @@
 - [Glossary](./aleo/concepts/07_glossary.md)
 
 
-## Chapter 2: The Aleo Curves
-
-- [Overview](./aleo/curves/00_overview.md)
-- [Edwards BLS12](./aleo/curves/01_edwards_bls12.md)
-- [BLS12-377](./aleo/curves/02_bls12_377.md)
-- [Edwards BW6](./aleo/curves/03_edwards_bw6.md)
-- [BW6](./aleo/curves/04_bw6.md)
-
-
-## Chapter 3: Networking
+## Chapter 2: Networking
 
 - [Networking](./aleo/networking/00_networking.md)
 - [Message Types](./aleo/networking/01_message_types.md)
@@ -86,6 +77,15 @@
 
 
 ## Setup I
+
+## Chapter 0: The Aleo Curves
+
+- [undefined](./setup/the_aleo_curves/00_overview.md)
+- [undefined](./setup/the_aleo_curves/01_edwards_bls12.md)
+- [undefined](./setup/the_aleo_curves/02_bls12-377.md)
+- [undefined](./setup/the_aleo_curves/03_edwards_bw6.md)
+- [undefined](./setup/the_aleo_curves/04_bw6-761.md)
+
 
 ## Testnet I
 
