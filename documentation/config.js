@@ -20,11 +20,6 @@ module.exports = [
                 folderName: 'concepts'
             },
             {
-                title: 'The Aleo Curves',
-                folderName: 'curves'
-            },
-
-            {
                 title: 'Networking',
                 folderName: 'networking'
             },
@@ -57,6 +52,10 @@ module.exports = [
         title: 'Setup I',
         folderName: 'setup',
         chapters: [
+            {
+                title: 'The Aleo Curves',
+                folderName: 'the_aleo_curves'
+            },
         ]
     },
     {
