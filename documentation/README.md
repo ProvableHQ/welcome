@@ -87,14 +87,32 @@
 
 ## Chapter 0: Getting Started
 
+- [Overview](./rpc/getting_started/00_overview.md)
 
 
 ## Chapter 1: Public Endpoints
 
+- [decoderawtransaction](./rpc/public_endpoints/00_decoderawtransaction.md)
+- [decoderecord](./rpc/public_endpoints/01_decoderecord.md)
+- [getbestblockhash](./rpc/public_endpoints/02_getbestblockhash.md)
+- [getblock](./rpc/public_endpoints/03_getblock.md)
+- [getblockcount](./rpc/public_endpoints/04_getblockcount.md)
+- [getblockhash](./rpc/public_endpoints/05_getblockhash.md)
+- [getblocktemplate](./rpc/public_endpoints/06_getblocktemplate.md)
+- [getconnectioncount](./rpc/public_endpoints/07_getconnectioncount.md)
+- [getpeerinfo](./rpc/public_endpoints/08_getpeerinfo.md)
+- [getrawtransaction](./rpc/public_endpoints/09_getrawtransaction.md)
+- [gettransactioninfo](./rpc/public_endpoints/10_gettransactioninfo.md)
+- [sendtransaction](./rpc/public_endpoints/11_sendtransaction.md)
+- [validaterawtransaction](./rpc/public_endpoints/12_validaterawtransaction.md)
 
 
 ## Chapter 2: Private Endpoints
 
+- [createaccount](./rpc/private_endpoints/00_createaccount.md)
+- [createrawtransaction](./rpc/private_endpoints/01_createrawtransaction.md)
+- [fetchrecordcommitments](./rpc/private_endpoints/02_fetchrecordcommitments.md)
+- [getrawrecord](./rpc/private_endpoints/03_getrawrecord.md)
 
 
 ## Contributing
