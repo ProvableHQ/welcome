@@ -75,18 +75,26 @@
 - [Message Types](./aleo/networking/01_message_types.md)
 
 
-## Chapter 7: RPC
-
-- [snarkOS JSON-RPC API Reference](./aleo/rpc/00_rpc.md)
-- [snarkOS JSON-RPC Methods](./aleo/rpc/01_methods.md)
-
-
-## Chapter 8: Additional Material
+## Chapter 7: Additional Material
 
 - [Style Guide](./aleo/additional_material/00_style.md)
 - [Common Patterns](./aleo/additional_material/01_common.md)
 - [List of Known Bugs](./aleo/additional_material/02_bugs.md)
 - [Contributing](./aleo/additional_material/03_contributing.md)
+
+
+## RPC
+
+## Chapter 0: Getting Started
+
+
+
+## Chapter 1: Public Endpoints
+
+
+
+## Chapter 2: Private Endpoints
+
 
 
 ## Contributing
