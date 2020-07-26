@@ -91,7 +91,7 @@
 
 ## Chapter 0: Getting Started
 
-- [Overview](./testnet/rpc/getting_started/00_overview.md)
+- [undefined](./testnet/rpc/getting_started/00_overview.md)
 
 
 ## Chapter 1: Public RPC Endpoints
