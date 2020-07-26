@@ -2,7 +2,11 @@ name: Sync
 
 on:
   push:
-    branches: [master]
+    paths:
+      - '**/documentation/**.md'
+      - '**/documentation/config.js'
+    branches:
+      - 'master'
 
 jobs:
   sync:
