@@ -85,6 +85,7 @@
 
 ### Chapter 7: Getting Started
 
+- [Aleo Setup I.](./setup/getting_started/00_overview.md)
 
 
 ### Chapter 8: The Aleo Curves
@@ -95,7 +96,6 @@
 
 ### Chapter 9: Getting Started
 
-- [RPC Server](./autogen/testnet/rpc/getting_started/00_rpc_server.md)
 
 
 ### Chapter 10: Public RPC Endpoints
