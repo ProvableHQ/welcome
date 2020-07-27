@@ -1,10 +1,10 @@
 ---
-id: account
+id: accounts
 title: Accounts
 sidebar_label: Accounts
 ---
 
-An **Aleo account** is comprised of an [account private key](#account-private-key), [account view key](#account-view-key),
+An **Aleo account** is composed of an [account private key](#account-private-key), [account view key](#account-view-key),
 and an [account address](#account-address).
 
 The account private key is used to authorize a transaction, which updates the global state of account records. The account
@@ -12,7 +12,7 @@ view key is used to decrypt account records, which are encrypted under the user'
 address enables users to interact with one another, sending and receiving records that encode values and application data.
 
 To protect user *assets* and *record data*, one should **never disclose their account private key** to any
-third parties. For real-world applications on Aleo, users should derive an [account delegation key](#delegation-key)
+third parties. For real-world applications on Aleo, users should derive an [account prover key](#prover-key)
 from their account private key to allow third parties to *trustlessly* run applications and generate transactions
 on a user's behalf.
 
@@ -26,25 +26,25 @@ Every Aleo account private key is constructed from a randomly-sampled **account 
 ### Private Key Format
 
 ```
-AKEY1b47dMA8f9GfXPsW9s16qWfiYYmWGAAcorK9RkaVpBeFA
+APrivateKey1b47dMA8f9GfXPsW9s16qWfiYYmWGAAcorK9RkaVpBeFA
 ```
 
-An account private key is formatted as a Base58 string, comprised of 49 characters.
-The account private key is encoded with a [private key prefix](#account-prefixes) that reads `AKEY1`, indicating
+An account private key is formatted as a Base58 string, comprised of 56 characters.
+The account private key is encoded with a [private key prefix](#account-prefixes) that reads `APrivateKey1`, indicating
 that it is a private key and should not be shared with other users.
 
-### Delegation Key
+### Prover Key
 
-To facilitate user interactions at scale with ease, users can derive an account delegation key which allows a third-party to
+To facilitate user interactions at scale with ease, users can derive an account prover key which allows a prover to
 trustlessly process applications and user transactions on the user's behalf.
 
-The account delegation key is comprised of:
+The account prover key is comprised of:
 - a **public key** for the account signature scheme,
 - the **pseudorandom function seed** from the account private key, and
 - the **commitment randomness** from the account private key.
 
-While the account delegation key does **not** allow a third party to spend assets or forge record data, it does allow the
-party to access and view it. As such, users should provide this key only to authorized parties.
+While the account prover key does **not** allow the prover to arbitrarily spend assets or forge record data, it does allow the
+prover to access and view account data. As such, users should provide this key only to authorized parties.
 
 ## Account View Key
 
@@ -55,7 +55,19 @@ third-party auditors to verify the complete history of an account.
 
 The account view key is comprised of:
 - a **secret key** for the account encryption scheme.
- 
+
+### View Key Format
+
+<!-- TODO (howardwu): Fill in view key format. -->
+
+```
+
+```
+
+An account view key is formatted as a Base58 string, comprised of 56 characters.
+The account view key is encoded with a [view key prefix](#account-prefixes) that reads `APrivateKey1`, indicating
+that it is a private key and should not be shared with other users.
+
 ## Account Address
 
 An Aleo account address is a unique identifier that allows users to transfer value and record data to one another in transactions.
@@ -74,10 +86,22 @@ The account address is encoded with an [address prefix](#account-prefixes) that 
 
 ## Advanced Topics
 
+### Account Prefixes
+
+<!-- TODO (howardwu): Fill in remaining prefixes. -->
+
+|             |  Type  |       Prefix      |
+|:-----------:|:------:|:-----------------:|
+| **Account Private Key** |  bytes | `[21, 38, 63, 229]` |
+| **Account Prover Key** |  bytes | `[]` | 
+| **Account View Key** | bytes | `[ 14, 138, 223, 204, 247, 224, 122 ]` |
+| **Account Address**   | string |       `aleo1`    |
+
+
 ### Offline Accounts
 
 In many instances such as enterprise settings, it is advisable to handle sensitive keys and data on isolated, offline machines.
-An Aleo account can be created on an offline machine and available for immediate use. In conjunction with account delegation keys,
+An Aleo account can be created on an offline machine and available for immediate use. In conjunction with account prover keys,
 a user can ensure their private key remains offline even for creating transactions.
 
 While no solution is perfect, it is advisable to create a new Aleo account on a disconnected device to minimize the risk of
@@ -134,9 +158,3 @@ graph TD
     F --> G(Account Address) 
 ```
 
-## Account Prefixes
-
-|             |  Type  |       Prefix      |
-|:-----------:|:------:|:-----------------:|
-| Private Key |  bytes | [21, 38, 63, 229] |
-|   Address   | string |       "aleo1"     |

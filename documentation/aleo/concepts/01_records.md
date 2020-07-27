@@ -1,79 +1,101 @@
 ---
 id: records
-title: Aleo Records
+title: Records
 sidebar_label: Records
 ---
 
-## What are Records?
+A *record** is a fundamental data structure for encoding user assets and application state.
 
-Records are core data structures in the Aleo protocol that represent state on the ledger - Aleo credits and arbitrary application state.
+Each account record contains information that specifies the record owner, its stored value, and its application state. 
+An Aleo account can create a [transactions](02_transactions.md) to consume a record and produce a new record in its place.
+Records on Aleo are encrypted to the record owner address, ensuring that all records on Aleo are fully private.
 
-Records are spent and created via [transactions](02_transactions.md) and are analogous to UTXOs, as they can only be spent once. However unlike UTXOs, records are fully private. 
-Records are encrypted on the ledger, and only the record owners can decrypt the record contents.
+## Components of a Record
 
-## Components
+An Aleo record is serialized in the following format:
 
-#### Account Address
-
-The [account address](00_account.md#account-address) of the record owner that can spend the record.
-
-#### Value
-
-The amount of Aleo credits this record holds.
-
-#### Payload
-
-A record payload that encodes arbitrary application information.
-
-#### Birth Predicate Hash
-
-The id of the [birth predicate](07_glossary.md#birth-predicate) that must be satisfied when the record is created.
-
-#### Death Predicate Hash
-
-The id of the [death predicate](07_glossary.md#death-predicate) that must be specified when the record is spent.
-
-#### Serial Number Nonce
-
-The nonce used to generate the record [serial number](07_glossary.md#record-serial-number) when the record is being spent.
-
-#### Record Commitment
-
-The [commitment](07_glossary.md#record-commitment) on the contents of the record.
-
-#### Commitment Randomness
-
-The randomness used to generate the record commitment.
-
-## Serialization
-
-Records are serialized in the format below:
-
-|          Parameter          |                       Type                        | Size (bytes) |
+|          Parameter          |                       Type                        | Size (in bytes) |
 |:---------------------------:|:-------------------------------------------------:|:------------:|
-|          `address`          |                     variable                      |      32      |
+|           `owner`           |                      address                      |      32      |
 |           `value`           |                        u64                        |       8      |
 |          `payload`          |                       bytes                       |      32      |
-| `birth_predicate_hash` len  | [var_int](07_glossary.md#variable-length-integer) |      1+      |
-|    `birth_predicate_hash`   |                       bytes                       |      48+     |
-| `death_predicate_hash` len  | [var_int](07_glossary.md#variable-length-integer) |      1+      |
-|    `death_predicate_hash`   |                       bytes                       |      48+     |
-|    `serial_number_nonce`    |                     variable                      |      32      |
-|         `commitment`        |                     variable                      |      32      |
-|   `commitment_randomness`   |                     variable                      |      32      |
-|                             |                                                   |              |
+|    `birth_predicate_id`     |                       bytes                       |      48      |
+|    `death_predicate_id`     |                       bytes                       |      48      |
+|    `serial_number_nonce`    |                       bytes                       |      32      |
+|   `commitment_randomness`   |                       bytes                       |      32      |
 
-## Encryption
+### Owner
 
-New records are encrypted and live in the transactions that create them. 
-This allows for the secure and private transfer of sensitive record information on a public network, 
-because only the record owners can decrypt these records. The encryption algorithm is outlined [here]().
+```
+aleo1fuge6ah8c9custvmlju5t30gk8p8lar5x36jlfa2glhgy9n0fuxsreeh2c
+```
+The **record owner** is an [account address](00_accounts.md#account-address),
+and specifies the party who is authorized to spend the record.
 
-## Noop Records
+### Value
 
-Because Aleo transactions are all have 2 records as input and 2 records as output, the the existence of noop records are necessary to enable the creation of new non-noop records that hold state and can be spent.
-Additionally, there is no way to determine if a spent or new record is a noop directly from its serial number or commitment, so there is no leak of privacy.
+```
+4130
+```
 
-## Double Spends
+The **record value** specifies the amount of Aleo credits stored in the record.
 
-A record can not be spent in two different transactions because each record has a unique serial number; once a serial number is already included in previous transaction, the network will reject all subsequent transactions trying to spend the same serial number. 
+### Payload
+
+```
+[ RECORD BYTE ARRAY ]
+```
+
+The **record payload** is a  that encodes arbitrary application information.
+
+### Birth Predicate ID
+
+```
+692575f93ebd4c58e9e6ed288d7ef2328623a8e391224b3cf24c1e65d4f0660ed5d14b78f84a259f14cb24a91fd58386
+```
+
+The **birth predicate ID** corresponds to the [birth predicate](07_glossary.md#birth-predicate) that must be satisfied when the record is created.
+
+### Death Predicate ID
+
+```
+9cb1c71986e72e36640b7fbe09d1853a37bdcbc19a406526a80e54ce37b5c1dd5d14b78f84a259f14cb24746a7fe8b01
+```
+
+The **death predicate ID** corresponds to the [death predicate](07_glossary.md#death-predicate) that must be specified when the record is spent.
+
+### Serial Number Nonce
+
+```
+c8d81ac0028a5643449a80c3cdf8e8f9593ca5e6bcf103b3c33606b01ea20108
+```
+
+The **serial number nonce** is used to generate a record [record serial number](07_glossary.md#record-serial-number) when the record is being spent.
+
+### Commitment Randomness
+
+```
+5acbd2c0475c7b4afa72173d7ed800edfc1bde235f5cf4e6c09ef70a36a48a09
+```
+The **commitment randomness** used to generate the [record commitment](07_glossary.md#record-commitment).
+
+## Advanced Topics
+
+### Record Encryption
+
+When a record is produced in a transaction, it is verifiably encrypted in the transaction and stored on the ledger.
+This enables users to securely and privately transfer record data and value between one another over the public network. 
+Only the sender and receiver with their corresponding account view keys are able to decrypt these records.
+
+### Dummy Records
+
+To protect privacy while enabling transactions that reason over different numbers of transaction inputs and transaction outputs,
+users may include dummy records in their transaction inputs and outputs to pad up to the required factor to create a transaction.
+Dummy records are required to have to a record value of zero, the dummy birth predicate ID, and the dummy death predicate ID.
+
+### Double Spends
+
+In Aleo, the same account record is unable to be spent across two distinct transactions. This is enforced by the requirement that
+the serial number of each new record and the commitment of each old record must be unique.
+If a previously existing serial number is detected in a transaction, both the transaction proof and consensus will fail to include
+the transaction in the next block.
