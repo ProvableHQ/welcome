@@ -85,47 +85,42 @@
 
 ### Chapter 7: Getting Started
 
-- [Curves](./setup/curves/getting_started/00_curves.md)
 
 
 ### Chapter 8: The Aleo Curves
 
-- [Edwards BLS12](./setup/curves/the_aleo_curves/00_edwards_bls12.md)
-- [BLS12-377](./setup/curves/the_aleo_curves/01_bls12-377.md)
-- [Edwards BW6](./setup/curves/the_aleo_curves/02_edwards_bw6.md)
-- [BW6-761](./setup/curves/the_aleo_curves/03_bw6-761.md)
 
 
 ## Testnet I
 
 ### Chapter 9: Getting Started
 
-- [RPC Server](./testnet/rpc/getting_started/00_rpc_server.md)
+- [RPC Server](./autogen/testnet/rpc/getting_started/00_rpc_server.md)
 
 
 ### Chapter 10: Public RPC Endpoints
 
-- [decoderawtransaction](./testnet/rpc/public_endpoints/00_decoderawtransaction.md)
-- [decoderecord](./testnet/rpc/public_endpoints/01_decoderecord.md)
-- [getbestblockhash](./testnet/rpc/public_endpoints/02_getbestblockhash.md)
-- [getblock](./testnet/rpc/public_endpoints/03_getblock.md)
-- [getblockcount](./testnet/rpc/public_endpoints/04_getblockcount.md)
-- [getblockhash](./testnet/rpc/public_endpoints/05_getblockhash.md)
-- [getblocktemplate](./testnet/rpc/public_endpoints/06_getblocktemplate.md)
-- [getconnectioncount](./testnet/rpc/public_endpoints/07_getconnectioncount.md)
-- [getpeerinfo](./testnet/rpc/public_endpoints/08_getpeerinfo.md)
-- [getrawtransaction](./testnet/rpc/public_endpoints/09_getrawtransaction.md)
-- [gettransactioninfo](./testnet/rpc/public_endpoints/10_gettransactioninfo.md)
-- [sendtransaction](./testnet/rpc/public_endpoints/11_sendtransaction.md)
-- [validaterawtransaction](./testnet/rpc/public_endpoints/12_validaterawtransaction.md)
+- [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
+- [decoderecord](./autogen/testnet/rpc/public_endpoints/01_decoderecord.md)
+- [getbestblockhash](./autogen/testnet/rpc/public_endpoints/02_getbestblockhash.md)
+- [getblock](./autogen/testnet/rpc/public_endpoints/03_getblock.md)
+- [getblockcount](./autogen/testnet/rpc/public_endpoints/04_getblockcount.md)
+- [getblockhash](./autogen/testnet/rpc/public_endpoints/05_getblockhash.md)
+- [getblocktemplate](./autogen/testnet/rpc/public_endpoints/06_getblocktemplate.md)
+- [getconnectioncount](./autogen/testnet/rpc/public_endpoints/07_getconnectioncount.md)
+- [getpeerinfo](./autogen/testnet/rpc/public_endpoints/08_getpeerinfo.md)
+- [getrawtransaction](./autogen/testnet/rpc/public_endpoints/09_getrawtransaction.md)
+- [gettransactioninfo](./autogen/testnet/rpc/public_endpoints/10_gettransactioninfo.md)
+- [sendtransaction](./autogen/testnet/rpc/public_endpoints/11_sendtransaction.md)
+- [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/12_validaterawtransaction.md)
 
 
 ### Chapter 11: Private RPC Endpoints
 
-- [createaccount](./testnet/rpc/private_endpoints/00_createaccount.md)
-- [createrawtransaction](./testnet/rpc/private_endpoints/01_createrawtransaction.md)
-- [fetchrecordcommitments](./testnet/rpc/private_endpoints/02_fetchrecordcommitments.md)
-- [getrawrecord](./testnet/rpc/private_endpoints/03_getrawrecord.md)
+- [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
+- [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
+- [fetchrecordcommitments](./autogen/testnet/rpc/private_endpoints/02_fetchrecordcommitments.md)
+- [getrawrecord](./autogen/testnet/rpc/private_endpoints/03_getrawrecord.md)
 
 
 
