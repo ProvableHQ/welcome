@@ -78,7 +78,12 @@
 
 ## Setup I
 
-## Chapter 0: The Aleo Curves
+## Chapter 0: Getting Started
+
+- [undefined](./setup/getting_started/00_curves.md)
+
+
+## Chapter 1: The Aleo Curves
 
 - [undefined](./setup/the_aleo_curves/00_edwards_bls12.md)
 - [undefined](./setup/the_aleo_curves/01_bls12-377.md)
