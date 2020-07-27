@@ -3,7 +3,7 @@ id: cli
 title: CLI Commands
 ---
 
-In the [hello world](aleo/documentation/leo/00_getting_started/02_hello_world.md) guide we called
+In the [hello world](02_hello_world.md) guide we called
 ```bash
 leo run
 ```
@@ -81,11 +81,11 @@ This command verifies the proof `hello_world.proof` using the verifying key `hel
 Leo was designed with simplicity in mind. 
 
 The `leo run` command will attempt to verify a proof only if all previous steps completed successfully.
-Under the hood, the Leo [CLI](../cli/run/run.md) will check for existing `.sum`, `.lpk`, `.lvk`, or `.proof` files 
+Under the hood, the Leo [CLI](../cli/05_run.md) will check for existing `.sum`, `.lpk`, `.lvk`, or `.proof` files 
 in the build directory before running each command. This ensures that we don't run unnecessary commands.
 
 ## The Leo Language
-To learn more about how to use the Leo Language, start [here](../language/layout.md)
+To learn more about how to use the Leo Language, start [here](../language/00_layout.md)
 
 ## The Leo CLI
-To learn more about how to use the Leo CLI, start [here](../cli/develop/new.md)
+To learn more about how to use the Leo CLI, start [here](../cli/00_new.md)

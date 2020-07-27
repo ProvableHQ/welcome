@@ -29,7 +29,7 @@ An Aleo record is serialized in the following format:
 ```
 aleo1fuge6ah8c9custvmlju5t30gk8p8lar5x36jlfa2glhgy9n0fuxsreeh2c
 ```
-The **record owner** is an [account address](00_account.md#account-address),
+The **record owner** is an [account address](00_accounts.md#account-address),
 and specifies the party who is authorized to spend the record.
 
 ### Value

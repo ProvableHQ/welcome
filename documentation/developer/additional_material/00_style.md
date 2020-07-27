@@ -8,7 +8,7 @@ There are many conventions that are unique to Leo language and the circuits it g
 
 This guide is a living document. 
 As new Leo programming conventions arise and old ones become obsolete this guide should reflect the changes.
-Feel free to add your comments and recommendations [here](./contributing).
+Feel free to add your comments and recommendations [here](03_contributing.md).
 
 
 ## Code Layout

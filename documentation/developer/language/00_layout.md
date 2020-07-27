@@ -4,13 +4,13 @@ title: Layout of a Leo File
 ---
 
 Leo files have four core parts:
-1. [`imports`](./imports)
+1. [`imports`](09_imports.md)
 
-2. [`circuits`](./circuits)
+2. [`circuits`](08_circuits.md)
 
-3. [`functions`](./functions)
+3. [`functions`](06_functions.md)
 
-4. [`tests`](./testing)
+4. [`tests`](10_tests.md)
 
 This order is strictly enforced. If you try and define a part out of order a syntax error will occur.
 This design choice is to improve readability for other Leo developers viewing your code.

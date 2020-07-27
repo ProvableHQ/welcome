@@ -22,7 +22,7 @@ test function expect_fail() {
     assert_eq!(1u8, 0u8);
 }
 ```
-To run tests, use the `leo test` CLI [command](../cli/develop#leo-test).
+To run tests, use the `leo test` CLI [command](../cli/02_test.md).
 
 ## Assert Equals
 This macro will enforce that the two values are equal in the constraint system.
