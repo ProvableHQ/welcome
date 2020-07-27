@@ -7,13 +7,13 @@
 
 ## Welcome to Aleo.
 
-## Chapter 0: Getting Started
+### Chapter 0: Getting Started
 
 - [Welcome to Aleo.](./aleo/getting_started/00_overview.md)
 - [Install snarkOS](./aleo/getting_started/01_installation.md)
 
 
-## Chapter 1: Concepts
+### Chapter 1: Concepts
 
 - [Accounts](./aleo/concepts/00_accounts.md)
 - [Records](./aleo/concepts/01_records.md)
@@ -25,7 +25,7 @@
 - [Glossary](./aleo/concepts/07_glossary.md)
 
 
-## Chapter 2: Networking
+### Chapter 2: Networking
 
 - [Networking](./aleo/networking/00_networking.md)
 - [Message Types](./aleo/networking/01_message_types.md)
@@ -33,7 +33,7 @@
 
 ## Developer Preview I
 
-## Chapter 0: Hello Leo!
+### Chapter 3: Hello Leo!
 
 - [Leo Language Documentation](./developer/getting_started/00_overview.md)
 - [Installation](./developer/getting_started/01_installation.md)
@@ -43,7 +43,7 @@
 - [Pedersen Hash Example](./developer/getting_started/05_example.md)
 
 
-## Chapter 1: Language
+### Chapter 4: Language
 
 - [Layout of a Leo File](./developer/language/00_layout.md)
 - [Defining Variables](./developer/language/01_variables.md)
@@ -60,7 +60,7 @@
 - [Lexical Structure](./developer/language/12_lexical.md)
 
 
-## Chapter 2: CLI
+### Chapter 5: CLI
 
 - [Create a Package](./developer/cli/00_new.md)
 - [Build a Package](./developer/cli/01_build.md)
@@ -73,7 +73,7 @@
 - [Deploy](./developer/cli/08_deploy.md)
 
 
-## Chapter 3: Additional Material
+### Chapter 6: Additional Material
 
 - [Style Guide](./developer/additional_material/00_style.md)
 - [Common Patterns](./developer/additional_material/01_common.md)
@@ -83,12 +83,12 @@
 
 ## Setup I
 
-## Chapter 0: Getting Started
+### Chapter 7: Getting Started
 
 - [Curves](./setup/curves/getting_started/00_curves.md)
 
 
-## Chapter 1: The Aleo Curves
+### Chapter 8: The Aleo Curves
 
 - [Edwards BLS12](./setup/curves/the_aleo_curves/00_edwards_bls12.md)
 - [BLS12-377](./setup/curves/the_aleo_curves/01_bls12-377.md)
@@ -98,12 +98,12 @@
 
 ## Testnet I
 
-## Chapter 0: Getting Started
+### Chapter 9: Getting Started
 
 - [RPC Server](./testnet/rpc/getting_started/00_rpc_server.md)
 
 
-## Chapter 1: Public RPC Endpoints
+### Chapter 10: Public RPC Endpoints
 
 - [decoderawtransaction](./testnet/rpc/public_endpoints/00_decoderawtransaction.md)
 - [decoderecord](./testnet/rpc/public_endpoints/01_decoderecord.md)
@@ -120,7 +120,7 @@
 - [validaterawtransaction](./testnet/rpc/public_endpoints/12_validaterawtransaction.md)
 
 
-## Chapter 2: Private RPC Endpoints
+### Chapter 11: Private RPC Endpoints
 
 - [createaccount](./testnet/rpc/private_endpoints/00_createaccount.md)
 - [createrawtransaction](./testnet/rpc/private_endpoints/01_createrawtransaction.md)
