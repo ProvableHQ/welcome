@@ -61,6 +61,10 @@
             "chapters": [
                 {
                     "title": "Getting Started",
+                    "folderName": "getting_started"
+                },
+                {
+                    "title": "RPC Server",
                     "isAutogen": true
                 },
                 {

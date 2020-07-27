@@ -15,8 +15,8 @@
             "folderName": "testnet",
             "chapters": [
                 {
-                    "title": "Getting Started",
-                    "folderName": "rpc/getting_started"
+                    "title": "RPC Server",
+                    "folderName": "rpc/rpc_server"
                 },
                 {
                     "title": "Public RPC Endpoints",
