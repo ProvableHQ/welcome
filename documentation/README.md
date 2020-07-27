@@ -113,6 +113,10 @@
 
 ## Chapter 2: Private RPC Endpoints
 
+- [createaccount](./testnet/rpc/private_endpoints/00_createaccount.md)
+- [createrawtransaction](./testnet/rpc/private_endpoints/01_createrawtransaction.md)
+- [fetchrecordcommitments](./testnet/rpc/private_endpoints/02_fetchrecordcommitments.md)
+- [getrawrecord](./testnet/rpc/private_endpoints/03_getrawrecord.md)
 
 
 ## Contributing
