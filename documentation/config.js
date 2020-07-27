@@ -72,7 +72,7 @@ module.exports = [
             },
             {
                 title: 'Private RPC Endpoints',
-                folderName: 'rpcprivate_endpoints'
+                folderName: 'rpc/private_endpoints'
             }
         ]
     },
