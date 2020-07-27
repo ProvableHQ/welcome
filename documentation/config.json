@@ -47,11 +47,11 @@
             "chapters": [
                 {
                     "title": "Getting Started",
-                    "folderName": "curves/getting_started"
+                    "folderName": "getting_started"
                 },
                 {
                     "title": "The Aleo Curves",
-                    "folderName": "curves/the_aleo_curves"
+                    "isAutogen": true
                 }
             ]
         },
@@ -61,15 +61,15 @@
             "chapters": [
                 {
                     "title": "Getting Started",
-                    "folderName": "rpc/getting_started"
+                    "isAutogen": true
                 },
                 {
                     "title": "Public RPC Endpoints",
-                    "folderName": "rpc/public_endpoints"
+                    "isAutogen": true
                 },
                 {
                     "title": "Private RPC Endpoints",
-                    "folderName": "rpc/private_endpoints"
+                    "isAutogen": true
                 }
             ]
         }

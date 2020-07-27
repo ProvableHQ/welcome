@@ -1,0 +1,32 @@
+{
+    "readme": [
+        {
+            "title": "Setup I",
+            "folderName": "setup",
+            "chapters": [
+                {
+                    "title": "The Aleo Curves",
+                    "folderName": "the_aleo_curves"
+                }
+            ]
+        },
+        {
+            "title": "Testnet I",
+            "folderName": "testnet",
+            "chapters": [
+                {
+                    "title": "Getting Started",
+                    "folderName": "rpc/getting_started"
+                },
+                {
+                    "title": "Public RPC Endpoints",
+                    "folderName": "rpc/public_endpoints"
+                },
+                {
+                    "title": "Private RPC Endpoints",
+                    "folderName": "rpc/private_endpoints"
+                }
+            ]
+        }
+    ]
+}
