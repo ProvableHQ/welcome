@@ -80,10 +80,15 @@
 
 ## Chapter 0: Getting Started
 
+- [Curves](./setup/curves/getting_started/00_curves.md)
 
 
 ## Chapter 1: The Aleo Curves
 
+- [Edwards BLS12](./setup/curves/the_aleo_curves/00_edwards_bls12.md)
+- [BLS12-377](./setup/curves/the_aleo_curves/01_bls12-377.md)
+- [Edwards BW6](./setup/curves/the_aleo_curves/02_edwards_bw6.md)
+- [BW6-761](./setup/curves/the_aleo_curves/03_bw6-761.md)
 
 
 ## Testnet I
