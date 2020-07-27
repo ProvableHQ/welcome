@@ -36,6 +36,10 @@
                     "folderName": "cli"
                 },
                 {
+                    "title": "Programming Model",
+                    "folderName": "programming_model"
+                },
+                {
                     "title": "Additional Material",
                     "folderName": "additional_material"
                 }

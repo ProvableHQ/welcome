@@ -73,7 +73,14 @@
 - [Deploy](./developer/cli/08_deploy.md)
 
 
-### Chapter 6: Additional Material
+### Chapter 6: Programming Model
+
+- [The Leo Programming Model](./developer/programming_model/00_model.md)
+- [A Leo Erc20 on Aleo](./developer/programming_model/01_erc20.md)
+- [Leo Procedures](./developer/programming_model/02_procedures.md)
+
+
+### Chapter 7: Additional Material
 
 - [Style Guide](./developer/additional_material/00_style.md)
 - [Common Patterns](./developer/additional_material/01_common.md)
@@ -83,12 +90,12 @@
 
 ## Setup I
 
-### Chapter 7: Getting Started
+### Chapter 8: Getting Started
 
 - [Aleo Setup I.](./setup/getting_started/00_overview.md)
 
 
-### Chapter 8: The Aleo Curves
+### Chapter 9: The Aleo Curves
 
 - [The Aleo Curves](./autogen/setup/the_aleo_curves/00_the_aleo_curves.md)
 - [Edwards BLS12](./autogen/setup/the_aleo_curves/01_edwards_bls12.md)
@@ -99,17 +106,17 @@
 
 ## Testnet I
 
-### Chapter 9: Getting Started
+### Chapter 10: Getting Started
 
 - [Testnet I.](./testnet/getting_started/00_overview.md)
 
 
-### Chapter 10: RPC Server
+### Chapter 11: RPC Server
 
 - [Configurations](./autogen/testnet/rpc/rpc_server/00_configurations.md)
 
 
-### Chapter 11: Public RPC Endpoints
+### Chapter 12: Public RPC Endpoints
 
 - [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
 - [decoderecord](./autogen/testnet/rpc/public_endpoints/01_decoderecord.md)
@@ -126,7 +133,7 @@
 - [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/12_validaterawtransaction.md)
 
 
-### Chapter 12: Private RPC Endpoints
+### Chapter 13: Private RPC Endpoints
 
 - [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
 - [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
