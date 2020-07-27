@@ -142,12 +142,13 @@ As expected, the test fails telling us that we incorrectly provided 2 inputs to 
 Since we failed before running the circuit, there is no output about the constraint system.
 
 ## Integration Tests
-For integration tests, one can invoke `.in` and `.state` files to load the correct input and state as follows:
+
+For integration tests, one can invoke [`.in`](./07_inputs.md#program-inputs) and [`.state`](../programming_model/00_model.md#state-file) files to load the correct input and state as follows:
  
  ```leo
  #[({USER_DEFINED_1}.in, {USER_DEFINED_2}.state, {USER_DEFINED_3}.out)]
  test function token_withdraw() {
-     ...
+     ... 
  } 
 ```
 

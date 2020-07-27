@@ -13,7 +13,7 @@ Conditional `if else` statements in Leo are expensive. It is preferred to use te
 ```leo title="Example:"
 if (condition) {
     return a
-else {
+} else {
     return b
 } 
 ```
@@ -22,3 +22,19 @@ else {
 return if condition? a : b
 ```
 
+### Logging inside branches
+
+Since we execute all conditional branches, you cannot conditionally output a log statement;
+
+```leo title="Example:"
+if (condition) {
+    print!("Hello");
+} else {
+    print!("World");
+} 
+```
+
+```bash title="console output:"
+Hello
+World
+```

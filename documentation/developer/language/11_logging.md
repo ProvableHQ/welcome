@@ -59,9 +59,6 @@ function main(a: u32) {
 }
 ```
 
-
-
-
 #### `error!`
 Prints the error to console.
 ```leo
@@ -69,3 +66,7 @@ function main(a: u32) {
     error!("a is {}", a);
 }
 ```
+
+:::info
+You cannot conditionally output a log statement in an `if` statement. This is because all conditional branches [must be executed](./05_statements.md).
+:::
