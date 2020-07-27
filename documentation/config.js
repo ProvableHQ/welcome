@@ -53,9 +53,13 @@ module.exports = [
         folderName: 'setup',
         chapters: [
             {
+                title: 'Getting Started',
+                folderName: 'getting_started'
+            },
+            {
                 title: 'The Aleo Curves',
                 folderName: 'the_aleo_curves'
-            },
+            }
         ]
     },
     {
