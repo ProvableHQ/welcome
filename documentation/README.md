@@ -80,22 +80,17 @@
 
 ## Chapter 0: Getting Started
 
-- [undefined](./setup/getting_started/00_curves.md)
 
 
 ## Chapter 1: The Aleo Curves
 
-- [undefined](./setup/the_aleo_curves/00_edwards_bls12.md)
-- [undefined](./setup/the_aleo_curves/01_bls12-377.md)
-- [undefined](./setup/the_aleo_curves/02_edwards_bw6.md)
-- [undefined](./setup/the_aleo_curves/03_bw6-761.md)
 
 
 ## Testnet I
 
 ## Chapter 0: Getting Started
 
-- [undefined](./testnet/rpc/getting_started/00_rpc_server.md)
+- [RPC Server](./testnet/rpc/getting_started/00_rpc_server.md)
 
 
 ## Chapter 1: Public RPC Endpoints

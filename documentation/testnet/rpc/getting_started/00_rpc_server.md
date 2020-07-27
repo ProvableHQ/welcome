@@ -1,6 +1,7 @@
 ---
 id: rpc_server
-hide_title: true
+title: RPC Server
+sidebar_label: RPC Server
 ---
 
 In Aleo, full nodes run a [JSON-RPC](https://www.jsonrpc.org/specification) server
