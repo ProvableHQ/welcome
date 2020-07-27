@@ -90,15 +90,26 @@
 
 ### Chapter 8: The Aleo Curves
 
+- [The Aleo Curves](./autogen/setup/the_aleo_curves/00_the_aleo_curves.md)
+- [Edwards BLS12](./autogen/setup/the_aleo_curves/01_edwards_bls12.md)
+- [BLS12-377](./autogen/setup/the_aleo_curves/02_bls12-377.md)
+- [Edwards BW6](./autogen/setup/the_aleo_curves/03_edwards_bw6.md)
+- [BW6-761](./autogen/setup/the_aleo_curves/04_bw6-761.md)
 
 
 ## Testnet I
 
 ### Chapter 9: Getting Started
 
+- [Testnet I.](./testnet/getting_started/00_overview.md)
 
 
-### Chapter 10: Public RPC Endpoints
+### Chapter 10: RPC Server
+
+- [Configurations](./autogen/testnet/rpc/rpc_server/00_configurations.md)
+
+
+### Chapter 11: Public RPC Endpoints
 
 - [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
 - [decoderecord](./autogen/testnet/rpc/public_endpoints/01_decoderecord.md)
@@ -115,7 +126,7 @@
 - [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/12_validaterawtransaction.md)
 
 
-### Chapter 11: Private RPC Endpoints
+### Chapter 12: Private RPC Endpoints
 
 - [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
 - [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
