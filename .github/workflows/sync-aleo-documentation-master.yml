@@ -30,10 +30,10 @@ jobs:
           curl \
             -X POST \
             -u "${{ secrets.SYNC_USERNAME }}:${{ secrets.SYNC_TOKEN }}" \
-            -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${{ secrets.SYNC_ORGANIZATION }}/${{ secrets.SYNC_APPLICATION }}/dispatches \
+            -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${{ secrets.SYNC_ORGANIZATION }}/${{ secrets.SYNC_APPLICATION_TWO }}/dispatches \
             -d '{"event_type":"Synchronize"}'
           curl \
             -X POST \
             -u "${{ secrets.SYNC_USERNAME }}:${{ secrets.SYNC_TOKEN }}" \
-            -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${{ secrets.SYNC_ORGANIZATION }}/${{ secrets.SYNC_APPLICATION_TWO }}/dispatches \
+            -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${{ secrets.SYNC_ORGANIZATION }}/${{ secrets.SYNC_APPLICATION_THREE }}/dispatches \
             -d '{"event_type":"Synchronize"}'
