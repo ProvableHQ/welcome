@@ -19,8 +19,8 @@ An Aleo record is serialized in the following format:
 |           `owner`           |                      address                      |      32      |
 |           `value`           |                        u64                        |       8      |
 |          `payload`          |                       bytes                       |      32      |
-|    `birth_predicate_id`     |                       bytes                       |      48      |
-|    `death_predicate_id`     |                       bytes                       |      48      |
+|    `birth_program_id`     |                       bytes                       |      48      |
+|    `death_program_id`     |                       bytes                       |      48      |
 |    `serial_number_nonce`    |                       bytes                       |      32      |
 |   `commitment_randomness`   |                       bytes                       |      32      |
 
@@ -54,7 +54,7 @@ The **record payload** is a  that encodes arbitrary application information.
 692575f93ebd4c58e9e6ed288d7ef2328623a8e391224b3cf24c1e65d4f0660ed5d14b78f84a259f14cb24a91fd58386
 ```
 
-The **birth predicate ID** corresponds to the [birth predicate](07_glossary.md#birth-predicate) that must be satisfied when the record is created.
+The **birth program ID** corresponds to the [birth program](07_glossary.md#birth-program) that must be satisfied when the record is created.
 
 ### Death Predicate ID
 
@@ -62,7 +62,7 @@ The **birth predicate ID** corresponds to the [birth predicate](07_glossary.md#b
 9cb1c71986e72e36640b7fbe09d1853a37bdcbc19a406526a80e54ce37b5c1dd5d14b78f84a259f14cb24746a7fe8b01
 ```
 
-The **death predicate ID** corresponds to the [death predicate](07_glossary.md#death-predicate) that must be specified when the record is spent.
+The **death program ID** corresponds to the [death program](07_glossary.md#death-program) that must be specified when the record is spent.
 
 ### Serial Number Nonce
 
@@ -91,7 +91,7 @@ Only the sender and receiver with their corresponding account view keys are able
 
 To protect privacy while enabling transactions that reason over different numbers of transaction inputs and transaction outputs,
 users may include dummy records in their transaction inputs and outputs to pad up to the required factor to create a transaction.
-Dummy records are required to have to a record value of zero, the dummy birth predicate ID, and the dummy death predicate ID.
+Dummy records are required to have to a record value of zero, the dummy birth program ID, and the dummy death program ID.
 
 ### Double Spends
 

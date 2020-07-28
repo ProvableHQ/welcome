@@ -194,5 +194,5 @@ a += 1;
 Two possible branches, multiplied by 4 loops = 8 branches generated in the circuit by the `for` loop.
 
 :::info
-For more information on branching patterns in Leo see [Common Patterns](../additional_material/01_common.md#branches).
+For more information on branching patterns in Leo see [Common Patterns](./additional_material/01_common.md#branches).
 :::

@@ -15,19 +15,19 @@ This commitment is included in the transaction that created the record, which de
 
 ### Local Data Commitment
 
-The commitment on the data being used to create the transaction - old records, new records, memo, and network id. This information is also used by the predicates to reason about their application specific logic.
+The commitment on the data being used to create the transaction - old records, new records, memo, and network id. This information is also used by the programs to reason about their application specific logic.
 
 ### Predicate
 
-A predicate is user defined boolean function that reasons about a transactions local data and determines if it is valid. This is allows for arbitrary applications to be run on Aleo. By representing state in records, predicates can reason about their own application specific logic.
+A program is user defined boolean function that reasons about a transactions local data and determines if it is valid. This is allows for arbitrary applications to be run on Aleo. By representing state in records, programs can reason about their own application specific logic.
 
 ### Birth Predicate
 
-A birth predicate is a predicate associated with the birth of a new record
+A birth program is a program associated with the birth of a new record
 
 ### Death Predicate
 
-A death predicate is a predicate associated with the death/spending of a record
+A death program is a program associated with the death/spending of a record
 
 ### Ledger Membership Witness
 

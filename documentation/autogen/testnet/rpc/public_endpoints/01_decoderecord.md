@@ -20,8 +20,8 @@ Returns information about a record from serialized record hex.
 | `is_dummy`              | number | The height of the next block       |
 | `value`                 | number | The current timestamp              |
 | `payload`               | object | The record payload                 |
-| `birth_predicate_repr`  | string | The birth predicate representation |
-| `death_predicate_repr`  | string | The death predicate representation |
+| `birth_program_repr`  | string | The birth program representation |
+| `death_program_repr`  | string | The death program representation |
 | `serial_number_nonce`   | string | The serial number nonce            |
 | `commitment`            | string | The record commitment              |
 | `commitment_randomness` | string | The record commitment randomness   |

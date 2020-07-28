@@ -14,7 +14,7 @@ An Aleo transaction is serialized in the following format:
 |:-----------------------:|:------------------------------------------------:|:------------:|
 |   `old_serial_numbers`  |                     bytes                        |       64     |
 |    `new_commitments`    |                     bytes                        |       64     |
-|  `predicate_commitment` |                     bytes                        |       32     |
+|  `program_commitment` |                     bytes                        |       32     |
 |    `local_data_root`    |                     bytes                        |       32     |
 |     `value_balance`     |                      i64                         |        8     |
 |       `memorandum`      |                     bytes                        |       32     |
@@ -49,7 +49,7 @@ The **new commitments** are the [commitments](07_glossary.md#record-commitment) 
 121edc861e1730306397c895152e5b76da00d0b598ea6225b22aaf4b3741f323
 ```
 
-The **predicate commitment** on the predicates being used to spend the old records and the predicates used to create the new records in the transaction.
+The **program commitment** on the programs being used to spend the old records and the programs used to create the new records in the transaction.
 
 ### Local Data Root
 
@@ -126,12 +126,12 @@ The steps to create a transaction are as follows:
 
 1. Generate the serial numbers of the records being spent
 2. Generate the new records
-3. Generate the predicate commitment
+3. Generate the program commitment
 4. Generate the local data commitment
 5. Generate the transaction signatures
 6. Generate the ledger digest and [ledger membership witnesses](07_glossary.md#ledger-membership-witness) for the input record commitments 
 7. Generate the inner SNARK proof
-8. Generate the predicate SNARK proofs
+8. Generate the program SNARK proofs
 9. Generate the transaction proof
 10. Compose the transaction with the attributes above
 

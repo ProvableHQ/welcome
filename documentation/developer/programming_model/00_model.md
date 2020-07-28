@@ -8,8 +8,8 @@ This section assumes that you have knowledge of [records](../../aleo/concepts/01
 
 ## Leo Record Runtime
 
-Each Leo `.leo` file is compiled into [predicate](../../aleo/concepts/07_glossary.md#predicate).
-Each predicate lives in a [record](../../aleo/concepts/01_records.md). Each record lives in a [transaction](../../aleo/concepts/02_transactions.md).
+Each Leo `.leo` file is compiled into [program](../../aleo/concepts/07_glossary.md#program).
+Each program lives in a [record](../../aleo/concepts/01_records.md). Each record lives in a [transaction](../../aleo/concepts/02_transactions.md).
 An Aleo transaction spends two old records: `old_record_0`, `old_record_1` and creates two new records: `new_record_0`, `new_record_1`.
 
 ## Registers
