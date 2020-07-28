@@ -9,7 +9,7 @@ to enable API calls for fetching data and interacting with peers connected to th
 
 ## RPC Port
 
-```
+```ignore
 -rpc-port 3030
 ```
 
@@ -17,7 +17,7 @@ The default RPC port is 3030. This can be specified with the `-rpc-port` flag wh
 
 ## Authentication for Private RPC Endpoints
 
-```
+```ignore
 -rpc-username {USERNAME} -rpc-password {PASSWORD}
 ```
 
