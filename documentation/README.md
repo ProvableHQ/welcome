@@ -91,6 +91,13 @@
 
 ### Chapter 8: The Aleo Curves
 
+- [The Aleo Curves](./autogen/setup/the_aleo_curves/00_the_aleo_curves.md)
+- [Edwards BLS12](./autogen/setup/the_aleo_curves/01_edwards_bls12.md)
+- [BLS12-377](./autogen/setup/the_aleo_curves/02_bls12-377.md)
+- [Edwards BW6](./autogen/setup/the_aleo_curves/03_edwards_bw6.md)
+- [BW6-761](./autogen/setup/the_aleo_curves/04_bw6-761.md)
+
+
 ## Testnet I
 
 ### Chapter 9: Getting Started
@@ -106,7 +113,32 @@
 
 ### Chapter 11: RPC Server
 
+- [Configurations](./autogen/testnet/rpc/rpc_server/00_configurations.md)
+
+
 ### Chapter 12: Public RPC Endpoints
 
+- [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
+- [decoderecord](./autogen/testnet/rpc/public_endpoints/01_decoderecord.md)
+- [decryptrecord](./autogen/testnet/rpc/public_endpoints/02_decryptrecord.md)
+- [getbestblockhash](./autogen/testnet/rpc/public_endpoints/03_getbestblockhash.md)
+- [getblock](./autogen/testnet/rpc/public_endpoints/04_getblock.md)
+- [getblockcount](./autogen/testnet/rpc/public_endpoints/05_getblockcount.md)
+- [getblockhash](./autogen/testnet/rpc/public_endpoints/06_getblockhash.md)
+- [getblocktemplate](./autogen/testnet/rpc/public_endpoints/07_getblocktemplate.md)
+- [getconnectioncount](./autogen/testnet/rpc/public_endpoints/08_getconnectioncount.md)
+- [getpeerinfo](./autogen/testnet/rpc/public_endpoints/09_getpeerinfo.md)
+- [getrawtransaction](./autogen/testnet/rpc/public_endpoints/10_getrawtransaction.md)
+- [gettransactioninfo](./autogen/testnet/rpc/public_endpoints/11_gettransactioninfo.md)
+- [sendtransaction](./autogen/testnet/rpc/public_endpoints/12_sendtransaction.md)
+- [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/13_validaterawtransaction.md)
+
+
 ### Chapter 13: Private RPC Endpoints
+
+- [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
+- [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
+- [fetchrecordcommitments](./autogen/testnet/rpc/private_endpoints/02_fetchrecordcommitments.md)
+- [getrawrecord](./autogen/testnet/rpc/private_endpoints/03_getrawrecord.md)
+
 
