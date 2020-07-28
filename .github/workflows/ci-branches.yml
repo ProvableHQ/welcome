@@ -1,0 +1,18 @@
+name: CI - Branches
+on: [push]
+
+env:
+  RUST_BACKTRACE: 1
+
+jobs:
+  style:
+    name: Check Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-verbose-mode: 'yes'
+          folder-path: 'documentation'
