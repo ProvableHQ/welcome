@@ -83,6 +83,7 @@
     ],
     "documentation": [
         {
+            "title": "Welcome to Aleo.",
             "folderName": "aleo",
             "chapters": [
                 {
@@ -95,27 +96,28 @@
                 },
                 {
                     "title": "Hello Leo!",
-                    "folderName": "getting_started"
+                    "folderName": "../developer/getting_started"
                 },
                 {
                     "title": "Language",
-                    "folderName": "language"
+                    "folderName": "../developer/language"
                 },
                 {
                     "title": "CLI",
-                    "folderName": "cli"
+                    "folderName": "../developer/cli"
                 },
                 {
                     "title": "Programming Model",
-                    "folderName": "programming_model"
+                    "folderName": "../developer/programming_model"
                 },
                 {
                     "title": "Additional Material",
-                    "folderName": "additional_material"
+                    "folderName": "../developer/additional_material"
                 }
             ]
         },
         {
+            "title": "Setup I",
             "folderName": "setup",
             "chapters": [
                 {
@@ -129,6 +131,7 @@
             ]
         },
         {
+            "title": "Testnet I",
             "folderName": "testnet",
             "chapters": [
                 {
