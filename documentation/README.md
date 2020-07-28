@@ -54,7 +54,14 @@
 - [Lexical Structure](./developer/language/12_lexical.md)
 
 
-### Chapter 4: CLI
+### Chapter 4: Programming Model
+
+- [The Leo Programming Model](./developer/programming_model/00_model.md)
+- [A Leo Erc20 on Aleo](./developer/programming_model/01_erc20.md)
+- [Leo Procedures](./developer/programming_model/02_procedures.md)
+
+
+### Chapter 5: CLI
 
 - [Create a Package](./developer/cli/00_new.md)
 - [Build a Package](./developer/cli/01_build.md)
@@ -65,13 +72,6 @@
 - [Login to Your Aleo Account](./developer/cli/06_login.md)
 - [Publish a Package to APM](./developer/cli/07_publish.md)
 - [Deploy](./developer/cli/08_deploy.md)
-
-
-### Chapter 5: Programming Model
-
-- [The Leo Programming Model](./developer/programming_model/00_model.md)
-- [A Leo Erc20 on Aleo](./developer/programming_model/01_erc20.md)
-- [Leo Procedures](./developer/programming_model/02_procedures.md)
 
 
 ### Chapter 6: Additional Material
