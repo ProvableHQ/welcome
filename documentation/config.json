@@ -11,12 +11,7 @@
                 {
                     "title": "Concepts",
                     "folderName": "concepts"
-                },
-                {
-                    "title": "Networking",
-                    "folderName": "networking"
                 }
-
             ]
         },
         {
@@ -66,6 +61,83 @@
                 {
                     "title": "Getting Started",
                     "folderName": "getting_started"
+                },
+                {
+                    "title": "Networking",
+                    "folderName": "networking"
+                },
+                {
+                    "title": "RPC Server",
+                    "isAutogen": true
+                },
+                {
+                    "title": "Public RPC Endpoints",
+                    "isAutogen": true
+                },
+                {
+                    "title": "Private RPC Endpoints",
+                    "isAutogen": true
+                }
+            ]
+        }
+    ],
+    "documentation": [
+        {
+            "folderName": "aleo",
+            "chapters": [
+                {
+                    "title": "Getting Started",
+                    "folderName": "getting_started"
+                },
+                {
+                    "title": "Concepts",
+                    "folderName": "concepts"
+                },
+                {
+                    "title": "Hello Leo!",
+                    "folderName": "getting_started"
+                },
+                {
+                    "title": "Language",
+                    "folderName": "language"
+                },
+                {
+                    "title": "CLI",
+                    "folderName": "cli"
+                },
+                {
+                    "title": "Programming Model",
+                    "folderName": "programming_model"
+                },
+                {
+                    "title": "Additional Material",
+                    "folderName": "additional_material"
+                }
+            ]
+        },
+        {
+            "folderName": "setup",
+            "chapters": [
+                {
+                    "title": "Getting Started",
+                    "folderName": "getting_started"
+                },
+                {
+                    "title": "The Aleo Curves",
+                    "isAutogen": true
+                }
+            ]
+        },
+        {
+            "folderName": "testnet",
+            "chapters": [
+                {
+                    "title": "Getting Started",
+                    "folderName": "getting_started"
+                },
+                {
+                    "title": "Networking",
+                    "folderName": "networking"
                 },
                 {
                     "title": "RPC Server",

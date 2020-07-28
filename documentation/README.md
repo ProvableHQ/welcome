@@ -27,8 +27,8 @@
 
 ### Chapter 2: Networking
 
-- [Networking](./aleo/networking/00_networking.md)
-- [Message Types](./aleo/networking/01_message_types.md)
+- [Networking](testnet/networking/00_networking.md)
+- [Message Types](testnet/networking/01_message_types.md)
 
 
 ## Developer Preview I

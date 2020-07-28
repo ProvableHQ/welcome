@@ -28,5 +28,33 @@
                 }
             ]
         }
+    ],
+    "documentation": [
+        {
+            "folderName": "setup",
+            "chapters": [
+                {
+                    "title": "The Aleo Curves",
+                    "folderName": "the_aleo_curves"
+                }
+            ]
+        },
+        {
+            "folderName": "testnet",
+            "chapters": [
+                {
+                    "title": "RPC Server",
+                    "folderName": "rpc/rpc_server"
+                },
+                {
+                    "title": "Public RPC Endpoints",
+                    "folderName": "rpc/public_endpoints"
+                },
+                {
+                    "title": "Private RPC Endpoints",
+                    "folderName": "rpc/private_endpoints"
+                }
+            ]
+        }
     ]
 }
