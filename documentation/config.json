@@ -27,12 +27,12 @@
                     "folderName": "language"
                 },
                 {
-                    "title": "CLI",
-                    "folderName": "cli"
-                },
-                {
                     "title": "Programming Model",
                     "folderName": "programming_model"
+                },
+                {
+                    "title": "CLI",
+                    "folderName": "cli"
                 },
                 {
                     "title": "Additional Material",
@@ -103,12 +103,12 @@
                     "document_id": "developer/language"
                 },
                 {
-                    "title": "CLI",
-                    "document_id": "developer/cli"
-                },
-                {
                     "title": "Programming Model",
                     "document_id": "developer/programming_model"
+                },
+                {
+                    "title": "CLI",
+                    "document_id": "developer/cli"
                 },
                 {
                     "title": "Additional Material",
