@@ -17,15 +17,15 @@ This commitment is included in the transaction that created the record, which de
 
 The commitment on the data being used to create the transaction - old records, new records, memo, and network id. This information is also used by the programs to reason about their application specific logic.
 
-### Predicate
+### Program
 
 A program is user defined boolean function that reasons about a transactions local data and determines if it is valid. This is allows for arbitrary applications to be run on Aleo. By representing state in records, programs can reason about their own application specific logic.
 
-### Birth Predicate
+### Birth Program
 
 A birth program is a program associated with the birth of a new record
 
-### Death Predicate
+### Death Program
 
 A death program is a program associated with the death/spending of a record
 

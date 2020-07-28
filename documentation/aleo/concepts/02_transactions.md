@@ -43,7 +43,7 @@ that were consumed by the transaction.
 
 The **new commitments** are the [commitments](07_glossary.md#record-commitment) for corresponding records that were produced by the transaction.
 
-### Predicate Commitment
+### Program Commitment
 
 ```
 121edc861e1730306397c895152e5b76da00d0b598ea6225b22aaf4b3741f323

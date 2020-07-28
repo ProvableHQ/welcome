@@ -48,7 +48,7 @@ The **record value** specifies the amount of Aleo credits stored in the record.
 
 The **record payload** is a  that encodes arbitrary application information.
 
-### Birth Predicate ID
+### Birth Program ID
 
 ```
 692575f93ebd4c58e9e6ed288d7ef2328623a8e391224b3cf24c1e65d4f0660ed5d14b78f84a259f14cb24a91fd58386
@@ -56,7 +56,7 @@ The **record payload** is a  that encodes arbitrary application information.
 
 The **birth program ID** corresponds to the [birth program](07_glossary.md#birth-program) that must be satisfied when the record is created.
 
-### Death Predicate ID
+### Death Program ID
 
 ```
 9cb1c71986e72e36640b7fbe09d1853a37bdcbc19a406526a80e54ce37b5c1dd5d14b78f84a259f14cb24746a7fe8b01
