@@ -83,44 +83,46 @@
     ],
     "documentation": [
         {
-            "folderName": "aleo",
+            "title": "Welcome to Aleo.",
+            "section_id": "aleo",
             "chapters": [
                 {
                     "title": "Getting Started",
-                    "folderName": "getting_started"
+                    "document_id": "aleo/getting_started"
                 },
                 {
                     "title": "Concepts",
-                    "folderName": "concepts"
+                    "document_id": "aleo/concepts"
                 },
                 {
                     "title": "Hello Leo!",
-                    "folderName": "getting_started"
+                    "document_id": "developer/getting_started"
                 },
                 {
                     "title": "Language",
-                    "folderName": "language"
+                    "document_id": "developer/language"
                 },
                 {
                     "title": "CLI",
-                    "folderName": "cli"
+                    "document_id": "developer/cli"
                 },
                 {
                     "title": "Programming Model",
-                    "folderName": "programming_model"
+                    "document_id": "developer/programming_model"
                 },
                 {
                     "title": "Additional Material",
-                    "folderName": "additional_material"
+                    "document_id": "developer/additional_material"
                 }
             ]
         },
         {
-            "folderName": "setup",
+            "title": "Setup I",
+            "section_id": "setup",
             "chapters": [
                 {
                     "title": "Getting Started",
-                    "folderName": "getting_started"
+                    "document_id": "setup/getting_started"
                 },
                 {
                     "title": "The Aleo Curves",
@@ -129,15 +131,16 @@
             ]
         },
         {
-            "folderName": "testnet",
+            "title": "Testnet I",
+            "section_id": "testnet",
             "chapters": [
                 {
                     "title": "Getting Started",
-                    "folderName": "getting_started"
+                    "document_id": "testnet/getting_started"
                 },
                 {
                     "title": "Networking",
-                    "folderName": "networking"
+                    "document_id": "testnet/networking"
                 },
                 {
                     "title": "RPC Server",

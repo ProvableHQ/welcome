@@ -31,28 +31,31 @@
     ],
     "documentation": [
         {
-            "folderName": "setup",
+
+            "title": "Setup I",
+            "section_id": "setup",
             "chapters": [
                 {
                     "title": "The Aleo Curves",
-                    "folderName": "the_aleo_curves"
+                    "document_id": "setup/the_aleo_curves"
                 }
             ]
         },
         {
-            "folderName": "testnet",
+            "title": "Testnet I",
+            "section_id": "testnet",
             "chapters": [
                 {
                     "title": "RPC Server",
-                    "folderName": "rpc/rpc_server"
+                    "document_id": "testnet/rpc/rpc_server"
                 },
                 {
                     "title": "Public RPC Endpoints",
-                    "folderName": "rpc/public_endpoints"
+                    "document_id": "testnet/rpc/public_endpoints"
                 },
                 {
                     "title": "Private RPC Endpoints",
-                    "folderName": "rpc/private_endpoints"
+                    "document_id": "testnet/rpc/private_endpoints"
                 }
             ]
         }
