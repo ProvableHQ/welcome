@@ -10,7 +10,6 @@
 ### Chapter 0: Getting Started
 
 - [Welcome to Aleo.](./aleo/getting_started/00_overview.md)
-- [Install snarkOS](./aleo/getting_started/01_installation.md)
 
 
 ### Chapter 1: Concepts
@@ -103,6 +102,7 @@
 ### Chapter 9: Getting Started
 
 - [Testnet I.](./testnet/getting_started/00_overview.md)
+- [Install snarkOS](./testnet/getting_started/01_installation.md)
 
 
 ### Chapter 10: Networking
