@@ -105,4 +105,4 @@ OPTIONS:
 
 ### Interfacing with a running node
 
-By default, snarkOS runs a JSON-RPC server to allow external interfacing with the Aleo network. Additional information can be found [here](../../autogen/testnet/rpc/rpc_server/00_configurations.md)
+By default, snarkOS runs a JSON-RPC server to allow external interfacing with the Aleo network. Additional information can be found [here](aleo/documentation/autogen/testnet/rpc/rpc_server/00_configurations.md)
