@@ -105,6 +105,17 @@
     ],
     "documentation": [
         {
+
+            "title": "Introduction",
+            "section_id": "introduction",
+            "chapters": [
+                {
+                    "title": "Introduction",
+                    "isAutogen": true
+                }
+            ]
+        },
+        {
             "title": "Welcome to Aleo.",
             "section_id": "aleo",
             "chapters": [
