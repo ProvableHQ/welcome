@@ -9,7 +9,8 @@
 
 ### Chapter 0: Getting Started
 
-- [Welcome to Aleo.](./aleo/getting_started/00_overview.md)
+- [Welcome to Aleo.](./aleo/getting_started/00_introduction.md)
+- [Developer Preview I](./aleo/getting_started/01_developer_preview.md)
 
 
 ### Chapter 1: Concepts
@@ -140,5 +141,23 @@
 - [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
 - [fetchrecordcommitments](./autogen/testnet/rpc/private_endpoints/02_fetchrecordcommitments.md)
 - [getrawrecord](./autogen/testnet/rpc/private_endpoints/03_getrawrecord.md)
+
+
+## Explorer I
+
+### Chapter 14: Authentication
+
+
+
+### Chapter 15: Block
+
+
+
+### Chapter 16: Transaction
+
+
+
+### Chapter 17: Metrics
+
 
 
