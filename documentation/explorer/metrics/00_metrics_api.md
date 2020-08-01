@@ -1,3 +1,9 @@
+---
+id: metrics_api
+title: Metrics API
+sidebar_label: Metrics API
+---
+
 # Metrics API
 
 The metrics API provides endpoints to retrieve block and transaction data metrics on the Aleo testnet.
