@@ -17,6 +17,7 @@ to compile, execute, and finalize its state autonomously.
 
 ### Chapter 0: Getting Started
 
+- [Welcome to Aleo.](./aleo/getting_started/00_overview.md)
 - [Developer Preview I](./aleo/getting_started/01_developer_preview.md)
 
 
