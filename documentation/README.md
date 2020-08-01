@@ -147,17 +147,32 @@
 
 ### Chapter 14: Authentication
 
+- [Authentication API](./explorer/authentication/00_authentication_api.md)
+- [createapikey](./explorer/authentication/01_createapikey.md)
 
 
 ### Chapter 15: Block
 
+- [Block API](./explorer/block/00_block_api.md)
+- [getbestblock](./explorer/block/01_getbestblock.md)
+- [getbyheight](./explorer/block/02_getbyheight.md)
+- [getbyheightrange](./explorer/block/03_getbyheightrange.md)
+- [getbyhash](./explorer/block/04_getbyhash.md)
 
 
 ### Chapter 16: Transaction
 
+- [Transaction API](./explorer/transaction/00_transaction_api.md)
+- [get](./explorer/transaction/01_getbyhash.md)
+- [get](./explorer/transaction/02_getbyhashbatch.md)
+- [get](./explorer/transaction/03_broadcast.md)
+- [validate](./explorer/transaction/04_validate.md)
 
 
 ### Chapter 17: Metrics
 
+- [metrics_api](./explorer/metrics/00_metrics_api.md)
+- [get](./explorer/metrics/01_get.md)
+- [graph](./explorer/metrics/02_graph.md)
 
 
