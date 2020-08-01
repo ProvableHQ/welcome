@@ -86,19 +86,19 @@
             "chapters": [
                 {
                     "title": "Authentication",
-                    "folderName": "explorer/authentication"
+                    "folderName": "authentication"
                 },
                 {
                     "title": "Block",
-                    "folderName": "explorer/block"
+                    "folderName": "block"
                 },
                 {
                     "title": "Transaction",
-                    "folderName": "explorer/transaction"
+                    "folderName": "transaction"
                 },
                 {
                     "title": "Metrics",
-                    "folderName": "explorer/metrics"
+                    "folderName": "metrics"
                 }
             ]
         }
