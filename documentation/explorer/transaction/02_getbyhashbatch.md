@@ -1,7 +1,7 @@
 ---
-id: get
-title: get
-sidebar_label: get
+id: getbyhashbatch
+title: getbyhashbatch
+sidebar_label: getbyhashbatch
 ---
 
 # `/transaction/getbyhashbatch`

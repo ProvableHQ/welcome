@@ -1,7 +1,7 @@
 ---
-id: get
-title: get
-sidebar_label: get
+id: broadcast
+title: broadcast
+sidebar_label: broadcast
 ---
 
 # `/transaction/broadcast`
