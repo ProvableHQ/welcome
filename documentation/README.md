@@ -171,7 +171,7 @@
 
 ### Chapter 17: Metrics
 
-- [metrics_api](./explorer/metrics/00_metrics_api.md)
+- [Metrics API](./explorer/metrics/00_metrics_api.md)
 - [get](./explorer/metrics/01_get.md)
 - [graph](./explorer/metrics/02_graph.md)
 
