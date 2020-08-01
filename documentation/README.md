@@ -163,9 +163,9 @@
 ### Chapter 16: Transaction
 
 - [Transaction API](./explorer/transaction/00_transaction_api.md)
-- [get](./explorer/transaction/01_getbyhash.md)
-- [get](./explorer/transaction/02_getbyhashbatch.md)
-- [get](./explorer/transaction/03_broadcast.md)
+- [getbyhash](./explorer/transaction/01_getbyhash.md)
+- [getbyhashbatch](./explorer/transaction/02_getbyhashbatch.md)
+- [broadcast](./explorer/transaction/03_broadcast.md)
 - [validate](./explorer/transaction/04_validate.md)
 
 
