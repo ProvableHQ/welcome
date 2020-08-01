@@ -4,8 +4,6 @@ title: graph
 sidebar_label: graph
 ---
 
-# `/metrics/graph`
-
 The `graph` endpoint retrieves temporal data related to the amount of transactions and the sum of their fees.
 
 ```

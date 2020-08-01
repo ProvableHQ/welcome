@@ -4,8 +4,6 @@ title: Transaction API
 sidebar_label: Transaction API
 ---
 
-# Transaction API
-
 The Transaction API provides endpoints to retrieve the state of transactions on the Aleo testnet.
 
 ## Components of a Transaction Object

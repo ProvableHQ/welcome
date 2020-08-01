@@ -4,8 +4,6 @@ title: getbyhashbatch
 sidebar_label: getbyhashbatch
 ---
 
-# `/transaction/getbyhashbatch`
-
 The `getbyhashbatch` endpoint retrieves a list of transactions based on the list of given hashes.
 
 ## Request Type

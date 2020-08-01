@@ -4,8 +4,6 @@ title: validate
 sidebar_label: validate
 ---
 
-# `/transaction/validate`
-
 The `validate` validates whether the given transaction is valid on the Aleo network.
 
 ## Request Type

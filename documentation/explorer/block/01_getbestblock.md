@@ -4,8 +4,6 @@ title: getbestblock
 sidebar_label: getbestblock
 ---
 
-# `/block/getbestblock`
-
 The `getbestblock` endpoint retrieves the latest canonical block.
 
 ## Request Type

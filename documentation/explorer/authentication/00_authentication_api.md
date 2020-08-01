@@ -4,8 +4,6 @@ title: Authentication API
 sidebar_label: Authentication API
 ---
 
-# Authentication API
-
 The authentication API is a starting endpoint that provides an API key for querying REST API endpoints on Aleo Explorer.
 
 ## API Key

@@ -4,8 +4,6 @@ title: getbyhash
 sidebar_label: getbyhash
 ---
 
-# `/transaction/getbyhash`
-
 The `getbyhash` endpoint retrieves a transaction based on the given hash (if one exists at that hash).
 
 ## Request Type

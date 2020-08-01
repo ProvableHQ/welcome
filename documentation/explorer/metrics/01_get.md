@@ -4,8 +4,6 @@ title: get
 sidebar_label: get
 ---
 
-# `/metrics/get`
-
 The `get` endpoint retrieves a metric based on the last sequence of blocks.
 
 ## Request Type

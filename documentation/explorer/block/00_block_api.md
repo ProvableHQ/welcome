@@ -4,8 +4,6 @@ title: Block API
 sidebar_label: Block API
 ---
 
-# Block API
-
 The block API provides REST API endpoints for retrieving block data from the Aleo testnet.
 
 ## Components of a Block

@@ -4,8 +4,6 @@ title: getbyheightrange
 sidebar_label: getbyheightrange
 ---
 
-# `/block/getbyheightrange`
-
 The `getbyheightrange` endpoint retrieves a list of canonical blocks based on the given height range.
 
 ## Request Type

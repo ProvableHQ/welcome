@@ -4,8 +4,6 @@ title: getbyheight
 sidebar_label: getbyheight
 ---
 
-# `/block/getbyheight`
-
 The `getbyheight` endpoint retrieves a canonical block based on the given height (if one exists at that height).
 
 ## Request Type

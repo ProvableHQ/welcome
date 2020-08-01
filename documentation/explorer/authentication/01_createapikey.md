@@ -4,8 +4,6 @@ title: createapikey
 sidebar_label: createapikey
 ---
 
-# `/auth/createapikey`
-
 The `createapikey` endpoint generates a new API key to authenticate REST API calls with.
 
 ## Request Type

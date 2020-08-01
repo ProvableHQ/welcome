@@ -4,8 +4,6 @@ title: broadcast
 sidebar_label: broadcast
 ---
 
-# `/transaction/broadcast`
-
 The `broadcast` endpoint sends a signed and valid transaction to the Aleo network.
 
 ## Request Type

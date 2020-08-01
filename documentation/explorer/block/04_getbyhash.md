@@ -4,8 +4,6 @@ title: getbyhash
 sidebar_label: getbyhash
 ---
 
-# `/block/getbyhash`
-
 The `getbyhash` endpoint retrieves a canonical block based on the given hash (if one exists at that hash).
 
 ## Request Type
