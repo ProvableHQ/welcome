@@ -14,7 +14,7 @@ POST /metrics/get
 
 ## Parameters
 
-### blocks <span style="color:red">required</span>
+### blocks (required)
 
 A number value representing the amount of blocks, starting from the best block, to use to calculate the metrics.
 

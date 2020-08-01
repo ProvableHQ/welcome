@@ -20,7 +20,7 @@ Yes
 
 ## Parameters
 
-### hash <span style="color:red">required</span>
+### hash (required)
 
 A string value that represents a blockhash. This string can be either 64 or 66 characters long, if the string is 66 characters the first two characters should be `0x`.
 

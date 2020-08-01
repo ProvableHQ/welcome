@@ -20,7 +20,7 @@ Yes
 
 ## Parameters
 
-### height <span style="color:red">required</span>
+### height (required)
 
 A `positive integer` value or the string `latest` is accepted, where the integer will return the block corresponding to that height and the string latest will return the latest canonical block.
 

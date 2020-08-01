@@ -12,11 +12,11 @@ POST /metrics/get
 
 ## Parameters
 
-### interval
+### interval (required)
 
 A number value representing the amount of time in seconds for each slice.
 
-### amount
+### amount (required)
 
 A number value representing the amount of slices requested.
 

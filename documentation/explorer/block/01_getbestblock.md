@@ -20,7 +20,9 @@ Yes
 
 ## Parameters
 
+```
 None
+```
 
 ## Response
 

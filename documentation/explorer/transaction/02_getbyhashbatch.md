@@ -14,7 +14,7 @@ POST /transaction/getbyhashbatch
 
 ## Parameters
 
-### hash array <span style="color:red">required</span>
+### hash array (required)
 
 A list of string values that represent transaction hashes. These strings can be either 64 or 66 characters long, if the string is 66 characters the first two characters should be `0x`.
 

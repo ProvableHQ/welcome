@@ -14,7 +14,7 @@ POST /transaction/broadcast
 
 ## Parameters
 
-### raw transaction <span style="color:red">required</span>
+### raw transaction (required)
 
 A 1950 character long string that represents an valid signed raw transaction.
 
