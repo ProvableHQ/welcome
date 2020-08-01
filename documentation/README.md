@@ -153,20 +153,20 @@
 
 ### Chapter 15: Block
 
-- [Block API](./explorer/block/00_block_api.md)
-- [getbestblock](./explorer/block/01_getbestblock.md)
-- [getbyheight](./explorer/block/02_getbyheight.md)
-- [getbyheightrange](./explorer/block/03_getbyheightrange.md)
-- [getbyhash](./explorer/block/04_getbyhash.md)
+- [Block API](explorer/blocks/00_block_api.md)
+- [getbestblock](explorer/blocks/01_getbestblock.md)
+- [getbyheight](explorer/blocks/02_getbyheight.md)
+- [getbyheightrange](explorer/blocks/03_getbyheightrange.md)
+- [getbyhash](explorer/blocks/04_getbyhash.md)
 
 
 ### Chapter 16: Transaction
 
-- [Transaction API](./explorer/transaction/00_transaction_api.md)
-- [getbyhash](./explorer/transaction/01_getbyhash.md)
-- [getbyhashbatch](./explorer/transaction/02_getbyhashbatch.md)
-- [broadcast](./explorer/transaction/03_broadcast.md)
-- [validate](./explorer/transaction/04_validate.md)
+- [Transaction API](explorer/transactions/00_transaction_api.md)
+- [getbyhash](explorer/transactions/01_getbyhash.md)
+- [getbyhashbatch](explorer/transactions/02_getbyhashbatch.md)
+- [broadcast](explorer/transactions/03_broadcast.md)
+- [validate](explorer/transactions/04_validate.md)
 
 
 ### Chapter 17: Metrics

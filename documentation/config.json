@@ -89,12 +89,12 @@
                     "folderName": "authentication"
                 },
                 {
-                    "title": "Block",
-                    "folderName": "block"
+                    "title": "Blocks",
+                    "folderName": "blocks"
                 },
                 {
-                    "title": "Transaction",
-                    "folderName": "transaction"
+                    "title": "Transactions",
+                    "folderName": "transactions"
                 },
                 {
                     "title": "Metrics",
@@ -187,12 +187,12 @@
                     "document_id": "explorer/authentication"
                 },
                 {
-                    "title": "Block",
-                    "document_id": "explorer/block"
+                    "title": "Blocks",
+                    "document_id": "explorer/blocks"
                 },
                 {
-                    "title": "Transaction",
-                    "document_id": "explorer/transaction"
+                    "title": "Transactions",
+                    "document_id": "explorer/transactions"
                 },
                 {
                     "title": "Metrics",
