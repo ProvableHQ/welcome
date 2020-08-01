@@ -1,37 +1,25 @@
-# APIKey API
+---
+id: authentication_api
+title: Authentication API
+sidebar_label: Authentication API
+---
 
-The APIKey API can be used to generate new APIKeys, these keys are required to authenticate against the rest of the API endpoints.
+# Authentication API
 
-## The APIkey
+The authentication API is a starting endpoint that provides an API key for querying REST API endpoints on Aleo Explorer.
 
-The APIKey is a string value in base 64 encoding.
+## API Key
 
-```json
-"MWRkMWMxMWEtMzUzMC00YTRmLTg5NDQtZjdkZDMwN2YwMjIy"
+The API key is a Base64 encoded authentication token.
+
+```
+MWRkMWMxMWEtMzUzMC00YTRmLTg5NDQtZjdkZDMwN2YwMjIy
 ```
 
 ## Usage
 
-The APIKey is used as a bearer token and should be set in the `Authorization` header of the core APIs.
-
-```json
-  Authorization:"Bearer MWRkMWMxMWEtMzUzMC00YTRmLTg5NDQtZjdkZDMwN2YwMjIy"
-```
-
----
-
-## /createapikey
-
-The `/createapikey` generates a new APIKey for the user to authenticate with, it requires no parameters or sign-up.
+The API key is a bearer token and should be set in the `Authorization` header with each REST API call.
 
 ```
-GET /auth/createapikey
+Authorization: "Bearer MWRkMWMxMWEtMzUzMC00YTRmLTg5NDQtZjdkZDMwN2YwMjIy"
 ```
-
-### Parameters
-
-No parameters.
-
-### Response:
-
-Retrieves an authentication token.

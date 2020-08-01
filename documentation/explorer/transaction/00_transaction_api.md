@@ -1,64 +1,14 @@
-# Transaction information API
+---
+id: transaction_api
+title: Transaction API
+sidebar_label: Transaction API
+---
 
-The Transaction information api exposes several endpoints that allow the user to retrieve the cached state of transactions of the Aleo network.
+# Transaction API
 
-## The transaction object
+The Transaction API provides endpoints to retrieve the state of transactions on the Aleo testnet.
 
-### Attributes
-
-#### hash (string)
-
-Hash of all of the transaction attributes.
-
-#### parentBlock (block object or string)
-
-The parentblock of this current transaction, can either be a block object or a string referencing a blockhash.
-
-#### memo (string)
-
-An optional 32 byte memo field.
-
-#### newCommitments (string)
-
-List of commitments corresponding to newly produced records in this transaction.
-
-#### OldSerialNumbers (string)
-
-List of serial numbers corresponding to records consumed in this transaction.
-
-#### size (number)
-
-The size of the current transaction in bytes.
-
-#### digest (string)
-
-The merkle root hash of the block this transaction is transacted from
-
-#### transactionProof (string)
-
-A succinct proof that the predicate proofs (applications) ran correctly, the inner proof was valid, and that the outputs were verified to be correct.
-
-#### localDataCommitment (number)
-
-Commitment to local data (used to verify the outer proof).
-
-#### predicateDataCommitment (number)
-
-Commitment to the predicate state (used to verify the outer proof).
-
-#### valueBalance (number)
-
-The transaction fee for the miner (positive number). The mining reward for the miner (negative number).
-
-#### signatures (array of two hashes (strings))
-
-List of signatures authorizing each of the old records to be spent (Miner checks that each signature corresponds to the serial number of an old record)
-
-#### parentBlock (excerpt of block object)
-
-Core values of the block this transaction is a part of (time of block, block hash, which height the block is at and wether it is canonical or not).
-
-### Example
+## Components of a Transaction Object
 
 ```json
 {
@@ -91,76 +41,56 @@ Core values of the block this transaction is a part of (time of block, block has
 }
 ```
 
----
+### Attributes
 
-## /getbyhash
+#### `hash` (string)
 
-The `/getbyhash` endpoint retrieves a transaction based on the given hash (if one exists at that hash).
+Hash of all of the transaction attributes.
 
-```
-POST /transaction/getbyhash
-```
+#### `parentBlock` (block object or string)
 
-### Parameters
+The parent block of this current transaction, can either be a block object or a string referencing a block hash.
 
-#### hash <span style="color:red">required</span>
+#### `memo` (string)
 
-A string value that represents a blockhash. This string can be either 64 or 66 characters long, if the string is 66 characters the first two characters should be `0x`.
+An optional 32 byte memo field.
 
-### Response:
+#### `newCommitments` (string)
 
-Retrieves a transaction object.
+List of commitments corresponding to newly produced records in this transaction.
 
-## /getbyhashbatch
+#### `oldSerialNumbers` (string)
 
-The `/getbyhashbatch` endpoint retrieves a list of transactions based on the list of given hashes.
+List of serial numbers corresponding to records consumed in this transaction.
 
-```
-POST /transaction/getbyhashbatch
-```
+#### `size` (number)
 
-### Parameters
+The size of the current transaction in bytes.
 
-#### hash array <span style="color:red">required</span>
+#### `digest` (string)
 
-A list of string values that represent transaction hashes. These strings can be either 64 or 66 characters long, if the string is 66 characters the first two characters should be `0x`.
+The Merkle root hash of the block this transaction is transacted from
 
-### Response:
+#### `transactionProof` (string)
 
-Retrieves a list of transaction objects.
+A succinct proof that the predicate proofs (applications) ran correctly, the inner proof was valid, and that the outputs were verified to be correct.
 
-## /broadcast
+#### `localDataCommitment` (number)
 
-The `/broadcast` endpoint sends a signed and valid transaction to the aleo network.
+Commitment to local data (used to verify the outer proof).
 
-```
-POST /transaction/broadcast
-```
+#### `predicateDataCommitment` (number)
 
-### Parameters
+Commitment to the predicate state (used to verify the outer proof).
 
-#### raw transaction <span style="color:red">required</span>
+#### `valueBalance` (number)
 
-A 1950 character long string that represents an valid signed raw transaction.
+The transaction fee for the miner (positive number). The mining reward for the miner (negative number).
 
-### Response:
+#### `signatures` (array of two hashes (strings))
 
-A transaction hash of the posted transaction.
+List of signatures authorizing each of the old records to be spent (Miner checks that each signature corresponds to the serial number of an old record)
 
-## /validate
+#### `parentBlock` (excerpt of block object)
 
-The `/validate` validates wether the given transaction is valid on the current aleo network.
-
-```
-POST /transaction/validate
-```
-
-### Parameters
-
-#### raw transaction <span style="color:red">required</span>
-
-A 1950 character long string that represents an valid signed raw transaction.
-
-### Response:
-
-A boolean value (true or false), wether the transaction is valid or not.
+Core values of the block this transaction is a part of (time of block, block hash, which height the block is at and whether it is canonical or not).

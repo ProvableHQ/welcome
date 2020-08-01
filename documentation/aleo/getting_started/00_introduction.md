@@ -1,5 +1,5 @@
 ---
-id: overview
+id: introduction
 title: Welcome to Aleo.
 sidebar_label: Introduction
 ---

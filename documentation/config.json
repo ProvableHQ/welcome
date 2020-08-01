@@ -79,6 +79,28 @@
                     "isAutogen": true
                 }
             ]
+        },
+        {
+            "title": "Explorer I",
+            "folderName": "explorer",
+            "chapters": [
+                {
+                    "title": "Authentication",
+                    "folderName": "explorer/authentication"
+                },
+                {
+                    "title": "Block",
+                    "folderName": "explorer/block"
+                },
+                {
+                    "title": "Transaction",
+                    "folderName": "explorer/transaction"
+                },
+                {
+                    "title": "Metrics",
+                    "folderName": "explorer/metrics"
+                }
+            ]
         }
     ],
     "documentation": [
@@ -153,6 +175,28 @@
                 {
                     "title": "Private RPC Endpoints",
                     "isAutogen": true
+                }
+            ]
+        },
+        {
+            "title": "Explorer I",
+            "section_id": "explorer",
+            "chapters": [
+                {
+                    "title": "Authentication",
+                    "document_id": "explorer/authentication"
+                },
+                {
+                    "title": "Block",
+                    "document_id": "explorer/block"
+                },
+                {
+                    "title": "Transaction",
+                    "document_id": "explorer/transaction"
+                },
+                {
+                    "title": "Metrics",
+                    "document_id": "explorer/metrics"
                 }
             ]
         }

@@ -1,60 +1,14 @@
-# Block information API
+---
+id: block_api
+title: Block API
+sidebar_label: Block API
+---
 
-The block information api exposes several endpoints that allow the user to retrieve the cached state of blocks of the Aleo network.
+# Block API
 
-## The block object
+The block API provides REST API endpoints for retrieving block data from the Aleo testnet.
 
-### Attributes
-
-#### hash (string)
-
-Hash of all of the block header data within this attribute.
-
-#### height (number)
-
-The height this current block is located at.
-
-#### canonical (boolean)
-
-A boolean value whether this block is currently in the longest chain.
-
-#### previousBlockHash (string)
-
-The hash of the previous block header.
-
-#### merkleRoot (string)
-
-Merkle root representing the transactions in the block.
-
-#### pedersonMerkleRoot (string)
-
-Merkle root representing the state of the block.
-
-#### time (number)
-
-Block timestamp is a Unix epoch time (UTC) when the miner started hashing the header (according to the miner and checked by every other miner).
-
-#### size (number)
-
-The size in bytes of the current block (sum of the size of all transactions + the values listed within this object).
-
-#### nonce (number)
-
-Nonce for solving the PoSW puzzle.
-
-#### proof (string)
-
-A succinct proof that attests to the transactions included in this block.
-
-#### transactions (Array of hashes (strings))
-
-A list of all the transactions included in this block.
-
-#### difficultyTarget (number)
-
-Proof of Succinct Work algorithm difficulty target for this block.
-
-### Example
+## Components of a Block
 
 ```json
 {
@@ -73,78 +27,57 @@ Proof of Succinct Work algorithm difficulty target for this block.
 }
 ```
 
----
+The components of a block as provided are specific to the data structure provided by Aleo Explorer.
 
-## /getbestblock
+All components in a standard Aleo block are provided, in addition to possible helper parameters that accompany the primary data.
 
-The `/getbest` endpoint retrieves the latest canonical block.
+### Attributes
 
-```
-GET /block/getbest
-```
+#### `hash` (string)
 
-### Parameters
+Hash of all of the block header data within this attribute.
 
-No parameters.
+#### `height` (number)
 
-### Response:
+The height this current block is located at.
 
-Retrieves a block object.
+#### `canonical` (boolean)
 
-## /getbyheight
+A boolean value whether this block is currently in the longest chain.
 
-The `/getbyheight` endpoint retrieves a canonical block based on the given height (if one exists at that height).
+#### `previousBlockHash` (string)
 
-```
-POST /block/getbyheight
-```
+The hash of the previous block header.
 
-### Parameters
+#### `merkleRoot` (string)
 
-#### height <span style="color:red">required</span>
+Merkle root representing the transactions in the block.
 
-A `positive integer` value or the string `latest` is accepted, where the integer will return the block corresponding to that height and the string latest will return the latest canonical block.
+#### `pedersonMerkleRoot` (string)
 
-### Response:
+Merkle root representing the state of the block.
 
-Retrieves a block object.
+#### `time` (number)
 
-## /getbyheightrange
+Block timestamp is a Unix epoch time (UTC) when the miner started hashing the header (according to the miner and checked by every other miner).
 
-The `/getbyheightrange` endpoint retrieves a list of canonical blocks based on the given height range.
+#### `size` (number)
 
-```
-POST /block/getbyheightrange
-```
+The size in bytes of the current block (sum of the size of all transactions + the values listed within this object).
 
-### Parameters
+#### `nonce` (number)
 
-#### from <span style="color:red">required</span>
+Nonce for solving the PoSW puzzle.
 
-A `non negative integer` value indicating the start height to return blocks from.
+#### `proof` (string)
 
-#### to <span style="color:grey">optional</span>
+A succinct proof that attests to the transactions included in this block.
 
-A `positive integer` value or the string `latest` is accepted, where the integer will return all the canonical blocks up to that height and the string latest will return all the blocks up to the latest canonical block.
+#### `transactions` (Array of hashes (strings))
 
-### Response:
+A list of all the transactions included in this block.
 
-Retrieves a list of block objects block object.
+#### `difficultyTarget` (number)
 
-## /getbyhash
+Proof of Succinct Work algorithm difficulty target for this block.
 
-The `/getbyhash` endpoint retrieves a canonical block based on the given hash (if one exists at that hash).
-
-```
-POST /block/getbyhash
-```
-
-### Parameters
-
-#### hash <span style="color:red">required</span>
-
-A string value that represents a blockhash. This string can be either 64 or 66 characters long, if the string is 66 characters the first two characters should be `0x`.
-
-### Response:
-
-Retrieves a block object.

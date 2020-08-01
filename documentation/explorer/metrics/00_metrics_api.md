@@ -1,60 +1,8 @@
-# Metrics information API
+# Metrics API
 
-The Metric information api exposes one endpoints that allow the user to retrieve the cached state of metrics over a certain amount of blocks of the Aleo network.
+The metrics API provides endpoints to retrieve block and transaction data metrics on the Aleo testnet.
 
-## The metric object
-
-### Attributes
-
-#### totalBlocks (metric {value: number, unit: string, title: string})
-
-Number of canonical blocks on chain.
-
-#### timeLastBlock (metric {value: number, unit: string, title: string})
-
-Block timestamp is a Unix epoch time (UTC) when the miner started hashing the header (according to the miner and checked by every other miner) of the last block in the range.
-
-#### totalTransactions (metric {value: number, unit: string, title: string})
-
-Number of canonical transactions on chain.
-
-#### avgTransactionFee (metric {value: number, unit: string, title: string})
-
-Average of all canonical transaction fees in requested range.
-
-#### lastBlockReward (metric {value: number, unit: string, title: string})
-
-BlockReward of last block in requested range.
-
-#### nodesOnlineNow (metric {value: number, unit: string, title: string})
-
-Number of nodes online (best guess metric).
-
-#### avgBlockTime (metric {value: number, unit: string, title: string})
-
-Average of all canonical block times.
-
-#### snarksPerSecond (metric {value: number, unit: string, title: string})
-
-<todo>
-
-#### medianConfirmationTime (metric {value: number, unit: string, title: string})
-
-Median of all block times.
-
-#### transactionFeePerByte (metric {value: number, unit: string, title: string})
-
-Average amount of bytes per fee generating transaction.
-
-#### totalFeesPayedToMiners (metric {value: number, unit: string, title: string})
-
-The total amount of transaction fees paid to miners in requested range.
-
-#### avgNodesOnline (metric {value: number, unit: string, title: string})
-
-Average number of nodes online (best guess metric) in requested range.
-
-### Example
+## Components of a Metrics Object
 
 ```json
 {
@@ -122,49 +70,58 @@ Average number of nodes online (best guess metric) in requested range.
 }
 ```
 
----
-
-## /get
-
-The `/get` endpoint retrieves a metric based on the last sequence of blocks.
-
-```
-POST /metrics/get
-```
-
-### Parameters
-
-#### blocks <span style="color:red">required</span>
-
-A number value representing the amount of blocks, starting from the best block, to use to calculate the metrics.
-
-### Response:
-
-Retrieves a metric object.
-
----
-
-## The graphMetric object
-
 ### Attributes
 
-#### txCount (number)
+#### `totalBlocks` (metric {value: number, unit: string, title: string})
 
-Total amount of transactions, providing a fee, included in slice.
+Number of canonical blocks on chain.
 
-#### feeSum (number))
+#### `timeLastBlock` (metric {value: number, unit: string, title: string})
 
-Sum of transaction fees included in slice
+Block timestamp is a Unix epoch time (UTC) when the miner started hashing the header (according to the miner and checked by every other miner) of the last block in the range.
 
-#### start (number)
+#### `totalTransactions` (metric {value: number, unit: string, title: string})
 
-Block timestamp is a Unix epoch time (UTC) of first block included in slice
+Number of canonical transactions on chain.
 
-#### end (number)
+#### `avgTransactionFee` (metric {value: number, unit: string, title: string})
 
-Block timestamp is a Unix epoch time (UTC) of last block included in slice
+Average of all canonical transaction fees in requested range.
 
-### Example
+#### `lastBlockReward` (metric {value: number, unit: string, title: string})
+
+BlockReward of last block in requested range.
+
+#### `nodesOnlineNow` (metric {value: number, unit: string, title: string})
+
+Number of nodes online (best guess metric).
+
+#### `avgBlockTime` (metric {value: number, unit: string, title: string})
+
+Average of all canonical block times.
+
+#### `snarksPerSecond` (metric {value: number, unit: string, title: string})
+
+Number of proofs per second computed by miners of the network.
+
+#### `medianConfirmationTime` (metric {value: number, unit: string, title: string})
+
+Median of all block times.
+
+#### `transactionFeePerByte` (metric {value: number, unit: string, title: string})
+
+Average amount of bytes per fee generating transaction.
+
+#### `totalFeesPayedToMiners` (metric {value: number, unit: string, title: string})
+
+The total amount of transaction fees paid to miners in requested range.
+
+#### `avgNodesOnline` (metric {value: number, unit: string, title: string})
+
+Average number of nodes online (best guess metric) in requested range.
+
+
+## Components of a Graph Metrics Object
 
 ```json
 [
@@ -177,26 +134,20 @@ Block timestamp is a Unix epoch time (UTC) of last block included in slice
 ]
 ```
 
----
+### Attributes
 
-## /graph
+#### `txCount` (number)
 
-The `/graph` endpoint retrieves temporal data related to the amount of transactions and the sum of their fees.
+Total amount of transactions, providing a fee, included in slice.
 
-```
-POST /metrics/get
-```
+#### `feeSum` (number))
 
-### Parameters
+Sum of transaction fees included in slice
 
-#### interval
+#### `start` (number)
 
-A number value representing the amount of time in seconds for each slice.
+Block timestamp is a Unix epoch time (UTC) of first block included in slice
 
-#### amount
+#### `end` (number)
 
-A number value representing the amount of slices requested.
-
-### Response:
-
-Retrieves a graphMetric array of interval slices.
+Block timestamp is a Unix epoch time (UTC) of last block included in slice
