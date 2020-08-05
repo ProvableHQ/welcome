@@ -12,13 +12,13 @@ view key is used to decrypt account records, which are encrypted under the user'
 address enables users to interact with one another, sending and receiving records that encode values and application data.
 
 To protect user *assets* and *record data*, one should **never disclose their account private key** to any
-third parties. For real-world applications on Aleo, users should derive an [account prover key](#prover-key)
+third parties. For real-world applications on Aleo, users should derive an [account proving key](#account-proving-key)
 from their account private key to allow third parties to *trustlessly* run applications and generate transactions
 on a user's behalf.
 
-## Account Private Keys
+## Account Private Key
 
-Every Aleo account private key is constructed from a randomly-sampled **account seed**. This account seed is used to generate:
+An account private key is constructed from a randomly-sampled **account seed**. This account seed is used to generate:
 - a **secret key** for the account signature scheme,
 - a **pseudorandom function seed** for transaction serial numbers, and
 - a **commitment randomness** for the account commitment scheme.
@@ -29,22 +29,32 @@ Every Aleo account private key is constructed from a randomly-sampled **account 
 APrivateKey1b47dMA8f9GfXPsW9s16qWfiYYmWGAAcorK9RkaVpBeFA
 ```
 
-An account private key is formatted as a Base58 string, comprised of 56 characters.
+An account private key is formatted as a Base58 string, comprised of 58 characters.
 The account private key is encoded with a [private key prefix](#account-prefixes) that reads `APrivateKey1`, indicating
 that it is a private key and should not be shared with other users.
 
-### Prover Key
+## Account Proving Key
 
-To facilitate user interactions at scale with ease, users can derive an account prover key which allows a prover to
+To facilitate user interactions at scale with ease, users can derive an account proving key which allows a prover to
 trustlessly process applications and user transactions on the user's behalf.
 
-The account prover key is comprised of:
+The account proving key is comprised of:
 - a **public key** for the account signature scheme,
 - the **pseudorandom function seed** from the account private key, and
 - the **commitment randomness** from the account private key.
 
-While the account prover key does **not** allow the prover to arbitrarily spend assets or forge record data, it does allow the
+While the account proving key does **not** allow the prover to arbitrarily spend assets or forge record data, it does allow the
 prover to access and view account data. As such, users should provide this key only to authorized parties.
+
+### Proving Key Format
+
+```
+AProvingKey1z3f8dMA8f9GffPsP2s85qWfiYYmBWcccorK9RkaVpAAFB
+```
+
+An account proving key is formatted as a Base58 string, comprised of 58 characters.
+The account proving key is encoded with a [private key prefix](#account-prefixes) that reads `AProvingKey1`, indicating
+that it is a proving key and should only be shared with authorized parties.
 
 ## Account View Key
 
@@ -58,15 +68,13 @@ The account view key is comprised of:
 
 ### View Key Format
 
-<!-- TODO (howardwu): Fill in view key format. -->
-
 ```
-
+AViewKey1cVP45x3E1TxJFgiJqawy7w5WQDsUXWTbpWAXSXB1sDw8
 ```
 
 An account view key is formatted as a Base58 string, comprised of 56 characters.
 The account view key is encoded with a [view key prefix](#account-prefixes) that reads `APrivateKey1`, indicating
-that it is a private key and should not be shared with other users.
+that it is a private key and should only be shared with authorized parties.
 
 ## Account Address
 
@@ -88,20 +96,17 @@ The account address is encoded with an [address prefix](#account-prefixes) that 
 
 ### Account Prefixes
 
-<!-- TODO (howardwu): Fill in remaining prefixes. -->
-
-|             |  Type  |       Prefix      |
-|:-----------:|:------:|:-----------------:|
-| **Account Private Key** |  bytes | `[21, 38, 63, 229]` |
-| **Account Prover Key** |  bytes | `[]` | 
-| **Account View Key** | bytes | `[ 14, 138, 223, 204, 247, 224, 122 ]` |
-| **Account Address**   | string |       `aleo1`    |
-
+|                              |  Type  |   Human-Readable Prefix      |                 Prefix Bytes               |
+|:----------------------------:|:------:|:----------------------------:|:------------------------------------------:|
+| **Account Private Key**      | bytes  |  `APrivateKey1`              | `[21, 38, 63, 229]` |
+| **Account Proving Key**      | bytes  |  `AProvingKey1`              | `[ 109, 249, 98, 224, 36, 15, 213, 187, 79, 190 ]` | 
+| **Account View Key**         | bytes  |  `AViewKey1`                 | `[ 14, 138, 223, 204, 247, 224, 122 ]` |
+| **Account Address**          | string |  `aleo1`                     |      `aleo1`    |
 
 ### Offline Accounts
 
 In many instances such as enterprise settings, it is advisable to handle sensitive keys and data on isolated, offline machines.
-An Aleo account can be created on an offline machine and available for immediate use. In conjunction with account prover keys,
+An Aleo account can be created on an offline machine and available for immediate use. In conjunction with account proving keys,
 a user can ensure their private key remains offline even for creating transactions.
 
 While no solution is perfect, it is advisable to create a new Aleo account on a disconnected device to minimize the risk of
