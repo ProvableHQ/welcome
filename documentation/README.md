@@ -21,8 +21,8 @@
 - [Blocks](./aleo/concepts/03_blocks.md)
 - [Consensus](./aleo/concepts/04_consensus.md)
 - [Mining on Aleo](./aleo/concepts/05_mining.md)
-- [Parameters](./aleo/concepts/06_parameters.md)
-- [Glossary](./aleo/concepts/07_glossary.md)
+- [Parameters](aleo/concepts/05_parameters.md)
+- [Glossary](aleo/concepts/06_glossary.md)
 
 
 ## Developer Preview I

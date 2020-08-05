@@ -8,7 +8,7 @@ This section assumes that you have knowledge of [records](../../aleo/concepts/01
 
 ## Leo Record Runtime
 
-Each Leo `.leo` file is compiled into [program](../../aleo/concepts/07_glossary.md#program).
+Each Leo `.leo` file is compiled into [program](../../aleo/concepts/06_glossary.md#program).
 Each program lives in a [record](../../aleo/concepts/01_records.md). Each record lives in a [transaction](../../aleo/concepts/02_transactions.md).
 An Aleo transaction spends two old records: `old_record_0`, `old_record_1` and creates two new records: `new_record_0`, `new_record_1`.
 
@@ -36,7 +36,7 @@ To ensure the accuracy of input and output register state, a hash of each is sto
 ## Committing to Register Data.
 
 Register values are hashed and included in the [local data commitment](../../aleo/concepts/02_transactions.md#local-data-commitment).
-The Leo runtime calculates the [record commitment](../../aleo/concepts/07_glossary.md#record-commitment) as well as 
+The Leo runtime calculates the [record commitment](../../aleo/concepts/06_glossary.md#record-commitment) as well as 
 the local data commitment to ensure that all record data is included in the [local data root](../../aleo/concepts/02_transactions.md#ledger-digest).
 
 ## `.in` and `.out` files

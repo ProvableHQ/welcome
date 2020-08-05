@@ -5,7 +5,7 @@ sidebar_label: Blocks
 ---
 
 A **block** is a fundamental data structure for organizing Aleo [transactions](02_transactions.md) by time.
-Blocks are generated through a process called [mining](05_mining.md) and blocks accepted by the network
+Blocks are generated through a process called [mining](04_consensus.md#mining-on-aleo) and blocks accepted by the network
 denote the official state in the network.
 
 ## Components of a Block
@@ -15,7 +15,7 @@ An Aleo block is serialized in the following format:
 |     Parameter    |                       Type                       | Size (bytes) |
 |:----------------:|:------------------------------------------------:|:------------:|
 |     `header`     |                    BlockHeader                   |      503     |
-| num transactions | [variable_length_integer](07_glossary.md#variable-length-integer)|      1+      |
+| num transactions | [variable_length_integer](06_glossary.md#variable-length-integer)|      1+      |
 |  `transactions`  |                array[Transaction]                |       ?      |
 
 #### Block Header

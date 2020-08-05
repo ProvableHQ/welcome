@@ -123,7 +123,7 @@ of the account view key, the account commitment output should be representable i
 
 ### Create an Account
 
-Given global instantiated Aleo [parameters and algorithms](06_parameters.md). 
+Given global instantiated Aleo [parameters and algorithms](05_parameters.md). 
 
 #### Generate a Private Key 
 
