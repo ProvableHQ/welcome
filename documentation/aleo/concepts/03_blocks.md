@@ -1,10 +1,8 @@
 ---
 id: blocks
-title: Aleo Blocks
+title: Blocks
 sidebar_label: Blocks
 ---
-
-# Block 
 
 A *block* is a fundamental data structure for organizing Aleo [transactions](02_transactions.md) by time.
 Blocks are generated through a process called [mining](05_mining.md) and blocks accepted by the network
