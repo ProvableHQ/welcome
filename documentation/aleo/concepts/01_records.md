@@ -19,8 +19,8 @@ An Aleo record is serialized in the following format:
 |           `owner`           |                      address                      |      32      |
 |           `value`           |                        u64                        |       8      |
 |          `payload`          |                       bytes                       |      32      |
-|    `birth_program_id`     |                       bytes                       |      48      |
-|    `death_program_id`     |                       bytes                       |      48      |
+|    `birth_program_id`       |                       bytes                       |      48      |
+|    `death_program_id`       |                       bytes                       |      48      |
 |    `serial_number_nonce`    |                       bytes                       |      32      |
 |   `commitment_randomness`   |                       bytes                       |      32      |
 

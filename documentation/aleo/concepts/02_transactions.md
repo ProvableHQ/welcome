@@ -14,7 +14,7 @@ An Aleo transaction is serialized in the following format:
 |:-----------------------:|:------------------------------------------------:|:------------:|
 |   `old_serial_numbers`  |                     bytes                        |       64     |
 |    `new_commitments`    |                     bytes                        |       64     |
-|  `program_commitment` |                     bytes                        |       32     |
+|  `program_commitment`   |                     bytes                        |       32     |
 |    `local_data_root`    |                     bytes                        |       32     |
 |     `value_balance`     |                      i64                         |        8     |
 |       `memorandum`      |                     bytes                        |       32     |

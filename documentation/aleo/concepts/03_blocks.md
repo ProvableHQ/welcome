@@ -4,19 +4,19 @@ title: Blocks
 sidebar_label: Blocks
 ---
 
-A **block** is a fundamental data structure for organizing Aleo [transactions](02_transactions.md) by time.
-Blocks are generated through a process called [mining](04_consensus.md#mining-on-aleo) and blocks accepted by the network
-denote the official state in the network.
+A **block** is a fundamental data structure for organizing Aleo [transactions](02_transactions.md) over time.
+Blocks are produced through a process called [mining](04_consensus.md#mining-on-aleo) and included as
+permanent history on Aleo.
 
 ## Components of a Block
 
 An Aleo block is serialized in the following format:
 
-|     Parameter    |                       Type                       | Size (bytes) |
-|:----------------:|:------------------------------------------------:|:------------:|
-|     `header`     |                    BlockHeader                   |      503     |
-| num transactions | [variable_length_integer](06_glossary.md#variable-length-integer)|      1+      |
-|  `transactions`  |                array[Transaction]                |       ?      |
+|     Parameter    |                                Type                                | Size (bytes) |
+|:----------------:|:------------------------------------------------------------------:|:------------:|
+|     `header`     |   [Block Header](#components-of-a-block-header)                    |      503     |
+|`num_transactions`| [variable_length_integer](06_glossary.md#variable-length-integer)  |  `variable`  |
+|  `transactions`  | \[[Transaction](02_transactions.md#components-of-a-transaction)\]  |  `variable`  |
 
 #### Block Header
 
@@ -36,7 +36,7 @@ An Aleo block header is serialized in the following format:
 |    `previous_block_hash`    |   bytes  |      32      |
 |      `merkle_root_hash`     |   bytes  |      32      |
 | `pedersen_merkle_root_hash` |   bytes  |      32      |
-|           `proof`           | variable |      387     |
+|           `proof`           |   bytes  |      387     |
 |            `time`           |    i64   |       8      |
 |     `difficulty_target`     |    u64   |       8      |
 |           `nonce`           |    u32   |       4      |
