@@ -20,8 +20,8 @@
 - [Transactions](./aleo/concepts/02_transactions.md)
 - [Blocks](./aleo/concepts/03_blocks.md)
 - [Consensus](./aleo/concepts/04_consensus.md)
-- [Parameters](aleo/concepts/05_parameters.md)
-- [Glossary](aleo/concepts/06_glossary.md)
+- [Parameters](./aleo/concepts/05_parameters.md)
+- [Glossary](./aleo/concepts/06_glossary.md)
 
 
 ## Developer Preview I
