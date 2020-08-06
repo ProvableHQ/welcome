@@ -23,11 +23,11 @@ to compile, execute, and finalize its state autonomously.
 ### Chapter 1: Concepts
 
 - [Accounts](./aleo/concepts/00_accounts.md)
-- [Records](./aleo/concepts/01_records.md)
-- [Transactions](./aleo/concepts/02_transactions.md)
-- [Blocks](./aleo/concepts/03_blocks.md)
-- [Consensus](./aleo/concepts/04_consensus.md)
-- [Parameters](./aleo/concepts/05_parameters.md)
+- [Programs](./aleo/concepts/01_programs.md)
+- [Records](./aleo/concepts/02_records.md)
+- [Transactions](./aleo/concepts/03_transactions.md)
+- [Blocks](./aleo/concepts/04_blocks.md)
+- [Consensus](./aleo/concepts/05_consensus.md)
 - [Glossary](./aleo/concepts/06_glossary.md)
 
 
