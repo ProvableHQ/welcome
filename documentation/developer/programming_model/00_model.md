@@ -4,12 +4,12 @@ title: The Leo Programming Model
 sidebar_label: Model
 ---
 
-This section assumes that you have knowledge of [records](../../aleo/concepts/01_records.md) and their use in the [Aleo Protocol](../../aleo/concepts/00_accounts.md).
+This section assumes that you have knowledge of [records](../../aleo/concepts/02_records.md) and their use in the [Aleo Protocol](../../aleo/concepts/00_accounts.md).
 
 ## Leo Record Runtime
 
 Each Leo `.leo` file is compiled into [program](../../aleo/concepts/06_glossary.md#program).
-Each program lives in a [record](../../aleo/concepts/01_records.md). Each record lives in a [transaction](../../aleo/concepts/02_transactions.md).
+Each program lives in a [record](../../aleo/concepts/02_records.md). Each record lives in a [transaction](../../aleo/concepts/03_transactions.md).
 An Aleo transaction spends two old records: `old_record_0`, `old_record_1` and creates two new records: `new_record_0`, `new_record_1`.
 
 ## Registers
@@ -35,9 +35,9 @@ To ensure the accuracy of input and output register state, a hash of each is sto
 
 ## Committing to Register Data.
 
-Register values are hashed and included in the [local data commitment](../../aleo/concepts/02_transactions.md#local-data-commitment).
+Register values are hashed and included in the [local data commitment](../../aleo/concepts/03_transactions.md#local-data-commitment).
 The Leo runtime calculates the [record commitment](../../aleo/concepts/06_glossary.md#record-commitment) as well as 
-the local data commitment to ensure that all record data is included in the [local data root](../../aleo/concepts/02_transactions.md#ledger-digest).
+the local data commitment to ensure that all record data is included in the [local data root](../../aleo/concepts/03_transactions.md#ledger-digest).
 
 ## `.in` and `.out` files
 
@@ -92,7 +92,7 @@ To see how to load register files into tests, checkout [**Writing Tests**](../la
 ## State
 
 Leo files can access record and leaf state passed into the state file. 
-For example, it could be necessary for Leo programs to access the [owner](../../aleo/concepts/01_records.md#owner), [value](../../aleo/concepts/01_records.md#value), or other private fields within a [record](../../aleo/concepts/01_records.md). 
+For example, it could be necessary for Leo programs to access the [owner](../../aleo/concepts/02_records.md#owner), [value](../../aleo/concepts/02_records.md#value), or other private fields within a [record](../../aleo/concepts/02_records.md). 
 This context is included in the state `.state` file.
 
 ## `.state` file
@@ -133,18 +133,18 @@ Developers **cannot** define public variables outside of the state `leaf_index` 
 
 ### Public State Variables
 
-The `[state]` section defines the [local data root](../../aleo/concepts/02_transactions.md#local-data-root) and 
-the current record's index (0 - 3) within the commitment (4 records in a [transaction](../../aleo/concepts/02_transactions.md) currently).
+The `[state]` section defines the [local data root](../../aleo/concepts/03_transactions.md#local-data-root) and 
+the current record's index (0 - 3) within the commitment (4 records in a [transaction](../../aleo/concepts/03_transactions.md) currently).
 The state section must be defined below the public `[[public]]` section.
 
 ### Record Variables
 
-The `[record]` section defines [record](../../aleo/concepts/01_records.md) information. All record variables are private 
+The `[record]` section defines [record](../../aleo/concepts/02_records.md) information. All record variables are private 
 so the record section must be defined below the private `[[private]]` section.
 
 ### Private State Leaf Variables
 
-The `[state_leaf]` section defines state leaf transition information that is encoded in a [transaction](../../aleo/concepts/02_transactions.md).
+The `[state_leaf]` section defines state leaf transition information that is encoded in a [transaction](../../aleo/concepts/03_transactions.md).
 The state leaf section must be defined below the private `[[private]]` section.
 
 :::info

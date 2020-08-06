@@ -7,7 +7,7 @@ sidebar_label: Records
 A **record** is a fundamental data structure for encoding user assets and application state.
 
 Each account record contains information that specifies the record owner, its stored value, and its application state. 
-An Aleo account can create a [transactions](02_transactions.md) to consume a record and produce a new record in its place.
+An Aleo account can create a [transactions](03_transactions.md) to consume a record and produce a new record in its place.
 Records on Aleo are encrypted to the record owner address, ensuring that all records on Aleo are fully private.
 
 ## Components of a Record

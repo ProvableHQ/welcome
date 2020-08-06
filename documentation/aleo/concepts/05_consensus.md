@@ -13,9 +13,9 @@ hardware-accelerated SNARKs.
 
 ## Mining on Aleo
 
-Mining is a permissionless process of producing new [blocks](03_blocks.md) for inclusion on Aleo.
-Miners produce blocks by processing pending [transactions](02_transactions.md) and computing a valid
-nonce for solving a [Proof of Succinct Work](04_consensus.md#proof-of-succinct-work) puzzle.
+Mining is a permissionless process of producing new [blocks](04_blocks.md) for inclusion on Aleo.
+Miners produce blocks by processing pending [transactions](03_transactions.md) and computing a valid
+nonce for solving a [Proof of Succinct Work](05_consensus.md#proof-of-succinct-work) puzzle.
 
 On success in finding a valid block, miners are compensated with a [block reward](#block-rewards) for their contribution. To
 ensure Aleo continues to advance, a difficulty rate is dynamically adjusted to reflect the number

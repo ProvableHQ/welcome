@@ -4,8 +4,8 @@ title: Blocks
 sidebar_label: Blocks
 ---
 
-A **block** is a fundamental data structure for organizing Aleo [transactions](02_transactions.md) over time.
-Blocks are produced through a process called [mining](04_consensus.md#mining-on-aleo) and included as
+A **block** is a fundamental data structure for organizing Aleo [transactions](03_transactions.md) over time.
+Blocks are produced through a process called [mining](05_consensus.md#mining-on-aleo) and included as
 permanent history on Aleo.
 
 ## Components of a Block
@@ -16,15 +16,17 @@ An Aleo block is serialized in the following format:
 |:----------------:|:------------------------------------------------------------------:|:------------:|
 |     `header`     |   [Block Header](#components-of-a-block-header)                    |      503     |
 |`num_transactions`| [variable_length_integer](06_glossary.md#variable-length-integer)  |  `variable`  |
-|  `transactions`  | \[[Transaction](02_transactions.md#components-of-a-transaction)\]  |  `variable`  |
+|  `transactions`  | \[[Transaction](03_transactions.md#components-of-a-transaction)\]  |  `variable`  |
 
 #### Block Header
 
-The [block header](#block-header) is the information describing the block.
+The **block header** contains components that summarize the state of the specified block,
+as well as the state of the ledger at this point in history. See the [components of a block header](#components-of-a-block-header)
+for more details.
 
 #### Transactions
 
-The transactions included in the block.
+The **transactions** are a list of all transactions that are included in the specified block.
 
 
 ## Components of a Block Header
@@ -37,34 +39,35 @@ An Aleo block header is serialized in the following format:
 |      `merkle_root_hash`     |   bytes  |      32      |
 | `pedersen_merkle_root_hash` |   bytes  |      32      |
 |           `proof`           |   bytes  |      387     |
-|            `time`           |    i64   |       8      |
+|         `timestamp`         |    i64   |       8      |
 |     `difficulty_target`     |    u64   |       8      |
 |           `nonce`           |    u32   |       4      |
 
  
 #### Previous Block Hash
  
-The block hash of the parent block.
+The **previous block hash** is the block hash of the parent block.
  
 #### Merkle Root Hash
 
-The Merkle root representing the transactions in the block.
+The **Merkle root hash** represents the root hash of a Merkle tree of the transactions in the specified block.
  
 #### Pedersen Merkle Root Hash
 
-The Merkle root of the transactions in the block using a Pedersen hash.
+The **Pedersen Merkle root hash** represents the root hash of a Merkle tree of the transactions in the specified block, using a Pedersen hash.
  
 #### Proof of Succinct Work
  
-The Proof of Succient Work used to mine the block.
+The *proof* is a valid Proof of Succient Work for mining the specified block.
  
 #### Timestamp
 
-The block timestamp is a Unix epoch time (UTC) when the miner started hashing the header (according to the miner).
+The **timestamp** is encoded as the Unix epoch time (UTC) when the miner started hashing the header.
 
 #### Difficulty Target
 
-The PoSW difficulty target for this block.
+The **difficulty target** reflects the number of proofs per second being produced by miners on Aleo, and is used
+to dynamically set the difficulty of mining on Aleo.
  
 #### Nonce
 

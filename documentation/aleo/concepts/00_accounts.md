@@ -59,7 +59,7 @@ that it is a proving key and should only be shared with authorized parties.
 ## Account View Key
 
 An Aleo account view key is derived from an account private key and enables users to decrypt their
-[records](02_transactions.md#record-ciphertexts) from the global ledger.
+[records](03_transactions.md#record-ciphertexts) from the global ledger.
 As account view keys are able to access every record in a user's account, this key can be used by
 third-party auditors to verify the complete history of an account.
 
@@ -98,7 +98,7 @@ The account address is encoded with an [address prefix](#account-prefixes) that 
 
 |                              |  Type  |   Human-Readable Prefix      |                 Prefix Bytes               |
 |:----------------------------:|:------:|:----------------------------:|:------------------------------------------:|
-| **Account Private Key**      | bytes  |  `APrivateKey1`              | `[21, 38, 63, 229]` |
+| **Account Private Key**      | bytes  |  `APrivateKey1`              | `[ 127, 134, 189, 116, 210, 221, 210, 137, 144 ]` |
 | **Account Proving Key**      | bytes  |  `AProvingKey1`              | `[ 109, 249, 98, 224, 36, 15, 213, 187, 79, 190 ]` | 
 | **Account View Key**         | bytes  |  `AViewKey1`                 | `[ 14, 138, 223, 204, 247, 224, 122 ]` |
 | **Account Address**          | string |  `aleo1`                     |      `aleo1`    |
@@ -123,7 +123,7 @@ of the account view key, the account commitment output should be representable i
 
 ### Create an Account
 
-Given global instantiated Aleo [parameters and algorithms](05_parameters.md). 
+Given global instantiated Aleo parameters and subroutines.
 
 #### Generate a Private Key 
 

@@ -1,5 +1,0 @@
----
-id: parameters
-title: Parameters
----
-
