@@ -6,7 +6,7 @@ sidebar_label: Overview
 
 **Aleo Testnet I** is an experimental network for developers to begin building and testing applications on Aleo.
 Testnet I is used by the core team for designing and evaluating new circuits, planning and staging network upgrades,
-as well as running experimental features for inclusion on mainnet.
+and running experimental features for inclusion on mainnet.
 
 This testnet is **not** ready for production use and will undergo thorough audit and testing before reaching production.
 
