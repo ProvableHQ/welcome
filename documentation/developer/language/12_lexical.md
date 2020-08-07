@@ -21,6 +21,7 @@ This will comment out all text inside `...`. Nested comments are not supported.
 
 Identifiers in Leo must start with an alphabetical character.
 The first character can be followed by any number of alphanumerical or `_` characters.
+These are all ASCII characters; there is no support for (non-ASCII) Unicode characters.
 An identifier that is equal to a keyword will result in a syntax error.
 Examples of identifiers include:
 
