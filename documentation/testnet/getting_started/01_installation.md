@@ -77,7 +77,7 @@ OPTIONS:
         --mempool-interval <mempool-interval>    Specify the frequency in seconds x 10 the node should fetch the mempool from sync node
         --min-peers <min-peers>                  Specify the minimum number of peers the node should connect to
         --miner-address <miner-address>          Specify the address that will receive miner rewards
-        --network <network-id>                   Run the node on a specified network id (default = 0)
+        --network <network-id>                   Run the node on a specified network (default = 0)
     -d, --path <path>                            Specify the node's storage path
     -p, --port <port>                            Run the node on a specified port
         --rpc-password <rpc-password>            Specify a password for rpc authentication

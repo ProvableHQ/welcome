@@ -25,5 +25,5 @@ Currently, Aleo has reserved the use of network id 0 for **Aleo Mainnet** and 1 
 ### Ports
 
 By default a snarkOS node is exposed at port `4130` + their network ID. For example, mainnet nodes are exposed at 
-port 4130, testnet 1 nodes are exposed at port 4131, and so forth. The uniqueness of ports is an additional safeguard 
+port `4130`, testnet 1 nodes are exposed at port `4131`, and so forth. The uniqueness of ports is an additional safeguard 
 for node operators to connect to nodes on their particular network and run multiple networks on the same IP.
