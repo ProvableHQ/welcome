@@ -138,8 +138,9 @@
 
 - [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
 - [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
-- [fetchrecordcommitments](./autogen/testnet/rpc/private_endpoints/02_fetchrecordcommitments.md)
-- [getrawrecord](./autogen/testnet/rpc/private_endpoints/03_getrawrecord.md)
+- [getrawrecord](./autogen/testnet/rpc/private_endpoints/02_getrawrecord.md)
+- [getrecordcommitmentcount](./autogen/testnet/rpc/private_endpoints/03_getrecordcommitmentcount.md)
+- [getrecordcommitments](./autogen/testnet/rpc/private_endpoints/04_getrecordcommitments.md)
 
 
 ## Explorer I
