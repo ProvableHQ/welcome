@@ -26,6 +26,16 @@ proofs per second that miners on Aleo contribute.
 A block reward is the total amount of Aleo credits rewarded to the address that mined a block.
 This value is the base block reward in addition to the fees paid by all transactions included in the block.
 
+|      Block Number     |   Reward  |
+|:---------------------:|:---------:|
+| 0 - 3,503,999         | 150 ALEO  |
+| 3,504,000 - 7,007,999 | 75 ALEO   |
+| 7,008,000 - ∞         | 37.5 ALEO |
+
+Initially, each Aleo block reward is worth 150 Aleo credits. This block reward is halved after every 3,504,000 blocks, which
+is approximately four years at an estimated 100 blocks per hour. After two iterations of halving the block reward, it will
+remain at 37.5 for perpetuity. 
+
 ### Block Difficulty and Block Times
 
 The block time is the amount of time it takes for the network to produce a valid block.

@@ -31,7 +31,7 @@ An Aleo transaction is serialized in the following format:
  e8a82df9d2e92758f50e52832a0b635718c253ce60962e993afebca9a726de91]
 ```
 
-The **old serial numbers** are the [serial numbers](06_glossary.md#record-serial-number) for corresponding records
+The **old serial numbers** are the [serial numbers](07_glossary.md#record-serial-number) for corresponding records
 that were consumed by the transaction.
 
 ### New Commitments
@@ -41,7 +41,7 @@ that were consumed by the transaction.
  2854be536b8ba0feafd10ae0725c1f920aec6b18740607321660b872feac4700]
 ```
 
-The **new commitments** are the [commitments](06_glossary.md#record-commitment) for corresponding records that were produced by the transaction.
+The **new commitments** are the [commitments](07_glossary.md#record-commitment) for corresponding records that were produced by the transaction.
 
 ### Program Commitment
 
@@ -91,7 +91,7 @@ The **network ID** indicates the network that the transaction is included in. Fo
  5b74266ae4566ca630c0ce2df1b9bec84c788c6635a40f80e1761dc1bfb0c600f720ea0c6d5e9b8a579e6f00ad6ccfdf916b96b1189c1ff470bfb77d10513703]
 ```
 
-The [randomized signatures](06_glossary.md#randomized-signature) used by the record spenders to allow for authorized delegation of transaction generation.
+The [randomized signatures](07_glossary.md#randomized-signature) used by the record spenders to allow for authorized delegation of transaction generation.
 
 ### Ledger Digest
 
@@ -129,7 +129,7 @@ The steps to create a transaction are as follows:
 3. Generate the program commitment
 4. Generate the local data commitment
 5. Generate the transaction signatures
-6. Generate the ledger digest and [ledger membership witnesses](06_glossary.md#ledger-membership-witness) for the input record commitments 
+6. Generate the ledger digest and [ledger membership witnesses](07_glossary.md#ledger-membership-witness) for the input record commitments 
 7. Generate the inner SNARK proof
 8. Generate the program SNARK proofs
 9. Generate the transaction proof
