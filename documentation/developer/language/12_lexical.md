@@ -46,6 +46,7 @@ for
 if
 import
 in
+input
 let
 mut
 return
