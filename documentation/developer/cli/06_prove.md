@@ -1,12 +1,12 @@
 ---
 id: prove
-title: Generate a Proof
+title: Execute the Program
 sidebar_label: leo prove
 ---
 
 ### `leo prove`
 
-To execute the program and produce an execution proof, run:
+To execute your Leo program and produce a program proof, run:
 ```bash
 leo prove
 ```

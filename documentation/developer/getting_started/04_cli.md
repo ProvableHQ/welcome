@@ -81,7 +81,7 @@ This command verifies the proof `hello_world.proof` using the verifying key `hel
 Leo was designed with simplicity in mind. 
 
 The `leo run` command will attempt to verify a proof only if all previous steps completed successfully.
-Under the hood, the Leo [CLI](../cli/09_run.md) will check for existing `.sum`, `.lpk`, `.lvk`, or `.proof` files 
+Under the hood, the Leo [CLI](../cli/07_run.md) will check for existing `.sum`, `.lpk`, `.lvk`, or `.proof` files 
 in the build directory before running each command. This ensures that we don't run unnecessary commands.
 
 ## The Leo Language

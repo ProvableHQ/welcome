@@ -105,7 +105,7 @@ As expected, the test now fails. The console output tells us that the constraint
 
 Under the hood, the compiler executes the test in two parts. First, the test function is compiled to check for syntax
 errors. Second, the circuit is run. Since test functions do not have input values, we can simply check to see if the circuit's
-constraint system is satisfied instead of generating and verifying a full proof.
+constraint system is not satisfied instead of generating and verifying a full proof.
 
 ### Failing Test Compilation 
 

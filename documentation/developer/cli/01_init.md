@@ -6,7 +6,7 @@ sidebar_label: leo init
 
 ## `leo init`
 
-To initialize a Leo project in an existing directory, run:
+To initialize a Leo package in an existing directory, run:
 ```bash
 leo init
 ```

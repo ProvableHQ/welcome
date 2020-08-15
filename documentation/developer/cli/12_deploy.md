@@ -1,6 +1,6 @@
 ---
 id: deploy
-title: Deploy
+title: Deploy to Aleo
 sidebar_label: leo deploy
 ---
 

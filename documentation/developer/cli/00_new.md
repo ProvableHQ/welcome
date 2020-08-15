@@ -22,8 +22,6 @@ package_name/
   └── main.leo # Your program file
 ```
 
-
-
 ### Optional Flags
 ```bash
 leo new {$Name} --bin
