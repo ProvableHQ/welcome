@@ -16,10 +16,3 @@ leo  Running 2 tests
 leo  test language::expect_pass compiled. Constraint system satisfied: true
 leo  test language::expect_fail errored: Assertion 1u8 == 0u8 failed
 ```
-
-### `leo clean`
-
-To remove all files in the `build/` folder, run:
-```bash
-leo clean
-```

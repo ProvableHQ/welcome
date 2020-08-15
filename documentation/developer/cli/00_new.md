@@ -1,7 +1,7 @@
 ---
 id: new
 title: Create a Package
-sidebar_label: leo new / init
+sidebar_label: leo new
 ---
 
 ## `leo new`
@@ -39,22 +39,4 @@ package_name/
 ├── Leo.toml # Your program manifest
 └── src/    
   └── lib.leo # Your program library
-```
-
-
-## `leo init`
-
-To initialize a project in an existing directory, run:
-```bash
-leo init
-```
-This will initialize the current directory with the same package directory setup.
-
-### Optional Flags
-`leo init` supports the same flags as `leo new`
-```bash
-leo init --bin
-```
-```bash
-leo init --lib
 ```
