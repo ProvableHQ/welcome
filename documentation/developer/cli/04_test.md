@@ -10,6 +10,7 @@ To execute unit tests on your program, run:
 ```bash
 leo test
 ```
+
 The results of the test compilation and the constraint system will be printed:
 ```bash
 leo  Running 2 tests

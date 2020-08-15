@@ -5,7 +5,7 @@ sidebar_label: leo add
 ---
 
 :::caution
-Warning! This feature is still in development and is unstable.
+This feature is not standardized and currently unstable.
 :::
 
 ### `leo add`

@@ -5,7 +5,7 @@ sidebar_label: leo login
 ---
 
 :::caution
-Warning! This feature is still in development and is unstable.
+This feature is not standardized and currently unstable.
 :::
 
 To use private packages and publish to Aleo Package Manager, start by authenticating with:

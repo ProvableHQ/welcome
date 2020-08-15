@@ -5,7 +5,7 @@ sidebar_label: leo deploy
 ---
 
 :::caution
-Warning! This feature is still in development and is not yet supported.
+This feature is not standardized and currently unstable.
 :::
 
 To deploy your program to Aleo, run:
