@@ -70,14 +70,19 @@ to compile, execute, and finalize its state autonomously.
 ### Chapter 5: CLI
 
 - [Create a Package](./developer/cli/00_new.md)
-- [Build a Package](./developer/cli/01_build.md)
-- [Test a Package](./developer/cli/02_test.md)
-- [Perform the Program Setup](./developer/cli/03_setup.md)
-- [Generate a Proof](./developer/cli/04_prove.md)
-- [Verify the Program](./developer/cli/05_run.md)
-- [Login to Your Aleo Account](./developer/cli/06_login.md)
-- [Publish a Package to APM](./developer/cli/07_publish.md)
-- [Deploy](./developer/cli/08_deploy.md)
+- [Initialize a Package](./developer/cli/01_init.md)
+- [Build a Package](./developer/cli/02_build.md)
+- [Auto-Compile Your Program](./developer/cli/03_watch.md)
+- [Test a Package](./developer/cli/04_test.md)
+- [Import a Package](./developer/cli/05_add.md)
+- [Remove a Package](./developer/cli/06_remove.md)
+- [Perform the Program Setup](./developer/cli/07_setup.md)
+- [Generate a Proof](./developer/cli/08_prove.md)
+- [Verify the Program](./developer/cli/09_run.md)
+- [Login to Your Aleo Account](./developer/cli/10_login.md)
+- [Publish a Package to APM](./developer/cli/11_publish.md)
+- [Deploy](./developer/cli/12_deploy.md)
+- [Clean Your Workspace](./developer/cli/13_clean.md)
 
 
 ### Chapter 6: Additional Material
