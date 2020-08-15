@@ -28,7 +28,7 @@
 
 ### Chapter 2: Hello Leo!
 
-- [Leo Language Documentation](./developer/getting_started/00_overview.md)
+- [The Leo Programming Language](./developer/getting_started/00_overview.md)
 - [Installation](./developer/getting_started/01_installation.md)
 - [Hello World in Leo](./developer/getting_started/02_hello_world.md)
 - [File Syntax](./developer/getting_started/03_syntax.md)
@@ -38,7 +38,7 @@
 
 ### Chapter 3: Language
 
-- [Layout of a Leo File](./developer/language/00_layout.md)
+- [Layout of a Leo Program](./developer/language/00_layout.md)
 - [Defining Variables](./developer/language/01_variables.md)
 - [Data Types](./developer/language/02_types.md)
 - [Arrays](./developer/language/03_arrays.md)
