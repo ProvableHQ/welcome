@@ -1,8 +1,12 @@
 ---
-id: test
+id: remove
 title: Remove a Package
 sidebar_label: leo remove
 ---
+
+:::caution
+Warning! This feature is still in development and is unstable.
+:::
 
 ### `leo remove`
 

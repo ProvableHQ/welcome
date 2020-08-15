@@ -5,7 +5,7 @@ sidebar_label: leo publish
 ---
 
 :::caution
-Warning! This feature is still in development and is not yet supported.
+Warning! This feature is still in development and is unstable.
 :::
 
 To package your program as a gadget and publish it online, run:

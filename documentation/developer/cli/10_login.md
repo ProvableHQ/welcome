@@ -5,7 +5,7 @@ sidebar_label: leo login
 ---
 
 :::caution
-Warning! This feature is still in development and is not yet supported.
+Warning! This feature is still in development and is unstable.
 :::
 
 To use remote compilation features, start by authentication with:

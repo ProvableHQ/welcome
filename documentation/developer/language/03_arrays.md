@@ -7,7 +7,7 @@ Leo supports static arrays with fixed size.
 **Dynamic arrays do not exist in Leo**. 
 You cannot change the values of an array once they are initialized.
 
-### Array type
+### Array Type
 The array type specifies the type and number of elements being stored.
 
 #### Syntax:
@@ -18,7 +18,7 @@ The array type specifies the type and number of elements being stored.
 u32[3]
 ```
 
-### Array expression
+### Array Expression
 Create an array with brackets `[]`.
 
 #### Syntax:
@@ -29,7 +29,7 @@ Create an array with brackets `[]`.
 [1, 2, 3]
 ```
 
-### Array initializer
+### Array Initializer
 Create an array of the same element with size `size`.
 
 #### Syntax:
@@ -37,7 +37,7 @@ Create an array of the same element with size `size`.
 
 #### Example:
 ```leo title="Array that stores values 1, 1, 1 with type u32"
-[1u32; 3]]
+[1u32; 3]
 ```
 
 ### Array Indexing
@@ -117,9 +117,9 @@ function main() -> u32[2] {
 }
 ```
 
-### Multidimensional Arrays
+### Multi-dimensional Arrays
 
-Leo supports multidimensional arrays of primitive values.
+Leo supports multi-dimensional arrays of primitive values.
 
 ```leo
 function main() -> u32[3][2] {
@@ -132,13 +132,13 @@ function main() -> u32[3][2] {
 }
 ```
 
-#### Multidimensional Array Type
-The explicit type for a multidimensional array is written: 
+#### Multi-dimensional Array Type
+The explicit type for a multi-dimensional array is written: 
 
 `data_type[1st dimension][2nd dimension]..[Nth dimension]`
 
-#### Multidimensional Array Indexing
-To access an element of a multidimensional array:
+#### Multi-dimensional Array Indexing
+To access an element of a multi-dimensional array:
 
 `name[Nth dimension access]..[2nd dimension access][1st dimension access]`
 

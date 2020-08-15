@@ -1,5 +1,5 @@
 ---
-id: publish
+id: clean
 title: Clean Your Workspace
 sidebar_label: leo clean
 ---

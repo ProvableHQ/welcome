@@ -1,13 +1,8 @@
 ---
 id: overview
-title: Leo Language Documentation
+title: The Leo Programming Language
 sidebar_label: Overview
 ---
 
-Welcome to the Leo language. A simple, easy-to-use programming language for writing apps on Aleo.
-
-### Where do I start?
-[install leo](01_installation.md)
-
-### Show me the source code
-Go to the [GitHub Repository](https://github.com/AleoHQ/leo)
+Welcome to the Leo programming language. Leo is a functional, statically-typed programming language built
+for writing private applications.

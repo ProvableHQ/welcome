@@ -1,6 +1,6 @@
 ---
 id: layout
-title: Layout of a Leo File
+title: Layout of a Leo Program
 ---
 
 Leo files have four core parts:

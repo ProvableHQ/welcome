@@ -1,5 +1,5 @@
 ---
-id: new
+id: init
 title: Initialize a Package
 sidebar_label: leo init
 ---

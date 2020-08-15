@@ -5,7 +5,7 @@ title: Operators
 
 Operators in Leo compute a value based off of one or more expressions.
 
-## Implicit evaluation
+## Implicit Evaluation
 Since Leo programs compile down to a circuit, Leo enforces a strict type system.
 When evaluating an operator that has an implicit expression, Leo will try and resolve the type based off of previous statements.
 
