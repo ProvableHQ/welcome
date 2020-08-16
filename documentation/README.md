@@ -37,8 +37,8 @@
 
 - [Overview](./aleo/posw/00_overview.md)
 - [Consensus Security](./aleo/posw/01_consensus_security.md)
-- [The PoSW Predicate](./aleo/posw/01_posw_predicate.md)
-- [The Mining Process](./aleo/posw/02_mining.md)
+- [The PoSW Predicate](aleo/posw/02_posw_predicate.md)
+- [The Mining Process](aleo/posw/03_mining.md)
 
 
 ## Developer Preview I
