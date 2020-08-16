@@ -41,8 +41,8 @@
             ]
         },
         {
-            "title": "Setup I",
-            "folderName": "setup",
+            "title": "Testnet I",
+            "folderName": "testnet",
             "chapters": [
                 {
                     "title": "Getting Started",
@@ -51,16 +51,6 @@
                 {
                     "title": "The Aleo Curves",
                     "isAutogen": true
-                }
-            ]
-        },
-        {
-            "title": "Testnet I",
-            "folderName": "testnet",
-            "chapters": [
-                {
-                    "title": "Getting Started",
-                    "folderName": "getting_started"
                 },
                 {
                     "title": "Mining",
@@ -154,26 +144,16 @@
             ]
         },
         {
-            "title": "Setup I",
-            "section_id": "setup",
-            "chapters": [
-                {
-                    "title": "Getting Started",
-                    "document_id": "setup/getting_started"
-                },
-                {
-                    "title": "The Aleo Curves",
-                    "isAutogen": true
-                }
-            ]
-        },
-        {
             "title": "Testnet I",
             "section_id": "testnet",
             "chapters": [
                 {
                     "title": "Getting Started",
                     "document_id": "testnet/getting_started"
+                },
+                {
+                    "title": "The Aleo Curves",
+                    "isAutogen": true
                 },
                 {
                     "title": "Mining",

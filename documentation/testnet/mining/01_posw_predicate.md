@@ -10,7 +10,11 @@ The predicate used as part of the PoSW circuit verifies the inclusion of transac
 
 The state of the system is given by a Merkle tree $\mathsf{Tree}_\mathcal{G}(h)$ of depth $h$ over a CRT function $\mathcal{G}: \{0,1\}^{k} \rightarrow \{0,1\}^{k/2}$, where $\mathcal{G}$ is taken to be SHA-256 with $k = 512$. We denote this as the "state tree". Each leaf is the unique id of a transaction to be processed, and the variable $\mathsf{state}$ is the root of the tree.
 
+<!--
+
 <img align="left" src="Binary_tree.png" style="float:right"></img>
+
+-->
 
 The PoSW circuit takes the $q \leq d$ subtree of the state tree and computes a Merkle tree of depth $q$. The leaves of the tree are the depth $q$ elements of the state tree $\mathsf{Tree}_\mathcal{H}(h)$, instantiated over $k$-bit leaves with a different CRT function $\mathcal{H} : \{0,1\}^{k} \rightarrow \{0,1\}^{k/2}$ as a new PoSW tree $\mathsf{Tree}_{\mathcal{H}}(q)$. This layout is illustrated in the diagram on the left. For example, for $\mathbb{G} = \mathsf{BLS377}$ we set $\mathcal{H}$ as the $512$-bit Pedersen hash with output truncated to $256$ bits. 
 
@@ -34,7 +38,6 @@ Define group variables $Q = (Q_x, Q_y), h_i = (h^i_x, h^i_y) \in (\mathbb{F}_p^2
 This requires $k$ Edwards multiplications (6 constraints each), and a bit lookup for each of the $h_i$ in addition to $k$ booleanity checks.
 
 This is evaluated by ``precomputed_base_symmetric_multiscalar_mul`` in ``PedersenCRHGadget``.
-  
 
 ### Masked Pedersen Gadget
 The $k$-length masked Pedersen hash function over $\mathbb{G}$ is a CRT hash function $\mathcal{H}_{mask}: \{0,1\}^{k} \times \{0,1\}^k \times \mathbb{G} \rightarrow \mathbb{G}$ given by: $$ \mathcal{H}_{mask}^{G,H}(\rho, x,P) = P \cdot\prod_{i = 1}^k (\mathbb{1}[x_i \oplus \rho_i = 1] G_i^{2x_i - 1} H_i^{2\rho_i -1} + \mathbb{1}[x_i \oplus \rho_i = 0] H_i^{2\rho_i -1})$$ where $x_i$ and $\rho_i$ the $i$-th bits of $x$ and $\rho$ respectively, while $G_i \in \mathbb{G}$ are randomly sampled generators of $\mathbb{G}$ and $\oplus$ the bitwise XOR operation. The variable $P \in \mathbb{G}$ is appended as an input as well, for the demasking operation.
@@ -69,7 +72,7 @@ The $k$-length masked evaluation of $M$ Pedersen hashes takes as inputs:
 The $k/2$ length set of variables $\{o^i_x\}_{i = 1}^k \in (\mathbb{F_p})^k$ as the truncated outputs.
 
 ### Instantiation
-We use BLS-377 as the underlying group, which implies an output length of $256+1 = 257$ bits (using point-compression) which we truncate to $256$ bits. Security reduction to the hardness of ECDLP yields a security level of $\lambda \approx 128$ bits. The input length is set to $k = 512$ bits. 
+We use BLS-377 as the underlying group, which implies an output length of $256+1 = 257$ bits (using point-compression) which we truncate to $256$ bits. Security reduction to the hardness of ECDLP yields a security level of $\lambda \approx 128$ bits. The input length is set to $k = 512$ bits.
 
 ## PoSW Circuit 
 
