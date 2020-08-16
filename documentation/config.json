@@ -126,8 +126,8 @@
                     "isAutogen": true
                 },
                 {
-                    "title": "Mining",
-                    "document_id": "aleo/mining"
+                    "title": "Proof of Succinct Work",
+                    "document_id": "aleo/posw"
                 }
             ]
         },
