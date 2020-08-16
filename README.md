@@ -2,7 +2,7 @@
 
 ## Aleo Testnet I
 
-### Network Bootnodes
+### The Network
 
 To get started, the following is a list of Aleo Testnet I bootnodes.
 
