@@ -86,49 +86,42 @@
 - [Contributing](./developer/additional_material/03_contributing.md)
 
 
-## Setup I
-
-### Chapter 7: Getting Started
-
-- [Aleo Setup I.](./setup/getting_started/00_overview.md)
-
-
-### Chapter 8: The Aleo Curves
-
-- [The Aleo Curves](autogen/testnet/curves/the_aleo_curves/00_the_aleo_curves.md)
-- [Edwards BLS12](autogen/testnet/curves/the_aleo_curves/01_edwards_bls12.md)
-- [BLS12-377](autogen/testnet/curves/the_aleo_curves/02_bls12-377.md)
-- [Edwards BW6](autogen/testnet/curves/the_aleo_curves/03_edwards_bw6.md)
-- [BW6-761](autogen/testnet/curves/the_aleo_curves/04_bw6-761.md)
-
-
 ## Testnet I
 
-### Chapter 9: Getting Started
+### Chapter 7: Getting Started
 
 - [Testnet I.](./testnet/getting_started/00_overview.md)
 - [Install snarkOS](./testnet/getting_started/01_installation.md)
 
 
-### Chapter 10: Mining
+### Chapter 8: The Aleo Curves
+
+- [The Aleo Curves](./autogen/testnet/curves/the_aleo_curves/00_the_aleo_curves.md)
+- [Edwards BLS12](./autogen/testnet/curves/the_aleo_curves/01_edwards_bls12.md)
+- [BLS12-377](./autogen/testnet/curves/the_aleo_curves/02_bls12-377.md)
+- [Edwards BW6](./autogen/testnet/curves/the_aleo_curves/03_edwards_bw6.md)
+- [BW6-761](./autogen/testnet/curves/the_aleo_curves/04_bw6-761.md)
+
+
+### Chapter 9: Mining
 
 - [Proof of Succinct Work](./testnet/mining/00_posw.md)
 - [The PoSW Predicate](./testnet/mining/01_posw_predicate.md)
 - [The Mining Process](./testnet/mining/02_mining.md)
 
 
-### Chapter 11: Networking
+### Chapter 10: Networking
 
 - [Networking](./testnet/networking/00_networking.md)
 - [Message Types](./testnet/networking/01_message_types.md)
 
 
-### Chapter 12: RPC Server
+### Chapter 11: RPC Server
 
 - [Configurations](./autogen/testnet/rpc/rpc_server/00_configurations.md)
 
 
-### Chapter 13: Public RPC Endpoints
+### Chapter 12: Public RPC Endpoints
 
 - [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
 - [decoderecord](./autogen/testnet/rpc/public_endpoints/01_decoderecord.md)
@@ -146,7 +139,7 @@
 - [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/13_validaterawtransaction.md)
 
 
-### Chapter 14: Private RPC Endpoints
+### Chapter 13: Private RPC Endpoints
 
 - [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
 - [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
@@ -157,13 +150,13 @@
 
 ## Explorer I
 
-### Chapter 15: Authentication
+### Chapter 14: Authentication
 
 - [Authentication API](./explorer/authentication/00_authentication_api.md)
 - [createapikey](./explorer/authentication/01_createapikey.md)
 
 
-### Chapter 16: Blocks
+### Chapter 15: Blocks
 
 - [Block API](./explorer/blocks/00_block_api.md)
 - [getbestblock](./explorer/blocks/01_getbestblock.md)
@@ -172,7 +165,7 @@
 - [getbyhash](./explorer/blocks/04_getbyhash.md)
 
 
-### Chapter 17: Transactions
+### Chapter 16: Transactions
 
 - [Transaction API](./explorer/transactions/00_transaction_api.md)
 - [getbyhash](./explorer/transactions/01_getbyhash.md)
@@ -181,7 +174,7 @@
 - [validate](./explorer/transactions/04_validate.md)
 
 
-### Chapter 18: Metrics
+### Chapter 17: Metrics
 
 - [Metrics API](./explorer/metrics/00_metrics_api.md)
 - [get](./explorer/metrics/01_get.md)
