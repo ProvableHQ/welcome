@@ -1,5 +1,5 @@
 ---
-id: posw
+id: consensus_security
 title: Consensus Security
 sidebar_label: Consensus Security
 ---
