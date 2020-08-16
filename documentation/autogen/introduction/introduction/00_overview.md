@@ -40,11 +40,12 @@ to compile, execute, and finalize its state autonomously.
 - [BW6-761](./autogen/aleo/curves/the_aleo_curves/04_bw6-761.md)
 
 
-### Chapter 3: Mining
+### Chapter 3: Proof of Succinct Work
 
-- [Proof of Succinct Work](./aleo/mining/00_posw.md)
-- [The PoSW Predicate](./aleo/mining/01_posw_predicate.md)
-- [The Mining Process](./aleo/mining/02_mining.md)
+- [Overview](./aleo/posw/00_overview.md)
+- [Consensus Security](./aleo/posw/01_consensus_security.md)
+- [The PoSW Predicate](./aleo/posw/01_posw_predicate.md)
+- [The Mining Process](./aleo/posw/02_mining.md)
 
 
 ## Developer Preview I
