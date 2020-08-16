@@ -26,6 +26,13 @@
 
 ### Chapter 2: The Aleo Curves
 
+- [The Aleo Curves](./autogen/aleo/curves/the_aleo_curves/00_the_aleo_curves.md)
+- [Edwards BLS12](./autogen/aleo/curves/the_aleo_curves/01_edwards_bls12.md)
+- [BLS12-377](./autogen/aleo/curves/the_aleo_curves/02_bls12-377.md)
+- [Edwards BW6](./autogen/aleo/curves/the_aleo_curves/03_edwards_bw6.md)
+- [BW6-761](./autogen/aleo/curves/the_aleo_curves/04_bw6-761.md)
+
+
 ### Chapter 3: Mining
 
 - [Proof of Succinct Work](./aleo/mining/00_posw.md)
