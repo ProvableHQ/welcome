@@ -128,7 +128,13 @@
                 {
                     "title": "Mining",
                     "document_id": "aleo/mining"
-                },
+                }
+            ]
+        },
+        {
+            "title": "Developer Preview I",
+            "section_id": "developer",
+            "chapters": [
                 {
                     "title": "Hello Leo!",
                     "document_id": "developer/getting_started"
