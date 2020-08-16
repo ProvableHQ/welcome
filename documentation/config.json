@@ -11,6 +11,14 @@
                 {
                     "title": "Concepts",
                     "folderName": "concepts"
+                },
+                {
+                    "title": "The Aleo Curves",
+                    "isAutogen": true
+                },
+                {
+                    "title": "Mining",
+                    "folderName": "mining"
                 }
             ]
         },
@@ -47,14 +55,6 @@
                 {
                     "title": "Getting Started",
                     "folderName": "getting_started"
-                },
-                {
-                    "title": "The Aleo Curves",
-                    "isAutogen": true
-                },
-                {
-                    "title": "Mining",
-                    "folderName": "mining"
                 },
                 {
                     "title": "Networking",
@@ -122,6 +122,14 @@
                     "document_id": "aleo/concepts"
                 },
                 {
+                    "title": "The Aleo Curves",
+                    "isAutogen": true
+                },
+                {
+                    "title": "Mining",
+                    "document_id": "aleo/mining"
+                },
+                {
                     "title": "Hello Leo!",
                     "document_id": "developer/getting_started"
                 },
@@ -150,14 +158,6 @@
                 {
                     "title": "Getting Started",
                     "document_id": "testnet/getting_started"
-                },
-                {
-                    "title": "The Aleo Curves",
-                    "isAutogen": true
-                },
-                {
-                    "title": "Mining",
-                    "document_id": "testnet/mining"
                 },
                 {
                     "title": "Networking",

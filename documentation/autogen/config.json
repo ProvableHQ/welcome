@@ -1,13 +1,19 @@
 {
     "readme": [
         {
-            "title": "Testnet I",
-            "folderName": "testnet",
+            "title": "Welcome to Aleo",
+            "folderName": "aleo",
             "chapters": [
                 {
                     "title": "The Aleo Curves",
                     "folderName": "curves/the_aleo_curves"
-                },
+                }
+            ]
+        },
+        {
+            "title": "Testnet I",
+            "folderName": "testnet",
+            "chapters": [
                 {
                     "title": "RPC Server",
                     "folderName": "rpc/rpc_server"
@@ -36,13 +42,19 @@
             ]
         },
         {
-            "title": "Testnet I",
-            "section_id": "testnet",
+            "title": "Welcome to Aleo.",
+            "section_id": "aleo",
             "chapters": [
                 {
                     "title": "The Aleo Curves",
-                    "document_id": "testnet/curves/the_aleo_curves"
-                },
+                    "document_id": "aleo/curves/the_aleo_curves"
+                }
+            ]
+        },
+        {
+            "title": "Testnet I",
+            "section_id": "testnet",
+            "chapters": [
                 {
                     "title": "RPC Server",
                     "document_id": "testnet/rpc/rpc_server"
