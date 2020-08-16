@@ -35,9 +35,9 @@
 
 ### Chapter 3: Mining
 
-- [Proof of Succinct Work](./aleo/mining/00_posw.md)
-- [The PoSW Predicate](./aleo/mining/01_posw_predicate.md)
-- [The Mining Process](./aleo/mining/02_mining.md)
+- [Proof of Succinct Work](aleo/posw/00_overview.md)
+- [The PoSW Predicate](aleo/posw/01_posw_predicate.md)
+- [The Mining Process](aleo/posw/02_mining.md)
 
 
 ## Developer Preview I

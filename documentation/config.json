@@ -17,8 +17,8 @@
                     "isAutogen": true
                 },
                 {
-                    "title": "Mining",
-                    "folderName": "mining"
+                    "title": "Proof of Succinct Work",
+                    "folderName": "posw"
                 }
             ]
         },
