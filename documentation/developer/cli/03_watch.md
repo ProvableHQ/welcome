@@ -10,7 +10,7 @@ This feature is not standardized and currently unstable.
 
 ### `leo watch`
 
-To recompile your Leo program on the fly, run:
+To recompile have Leo recompile your program on the fly, run:
 ```bash
 leo watch
 ```
