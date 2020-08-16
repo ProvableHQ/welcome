@@ -24,9 +24,18 @@
 - [Glossary](./aleo/concepts/06_glossary.md)
 
 
+### Chapter 2: The Aleo Curves
+
+### Chapter 3: Mining
+
+- [Proof of Succinct Work](./aleo/mining/00_posw.md)
+- [The PoSW Predicate](./aleo/mining/01_posw_predicate.md)
+- [The Mining Process](./aleo/mining/02_mining.md)
+
+
 ## Developer Preview I
 
-### Chapter 2: Hello Leo!
+### Chapter 4: Hello Leo!
 
 - [The Leo Programming Language](./developer/getting_started/00_overview.md)
 - [Installation](./developer/getting_started/01_installation.md)
@@ -36,7 +45,7 @@
 - [Pedersen Hash Example](./developer/getting_started/05_example.md)
 
 
-### Chapter 3: Language
+### Chapter 5: Language
 
 - [Layout of a Leo Program](./developer/language/00_layout.md)
 - [Defining Variables](./developer/language/01_variables.md)
@@ -53,14 +62,14 @@
 - [Lexical Structure](./developer/language/12_lexical.md)
 
 
-### Chapter 4: Programming Model
+### Chapter 6: Programming Model
 
 - [The Leo Programming Model](./developer/programming_model/00_model.md)
 - [A Leo Erc20 on Aleo](./developer/programming_model/01_erc20.md)
 - [Leo Procedures](./developer/programming_model/02_procedures.md)
 
 
-### Chapter 5: CLI
+### Chapter 7: CLI
 
 - [Create a Package](./developer/cli/00_new.md)
 - [Initialize a Package](./developer/cli/01_init.md)
@@ -78,7 +87,7 @@
 - [Clean Your Workspace](./developer/cli/13_clean.md)
 
 
-### Chapter 6: Additional Material
+### Chapter 8: Additional Material
 
 - [Style Guide](./developer/additional_material/00_style.md)
 - [Common Patterns](./developer/additional_material/01_common.md)
@@ -88,26 +97,10 @@
 
 ## Testnet I
 
-### Chapter 7: Getting Started
+### Chapter 9: Getting Started
 
 - [Testnet I.](./testnet/getting_started/00_overview.md)
 - [Install snarkOS](./testnet/getting_started/01_installation.md)
-
-
-### Chapter 8: The Aleo Curves
-
-- [The Aleo Curves](autogen/aleo/curves/the_aleo_curves/00_the_aleo_curves.md)
-- [Edwards BLS12](autogen/aleo/curves/the_aleo_curves/01_edwards_bls12.md)
-- [BLS12-377](autogen/aleo/curves/the_aleo_curves/02_bls12-377.md)
-- [Edwards BW6](autogen/aleo/curves/the_aleo_curves/03_edwards_bw6.md)
-- [BW6-761](autogen/aleo/curves/the_aleo_curves/04_bw6-761.md)
-
-
-### Chapter 9: Mining
-
-- [Proof of Succinct Work](aleo/mining/00_posw.md)
-- [The PoSW Predicate](aleo/mining/01_posw_predicate.md)
-- [The Mining Process](aleo/mining/02_mining.md)
 
 
 ### Chapter 10: Networking
