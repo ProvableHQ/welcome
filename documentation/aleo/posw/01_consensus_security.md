@@ -10,7 +10,7 @@ We identify these below.
 
 ## Amortization Resistance
 
-The most important property of any PoW system is non-batchability:
+The most important property of any PoW system is **non-batchability**:
 computation of many instances of the problem should not provide substantial speed-ups to miners through the reuse of information.
 
 We work in the **Generic Group Model (GGM)**,
@@ -19,15 +19,15 @@ in the random encoding of some group `G`.
 Computational difficulty is then given by the number of oracle queries that a miner
 makes to `O`. In this setup, we can define the notion of `epsilon`-*amortization resistance*
 as the ratio of oracle queries performed by the optimal algorithm
-`A`^`O`_`(P, n)` computing `n = poly(n)` proofs simultaneously versus
-the algorithm `A`^`O`_`(P, 1)`computing each `n` proof individually.
-Here `n` is proof size, `Queries( A^O )` the number of queries `A`^`O` makes to `O` and `x_i`
+`A^O`_`(P, n)` computing `n = poly(n)` proofs simultaneously versus
+the algorithm `A^O`_`(P, 1)`computing each `n` proof individually.
+Here `n` is proof size, `Queries( A^O )` the number of queries `A^O` makes to `O` and `x_i`
 the (randomly sampled) `i`-th problem instance:
 ```
 \epsilon \leq 1 - \frac{\mathsf{Queries}(\mathcal{A}^{\mathcal{O}}_{\mathcal{P}, \ell(n)}(\{\mathbf{x_i}\}_{i = 1}^{\ell(n)}))}{\sum_{i = 1}^{\ell(n)} \mathsf{Queries}(\mathcal{A}^{\mathcal{O}}_{\mathcal{P}, 1}(\mathbf{x_i}))}.
 ```
 
-Intuitively, `epsilon$` is the advantage that a large miner receives due to the amortizability of the underlying puzzle.
+Intuitively, `epsilon` is the advantage that a large miner receives due to the amortizability of the underlying puzzle.
 If `epsilon = 0`, no algorithm attains speedup from batching and the puzzle is *perfectly amortizable*.
 
 ## Quantization Error & Forking Probability
