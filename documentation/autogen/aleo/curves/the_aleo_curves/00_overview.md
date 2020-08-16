@@ -1,7 +1,7 @@
 ---
-id: the_aleo_curves
-title: The Aleo Curves
-sidebar_label: The Aleo Curves
+id: overview
+title: Overview
+sidebar_label: Overview
 ---
 
 Aleo uses a tailored set of pairing-friendly elliptic curves to perform efficient proof verification.
