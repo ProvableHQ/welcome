@@ -34,19 +34,14 @@ function main(a: u32, b: u32) -> u32 {
 
 ```leo
 [main]
-a: bool  = true;       // booleans
-b: u8    = 2;          // integers
-c: field = 0;          // fields
-d: group = (0, 1)group // group tuples
+a: bool  = true;                // booleans
+b: u8    = 2;                   // integers
+c: field = 0;                   // fields
+d: group = (0, 1)group          // group elements
 e: address = aleo1qnr4dkkvkgfqph0vzc3y6z2eu975wnpz2925ntjccd5cfqxtyu8sta57j8 // addresses
-```
-
-### Arrays
-
-```leo
-[main]
-a: u8[4]    = [0u8; 4];      // <- single
-b: u8[2][3] = [[0u8; 2]; 3]; // <- multi-dimensional
+f: u8[32] = [0; 32]             // arrays
+g: u8[2][3] = [[0u8; 2]; 3];    // multi-dimensional arrays
+h: (bool, bool) = (true, false) // tuples
 ```
 
 ## Runtime Input Registers

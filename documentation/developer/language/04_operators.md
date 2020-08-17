@@ -18,7 +18,8 @@ Otherwise, the error will be caught at proving time when main function inputs ar
 | Operation        |  Operators |         Supported Types        |
 |:----------------:|:----------:|:------------------------------:|
 | addition         |  `+` `+=`  | `group`, `field`, integers |
-| subtraction      |  `-` `-=`  | `group`, `field`, integers |
+| negation(unary)  |   `-`      | `group`, `field`, integers | 
+| subtraction(binary)|  `-` `-=`  | `group`, `field`, integers |
 | multiplication   |  `*` `*=`  |     `field`, integers      |
 | division         |  `/` `/=`  |     `field`, integers      |
 | exponentiation   | `**` `**=` |        integers            |

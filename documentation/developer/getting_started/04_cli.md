@@ -76,8 +76,6 @@ This command verifies the proof `hello_world.proof` using the verifying key `hel
   Verifier output : true
 ```
 
-#### Why did we call `leo run` twice?
-
 Leo was designed with simplicity in mind. 
 
 The `leo run` command will attempt to verify a proof only if all previous steps completed successfully.

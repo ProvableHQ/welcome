@@ -3,7 +3,7 @@ id: syntax
 title: File Syntax
 ---
 
-First, Open up `Leo.toml` in Aleo Studio or your text editor of choice.
+First, Open up `Leo.toml` in [Aleo Studio](https://aleo.studio/) for pretty syntax highlighting or your text editor of choice.
 
 ```leo title="Leo.toml" 
 [package]
@@ -14,15 +14,26 @@ version = "0.1.0"
 This is the Leo manifest file that configures our package. 
 Let's go through each line.
 
-**`[package]`**
+```leo
+[package]
+```
 
-The first line is a section heading that indicates that the statements after provide information to configure the package.
+The first line is a section heading that indicates the next lines will provide basic information on how to compile the program. provide information to configure the package.
 In the future, Leo plans to support other sections to give information on `[dependencies]`, `[accounts]`, and `[modules]`.
 
-**`name` and `version`**
+```leo
+name = "hello_world"
+```
 
-The next two lines give basic information on how to compile the program.
 The package `name` is the official, unique name of the package that other developers will be able to look up after you have published your package.
+
+Package names are only allowed to contain lowercase letters, numbers and hyphens. Hyphens `-` are the only separator allowed in package names. 
+
+```leo
+version = "0.1.0"
+```
+
+All files in the current package will be compiled with the specified Leo version. 
 
 Next, open up `src/main.leo`.
 
@@ -38,7 +49,7 @@ function main(a: u32) -> u32 {
 The `main.leo` file is the entry point of a Leo project. It should contain a function named `main`. 
 Let's break down the structure of a Leo file.
 
-```leo title="src/main.leo"
+```leo
 function main(a: u32) -> u32 {
 ```
 
@@ -47,7 +58,7 @@ Our **hello_world** `main` function takes one input `a` with type `u32` and retu
 The function body is enclosed in curly braces `{ }`. It is a common convention in Leo to place the opening curly 
 bracket on the same line as the function definition, adding one space in between.
 
-```leo title="src/main.leo"
+```leo
     return a
 ```
 

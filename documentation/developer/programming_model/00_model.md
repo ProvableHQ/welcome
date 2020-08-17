@@ -86,7 +86,7 @@ The return function of main will automatically write to the output registers in 
 Intermediate runtime state will automatically be passed from one record's output register to the next record's input register.
 
 :::info
-To see how to load register files into tests, checkout [**Writing Tests**](../language/10_tests.md#integration-tests).
+To see how to load register files into tests, checkout [**Writing Tests**](aleo/documentation/developer/language/11_tests.md#integration-tests).
 :::
 
 ## State
@@ -148,7 +148,7 @@ The `[state_leaf]` section defines state leaf transition information that is enc
 The state leaf section must be defined below the private `[[private]]` section.
 
 :::info
-To see how to load state files into tests, checkout [**Writing Tests**](../language/10_tests.md#integration-tests)
+To see how to load state files into tests, checkout [**Writing Tests**](aleo/documentation/developer/language/11_tests.md#integration-tests)
 :::
 
 ## Where Register and State Files are Stored
@@ -179,12 +179,12 @@ State register values can be accessed by passing the `state`, `record`, and `sta
 accessing each variable via dot `.` syntax.
 
 ```leo
-function main(state, record, state_leaf) {
-    let index = state.index;
+function main(input) {
+    let index = input.state.index;
     
-    assert_eq!(record.value_balance, 0u64);
+    assert_eq!(input.record.value_balance, 0u64);
 
-    assert_eq!(state_leaf.network_id, 1u8);
+    assert_eq!(input.state_leaf.network_id, 1u8);
 }
 ``` 
 

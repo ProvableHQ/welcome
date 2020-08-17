@@ -10,15 +10,15 @@ all possible evaluations.
 
 ### If Else Ternary Expression
 
-A conditional (ternary) expression takes three operands.
-
-1. A **condition** boolean followed by a question mark `?`.
-2. A **first expression** to execute if the **condition** is true followed by a colon `:`
-3. A **second expression** to execute if the **condition** is false followed by a semicolon `;`
-
 #### Syntax 
 
-`if condition ? first_expression : second_expression;`
+> if *condition* ? *first_expression* : *second_expression*;
+
+A conditional (ternary) expression takes three operands.
+
+1. A *condition* boolean followed by a question mark `?`.
+2. A *first expression* to execute if the *condition* is true followed by a colon `:`
+3. A *second expression* to execute if the *condition* is false followed by a semicolon `;`
 
 #### Example
 
@@ -31,15 +31,15 @@ function is_zero(a: u32) -> bool {
 
 #### Cost
 Ternary expressions are the cheapest form of conditional.
-We can resolve the **first expression** and **second expression** values before evaluating the **condition**.
+We can resolve the *first expression* and *second expression* values before evaluating the *condition*.
 This is very easy to convert into a circuit because we know that each expression does not depend on information in later statements. 
 
 ### If Conditional Statement
 
-A traditional `if` statement that executes a **statement** if a specified **condition** is truthy.
-
 #### Syntax:
-```if condition { statement } ```
+> if *condition* { *statement* } 
+
+An `if` statement executes a *statement* if a specified *condition* is truthy.
 
 #### Example:
 ```leo
@@ -72,36 +72,33 @@ Conditional statements can cost significantly more than ternary expressions.
 
 #### Increasing costs
 Observe that the statement `return a` is repeated in both branches. 
-Imagine that the statement made a call to a `large_circuit_with_many_constraints()`.
-We have now doubled the number of constraints in our program.
+The cost of every computation within the conditional will be doubled.
+This greatly increases the constraint numbers and slows down the circuit.
 
 Even though we only return the result of one branch of the circuit at proving time, 
 all branches need to be created for the circuit to function properly. 
 
 ### If Else Conditional Statement
 
-Adds an `else` and a **statement2** to the above definition. 
-Executes **statement2** if **condition** is true.
+Adds an `else` and a *statement2* to the above definition. 
+Executes *statement2* if *condition* is false.
 
 #### Syntax
-```leo 
-if condition {
-    statement1 
-} else { 
-    statement2
-}    
-```
+>leo 
+>if *condition* {
+>    *statement1* 
+>} else { 
+>    *statement2*
+>}    
 
 `if` statements can be chained using an `else if` clause.
-```leo
-if condition1 {
-    statement1 
-} else if condition2 { 
-    statement2
-} else {
-    statement3
-}
-```
+>leo 
+>if *condition1* {
+>    *statement1* 
+>} else if *condition2* { 
+>    *statement2*
+>} else {
+>   *statement3*
 
 #### Example
 ```leo
@@ -142,11 +139,11 @@ Leo supports `for` loops with bounded iteration. `from_number` and `to_number` m
 
 #### Syntax
 
-```leo
-for variable in from_number..to_number {
-    statement
+> for *variable* in *from_number*..*to_number* {
+    *statement*
 }
-```
+
+Variable can be any valid identifier. From number and to number must be `u32`s.
 
 #### Example
 
@@ -194,5 +191,5 @@ a += 1;
 Two possible branches, multiplied by 4 loops = 8 branches generated in the circuit by the `for` loop.
 
 :::info
-For more information on branching patterns in Leo see [Common Patterns](./additional_material/01_common.md#branches).
+For more information on branching patterns in Leo see [Common Patterns](../additional_material/01_common.md#branches).
 :::

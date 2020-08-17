@@ -1,7 +1,11 @@
 ---
-id: arrays
+id: arrays_and_tuples
 title: Arrays
+sidebar_label: Arrays and Tuples
 ---
+
+## Indexing
+Arrays and tuples in Leo are zero indexed.
 
 Leo supports static arrays with fixed size. 
 **Dynamic arrays do not exist in Leo**. 
@@ -11,7 +15,10 @@ You cannot change the values of an array once they are initialized.
 The array type specifies the type and number of elements being stored.
 
 #### Syntax:
-`type[size]`
+> *type*[*size*]
+
+Type is any supported data type.
+Size must be a `u32`.
 
 #### Example: 
 ```leo title="Array type that stores 3 elements with type u32"
@@ -22,7 +29,7 @@ u32[3]
 Create an array with brackets `[]`.
 
 #### Syntax:
-`[element1, element2, ... elementN]`
+> [*value1*, *value2*, ... *valueN*]
 
 #### Example:
 ```leo title="Array that stores values 1, 2, 3 with type u32"
@@ -33,7 +40,9 @@ Create an array with brackets `[]`.
 Create an array of the same element with size `size`.
 
 #### Syntax:
-`[element; size]` 
+> [*value*; *size*] 
+
+Size must be a `u32`.
 
 #### Example:
 ```leo title="Array that stores values 1, 1, 1 with type u32"
@@ -45,7 +54,10 @@ Create an array of the same element with size `size`.
 Access an element of an array starting at index 0.
 
 #### Syntax:
-`array[index]`
+> *array*[*index*]
+
+Array is the name of an array we are accessing.
+Index must be a `u32`.
 
 #### Example:
 ```leo
@@ -58,10 +70,11 @@ let first = arr[0]; // access the first element
 Access a subset of an array. 
 
 #### Syntax:
-`array[from_index..to_index]`
+> *array*[*from_index*..*to_index*]
 
-* Omitting `from_index` defaults to index 0.
-* Omitting `to_index` defaults to the length of the array.
+Array is the name of an array we are accessing.
+From index must be a u32. Omitting from index defaults to index 0.
+To index must be a u32. Omitting to_index defaults to the length of the array.
 
 #### Example:
 ```leo
@@ -79,7 +92,9 @@ Copies the elements of one array into another. Element types must match.
 Equivalent to slicing all elements of an array.
 
 #### Syntax:
-`...array`
+> ...*array*
+
+Array is the name of an array we are accessing.
 
 #### Example:
 ```leo
@@ -135,12 +150,19 @@ function main() -> u32[3][2] {
 #### Multi-dimensional Array Type
 The explicit type for a multi-dimensional array is written: 
 
-`data_type[1st dimension][2nd dimension]..[Nth dimension]`
+#### Syntax
+> *type*[*1st dimension*][*2nd dimension*]..[*Nth dimension*]`
+
+Type is any supported data type.
+Dimensions must be `u32`.
 
 #### Multi-dimensional Array Indexing
 To access an element of a multi-dimensional array:
 
-`name[Nth dimension access]..[2nd dimension access][1st dimension access]`
+> *array*[*Nth dimension index*]..[*2nd dimension index*][*1st dimension index*]`
+
+Type is any supported data type.
+Dimension indices must be `u32`.
 
 #### Example:
 
@@ -157,3 +179,27 @@ function main() -> u32 {
 3. Access the second row located at index 1 `m[1]`.
 4. Access the third column located at index 2 `m[1][2]`.
 5. Verify the program output is `5u32` with `leo run`.
+
+# Tuples
+
+**Type**
+> (*type1*, *type2*, ... *typeN*)
+
+**Value**
+> (*value1*, *value2*, ... *valueN*)
+
+Tuple values can be accessed with 
+> *tuple*.*index*
+
+Tuple is the name of the tuple we are accessing.
+Index must be a `u32`
+
+```leo
+let a = (true, true);
+
+let a: (bool, bool) = (true, true);
+
+let first = a.0;
+let second = a.1;
+
+```
