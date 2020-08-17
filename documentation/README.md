@@ -125,28 +125,28 @@
 ### Chapter 12: Public RPC Endpoints
 
 - [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
-- [decoderecord](./autogen/testnet/rpc/public_endpoints/01_decoderecord.md)
-- [decryptrecord](./autogen/testnet/rpc/public_endpoints/02_decryptrecord.md)
-- [getbestblockhash](./autogen/testnet/rpc/public_endpoints/03_getbestblockhash.md)
-- [getblock](./autogen/testnet/rpc/public_endpoints/04_getblock.md)
-- [getblockcount](./autogen/testnet/rpc/public_endpoints/05_getblockcount.md)
-- [getblockhash](./autogen/testnet/rpc/public_endpoints/06_getblockhash.md)
-- [getblocktemplate](./autogen/testnet/rpc/public_endpoints/07_getblocktemplate.md)
-- [getconnectioncount](./autogen/testnet/rpc/public_endpoints/08_getconnectioncount.md)
-- [getpeerinfo](./autogen/testnet/rpc/public_endpoints/09_getpeerinfo.md)
-- [getrawtransaction](./autogen/testnet/rpc/public_endpoints/10_getrawtransaction.md)
-- [gettransactioninfo](./autogen/testnet/rpc/public_endpoints/11_gettransactioninfo.md)
-- [sendtransaction](./autogen/testnet/rpc/public_endpoints/12_sendtransaction.md)
-- [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/13_validaterawtransaction.md)
+- [getbestblockhash](./autogen/testnet/rpc/public_endpoints/01_getbestblockhash.md)
+- [getblock](./autogen/testnet/rpc/public_endpoints/02_getblock.md)
+- [getblockcount](./autogen/testnet/rpc/public_endpoints/03_getblockcount.md)
+- [getblockhash](./autogen/testnet/rpc/public_endpoints/04_getblockhash.md)
+- [getblocktemplate](./autogen/testnet/rpc/public_endpoints/05_getblocktemplate.md)
+- [getconnectioncount](./autogen/testnet/rpc/public_endpoints/06_getconnectioncount.md)
+- [getpeerinfo](./autogen/testnet/rpc/public_endpoints/07_getpeerinfo.md)
+- [getrawtransaction](./autogen/testnet/rpc/public_endpoints/08_getrawtransaction.md)
+- [gettransactioninfo](./autogen/testnet/rpc/public_endpoints/09_gettransactioninfo.md)
+- [sendtransaction](./autogen/testnet/rpc/public_endpoints/10_sendtransaction.md)
+- [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/11_validaterawtransaction.md)
 
 
 ### Chapter 13: Private RPC Endpoints
 
 - [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
 - [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
-- [getrawrecord](./autogen/testnet/rpc/private_endpoints/02_getrawrecord.md)
-- [getrecordcommitmentcount](./autogen/testnet/rpc/private_endpoints/03_getrecordcommitmentcount.md)
-- [getrecordcommitments](./autogen/testnet/rpc/private_endpoints/04_getrecordcommitments.md)
+- [decoderecord](./autogen/testnet/rpc/private_endpoints/02_decoderecord.md)
+- [decryptrecord](./autogen/testnet/rpc/private_endpoints/03_decryptrecord.md)
+- [getrawrecord](./autogen/testnet/rpc/private_endpoints/04_getrawrecord.md)
+- [getrecordcommitmentcount](./autogen/testnet/rpc/private_endpoints/05_getrecordcommitmentcount.md)
+- [getrecordcommitments](./autogen/testnet/rpc/private_endpoints/06_getrecordcommitments.md)
 
 
 ## Explorer I
