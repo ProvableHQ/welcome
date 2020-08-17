@@ -50,23 +50,26 @@
 - [Hello World in Leo](./developer/getting_started/02_hello_world.md)
 - [File Syntax](./developer/getting_started/03_syntax.md)
 - [CLI Commands](./developer/getting_started/04_cli.md)
-- [Pedersen Hash Example](aleo/documentation/developer/getting_started/05_pedersen_hash.md)
+- [Pedersen Hash Example Overview](./developer/getting_started/05_pedersen_hash.md)
+- [Token Example Overview](./developer/getting_started/06_token.md)
+- [StableCoin Example Overview](./developer/getting_started/07_stablecoin.md)
+- [Token Swap Example Overview](./developer/getting_started/08_token_swap.md)
 
 
 ### Chapter 5: Language
 
 - [Layout of a Leo Program](./developer/language/00_layout.md)
 - [Defining Variables](./developer/language/01_variables.md)
-- [Data Types](./developer/language/02_types.md)
-- [Arrays](aleo/documentation/developer/language/03_arrays_and_tuples.md)
+- [Data Types and Values](./developer/language/02_types.md)
+- [Arrays](./developer/language/03_arrays_and_tuples.md)
 - [Operators](./developer/language/04_operators.md)
 - [Statements](./developer/language/05_statements.md)
 - [Functions](./developer/language/06_functions.md)
 - [Leo Inputs](./developer/language/07_inputs.md)
 - [Circuits](./developer/language/08_circuits.md)
 - [Imports](./developer/language/09_imports.md)
-- [Writing Tests](aleo/documentation/developer/language/11_tests.md)
-- [Logging](aleo/documentation/developer/language/10_console.md)
+- [Console Functions](./developer/language/10_console.md)
+- [Writing Tests](./developer/language/11_tests.md)
 - [Lexical Structure](./developer/language/12_lexical.md)
 
 
