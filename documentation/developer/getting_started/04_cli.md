@@ -24,30 +24,31 @@ leo build
 This command compiles the program file `main.leo`. Leo will check program syntax and produce the circuit. 
 
 ```bash title="console output:"
-  leo  Compiled program file "/{$PATH}/hello_world/src/main.leo"
+  leo  Compiled program file "/{$PATH}/hello-world/src/main.leo"
 ```
 
-To avoid unnecessary future compilations, Leo creates a checksum `hello_world.sum` in the `build/` directory.
+To avoid unnecessary future compilations, Leo creates a checksum `hello-world.sum` in the `build/` directory.
 
 ### 2. Setup
 ```bash
 leo setup
 ```
-This command generates a proving key `hello_world.lpk` and verifying key `hello_world.lvk` and stores both in the `build/` directory.
+This command generates a proving key `hello-world.lpk` and verifying key `hello-world.lvk` and stores both in the `build/` directory.
 
 ### 3. Prove
 
 ```bash
 leo prove
 ```
-This command generates a proof `hello_world.proof` using the inputs at `hello_world.in` and proving key at `hello_world.lpk`. 
+This command generates a proof `hello-world.proof` using the inputs at `hello-world.in` and proving key at `hello-world.lpk`. 
 
 ```bash title="console output:"
-  leo  Compiled program file "/{$PATH}/hello_world/src/main.leo"
+  leo  Compiled program file "/{$PATH}/hello-world/src/main.leo"
   leo  Setup starting...
-  leo  Program output: [[input]u32]
-  leo  Saving proving key ("/{$PATH}/hello_world")
-  leo  Saving verification key ("/{$PATH}/hello_world")
+  leo  Program circuit successfully synthesized!
+  leo  Writing to output registers...
+  leo  Saving proving key ("/{$PATH}/hello-world")
+  leo  Saving verification key ("/{$PATH}/hello-world")
   leo  Setup completed in 37 milliseconds
   leo  Program setup complete
 ```
@@ -60,27 +61,37 @@ The proof is stored in the  `build/` directory.
 leo run
 ```
 
-This command verifies the proof `hello_world.proof` using the verifying key `hello_world.lvk` and outputs the result to console.
+This command verifies the proof `hello-world.proof` using the verifying key `hello-world.lvk` and outputs the result to console.
 
-```bash title="console output:
-  leo  Compiled program file "/{$PATH}/hello_world/src/main.leo"
-  leo  Setup complete
+```bash title="console output:"
+  leo  Compiled program file "/{$PATH}/hello-world/src/main.leo"
+  leo  Loading saved setup...
   leo  Program setup complete
   leo  Proving...
-  leo  Program output: [1u32]
+  leo  Program circuit successfully synthesized!
+  leo  Writing to output registers...
   leo  Prover completed in 11 milliseconds
-  leo  Proof stored ("/{$PATH}/hello_world/outputs/hello_world.proof")
+  leo  Proof stored ("/{$PATH}/hello-world/outputs/hello-world.proof")
   leo  Completed program proving
 
   Verifier time   : 3 milliseconds
   Verifier output : true
 ```
 
-Leo was designed with simplicity in mind. 
-
 The `leo run` command will attempt to verify a proof only if all previous steps completed successfully.
 Under the hood, the Leo [CLI](../cli/07_run.md) will check for existing `.sum`, `.lpk`, `.lvk`, or `.proof` files 
 in the build directory before running each command. This ensures that we don't run unnecessary commands.
+
+### 5. Program Outputs
+
+The return value of the `main` function is stored in the program's output file `outputs/hello-world.out`
+
+```leo title="outputs/hello-world.out"
+[registers]
+r0: u32 = 3u32;
+```
+Try editing the inputs in `input/hello-world.in` executing `leo run`. If you provided different input values to the program,
+then you should see different results written to the output registers.
 
 ## The Leo Language
 To learn more about how to use the Leo Language, start [here](../language/00_layout.md)

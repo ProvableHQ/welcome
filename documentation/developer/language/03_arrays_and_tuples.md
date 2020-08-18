@@ -9,7 +9,7 @@ Arrays and tuples in Leo are zero indexed.
 
 Leo supports static arrays with fixed size. 
 **Dynamic arrays do not exist in Leo**. 
-You cannot change the values of an array once they are initialized.
+You cannot change the length of an array once they are initialized.
 
 ### Array Type
 The array type specifies the type and number of elements being stored.

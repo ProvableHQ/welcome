@@ -22,19 +22,3 @@ if (condition) {
 return if condition? a : b
 ```
 
-### Logging inside branches
-
-Since we execute all conditional branches, you cannot conditionally output a log statement;
-
-```leo title="Example:"
-if (condition) {
-    print!("Hello");
-} else {
-    print!("World");
-} 
-```
-
-```bash title="console output:"
-Hello
-World
-```

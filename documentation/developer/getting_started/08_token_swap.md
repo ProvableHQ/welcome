@@ -79,7 +79,7 @@ A maker cancels an intention to trade by invoking the exchange_or_cancel_program
 ## Code:
 
 ### Inputs
-
+```leo
 [main]
 exchange: bool
 maker_recv: address
@@ -103,7 +103,7 @@ leaf_index: u32
 [record]
 Owner: address
 Payload: [  id_0  ||  vb_0  ||  id_1  ||  vb_1 ]
-
+```
 
 ### exchange_or_cancel program
 

@@ -7,16 +7,16 @@ sidebar_label: Hello World
 Use the Leo CLI to create a new project
 
 ```bash
-leo new hello_world
-cd hello_world
+leo new hello-world
+cd hello-world
 ```
 
 This creates a directory with the following structure:
 ```bash
-hello_world/
+hello-world/
 ├── Leo.toml # Your program manifest
 ├── inputs/ 
-│ └── hello_world.in # Your program inputs
+│ └── hello-world.in # Your program inputs
 └── src/    
   └── main.leo # Your program file
 ```
@@ -32,17 +32,19 @@ This command will compile the program, generate keys for a trusted setup, fetch 
 
 
 ```bash title="console output:"
-  leo  Compiled program file "/$PATH/hello_world/src/main.leo"
+  leo  Compiled program file "/$PATH/hello-world/src/main.leo"
   leo  Setup starting...
-  leo  Program output: [[input]u32]
-  leo  Saving proving key ("/$PATH/hello_world")
-  leo  Saving verification key ("/$PATH/hello_world")
+  leo  Program circuit successfully synthesized!
+  leo  Writing to output registers...
+  leo  Saving proving key ("/$PATH/hello-world")
+  leo  Saving verification key ("/$PATH/hello-world")
   leo  Setup completed in 36 milliseconds
   leo  Program setup complete
   leo  Proving...
-  leo  Program output: [1u32]
+  leo  Program circuit successfully synthesized!
+  leo  Writing to output registers...
   leo  Prover completed in 10 milliseconds
-  leo  Proof stored ("/$PATH/hello_world/outputs/hello_world.proof")
+  leo  Proof stored ("/$PATH/hello-world/outputs/hello-world.proof")
   leo  Completed program proving
 
   Verifier time   : 3 milliseconds
