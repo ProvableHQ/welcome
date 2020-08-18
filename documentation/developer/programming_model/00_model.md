@@ -188,4 +188,4 @@ function main(input) {
 }
 ``` 
 
-To see how to access registers and state variables in an application, lets walk through a familiar example of transferring an [ERC20 token](./01_erc20.md) on Aleo.
+To see how to access registers and state variables in an application, lets walk through a familiar example of transferring an [ERC20 token](aleo/documentation/developer/programming_model/01_token.md) on Aleo.

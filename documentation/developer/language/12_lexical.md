@@ -41,8 +41,10 @@ as
 const
 else
 false
-function
+field
 for
+function
+group
 if
 import
 in
@@ -52,6 +54,7 @@ return
 self
 Self
 static
+string
 test
 true
 ```
