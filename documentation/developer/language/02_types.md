@@ -87,7 +87,12 @@ Leo supports this set as a primitive data type.
 
 **Type** = `group`
 
-**Value**
+**Value Syntax**
+>*G*group
+
+*G* is a number value such as 1 or 0. This syntax was specifically designed to support the `1group` and `0group` elements.
+
+**Tuple Value Syntax**
 > (*x*, *y*)group
 
 *x* and *y* are field values.
