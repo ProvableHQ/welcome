@@ -21,7 +21,7 @@ function add_one() -> u8 {
     return a + b   // allocated, computed value is enforced to be the sum of both values
 }
 ```
-Computations are expressed in terms of arithmetic circuits, in particular R1CS. Thus computing on an **allocated** variable always results in another **allocated** variable. 
+Computations are expressed in terms of arithmetic R1CS circuits. Thus computing on an **allocated** variable always results in another **allocated** variable. 
 
 ## Mutability
 All defined variables in Leo are immutable by default, which means they cannot be changed after assignment.

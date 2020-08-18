@@ -120,10 +120,10 @@ Old record 0: Taker’s token debit function for 5Y
 
 	Payload: [ id || vb ]
 
-    1. Assert 0 == record state leaf_index
-    2. Assert register id_1 == record payload id
-    3. Assert exchange_token_credit == record birth_predicate_id
-    4. Assert exchange_token_debit == record death_predicate_id
+    1. Check 0 == record state leaf_index
+    2. Check register id_1 == record payload id
+    3. Check exchange_token_credit == record birth_predicate_id
+    4. Check exchange_token_debit == record death_predicate_id
     5. Add registers vb_1 += payload vb // Debit the taker amount for the trade
     6. Set registers taker_recv = record payload recv
     7. Return registers ( maker_recv, id_0, vb_0, taker_recv, id_1, vb_1)
@@ -132,14 +132,14 @@ Old record 1: Makers’s intention to trade 10X for 5Y
 
 	Payload:  [  id_0  ||  vb_0  ||  id_1  ||  vb_1 ]
 
-    1. Assert 1 == record state leaf index
-    2. Assert exchange_or_cancel = record death_predicate_id
+    1. Check 1 == record state leaf index
+    2. Check exchange_or_cancel = record death_predicate_id
     3. If exchange mode == true
-    4. Assert registers maker == record payload recv
-    5. Assert registers id_0 == record payload id_0: X
-    6. Assert registers vb_0 == 0
-    7. Assert registers id_1 == record payload id_1: Y
-    8. Assert registers vb_1 == record payload vb_1: 5
+    4. Check registers maker == record payload recv
+    5. Check registers id_0 == record payload id_0: X
+    6. Check registers vb_0 == 0
+    7. Check registers id_1 == record payload id_1: Y
+    8. Check registers vb_1 == record payload vb_1: 5
     9. Add registers vb_0 += record payload value // Debit the maker’s amount for the trade
     10. Set registers maker_recv = record payload recv
     11. Return registers ( maker_recv, id_0, vb_0, taker_recv, id_1, vb_1)
@@ -148,25 +148,25 @@ New record 0: Takers token credit function for 10X
 
 	Payload: [ id || vb ]
 
-    1. Assert exchange_token_credit == record birth_predicate_id
+    1. Check exchange_token_credit == record birth_predicate_id
     2. If 2 == record state leaf_index
-    3. Assert registers taker_recv == record owner
-    4. Assert registers id_0 == record payload id_0: X
-    5. Assert registers vb_0 == record payload vb_0: 10
+    3. Check registers taker_recv == record owner
+    4. Check registers id_0 == record payload id_0: X
+    5. Check registers vb_0 == record payload vb_0: 10
     6. Subtract registers vb_0 -= record payload vb_0 // Transfer the maker’s tokens to the taker
-    7. Assert registers vb_0 == 0
+    7. Check registers vb_0 == 0
 
 New record 1: Maker’s token credit function for 5Y
 
 	Payload: [ id || vb ]
 
-    1. Assert exchange_token_credit == record birth_predicate_id
+    1. Check exchange_token_credit == record birth_predicate_id
     2. If 3 == record state leaf_index
-    3. Assert registers maker_recv == record owner
-    4. Assert registers id_1 == record payload id_0: Y
-    5. Assert registers vb_1 == record payload vb_0: 5
+    3. Check registers maker_recv == record owner
+    4. Check registers id_1 == record payload id_0: Y
+    5. Check registers vb_1 == record payload vb_0: 5
     6. Subtract registers vb_1 -= record payload vb_0  // Transfer the taker’s tokens to the maker
-    7. Assert registers vb_1 == 0
+    7. Check registers vb_1 == 0
 
 ### Cancel trade record pseudocode:
 
@@ -176,25 +176,25 @@ Old record 1: Cancel maker’s request to trade 10X for 5Y
 
 	Payload:  [  id_0  ||  vb_0  ||  id_1  ||  vb_1 ]
 
-    1. Assert 1 == record state leaf index
-    2. Assert exchange_or_cancel = record death_predicate_id
+    1. Check 1 == record state leaf index
+    2. Check exchange_or_cancel = record death_predicate_id
     3. If exchange mode == false
-    4. Assert refund == record payload recv
-    5. Assert registers id_0 == record payload id_0
-    6. Assert registers vb_0 == 0
-    7. Assert registers id_1 == record payload id_1
-    8. Assert registers vb_1 == 0
+    4. Check refund == record payload recv
+    5. Check registers id_0 == record payload id_0
+    6. Check registers vb_0 == 0
+    7. Check registers id_1 == record payload id_1
+    8. Check registers vb_1 == 0
     9. Add registers vb_0 += record payload vb_0
     10. Set registers taker_recv = record payload recv
     11. Return registers ( maker_recv, id_0, vb_0, taker_recv, id_1, vb_1)
 
 New record 0: Maker’s token credit function for 10X
-    1. Assert exchange_token_credit == record birth_predicate_id
-    2. Assert 3 == record state leaf_index
-    3. Assert registers taker_recv == record owner // The maker is the taker in a trade cancel
-    4. Assert registers id_1 == record payload id: X
-    5. Assert registers vb_1 == record payload vb: 10
+    1. Check exchange_token_credit == record birth_predicate_id
+    2. Check 3 == record state leaf_index
+    3. Check registers taker_recv == record owner // The maker is the taker in a trade cancel
+    4. Check registers id_1 == record payload id: X
+    5. Check registers vb_1 == record payload vb: 10
     6. Subtract registers vb_1 -= record payload vb
-    7. Assert registers vb_1 == 0
+    7. Check registers vb_1 == 0
 
 New record 1: dummy

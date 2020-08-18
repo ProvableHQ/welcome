@@ -11,92 +11,58 @@ The exception to this rule is when a new variable inherits its type from a previ
 Variables in Leo are always **passed by value**, which means they are always copied when they are used as function inputs or in assignments.
 
 ## Booleans
-
-**Type** = `bool`
-
-**Value** = `true` or `false`
-
-Adding an explicit type for booleans in statements is optional.
-```leo
-function main() -> bool {
-    let a = true; // implict type
-    let a: bool = true; // explicit type
-    
-    return a
-}
-```
-
-
-## Numbers
-Leo supports **signed integer**, **unsigned integer**, **field**, and **group** number types. 
-Leo will not default to a number type. The definition of a number **must** include an explicit type.
-After assignment, you can choose to explicitly add the type or let the compiler interpret implicitly.
-**Type casting is not yet supported.**
+Leo supports the traditional `true` or `false` boolean values. Adding the explicit `bool` type for booleans in statements is optional.
 
 ```leo
-function main() {
-    let a: u32 = 2; // explicit type
-    let a = 2u32; // explicit type    
-    let b = a - 1; // implicit type
-}
+let a = true;
+let b: bool = false;
 ```
 
-### Integers
-Leo supports several bit lengths for signed and unsigned integers.
+## Integers
+Leo supports signed integers `i8`, `i16`, `i32`, `i64`, `i128` 
+and unsigned integers `u8`, `u16`, `u32`, `u64`, `u128`; 
 
-**Type**
-
-| Bits | Signed | Unsigned |
-|:----:|:------:|:--------:|
-|   8  |   i8   |    u8    |
-|  16  |   i16  |    u16   |
-|  32  |   i32  |    u32   |
-|  64  |   i64  |    u64   |
-|  128 |  i128  |   u128   |
-
-**Value** = A number containing digits `0...9` and an optional negative prefix `-`
+```leo
+let a = 1u8;
+let b: u8 = 5;
+```
 
 :::info
 Higher bit length integers generate more constraints in the circuit, which can slow down computation time.
 :::
 
-
-### Field Values
-
-**Type** = `field`
-
-**Value** = A number containing digits `0...9` and an optional negative prefix `-`
-
-Leo supports a `field` type for native field elements as unsigned numbers up to the modulus length of the field.
+### A Note on Leo Integers
+Leo will not default to a integer type. The definition of a integer **must** include an explicit type.
+After assignment, you can choose to explicitly add the type or let the compiler interpret implicitly.
+**Type casting is not yet supported.**
 
 ```leo
-function main() -> field {
-    let a: = field = 1; // explicit type
-    let a = 1field; // explicit type
-    let b = a + 1; // implicit type
-
-    let a: field = 21888242871839275222246405745257275088548364400416034343698204186575808495617; // explicit type
-
-    return b
-}
+let a = 2u8; // explicit type    
+let b: u8 = 2; // explicit type
+let c = b - 1; // implicit type
 ```
 
-### Group Elements
+## Field Elements
+
+Leo supports a `field` type for native field elements as unsigned numbers up to the modulus length of the field.
+```leo
+let a = 1field; 
+let b: field = 21888242871839275222246405745257275088548364400416034343698204186575808495617;
+```
+
+## Group Elements
 The set of affine points on the elliptic curve passed into the Leo compiler forms a group.
-Leo supports this set as a primitive data type.
+Leo supports this set as a primitive data type. Group elements are special since their values optionally be defined as 
+coordinate pairs`(x, y)group`. The group type keyword `group` must be used when specifying a pair of group coordinates since implicit 
+syntax would collide with normal tuple `(a, b)` values. 
 
-**Type** = `group`
+```leo
+let a = 1group;
+let b = 0group;
+let c = (0, 1)group;
+```
 
-**Value Syntax**
->*G*group
-
-*G* is a number value such as 1 or 0. This syntax was specifically designed to support the `1group` and `0group` elements.
-
-**Tuple Value Syntax**
-> (*x*, *y*)group
-
-*x* and *y* are field values.
-
+### Recovery From Coordinates
 Leo also supports recovery of group values from a single field value coordinate
 * `(x, +)group` for given x and recovery with sign_high.
 * `(x, -)group` for given x and recovery with sign_low.
@@ -105,30 +71,19 @@ Leo also supports recovery of group values from a single field value coordinate
 * `(-, y)group` for given y and recovery with sign_low.
 * `(_, y)group` for given y and recovery with inferred x.
 
-Recovery with an inferred value will first try both sign low and sign high recovery.
-
-The group type keyword `group` must be used when specifying a pair of group coordinates since implicit syntax would collide
-with normal tuple `(a, b)` values. 
+Recovery with an inferred value will try both sign low and sign high recovery.
 
 ```leo
-function main() -> group {
-    let a: group = (0, 1)group;
-    let a = (0, +)group;
-    let b = a + 1;
-
-    let a = (21888242871839275222246405745257275088548364400416034343698204186575808495617, 21888242871839275222246405745257275088548364400416034343698204186575808495617)group; // explicit type
-    
-    return b
-}
+let a = (0, +)group;
+let b = (_, 1)group;
 ```
+
+
 
 ## Addresses
 
-**Type** = `address`
-
-**Value** = base 58 encoded hex string with prefix `aleo1`
-
-Addresses are defined to enable compiler-optimized routines for parsing and operating over addresses. These semantics will be accompanied by a standard library in a future sprint.
+Addresses are defined to enable compiler-optimized routines for parsing and operating over addresses. 
+These semantics will be accompanied by a standard library in a future sprint.
 
 ```leo
 function main(owner: address) {

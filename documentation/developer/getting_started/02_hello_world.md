@@ -4,14 +4,15 @@ title: Hello World in Leo
 sidebar_label: Hello World
 ---
 
-Use the Leo CLI to create a new project
-
+Use the Leo CLI to create a new project.
+In your terminal, run:
 ```bash
 leo new hello-world
 cd hello-world
 ```
 
 This creates a directory with the following structure:
+
 ```bash
 hello-world/
 ├── Leo.toml # Your program manifest
@@ -25,11 +26,11 @@ Let's run the project.
 
 ## Zero Knowledge in one line
 
+The `leo run` command will compile the program, generate keys for a trusted setup, fetch inputs, generate a proof and verify it.
+In your terminal, run:
 ```bash
 leo run
 ```
-This command will compile the program, generate keys for a trusted setup, fetch inputs, generate a proof and verify it.
-
 
 ```bash title="console output:"
   leo  Compiled program file "/$PATH/hello-world/src/main.leo"

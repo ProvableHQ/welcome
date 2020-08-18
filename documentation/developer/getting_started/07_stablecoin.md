@@ -57,24 +57,24 @@ payload: [ id || vb || signature ]
 ### stable_token_debit pseudocode
 
 1. Verify record payload signature.verify(policy, central_authority)
-2. Assert !blacklist.contains(record owner)
-3. Assert registers id == record payload id
-4. Assert token_debit == record death_predicate_id
-5. 3. Assert token_credit == record birth_predicate_id
+2. Check !blacklist.contains(record owner)
+3. Check registers id == record payload id
+4. Check token_debit == record death_predicate_id
+5. 3. Check token_credit == record birth_predicate_id
 6. If old record 0 == state leaf_index
-	Assert registers vb == 0
+	Check registers vb == 0
 6. Add registers vb += record payload vb
 7. Return (registers id, registers vb, token_credit)
 
 ### stable_token_credit pseudocode 
 1. Verify record payload signature.verify(policy, central_authority)
-2. Assert !blacklist.contains(record owner)
-3. Assert registers id == record payload id
-4. Assert registers predicate_id == record birth_predicate_id
-5. Assert token_credit == record birth_predicate_id
+2. Check !blacklist.contains(record owner)
+3. Check registers id == record payload id
+4. Check registers predicate_id == record birth_predicate_id
+5. Check token_credit == record birth_predicate_id
 6. Registers vb += record payload vb
 7. If new record 1 == state leaf_index
-	Assert registers vb == 0
+	Check registers vb == 0
 8. Return (registers id, registers vb, ?)
 
 :::info
