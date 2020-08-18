@@ -83,7 +83,7 @@ to compile, execute, and finalize its state autonomously.
 ### Chapter 6: Programming Model
 
 - [The Leo Programming Model](./developer/programming_model/00_model.md)
-- [A Leo Erc20 on Aleo](./developer/programming_model/01_erc20.md)
+- [A Leo Token on Aleo](./developer/programming_model/01_token.md)
 - [Leo Procedures](./developer/programming_model/02_procedures.md)
 
 
