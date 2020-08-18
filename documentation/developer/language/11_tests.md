@@ -69,7 +69,7 @@ leo test
 
 ```leo title="console output:"
   leo  Running 1 tests
-  leo  test tmp::test_add_one passed. Constraint system satisfied.
+  leo  test tmp::test_add_one compiled successfully. Constraint system satisfied: true
 ```
 **Success!**
 
@@ -100,14 +100,15 @@ leo test
 
 ```leo title="console output:"
   leo  Running 1 tests
-  leo  test tmp::test_add_one failed. Constraint system not satisfied.
+  leo  test hello-world::test_add_one errored:     -->  11:5
+                      |
+                   11 |      console.assert(one == res);
+                      |  ^^^^
+                      |
+                      = Assertion `one == res` failed
 ```
 
-As expected, the test now fails. The console output tells us that the constraint system is `not satified`.
-
-Under the hood, the compiler executes the test in two parts. First, the test function is compiled to check for syntax
-errors. Second, the circuit is run. Since test functions do not have input values, we can simply check to see if the circuit's
-constraint system is not satisfied instead of generating and verifying a full proof.
+As expected, the test now fails. The console output tells us the exact line where the assert failed.
 
 ### Failing Test Compilation 
 
@@ -154,8 +155,7 @@ Annotations are a work in progress. Currently only the `@context` test annotatio
 ### Test Context Annotation
 
 **Syntax**
-> @context(*file_name*)
->
+> @context(*file_name*)  
 > test function *test_name*() { ... }
 
 File name is the file stem that will be used for the input and output files.
@@ -165,11 +165,6 @@ For integration tests, one can invoke [`.in`](./07_inputs.md#program-inputs) and
 For example, one could invoke it as any of the following examples:
 ```leo
 @context(production) //  production.in, production.state, production.out
-test function token_withdraw() {
-    ...
-}
-
-@context(test)      //  test.in, test.state, test.out
 test function token_withdraw() {
     ...
 }

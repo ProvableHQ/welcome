@@ -17,11 +17,11 @@ function function_name() {
 Functions can take one or more arguments. Each function argument must have a name followed by an explicit type.
 
 ```leo
-function add_one(arg : u32) { // one argument named `arg` with type `u32`
+function add_one(arg : u32) { // one argument `arg` with type `u32`
     arg += 1;
 }
 
-function and(a: bool, b: bool) -> bool { // two arguments `a` and `b` with type `bool`
+function and(a: bool, b: bool) -> bool { // two arguments `a`, `b` with types `bool`
     return c && b
 }
 ```

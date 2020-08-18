@@ -99,6 +99,7 @@ Executes *statement2* if *condition* is false.
 >    *statement2*
 >} else {
 >   *statement3*
+>}
 
 #### Example
 ```leo

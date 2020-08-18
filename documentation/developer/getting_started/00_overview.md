@@ -39,7 +39,7 @@ Read the [**Model**](../programming_model/00_model.md) to learn more.
 
 The Leo CLI provides a suite of commands to make programming in Leo easy.
 
-Develop you program with [**new**](../cli/00_new.md), [**build**](../cli/02_build.md), [**watch**](../cli/03_watch.md), 
+Develop your program with [**new**](../cli/00_new.md), [**build**](../cli/02_build.md), [**watch**](../cli/03_watch.md), 
 [**test**](../cli/04_test.md), and [**clean**](../cli/13_clean.md).
 
 Download packages from the Aleo Package Manager with [**add**](../cli/09_add.md), [**remove**](../cli/10_remove.md), [**login**](../cli/08_login.md), and [**publish**](../cli/11_publish.md).

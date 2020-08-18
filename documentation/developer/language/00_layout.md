@@ -36,7 +36,7 @@ circuit Point {
 ### Imports
 
 [Imports](09_imports.md) fetch other circuits and functions and bring them into the current file scope.
-You can import dependencies that are declared locally or in an imported package.
+You can import dependencies that are declared locally in the `src` directory or downloaded to the `imports` directory.
 
 ```leo
 import math.square;
@@ -50,7 +50,7 @@ function main() {
 
 Each [Test](aleo/documentation/developer/language/11_tests.md) function generates new constraints for an isolated test circuit.
 The input to a test can be specified with the [context annotation]().
-Tests are executed with the Leo [test command](../cli/04_test.md)
+Tests are executed with the Leo [test command](../cli/04_test.md).
 
 ```leo
 function square(a: u32) -> u32 {

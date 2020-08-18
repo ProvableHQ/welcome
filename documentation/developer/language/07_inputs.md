@@ -38,7 +38,7 @@ a: bool  = true;                // booleans
 b: u8    = 2;                   // integers
 c: field = 0;                   // fields
 d: group = (0, 1)group          // group elements
-e: address = aleo1qnr4dkkvkgfqph0vzc3y6z2eu975wnpz2925ntjccd5cfqxtyu8sta57j8 // addresses
+e: address = aleo1qnr4dkkvkgfqph0vzc3y6z2eu975wnpz2925ntjccd5cfqxtyu8sta57j8
 f: u8[32] = [0; 32]             // arrays
 g: u8[2][3] = [[0u8; 2]; 3];    // multi-dimensional arrays
 h: (bool, bool) = (true, false) // tuples
@@ -55,6 +55,6 @@ Similar to input registers, runtime [state](../programming_model/00_model.md#sta
 merkle leaf state information that developers can access through the [`.state` file](../programming_model/00_model.md#state-file).
 
 :::info
-To learn more about runtime files checkout the Leo runtime [Model](../programming_model/00_model.md#in-and-out-files).
+To learn more about runtime files checkout the Leo runtime [**Model**](../programming_model/00_model.md#in-and-out-files).
 :::
 
