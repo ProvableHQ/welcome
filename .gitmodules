@@ -4,3 +4,6 @@
 [submodule "leo"]
 	path = leo
 	url = https://github.com/AleoHQ/leo
+[submodule "aleo-setup"]
+	path = aleo-setup
+	url = https://github.com/AleoHQ/aleo-setup
