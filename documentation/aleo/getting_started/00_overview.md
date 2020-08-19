@@ -56,10 +56,6 @@ to compile, execute, and finalize its state autonomously.
 - [Hello World in Leo](./developer/getting_started/02_hello_world.md)
 - [File Syntax](./developer/getting_started/03_syntax.md)
 - [CLI Commands](./developer/getting_started/04_cli.md)
-- [Pedersen Hash Example Overview](./developer/getting_started/05_pedersen_hash.md)
-- [Token Example Overview](./developer/getting_started/06_token.md)
-- [StableCoin Example Overview](./developer/getting_started/07_stablecoin.md)
-- [Token Swap Example Overview](./developer/getting_started/08_token_swap.md)
 
 
 ### Chapter 5: Language
@@ -104,7 +100,15 @@ to compile, execute, and finalize its state autonomously.
 - [Clean Your Workspace](./developer/cli/13_clean.md)
 
 
-### Chapter 8: Additional Material
+### Chapter 8: Toy Examples
+
+- [Digital Assets](./developer/toy_examples/00_digital_assets.md)
+- [Stablecoins](./developer/toy_examples/01_stablecoins.md)
+- [Private Swaps](./developer/toy_examples/02_private_swaps.md)
+- [Pedersen Hash](./developer/toy_examples/03_pedersen_hash.md)
+
+
+### Chapter 9: Additional Material
 
 - [Style Guide](./developer/additional_material/00_style.md)
 - [Common Patterns](./developer/additional_material/01_common.md)
@@ -114,24 +118,24 @@ to compile, execute, and finalize its state autonomously.
 
 ## Testnet I
 
-### Chapter 9: Getting Started
+### Chapter 10: Getting Started
 
 - [Testnet I.](./testnet/getting_started/00_overview.md)
 - [Install snarkOS](./testnet/getting_started/01_installation.md)
 
 
-### Chapter 10: Networking
+### Chapter 11: Networking
 
 - [Networking](./testnet/networking/00_networking.md)
 - [Message Types](./testnet/networking/01_message_types.md)
 
 
-### Chapter 11: RPC Server
+### Chapter 12: RPC Server
 
 - [Configurations](./autogen/testnet/rpc/rpc_server/00_configurations.md)
 
 
-### Chapter 12: Public RPC Endpoints
+### Chapter 13: Public RPC Endpoints
 
 - [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
 - [getbestblockhash](./autogen/testnet/rpc/public_endpoints/01_getbestblockhash.md)
@@ -147,7 +151,7 @@ to compile, execute, and finalize its state autonomously.
 - [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/11_validaterawtransaction.md)
 
 
-### Chapter 13: Private RPC Endpoints
+### Chapter 14: Private RPC Endpoints
 
 - [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
 - [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
@@ -160,13 +164,13 @@ to compile, execute, and finalize its state autonomously.
 
 ## Explorer I
 
-### Chapter 14: Authentication
+### Chapter 15: Authentication
 
 - [Authentication API](./explorer/authentication/00_authentication_api.md)
 - [createapikey](./explorer/authentication/01_createapikey.md)
 
 
-### Chapter 15: Blocks
+### Chapter 16: Blocks
 
 - [Block API](./explorer/blocks/00_block_api.md)
 - [getbestblock](./explorer/blocks/01_getbestblock.md)
@@ -175,7 +179,7 @@ to compile, execute, and finalize its state autonomously.
 - [getbyhash](./explorer/blocks/04_getbyhash.md)
 
 
-### Chapter 16: Transactions
+### Chapter 17: Transactions
 
 - [Transaction API](./explorer/transactions/00_transaction_api.md)
 - [getbyhash](./explorer/transactions/01_getbyhash.md)
@@ -184,7 +188,7 @@ to compile, execute, and finalize its state autonomously.
 - [validate](./explorer/transactions/04_validate.md)
 
 
-### Chapter 17: Metrics
+### Chapter 18: Metrics
 
 - [Metrics API](./explorer/metrics/00_metrics_api.md)
 - [get](./explorer/metrics/01_get.md)
