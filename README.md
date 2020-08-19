@@ -14,7 +14,7 @@ This repository serves a guide for getting started with building on Aleo. Here i
 - [Aleo Explorer](https://aleo.network) - Validate and broadcast on Aleo Testnet I
 - [Aleo Developer Portal](https://developer.aleo.org) - The documentation portal for Developer Preview I
 
-As this is the first in our series of developer previews, we anticipate there to be many bugs. For help with getting setup, please join the Discord channel to ask questions and help others get their question answered.
+As this is the first in our series of developer previews, we anticipate there to be bugs. For help with getting set up, please join the Discord channel to ask questions and help others get their question answered.
 
 We will be updating this page with FAQs to make it easy for finding common issues and to fix them quickly.
 
