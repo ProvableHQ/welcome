@@ -1,8 +1,12 @@
 ---
-id: token_swap
-title: Token Swap Example Overview
-sidebar_label: Token Swap Example
+id: private_swaps
+title: Private Swaps
+sidebar_label: Private Swaps
 ---
+
+:::caution
+This design is not standardized and currently unstable.
+:::
 
 # Goal
 

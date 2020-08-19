@@ -1,8 +1,12 @@
 ---
 id: pedersen_hash
-title: Pedersen Hash Example Overview
-sidebar_label: Pedersen Hash Example
+title: Pedersen Hash
+sidebar_label: Pedersen Hash
 ---
+
+:::caution
+This design is not standardized and currently unstable.
+:::
 
 Let's learn how to write a Pedersen Hash in Leo and prove knowledge of a preimage.
 ```leo title="src/256_bit.leo"

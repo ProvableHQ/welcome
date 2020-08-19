@@ -49,10 +49,10 @@
 - [Hello World in Leo](./developer/getting_started/02_hello_world.md)
 - [File Syntax](./developer/getting_started/03_syntax.md)
 - [CLI Commands](./developer/getting_started/04_cli.md)
-- [Pedersen Hash Example Overview](./developer/getting_started/05_pedersen_hash.md)
-- [Token Example Overview](./developer/getting_started/06_token.md)
-- [StableCoin Example Overview](./developer/getting_started/07_stablecoin.md)
-- [Token Swap Example Overview](./developer/getting_started/08_token_swap.md)
+- [Pedersen Hash Example Overview](developer/toy_examples/03_pedersen_hash.md)
+- [Token Example Overview](developer/toy_examples/00_digital_assets.md)
+- [StableCoin Example Overview](developer/toy_examples/01_stablecoins.md)
+- [Token Swap Example Overview](developer/toy_examples/02_private_swaps.md)
 
 
 ### Chapter 5: Language

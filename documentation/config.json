@@ -43,6 +43,10 @@
                     "folderName": "cli"
                 },
                 {
+                    "title": "Toy Examples",
+                    "folderName": "toy_examples"
+                },
+                {
                     "title": "Additional Material",
                     "folderName": "additional_material"
                 }

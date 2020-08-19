@@ -6,34 +6,40 @@
 
 ### The Network
 
-To get started, the following is a list of Aleo Testnet I bootnodes.
+To connect to the network, the following is a list of Aleo Testnet I bootnodes.
 
 #### Americas
 
-| Region        | URL                       | Network Port | RPC Port |
-|---------------|---------------------------|:------------:|:--------:|
-| Americas      | us1.testnet1.aleo.network |     4131     |   3030   |
-| Americas      | us2.testnet1.aleo.network |     4131     |   3030   |
-| Americas      | us3.testnet1.aleo.network |     4131     |   3030   |
-| Americas      | us4.testnet1.aleo.network |     4131     |   3030   |
-| Americas      | us5.testnet1.aleo.network |     4131     |   3030   |
-
-#### Asia
-
-| Region | URL                       | Network Port | RPC Port |
-|--------|---------------------------|:------------:|:--------:|
-| Asia   | as1.testnet1.aleo.network |     4131     |   3030   |
-| Asia   | as2.testnet1.aleo.network |     4131     |   3030   |
-| Asia   | as3.testnet1.aleo.network |     4131     |   3030   |
+| Status  | Region        | URL                       | Network Port | RPC Port |
+|:-------:|:-------------:|---------------------------|:------------:|:--------:|
+| Live    | Americas      | us1.testnet1.aleo.network |     4131     |   3030   |
+| Live    | Americas      | us2.testnet1.aleo.network |     4131     |   3030   |
+| Live    | Americas      | us3.testnet1.aleo.network |     4131     |   3030   |
+| Live    | Americas      | us4.testnet1.aleo.network |     4131     |   3030   |
+| Live    | Americas      | us5.testnet1.aleo.network |     4131     |   3030   |
 
 #### Europe
 
-| Region | URL                       | Network Port | RPC Port |
-|--------|---------------------------|:------------:|:--------:|
-| Europe | eu1.testnet1.aleo.network |     4131     |   3030   |
-| Europe | eu2.testnet1.aleo.network |     4131     |   3030   |
-| Europe | eu3.testnet1.aleo.network |     4131     |   3030   |
+| Status  | Region | URL                       | Network Port | RPC Port |
+|:-------:|:------:|---------------------------|:------------:|:--------:|
+| Pending | Europe | eu1.testnet1.aleo.network |     4131     |   3030   |
+| Pending | Europe | eu2.testnet1.aleo.network |     4131     |   3030   |
+| Pending | Europe | eu3.testnet1.aleo.network |     4131     |   3030   |
+| Pending | Europe | eu4.testnet1.aleo.network |     4131     |   3030   |
+| Pending | Europe | eu5.testnet1.aleo.network |     4131     |   3030   |
+
+#### Asia
+
+| Status  | Region | URL                       | Network Port | RPC Port |
+|:-------:|:------:|---------------------------|:------------:|:--------:|
+| Pending | Asia   | as1.testnet1.aleo.network |     4131     |   3030   |
+| Pending | Asia   | as2.testnet1.aleo.network |     4131     |   3030   |
+| Pending | Asia   | as3.testnet1.aleo.network |     4131     |   3030   |
+| Pending | Asia   | as4.testnet1.aleo.network |     4131     |   3030   |
+| Pending | Asia   | as5.testnet1.aleo.network |     4131     |   3030   |
 
 ## Aleo Studio
+
+
 
 ## Technical Support
