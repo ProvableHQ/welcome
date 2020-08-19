@@ -78,7 +78,6 @@
 
 - [The Leo Programming Model](./developer/programming_model/00_model.md)
 - [A Leo Token on Aleo](./developer/programming_model/01_token.md)
-- [Leo Procedures](./developer/programming_model/02_procedures.md)
 
 
 ### Chapter 7: CLI
