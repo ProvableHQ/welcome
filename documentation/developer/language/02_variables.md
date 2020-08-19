@@ -21,7 +21,7 @@ function add_one() -> u8 {
     return a + b   // allocated, computed value is enforced to be the sum of both values
 }
 ```
-Computations are expressed in terms of arithmetic circuits, in particular rank-1 quadratic constraint systems. Thus computing on an **allocated** variable always results in another **allocated** variable. 
+Computations are expressed in terms of arithmetic R1CS circuits. Thus computing on an **allocated** variable always results in another **allocated** variable. 
 
 ## Mutability
 All defined variables in Leo are immutable by default, which means they cannot be changed after assignment.
@@ -29,9 +29,9 @@ Local variables can be made mutable with the `mut` keyword. This functionality d
 variables are **pass by value**.
 
 ```leo
-let a = 0u32;
+let a: u32 = 0;
 //a = 1 <- Will fail
 
-let mut b = 0u32;
+let mut b: u32 = 0;
 b = 1; // <- Ok
 ```

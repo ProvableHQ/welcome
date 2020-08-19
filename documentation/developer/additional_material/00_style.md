@@ -60,7 +60,7 @@ test function test_foo() {
 
 | Item                | Convention                          |
 |---------------------|-------------------------------------|
-| Packages            | snake_case (but prefer single word) |
+| Packages            | kebab-case (but prefer single word) |
 | Circuits            | CamelCase                           |
 | Circuit Members     | snake_case                          |
 | Functions           | snake_case                          |

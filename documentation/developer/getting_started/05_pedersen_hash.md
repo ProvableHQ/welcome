@@ -1,7 +1,7 @@
 ---
-id: example
-title: Pedersen Hash Example
-sidebar_label: A More Complex Example
+id: pedersen_hash
+title: Pedersen Hash Example Overview
+sidebar_label: Pedersen Hash Example
 ---
 
 Let's learn how to write a Pedersen Hash in Leo and prove knowledge of a preimage.
@@ -43,3 +43,18 @@ function main(parameters: group[256], input: bool[256]) -> group {
 const parameters: group[256] = [1group; 256];
 input: bool[256] = [true; 256];
 ```
+
+### Circuit Execution
+All paths in a circuit need to execute. Circuits cannot reason about errors.
+
+All values in a program must be static. Circuits cannot dynamically generate other circuits.
+
+### Logging
+To aid developers in writing circuits, Leo provides several [console functions](aleo/documentation/developer/language/11_console.md):
+* console.assert
+* console.log
+* console.debug
+* console.error
+
+These functions execute separately from the circuit and do not generate constraints.
+They can be used to provide developers additional information when testing circuits.

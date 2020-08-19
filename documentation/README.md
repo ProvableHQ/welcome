@@ -50,31 +50,34 @@
 - [Hello World in Leo](./developer/getting_started/02_hello_world.md)
 - [File Syntax](./developer/getting_started/03_syntax.md)
 - [CLI Commands](./developer/getting_started/04_cli.md)
-- [Pedersen Hash Example](./developer/getting_started/05_example.md)
+- [Pedersen Hash Example Overview](./developer/getting_started/05_pedersen_hash.md)
+- [Token Example Overview](./developer/getting_started/06_token.md)
+- [StableCoin Example Overview](./developer/getting_started/07_stablecoin.md)
+- [Token Swap Example Overview](./developer/getting_started/08_token_swap.md)
 
 
 ### Chapter 5: Language
 
-- [Layout of a Leo Program](./developer/language/00_layout.md)
-- [Defining Variables](./developer/language/01_variables.md)
-- [Data Types](./developer/language/02_types.md)
-- [Arrays](./developer/language/03_arrays.md)
-- [Operators](./developer/language/04_operators.md)
-- [Statements](./developer/language/05_statements.md)
-- [Functions](./developer/language/06_functions.md)
-- [Leo Inputs](./developer/language/07_inputs.md)
-- [Circuits](./developer/language/08_circuits.md)
-- [Imports](./developer/language/09_imports.md)
-- [Writing Tests](./developer/language/10_tests.md)
-- [Logging](./developer/language/11_logging.md)
-- [Lexical Structure](./developer/language/12_lexical.md)
+- [A Flying Tour of Leo](./developer/language/00_flying_tour.md)
+- [Layout of a Leo Program](./developer/language/01_layout.md)
+- [Defining Variables](./developer/language/02_variables.md)
+- [Data Types and Values](./developer/language/03_types.md)
+- [Arrays](./developer/language/04_arrays_and_tuples.md)
+- [Operators](./developer/language/05_operators.md)
+- [Statements](./developer/language/06_statements.md)
+- [Functions](./developer/language/07_functions.md)
+- [Leo Inputs](./developer/language/08_inputs.md)
+- [Circuits](./developer/language/09_circuits.md)
+- [Imports](./developer/language/10_imports.md)
+- [Console Functions](./developer/language/11_console.md)
+- [Writing Tests](./developer/language/12_tests.md)
+- [Lexical Structure](./developer/language/13_lexical.md)
 
 
 ### Chapter 6: Programming Model
 
 - [The Leo Programming Model](./developer/programming_model/00_model.md)
-- [A Leo Erc20 on Aleo](./developer/programming_model/01_erc20.md)
-- [Leo Procedures](./developer/programming_model/02_procedures.md)
+- [A Leo Token on Aleo](./developer/programming_model/01_token.md)
 
 
 ### Chapter 7: CLI
