@@ -156,6 +156,10 @@
                     "document_id": "developer/cli"
                 },
                 {
+                    "title": "Toy Examples",
+                    "document_id": "toy_examples"
+                },
+                {
                     "title": "Additional Material",
                     "document_id": "developer/additional_material"
                 }
