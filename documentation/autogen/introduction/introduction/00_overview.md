@@ -65,19 +65,20 @@ to compile, execute, and finalize its state autonomously.
 
 ### Chapter 5: Language
 
-- [Layout of a Leo Program](./developer/language/00_layout.md)
-- [Defining Variables](./developer/language/01_variables.md)
-- [Data Types and Values](./developer/language/02_types.md)
-- [Arrays](./developer/language/03_arrays_and_tuples.md)
-- [Operators](./developer/language/04_operators.md)
-- [Statements](./developer/language/05_statements.md)
-- [Functions](./developer/language/06_functions.md)
-- [Leo Inputs](./developer/language/07_inputs.md)
-- [Circuits](./developer/language/08_circuits.md)
-- [Imports](./developer/language/09_imports.md)
-- [Console Functions](./developer/language/10_console.md)
-- [Writing Tests](./developer/language/11_tests.md)
-- [Lexical Structure](./developer/language/12_lexical.md)
+- [A Flying Tour of Leo](./developer/language/00_flying_tour.md)
+- [Layout of a Leo Program](./developer/language/01_layout.md)
+- [Defining Variables](./developer/language/02_variables.md)
+- [Data Types and Values](./developer/language/03_types.md)
+- [Arrays](./developer/language/04_arrays_and_tuples.md)
+- [Operators](./developer/language/05_operators.md)
+- [Statements](./developer/language/06_statements.md)
+- [Functions](./developer/language/07_functions.md)
+- [Leo Inputs](./developer/language/08_inputs.md)
+- [Circuits](./developer/language/09_circuits.md)
+- [Imports](./developer/language/10_imports.md)
+- [Console Functions](./developer/language/11_console.md)
+- [Writing Tests](./developer/language/12_tests.md)
+- [Lexical Structure](./developer/language/13_lexical.md)
 
 
 ### Chapter 6: Programming Model

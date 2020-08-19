@@ -58,19 +58,20 @@
 
 ### Chapter 5: Language
 
-- [Layout of a Leo Program](aleo/documentation/developer/language/01_layout.md)
-- [Defining Variables](aleo/documentation/developer/language/02_variables.md)
-- [Data Types and Values](aleo/documentation/developer/language/03_types.md)
-- [Arrays](aleo/documentation/developer/language/04_arrays_and_tuples.md)
-- [Operators](aleo/documentation/developer/language/05_operators.md)
-- [Statements](aleo/documentation/developer/language/06_statements.md)
-- [Functions](aleo/documentation/developer/language/07_functions.md)
-- [Leo Inputs](aleo/documentation/developer/language/08_inputs.md)
-- [Circuits](aleo/documentation/developer/language/09_circuits.md)
-- [Imports](aleo/documentation/developer/language/10_imports.md)
-- [Console Functions](aleo/documentation/developer/language/11_console.md)
-- [Writing Tests](aleo/documentation/developer/language/12_tests.md)
-- [Lexical Structure](aleo/documentation/developer/language/13_lexical.md)
+- [A Flying Tour of Leo](./developer/language/00_flying_tour.md)
+- [Layout of a Leo Program](./developer/language/01_layout.md)
+- [Defining Variables](./developer/language/02_variables.md)
+- [Data Types and Values](./developer/language/03_types.md)
+- [Arrays](./developer/language/04_arrays_and_tuples.md)
+- [Operators](./developer/language/05_operators.md)
+- [Statements](./developer/language/06_statements.md)
+- [Functions](./developer/language/07_functions.md)
+- [Leo Inputs](./developer/language/08_inputs.md)
+- [Circuits](./developer/language/09_circuits.md)
+- [Imports](./developer/language/10_imports.md)
+- [Console Functions](./developer/language/11_console.md)
+- [Writing Tests](./developer/language/12_tests.md)
+- [Lexical Structure](./developer/language/13_lexical.md)
 
 
 ### Chapter 6: Programming Model
