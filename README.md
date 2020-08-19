@@ -7,14 +7,14 @@
 
 ## Welcome to Aleo.
 
-This repository serves a guide for getting started with building on Aleo. Here is a quick summary of the key highlights for Developer Preview I:
+This repository serves as a guide for getting started with building on Aleo. Here is a quick summary of the key highlights for Developer Preview I:
 
-- [Aleo Studio](https://aleo.studio) - The world's first IDE for zero-knowledge proofs
+- [Aleo Studio](https://aleo.studio) - The first IDE for zero-knowledge proofs
 - [Aleo Package Manager](https://aleo.pm) - Official package manager of the Leo programming language
 - [Aleo Explorer](https://aleo.network) - Validate and broadcast on Aleo Testnet I
 - [Aleo Developer Portal](https://developer.aleo.org) - The documentation portal for Developer Preview I
 
-As this is the first in our series of developer previews, we anticipate there to be bugs. For help with getting set up, please join the Discord channel to ask questions and help others get their question answered.
+As this is the first in our series of developer previews, we anticipate there to be bugs. For help getting set up, please join the Discord channel to ask questions and help others answer their questions.
 
 We will be updating this page with FAQs to make it easy for finding common issues and to fix them quickly.
 
