@@ -213,7 +213,7 @@
         },
         {
             "title": "Advanced Topics",
-            "folderName": "advanced",
+            "section_id": "advanced",
             "chapters": [
                 {
                     "title": "The Aleo Curves",
