@@ -12,7 +12,7 @@ more explicit type variable definitions.
 
 ## Program Inputs
 
-The `[main]` section header specifies the `main.leo` target file which must have a [`main` function](./06_functions.md#main-function-inputs) with matching input names and types.
+The `[main]` section header specifies the `main.leo` target file which must have a [`main` function](aleo/documentation/developer/language/07_functions.md#main-function-inputs) with matching input names and types.
 The default inputs file is `inputs/package.in`. 
 
 ```leo title="inputs/package.in"
@@ -21,7 +21,7 @@ a: u32 = 1;
 b: u32 = 2;
 ```
 
-Program inputs can be accessed as main function [arguments](./06_functions.md#arguments).
+Program inputs can be accessed as main function [arguments](aleo/documentation/developer/language/07_functions.md#arguments).
 
 ```leo title="src/main.leo"
 function main(a: u32, b: u32) -> u32 {

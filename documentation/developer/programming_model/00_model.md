@@ -43,7 +43,7 @@ the local data commitment to ensure that all record data is included in the [loc
 
 ### Input Registers
 
-Input register information is passed to Leo as program input inside the `.in` file indicated by the `[registers]` [section](../language/07_inputs.md#runtime-input-registers).
+Input register information is passed to Leo as program input inside the `.in` file indicated by the `[registers]` [section](aleo/documentation/developer/language/08_inputs.md#runtime-input-registers).
 
 ```leo title="project.in"
 [main]
@@ -86,7 +86,7 @@ The return function of main will automatically write to the output registers in 
 Intermediate runtime state will automatically be passed from one record's output register to the next record's input register.
 
 :::info
-To see how to load register files into tests, checkout [**Writing Tests**](aleo/documentation/developer/language/11_tests.md#integration-tests).
+To see how to load register files into tests, checkout [**Writing Tests**](aleo/documentation/developer/language/12_tests.md#integration-tests).
 :::
 
 ## State
@@ -148,14 +148,14 @@ The `[state_leaf]` section defines state leaf transition information that is enc
 The state leaf section must be defined below the private `[[private]]` section.
 
 :::info
-To see how to load state files into tests, checkout [**Writing Tests**](aleo/documentation/developer/language/11_tests.md#integration-tests)
+To see how to load state files into tests, checkout [**Writing Tests**](aleo/documentation/developer/language/12_tests.md#integration-tests)
 :::
 
 ## Where Register and State Files are Stored
 
 The Leo [CLI](../cli/00_new.md) creates an `inputs/` and an `outputs/` folder to store program input and output information from the compiler.
 These folders also provide access to register, record, and leaf state information.
-We already introduced the program [inputs](../language/07_inputs.md) `.in` file located in the `inputs/` folder.
+We already introduced the program [inputs](aleo/documentation/developer/language/08_inputs.md) `.in` file located in the `inputs/` folder.
 When each Leo file in a transaction is run, `.out` files as well as a `.state` file are created as follows:
 
 ```bash
