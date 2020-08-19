@@ -1,4 +1,6 @@
-# Welcome to Aleo.
+<h1 align="center">
+    <img width="1412" src="./.resources/banner.png">
+</h1>
 
 ## Aleo Testnet I
 
