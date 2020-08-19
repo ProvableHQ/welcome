@@ -22,7 +22,7 @@ Proceed to [**Installation**](./01_installation.md) for information on how to in
 
 ## Getting Started
 
-Checkout the [**Hello World**](./02_hello_world.md) tutorial for a brief walk-through of Leo and the Leo CLI.
+Check out the [**Hello World**](./02_hello_world.md) tutorial for a brief walk-through of Leo and the Leo CLI.
 
 ## Language Documentation
 
@@ -31,7 +31,7 @@ Leo comes with an advanced testing framework for writing unit and integration te
 
 ## Programming Model
 
-Leo programs are designed to work with Aleo [record](../../aleo/concepts/02_records.md) and [transaction](../../aleo/concepts/03_transactions.md) data. 
+Leo programs are designed to work with Aleo [**record**](../../aleo/concepts/02_records.md) and [**transaction**](../../aleo/concepts/03_transactions.md) data. 
 Understanding how to access and compute on this data is essential to writing private applications. 
 Read the [**Model**](../programming_model/00_model.md) to learn more.
 
@@ -48,3 +48,6 @@ Once your Leo program is compiled, generate proofs with [**setup**](../cli/05_se
 
 ## Additional Material
 
+Is your Leo code formatted correctly? Check out the [**Style Guide**](../additional_material/00_style.md) and [**Common Patterns**](../additional_material/01_common.md) for the official guidelines.
+
+Found a bug? Have an idea for a feature? Proceed to the [**Known Bugs**](../additional_material/02_bugs.md) section and the [**Contributing Guide**](../additional_material/03_contributing.md).
