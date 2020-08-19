@@ -17,11 +17,11 @@ function function_name() {
 Functions can take one or more arguments. Each function argument must have a name followed by an explicit type.
 
 ```leo
-function add_one(arg : u32) { // one argument named `arg` with type `u32`
+function add_one(arg : u32) { // one argument `arg` with type `u32`
     arg += 1;
 }
 
-function and(a: bool, b: bool) -> bool { // two arguments `a` and `b` with type `bool`
+function and(a: bool, b: bool) -> bool { // two arguments `a`, `b` with types `bool`
     return c && b
 }
 ```
@@ -43,7 +43,7 @@ function main() -> u32 {
 ### Main function inputs
 The `main` function is the entry point of a Leo program.
 
-`main` function arguments provide the [inputs](./07_inputs.md) to the circuit.
+`main` function arguments provide the [inputs](aleo/documentation/developer/language/08_inputs.md) to the circuit.
 They are allocated private variables in the program's constraint system.
 
 ```leo

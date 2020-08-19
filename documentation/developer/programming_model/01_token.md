@@ -1,14 +1,14 @@
 ---
 id: erc20
-title: A Leo Erc20 on Aleo
-sidebar_label: Erc20 Example
+title: A Leo Token on Aleo
+sidebar_label: Token Example
 ---
 
 Consider a token with two functions: `token_debit` and `token_credit`.
 * `token_debit` decrements a user's token balance by a value.
 * `token_credit` increments a user's token balance by a value.
 
-Lets transfer a token value of `1` for a token with id `[1u8; 32]`
+Lets transfer a token value of `100u8` for a token with id `1u8`
 
 ### Records
 For this example we will only use one old record `old_record_0` and one new record `new_record_0`.
@@ -31,12 +31,12 @@ The updated [execute](./00_model.md#registers) for our example:
 
 After `old_record_0` dies, `token_debit` outputs the token id and token value balance `(token_id, value_balance)` being transferred to `new_record_0`.
 
-`state_1 = ([1u8; 32], 1)`
+`state_1 = (1u8, 100u8)`
 
 `new_record_0` should be credited with the value from `state_1` when it is born. In addition, we will check to make sure the 
 `state_2` calculated by `new_record_0` is equal to `state_0` where `value_balance == 0u64` ensuring money has not been created out of thin air.
 
-`state_2 = ([1u8; 32], 0)` 
+`state_2 = (1u8, 0u8)` 
 
 ### Implementation
 
@@ -93,19 +93,20 @@ We need the index of this record:
 
 The program input file contains program inputs. In this case, we fetch both values directly from the
 record payload so `[main]` will be empty.
-The input register contains the initial state and is stored in the `erc20.in` file.
+The input register contains the initial state and is stored in the `token.in` file.
 
-```leo title="erc20.in"
+```leo title="token.in"
 [main]
 
 [registers]
-token_id: u8[32] = [1u8; 32];
-value_balance: u64 = 0; // Value in the first input register is initialized to 0
+token_id: u8 = 1u8;
+value_balance: u8 = 0u8; // Value in the first input register is initialized to 0
 ```
 
-Record and leaf state are passed into Leo through the `erc20.state` file.
+Record and leaf state are passed into Leo through the `token.state` file.
 
-```leo title="erc20.state"
+```leo title="token.state"
+// The program state for stable_token/src/main.leo
 [[public]]
 
 [state]
@@ -117,11 +118,12 @@ root: u8[32] = [0u8; 32];
 [record]
 serial_number: u8[32] = [0u8; 32];
 commitment: u8[32] = [0u8; 32];
-owner: address = aleo1...;
+owner: address = aleo1qnr4dkkvkgfqph0vzc3y6z2eu975wnpz2925ntjccd5cfqxtyu8sta57j8;
+is_dummy: bool = false;
 value: u64 = 0;
-payload: Payload = Payload { token_id = [1u8; 32], value_balance = 1u64 };
-birth_program_id: u8[32] = [0u8; 32];
-death_program_id: u8[32] = [0u8; 32];
+payload: u8[32] = [1, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+birth_program_id: u8[48] = [1u8; 48];
+death_program_id: u8[48] = [0u8; 48];
 serial_number_nonce: u8[32] = [0u8; 32];
 commitment_randomness: u8[32] = [0u8; 32];
 
@@ -130,6 +132,7 @@ path: u8[32][2] = [ [0u8; 32], [0u8; 32] ];
 memo: u8[32] = [0u8; 32];
 network_id: u8 = 0;
 leaf_randomness: u8[32] = [0u8; 32];
+
 ```
 
 ### 1.4 Leo Function
@@ -147,29 +150,54 @@ The `token_debit` Leo function should:
 #### Code
 
 ```leo title="token_debit.leo"
-function main(registers, state, record) -> (u8[32], u32) {
-    assert_eq!(registers.token_id, record.payload.token_id); // 1.
-    assert_eq!(record.birth_program_id, token_debit); // 2.
-    assert_eq!(record.death_program_id, token_credit); // 3.
+// The token debit function
+function debit(
+    input,
+    token_debit: u8[48],
+    token_credit: u8[48]
+) -> (u8, u8) {
+    // 1. Check token ids match
+    let id_t = input.registers.id;
+    let payload_id_t = input.record.payload[0]; // payload is u8 bytes
+    let condition1 = id_t == payload_id_t;
 
-    if (state.leaf_index == 0u32) {
-        assert_eq!(registers.value_balance, 0u32); // 4.
+    // 2. Check record death is token_debit
+    let id_d = input.record.death_program_id;
+    let condition2 = id_d == token_debit;
+
+    // 3. Check record birth is token_credit
+    let id_b = input.record.birth_program_id;
+    let condition3 = id_b == token_credit;
+
+    // 4. Handle old_record_0 new token case
+    let global_index = input.state.leaf_index;
+    let vb_t_old = input.registers.value_balance;
+    let is_zero = vb_t_old == 0;
+    let condition4 = if global_index == 0 ? is_zero : true;
+
+    // 5. Add payload value to register value balance
+    let payload_vb_t = input.record.payload[1];
+    let vb_t_new = vb_t_old + payload_vb_t;
+
+    // 6. Debit the funds if checks pass
+    let passed = condition1 && condition2 && condition3 && condition4 && condition5;
+
+    if passed {
+        return (id_t, vb_t_new)
+    } else {
+        return (id_t, vb_t_old)
     }
-
-    let new_value_balance = registers.value_balance + record.payload.value_t; // 5.
-
-    return (registers.token_id, new_value_balance) // 6.
 }
 ```
 
 #### Output
 
-Return values are written to the `erc20.out` file after the program is run.
+Return values are written to the `token.out` file after the program is run.
 
-```leo title="erc20.out"
+```leo title="token.out"
 [registers]
-token_id: u8[32] = [1u8; 32];
-value_balance: u64 = 1;
+token_id: u8 = 1u8;
+value_balance: u8 = 100u8;
 ```
 
 ### 1.5 Leo Runtime Checks
@@ -228,16 +256,28 @@ If you were to do the calculation in Leo by hand, the `token_debit` function wou
 #### Code
 
 ```leo title="token_debit.leo"
-function main(registers, state, record, state_leaf) -> (u8[32], u32) {
-    assert_eq!(registers.token_id, record.payload.token_id); // 1.
-    assert_eq!(record.birth_program_id, token_debit); // 2.
-    assert_eq!(record.death_program_id, token_credit); // 3.
+function debit(
+    input,
+    token_debit: u8[48],
+    token_credit: u8[48]
+) -> (u8, u8) {
+    let id_t = input.registers.id;
+    let payload_id_t = input.record.payload[0]; // payload is u8 bytes
+    let condition1 = id_t == payload_id_t; // 1.
 
-    if (state.leaf_index == 0u32) {
-        assert_eq!(registers.value_balance, 0u32); // 4.
-    }
+    let id_d = input.record.death_program_id;
+    let condition2 = id_d == token_debit; // 2.
 
-    let new_value_balance = registers.value_balance + record.payload.value_t; // 5.
+    let id_b = input.record.birth_program_id;
+    let condition3 = id_b == token_credit; // 3.
+
+    let global_index = input.state.leaf_index;
+    let vb_t_old = input.registers.value_balance;
+    let is_zero = vb_t_old == 0;
+    let condition4 = if global_index == 0 ? is_zero : true; // 4.
+
+    let payload_vb_t = input.record.payload[1];
+    let vb_t_new = vb_t_old + payload_vb_t; // 5.
 
     let cm_actual = commit(
         record.owner, 
@@ -249,7 +289,7 @@ function main(registers, state, record, state_leaf) -> (u8[32], u32) {
         record.commitment_randomness,
     );
 
-    assert_eq!(cm, cm_actual); // 6.
+    let condition6 = cm cm_actual; // 6.
 
     let hash_t0 = hash(
         register.token_id,
@@ -274,16 +314,23 @@ function main(registers, state, record, state_leaf) -> (u8[32], u32) {
 
     let local_data_actual = merkle_root(data, state_leaf.path);
     
-    assert_eq!(state.root, local_data_actual); // 7.
+    let condition7 = state.root == local_data_actual; // 7.
 
-    return (registers.token_id, new_value_balance) // 8.
+    // 6. Debit the funds if checks pass
+    let passed = condition1 && condition2 && condition3 && condition4 && condition6 && condition7
+
+    if passed {
+        return (id_t, vb_t_new)
+    } else {
+        return (id_t, vb_t_old)
+    }
 }
 ```
 
 #### Summary
 
 The Leo runtime performs verification checks at the end of a program run.
-The input data for these checks comes from the current record and state context that is passed in by default to the `erc20.in` and `erc20.state` files.
+The input data for these checks comes from the current record and state context that is passed in by default to the `token.in` and `token.state` files.
 If the checks fail, the record is invalid and Leo will output a constraint system error.
 
 ## 2. `token_credit`
@@ -328,21 +375,22 @@ We need the index of this record:
 
 Similar to `token_debit`, the program inputs file contains the input register information.
 
-```leo title="erc20.in"
+```leo title="token.in"
 [main]
 
 [registers]
-token_id: u8[32] = [1u8; 32];
-value_balance: u64 = 1;
+token_id: u8 = 1u8;
+value_balance: u8 = 100u8;
 ```
 
 :::note
 Note that the output registers of `token_debit` is loaded into the input register for `token_credit`.
 :::
 
-Record and leaf state are passed into Leo through the `erc20.state` file.
+Record and leaf state are passed into Leo through the `token.state` file.
 
-```leo title="erc20.state"
+```leo title="token.state"
+// The program state for token/src/main.leo
 [[public]]
 
 [state]
@@ -354,11 +402,12 @@ root: u8[32] = [0u8; 32];
 [record]
 serial_number: u8[32] = [0u8; 32];
 commitment: u8[32] = [0u8; 32];
-owner: address = aleo1...;
+owner: address = aleo1qnr4dkkvkgfqph0vzc3y6z2eu975wnpz2925ntjccd5cfqxtyu8sta57j8;
+is_dummy: bool = false;
 value: u64 = 0;
-payload: u8[32] = [0u8; 32];
-birth_program_id: u8[32] = [0u8; 32];
-death_program_id: u8[32] = [0u8; 32];
+payload: u8[32] = [1, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+birth_program_id: u8[48] = [1u8; 48];
+death_program_id: u8[48] = [0u8; 48];
 serial_number_nonce: u8[32] = [0u8; 32];
 commitment_randomness: u8[32] = [0u8; 32];
 
@@ -367,6 +416,7 @@ path: u8[32][2] = [ [0u8; 32], [0u8; 32] ];
 memo: u8[32] = [0u8; 32];
 network_id: u8 = 0;
 leaf_randomness: u8[32] = [0u8; 32];
+
 ```
 
 :::note
@@ -388,31 +438,54 @@ The `token_credit` Leo function should:
 #### Code
 
 ```leo title="token_credit.leo"
-function main(registers, state, record) -> (u8[32], u32) {
-    assert_eq!(registers.token_id, record.payload.token_id); // 1.
-    assert_eq!(record.birth_program_id, token_credit); // 2.
-    
-    let mut new_value_balance = record.payload.value_balance
+// The token credit function
+function credit(
+    input,
+    token_credit: u8[48]
+) -> (u8, u8) {
+    let id_t = input.registers.id;
+    let payload_id_t = input.record.payload[0];
 
-    if (state.leaf_index == 2u32) {
-        new_value_balance -= payload.value_balance; // 3.
+    // 1. Check token id's match
+    let condition1 = id_t == payload_id_t;
 
-        assert_eq!(new_value_balance, 0u64); // 4.
+    // 2. Check record birth
+    let id_b = input.record.birth_program_id;
+    let condition2 = id_b == token_credit;
+
+    // 3. Subtract payload value form register value balance
+    let vb_t_old = input.registers.value_balance;
+    let payload_vb_t = input.record.payload[1];
+    let vb_t_new = vb_t_old - payload_vb_t;
+
+    // 4. Check that no money is created
+    let condition3 = vb_t_new <= vb_t_old;
+
+    // 5. Handle new_record_1 value is conserved case
+    let global_index = input.state.leaf_index;
+    let is_zero = vb_t_new == 0;
+    let condition4 = if global_index == 3 ? is_zero : true;
+
+    // 6. Credit the funds if checks pass
+    let passed = condition1 && condition2 && condition3 && condition4;
+
+    if passed {
+        return (id_t, vb_t_new)
+    } else {
+        return (id_t, vb_t_old)
     }
-
-    return (registers.token_id, new_value_balance) // 5.
 }
 ```
 
 
 #### Output
 
-Return values are written to the `erc20.out` file after the program is run.
+Return values are written to the `token.out` file after the program is run.
 
-```leo title="erc20.out"
+```leo title="token.out"
 [registers]
-token_id: u8[32] = [1u8; 32];
-value_balance: u64 = 0;
+token_id: u8 = 1;
+value_balance: u8 = 0;
 ```
 
 ### 2.5 Leo Runtime Checks
@@ -421,7 +494,7 @@ The Leo runtime will run the [same checks](#15-leo-runtime-checks) as in `token_
 
 ## Summary
 
-To implement an Erc20 token on Aleo you need to write two functions: [`token_debit`](#1-token_debit) and [`token_credit`](#2-token_credit).
+To implement a token on Aleo you need to write two functions: [`token_debit`](#1-token_debit) and [`token_credit`](#2-token_credit).
 `token debit` will be the [death program](#record-programs) of an old record whose value is being transferred. 
 `token_credit` is the [birth program](#record-programs) of a new record that receives the old record's value.
 Each program has access to register, record, and leaf state through [input files](#13-data-inputs). 

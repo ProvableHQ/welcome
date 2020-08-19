@@ -3,37 +3,39 @@ id: tests
 title: Writing Tests
 ---
 
-Use the `test` keyword to define tests in a leo program. Tests must have zero function inputs and zero function returns.
+Use the `test` keyword to define tests in a leo program.
 
 ```leo
 function main(a: u32) -> u32 {
     return a
 }
 
-test function expect_pass() {
+test function test_main() {
     let a = 1u32;
 
     let res = main(a);
 
-    assert_eq!(res, 1u32);
+    console.assert(res == 1u32);
 }
 
-test function expect_fail() {
-    assert_eq!(1u8, 0u8);
+test function test_ne() {
+    console.assert(1u8 != 0u8);
 }
 ```
 To run tests, use the `leo test` CLI [command](../cli/04_test.md).
 
-## Assert Equals
-This macro will enforce that the two values are equal in the constraint system.
+## Console Assert Function
+
+The console [assert function](aleo/documentation/developer/language/11_console.md#console-assert) was add specifically for testing purposes.
+You can use it to check that an expression evaluates to a true boolean value.
 
 ```leo
 function main() {
-    assert_eq!(45u32, 45u32);
+    console.assert(45u32 == 45u32);
   
-    assert_eq!(2field, 2field);
+    console.assert(2field == 2field);
   
-    assert_eq!(true, true);
+    console.assert(true == true);
 }
 ```
 
@@ -50,7 +52,7 @@ test function test_add_one() {
 
     let res = add_one(one);
     
-    assert_eq!(two, res);
+    console.assert(two == res);
 }
 ```
 
@@ -67,7 +69,7 @@ leo test
 
 ```leo title="console output:"
   leo  Running 1 tests
-  leo  test tmp::test_add_one passed. Constraint system satisfied.
+  leo  test tmp::test_add_one compiled successfully. Constraint system satisfied: true
 ```
 **Success!**
 
@@ -85,7 +87,7 @@ test function test_add_one() {
 
     let res = add_one(one);
     
-    assert_eq!(one, res); // <- changed to `one`
+    console.assert(one == res); // <- changed to `one`
 }
 ```
 
@@ -98,14 +100,15 @@ leo test
 
 ```leo title="console output:"
   leo  Running 1 tests
-  leo  test tmp::test_add_one failed. Constraint system not satisfied.
+  leo  test hello-world::test_add_one errored:     -->  11:5
+                      |
+                   11 |      console.assert(one == res);
+                      |  ^^^^
+                      |
+                      = Assertion `one == res` failed
 ```
 
-As expected, the test now fails. The console output tells us that the constraint system is `not satified`.
-
-Under the hood, the compiler executes the test in two parts. First, the test function is compiled to check for syntax
-errors. Second, the circuit is run. Since test functions do not have input values, we can simply check to see if the circuit's
-constraint system is not satisfied instead of generating and verifying a full proof.
+As expected, the test now fails. The console output tells us the exact line where the assert failed.
 
 ### Failing Test Compilation 
 
@@ -122,7 +125,7 @@ test function test_add_one() {
 
     let res = add_one(one, one); // <- added `one` as input
     
-    assert_eq!(one, res);
+    console.assert(one == res);
 }
 ```
 
@@ -141,34 +144,26 @@ Add a second `one` as input to the function call to `add_one`.
 As expected, the test fails telling us that we incorrectly provided 2 inputs to the `add_one` function.
 Since we failed before running the circuit, there is no output about the constraint system.
 
-## Integration Tests
+## Annotations
 
-For integration tests, one can invoke [`.in`](./07_inputs.md#program-inputs) and [`.state`](../programming_model/00_model.md#state-file) files to load the correct input and state as follows:
+Annotations provide additional metadata to a definition in Leo.
+
+:::info
+Annotations are a work in progress. Currently only the `@context` test annotation is supported
+:::
+
+### Test Context Annotation
+The context annotation takes one argument that will be used as the file name for input and output files.
+For integration tests, one can invoke [`.in`](aleo/documentation/developer/language/08_inputs.md#program-inputs) and [`.state`](../programming_model/00_model.md#state-file) files to load the correct input and state as follows:
  
- ```leo
- #[({USER_DEFINED_1}.in, {USER_DEFINED_2}.state, {USER_DEFINED_3}.out)]
- test function token_withdraw() {
-     ... 
- } 
-```
-
 For example, one could invoke it as any of the following examples:
 ```leo
-#[(token_withdraw.in, token_withdraw.state, token_withdraw.out)]
+@context(production) //  production.in, production.state, production.out
 test function token_withdraw() {
     ...
 }
 
-#[(test_input.in, test_state.state, test_output.out)]
-test function token_withdraw() {
-    ...
-}
-
-#[
-    mainnet.in,
-    mainnet.state,
-    mainnet.out
-]
+@context(custom)   //  custom.in, custom.state, custom.out
 test function token_withdraw() {
     ...
 }

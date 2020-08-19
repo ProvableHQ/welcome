@@ -18,7 +18,8 @@ Otherwise, the error will be caught at proving time when main function inputs ar
 | Operation        |  Operators |         Supported Types        |
 |:----------------:|:----------:|:------------------------------:|
 | addition         |  `+` `+=`  | `group`, `field`, integers |
-| subtraction      |  `-` `-=`  | `group`, `field`, integers |
+| negation(unary)  |   `-`      | `group`, `field`, integers | 
+| subtraction(binary)|  `-` `-=`  | `group`, `field`, integers |
 | multiplication   |  `*` `*=`  |     `field`, integers      |
 | division         |  `/` `/=`  |     `field`, integers      |
 | exponentiation   | `**` `**=` |        integers            |
@@ -37,8 +38,8 @@ Relational operators will always resolve to a boolean `bool` value.
 
 |       Operation       | Operators |           Supported Types           |
 |:---------------------:|:---------:|:-----------------------------------:|
-| equal                 | `==`      | `group`, `field`, integers      |
-| not-equal             | `!=`      | `group` ,  `field` , integers |
+| equal                 | `==`      | `bool`, `group`, `field`, integers, arrays, tuples, circuits |
+| not-equal             | `!=`      | `bool`, `group`, `field`, integers, arrays, tuples, circuits |
 | less than             | `<`       |           integers              |
 | less than or equal    | `<=`      |           integers              |
 | greater than          | `>`       |           integers              |
@@ -62,7 +63,7 @@ Operators will prioritize evaluation according to:
 
 To prioritize a different evaluation use parentheses `()` around the expression.
 
-```leo"
+```leo
 let result = (a + 1) * 2; 
 ```
 `(a + 1)` will be evaluated before multiplying by two `* 2`
