@@ -55,3 +55,15 @@ To connect to the network, the following is a list of Aleo Testnet I bootnodes.
 | Pending | Asia   | as5.testnet1.aleo.network |     4131     |   3030   |
 
 
+## Aleo Studio
+
+### Known issues
+
+- Some early testers on **macOS** and **Linux** have reported permission issues when installing Aleo Studio. To resolve this issue, run the following:
+```
+# macOS
+chmod -R 777 /Applications/Aleo\ Studio.app
+
+# Linux for deb
+sudo chmod -R 777 /opt/Aleo\ Studio/
+```
