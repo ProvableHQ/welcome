@@ -153,13 +153,7 @@ Annotations are a work in progress. Currently only the `@context` test annotatio
 :::
 
 ### Test Context Annotation
-
-**Syntax**
-> @context(*file_name*)  
-> test function *test_name*() { ... }
-
-File name is the file stem that will be used for the input and output files.
-
+The context annotation takes one argument that will be used as the file name for input and output files.
 For integration tests, one can invoke [`.in`](./07_inputs.md#program-inputs) and [`.state`](../programming_model/00_model.md#state-file) files to load the correct input and state as follows:
  
 For example, one could invoke it as any of the following examples:

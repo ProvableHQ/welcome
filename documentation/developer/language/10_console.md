@@ -7,11 +7,8 @@ Leo supports `console.assert`, `console.log`, `console.debug`, and `console.erro
 
 ## Console Assert
 
-**Syntax**
-> console.assert(*condition*)
-
-The condition must evaluate to a boolean.
-The assert function is most commonly used in [testing](./11_tests.md).
+The expression inside of a `console.assert` must evaluate to a boolean.
+The assert function is most commonly used in [**testing**](./11_tests.md).
 
 ```leo
 function square(a: u32) -> u32 {
@@ -28,32 +25,25 @@ test function test_square() {
 ```
 
 :::info
-The console assert function does not produce any constraints in the circuit!
+The console assert function does not produce any constraints in the circuit. This makes it ideal for testing!
 :::
 
 ## Console Log, Debug, and Error
 
-**Syntax**
-> console.log(*format_string*)
-
-> console.debug(*format_string*)
-
-> console.error(*format_string*)
+Logging functions like `console.log`, `console.debug`, and `console.error` require a format string as an argument. 
 
 ### Format Strings
+The first argument a macro receives is a format string. This must be a string literal. The power of the formatting string is in the `{}`s contained.
+Additional parameters passed to a console method replace the `{}`s within the formatting string in the order given.
 
-**Examples**
-```
+Format string syntax is intended to be familiar to those coming from C's `printf`/`fprintf` functions or Python's `str.format`
+
+```leo
 console.log("Hello");                   // => "Hello"
 console.log("The number is {}", 1u32);  // => "the number is 1u32"
 console.log("{} {}", 1u32, 2u32);)      // => "1 2"
 ```
 
-The first argument a macro receives is a format string. This must be a string literal. The power of the formatting string is in the `{}`s contained.
-
-Additional parameters passed to a console method replace the `{}`s within the formatting string in the order given.
-
-Format string syntax is intended to be familiar to those coming from C's `printf`/`fprintf` functions or Python's `str.format`
 
 ### `console.log`
 Prints the formatted value to the console.
@@ -62,6 +52,7 @@ function main(a: u32) {
     console.log("a is {}", a);
 }
 ```
+In your terminal, run:
 ```bash
 leo build
 ```
@@ -77,7 +68,7 @@ Since the Leo compiler does not parse input values until the proving phase the f
 a: u32 = 1u32;
 ```
 
-Provide the input inside a Leo input `.in` file with the package name under the main section.
+Provide the input inside a Leo input `.in` file with the package name under the main section. In your terminal, run:
 
 ```leo
 leo prove
@@ -106,9 +97,12 @@ function main(a: u32) {
 ```
 
 ### `console.error`
-Prints the error to console.
+Prints the error to console. 
 ```leo
 function main(a: u32) {
     console.error("a is {}", a);
 }
 ```
+:::warning
+`console.error` does not halt circuit execution.
+:::
