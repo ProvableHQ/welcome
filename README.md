@@ -1,6 +1,9 @@
-<h1 align="center">
+<p align="center">
     <img width="1412" src="./.resources/banner.png">
-</h1>
+    <img alt="Website" src="https://img.shields.io/website?down_message=offline&label=aleo.org&up_message=online&url=https%3A%2F%2Faleo.org">
+    <a href="https://discord.gg/SMXsDEQ"><img src="https://img.shields.io/discord/700454073459015690?logo=discord"/></a>
+    <a href="https://twitter.com/AleoHQ"><img src="https://img.shields.io/twitter/follow/AleoHQ?style=social"/></a>
+</p>
 
 ## Aleo Testnet I
 
@@ -41,5 +44,3 @@ To connect to the network, the following is a list of Aleo Testnet I bootnodes.
 ## Aleo Studio
 
 
-
-## Technical Support
