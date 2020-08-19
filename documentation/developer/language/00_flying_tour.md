@@ -5,7 +5,7 @@ title: A Flying Tour of Leo
 
 
 The best way to get to know Leo is by writing some code. We will fly through a high level overview of a Leo file.
-To gain a deeper understanding of the Leo language, then continue to the [next page](01_layout.md).
+To gain a deeper understanding of the Leo language, continue to the [next page](01_layout.md).
 
 
 **Square Root Example**: Let's prove that we know the square root of a number.

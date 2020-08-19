@@ -10,7 +10,7 @@ Arrays and tuples in Leo are zero indexed.
 ## Array Expression
 Create an array with brackets `[]`.
 
-```leo"
+```leo
 let a = [1u8, 2u8, 3u8];
 let b: u8[3] = [1, 2, 3];
 ```
