@@ -5,7 +5,7 @@ sidebar_label: leo remove
 ---
 
 :::caution
-This feature is not standardized and currently unstable.
+This feature is pending standardization.
 :::
 
 ### `leo remove`
