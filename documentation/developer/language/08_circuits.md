@@ -9,9 +9,8 @@ Circuits can have one or more members.
 Circuits are initialized by their defined name followed by their members in curly braces `{ }`.
 
 ## Circuit member values
-Circuit members can be defined as primitive values with explicit type. 
-They can be accessed using dot syntax:
-> *circuit_name*.*circuit_member_value*
+Circuit members can be defined as primitive values with explicit type.  
+They can be accessed using dot syntax `.`.
 
 ```leo
 circuit Point {
@@ -25,9 +24,8 @@ function main() -> u32 {
 ```
 
 ## Circuit member functions
-Members can also be defined as functions. 
-They can also be accessed using dot syntax:
-> *circuit_name*.*circuit_function*
+Members can also be defined as functions.  
+They can also be accessed using dot syntax `.`. 
 
 ```leo
 circuit Foo {
@@ -43,9 +41,8 @@ function main() -> u32 {
 ```
 
 ## Circuit member static functions
-Circuit functions can be made static, enabling them to be called without instantiation.
-They can be accessed using double colon syntax:
-> *circuit_name*::*static_circuit_function*
+Circuit functions can be made static, enabling them to be called without instantiation.  
+They can be accessed using double colon syntax `::`.
 
 ```leo
 circuit Foo {
