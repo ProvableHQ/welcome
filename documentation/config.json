@@ -120,8 +120,8 @@
             ]
         },
         {
-            "title": "Welcome to Aleo.",
-            "section_id": "aleo",
+            "title": "Developer Preview I",
+            "section_id": "developer",
             "chapters": [
                 {
                     "title": "Getting Started",
@@ -130,13 +130,7 @@
                 {
                     "title": "Concepts",
                     "document_id": "aleo/concepts"
-                }
-            ]
-        },
-        {
-            "title": "Developer Preview I",
-            "section_id": "developer",
-            "chapters": [
+                },
                 {
                     "title": "Hello Leo!",
                     "document_id": "developer/getting_started"
