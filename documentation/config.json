@@ -11,14 +11,6 @@
                 {
                     "title": "Concepts",
                     "folderName": "concepts"
-                },
-                {
-                    "title": "The Aleo Curves",
-                    "isAutogen": true
-                },
-                {
-                    "title": "Proof of Succinct Work",
-                    "folderName": "posw"
                 }
             ]
         },
@@ -99,6 +91,20 @@
                     "folderName": "metrics"
                 }
             ]
+        },
+        {
+            "title": "Advanced Topics",
+            "folderName": "advanced",
+            "chapters": [
+                {
+                    "title": "The Aleo Curves",
+                    "isAutogen": true
+                },
+                {
+                    "title": "Proof of Succinct Work",
+                    "folderName": "posw"
+                }
+            ]
         }
     ],
     "documentation": [
@@ -124,14 +130,6 @@
                 {
                     "title": "Concepts",
                     "document_id": "aleo/concepts"
-                },
-                {
-                    "title": "The Aleo Curves",
-                    "isAutogen": true
-                },
-                {
-                    "title": "Proof of Succinct Work",
-                    "document_id": "aleo/posw"
                 }
             ]
         },
@@ -210,6 +208,20 @@
                 {
                     "title": "Metrics",
                     "document_id": "explorer/metrics"
+                }
+            ]
+        },
+        {
+            "title": "Advanced Topics",
+            "folderName": "advanced",
+            "chapters": [
+                {
+                    "title": "The Aleo Curves",
+                    "isAutogen": true
+                },
+                {
+                    "title": "Proof of Succinct Work",
+                    "document_id": "advanced/posw"
                 }
             ]
         }

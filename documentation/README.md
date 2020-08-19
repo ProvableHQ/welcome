@@ -25,19 +25,19 @@
 
 ### Chapter 2: The Aleo Curves
 
-- [Overview](./autogen/aleo/curves/the_aleo_curves/00_overview.md)
-- [Edwards BLS12](./autogen/aleo/curves/the_aleo_curves/01_edwards_bls12.md)
-- [BLS12-377](./autogen/aleo/curves/the_aleo_curves/02_bls12-377.md)
-- [Edwards BW6](./autogen/aleo/curves/the_aleo_curves/03_edwards_bw6.md)
-- [BW6-761](./autogen/aleo/curves/the_aleo_curves/04_bw6-761.md)
+- [Overview](autogen/advanced/curves/the_aleo_curves/00_overview.md)
+- [Edwards BLS12](autogen/advanced/curves/the_aleo_curves/01_edwards_bls12.md)
+- [BLS12-377](autogen/advanced/curves/the_aleo_curves/02_bls12-377.md)
+- [Edwards BW6](autogen/advanced/curves/the_aleo_curves/03_edwards_bw6.md)
+- [BW6-761](autogen/advanced/curves/the_aleo_curves/04_bw6-761.md)
 
 
 ### Chapter 3: Proof of Succinct Work
 
-- [Overview](./aleo/posw/00_overview.md)
-- [Consensus Security](./aleo/posw/01_consensus_security.md)
-- [The PoSW Predicate](./aleo/posw/02_posw_predicate.md)
-- [The Mining Process](./aleo/posw/03_mining.md)
+- [Overview](advanced/posw/00_overview.md)
+- [Consensus Security](advanced/posw/01_consensus_security.md)
+- [The PoSW Predicate](advanced/posw/02_posw_predicate.md)
+- [The Mining Process](advanced/posw/03_mining.md)
 
 
 ## Developer Preview I
