@@ -25,7 +25,7 @@ test function test_square() {
 ```
 
 :::info
-The console assert function does not produce any constraints in the circuit. This makes it ideal for testing!
+The `console.assert` function does not produce any constraints in the circuit. This makes it ideal for testing!
 :::
 
 ## Console Log, Debug, and Error
@@ -33,10 +33,10 @@ The console assert function does not produce any constraints in the circuit. Thi
 Logging functions like `console.log`, `console.debug`, and `console.error` require a format string as an argument. 
 
 ### Format Strings
-The first argument a macro receives is a format string. This must be a string literal. The power of the formatting string is in the `{}`s contained.
-Additional parameters passed to a console method replace the `{}`s within the formatting string in the order given.
+The first argument a macro receives is a format string. This must be a string literal. The power of the formatting string is in the `{}`'s contained.
+Additional parameters passed to a console method replace the `{}`'s within the formatting string in the order given.
 
-Format string syntax is intended to be familiar to those coming from C's `printf`/`fprintf` functions or Python's `str.format`
+Format string syntax is intended to be familiar to those coming from C's `printf`/`fprintf` functions or Python's `str.format`.
 
 ```leo
 console.log("Hello");                   // => "Hello"
