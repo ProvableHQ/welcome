@@ -1,16 +1,6 @@
 {
     "readme": [
         {
-            "title": "Setup I",
-            "folderName": "setup",
-            "chapters": [
-                {
-                    "title": "The Aleo Curves",
-                    "folderName": "the_aleo_curves"
-                }
-            ]
-        },
-        {
             "title": "Testnet I",
             "folderName": "testnet",
             "chapters": [
@@ -27,6 +17,16 @@
                     "folderName": "rpc/private_endpoints"
                 }
             ]
+        },
+        {
+            "title": "Advanced Topics",
+            "folderName": "advanced",
+            "chapters": [
+                {
+                    "title": "The Aleo Curves",
+                    "folderName": "curves/the_aleo_curves"
+                }
+            ]
         }
     ],
     "documentation": [
@@ -38,17 +38,6 @@
                 {
                     "title": "Introduction",
                     "document_id": "introduction/introduction"
-                }
-            ]
-        },
-        {
-
-            "title": "Setup I",
-            "section_id": "setup",
-            "chapters": [
-                {
-                    "title": "The Aleo Curves",
-                    "document_id": "setup/the_aleo_curves"
                 }
             ]
         },
@@ -67,6 +56,16 @@
                 {
                     "title": "Private RPC Endpoints",
                     "document_id": "testnet/rpc/private_endpoints"
+                }
+            ]
+        },
+        {
+            "title": "Advanced Topics",
+            "section_id": "advanced",
+            "chapters": [
+                {
+                    "title": "The Aleo Curves",
+                    "document_id": "advanced/curves/the_aleo_curves"
                 }
             ]
         }

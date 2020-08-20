@@ -10,7 +10,6 @@
 ### Chapter 0: Getting Started
 
 - [Welcome to Aleo.](./aleo/getting_started/00_overview.md)
-- [Developer Preview I](./aleo/getting_started/01_developer_preview.md)
 
 
 ### Chapter 1: Concepts
@@ -29,52 +28,64 @@
 
 ### Chapter 2: Hello Leo!
 
-- [Leo Language Documentation](./developer/getting_started/00_overview.md)
+- [The Leo Programming Language](./developer/getting_started/00_overview.md)
 - [Installation](./developer/getting_started/01_installation.md)
 - [Hello World in Leo](./developer/getting_started/02_hello_world.md)
 - [File Syntax](./developer/getting_started/03_syntax.md)
 - [CLI Commands](./developer/getting_started/04_cli.md)
-- [Pedersen Hash Example](./developer/getting_started/05_example.md)
 
 
 ### Chapter 3: Language
 
-- [Layout of a Leo File](./developer/language/00_layout.md)
-- [Defining Variables](./developer/language/01_variables.md)
-- [Data Types](./developer/language/02_types.md)
-- [Arrays](./developer/language/03_arrays.md)
-- [Operators](./developer/language/04_operators.md)
-- [Statements](./developer/language/05_statements.md)
-- [Functions](./developer/language/06_functions.md)
-- [Leo Inputs](./developer/language/07_inputs.md)
-- [Circuits](./developer/language/08_circuits.md)
-- [Imports](./developer/language/09_imports.md)
-- [Writing Tests](./developer/language/10_tests.md)
-- [Logging](./developer/language/11_logging.md)
-- [Lexical Structure](./developer/language/12_lexical.md)
+- [A Flying Tour of Leo](./developer/language/00_flying_tour.md)
+- [Layout of a Leo Program](./developer/language/01_layout.md)
+- [Defining Variables](./developer/language/02_variables.md)
+- [Data Types and Values](./developer/language/03_types.md)
+- [Arrays](./developer/language/04_arrays_and_tuples.md)
+- [Operators](./developer/language/05_operators.md)
+- [Statements](./developer/language/06_statements.md)
+- [Functions](./developer/language/07_functions.md)
+- [Leo Inputs](./developer/language/08_inputs.md)
+- [Circuits](./developer/language/09_circuits.md)
+- [Imports](./developer/language/10_imports.md)
+- [Console Functions](./developer/language/11_console.md)
+- [Writing Tests](./developer/language/12_tests.md)
+- [Lexical Structure](./developer/language/13_lexical.md)
 
 
 ### Chapter 4: Programming Model
 
 - [The Leo Programming Model](./developer/programming_model/00_model.md)
-- [A Leo Erc20 on Aleo](./developer/programming_model/01_erc20.md)
-- [Leo Procedures](./developer/programming_model/02_procedures.md)
+- [A Leo Token on Aleo](./developer/programming_model/01_token.md)
 
 
 ### Chapter 5: CLI
 
 - [Create a Package](./developer/cli/00_new.md)
-- [Build a Package](./developer/cli/01_build.md)
-- [Test a Package](./developer/cli/02_test.md)
-- [Perform the Program Setup](./developer/cli/03_setup.md)
-- [Generate a Proof](./developer/cli/04_prove.md)
-- [Verify the Program](./developer/cli/05_run.md)
-- [Login to Your Aleo Account](./developer/cli/06_login.md)
-- [Publish a Package to APM](./developer/cli/07_publish.md)
-- [Deploy](./developer/cli/08_deploy.md)
+- [Initialize a Package](./developer/cli/01_init.md)
+- [Build a Package](./developer/cli/02_build.md)
+- [Auto-Compile Your Program](./developer/cli/03_watch.md)
+- [Test a Package](./developer/cli/04_test.md)
+- [Setup the Program](./developer/cli/05_setup.md)
+- [Execute the Program](./developer/cli/06_prove.md)
+- [Verify the Program](./developer/cli/07_run.md)
+- [Login to Aleo Package Manager](./developer/cli/08_login.md)
+- [Import a Package](./developer/cli/09_add.md)
+- [Remove a Package](./developer/cli/10_remove.md)
+- [Publish to Aleo Package Manager](./developer/cli/11_publish.md)
+- [Deploy to Aleo](./developer/cli/12_deploy.md)
+- [Clean Your Workspace](./developer/cli/13_clean.md)
 
 
-### Chapter 6: Additional Material
+### Chapter 6: Toy Examples
+
+- [Digital Assets](./developer/toy_examples/00_digital_assets.md)
+- [Stablecoins](./developer/toy_examples/01_stablecoins.md)
+- [Private Swaps](./developer/toy_examples/02_private_swaps.md)
+- [Pedersen Hash](./developer/toy_examples/03_pedersen_hash.md)
+
+
+### Chapter 7: Additional Material
 
 - [Style Guide](./developer/additional_material/00_style.md)
 - [Common Patterns](./developer/additional_material/01_common.md)
@@ -82,78 +93,62 @@
 - [Contributing](./developer/additional_material/03_contributing.md)
 
 
-## Setup I
-
-### Chapter 7: Getting Started
-
-- [Aleo Setup I.](./setup/getting_started/00_overview.md)
-
-
-### Chapter 8: The Aleo Curves
-
-- [The Aleo Curves](./autogen/setup/the_aleo_curves/00_the_aleo_curves.md)
-- [Edwards BLS12](./autogen/setup/the_aleo_curves/01_edwards_bls12.md)
-- [BLS12-377](./autogen/setup/the_aleo_curves/02_bls12-377.md)
-- [Edwards BW6](./autogen/setup/the_aleo_curves/03_edwards_bw6.md)
-- [BW6-761](./autogen/setup/the_aleo_curves/04_bw6-761.md)
-
-
 ## Testnet I
 
-### Chapter 9: Getting Started
+### Chapter 8: Getting Started
 
 - [Testnet I.](./testnet/getting_started/00_overview.md)
 - [Install snarkOS](./testnet/getting_started/01_installation.md)
 - [Aleo networks](./testnet/getting_started/02_networks.md)
 
 
-### Chapter 10: Networking
+### Chapter 9: Networking
 
 - [Networking](./testnet/networking/00_networking.md)
 - [Message Types](./testnet/networking/01_message_types.md)
 
 
-### Chapter 11: RPC Server
+### Chapter 10: RPC Server
 
 - [Configurations](./autogen/testnet/rpc/rpc_server/00_configurations.md)
 
 
-### Chapter 12: Public RPC Endpoints
+### Chapter 11: Public RPC Endpoints
 
 - [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
-- [decoderecord](./autogen/testnet/rpc/public_endpoints/01_decoderecord.md)
-- [decryptrecord](./autogen/testnet/rpc/public_endpoints/02_decryptrecord.md)
-- [getbestblockhash](./autogen/testnet/rpc/public_endpoints/03_getbestblockhash.md)
-- [getblock](./autogen/testnet/rpc/public_endpoints/04_getblock.md)
-- [getblockcount](./autogen/testnet/rpc/public_endpoints/05_getblockcount.md)
-- [getblockhash](./autogen/testnet/rpc/public_endpoints/06_getblockhash.md)
-- [getblocktemplate](./autogen/testnet/rpc/public_endpoints/07_getblocktemplate.md)
-- [getconnectioncount](./autogen/testnet/rpc/public_endpoints/08_getconnectioncount.md)
-- [getpeerinfo](./autogen/testnet/rpc/public_endpoints/09_getpeerinfo.md)
-- [getrawtransaction](./autogen/testnet/rpc/public_endpoints/10_getrawtransaction.md)
-- [gettransactioninfo](./autogen/testnet/rpc/public_endpoints/11_gettransactioninfo.md)
-- [sendtransaction](./autogen/testnet/rpc/public_endpoints/12_sendtransaction.md)
-- [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/13_validaterawtransaction.md)
+- [getbestblockhash](./autogen/testnet/rpc/public_endpoints/01_getbestblockhash.md)
+- [getblock](./autogen/testnet/rpc/public_endpoints/02_getblock.md)
+- [getblockcount](./autogen/testnet/rpc/public_endpoints/03_getblockcount.md)
+- [getblockhash](./autogen/testnet/rpc/public_endpoints/04_getblockhash.md)
+- [getblocktemplate](./autogen/testnet/rpc/public_endpoints/05_getblocktemplate.md)
+- [getconnectioncount](./autogen/testnet/rpc/public_endpoints/06_getconnectioncount.md)
+- [getpeerinfo](./autogen/testnet/rpc/public_endpoints/07_getpeerinfo.md)
+- [getrawtransaction](./autogen/testnet/rpc/public_endpoints/08_getrawtransaction.md)
+- [gettransactioninfo](./autogen/testnet/rpc/public_endpoints/09_gettransactioninfo.md)
+- [sendtransaction](./autogen/testnet/rpc/public_endpoints/10_sendtransaction.md)
+- [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/11_validaterawtransaction.md)
 
 
-### Chapter 13: Private RPC Endpoints
+### Chapter 12: Private RPC Endpoints
 
 - [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
 - [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
-- [getrawrecord](./autogen/testnet/rpc/private_endpoints/02_getrawrecord.md)
-- [getrecordcommitmentcount](./autogen/testnet/rpc/private_endpoints/03_getrecordcommitmentcount.md)
-- [getrecordcommitments](./autogen/testnet/rpc/private_endpoints/04_getrecordcommitments.md)
+- [decoderecord](./autogen/testnet/rpc/private_endpoints/02_decoderecord.md)
+- [decryptrecord](./autogen/testnet/rpc/private_endpoints/03_decryptrecord.md)
+- [getrawrecord](./autogen/testnet/rpc/private_endpoints/04_getrawrecord.md)
+- [getrecordcommitmentcount](./autogen/testnet/rpc/private_endpoints/05_getrecordcommitmentcount.md)
+- [getrecordcommitments](./autogen/testnet/rpc/private_endpoints/06_getrecordcommitments.md)
 
 
 ## Explorer I
 
-### Chapter 14: Authentication
+### Chapter 13: Authentication
 
 - [Authentication API](./explorer/authentication/00_authentication_api.md)
 - [createapikey](./explorer/authentication/01_createapikey.md)
 
 
-### Chapter 15: Blocks
+### Chapter 14: Blocks
 
 - [Block API](./explorer/blocks/00_block_api.md)
 - [getbestblock](./explorer/blocks/01_getbestblock.md)
@@ -162,7 +157,7 @@
 - [getbyhash](./explorer/blocks/04_getbyhash.md)
 
 
-### Chapter 16: Transactions
+### Chapter 15: Transactions
 
 - [Transaction API](./explorer/transactions/00_transaction_api.md)
 - [getbyhash](./explorer/transactions/01_getbyhash.md)
@@ -171,10 +166,29 @@
 - [validate](./explorer/transactions/04_validate.md)
 
 
-### Chapter 17: Metrics
+### Chapter 16: Metrics
 
 - [Metrics API](./explorer/metrics/00_metrics_api.md)
 - [get](./explorer/metrics/01_get.md)
 - [graph](./explorer/metrics/02_graph.md)
+
+
+## Advanced Topics
+
+### Chapter 17: The Aleo Curves
+
+- [Overview](./autogen/advanced/curves/the_aleo_curves/00_overview.md)
+- [Edwards BLS12](./autogen/advanced/curves/the_aleo_curves/01_edwards_bls12.md)
+- [BLS12-377](./autogen/advanced/curves/the_aleo_curves/02_bls12-377.md)
+- [Edwards BW6](./autogen/advanced/curves/the_aleo_curves/03_edwards_bw6.md)
+- [BW6-761](./autogen/advanced/curves/the_aleo_curves/04_bw6-761.md)
+
+
+### Chapter 18: Proof of Succinct Work
+
+- [Overview](./advanced/posw/00_overview.md)
+- [Consensus Security](./advanced/posw/01_consensus_security.md)
+- [The PoSW Predicate](./advanced/posw/02_posw_predicate.md)
+- [The Mining Process](./advanced/posw/03_mining.md)
 
 

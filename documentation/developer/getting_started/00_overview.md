@@ -1,13 +1,48 @@
 ---
 id: overview
-title: Leo Language Documentation
+title: The Leo Programming Language
 sidebar_label: Overview
 ---
 
-Welcome to the Leo language. A simple, easy-to-use programming language for writing apps on Aleo.
+Welcome to the Leo programming language. Leo is a functional, statically-typed programming language built
+for writing private applications.
 
-### Where do I start?
-[install leo](01_installation.md)
+:::info
+The Leo language is currently in active development. Please monitor the repository on [**GitHub**](https://github.com/AleoHQ/leo) for breaking changes
+:::
 
-### Show me the source code
-Go to the [GitHub Repository](https://github.com/AleoHQ/leo)
+## Installing Leo
+
+Proceed to [**Installation**](./01_installation.md) for information on how to install Leo.
+
+## Getting Started
+
+Check out the [**Hello World**](./02_hello_world.md) tutorial for a brief walk-through of Leo and the Leo CLI.
+
+## Language Documentation
+
+To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**](aleo/documentation/developer/language/01_layout.md).
+Leo comes with an advanced testing framework for writing unit and integration tests. Read [**Writing Tests**](aleo/documentation/developer/language/12_tests.md) to learn more.
+
+## Programming Model
+
+Leo programs are designed to work with Aleo [**record**](../../aleo/concepts/02_records.md) and [**transaction**](../../aleo/concepts/03_transactions.md) data. 
+Understanding how to access and compute on this data is essential to writing private applications. 
+Read the [**Model**](../programming_model/00_model.md) to learn more.
+
+## Command Line Interface Documentation
+
+The Leo CLI provides a suite of commands to make programming in Leo easy.
+
+Develop your program with [**new**](../cli/00_new.md), [**build**](../cli/02_build.md), [**watch**](../cli/03_watch.md), 
+[**test**](../cli/04_test.md), and [**clean**](../cli/13_clean.md).
+
+Download packages from the Aleo Package Manager with [**add**](../cli/09_add.md), [**remove**](../cli/10_remove.md), [**login**](../cli/08_login.md), and [**publish**](../cli/11_publish.md).
+
+Once your Leo program is compiled, generate proofs with [**setup**](../cli/05_setup.md), [**prove**](../cli/06_prove.md), and [**run**](../cli/07_run.md).
+
+## Additional Material
+
+Is your Leo code formatted correctly? Check out the [**Style Guide**](../additional_material/00_style.md) and [**Common Patterns**](../additional_material/01_common.md) for the official guidelines.
+
+Found a bug? Have an idea for a feature? Proceed to the [**Known Bugs**](../additional_material/02_bugs.md) section and the [**Contributing Guide**](../additional_material/03_contributing.md).
