@@ -54,7 +54,7 @@ Equivalent to slicing all elements of an array.
 ```leo
 let arr: u32[4] = [0, 1, 2, 3];
 
-let arr_with_4: u32[5] = [...arr, 4];
+let arr_with_5: u32[5] = [...arr, 4];
 ```
 
 ### Notes on Fixed Size
