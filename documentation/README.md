@@ -10,7 +10,6 @@
 ### Chapter 0: Getting Started
 
 - [Welcome to Aleo.](./aleo/getting_started/00_overview.md)
-- [Developer Preview I](./aleo/getting_started/01_developer_preview.md)
 
 
 ### Chapter 1: Concepts
@@ -24,39 +23,18 @@
 - [Glossary](./aleo/concepts/06_glossary.md)
 
 
-### Chapter 2: The Aleo Curves
-
-- [Overview](./autogen/aleo/curves/the_aleo_curves/00_overview.md)
-- [Edwards BLS12](./autogen/aleo/curves/the_aleo_curves/01_edwards_bls12.md)
-- [BLS12-377](./autogen/aleo/curves/the_aleo_curves/02_bls12-377.md)
-- [Edwards BW6](./autogen/aleo/curves/the_aleo_curves/03_edwards_bw6.md)
-- [BW6-761](./autogen/aleo/curves/the_aleo_curves/04_bw6-761.md)
-
-
-### Chapter 3: Proof of Succinct Work
-
-- [Overview](./aleo/posw/00_overview.md)
-- [Consensus Security](./aleo/posw/01_consensus_security.md)
-- [The PoSW Predicate](./aleo/posw/02_posw_predicate.md)
-- [The Mining Process](./aleo/posw/03_mining.md)
-
-
 ## Developer Preview I
 
-### Chapter 4: Hello Leo!
+### Chapter 2: Hello Leo!
 
 - [The Leo Programming Language](./developer/getting_started/00_overview.md)
 - [Installation](./developer/getting_started/01_installation.md)
 - [Hello World in Leo](./developer/getting_started/02_hello_world.md)
 - [File Syntax](./developer/getting_started/03_syntax.md)
 - [CLI Commands](./developer/getting_started/04_cli.md)
-- [Pedersen Hash Example Overview](./developer/getting_started/05_pedersen_hash.md)
-- [Token Example Overview](./developer/getting_started/06_token.md)
-- [StableCoin Example Overview](./developer/getting_started/07_stablecoin.md)
-- [Token Swap Example Overview](./developer/getting_started/08_token_swap.md)
 
 
-### Chapter 5: Language
+### Chapter 3: Language
 
 - [A Flying Tour of Leo](./developer/language/00_flying_tour.md)
 - [Layout of a Leo Program](./developer/language/01_layout.md)
@@ -74,13 +52,13 @@
 - [Lexical Structure](./developer/language/13_lexical.md)
 
 
-### Chapter 6: Programming Model
+### Chapter 4: Programming Model
 
 - [The Leo Programming Model](./developer/programming_model/00_model.md)
 - [A Leo Token on Aleo](./developer/programming_model/01_token.md)
 
 
-### Chapter 7: CLI
+### Chapter 5: CLI
 
 - [Create a Package](./developer/cli/00_new.md)
 - [Initialize a Package](./developer/cli/01_init.md)
@@ -98,7 +76,15 @@
 - [Clean Your Workspace](./developer/cli/13_clean.md)
 
 
-### Chapter 8: Additional Material
+### Chapter 6: Toy Examples
+
+- [Digital Assets](./developer/toy_examples/00_digital_assets.md)
+- [Stablecoins](./developer/toy_examples/01_stablecoins.md)
+- [Private Swaps](./developer/toy_examples/02_private_swaps.md)
+- [Pedersen Hash](./developer/toy_examples/03_pedersen_hash.md)
+
+
+### Chapter 7: Additional Material
 
 - [Style Guide](./developer/additional_material/00_style.md)
 - [Common Patterns](./developer/additional_material/01_common.md)
@@ -108,24 +94,24 @@
 
 ## Testnet I
 
-### Chapter 9: Getting Started
+### Chapter 8: Getting Started
 
 - [Testnet I.](./testnet/getting_started/00_overview.md)
 - [Install snarkOS](./testnet/getting_started/01_installation.md)
 
 
-### Chapter 10: Networking
+### Chapter 9: Networking
 
 - [Networking](./testnet/networking/00_networking.md)
 - [Message Types](./testnet/networking/01_message_types.md)
 
 
-### Chapter 11: RPC Server
+### Chapter 10: RPC Server
 
 - [Configurations](./autogen/testnet/rpc/rpc_server/00_configurations.md)
 
 
-### Chapter 12: Public RPC Endpoints
+### Chapter 11: Public RPC Endpoints
 
 - [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
 - [getbestblockhash](./autogen/testnet/rpc/public_endpoints/01_getbestblockhash.md)
@@ -141,7 +127,7 @@
 - [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/11_validaterawtransaction.md)
 
 
-### Chapter 13: Private RPC Endpoints
+### Chapter 12: Private RPC Endpoints
 
 - [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
 - [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
@@ -154,13 +140,13 @@
 
 ## Explorer I
 
-### Chapter 14: Authentication
+### Chapter 13: Authentication
 
 - [Authentication API](./explorer/authentication/00_authentication_api.md)
 - [createapikey](./explorer/authentication/01_createapikey.md)
 
 
-### Chapter 15: Blocks
+### Chapter 14: Blocks
 
 - [Block API](./explorer/blocks/00_block_api.md)
 - [getbestblock](./explorer/blocks/01_getbestblock.md)
@@ -169,7 +155,7 @@
 - [getbyhash](./explorer/blocks/04_getbyhash.md)
 
 
-### Chapter 16: Transactions
+### Chapter 15: Transactions
 
 - [Transaction API](./explorer/transactions/00_transaction_api.md)
 - [getbyhash](./explorer/transactions/01_getbyhash.md)
@@ -178,10 +164,29 @@
 - [validate](./explorer/transactions/04_validate.md)
 
 
-### Chapter 17: Metrics
+### Chapter 16: Metrics
 
 - [Metrics API](./explorer/metrics/00_metrics_api.md)
 - [get](./explorer/metrics/01_get.md)
 - [graph](./explorer/metrics/02_graph.md)
+
+
+## Advanced Topics
+
+### Chapter 17: The Aleo Curves
+
+- [Overview](./autogen/advanced/curves/the_aleo_curves/00_overview.md)
+- [Edwards BLS12](./autogen/advanced/curves/the_aleo_curves/01_edwards_bls12.md)
+- [BLS12-377](./autogen/advanced/curves/the_aleo_curves/02_bls12-377.md)
+- [Edwards BW6](./autogen/advanced/curves/the_aleo_curves/03_edwards_bw6.md)
+- [BW6-761](./autogen/advanced/curves/the_aleo_curves/04_bw6-761.md)
+
+
+### Chapter 18: Proof of Succinct Work
+
+- [Overview](./advanced/posw/00_overview.md)
+- [Consensus Security](./advanced/posw/01_consensus_security.md)
+- [The PoSW Predicate](./advanced/posw/02_posw_predicate.md)
+- [The Mining Process](./advanced/posw/03_mining.md)
 
 

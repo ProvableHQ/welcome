@@ -5,7 +5,7 @@ sidebar_label: leo publish
 ---
 
 :::caution
-This feature is not standardized and currently unstable.
+This feature is pending standardization.
 :::
 
 To package your program as a gadget and publish it online, run:

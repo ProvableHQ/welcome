@@ -1,8 +1,12 @@
 ---
-id: token
-title: Token Example Overview
-sidebar_label: Token Example
+id: digital_assets
+title: Digital Assets
+sidebar_label: Digital Assets
 ---
+
+:::caution
+This design is not standardized and currently unstable.
+:::
 
 ## Goal
 
@@ -14,7 +18,8 @@ Tokens are stored inside of record payloads. The record payload specifies the to
 
 ### Transfer
 
-To transfer a token, a sender should first have a record that specifies the token id and their token value balance. In a transaction, the token_debit function will be invoked on the sender’s input record to begin transferring to the receiver. The token_credit function will be invoked on the receiver’s output record to finalize the transfer in a valid transaction.
+To transfer a token, a sender should first have a record that specifies the token id and their token value balance.
+In a transaction, the token_debit function will be invoked on the sender’s input record to begin transferring to the receiver. The token_credit function will be invoked on the receiver’s output record to finalize the transfer in a valid transaction.
 
 
 #### Inputs

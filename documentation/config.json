@@ -11,14 +11,6 @@
                 {
                     "title": "Concepts",
                     "folderName": "concepts"
-                },
-                {
-                    "title": "The Aleo Curves",
-                    "isAutogen": true
-                },
-                {
-                    "title": "Proof of Succinct Work",
-                    "folderName": "posw"
                 }
             ]
         },
@@ -41,6 +33,10 @@
                 {
                     "title": "CLI",
                     "folderName": "cli"
+                },
+                {
+                    "title": "Toy Examples",
+                    "folderName": "toy_examples"
                 },
                 {
                     "title": "Additional Material",
@@ -95,6 +91,20 @@
                     "folderName": "metrics"
                 }
             ]
+        },
+        {
+            "title": "Advanced Topics",
+            "folderName": "advanced",
+            "chapters": [
+                {
+                    "title": "The Aleo Curves",
+                    "isAutogen": true
+                },
+                {
+                    "title": "Proof of Succinct Work",
+                    "folderName": "posw"
+                }
+            ]
         }
     ],
     "documentation": [
@@ -110,8 +120,8 @@
             ]
         },
         {
-            "title": "Welcome to Aleo.",
-            "section_id": "aleo",
+            "title": "Developer Preview I",
+            "section_id": "developer",
             "chapters": [
                 {
                     "title": "Getting Started",
@@ -121,20 +131,6 @@
                     "title": "Concepts",
                     "document_id": "aleo/concepts"
                 },
-                {
-                    "title": "The Aleo Curves",
-                    "isAutogen": true
-                },
-                {
-                    "title": "Proof of Succinct Work",
-                    "document_id": "aleo/posw"
-                }
-            ]
-        },
-        {
-            "title": "Developer Preview I",
-            "section_id": "developer",
-            "chapters": [
                 {
                     "title": "Hello Leo!",
                     "document_id": "developer/getting_started"
@@ -150,6 +146,10 @@
                 {
                     "title": "CLI",
                     "document_id": "developer/cli"
+                },
+                {
+                    "title": "Toy Examples",
+                    "document_id": "developer/toy_examples"
                 },
                 {
                     "title": "Additional Material",
@@ -202,6 +202,20 @@
                 {
                     "title": "Metrics",
                     "document_id": "explorer/metrics"
+                }
+            ]
+        },
+        {
+            "title": "Advanced Topics",
+            "section_id": "advanced",
+            "chapters": [
+                {
+                    "title": "The Aleo Curves",
+                    "isAutogen": true
+                },
+                {
+                    "title": "Proof of Succinct Work",
+                    "document_id": "advanced/posw"
                 }
             ]
         }
