@@ -38,8 +38,8 @@ Relational operators will always resolve to a boolean `bool` value.
 
 |       Operation       | Operators |           Supported Types           |
 |:---------------------:|:---------:|:-----------------------------------:|
-| equal                 | `==`      | `bool`, `group`, `field`, integers, arrays, tuples, circuits |
-| not-equal             | `!=`      | `bool`, `group`, `field`, integers, arrays, tuples, circuits |
+| equal                 | `==`      | `bool`, `group`, `field`, integers, addresses, arrays, tuples, circuits |
+| not-equal             | `!=`      | `bool`, `group`, `field`, integers, addresses, arrays, tuples, circuits |
 | less than             | `<`       |           integers              |
 | less than or equal    | `<=`      |           integers              |
 | greater than          | `>`       |           integers              |
