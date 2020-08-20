@@ -10,7 +10,7 @@ To execute your Leo program and produce a program proof, run:
 ```bash
 leo prove
 ```
-```bash
+```bash title="console output:"
 leo  Compiled program file "${NAME}/src/main.leo"
 leo  Loading saved setup...
 leo  Program setup complete
@@ -29,5 +29,5 @@ Next, the input `.in` and `.state` input files in the `inputs` directory are par
 Once again, Leo uses cryptographic randomness from your machine to produce the proof. The proof is stored in the `outputs` directory as `.proof`:
 
 ```bash
-build/{$NAME}.proof
+outputs/{$NAME}.proof
 ```

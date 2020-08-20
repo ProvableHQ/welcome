@@ -4,17 +4,13 @@ title: Auto-Compile a Program
 sidebar_label: leo watch
 ---
 
-:::caution
-This feature is pending standardization.
-:::
-
 ### `leo watch`
 
 To recompile have Leo recompile your program on the fly, run:
 ```
 leo watch
 ```
-```bash
+```bash title="console output:"
 leo  Watching Leo source code
 ```
 Leo will monitor the source file tree starting from **main.leo**.

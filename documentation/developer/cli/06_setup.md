@@ -10,7 +10,7 @@ To run the program setup and produce a proving key and verification key, run:
 ```bash
 leo setup
 ```
-```bash
+```bash title="console output:"
 leo  Compiled program file "{$NAME}/src/main.leo"
 leo  Setup starting...
 leo  Program circuit successfully synthesized!

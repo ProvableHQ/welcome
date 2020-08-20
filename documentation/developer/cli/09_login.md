@@ -3,10 +3,13 @@ id: login
 title: Login to Aleo Package Manager
 sidebar_label: leo login
 ---
-
+### `leo login`
 To use private packages and publish to Aleo Package Manager, start by authenticating with:
 ```
 leo login -u <username> -p <password>
+```
+```bash title="console output:"
+leo  Login successful.
 ```
 
 If remote compilation is enabled, Leo will sync your workspace when

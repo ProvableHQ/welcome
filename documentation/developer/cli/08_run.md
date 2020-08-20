@@ -10,7 +10,7 @@ To verify the proof in the `outputs` directory run:
 ```bash
 leo run
 ```
-```bash
+```bash title="console output:"
 leo  Compiled program file "${NAME}/src/main.leo"
 leo  Setup starting...
 leo  Program circuit successfully synthesized!
@@ -33,4 +33,9 @@ Verifier output : true
 Leo starts by checking the `outputs` directory for an existing `.proof` file. If it doesn't exist, Leo will proceed to run `leo prove` and then continue.
 
 After the verifier is run, Leo will output either `true` or `false` based on the verification.
+
+The program output will be stored in the program output file `.out`:
+```bash
+outputs/{$NAME}.out
+```
 
