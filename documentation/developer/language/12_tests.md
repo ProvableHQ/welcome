@@ -22,7 +22,7 @@ test function test_ne() {
     console.assert(1u8 != 0u8);
 }
 ```
-To run tests, use the `leo test` CLI [command](../cli/04_test.md).
+To run tests, use the `leo test` CLI [command](aleo/documentation/developer/cli/05_test.md).
 
 ## Console Assert Function
 

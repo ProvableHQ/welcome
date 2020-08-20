@@ -42,3 +42,4 @@ package_name/
 
 :::info
 For more information on **main.leo** and **lib.leo** differences, check out the [**Layout of a Leo Program**](../language/01_layout.md#binaries-vs-libraries)
+:::

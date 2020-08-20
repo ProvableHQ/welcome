@@ -50,7 +50,7 @@ function main() {
 
 Each [test](12_tests.md) function generates new constraints for an isolated test circuit.
 The input to a test can be specified with the [context annotation](12_tests.md#test-context-annotation).
-Tests are executed with the Leo [test command](../cli/04_test.md).
+Tests are executed with the Leo [test command](aleo/documentation/developer/cli/05_test.md).
 
 ```leo
 function square(a: u32) -> u32 {

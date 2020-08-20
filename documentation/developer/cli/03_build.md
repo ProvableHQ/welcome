@@ -19,4 +19,4 @@ leo  Compiled program file "{$NAME}/src/main.leo"
 leo  Compiled library file "{$NAME}/src/lib.leo"
 ```
 
-This will create a new directory `outputs/` and a checksum file `.sum` in the directory. 
+This will create a new directory `outputs/`, as serialized program file `.json`, and a checksum file `.sum` in the directory. 

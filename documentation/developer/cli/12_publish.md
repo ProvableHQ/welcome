@@ -1,6 +1,6 @@
 ---
 id: publish
-title: Publish to Aleo Package Manager
+title: Publish a Package to Aleo Package Manager
 sidebar_label: leo publish
 ---
 

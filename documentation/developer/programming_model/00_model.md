@@ -153,7 +153,7 @@ To see how to load state files into tests, checkout [**Writing Tests**](../langu
 
 ## Where Register and State Files are Stored
 
-The Leo [CLI](../cli/00_new.md) creates an `inputs/` and an `outputs/` folder to store program input and output information from the compiler.
+The Leo [CLI](aleo/documentation/developer/cli/01_new.md) creates an `inputs/` and an `outputs/` folder to store program input and output information from the compiler.
 These folders also provide access to register, record, and leaf state information.
 We already introduced the program [inputs](../language/08_inputs.md) `.in` file located in the `inputs/` folder.
 When each Leo file in a transaction is run, `.out` files as well as a `.state` file are created as follows:

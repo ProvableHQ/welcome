@@ -60,20 +60,20 @@
 
 ### Chapter 5: CLI
 
-- [Create a Package](./developer/cli/00_new.md)
-- [Initialize a Package](./developer/cli/01_init.md)
-- [Build a Package](./developer/cli/02_build.md)
-- [Auto-Compile Your Program](./developer/cli/03_watch.md)
-- [Test a Package](./developer/cli/04_test.md)
-- [Setup the Program](./developer/cli/05_setup.md)
-- [Execute the Program](./developer/cli/06_prove.md)
-- [Verify the Program](./developer/cli/07_run.md)
-- [Login to Aleo Package Manager](./developer/cli/08_login.md)
-- [Import a Package](./developer/cli/09_add.md)
-- [Remove a Package](./developer/cli/10_remove.md)
-- [Publish to Aleo Package Manager](./developer/cli/11_publish.md)
-- [Deploy to Aleo](./developer/cli/12_deploy.md)
-- [Clean Your Workspace](./developer/cli/13_clean.md)
+- [Create a Package](aleo/documentation/developer/cli/01_new.md)
+- [Initialize a Package](aleo/documentation/developer/cli/02_init.md)
+- [Build a Package](aleo/documentation/developer/cli/03_build.md)
+- [Auto-Compile Your Program](aleo/documentation/developer/cli/04_watch.md)
+- [Test a Package](aleo/documentation/developer/cli/05_test.md)
+- [Setup the Program](aleo/documentation/developer/cli/06_setup.md)
+- [Execute the Program](aleo/documentation/developer/cli/07_prove.md)
+- [Verify the Program](aleo/documentation/developer/cli/08_run.md)
+- [Login to Aleo Package Manager](aleo/documentation/developer/cli/09_login.md)
+- [Import a Package](aleo/documentation/developer/cli/10_add.md)
+- [Remove a Package](aleo/documentation/developer/cli/11_remove.md)
+- [Publish to Aleo Package Manager](aleo/documentation/developer/cli/12_publish.md)
+- [Deploy to Aleo](aleo/documentation/developer/cli/13_deploy.md)
+- [Clean Your Workspace](aleo/documentation/developer/cli/14_clean.md)
 
 
 ### Chapter 6: Toy Examples
