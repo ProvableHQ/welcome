@@ -10,6 +10,8 @@ To create a new package, run:
 ```bash
 leo new {$NAME}
 ```
+
+
 This command will create a new directory with the given package name.
 
 The new package will have a directory structure as follows:

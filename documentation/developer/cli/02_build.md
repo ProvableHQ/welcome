@@ -12,11 +12,11 @@ leo build
 ```
 The results of compiling `main.leo` or `lib.leo` and it's imported dependencies will be printed:
 ```bash
-leo  Compiled program file "/{$PATH}/{$NAME}/src/main.leo"
+leo  Compiled program file "{$NAME}/src/main.leo"
 ```
 
 ```bash
-leo  Compiled library file "/{$PATH}/{$NAME}/src/lib.leo"
+leo  Compiled library file "{$NAME}/src/lib.leo"
 ```
 
 This will create a new directory `outputs/` and a checksum file `.sum` in the directory. 

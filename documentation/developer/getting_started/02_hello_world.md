@@ -33,19 +33,19 @@ leo run
 ```
 
 ```bash title="console output:"
-  leo  Compiled program file "/$PATH/hello-world/src/main.leo"
+  leo  Compiled program file "hello-world/src/main.leo"
   leo  Setup starting...
   leo  Program circuit successfully synthesized!
   leo  Writing to output registers...
-  leo  Saving proving key ("/$PATH/hello-world")
-  leo  Saving verification key ("/$PATH/hello-world")
+  leo  Saving proving key ("hello-world/outputs/hello-world.lpk")
+  leo  Saving verification key ("hello-world/outputs/hello-world.lvk")
   leo  Setup completed in 36 milliseconds
   leo  Program setup complete
   leo  Proving...
   leo  Program circuit successfully synthesized!
   leo  Writing to output registers...
   leo  Prover completed in 10 milliseconds
-  leo  Proof stored ("/$PATH/hello-world/outputs/hello-world.proof")
+  leo  Proof stored ("hello-world/outputs/hello-world.proof")
   leo  Completed program proving
 
   Verifier time   : 3 milliseconds
