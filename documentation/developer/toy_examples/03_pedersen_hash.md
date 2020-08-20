@@ -54,7 +54,7 @@ All paths in a circuit need to execute. Circuits cannot reason about errors.
 All values in a program must be static. Circuits cannot dynamically generate other circuits.
 
 ### Logging
-To aid developers in writing circuits, Leo provides several [console functions](aleo/documentation/developer/language/11_console.md):
+To aid developers in writing circuits, Leo provides several [console functions](../language/11_console.md):
 * console.assert
 * console.log
 * console.debug

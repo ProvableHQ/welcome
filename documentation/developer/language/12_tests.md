@@ -26,7 +26,7 @@ To run tests, use the `leo test` CLI [command](../cli/04_test.md).
 
 ## Console Assert Function
 
-The console [assert function](aleo/documentation/developer/language/11_console.md#console-assert) was add specifically for testing purposes.
+The console [assert function](11_console.md#console-assert) was add specifically for testing purposes.
 You can use it to check that an expression evaluates to a true boolean value.
 
 ```leo
@@ -154,7 +154,7 @@ Annotations are a work in progress. Currently only the `@context` test annotatio
 
 ### Test Context Annotation
 The context annotation takes one argument that will be used as the file name for input and output files.
-For integration tests, one can invoke [`.in`](aleo/documentation/developer/language/08_inputs.md#program-inputs) and [`.state`](../programming_model/00_model.md#state-file) files to load the correct input and state as follows:
+For integration tests, one can invoke [`.in`](08_inputs.md#program-inputs) and [`.state`](../programming_model/00_model.md#state-file) files to load the correct input and state as follows:
  
 For example, one could invoke it as any of the following examples:
 ```leo

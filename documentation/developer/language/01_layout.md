@@ -9,7 +9,7 @@ Declarations are locally accessible within a program file. If you need a declara
 
 ### Functions
 
-[Functions](aleo/documentation/developer/language/07_functions.md) contain statements that can compute values. 
+[Functions](07_functions.md) contain statements that can compute values. 
 Functions must be in a program's current scope to be called.
 
 ```leo
@@ -20,7 +20,7 @@ function square(a: u32) -> u32 {
 
 ### Circuits
 
-[Circuits](aleo/documentation/developer/language/09_circuits.md) are similar to structs in object-oriented languages. They can contain members that store values or declare functions.
+[Circuits](09_circuits.md) are similar to structs in object-oriented languages. They can contain members that store values or declare functions.
 
 ```leo
 circuit Point {
@@ -35,7 +35,7 @@ circuit Point {
 
 ### Imports
 
-[Imports](aleo/documentation/developer/language/10_imports.md) fetch other circuits and functions and bring them into the current file scope.
+[Imports](10_imports.md) fetch other circuits and functions and bring them into the current file scope.
 You can import dependencies that are declared locally in the `src` directory or downloaded to the `imports` directory.
 
 ```leo
@@ -48,8 +48,8 @@ function main() {
 
 ### Tests
 
-Each [test](aleo/documentation/developer/language/12_tests.md) function generates new constraints for an isolated test circuit.
-The input to a test can be specified with the [context annotation](aleo/documentation/developer/language/12_tests.md#test-context-annotation).
+Each [test](12_tests.md) function generates new constraints for an isolated test circuit.
+The input to a test can be specified with the [context annotation](12_tests.md#test-context-annotation).
 Tests are executed with the Leo [test command](../cli/04_test.md).
 
 ```leo

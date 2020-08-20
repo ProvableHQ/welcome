@@ -8,7 +8,7 @@ Leo supports `console.assert`, `console.log`, `console.debug`, and `console.erro
 ## Console Assert
 
 The expression inside of a `console.assert` must evaluate to a boolean.
-The assert function is most commonly used in [**testing**](aleo/documentation/developer/language/12_tests.md).
+The assert function is most commonly used in [**testing**](12_tests.md).
 
 ```leo
 function square(a: u32) -> u32 {

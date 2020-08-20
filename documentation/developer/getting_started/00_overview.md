@@ -13,16 +13,16 @@ The Leo language is currently in active development. Please monitor the reposito
 
 ## Installing Leo
 
-Proceed to [**Installation**](./01_installation.md) for information on how to install Leo.
+Proceed to [**Installation**](01_installation.md) for information on how to install Leo.
 
 ## Getting Started
 
-Check out the [**Hello World**](./02_hello_world.md) tutorial for a brief walk-through of Leo and the Leo CLI.
+Check out the [**Hello World**](02_hello_world.md) tutorial for a brief walk-through of Leo and the Leo CLI.
 
 ## Language Documentation
 
-To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**](aleo/documentation/developer/language/01_layout.md).
-Leo comes with an advanced testing framework for writing unit and integration tests. Read [**Writing Tests**](aleo/documentation/developer/language/12_tests.md) to learn more.
+To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**](../language/01_layout.md).
+Leo comes with an advanced testing framework for writing unit and integration tests. Read [**Writing Tests**](../language/12_tests.md) to learn more.
 
 ## Programming Model
 
