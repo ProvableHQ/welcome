@@ -4,10 +4,6 @@ title: Publish a Package to Aleo Package Manager
 sidebar_label: leo publish
 ---
 
-:::caution
-This feature is pending standardization.
-:::
-
 To package your program as a gadget and publish it online, run:
 ```
 leo publish
