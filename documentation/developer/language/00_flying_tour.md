@@ -11,7 +11,7 @@ To gain a deeper understanding of the Leo language, continue to the [next page](
 **Square Root Example**: Let's prove that we know the square root of a number.
 
 **`src/main.leo`**
-```rust // change this to leo
+```leo
 function main(a: u32, b: u32) -> bool {
     return square_root(a, b)
 }
@@ -60,7 +60,7 @@ affecting the underlying constraint system.
 **Circuits Example**
 
 **`src/main.leo`**
-```rust
+```leo
 circuit Point {
     x: u32,
     y: u32,

@@ -5,6 +5,19 @@
     <a href="https://twitter.com/AleoHQ"><img src="https://img.shields.io/twitter/follow/AleoHQ?style=social"/></a>
 </p>
 
+## Welcome to Aleo.
+
+This repository serves as a guide for getting started with building on Aleo. Here is a quick summary of the key highlights for Developer Preview I:
+
+- [Aleo Studio](https://aleo.studio) - The first IDE for zero-knowledge proofs
+- [Aleo Package Manager](https://aleo.pm) - Official package manager of the Leo programming language
+- [Aleo Explorer](https://aleo.network) - Validate and broadcast on Aleo Testnet I
+- [Aleo Developer Portal](https://developer.aleo.org) - The documentation portal for Developer Preview I
+
+As this is the first in our series of developer previews, we anticipate there to be bugs. For help getting set up, please join the Discord channel to ask questions and help others answer their questions.
+
+We will be updating this page with FAQs to make it easy for finding common issues and to fix them quickly.
+
 ## Aleo Testnet I
 
 ### The Network
@@ -41,6 +54,16 @@ To connect to the network, the following is a list of Aleo Testnet I bootnodes.
 | Pending | Asia   | as4.testnet1.aleo.network |     4131     |   3030   |
 | Pending | Asia   | as5.testnet1.aleo.network |     4131     |   3030   |
 
+
 ## Aleo Studio
 
+### Known issues
 
+- Some early testers on **macOS** and **Linux** have reported permission issues when installing Aleo Studio. To resolve this issue, run the following:
+```
+# macOS
+chmod -R 777 /Applications/Aleo\ Studio.app
+
+# Linux for deb
+sudo chmod -R 777 /opt/Aleo\ Studio/
+```
