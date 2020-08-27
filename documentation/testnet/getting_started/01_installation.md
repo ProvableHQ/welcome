@@ -42,7 +42,7 @@ This will generate an executable under the `./target/release` directory
 
 To connect and start syncing to the main network, simply run the client:
 ```
-./target/release/snarkOS
+./target/release/snarkos
 ```
 
 Additionally, the client can be run in quiet mode with the `--quiet` flag: 
