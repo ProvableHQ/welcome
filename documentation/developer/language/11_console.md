@@ -8,7 +8,7 @@ Leo supports `console.assert`, `console.log`, `console.debug`, and `console.erro
 ## Console Assert
 
 The expression inside of a `console.assert` must evaluate to a boolean.
-The assert function is most commonly used in [**testing**](aleo/documentation/developer/language/12_tests.md).
+The assert function is most commonly used in [**testing**](12_tests.md).
 
 ```leo
 function square(a: u32) -> u32 {
@@ -25,7 +25,7 @@ test function test_square() {
 ```
 
 :::info
-The console assert function does not produce any constraints in the circuit. This makes it ideal for testing!
+The `console.assert` function does not produce any constraints in the circuit. This makes it ideal for testing!
 :::
 
 ## Console Log, Debug, and Error
@@ -33,10 +33,10 @@ The console assert function does not produce any constraints in the circuit. Thi
 Logging functions like `console.log`, `console.debug`, and `console.error` require a format string as an argument. 
 
 ### Format Strings
-The first argument a macro receives is a format string. This must be a string literal. The power of the formatting string is in the `{}`s contained.
-Additional parameters passed to a console method replace the `{}`s within the formatting string in the order given.
+The first argument a macro receives is a format string. This must be a string literal. The power of the formatting string is in the `{}`'s contained.
+Additional parameters passed to a console method replace the `{}`'s within the formatting string in the order given.
 
-Format string syntax is intended to be familiar to those coming from C's `printf`/`fprintf` functions or Python's `str.format`
+Format string syntax is intended to be familiar to those coming from C's `printf`/`fprintf` functions or Python's `str.format`.
 
 ```leo
 console.log("Hello");                   // => "Hello"

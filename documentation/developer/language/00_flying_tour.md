@@ -37,7 +37,7 @@ Collections of data types can be created in the form of static [arrays and tuple
 
 ## 2 Functions
 The `main` [function](07_functions.md) is the entrypoint of a Leo program. 
-[`leo run`](../cli/07_run.md) will provide private [inputs](08_inputs.md) directly to the function for proving and store the program result in an output file.
+[`leo run`](aleo/documentation/developer/cli/08_run.md) will provide private [inputs](08_inputs.md) directly to the function for proving and store the program result in an output file.
 
 The `square_root` function is called by `main` with private inputs `a` and `b` which are both unsigned `u32` integers.
 
@@ -100,7 +100,7 @@ Leo introduces `Self` and `self` keywords to access circuit member values.
 
 [Imports](10_imports.md) fetch other circuits and functions and bring them into the current file scope. 
 Leo supports imports for dependencies that are declared locally or in an imported package.
-Importing packages can be accomplished using the [**`leo add`**](../cli/09_add.md) command in the CLI.
+Importing packages can be accomplished using the [**`leo add`**](aleo/documentation/developer/cli/10_add.md) command in the CLI.
 
 **This completes the flying tour!** 
 
@@ -108,4 +108,4 @@ Importing packages can be accomplished using the [**`leo add`**](../cli/09_add.m
 To learn more about how to use the Leo Language, start [here](01_layout.md)
 
 ## The Leo CLI
-To learn more about how to use the Leo CLI, start [here](../cli/00_new.md)
+To learn more about how to use the Leo CLI, start [here](aleo/documentation/developer/cli/01_new.md)

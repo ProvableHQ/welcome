@@ -1,6 +1,6 @@
 ---
 id: deploy
-title: Deploy to Aleo
+title: Deploy a Package to Aleo
 sidebar_label: leo deploy
 ---
 

@@ -35,7 +35,7 @@ Examples of identifiers include:
 The following Leo keywords can only be used in their correct contexts.
 They cannot be used as the names of identifiers.
 
-```leo
+```
 address
 as
 const
