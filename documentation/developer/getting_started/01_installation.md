@@ -17,13 +17,13 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="mac">
 
-[**Install for Mac**](https://github.com/AleoHQ/leo/releases/download/v1.0.1/leo_v1.0.1_mac.zip)
+[**Install for Mac**](https://github.com/AleoHQ/leo/releases/download/v1.0.2/leo-v1.0.2-x86_64-apple-darwin.zip)
 
 </TabItem>
 
 <TabItem value="ubuntu">
 
-[**Install for Ubuntu**](https://github.com/AleoHQ/leo/releases/download/v1.0.1/leo_v1.0.1_ubuntu.zip)
+[**Install for Ubuntu**](https://github.com/AleoHQ/leo/releases/download/v1.0.2/leo-v1.0.2-x86_64-unknown-linux-gnu.zip)
 
 </TabItem>
 

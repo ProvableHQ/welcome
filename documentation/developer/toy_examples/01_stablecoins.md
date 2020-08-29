@@ -83,5 +83,5 @@ payload: [ id || vb || signature ]
 8. Return (registers id, registers vb, ?)
 
 :::info
-For a more in-depth description of how tokens use records and state check out the [**programming model**](aleo/documentation/developer/programming_model/01_token.md) for tokens.
+For a more in-depth description of how tokens use records and state check out the [**programming model**](../programming_model/01_token.md) for tokens.
 :::

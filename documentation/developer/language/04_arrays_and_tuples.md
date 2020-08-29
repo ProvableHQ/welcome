@@ -7,6 +7,15 @@ sidebar_label: Arrays and Tuples
 ## Indexing
 Arrays and tuples in Leo are zero indexed.
 
+## Array Types
+Leo supports arrays of all types:
+arrays of integers, arrays of field elements, arrays of circuits, etc.
+An array type is defined by both the type and the number of its elements:
+for example, the type of arrays of `u8` integers of length 3
+is different from
+both the type of arrays of `u8` integers of length 10
+and the type of arrays of `u16` integers of length 3.
+
 ## Array Expression
 Create an array with brackets `[]`.
 
@@ -35,7 +44,7 @@ let first = arr[0]; // access the first element
 ## Array Slicing
 Access a subset of an array. 
 From index must be a u32. Omitting from index defaults to index 0.
-To index must be a u32. Omitting to_index defaults to the length of the array.
+To index must be a u32. Omitting to_index defaults to the length of the array minus one.
 
 ```leo
 let arr: u32[4] = [0, 1, 2, 3];
@@ -54,7 +63,7 @@ Equivalent to slicing all elements of an array.
 ```leo
 let arr: u32[4] = [0, 1, 2, 3];
 
-let arr_with_4: u32[5] = [...arr, 4];
+let arr_with_5: u32[5] = [...arr, 4];
 ```
 
 ### Notes on Fixed Size
@@ -91,7 +100,8 @@ return d
 
 ## Multi-dimensional Arrays
 
-Leo supports multi-dimensional arrays of primitive values.
+Leo supports multi-dimensional arrays.
+These are simply arrays whose elements are arrays.
 
 ```leo
 function main() -> u32[3][2] {
