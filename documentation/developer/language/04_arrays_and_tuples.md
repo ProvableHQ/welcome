@@ -7,6 +7,15 @@ sidebar_label: Arrays and Tuples
 ## Indexing
 Arrays and tuples in Leo are zero indexed.
 
+## Array Types
+Leo supports arrays of all types:
+arrays of integers, arrays of field elements, arrays of circuits, etc.
+An array type is defined by both the type and the number of its elements:
+for example, the type of arrays of `u8` integers of length 3
+is different from
+both the type of arrays of `u8` integers of length 10
+and the type of arrays of `u16` integers of length 3.
+
 ## Array Expression
 Create an array with brackets `[]`.
 
@@ -91,7 +100,8 @@ return d
 
 ## Multi-dimensional Arrays
 
-Leo supports multi-dimensional arrays of primitive values.
+Leo supports multi-dimensional arrays.
+These are simply arrays whose elements are arrays.
 
 ```leo
 function main() -> u32[3][2] {
