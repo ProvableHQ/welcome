@@ -7,6 +7,7 @@ Circuits are a powerful complex data type in Leo.
 Circuit names should be CamelCase.
 Circuits can have one or more members. 
 Circuits are initialized by their defined name followed by their members in curly braces `{ }`.
+Circuit types with the same members but different names are different types.
 
 ## Circuit member values
 Circuit members can be defined as primitive values with explicit type.  

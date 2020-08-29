@@ -163,5 +163,5 @@ function main(input, token_debit: u8[48], token_credit: u8[48]) -> (u8, u8) {
 This example is a proof of concept. It is not secure and should not be used for production.
 :::
 :::info
-For a more in-depth description of how tokens use records and state check out the [**programming model**](aleo/documentation/developer/programming_model/01_token.md) for this token.
+For a more in-depth description of how tokens use records and state check out the [**programming model**](../programming_model/01_token.md) for this token.
 :::

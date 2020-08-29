@@ -15,7 +15,7 @@ For this example we will only use one old record `old_record_0` and one new reco
 The second `old_record_1` and second `new_record_1` will be set to null **dummy** records.
 **Dummy** records pass through their input state as their output state.
 
-The updated [execute](./00_model.md#registers) for our example:
+The updated [execute](00_model.md#registers) for our example:
 
 1. `state_0 -> old_record_0 -> state_1`
 2. `state_1 -> dummy -> state_1`

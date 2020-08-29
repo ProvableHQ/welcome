@@ -43,7 +43,7 @@ function main() -> u32 {
 ### Main function inputs
 The `main` function is the entry point of a Leo program.
 
-`main` function arguments provide the [inputs](aleo/documentation/developer/language/08_inputs.md) to the circuit.
+`main` function arguments provide the [inputs](08_inputs.md) to the circuit.
 They are allocated private variables in the program's constraint system.
 
 ```leo

@@ -4,13 +4,14 @@ title: Import a Package
 sidebar_label: leo add
 ---
 
-:::caution
-This feature is pending standardization.
-:::
-
 ### `leo add`
 
 To add a package from the Aleo Package Manager, run:
 ```bash
-leo add {author}/{package_name}
+leo add -a <author> -p <package_name>
 ```
+
+```bash title="console output:"
+leo  Successfully added a package
+```
+
