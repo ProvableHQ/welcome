@@ -15,7 +15,8 @@ jobs:
 
       - name: Update modules
         run: |
-          git submodule update --remote
+          git submodule update --init --remote
+          git status
           git add .
           git diff-index --quiet HEAD || git commit -m "Update modules"
 
