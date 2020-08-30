@@ -9,6 +9,10 @@
                     "folderName": "rpc/concepts"
                 },
                 {
+                    "title": "Network Messages",
+                    "folderName": "network/network_messages"
+                },
+                {
                     "title": "Public RPC Endpoints",
                     "folderName": "rpc/public_endpoints"
                 },
@@ -48,6 +52,10 @@
                 {
                     "title": "Concepts",
                     "document_id": "testnet/rpc/concepts"
+                },
+                {
+                    "title": "Network Messages",
+                    "document_id": "testnet/network/network_messages"
                 },
                 {
                     "title": "Public RPC Endpoints",
