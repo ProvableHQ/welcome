@@ -5,8 +5,8 @@
             "folderName": "testnet",
             "chapters": [
                 {
-                    "title": "RPC Server",
-                    "folderName": "rpc/rpc_server"
+                    "title": "Concepts",
+                    "folderName": "rpc/concepts"
                 },
                 {
                     "title": "Public RPC Endpoints",
@@ -46,8 +46,8 @@
             "section_id": "testnet",
             "chapters": [
                 {
-                    "title": "RPC Server",
-                    "document_id": "testnet/rpc/rpc_server"
+                    "title": "Concepts",
+                    "document_id": "testnet/rpc/concepts"
                 },
                 {
                     "title": "Public RPC Endpoints",
