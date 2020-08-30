@@ -110,6 +110,22 @@
 
 ### Chapter 10: Network Messages
 
+- [Block](./autogen/testnet/network/network_messages/00_block.md)
+- [GetBlock](./autogen/testnet/network/network_messages/01_get_block.md)
+- [GetMemoryPool](./autogen/testnet/network/network_messages/02_get_memory_pool.md)
+- [GetPeers](./autogen/testnet/network/network_messages/03_get_peers.md)
+- [GetSync](./autogen/testnet/network/network_messages/04_get_sync.md)
+- [MemoryPool](./autogen/testnet/network/network_messages/05_memory_pool.md)
+- [Peers](./autogen/testnet/network/network_messages/06_peers.md)
+- [Ping](./autogen/testnet/network/network_messages/07_ping.md)
+- [Pong](./autogen/testnet/network/network_messages/08_pong.md)
+- [Sync](./autogen/testnet/network/network_messages/09_sync.md)
+- [SyncBlock](./autogen/testnet/network/network_messages/10_sync_block.md)
+- [Transaction](./autogen/testnet/network/network_messages/11_transaction.md)
+- [Verack](./autogen/testnet/network/network_messages/12_verack.md)
+- [Version](./autogen/testnet/network/network_messages/13_version.md)
+
+
 ### Chapter 11: Public RPC Endpoints
 
 - [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
