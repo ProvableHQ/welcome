@@ -105,52 +105,52 @@
 
 ### Chapter 9: Concepts
 
-- [RPC Server](./autogen/testnet/rpc/concepts/00_rpc_server.md)
+- [RPC Server](./autogen/testnet/concepts/00_rpc_server.md)
 
 
 ### Chapter 10: Network Messages
 
-- [Block](./autogen/testnet/network/network_messages/00_block.md)
-- [GetBlock](./autogen/testnet/network/network_messages/01_get_block.md)
-- [GetMemoryPool](./autogen/testnet/network/network_messages/02_get_memory_pool.md)
-- [GetPeers](./autogen/testnet/network/network_messages/03_get_peers.md)
-- [GetSync](./autogen/testnet/network/network_messages/04_get_sync.md)
-- [MemoryPool](./autogen/testnet/network/network_messages/05_memory_pool.md)
-- [Peers](./autogen/testnet/network/network_messages/06_peers.md)
-- [Ping](./autogen/testnet/network/network_messages/07_ping.md)
-- [Pong](./autogen/testnet/network/network_messages/08_pong.md)
-- [Sync](./autogen/testnet/network/network_messages/09_sync.md)
-- [SyncBlock](./autogen/testnet/network/network_messages/10_sync_block.md)
-- [Transaction](./autogen/testnet/network/network_messages/11_transaction.md)
-- [Verack](./autogen/testnet/network/network_messages/12_verack.md)
-- [Version](./autogen/testnet/network/network_messages/13_version.md)
+- [Block](./autogen/testnet/network_messages/00_block.md)
+- [GetBlock](./autogen/testnet/network_messages/01_get_block.md)
+- [GetMemoryPool](./autogen/testnet/network_messages/02_get_memory_pool.md)
+- [GetPeers](./autogen/testnet/network_messages/03_get_peers.md)
+- [GetSync](./autogen/testnet/network_messages/04_get_sync.md)
+- [MemoryPool](./autogen/testnet/network_messages/05_memory_pool.md)
+- [Peers](./autogen/testnet/network_messages/06_peers.md)
+- [Ping](./autogen/testnet/network_messages/07_ping.md)
+- [Pong](./autogen/testnet/network_messages/08_pong.md)
+- [Sync](./autogen/testnet/network_messages/09_sync.md)
+- [SyncBlock](./autogen/testnet/network_messages/10_sync_block.md)
+- [Transaction](./autogen/testnet/network_messages/11_transaction.md)
+- [Verack](./autogen/testnet/network_messages/12_verack.md)
+- [Version](./autogen/testnet/network_messages/13_version.md)
 
 
 ### Chapter 11: Public RPC Endpoints
 
-- [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
-- [getbestblockhash](./autogen/testnet/rpc/public_endpoints/01_getbestblockhash.md)
-- [getblock](./autogen/testnet/rpc/public_endpoints/02_getblock.md)
-- [getblockcount](./autogen/testnet/rpc/public_endpoints/03_getblockcount.md)
-- [getblockhash](./autogen/testnet/rpc/public_endpoints/04_getblockhash.md)
-- [getblocktemplate](./autogen/testnet/rpc/public_endpoints/05_getblocktemplate.md)
-- [getconnectioncount](./autogen/testnet/rpc/public_endpoints/06_getconnectioncount.md)
-- [getpeerinfo](./autogen/testnet/rpc/public_endpoints/07_getpeerinfo.md)
-- [getrawtransaction](./autogen/testnet/rpc/public_endpoints/08_getrawtransaction.md)
-- [gettransactioninfo](./autogen/testnet/rpc/public_endpoints/09_gettransactioninfo.md)
-- [sendtransaction](./autogen/testnet/rpc/public_endpoints/10_sendtransaction.md)
-- [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/11_validaterawtransaction.md)
+- [decoderawtransaction](./autogen/testnet/public_endpoints/00_decoderawtransaction.md)
+- [getbestblockhash](./autogen/testnet/public_endpoints/01_getbestblockhash.md)
+- [getblock](./autogen/testnet/public_endpoints/02_getblock.md)
+- [getblockcount](./autogen/testnet/public_endpoints/03_getblockcount.md)
+- [getblockhash](./autogen/testnet/public_endpoints/04_getblockhash.md)
+- [getblocktemplate](./autogen/testnet/public_endpoints/05_getblocktemplate.md)
+- [getconnectioncount](./autogen/testnet/public_endpoints/06_getconnectioncount.md)
+- [getpeerinfo](./autogen/testnet/public_endpoints/07_getpeerinfo.md)
+- [getrawtransaction](./autogen/testnet/public_endpoints/08_getrawtransaction.md)
+- [gettransactioninfo](./autogen/testnet/public_endpoints/09_gettransactioninfo.md)
+- [sendtransaction](./autogen/testnet/public_endpoints/10_sendtransaction.md)
+- [validaterawtransaction](./autogen/testnet/public_endpoints/11_validaterawtransaction.md)
 
 
 ### Chapter 12: Private RPC Endpoints
 
-- [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
-- [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
-- [decoderecord](./autogen/testnet/rpc/private_endpoints/02_decoderecord.md)
-- [decryptrecord](./autogen/testnet/rpc/private_endpoints/03_decryptrecord.md)
-- [getrawrecord](./autogen/testnet/rpc/private_endpoints/04_getrawrecord.md)
-- [getrecordcommitmentcount](./autogen/testnet/rpc/private_endpoints/05_getrecordcommitmentcount.md)
-- [getrecordcommitments](./autogen/testnet/rpc/private_endpoints/06_getrecordcommitments.md)
+- [createaccount](./autogen/testnet/private_endpoints/00_createaccount.md)
+- [createrawtransaction](./autogen/testnet/private_endpoints/01_createrawtransaction.md)
+- [decoderecord](./autogen/testnet/private_endpoints/02_decoderecord.md)
+- [decryptrecord](./autogen/testnet/private_endpoints/03_decryptrecord.md)
+- [getrawrecord](./autogen/testnet/private_endpoints/04_getrawrecord.md)
+- [getrecordcommitmentcount](./autogen/testnet/private_endpoints/05_getrecordcommitmentcount.md)
+- [getrecordcommitments](./autogen/testnet/private_endpoints/06_getrecordcommitments.md)
 
 
 ## Explorer I
@@ -190,11 +190,11 @@
 
 ### Chapter 17: The Aleo Curves
 
-- [Overview](./autogen/advanced/curves/the_aleo_curves/00_overview.md)
-- [Edwards BLS12](./autogen/advanced/curves/the_aleo_curves/01_edwards_bls12.md)
-- [BLS12-377](./autogen/advanced/curves/the_aleo_curves/02_bls12-377.md)
-- [Edwards BW6](./autogen/advanced/curves/the_aleo_curves/03_edwards_bw6.md)
-- [BW6-761](./autogen/advanced/curves/the_aleo_curves/04_bw6-761.md)
+- [Overview](./autogen/advanced/the_aleo_curves/00_overview.md)
+- [Edwards BLS12](./autogen/advanced/the_aleo_curves/01_edwards_bls12.md)
+- [BLS12-377](./autogen/advanced/the_aleo_curves/02_bls12-377.md)
+- [Edwards BW6](./autogen/advanced/the_aleo_curves/03_edwards_bw6.md)
+- [BW6-761](./autogen/advanced/the_aleo_curves/04_bw6-761.md)
 
 
 ### Chapter 18: Proof of Succinct Work
