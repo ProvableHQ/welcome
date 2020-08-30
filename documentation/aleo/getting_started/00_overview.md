@@ -110,16 +110,11 @@ to compile, execute, and finalize its state autonomously.
 - [Install snarkOS](./testnet/getting_started/01_installation.md)
 
 
-### Chapter 9: Networking
-
-- [Networking](./testnet/networking/00_networking.md)
-- [Message Types](./testnet/networking/01_message_types.md)
+### Chapter 9: Concepts
 
 
-### Chapter 10: RPC Server
 
-- [Configurations](./autogen/testnet/rpc/rpc_server/00_configurations.md)
-
+### Chapter 10: Network Messages
 
 ### Chapter 11: Public RPC Endpoints
 
