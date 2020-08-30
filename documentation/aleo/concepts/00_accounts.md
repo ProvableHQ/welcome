@@ -96,12 +96,12 @@ The account address is encoded with an [address prefix](#account-prefixes) that 
 
 ### Account Prefixes
 
-|                              |  Type  |   Human-Readable Prefix      |                 Prefix Bytes               |
-|:----------------------------:|:------:|:----------------------------:|:------------------------------------------:|
-| **Account Private Key**      | bytes  |  `APrivateKey1`              | `[ 127, 134, 189, 116, 210, 221, 210, 137, 144 ]` |
-| **Account Proving Key**      | bytes  |  `AProvingKey1`              | `[ 109, 249, 98, 224, 36, 15, 213, 187, 79, 190 ]` | 
-| **Account View Key**         | bytes  |  `AViewKey1`                 | `[ 14, 138, 223, 204, 247, 224, 122 ]` |
-| **Account Address**          | string |  `aleo1`                     |      `aleo1`    |
+|                         |  Type  | Human-Readable Prefix |                    Prefix Bytes                    |
+|:-----------------------:|:------:|:---------------------:|:--------------------------------------------------:|
+| **Account Private Key** | bytes  | `APrivateKey1`        | `[ 127, 134, 189, 116, 210, 221, 210, 137, 144 ]`  |
+| **Account Proving Key** | bytes  | `AProvingKey1`        | `[ 109, 249, 98, 224, 36, 15, 213, 187, 79, 190 ]` |
+| **Account View Key**    | bytes  | `AViewKey1`           | `[ 14, 138, 223, 204, 247, 224, 122 ]`             |
+| **Account Address**     | string | `aleo1`               | `aleo1`                                            |
 
 ### Offline Accounts
 
@@ -114,12 +114,9 @@ leaking one's account private key to unintended parties.
 
 ### Account Commitment Outputs
 
-An account view key is comprised of an encryption secret key, which is derived from the account commitment output.
-As the encryption secret key is a scalar field element, and the account commitment output is a group element, an efficiently 
-
-The account commitment output is used to create an account view key. 
+The account commitment output is used to create an account view key, which is comprised of an encryption secret key. 
 This encryption secret key is a scalar field element derived from the account commitment output. To ensure the validity
-of the account view key, the account commitment output should be representable in the scalar field
+of the account view key, the account commitment output should be representable in the scalar field.
 
 ### Create an Account
 
@@ -132,9 +129,11 @@ Given global instantiated Aleo parameters and subroutines.
 2. Construct private key components
     - `sk_sig` = Blake2s(`seed`, 0)
     - `sk_prf` = Blake2s(`seed`, 1)
-    - `r_pk` = Blake2s(`seed`, 2)
-    
+    - `r_pk` = Blake2s(`seed`, `counter`)
+           
 3.`private_key` = (`seed`, `sk_sig`, `sk_prf`, `r_pk`)
+
+`counter` is a `u16` value that is iterated on until a valid `view_key` can be derived from `private_key`
 
 #### Generate a View Key 
 
@@ -153,7 +152,7 @@ graph TD
 	A["Seed (32 Bytes)"] 
     A --> |"Blake2s(Seed, 0)"| B(sk_sig)
     A --> |"Blake2s(Seed, 1)"| C(sk_prf)
-    A --> |"Blake2s(Seed, 2)"| D(r_pk)
+    A --> |"Blake2s(Seed, counter)"| D(r_pk)
     
     B --> E(Account Private Key)
     C --> E(Account Private Key)
