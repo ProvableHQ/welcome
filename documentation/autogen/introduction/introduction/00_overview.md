@@ -112,6 +112,7 @@ to compile, execute, and finalize its state autonomously.
 
 ### Chapter 9: Concepts
 
+- [RPC Server](./autogen/testnet/rpc/concepts/00_rpc_server.md)
 
 
 ### Chapter 10: Network Messages
