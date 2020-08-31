@@ -38,7 +38,9 @@ They cannot be used as the names of identifiers.
 ```
 address
 as
+circuit
 const
+console
 else
 false
 field
