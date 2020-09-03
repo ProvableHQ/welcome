@@ -24,6 +24,24 @@ function main() -> u32 {
 }
 ```
 
+### Mutability
+
+Circuit member variables can be made mutable with the `mut` keyword.
+
+```leo
+circuit Foo {
+    mut a: u32,
+    b: u32,
+}
+
+function main() {
+    let mut f = Foo { a: 1u32, b: 2u32 };
+
+    f.a = 0u32;
+    // f.b = 0u32; // Errors because circuit variable `b` is immutable
+}
+```
+
 ## Circuit member functions
 Members can also be defined as functions.  
 They can also be accessed using dot syntax `.`. 
@@ -56,6 +74,9 @@ function main() -> u32 {
     return Foo::echo(1u32)
 }
 ```
+:::note
+Circuit member functions, both normal and static, are immutable.
+:::
 
 ## `Self` and `self`
 The `Self` keyword references the circuit's definition.
@@ -94,4 +115,3 @@ function main() -> bool {
     return c.baz() 
 }
 ```
-
