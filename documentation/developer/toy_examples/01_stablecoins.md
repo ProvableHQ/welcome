@@ -38,14 +38,14 @@ For example, a centrally backed stable coin that enforces blacklisting can check
 ## Code:
 
 ### Inputs
-
+```leo
 [main]
 issuing_authority: address
 
 [registers]
 Id: u8
 vb: u8
-predicate_id: u8[48]
+predicate_id: [u8; 48]
 
 …
 
@@ -55,9 +55,10 @@ leaf_index: u32
 
 [[private]]
 [record]
-death_predicate_id: u8[48]
-birth_predicate_id: u8[48]
+death_predicate_id: [u8; 48]
+birth_predicate_id: [u8; 48]
 payload: [ id || vb || signature ]
+```
 
 ### stable_token_debit pseudocode
 

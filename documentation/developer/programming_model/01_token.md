@@ -99,8 +99,8 @@ The input register contains the initial state and is stored in the `token.in` fi
 [main]
 
 [registers]
-token_id: u8 = 1u8;
-value_balance: u8 = 0u8; // Value in the first input register is initialized to 0
+token_id: u8 = 1;
+value_balance: u8 = 0; // Value in the first input register is initialized to 0
 ```
 
 Record and leaf state are passed into Leo through the `token.state` file.
@@ -111,28 +111,27 @@ Record and leaf state are passed into Leo through the `token.state` file.
 
 [state]
 leaf_index: u32 = 0;
-root: u8[32] = [0u8; 32];
+root: [u8; 32] = [0; 32];
 
 [[private]]
 
 [record]
-serial_number: u8[32] = [0u8; 32];
-commitment: u8[32] = [0u8; 32];
-owner: address = aleo1qnr4dkkvkgfqph0vzc3y6z2eu975wnpz2925ntjccd5cfqxtyu8sta57j8;
+serial_number: [u8; 64] = [0; 64];
+commitment: [u8; 32] = [0; 32];
+owner: address = aleo1daxej63vwrmn2zhl4dymygagh89k5d2vaw6rjauueme7le6k2q8sjn0ng9;
 is_dummy: bool = false;
 value: u64 = 0;
-payload: u8[32] = [1, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-birth_program_id: u8[48] = [1u8; 48];
-death_program_id: u8[48] = [0u8; 48];
-serial_number_nonce: u8[32] = [0u8; 32];
-commitment_randomness: u8[32] = [0u8; 32];
+payload: [u8; 32] = [1, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+birth_program_id: [u8; 48] = [1; 48];
+death_program_id: [u8; 48] = [0; 48];
+serial_number_nonce: [u8; 32] = [0; 32];
+commitment_randomness: [u8; 32] = [0; 32];
 
 [state_leaf]
-path: u8[32][2] = [ [0u8; 32], [0u8; 32] ];
-memo: u8[32] = [0u8; 32];
+path: [u8; 128] = [0; 128];
+memo: [u8; 32] = [0; 32];
 network_id: u8 = 0;
-leaf_randomness: u8[32] = [0u8; 32];
-
+leaf_randomness: [u8; 32] = [0; 32];
 ```
 
 ### 1.4 Leo Function
@@ -153,8 +152,8 @@ The `token_debit` Leo function should:
 // The token debit function
 function debit(
     input,
-    token_debit: u8[48],
-    token_credit: u8[48]
+    token_debit: [u8; 48],
+    token_credit: [u8; 48]
 ) -> (u8, u8) {
     // 1. Check token ids match
     let id_t = input.registers.id;
@@ -196,8 +195,8 @@ Return values are written to the `token.out` file after the program is run.
 
 ```leo title="token.out"
 [registers]
-token_id: u8 = 1u8;
-value_balance: u8 = 100u8;
+token_id: u8 = 1;
+value_balance: u8 = 100;
 ```
 
 ### 1.5 Leo Runtime Checks
@@ -258,8 +257,8 @@ If you were to do the calculation in Leo by hand, the `token_debit` function wou
 ```leo title="token_debit.leo"
 function debit(
     input,
-    token_debit: u8[48],
-    token_credit: u8[48]
+    token_debit: [u8; 48],
+    token_credit: [u8; 48]
 ) -> (u8, u8) {
     let id_t = input.registers.id;
     let payload_id_t = input.record.payload[0]; // payload is u8 bytes
@@ -379,8 +378,8 @@ Similar to `token_debit`, the program inputs file contains the input register in
 [main]
 
 [registers]
-token_id: u8 = 1u8;
-value_balance: u8 = 100u8;
+token_id: u8 = 1;
+value_balance: u8 = 100;
 ```
 
 :::note
@@ -395,27 +394,27 @@ Record and leaf state are passed into Leo through the `token.state` file.
 
 [state]
 leaf_index: u32 = 2;
-root: u8[32] = [0u8; 32];
+root: u8[32] = [0; 32];
 
 [[private]]
 
 [record]
-serial_number: u8[32] = [0u8; 32];
-commitment: u8[32] = [0u8; 32];
-owner: address = aleo1qnr4dkkvkgfqph0vzc3y6z2eu975wnpz2925ntjccd5cfqxtyu8sta57j8;
+serial_number: [u8; 32] = [0; 32];
+commitment: [u8; 32] = [0; 32];
+owner: address = aleo1daxej63vwrmn2zhl4dymygagh89k5d2vaw6rjauueme7le6k2q8sjn0ng9;
 is_dummy: bool = false;
 value: u64 = 0;
-payload: u8[32] = [1, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-birth_program_id: u8[48] = [1u8; 48];
-death_program_id: u8[48] = [0u8; 48];
-serial_number_nonce: u8[32] = [0u8; 32];
-commitment_randomness: u8[32] = [0u8; 32];
+payload: [u8; 32] = [1, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+birth_program_id: [u8; 48] = [1; 48];
+death_program_id: [u8; 48] = [0; 48];
+serial_number_nonce: [u8; 32] = [0; 32];
+commitment_randomness: [u8; 32] = [0; 32];
 
 [state_leaf]
-path: u8[32][2] = [ [0u8; 32], [0u8; 32] ];
-memo: u8[32] = [0u8; 32];
+path: [u8; 128] = [0; 128];
+memo: [u8; 32] = [0; 32];
 network_id: u8 = 0;
-leaf_randomness: u8[32] = [0u8; 32];
+leaf_randomness: [u8; 32] = [0; 32];
 
 ```
 
@@ -441,7 +440,7 @@ The `token_credit` Leo function should:
 // The token credit function
 function credit(
     input,
-    token_credit: u8[48]
+    token_credit: [u8; 48]
 ) -> (u8, u8) {
     let id_t = input.registers.id;
     let payload_id_t = input.record.payload[0];
