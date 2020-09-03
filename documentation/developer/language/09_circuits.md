@@ -9,8 +9,8 @@ Circuits can have one or more members.
 Circuits are initialized by their defined name followed by their members in curly braces `{ }`.
 Circuit types with the same members but different names are different types.
 
-## Circuit member values
-Circuit members can be defined as primitive values with explicit type.  
+## Circuit member variables
+Circuit members can be defined as variables with any type.  
 They can be accessed using dot syntax `.`.
 
 ```leo
