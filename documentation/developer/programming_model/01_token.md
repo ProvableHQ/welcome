@@ -394,7 +394,7 @@ Record and leaf state are passed into Leo through the `token.state` file.
 
 [state]
 leaf_index: u32 = 2;
-root: u8[32] = [0; 32];
+root: [u8; 32] = [0; 32];
 
 [[private]]
 

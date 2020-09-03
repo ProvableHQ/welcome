@@ -38,15 +38,24 @@ They cannot be used as the names of identifiers.
 ```
 address
 as
+bool
+circuit
 const
+console
 else
 false
 field
 for
 function
 group
+i8
+i16
+i32
+i64
+i128
 if
 import
+input
 in
 let
 mut
@@ -57,5 +66,10 @@ static
 string
 test
 true
+u8
+u16
+u32
+u64
+u128
 ```
 

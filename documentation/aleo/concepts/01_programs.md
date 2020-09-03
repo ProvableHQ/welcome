@@ -18,7 +18,7 @@ syntax familiar to web developers and composable in features, Leo is well-suited
 existing developer frameworks to supercharge web apps with privacy and integrity.
 
 ```leo
-function main(inputs) -> (u8[32], u32) {
+function main(inputs) -> ([u8; 32], u32) {
     assert_eq!(registers.token_id, record.payload.token_id);
     assert_eq!(record.birth_program_id, token_debit);
     assert_eq!(record.death_program_id, token_credit);
