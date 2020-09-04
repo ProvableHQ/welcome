@@ -9,7 +9,7 @@ To use private packages and publish to Aleo Package Manager, start by authentica
 leo login -u <username> -p <password>
 ```
 ```bash title="console output:"
-leo  Login successful.
+     Login success
 ```
 
 If remote compilation is enabled, Leo will sync your workspace when

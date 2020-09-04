@@ -17,13 +17,13 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="mac">
 
-[**Install for Mac**](https://github.com/AleoHQ/leo/releases/download/v1.0.2/leo-v1.0.2-x86_64-apple-darwin.zip)
+[**Install for Mac**](https://github.com/AleoHQ/leo/releases/download/v1.0.3/leo-v1.0.3-x86_64-apple-darwin.zip)
 
 </TabItem>
 
 <TabItem value="ubuntu">
 
-[**Install for Ubuntu**](https://github.com/AleoHQ/leo/releases/download/v1.0.2/leo-v1.0.2-x86_64-unknown-linux-gnu.zip)
+[**Install for Ubuntu**](https://github.com/AleoHQ/leo/releases/download/v1.0.3/leo-v1.0.3-x86_64-unknown-linux-gnu.zip)
 
 </TabItem>
 
@@ -74,7 +74,7 @@ cd leo
 $ cargo build --release
 ```
 
-This will generate an executable under the `./target/release` directory. To run snarkOS, run the following command:
+This will generate an executable under the `./target/release` directory. To run Leo, run the following command:
 ```bash
 ./target/release/leo
 ```

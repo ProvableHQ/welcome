@@ -16,8 +16,10 @@ This creates a directory with the following structure:
 ```bash
 hello-world/
 ├── Leo.toml # Your program manifest
+├── README.md # Your program description
 ├── inputs/ 
-│ └── hello-world.in # Your program inputs
+│ ├── hello-world.in # Your program inputs
+│ └── hello-world.state # Record state information
 └── src/    
   └── main.leo # Your program file
 ```
@@ -33,23 +35,25 @@ leo run
 ```
 
 ```bash title="console output:"
-  leo  Compiled program file "hello-world/src/main.leo"
-  leo  Setup starting...
-  leo  Program circuit successfully synthesized!
-  leo  Writing to output registers...
-  leo  Saving proving key ("hello-world/outputs/hello-world.lpk")
-  leo  Saving verification key ("hello-world/outputs/hello-world.lvk")
-  leo  Setup completed in 36 milliseconds
-  leo  Program setup complete
-  leo  Proving...
-  leo  Program circuit successfully synthesized!
-  leo  Writing to output registers...
-  leo  Prover completed in 10 milliseconds
-  leo  Proof stored ("hello-world/outputs/hello-world.proof")
-  leo  Completed program proving
+Compiling Starting...
+ Compiling Compiling main program... ("hello-world/src/main.leo")
+ Compiling Complete
+      Done Finished in 10 milliseconds
 
-  Verifier time   : 3 milliseconds
-  Verifier output : true
+     Setup Starting...
+     Setup Saving proving key ("hello-world/outputs/hello-world.lpk")
+     Setup Complete
+     Setup Saving verification key ("hello-world/outputs/hello-world.lvk")
+     Setup Complete
+      Done Finished in 10 milliseconds
+
+   Proving Starting...
+   Proving Saving proof... ("hello-world/outputs/hello-world.proof")
+      Done Finished in 10 milliseconds
+
+ Verifying Starting...
+ Verifying Proof is valid
+      Done Finished in 10 milliseconds
 ```
 
 Congratulations! You've just run your first Leo program.

@@ -10,3 +10,6 @@ To clean the output directory, run:
 ```bash
 leo clean
 ```
+```bash title="console output:"
+      Done Program workspace cleaned
+```

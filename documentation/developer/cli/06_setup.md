@@ -11,14 +11,12 @@ To run the program setup and produce a proving key and verification key, run:
 leo setup
 ```
 ```bash title="console output:"
-leo  Compiled program file "{$NAME}/src/main.leo"
-leo  Setup starting...
-leo  Program circuit successfully synthesized!
-leo  Writing to output registers...
-leo  Setup completed in 0 milliseconds
-leo  Saving proving key ("{$NAME}/outputs/${NAME}.lpk")
-leo  Saving verification key ("{$NAME}/outputs/${NAME}.lvk")
-leo  Program setup complete
+     Setup Starting...
+     Setup Saving proving key ("${NAME}/outputs/${NAME}.lpk")
+     Setup Complete
+     Setup Saving verification key ("${NAME}/outputs/${NAME}.lvk")
+     Setup Complete
+      Done Finished in 10 milliseconds
 ```
 Leo will use a cryptographically-secure pseudorandom number generator from your machine to perform the setup. 
 

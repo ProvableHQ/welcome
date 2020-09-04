@@ -12,6 +12,6 @@ leo add -a <author> -p <package_name>
 ```
 
 ```bash title="console output:"
-leo  Successfully added a package
+    Adding Successfully added a package
 ```
 
