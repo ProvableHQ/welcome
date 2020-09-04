@@ -18,16 +18,31 @@ syntax familiar to web developers and composable in features, Leo is well-suited
 existing developer frameworks to supercharge web apps with privacy and integrity.
 
 ```leo
-function main(inputs) -> ([u8; 32], u32) {
-    assert_eq!(registers.token_id, record.payload.token_id);
-    assert_eq!(record.birth_program_id, token_debit);
-    assert_eq!(record.death_program_id, token_credit);
+circuit Point {
+    x: u32,
+    y: u32,
 
-    if (state.leaf_index == 0u32) {
-        assert_eq!(registers.value_balance, 0u32);
+    static function new() -> Self {
+        return Self { 
+            x: 0, 
+            y: 0, 
+        }
     }
 
-    return (registers.token_id, registers.value_balance + record.payload.value_t)
+    function add() -> u32 {
+        return self.x + self.y
+    }
+}
+
+function main() {
+    let mut p = Point::new();
+    
+    p.x = 4u32;
+    p.y = 6u32;
+
+    let sum = p.add();
+    
+    console.log("The sum is {}", sum);
 }
 ```
 
