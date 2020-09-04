@@ -55,14 +55,19 @@ let b: field = 21888242871839275222246405745257275088548364400416034343698204186
 
 ## Group Elements
 The set of affine points on the elliptic curve passed into the Leo compiler forms a group.
-Leo supports this set as a primitive data type. Group elements are special since their values optionally be defined as 
-coordinate pairs`(x, y)group`. The group type keyword `group` must be used when specifying a pair of group coordinates since implicit 
+Leo supports this set as a primitive data type. Group elements are special since their values can be defined as 
+coordinate pairs  
+`(x, y)group`. The group type keyword `group` must be used when specifying a pair of group coordinates since implicit 
 syntax would collide with normal tuple `(a, b)` values. 
 
 ```leo
-let a = 1group;
-let b = 0group;
-let c = (0, 1)group;
+let b = 0group; // the zero group
+
+let a = 1group; // the group generator
+
+let c = 2group; // 2 * the group generator
+
+let c = (0, 1)group; // coordinate notation
 ```
 
 ### Recovery From Coordinates
