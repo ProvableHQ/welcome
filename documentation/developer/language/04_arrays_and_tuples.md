@@ -11,7 +11,7 @@ Arrays and tuples in Leo are zero indexed.
 Leo supports arrays of all types:
 arrays of integers, arrays of field elements, arrays of circuits, etc.
 An array type is defined by both the type and the number of its elements:
-for example, the type of arrays of `u32` integers of length 3
+for example, the type of arrays of `u8` integers of length 3
 is different from
 both the type of arrays of `u8` integers of length 10
 and the type of arrays of `u16` integers of length 3.
