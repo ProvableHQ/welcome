@@ -57,8 +57,11 @@ In your terminal, run:
 leo build
 ```
 ```bash title="console output:"
-  leo  a is [input]u32
-  leo  Compiled program file "/Users/collinchin/development/leo/tmp/src/main.leo"
+ Compiling Starting...
+ Compiling Compiling main program... ("src/main.leo")
+ Compiling a is 1u32
+ Compiling Complete
+      Done Finished in 10 milliseconds
 ```
 
 Since the Leo compiler does not parse input values until the proving phase the formatted of input `a` is printed as `[input]`.
@@ -75,15 +78,22 @@ leo prove
 ```
 
 ```bash title="console output:"
-  leo  Compiled program file "/Users/collinchin/development/leo/tmp/src/main.leo"
-  leo  Setup complete
-  leo  Program setup complete
-  leo  Proving...
-  leo  a is 1u32  // <- logged value
-  leo  Program output: []
-  leo  Prover completed in 233 milliseconds
-  leo  Proof stored ("/Users/collinchin/development/leo/tmp/outputs/tmp.proof")
-  leo  Completed program proving
+ Compiling Starting...
+ Compiling Compiling main program... ("src/main.leo")
+ Compiling a is 1u32
+ Compiling Complete
+      Done Finished in 10 milliseconds
+
+     Setup Starting...
+     Setup Saving proving key ("outputs/testing.lpk")
+     Setup Complete
+     Setup Saving verification key ("outputs/testing.lvk")
+     Setup Complete
+      Done Finished in 10 milliseconds
+
+   Proving Starting...
+   Proving Saving proof... ("outputs/testing.proof")
+      Done Finished in 10 milliseconds
 ```
 
 The result of `leo prove` now prints out the input value that we provided. 
