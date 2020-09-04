@@ -11,6 +11,6 @@ This feature is pending standardization.
 ### `leo lint`
 
 To lint the source directory, run:
-```bash
+```leo_console
 leo lint
 ```

@@ -38,7 +38,7 @@ For example, a centrally backed stable coin that enforces blacklisting can check
 ## Code:
 
 ### Inputs
-```leo
+```leo_input
 [main]
 issuing_authority: address
 

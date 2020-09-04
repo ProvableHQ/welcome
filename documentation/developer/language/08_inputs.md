@@ -15,8 +15,8 @@ more explicit type variable definitions.
 The `[main]` section header specifies the `main.leo` target file which must have a [`main` function](07_functions.md#main-function-inputs) with matching input names and types.
 The default inputs file is `inputs/package.in`. 
 
-```leo title="inputs/package.in"
-[main] // <- section header
+```leo_input title="inputs/package.in"
+[table] // section header
 a: u32 = 1;
 b: u32 = 2;
 ```
@@ -32,7 +32,7 @@ function main(a: u32, b: u32) -> u32 {
 
 ### Supported types
 
-```leo
+```leo_input
 [main]
 a: bool  = true;                 // booleans
 b: u8    = 2;                    // integers

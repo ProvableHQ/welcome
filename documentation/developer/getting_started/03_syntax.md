@@ -5,7 +5,7 @@ title: File Syntax
 
 First, open your **hello-world** project in [Aleo Studio](https://aleo.studio/) (for pretty syntax highlighting) or your text editor of choice.  
 **Leo.toml** is the Leo manifest file that configures our package. 
-```leo title="Leo.toml" 
+```leo_input title="Leo.toml" 
 [package]
 name = "hello-world"
 version = "0.1.0"
@@ -13,19 +13,19 @@ version = "0.1.0"
 
 The section heading `[package]` indicates the next lines will provide basic information on how to compile the package.
 In a future release, Leo will support other sections to give information on `[dependencies]`, `[accounts]`, and `[modules]`.
-```leo
+```leo_input
 [package]
 ```  
 
 The package `name` is the official, unique name of the package that other developers will be able to look up after you have published your package.
 Package names are kebab-case only allowing lowercase letters and numbers separated by hyphens.
-```leo
+```leo_input
 name = "hello-world"
 ```
 
 All files in the current package will be compiled with the specified Leo `version`. 
 
-```leo
+```leo_input
 version = "0.1.0"
 ```
 
@@ -58,7 +58,7 @@ Return statements in Leo are unique since they do not end in a semicolon.
 ## Wiring program inputs 
 Leo's compiler will build a **circuit** out of the **main.leo** program. Open up **inputs/hello-world.in**.
 Files ending in **.in** and **.state** provide inputs to the program. 
-```leo title="inputs/hello-world.in"
+```leo_input title="inputs/hello-world.in"
 // The program input for hello-world/src/main.leo
 [main]
 a: u32 = 1;
@@ -71,14 +71,14 @@ r0: u32 = 0;
 Similar to our manifest `Leo.toml`, an input file begins with a section enclosed in brackets `[ ]`.
 `main` indicates that we are defining the private inputs to the program.
 
-```leo
+```leo_input
 [main]
 ```
 
 An input assignment shares syntax with an explicit variable [assignment](02_variables.md) in normal `.leo` files.
 Here we assign the input named `a` with type `u32` to the value `1`. Leo's compiler will fetch these values and provide them as inputs to the circuit at proving time.
 
-```leo
+```leo_input
 a: u32 = 1;
 b: u32 = 2;
 ```
@@ -86,7 +86,7 @@ b: u32 = 2;
 
 The `[registers]` section defines registers that a program can read and write to. In an Aleo transaction, these registers 
 will be used to pass data in between records. We do not need to worry too much about the input register `r0` for now. 
-```leo
+```leo_input
 [registers]
 r0: u32 = 0
 ```

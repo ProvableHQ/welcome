@@ -7,9 +7,9 @@ sidebar_label: leo clean
 ### `leo clean`
 
 To clean the output directory, run:
-```bash
+```leo_console
 leo clean
 ```
-```bash title="console output:"
+```leo_console title="console output:"
       Done Program workspace cleaned
 ```

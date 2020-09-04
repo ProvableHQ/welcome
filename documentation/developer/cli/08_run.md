@@ -7,12 +7,12 @@ sidebar_label: leo run
 ### `leo run`
 
 To verify the proof in the `outputs` directory run:
-```bash
+```leo_console
 leo run
 ```
-```bash title="console output:"
+```leo_console title="console output:"
  Compiling Starting...
- Compiling Compiling main program... ("${NAME}/src/main.leo")
+ Compiling Main program... ("package-name/src/main.leo")
  Compiling Complete
       Done Finished in 10 milliseconds
 
@@ -24,7 +24,7 @@ leo run
       Done Finished in 10 milliseconds
 
    Proving Starting...
-   Proving Saving proof... ("${NAME}/outputs/${NAME}.proof")
+   Proving Saving proof... ("package-name/outputs/package-name.proof")
       Done Finished in 10 milliseconds
 
  Verifying Starting...
@@ -37,7 +37,7 @@ Leo starts by checking the `outputs` directory for an existing `.proof` file. If
 After the verifier is run, Leo will output either `true` or `false` based on the verification.
 
 The program output will be stored in the program output file `.out`:
-```bash
-outputs/{$NAME}.out
+```leo_console
+outputs/package-name.out
 ```
 

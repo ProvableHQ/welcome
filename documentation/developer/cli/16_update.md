@@ -7,10 +7,10 @@ sidebar_label: leo update
 ### `leo update`
 
 To download and install the latest Leo version run:
-```bash
+```leo_console
 leo update
 ```
-```bash title="console output:"
+```leo_console title="console output:"
 Checking target-arch... x86_64-apple-darwin
 Checking current version... v1.0.3
 Checking latest released version... v1.0.3

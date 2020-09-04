@@ -5,10 +5,10 @@ sidebar_label: leo login
 ---
 ### `leo login`
 To use private packages and publish to Aleo Package Manager, start by authenticating with:
-```
+```leo_console
 leo login -u <username> -p <password>
 ```
-```bash title="console output:"
+```leo_console title="console output:"
      Login success
 ```
 
@@ -17,7 +17,7 @@ you run `leo build`, `leo test`, `leo setup` and `leo prove`, your program will 
 and execution on remote machines.
 
 ### USAGE
-```
+```leo_console
 leo login [FLAGS] [OPTIONS] [NAME]
 ```
 

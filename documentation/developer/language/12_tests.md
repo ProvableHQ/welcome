@@ -63,7 +63,7 @@ In a real program execution, we would expect `one` to be provided in a Leo input
 The last line of the test asserts that the type and value of `two` is equal to result `res`.
 
 Next, run the test with
-```bash
+```leo_console
 leo test
 ```
 
@@ -96,7 +96,7 @@ test function test_add_one() {
 Change the last line of `test_add_one` to assert that `one` is equal to the result `res`.
 
 Run the test with
-```bash
+```leo_console
 leo test
 ```
 
@@ -183,7 +183,7 @@ test function token_withdraw() {
 Create a directory in the `/inputs` directory named `/production`.
 Add a file named `production.in` and a file named `production.out`. 
 
-```leo title="inputs/production/production.in"
+```leo_input title="inputs/production/production.in"
 [main]
 a: u32 = 1;
 ```
@@ -210,11 +210,11 @@ test function test_add_one_production(a: u32) { // `a` is provided by the `produ
 
 Run the tests.
 
-```bash
+```leo_console
 leo test
 ```
 
-```bash title="console output:"
+```leo_console title="console output:"
       Test Running 1 tests
       Test testing::test_add_one_production ... ok
 

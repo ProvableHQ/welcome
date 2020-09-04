@@ -42,7 +42,7 @@ function main(parameters: [group; 256], input: [bool; 256]) -> group {
 }
 ```
 
-```leo title="inputs/pedersen.in"
+```leo_input title="inputs/pedersen.in"
 [main]
 const parameters: [group; 256] = [1group; 256];
 input: [bool; 256] = [true; 256];
@@ -55,10 +55,10 @@ All values in a program must be static. Circuits cannot dynamically generate oth
 
 ### Logging
 To aid developers in writing circuits, Leo provides several [console functions](../language/11_console.md):
-* console.assert
-* console.log
-* console.debug
-* console.error
+* `console.assert`
+* `console.log`
+* `console.debug`
+* `console.error`
 
 These functions execute separately from the circuit and do not generate constraints.
 They can be used to provide developers additional information when testing circuits.

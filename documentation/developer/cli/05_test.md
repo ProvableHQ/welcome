@@ -7,16 +7,16 @@ sidebar_label: leo test
 ### `leo test`
 
 To execute tests on your program, run:
-```
+```leo_console
 leo test
 ```
 
 The results of the test compilation and the constraint system will be printed:
-```bash title="console output:"
+```leo_console title="console output:"
         Test Running 2 tests
-        Test ${NAME}::${TEST-NAME-1} ... ok
+        Test package-name::test_name_1 ... ok
 
-        Test ${NAME}::${TEST-NAME-2} ... ok
+        Test package-name::test_name_2 ... ok
 
     Finished Tests passed in 10 milliseconds. 2 passed; 0 failed;
 ```

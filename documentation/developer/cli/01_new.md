@@ -7,7 +7,7 @@ sidebar_label: leo new
 ## `leo new`
 
 To create a new package, run:
-```bash
+```leo_console
 leo new {$NAME}
 ```
 
@@ -15,7 +15,7 @@ Valid package names are kebab-case: lowercase letters and numbers separated by h
 This command will create a new directory with the given package name.
 The new package will have a directory structure as follows:
 
-```bash
+```leo_console
 package-name/
 ├── Leo.toml # Your program manifest
 ├── README.md # Your program description
@@ -27,16 +27,16 @@ package-name/
 ```
 
 ### Optional Flags
-```bash
+```leo_console
 leo new {$Name} --bin
 ```
 This will create a new Leo package with a **main.leo** file in the source directory. The new package will have a directory structure as above.
 
-```bash
+```leo_console
 leo new {$Name} --lib
 ```
 This will create a new Leo package with a **lib.leo** file in the source directory. The new package will have a directory structure as follows:
-```
+```leo_console
 package_name/
 ├── Leo.toml # Your program manifest
 └── src/    

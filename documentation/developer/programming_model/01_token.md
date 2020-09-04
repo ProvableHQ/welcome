@@ -95,7 +95,7 @@ The program input file contains program inputs. In this case, we fetch both valu
 record payload so `[main]` will be empty.
 The input register contains the initial state and is stored in the `token.in` file.
 
-```leo title="token.in"
+```leo_input title="token.in"
 [main]
 
 [registers]
@@ -105,7 +105,7 @@ value_balance: u8 = 0; // Value in the first input register is initialized to 0
 
 Record and leaf state are passed into Leo through the `token.state` file.
 
-```leo title="token.state"
+```leo_input title="token.state"
 // The program state for stable_token/src/main.leo
 [[public]]
 
@@ -193,7 +193,7 @@ function debit(
 
 Return values are written to the `token.out` file after the program is run.
 
-```leo title="token.out"
+```leo_input title="token.out"
 [registers]
 token_id: u8 = 1;
 value_balance: u8 = 100;
@@ -374,7 +374,7 @@ We need the index of this record:
 
 Similar to `token_debit`, the program inputs file contains the input register information.
 
-```leo title="token.in"
+```leo_input title="token.in"
 [main]
 
 [registers]
@@ -388,7 +388,7 @@ Note that the output registers of `token_debit` is loaded into the input registe
 
 Record and leaf state are passed into Leo through the `token.state` file.
 
-```leo title="token.state"
+```leo_input title="token.state"
 // The program state for token/src/main.leo
 [[public]]
 
@@ -481,7 +481,7 @@ function credit(
 
 Return values are written to the `token.out` file after the program is run.
 
-```leo title="token.out"
+```leo_input title="token.out"
 [registers]
 token_id: u8 = 1;
 value_balance: u8 = 0;

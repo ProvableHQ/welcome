@@ -11,6 +11,6 @@ This feature is pending standardization.
 ### `leo remove`
 
 To remove a package from the Aleo Package Manager, run:
-```bash
+```leo_console
 leo remove -a <author> -p <package>
 ```

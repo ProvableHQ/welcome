@@ -5,7 +5,7 @@ sidebar_label: leo publish
 ---
 
 To package your program as a gadget and publish it online, run:
-```
+```leo_console
 leo publish
 ```
 Leo will proceed to snapshot your source directory and upload it to the circuit manager. 

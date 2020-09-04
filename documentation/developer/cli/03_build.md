@@ -7,13 +7,13 @@ sidebar_label: leo build
 ### `leo build`
 
 To compile your program and verify that it builds properly, run:
-```bash
+```leo_console
 leo build
 ```
 The results of compiling `main.leo` or `lib.leo` and it's imported dependencies will be printed:
-```bash title="console output:"
+```leo_console title="console output:"
  Compiling Starting...
- Compiling Compiling main program... ("${NAME}/src/main.leo")
+ Compiling Main program... ("${NAME}/src/main.leo")
  Compiling Complete
       Done Finished in 10 milliseconds
 ```

@@ -83,7 +83,7 @@ A maker cancels an intention to trade by invoking the exchange_or_cancel_program
 ## Code:
 
 ### Inputs
-```leo
+```leo_input
 [main]
 exchange: bool
 maker_recv: address

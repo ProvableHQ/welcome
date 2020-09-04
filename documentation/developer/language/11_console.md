@@ -53,12 +53,12 @@ function main(a: u32) {
 }
 ```
 In your terminal, run:
-```bash
+```leo_console
 leo build
 ```
-```bash title="console output:"
+```leo_console title="console output:"
  Compiling Starting...
- Compiling Compiling main program... ("src/main.leo")
+ Compiling Main program... ("src/main.leo")
  Compiling a is 1u32
  Compiling Complete
       Done Finished in 10 milliseconds
@@ -77,7 +77,7 @@ Provide the input inside a Leo input `.in` file with the package name under the 
 leo prove
 ```
 
-```bash title="console output:"
+```leo_console title="console output:"
  Compiling Starting...
  Compiling Compiling main program... ("src/main.leo")
  Compiling a is 1u32

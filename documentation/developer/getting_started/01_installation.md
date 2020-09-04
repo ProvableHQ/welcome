@@ -52,12 +52,12 @@ We recommend installing Rust using [rustup](https://www.rustup.rs/). You can ins
 
 We recommend installing Leo this way. In your terminal, run:
 
-```bash
+```leo_console
 cargo install leo
 ```
 
 Now to use Leo, in your terminal, run:
-```bash
+```leo_console
 leo
 ```
  
@@ -65,17 +65,17 @@ leo
 
 Alternatively, you can install Leo by building from the source code as follows:
 
-```bash
+```u32
 # Download the source code
 git clone https://github.com/AleoHQ/leo
 cd leo
 
 # Build in release mode
-$ cargo build --release
+ cargo build --release
 ```
 
 This will generate an executable under the `./target/release` directory. To run Leo, run the following command:
-```bash
+```u32
 ./target/release/leo
 ```
 

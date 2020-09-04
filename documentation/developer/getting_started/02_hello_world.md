@@ -6,14 +6,14 @@ sidebar_label: Hello World
 
 Use the Leo CLI to create a new project.
 In your terminal, run:
-```bash
+```leo_console
 leo new hello-world
 cd hello-world
 ```
 
 This creates a directory with the following structure:
 
-```bash
+```leo_console
 hello-world/
 ├── Leo.toml # Your program manifest
 ├── README.md # Your program description
@@ -30,13 +30,13 @@ Let's run the project.
 
 The `leo run` command will compile the program, generate keys for a trusted setup, fetch inputs, generate a proof and verify it.
 In your terminal, run:
-```bash
+```leo_console
 leo run
 ```
 
-```bash title="console output:"
-Compiling Starting...
- Compiling Compiling main program... ("hello-world/src/main.leo")
+```leo_console title="console output:"
+ Compiling Starting...
+ Compiling Main program... ("hello-world/src/main.leo")
  Compiling Complete
       Done Finished in 10 milliseconds
 

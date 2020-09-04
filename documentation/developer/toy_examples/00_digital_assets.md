@@ -23,7 +23,7 @@ In a transaction, the token_debit function will be invoked on the sender’s inp
 
 
 #### Inputs
-```leo title=token/inputs/token.state
+```leo_input title=token/inputs/token.state
 [main]
 
 [registers]
@@ -40,7 +40,6 @@ leaf_index: u32
 death_predicate_id: [u8; 48]
 birth_predicate_id: [u8; 48]
 payload: [ id || vb ]
-
 ```
 
 #### token_debit overview
