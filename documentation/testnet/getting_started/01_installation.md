@@ -107,7 +107,7 @@ FLAGS:
 
 OPTIONS:
         --connect <ip>                           Specify a node ip address to connect to on startup
-    -i, --ip <ip>                                Specify the ip of your node
+    -i, --ip <ip>                                Specify the ip of your node (in the format <IP ADDRESS>:<PORT>)
         --max-peers <max-peers>                  Specify the maximum number of peers the node can connect to
         --mempool-interval <mempool-interval>    Specify the frequency in seconds the node should fetch a sync node's mempool
         --min-peers <min-peers>                  Specify the minimum number of peers the node should connect to
@@ -129,7 +129,7 @@ snarkos --rpc-username <Username> --rpc-password <Password>
 
 ##### Manually connect to a peer on the network
 ```
-snarkos --connect "<IP ADDRESS>"
+snarkos --connect "<IP ADDRESS>:<PORT>"
 ```
 
 ### 3.3 Configuration File
