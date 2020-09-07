@@ -106,8 +106,8 @@ FLAGS:
     -q, --quiet          Do not show any logging in the console
 
 OPTIONS:
-        --connect <ip>                           Specify a node ip address to connect to on startup
-    -i, --ip <ip>                                Specify the ip of your node (in the format <IP ADDRESS>:<PORT>)
+        --connect <address>                      Specify a node ip address to connect to on startup (in the format <IP ADDRESS>:<PORT>)
+    -i, --ip <ip>                                Specify the ip of your node
         --max-peers <max-peers>                  Specify the maximum number of peers the node can connect to
         --mempool-interval <mempool-interval>    Specify the frequency in seconds the node should fetch a sync node's mempool
         --min-peers <min-peers>                  Specify the minimum number of peers the node should connect to
