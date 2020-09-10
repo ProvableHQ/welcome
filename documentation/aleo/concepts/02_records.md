@@ -70,7 +70,7 @@ The **death program ID** corresponds to the [death program](06_glossary.md#death
 c8d81ac0028a5643449a80c3cdf8e8f9593ca5e6bcf103b3c33606b01ea20108
 ```
 
-The **serial number nonce** is used to generate a record [record serial number](06_glossary.md#record-serial-number) when the record is being spent.
+The **serial number nonce** is used to generate a [record serial number](06_glossary.md#record-serial-number) when the record is being spent.
 
 ### Commitment Randomness
 
