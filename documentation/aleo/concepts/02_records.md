@@ -54,7 +54,7 @@ The **record payload** is a  that encodes arbitrary application information.
 692575f93ebd4c58e9e6ed288d7ef2328623a8e391224b3cf24c1e65d4f0660ed5d14b78f84a259f14cb24a91fd58386
 ```
 
-The **birth program ID** corresponds to the [birth program](06_glossary.md#birth-program) that must be satisfied when the record is created.
+The **birth program ID** corresponds to the [birth program](07_glossary.md#birth-program) that must be satisfied when the record is created.
 
 ### Death Program ID
 
@@ -62,7 +62,7 @@ The **birth program ID** corresponds to the [birth program](06_glossary.md#birth
 9cb1c71986e72e36640b7fbe09d1853a37bdcbc19a406526a80e54ce37b5c1dd5d14b78f84a259f14cb24746a7fe8b01
 ```
 
-The **death program ID** corresponds to the [death program](06_glossary.md#death-program) that must be specified when the record is spent.
+The **death program ID** corresponds to the [death program](07_glossary.md#death-program) that must be specified when the record is spent.
 
 ### Serial Number Nonce
 
@@ -70,14 +70,14 @@ The **death program ID** corresponds to the [death program](06_glossary.md#death
 c8d81ac0028a5643449a80c3cdf8e8f9593ca5e6bcf103b3c33606b01ea20108
 ```
 
-The **serial number nonce** is used to generate a record [record serial number](06_glossary.md#record-serial-number) when the record is being spent.
+The **serial number nonce** is used to generate a record [record serial number](07_glossary.md#record-serial-number) when the record is being spent.
 
 ### Commitment Randomness
 
 ```
 5acbd2c0475c7b4afa72173d7ed800edfc1bde235f5cf4e6c09ef70a36a48a09
 ```
-The **commitment randomness** used to generate the [record commitment](06_glossary.md#record-commitment).
+The **commitment randomness** used to generate the [record commitment](07_glossary.md#record-commitment).
 
 ## Advanced Topics
 
