@@ -33,8 +33,6 @@ Below are the steps to scan the chain and determine an account's balance.
 
 #### 1. Scan the ledger to find all owned records
 
-Requirements: `account_view_key`
-
     1. Sequentially fetch all the blocks in the ledger
     2. Fetch the transactions in each block
     3. Attempt to decrypt the encryped records in each transaction with a view key
