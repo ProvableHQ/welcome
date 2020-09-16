@@ -27,7 +27,8 @@ to compile, execute, and finalize its state autonomously.
 - [Transactions](./aleo/concepts/03_transactions.md)
 - [Blocks](./aleo/concepts/04_blocks.md)
 - [Consensus](./aleo/concepts/05_consensus.md)
-- [Glossary](./aleo/concepts/06_glossary.md)
+- [Aleo Credits](./aleo/concepts/06_credits.md)
+- [Glossary](./aleo/concepts/07_glossary.md)
 
 
 ## Developer Preview I
@@ -108,6 +109,7 @@ to compile, execute, and finalize its state autonomously.
 
 - [Testnet I.](./testnet/getting_started/00_overview.md)
 - [Install snarkOS](./testnet/getting_started/01_installation.md)
+- [Aleo networks](./testnet/getting_started/02_networks.md)
 
 
 ### Chapter 9: Concepts
