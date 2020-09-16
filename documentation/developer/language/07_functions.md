@@ -43,7 +43,7 @@ function main() -> u32 {
 ### Main function inputs
 The `main` function is the entry point of a Leo program.
 
-`main` function arguments provide the [inputs](aleo/documentation/developer/language/08_inputs.md) to the circuit.
+`main` function arguments provide the [inputs](08_inputs.md) to the circuit.
 They are allocated private variables in the program's constraint system.
 
 ```leo
@@ -62,7 +62,7 @@ function double(f: field) -> field { // one return value with type `field`
     return value
 }
 
-function arrays() -> (u32, u32[2]) { // two return values 
+function arrays() -> (u32, [u32; 2]) { // two return values 
     return (1, [2, 3])
 }
 ```
@@ -75,7 +75,7 @@ function double(f: field) -> field {
     return value
 }
 
-function arrays() -> (u32, u32[2]) {
+function arrays() -> (u32, [u32; 2]) {
     return (1, [2, 3])
 }
 
@@ -86,7 +86,7 @@ function main() {
     let b: field = double(a); // explicit type
 
     let (c, d) = arrays();
-    let (c, d): (u32, u32[2]) = arrays(); // explicit types
+    let (c, d): (u32, [u32; 2]) = arrays(); // explicit types
 }
 ```
 

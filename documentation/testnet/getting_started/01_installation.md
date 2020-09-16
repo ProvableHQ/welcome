@@ -23,42 +23,77 @@ We recommend installing Rust using [rustup](https://www.rustup.rs/). You can ins
   
   Download the [Windows 32-bit executable](https://win.rustup.rs/i686) and follow the on-screen instructions.
   
+### Build from Crates.io
+
+We recommend installing snarkOS this way. In your terminal, run:
+
+```bash
+cargo install snarkos
+```
+
+Now to use snarkOS, in your terminal, run:
+```bash
+snarkos
+```
+
 ### Build from Source Code
 
-```
+```bash
 # Download the source code
 git clone https://github.com/AleoHQ/snarkOS
 cd snarkOS
 
 # Build in release mode
-cargo build --release
+$ cargo build --release
 ```
 
-This will generate an executable under the `./target/release` directory
+This will generate an executable under the `./target/release` directory. To run snarkOS, run the following command:
+```bash
+./target/release/snarkos
+```
+
+### Build with Docker
+
+#### Docker build
+```bash
+docker build -t snarkos:latest .
+``` 
+or 
+```bash
+docker-compose build
+```
+
+#### Docker run
+``` bash
+docker run -d -p 4131:4131 --name snarkos snarkos 
+```
+or
+```bash
+docker-compose up
+```
 
 ## Usage Guide
 
-### Connecting to the Aleo network
-
-To connect and start syncing to the main network, simply run the client:
+To start a client node, run:
 ```
-./target/release/snarkOS
+snarkos
 ```
 
-Additionally, the client can be run in quiet mode with the `--quiet` flag: 
- ```
- ./target/release/snarkOS --quiet
- ```
+To start a mining node, run:
+```
+snarkos --is-miner
+```
 
-To run a client with custom settings, refer to the full list of options and flags available in the CLI.
+To run a node with custom settings, refer to the full list of options and flags available 
+in the CLI or simply modify the snarkOS configuration file.
 
 ### Command Line Interface
 
-Full list of CLI flags and options can be viewed with `./target/release/snarkOS --help`:
+Full list of CLI flags and options can be viewed with `snarkos --help`:
 
 ```
-snarkOS 0.8.0
-Start an Aleo node (include -h for more options)
+snarkOS 1.0.0
+Run an Aleo node (include -h for more options)
 
 USAGE:
     snarkos [FLAGS] [OPTIONS]
@@ -67,42 +102,43 @@ FLAGS:
     -h, --help           Prints help information
         --is-bootnode    Run the node as a bootnode (IP is hard coded in the protocol)
         --is-miner       Start mining blocks from this node
-        --no-jsonrpc     Run the node without running the json rpc
+        --no-jsonrpc     Run the node without running the json rpc server
     -q, --quiet          Do not show any logging in the console
 
 OPTIONS:
         --connect <ip>                           Specify a node ip address to connect to on startup
     -i, --ip <ip>                                Specify the ip of your node
         --max-peers <max-peers>                  Specify the maximum number of peers the node can connect to
-        --mempool-interval <mempool-interval>    Specify the frequency in seconds x 10 the node should fetch the mempool from sync node
+        --mempool-interval <mempool-interval>    Specify the frequency in seconds the node should fetch a sync node's mempool
         --min-peers <min-peers>                  Specify the minimum number of peers the node should connect to
         --miner-address <miner-address>          Specify the address that will receive miner rewards
-        --network <network-id>                   Run the node on a specified network (default = 0)
+        --network <network-id>                   Specify the network id (default = 1) of the node
+
     -d, --path <path>                            Specify the node's storage path
-    -p, --port <port>                            Run the node on a specified port
+    -p, --port <port>                            Specify the port the node is run on
         --rpc-password <rpc-password>            Specify a password for rpc authentication
-        --rpc-port <rpc-port>                    Run the rpc server on a specified port
+        --rpc-port <rpc-port>                    Specify the port the json rpc server is run on
         --rpc-username <rpc-username>            Specify a username for rpc authentication
 ```
 
+#### Examples
 
-### Examples
-
-#### Run a miner
+##### Guard RPC endpoints
 ```
-./target/release/snarkOS --is-miner
-```
-
-#### Protect sensitive RPC endpoints with an authentication layer
-```
-./target/release/snarkOS --rpc-username <Username> --rpc-password <Password>
+snarkos --rpc-username <Username> --rpc-password <Password>
 ```
 
-#### Manually connect to a peer on the network
+##### Manually connect to a peer on the network
 ```
-./target/release/snarkOS --connect "<IP ADDRESS>"
+snarkos --connect "<IP ADDRESS>"
 ```
+
+### 3.3 Configuration File
+
+A `snarkOS.toml` file is generated in the `~/.snarkOS/` directory when the node is initialized for the time. 
+Updating this `snarkOS.toml` file allows node operators to specify default settings for the node without 
+having to specify additional information in the CLI.
 
 ### Interfacing with a running node
 
-By default, snarkOS runs a JSON-RPC server to allow external interfacing with the Aleo network. Additional information can be found [here](aleo/documentation/autogen/testnet/rpc/rpc_server/00_configurations.md)
+By default, snarkOS runs a JSON-RPC server to allow external interfacing with the Aleo network. Documentation of the RPC endpoints can be found [here](aleo/documentation/autogen/testnet/rpc/rpc_server/00_configurations.md)

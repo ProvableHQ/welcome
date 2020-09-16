@@ -5,16 +5,20 @@
             "folderName": "testnet",
             "chapters": [
                 {
-                    "title": "RPC Server",
-                    "folderName": "rpc/rpc_server"
+                    "title": "Concepts",
+                    "folderName": "concepts"
+                },
+                {
+                    "title": "Network Messages",
+                    "folderName": "network_messages"
                 },
                 {
                     "title": "Public RPC Endpoints",
-                    "folderName": "rpc/public_endpoints"
+                    "folderName": "public_endpoints"
                 },
                 {
                     "title": "Private RPC Endpoints",
-                    "folderName": "rpc/private_endpoints"
+                    "folderName": "private_endpoints"
                 }
             ]
         },
@@ -24,7 +28,7 @@
             "chapters": [
                 {
                     "title": "The Aleo Curves",
-                    "folderName": "curves/the_aleo_curves"
+                    "folderName": "the_aleo_curves"
                 }
             ]
         }
@@ -46,16 +50,20 @@
             "section_id": "testnet",
             "chapters": [
                 {
-                    "title": "RPC Server",
-                    "document_id": "testnet/rpc/rpc_server"
+                    "title": "Concepts",
+                    "document_id": "concepts"
+                },
+                {
+                    "title": "Network Messages",
+                    "document_id": "testnet/network_messages"
                 },
                 {
                     "title": "Public RPC Endpoints",
-                    "document_id": "testnet/rpc/public_endpoints"
+                    "document_id": "testnet/public_endpoints"
                 },
                 {
                     "title": "Private RPC Endpoints",
-                    "document_id": "testnet/rpc/private_endpoints"
+                    "document_id": "testnet/private_endpoints"
                 }
             ]
         },
@@ -65,7 +73,7 @@
             "chapters": [
                 {
                     "title": "The Aleo Curves",
-                    "document_id": "advanced/curves/the_aleo_curves"
+                    "document_id": "advanced/the_aleo_curves"
                 }
             ]
         }

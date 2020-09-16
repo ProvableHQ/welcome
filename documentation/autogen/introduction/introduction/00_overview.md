@@ -68,20 +68,23 @@ to compile, execute, and finalize its state autonomously.
 
 ### Chapter 5: CLI
 
-- [Create a Package](./developer/cli/00_new.md)
-- [Initialize a Package](./developer/cli/01_init.md)
-- [Build a Package](./developer/cli/02_build.md)
-- [Auto-Compile Your Program](./developer/cli/03_watch.md)
-- [Test a Package](./developer/cli/04_test.md)
-- [Setup the Program](./developer/cli/05_setup.md)
-- [Execute the Program](./developer/cli/06_prove.md)
-- [Verify the Program](./developer/cli/07_run.md)
-- [Login to Aleo Package Manager](./developer/cli/08_login.md)
-- [Import a Package](./developer/cli/09_add.md)
-- [Remove a Package](./developer/cli/10_remove.md)
-- [Publish to Aleo Package Manager](./developer/cli/11_publish.md)
-- [Deploy to Aleo](./developer/cli/12_deploy.md)
-- [Clean Your Workspace](./developer/cli/13_clean.md)
+- [The Leo Command Line Interface](./developer/cli/00_overview.md)
+- [Create a Package](./developer/cli/01_new.md)
+- [Initialize a Package](./developer/cli/02_init.md)
+- [Build a Package](./developer/cli/03_build.md)
+- [Auto-Compile a Program](./developer/cli/04_watch.md)
+- [Test a Program](./developer/cli/05_test.md)
+- [Setup a Program](./developer/cli/06_setup.md)
+- [Execute a Program](./developer/cli/07_prove.md)
+- [Verify a Program](./developer/cli/08_run.md)
+- [Login to Aleo Package Manager](./developer/cli/09_login.md)
+- [Import a Package](./developer/cli/10_add.md)
+- [Remove a Package](./developer/cli/11_remove.md)
+- [Publish a Package to Aleo Package Manager](./developer/cli/12_publish.md)
+- [Deploy a Package to Aleo](./developer/cli/13_deploy.md)
+- [Clean a Package Workspace](./developer/cli/14_clean.md)
+- [Lint a Package Workspace](./developer/cli/15_lint.md)
+- [Update the Leo Compiler](./developer/cli/16_update.md)
 
 
 ### Chapter 6: Toy Examples
@@ -109,42 +112,54 @@ to compile, execute, and finalize its state autonomously.
 - [Aleo networks](./testnet/getting_started/02_networks.md)
 
 
-### Chapter 9: Networking
+### Chapter 9: Concepts
 
-- [Networking](./testnet/networking/00_networking.md)
-- [Message Types](./testnet/networking/01_message_types.md)
+- [RPC Server](./autogen/testnet/concepts/00_rpc_server.md)
 
 
-### Chapter 10: RPC Server
+### Chapter 10: Network Messages
 
-- [Configurations](./autogen/testnet/rpc/rpc_server/00_configurations.md)
+- [Block](./autogen/testnet/network_messages/00_block.md)
+- [GetBlock](./autogen/testnet/network_messages/01_get_block.md)
+- [GetMemoryPool](./autogen/testnet/network_messages/02_get_memory_pool.md)
+- [GetPeers](./autogen/testnet/network_messages/03_get_peers.md)
+- [GetSync](./autogen/testnet/network_messages/04_get_sync.md)
+- [MemoryPool](./autogen/testnet/network_messages/05_memory_pool.md)
+- [Peers](./autogen/testnet/network_messages/06_peers.md)
+- [Ping](./autogen/testnet/network_messages/07_ping.md)
+- [Pong](./autogen/testnet/network_messages/08_pong.md)
+- [Sync](./autogen/testnet/network_messages/09_sync.md)
+- [SyncBlock](./autogen/testnet/network_messages/10_sync_block.md)
+- [Transaction](./autogen/testnet/network_messages/11_transaction.md)
+- [Verack](./autogen/testnet/network_messages/12_verack.md)
+- [Version](./autogen/testnet/network_messages/13_version.md)
 
 
 ### Chapter 11: Public RPC Endpoints
 
-- [decoderawtransaction](./autogen/testnet/rpc/public_endpoints/00_decoderawtransaction.md)
-- [getbestblockhash](./autogen/testnet/rpc/public_endpoints/01_getbestblockhash.md)
-- [getblock](./autogen/testnet/rpc/public_endpoints/02_getblock.md)
-- [getblockcount](./autogen/testnet/rpc/public_endpoints/03_getblockcount.md)
-- [getblockhash](./autogen/testnet/rpc/public_endpoints/04_getblockhash.md)
-- [getblocktemplate](./autogen/testnet/rpc/public_endpoints/05_getblocktemplate.md)
-- [getconnectioncount](./autogen/testnet/rpc/public_endpoints/06_getconnectioncount.md)
-- [getpeerinfo](./autogen/testnet/rpc/public_endpoints/07_getpeerinfo.md)
-- [getrawtransaction](./autogen/testnet/rpc/public_endpoints/08_getrawtransaction.md)
-- [gettransactioninfo](./autogen/testnet/rpc/public_endpoints/09_gettransactioninfo.md)
-- [sendtransaction](./autogen/testnet/rpc/public_endpoints/10_sendtransaction.md)
-- [validaterawtransaction](./autogen/testnet/rpc/public_endpoints/11_validaterawtransaction.md)
+- [decoderawtransaction](./autogen/testnet/public_endpoints/00_decoderawtransaction.md)
+- [getbestblockhash](./autogen/testnet/public_endpoints/01_getbestblockhash.md)
+- [getblock](./autogen/testnet/public_endpoints/02_getblock.md)
+- [getblockcount](./autogen/testnet/public_endpoints/03_getblockcount.md)
+- [getblockhash](./autogen/testnet/public_endpoints/04_getblockhash.md)
+- [getblocktemplate](./autogen/testnet/public_endpoints/05_getblocktemplate.md)
+- [getconnectioncount](./autogen/testnet/public_endpoints/06_getconnectioncount.md)
+- [getpeerinfo](./autogen/testnet/public_endpoints/07_getpeerinfo.md)
+- [getrawtransaction](./autogen/testnet/public_endpoints/08_getrawtransaction.md)
+- [gettransactioninfo](./autogen/testnet/public_endpoints/09_gettransactioninfo.md)
+- [sendtransaction](./autogen/testnet/public_endpoints/10_sendtransaction.md)
+- [validaterawtransaction](./autogen/testnet/public_endpoints/11_validaterawtransaction.md)
 
 
 ### Chapter 12: Private RPC Endpoints
 
-- [createaccount](./autogen/testnet/rpc/private_endpoints/00_createaccount.md)
-- [createrawtransaction](./autogen/testnet/rpc/private_endpoints/01_createrawtransaction.md)
-- [decoderecord](./autogen/testnet/rpc/private_endpoints/02_decoderecord.md)
-- [decryptrecord](./autogen/testnet/rpc/private_endpoints/03_decryptrecord.md)
-- [getrawrecord](./autogen/testnet/rpc/private_endpoints/04_getrawrecord.md)
-- [getrecordcommitmentcount](./autogen/testnet/rpc/private_endpoints/05_getrecordcommitmentcount.md)
-- [getrecordcommitments](./autogen/testnet/rpc/private_endpoints/06_getrecordcommitments.md)
+- [createaccount](./autogen/testnet/private_endpoints/00_createaccount.md)
+- [createrawtransaction](./autogen/testnet/private_endpoints/01_createrawtransaction.md)
+- [decoderecord](./autogen/testnet/private_endpoints/02_decoderecord.md)
+- [decryptrecord](./autogen/testnet/private_endpoints/03_decryptrecord.md)
+- [getrawrecord](./autogen/testnet/private_endpoints/04_getrawrecord.md)
+- [getrecordcommitmentcount](./autogen/testnet/private_endpoints/05_getrecordcommitmentcount.md)
+- [getrecordcommitments](./autogen/testnet/private_endpoints/06_getrecordcommitments.md)
 
 
 ## Explorer I
@@ -184,11 +199,11 @@ to compile, execute, and finalize its state autonomously.
 
 ### Chapter 17: The Aleo Curves
 
-- [Overview](./autogen/advanced/curves/the_aleo_curves/00_overview.md)
-- [Edwards BLS12](./autogen/advanced/curves/the_aleo_curves/01_edwards_bls12.md)
-- [BLS12-377](./autogen/advanced/curves/the_aleo_curves/02_bls12-377.md)
-- [Edwards BW6](./autogen/advanced/curves/the_aleo_curves/03_edwards_bw6.md)
-- [BW6-761](./autogen/advanced/curves/the_aleo_curves/04_bw6-761.md)
+- [Overview](./autogen/advanced/the_aleo_curves/00_overview.md)
+- [Edwards BLS12](./autogen/advanced/the_aleo_curves/01_edwards_bls12.md)
+- [BLS12-377](./autogen/advanced/the_aleo_curves/02_bls12-377.md)
+- [Edwards BW6](./autogen/advanced/the_aleo_curves/03_edwards_bw6.md)
+- [BW6-761](./autogen/advanced/the_aleo_curves/04_bw6-761.md)
 
 
 ### Chapter 18: Proof of Succinct Work

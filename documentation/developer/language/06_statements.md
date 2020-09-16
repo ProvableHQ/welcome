@@ -8,7 +8,7 @@ title: Statements
 Branching in Leo differs from traditional programming languages. Leo developers should keep in mind that every program compiles to a circuit which represents
 all possible evaluations.
 
-## Conditional If Else Ternary Expression
+## If Else Ternary Expression
 
 A conditional (ternary) expression takes three operands.
 
@@ -25,7 +25,7 @@ let b: u8 = if is_valid ? 1 : 0;
 Ternary expressions are [**the cheapest**](../additional_material/01_common.md#branches) form of conditional.
 :::
 
-## If Conditional Statement
+## If Statement
 
 The boolean condition in an `if` statement does not require parenthesis. The statements to execute require brackets `{}`.
 
@@ -35,7 +35,7 @@ if a == 0 {
 }
 ```
 
-## If Else Conditional Statement
+## If Else Statement
 
 `else` and `else if` clauses can be used to chain `if` statements.
 

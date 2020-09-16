@@ -29,7 +29,7 @@ In a transaction, the token_debit function will be invoked on the sender’s inp
 [registers]
 id: u8
 vb: u8
-predicate_id: u8[48]
+predicate_id: [u8; 48]
 
 …
 
@@ -37,8 +37,8 @@ predicate_id: u8[48]
 leaf_index: u32
 
 [record]
-death_predicate_id: u8[48]
-birth_predicate_id: u8[48]
+death_predicate_id: [u8; 48]
+birth_predicate_id: [u8; 48]
 payload: [ id || vb ]
 
 ```
@@ -70,8 +70,8 @@ payload: [ id || vb ]
 // The token debit function
 function debit(
     input,
-    token_debit: u8[48],
-    token_credit: u8[48]
+    token_debit: [u8; 48],
+    token_credit: [u8; 48]
 ) -> (u8, u8) {
     // 1. Check token ids match
     let id_t = input.registers.id;
@@ -113,7 +113,7 @@ function debit(
 // The token credit function
 function credit(
     input,
-    token_credit: u8[48]
+    token_credit: [u8; 48]
 ) -> (u8, u8) {
     let id_t = input.registers.id;
     let payload_id_t = input.record.payload[0];
@@ -150,7 +150,7 @@ function credit(
 
 
 // The token main function
-function main(input, token_debit: u8[48], token_credit: u8[48]) -> (u8, u8) {
+function main(input, token_debit: [u8; 48], token_credit: [u8; 48]) -> (u8, u8) {
 
     //let (id_t, vb_t) = debit(input, token_debit, token_credit);
 
@@ -163,5 +163,5 @@ function main(input, token_debit: u8[48], token_credit: u8[48]) -> (u8, u8) {
 This example is a proof of concept. It is not secure and should not be used for production.
 :::
 :::info
-For a more in-depth description of how tokens use records and state check out the [**programming model**](aleo/documentation/developer/programming_model/01_token.md) for this token.
+For a more in-depth description of how tokens use records and state check out the [**programming model**](../programming_model/01_token.md) for this token.
 :::

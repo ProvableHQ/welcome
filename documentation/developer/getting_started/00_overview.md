@@ -13,16 +13,16 @@ The Leo language is currently in active development. Please monitor the reposito
 
 ## Installing Leo
 
-Proceed to [**Installation**](./01_installation.md) for information on how to install Leo.
+Proceed to [**Installation**](01_installation.md) for information on how to install Leo.
 
 ## Getting Started
 
-Check out the [**Hello World**](./02_hello_world.md) tutorial for a brief walk-through of Leo and the Leo CLI.
+Check out the [**Hello World**](02_hello_world.md) tutorial for a brief walk-through of Leo and the Leo CLI.
 
 ## Language Documentation
 
-To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**](aleo/documentation/developer/language/01_layout.md).
-Leo comes with an advanced testing framework for writing unit and integration tests. Read [**Writing Tests**](aleo/documentation/developer/language/12_tests.md) to learn more.
+To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**](../language/01_layout.md).
+Leo comes with an advanced testing framework for writing unit and integration tests. Read [**Writing Tests**](../language/12_tests.md) to learn more.
 
 ## Programming Model
 
@@ -34,12 +34,12 @@ Read the [**Model**](../programming_model/00_model.md) to learn more.
 
 The Leo CLI provides a suite of commands to make programming in Leo easy.
 
-Develop your program with [**new**](../cli/00_new.md), [**build**](../cli/02_build.md), [**watch**](../cli/03_watch.md), 
-[**test**](../cli/04_test.md), and [**clean**](../cli/13_clean.md).
+Develop your program with [**new**](aleo/documentation/developer/cli/01_new.md), [**build**](aleo/documentation/developer/cli/03_build.md), [**watch**](aleo/documentation/developer/cli/04_watch.md), 
+[**test**](aleo/documentation/developer/cli/05_test.md), and [**clean**](aleo/documentation/developer/cli/14_clean.md).
 
-Download packages from the Aleo Package Manager with [**add**](../cli/09_add.md), [**remove**](../cli/10_remove.md), [**login**](../cli/08_login.md), and [**publish**](../cli/11_publish.md).
+Download packages from the Aleo Package Manager with [**add**](aleo/documentation/developer/cli/10_add.md), [**remove**](aleo/documentation/developer/cli/11_remove.md), [**login**](aleo/documentation/developer/cli/09_login.md), and [**publish**](aleo/documentation/developer/cli/12_publish.md).
 
-Once your Leo program is compiled, generate proofs with [**setup**](../cli/05_setup.md), [**prove**](../cli/06_prove.md), and [**run**](../cli/07_run.md).
+Once your Leo program is compiled, generate proofs with [**setup**](aleo/documentation/developer/cli/06_setup.md), [**prove**](aleo/documentation/developer/cli/07_prove.md), and [**run**](aleo/documentation/developer/cli/08_run.md).
 
 ## Additional Material
 

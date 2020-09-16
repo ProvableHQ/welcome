@@ -38,14 +38,14 @@ For example, a centrally backed stable coin that enforces blacklisting can check
 ## Code:
 
 ### Inputs
-
+```leo
 [main]
 issuing_authority: address
 
 [registers]
 Id: u8
 vb: u8
-predicate_id: u8[48]
+predicate_id: [u8; 48]
 
 …
 
@@ -55,9 +55,10 @@ leaf_index: u32
 
 [[private]]
 [record]
-death_predicate_id: u8[48]
-birth_predicate_id: u8[48]
+death_predicate_id: [u8; 48]
+birth_predicate_id: [u8; 48]
 payload: [ id || vb || signature ]
+```
 
 ### stable_token_debit pseudocode
 
@@ -83,5 +84,5 @@ payload: [ id || vb || signature ]
 8. Return (registers id, registers vb, ?)
 
 :::info
-For a more in-depth description of how tokens use records and state check out the [**programming model**](aleo/documentation/developer/programming_model/01_token.md) for tokens.
+For a more in-depth description of how tokens use records and state check out the [**programming model**](../programming_model/01_token.md) for tokens.
 :::

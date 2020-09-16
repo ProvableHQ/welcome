@@ -53,11 +53,11 @@
                     "folderName": "getting_started"
                 },
                 {
-                    "title": "Networking",
-                    "folderName": "networking"
+                    "title": "Concepts",
+                    "isAutogen": true
                 },
                 {
-                    "title": "RPC Server",
+                    "title": "Network Messages",
                     "isAutogen": true
                 },
                 {
@@ -166,11 +166,11 @@
                     "document_id": "testnet/getting_started"
                 },
                 {
-                    "title": "Networking",
-                    "document_id": "testnet/networking"
+                    "title": "Concepts",
+                    "isAutogen": true
                 },
                 {
-                    "title": "RPC Server",
+                    "title": "Network Messages",
                     "isAutogen": true
                 },
                 {

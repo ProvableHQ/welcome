@@ -12,7 +12,7 @@ more explicit type variable definitions.
 
 ## Program Inputs
 
-The `[main]` section header specifies the `main.leo` target file which must have a [`main` function](aleo/documentation/developer/language/07_functions.md#main-function-inputs) with matching input names and types.
+The `[main]` section header specifies the `main.leo` target file which must have a [`main` function](07_functions.md#main-function-inputs) with matching input names and types.
 The default inputs file is `inputs/package.in`. 
 
 ```leo title="inputs/package.in"
@@ -21,7 +21,7 @@ a: u32 = 1;
 b: u32 = 2;
 ```
 
-Program inputs can be accessed as main function [arguments](aleo/documentation/developer/language/07_functions.md#arguments).
+Program inputs can be accessed as main function [arguments](07_functions.md#arguments).
 
 ```leo title="src/main.leo"
 function main(a: u32, b: u32) -> u32 {
@@ -34,14 +34,14 @@ function main(a: u32, b: u32) -> u32 {
 
 ```leo
 [main]
-a: bool  = true;                // booleans
-b: u8    = 2;                   // integers
-c: field = 0;                   // fields
-d: group = (0, 1)group          // group elements
+a: bool  = true;                 // booleans
+b: u8    = 2;                    // integers
+c: field = 0;                    // fields
+d: group = (0, 1)group           // group elements
 e: address = aleo1qnr4dkkvkgfqph0vzc3y6z2eu975wnpz2925ntjccd5cfqxtyu8sta57j8
-f: u8[32] = [0; 32]             // arrays
-g: u8[2][3] = [[0u8; 2]; 3];    // multi-dimensional arrays
-h: (bool, bool) = (true, false) // tuples
+f: [u8; 32] = [0; 32]            // arrays
+g: [[u8; 2]; 3] = [[0; 2]; 3]; // arrays of arrays
+h: (bool, bool) = (true, false)  // tuples
 ```
 
 ## Runtime Input Registers
