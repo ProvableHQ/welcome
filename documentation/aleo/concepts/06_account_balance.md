@@ -13,8 +13,9 @@ corresponding [account view key](./00_accounts.md#account-view-key) can decrypt 
 ## Owned Records
 
 Because Aleo is fully private, the user must scan the chain and attempt to decrypt every encrypted record with the 
-`account view key` to find all the records an `account` owns. Only the `account view key` that successfully decrypts the 
-record are determined to owned by the corresponding `account address` and spendable by the `account private key`.
+`account view key` to find all the records an `account` owns. A record is owned by the corresponding `account address` 
+and spendable by the `account private key` only if the cooresponding `account view key` successfully decrypts the 
+record.
 
 ## Spent Records
 
