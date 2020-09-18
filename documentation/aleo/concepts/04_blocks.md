@@ -15,7 +15,7 @@ An Aleo block is serialized in the following format:
 |     Parameter    |                                Type                                | Size (bytes) |
 |:----------------:|:------------------------------------------------------------------:|:------------:|
 |     `header`     |   [Block Header](#components-of-a-block-header)                    |      503     |
-|`num_transactions`| [variable_length_integer](06_glossary.md#variable-length-integer)  |  `variable`  |
+|`num_transactions`| [variable_length_integer](07_glossary.md#variable-length-integer)  |  `variable`  |
 |  `transactions`  | \[[Transaction](03_transactions.md#components-of-a-transaction)\]  |  `variable`  |
 
 #### Block Header
