@@ -29,7 +29,7 @@ Create an array of the same element with a fixed size.
 
 ```leo
 let a = [1u32; 3];
-let b: [u32; 2] = [1; 3];
+let b: [u32; 3] = [1; 3];
 ```
 
 ## Array Indexing
@@ -49,9 +49,9 @@ To index must be a `u32`. Omitting to_index defaults to the length of the array 
 ```leo
 let arr: [u32; 4] = [0, 1, 2, 3];
 
-let first_two = arr[..1]; // = [0, 1]
+let first_two = arr[..2]; // = [0, 1]
 
-let middle_two = arr[1..2]; // = [1, 2]
+let middle_two = arr[1..3]; // = [1, 2]
 
 let last_two = arr[2..]; // = [2, 3]
 ```

@@ -55,8 +55,8 @@ For each function we:
 Token debit decrements a user's token balance by a value.
 
 To achieve this we:
-* Check the record has the correct token information.
-* Check the record has the correct birth and death programs.
+* Check that the record has the correct token information.
+* Check that the record has the correct birth and death programs.
 * Transfer the token value in the record to a new record.
 
 ### 1.2 Data
@@ -139,9 +139,9 @@ leaf_randomness: [u8; 32] = [0; 32];
 #### Overview
 
 The `token_debit` Leo function should:
- 1. Check the `record.payload.token_id` matches the starting register `registers.token_id`.
- 2. Check the `record.birth_program_id` is equal to `token_debit`.
- 3. Check the `record.death_program_id` is equal to `token_credit`.
+ 1. Check that the `record.payload.token_id` matches the starting register `registers.token_id`.
+ 2. Check that the `record.birth_program_id` is equal to `token_debit`.
+ 3. Check that the `record.death_program_id` is equal to `token_credit`.
  4. If the global `state.leaf_index` of this record is 0, check the starting register `registers.value_balance` is 0.
  5. Add the `record.payload.value_balance` to the output `new_value_balance`.
  6. Return the `register.token_id` and output `new_value_balance`.
@@ -243,9 +243,9 @@ If you were to do the calculation in Leo by hand, the `token_debit` function wou
 
 #### Overview
 
- 1. Check the `record.payload.token_id` matches the starting register `registers.token_id`.
- 2. Check the `record.birth_program_id` is equal to `token_debit`.
- 3. Check the `record.death_program_id` is equal to `token_credit`.
+ 1. Check that the `record.payload.token_id` matches the starting register `registers.token_id`.
+ 2. Check that the `record.birth_program_id` is equal to `token_debit`.
+ 3. Check that the `record.death_program_id` is equal to `token_credit`.
  4. If the global `state.leaf_index` of this record is 0, check the starting register `registers.value_balance` is 0.
  5. Add the `record.payload.value_balance` to the output value balance.
  6. **Verify the record commitment.**
@@ -383,7 +383,7 @@ value_balance: u8 = 100;
 ```
 
 :::note
-Note that the output registers of `token_debit` is loaded into the input register for `token_credit`.
+Note that the output registers of `token_debit` are loaded into the input register for `token_credit`.
 :::
 
 Record and leaf state are passed into Leo through the `token.state` file.
@@ -427,8 +427,8 @@ This record's leaf index is 2 since leaf index 1 is a dummy which just passes th
 #### Overview
 
 The `token_credit` Leo function should:
- 1. Check the `record.payload.token_id` matches the starting register `registers.token_id`.
- 2. Check the `record.birth_program_id` is equal to `token_credit`.
+ 1. Check that the `record.payload.token_id` matches the starting register `registers.token_id`.
+ 2. Check that the `record.birth_program_id` is equal to `token_credit`.
  3. If the global `state.leaf_index` is 2, subtract the `record.payload.value_balance` from the starting `registers.value_balance`.
  4. If the gloabl `state.leaf_index` is 2, check the output `new_value_balance` is 0. This check ensures that no new money is created.
  5. Return the `registers.token_id` and output `new_value_balance`.
@@ -452,7 +452,7 @@ function credit(
     let id_b = input.record.birth_program_id;
     let condition2 = id_b == token_credit;
 
-    // 3. Subtract payload value form register value balance
+    // 3. Subtract payload value from register value balance
     let vb_t_old = input.registers.value_balance;
     let payload_vb_t = input.record.payload[1];
     let vb_t_new = vb_t_old - payload_vb_t;

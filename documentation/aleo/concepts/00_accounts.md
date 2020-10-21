@@ -73,7 +73,7 @@ AViewKey1cVP45x3E1TxJFgiJqawy7w5WQDsUXWTbpWAXSXB1sDw8
 ```
 
 An account view key is formatted as a Base58 string, comprised of 56 characters.
-The account view key is encoded with a [view key prefix](#account-prefixes) that reads `APrivateKey1`, indicating
+The account view key is encoded with a [view key prefix](#account-prefixes) that reads `AViewKey1`, indicating
 that it is a private key and should only be shared with authorized parties.
 
 ## Account Address
@@ -137,13 +137,13 @@ Given global instantiated Aleo parameters and subroutines.
 
 #### Generate a View Key 
 
-1. Construct `pk_sig` = AccountSignature,GeneratePublicKey(<code>pp<sub>account_sig</sub></code>, `sk_sig`)
+1. Construct `pk_sig` = AccountSignature,GeneratePublicKey(`account_sig`, `sk_sig`)
 
-2. `view_key` = AccountCommitment.Commit(<code>pp<sub>account_cm</sub></code>, (`pk_sig`, `sk_prf`), `r_pk`)
+2. `view_key` = AccountCommitment.Commit(`account_cm`, (`pk_sig`, `sk_prf`), `r_pk`)
 
 #### Generate an Address
 
-1. `address` = AccountEncryption.GeneratePublicKey(<code>pp<sub>account_enc</sub></code>, `view_key`)
+1. `address` = AccountEncryption.GeneratePublicKey(`account_enc`, `view_key`)
 
 ### Account Diagram
 
