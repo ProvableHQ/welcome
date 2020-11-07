@@ -19,7 +19,7 @@ The commitment on the data being used to create the transaction - old records, n
 
 ### Program
 
-A program is user defined boolean function that reasons about a transactions local data and determines if it is valid. This is allows for arbitrary applications to be run on Aleo. By representing state in records, programs can reason about their own application specific logic.
+A program is user defined boolean function that reasons about a transactions local data and determines if it is valid. This allows for arbitrary applications to be run on Aleo. By representing state in records, programs can reason about their own application specific logic.
 
 ### Birth Program
 
