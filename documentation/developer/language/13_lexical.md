@@ -38,7 +38,7 @@ They cannot be used as the names of identifiers.
 ```
 address
 as
-boolean
+bool
 circuit
 const
 console
