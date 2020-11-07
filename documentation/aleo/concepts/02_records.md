@@ -46,7 +46,7 @@ The **record value** specifies the amount of Aleo credits stored in the record.
 [ RECORD BYTE ARRAY ]
 ```
 
-The **record payload** is a  that encodes arbitrary application information.
+The **record payload** encodes arbitrary application information.
 
 ### Birth Program ID
 
