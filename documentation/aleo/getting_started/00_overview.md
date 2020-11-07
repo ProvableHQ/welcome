@@ -142,11 +142,12 @@ to compile, execute, and finalize its state autonomously.
 - [getblockhash](./autogen/testnet/public_endpoints/04_getblockhash.md)
 - [getblocktemplate](./autogen/testnet/public_endpoints/05_getblocktemplate.md)
 - [getconnectioncount](./autogen/testnet/public_endpoints/06_getconnectioncount.md)
-- [getpeerinfo](./autogen/testnet/public_endpoints/07_getpeerinfo.md)
-- [getrawtransaction](./autogen/testnet/public_endpoints/08_getrawtransaction.md)
-- [gettransactioninfo](./autogen/testnet/public_endpoints/09_gettransactioninfo.md)
-- [sendtransaction](./autogen/testnet/public_endpoints/10_sendtransaction.md)
-- [validaterawtransaction](./autogen/testnet/public_endpoints/11_validaterawtransaction.md)
+- [getnodeinfo](./autogen/testnet/public_endpoints/07_getnodeinfo.md)
+- [getpeerinfo](./autogen/testnet/public_endpoints/08_getpeerinfo.md)
+- [getrawtransaction](./autogen/testnet/public_endpoints/09_getrawtransaction.md)
+- [gettransactioninfo](./autogen/testnet/public_endpoints/10_gettransactioninfo.md)
+- [sendtransaction](./autogen/testnet/public_endpoints/11_sendtransaction.md)
+- [validaterawtransaction](./autogen/testnet/public_endpoints/12_validaterawtransaction.md)
 
 
 ### Chapter 12: Private RPC Endpoints

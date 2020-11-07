@@ -90,11 +90,11 @@ function main() {
 ```
 
 [Circuits](09_circuits.md) in leo are similar to structures in other object-oriented languages. 
-They provide a composite data type that can store primitive values and provide functions for instantiation and computation.
+They provide a composite data type that can store any value and provide functions for instantiation and computation.
 
 The `static` keyword modifies the `new` function so it can be called without instantiating the circuit.
 
-Leo introduces `Self` and `self` keywords to access circuit member values.
+Leo introduces `Self` and `self` keywords to access circuit member variables.
 
 ## 5. Imports
 

@@ -11,23 +11,25 @@ To verify the proof in the `outputs` directory run:
 leo run
 ```
 ```bash title="console output:"
-leo  Compiled program file "${NAME}/src/main.leo"
-leo  Setup starting...
-leo  Program circuit successfully synthesized!
-leo  Writing to output registers...
-leo  Setup completed in 0 milliseconds
-leo  Saving proving key ("${NAME}/outputs/${NAME}.lpk")
-leo  Saving verification key ("${NAME}/outputs/${NAME}.lvk")
-leo  Program setup complete
-leo  Proving...
-leo  Program circuit successfully synthesized!
-leo  Writing to output registers...
-leo  Prover completed in 7 milliseconds
-leo  Proof stored ("${NAME}/outputs/${NAME}.proof")
-leo  Completed program proving
+ Compiling Starting...
+ Compiling Compiling main program... ("${NAME}/src/main.leo")
+ Compiling Complete
+      Done Finished in 10 milliseconds
 
-Verifier time   : 2 milliseconds
-Verifier output : true
+     Setup Detected saved setup
+     Setup Loading proving key...
+     Setup Complete
+     Setup Loading verification key...
+     Setup Complete
+      Done Finished in 10 milliseconds
+
+   Proving Starting...
+   Proving Saving proof... ("${NAME}/outputs/${NAME}.proof")
+      Done Finished in 10 milliseconds
+
+ Verifying Starting...
+ Verifying Proof is valid
+      Done Finished in 10 milliseconds
 ```
 
 Leo starts by checking the `outputs` directory for an existing `.proof` file. If it doesn't exist, Leo will proceed to run `leo prove` and then continue.

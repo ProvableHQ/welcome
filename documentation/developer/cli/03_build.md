@@ -12,11 +12,9 @@ leo build
 ```
 The results of compiling `main.leo` or `lib.leo` and it's imported dependencies will be printed:
 ```bash title="console output:"
-leo  Compiled program file "{$NAME}/src/main.leo"
+ Compiling Starting...
+ Compiling Compiling main program... ("${NAME}/src/main.leo")
+ Compiling Complete
+      Done Finished in 10 milliseconds
 ```
-
-```bash title="console output:"
-leo  Compiled library file "{$NAME}/src/lib.leo"
-```
-
 This will create a new directory `outputs/`, as serialized program file `.json`, and a checksum file `.sum` in the directory. 

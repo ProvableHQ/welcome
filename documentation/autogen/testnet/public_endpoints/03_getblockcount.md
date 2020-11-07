@@ -18,7 +18,7 @@ None
 
 | Parameter |  Type  |                  Description                 |
 |:---------:|:------:|:--------------------------------------------:|
-| `result`  | string | The number of blocks in the best valid chain |
+| `result`  | number | The number of blocks in the best valid chain |
 
 ### Example
 ```ignore

@@ -43,7 +43,7 @@ function main() {
 Inside the Leo `test function` signature you have access to all `imports`, `circuits`, and `functions` in the current scope.
 ```leo title="src/main.leo"
 function add_one(a: u32) -> u32 {
-    return a + 1;
+    return a + 1
 }
 
 test function test_add_one() {
@@ -68,8 +68,10 @@ leo test
 ```
 
 ```leo title="console output:"
-  leo  Running 1 tests
-  leo  test tmp::test_add_one compiled successfully. Constraint system satisfied: true
+      Test Running 1 tests
+      Test testing::test_add_one ... ok
+
+      Done Tests passed in 10 milliseconds. 1 passed; 0 failed;
 ```
 **Success!**
 
@@ -78,7 +80,7 @@ The console output clearly states that our test passed, and our constraint syste
 ### Failing Tests
 ```leo title="src/main.leo"
 function add_one(a: u32) -> u32 {
-    return a + 1;
+    return a + 1
 }
 
 test function test_add_one() {
@@ -99,13 +101,17 @@ leo test
 ```
 
 ```leo title="console output:"
-  leo  Running 1 tests
-  leo  test hello-world::test_add_one errored:     -->  11:5
-                      |
-                   11 |      console.assert(one == res);
-                      |  ^^^^
-                      |
-                      = Assertion `one == res` failed
+      Test Running 1 tests
+      Test testing::test_add_one failed due to error
+
+    --> "testing/src/main.leo": 11:5
+     |
+  11 |      console.assert(one == res);
+     |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = Assertion `one == res` failed
+
+      Done Tests failed in 10 milliseconds. 0 passed; 1 failed;
 ```
 
 As expected, the test now fails. The console output tells us the exact line where the assert failed.
@@ -116,7 +122,7 @@ Tests with invalid syntax will fail before their circuit is run.
 
 ```leo title="src/main.leo"
 function add_one(a: u32) -> u32 {
-    return a + 1;
+    return a + 1
 }
 
 test function test_add_one() {
@@ -132,13 +138,17 @@ test function test_add_one() {
 Add a second `one` as input to the function call to `add_one`.
 
 ```leo title="console output:"
-  leo  Running 1 tests
-  leo  test tmp::test_add_one errored:    -->  2:1
-                      |
-                    2 |  function add_one(a: u32) -> u32 {
-                      |
-                      |
-                      = function expected 1 inputs, found 2 inputs
+      Test Running 1 tests
+      Test testing::test_add_one failed due to error
+
+    --> "testing/src/main.leo": 1:1
+     |
+   1 |  function add_one(a: u32) -> u32 {
+     |
+     |
+     = function expected 1 input variables, found 2
+
+      Done Tests failed in 10 milliseconds. 0 passed; 1 failed;
 ```
 
 As expected, the test fails telling us that we incorrectly provided 2 inputs to the `add_one` function.
@@ -167,4 +177,46 @@ test function token_withdraw() {
 test function token_withdraw() {
     ...
 }
-``` 
+```
+
+**Example**
+Create a directory in the `/inputs` directory named `/production`.
+Add a file named `production.in` and a file named `production.out`. 
+
+```leo title="inputs/production/production.in"
+[main]
+a: u32 = 1;
+```
+```leo title="inputs/production/production.state"
+// empty
+```
+
+Use the test context annotation to load the production input environment into the program test.
+
+```leo title="src/main.leo"
+function add_one(a: u32) -> u32 {
+    return a + 1
+}
+
+@context(production)
+test function test_add_one_production(a: u32) { // `a` is provided by the `production.in` file
+    let expected = a + 1;
+
+    let actual = add_one(a);
+
+    console.assert(expected == actual);
+}
+```
+
+Run the tests.
+
+```bash
+leo test
+```
+
+```bash title="console output:"
+      Test Running 1 tests
+      Test testing::test_add_one_production ... ok
+
+      Done Tests passed in 10 milliseconds. 1 passed; 0 failed;
+```
