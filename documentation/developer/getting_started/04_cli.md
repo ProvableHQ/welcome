@@ -89,7 +89,7 @@ leo run
 ```
 
 The `leo run` command will attempt to verify a proof only if all previous steps completed successfully.
-Under the hood, the Leo [CLI](aleo/documentation/developer/cli/08_run.md) will check for existing `.sum`, `.lpk`, `.lvk`, or `.proof` files 
+Under the hood, the Leo [CLI](../cli/08_run.md) will check for existing `.sum`, `.lpk`, `.lvk`, or `.proof` files 
 in the **outputs** directory before running each command. This ensures that we don't run unnecessary commands.
 
 ### 5. Program Outputs
@@ -107,4 +107,4 @@ then you should see different results written to the output registers. Be sure t
 To learn more about how to use the Leo Language, start [here](../language/01_layout.md)
 
 ## The Leo CLI
-To learn more about how to use the Leo CLI, start [here](aleo/documentation/developer/cli/01_new.md)
+To learn more about how to use the Leo CLI, start [here](../cli/01_new.md)
