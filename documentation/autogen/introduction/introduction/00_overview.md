@@ -12,6 +12,7 @@ This document provides an early developer preview of how Aleo enables engineerin
 performant, secure, and anonymous. Aleo introduces an application runtime environment that allows your software
 to compile, execute, and finalize its state autonomously.
 
+<!-- markdown-link-check-disable -->
 ## Welcome to Aleo.
 
 ### Chapter 0: Getting Started
@@ -213,3 +214,4 @@ to compile, execute, and finalize its state autonomously.
 - [The Mining Process](./advanced/posw/03_mining.md)
 
 
+<!-- markdown-link-check-enable -->
