@@ -13,7 +13,7 @@ leo init
 This will initialize the current directory with the same package directory setup.
 
 ### Optional Flags
-`leo init` supports the same flags as [**`leo new`**](aleo/documentation/developer/cli/01_new.md#optional-flags)
+`leo init` supports the same flags as [**`leo new`**](01_new.md#optional-flags)
 ```bash
 leo init --bin
 ```
