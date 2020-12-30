@@ -12,6 +12,7 @@ This document provides an early developer preview of how Aleo enables engineerin
 performant, secure, and anonymous. Aleo introduces an application runtime environment that allows your software
 to compile, execute, and finalize its state autonomously.
 
+<!-- markdown-link-check-disable -->
 ## Welcome to Aleo.
 
 ### Chapter 0: Getting Started
@@ -142,11 +143,12 @@ to compile, execute, and finalize its state autonomously.
 - [getblockhash](./autogen/testnet/public_endpoints/04_getblockhash.md)
 - [getblocktemplate](./autogen/testnet/public_endpoints/05_getblocktemplate.md)
 - [getconnectioncount](./autogen/testnet/public_endpoints/06_getconnectioncount.md)
-- [getpeerinfo](./autogen/testnet/public_endpoints/07_getpeerinfo.md)
-- [getrawtransaction](./autogen/testnet/public_endpoints/08_getrawtransaction.md)
-- [gettransactioninfo](./autogen/testnet/public_endpoints/09_gettransactioninfo.md)
-- [sendtransaction](./autogen/testnet/public_endpoints/10_sendtransaction.md)
-- [validaterawtransaction](./autogen/testnet/public_endpoints/11_validaterawtransaction.md)
+- [getnodeinfo](./autogen/testnet/public_endpoints/07_getnodeinfo.md)
+- [getpeerinfo](./autogen/testnet/public_endpoints/08_getpeerinfo.md)
+- [getrawtransaction](./autogen/testnet/public_endpoints/09_getrawtransaction.md)
+- [gettransactioninfo](./autogen/testnet/public_endpoints/10_gettransactioninfo.md)
+- [sendtransaction](./autogen/testnet/public_endpoints/11_sendtransaction.md)
+- [validaterawtransaction](./autogen/testnet/public_endpoints/12_validaterawtransaction.md)
 
 
 ### Chapter 12: Private RPC Endpoints
@@ -212,3 +214,4 @@ to compile, execute, and finalize its state autonomously.
 - [The Mining Process](./advanced/posw/03_mining.md)
 
 
+<!-- markdown-link-check-enable -->

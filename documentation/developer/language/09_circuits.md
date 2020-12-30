@@ -3,15 +3,38 @@ id: circuits
 title: Circuits
 ---
 
-Circuits are a powerful complex data type in Leo. 
-Circuit names should be CamelCase.
-Circuits can have one or more members. 
-Circuits are initialized by their defined name followed by their members in curly braces `{ }`.
+Circuits are a powerful complex data type in Leo - they share syntax with structs in object-oriented languages.  
+Circuit names should be CamelCase.  
+Circuits can have one or more members.  
+Circuits are initialized by their defined name followed by their member variables in curly braces `{ }`.  
 Circuit types with the same members but different names are different types.
 
+```leo
+circuit Rectangle {
+    width: u32,
+    height: u32,
+
+    function area(self) -> u32 {
+        return self.width * self.height
+    }
+}
+
+function main() {
+    let rect1 = Rectangle {
+        width: 25u32,
+        height: 50u32,
+    };
+
+    let area = rect1.area();
+
+    console.log("Rectangle area: {} square pixels", area);
+}
+```  
+
 ## Circuit member variables
-Circuit members can be defined as variables with any type.  
-They can be accessed using dot syntax `.`.
+Circuit member variables define the name and type of pieces of data grouped by the circuit.  
+Circuits members variables can be any type including other circuits.  
+They can be accessed using dot syntax `.`.  
 
 ```leo
 circuit Point {
@@ -20,52 +43,36 @@ circuit Point {
 }
 function main() -> u32 {
     let p = Point {x: 1u32, y: 0u32};
-    return p.x
-}
-```
-
-### Mutability
-
-Circuit member variables can be made mutable with the `mut` keyword.
-
-```leo
-circuit Foo {
-    mut a: u32,
-    b: u32,
-}
-
-function main() {
-    let mut f = Foo { a: 1u32, b: 2u32 };
-
-    f.a = 0u32;
-    // f.b = 0u32; // Errors because circuit variable `b` is immutable
+    return p.x // Access the circuit member variable `x`
 }
 ```
 
 ## Circuit member functions
-Members can also be defined as functions.  
-They can also be accessed using dot syntax `.`. 
+Circuit member functions define pieces of code that are run in the context of a circuit.
 
 ```leo
 circuit Foo {
-    function echo(x: u32) -> u32 {
-        return x
+    x: u32,    
+
+    function echo(self) -> u32 {
+        return self.x
     }
 }
 
 function main() -> u32 {
-    let c = Foo { };
-    return c.echo(1u32)
+    let c = Foo { x: 1u32 };
+    return c.echo()
 }
 ```
 
 ## Circuit member static functions
-Circuit functions can be made static, enabling them to be called without instantiation.  
+Circuit functions that do not have a self argument are considered static, 
+enabling them to be called without instantiating the circuit.  
 They can be accessed using double colon syntax `::`.
 
 ```leo
 circuit Foo {
-    static function echo(x: u32) -> u32 {
+    function echo(x: u32) -> u32 {
         return x
     }
 }
@@ -78,40 +85,93 @@ function main() -> u32 {
 Circuit member functions, both normal and static, are immutable.
 :::
 
-## `Self` and `self`
-The `Self` keyword references the circuit's definition.
-```leo
-circuit Circ {
-    b: bool
 
-    static function new() -> Self { // Self resolves to Foo
-        return Self { b: true }
-    }
-}
+### `Self` type
+The `Self` type references the circuit's definition.
 
-function main() -> bool {
-    let c = Foo::new();
-    return c.b
-}
-```
-
-The `self` keyword references the circuit's members.
 ```leo
 circuit Foo {
-    b: bool
-  
-    function bar() -> bool {
-        return self.b 
-    }
-    
-    function baz() -> bool {
-        return self.bar()
+    a: u32,
+
+    // Instantiates a new Foo circuit with a = 0u32.
+    function new() -> Self { // Self resolves to circuit type Foo
+        return Self { a: 0u32 }
     }
 }
 
-function main() -> bool {
-    let c = Foo { b: true };
-
-    return c.baz() 
+function main() {
+    let f = Foo::new(); // new is a static function.
 }
 ```
+
+### `self` keyword
+The `self` keyword provides view access to instantiated circuit members.
+It must be included as an argument in the circuit function signature.
+
+The circuit function must be called using dot `.` syntax. (Similar to rust syntax)
+
+```leo
+circuit Foo {
+    a: u32,
+
+    // Instantiates a new Foo circuit with a = 0u32.
+    function new() -> Self { // Self resolves to circuit type Foo
+        return Self { a: 0u32 }
+    }
+
+    // Logs the self circuit variable to console.
+    function log(self) {
+        console.log("{}", self.a); // Errors if "self" keyword is not present.
+    }
+}
+
+function main() {
+    let f = Foo::new();
+
+    f.log(); // Prints "0"
+}
+```
+
+
+### `mut self` keyword
+The `mut self` keyword provides mutable access to instantiated circuit member variables.
+It must be included as an argument in the circuit function signature.
+
+The circuit function must be called using dot `.` syntax (Similar to rust syntax)
+The instantiated circuit variable must also be defined as mutable `mut`.
+
+All functions which do not contain the `self` or `mut self` keyword are considered static. They must be called using double colon `::` syntax.
+
+```leo
+circuit Foo {
+    a: u32,
+
+    // Instantiates a new Foo circuit with a = 0u32.
+    function new() -> Self { // Self resolves to circuit type Foo
+        return Self { a: 0u32 }
+    }
+
+    // Logs the self circuit variable to console.
+    function log(self) {
+        console.log("{}", self.a); // Errors if "self" keyword is not present.
+    }
+
+    // Mutates the self circuit variable a = 1u32.
+    function mutate(mut self) {
+        self.a = 1u32; // Errors if "mut self" keyword is not present.
+    }
+}
+
+function main() {
+    let mut f = Foo::new(); 
+
+    f.mutate(); // Errors if "f" is not mutable.
+    f.log(); // Prints "1"
+}
+```
+
+
+
+
+
+

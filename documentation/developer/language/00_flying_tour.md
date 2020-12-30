@@ -37,7 +37,7 @@ Collections of data types can be created in the form of static [arrays and tuple
 
 ## 2 Functions
 The `main` [function](07_functions.md) is the entrypoint of a Leo program. 
-[`leo run`](aleo/documentation/developer/cli/08_run.md) will provide private [inputs](08_inputs.md) directly to the function for proving and store the program result in an output file.
+[`leo run`](../cli/08_run.md) will provide private [inputs](08_inputs.md) directly to the function for proving and store the program result in an output file.
 
 The `square_root` function is called by `main` with private inputs `a` and `b` which are both unsigned `u32` integers.
 
@@ -65,14 +65,14 @@ circuit Point {
     x: u32,
     y: u32,
 
-    static function new() -> Self {
+    function new() -> Self {
         return Self { 
             x: 0, 
             y: 0, 
         }
     }
 
-    function add() -> u32 {
+    function add(self) -> u32 {
         return self.x + self.y
     }
 }
@@ -92,7 +92,7 @@ function main() {
 [Circuits](09_circuits.md) in leo are similar to structures in other object-oriented languages. 
 They provide a composite data type that can store any value and provide functions for instantiation and computation.
 
-The `static` keyword modifies the `new` function so it can be called without instantiating the circuit.
+The `new` function is static and can be called without instantiating the circuit.
 
 Leo introduces `Self` and `self` keywords to access circuit member variables.
 
@@ -100,7 +100,7 @@ Leo introduces `Self` and `self` keywords to access circuit member variables.
 
 [Imports](10_imports.md) fetch other circuits and functions and bring them into the current file scope. 
 Leo supports imports for dependencies that are declared locally or in an imported package.
-Importing packages can be accomplished using the [**`leo add`**](aleo/documentation/developer/cli/10_add.md) command in the CLI.
+Importing packages can be accomplished using the [**`leo add`**](../cli/10_add.md) command in the CLI.
 
 **This completes the flying tour!** 
 
@@ -108,4 +108,4 @@ Importing packages can be accomplished using the [**`leo add`**](aleo/documentat
 To learn more about how to use the Leo Language, start [here](01_layout.md)
 
 ## The Leo CLI
-To learn more about how to use the Leo CLI, start [here](aleo/documentation/developer/cli/01_new.md)
+To learn more about how to use the Leo CLI, start [here](../cli/01_new.md)
