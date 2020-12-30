@@ -65,14 +65,14 @@ circuit Point {
     x: u32,
     y: u32,
 
-    static function new() -> Self {
+    function new() -> Self {
         return Self { 
             x: 0, 
             y: 0, 
         }
     }
 
-    function add() -> u32 {
+    function add(self) -> u32 {
         return self.x + self.y
     }
 }
@@ -92,7 +92,7 @@ function main() {
 [Circuits](09_circuits.md) in leo are similar to structures in other object-oriented languages. 
 They provide a composite data type that can store any value and provide functions for instantiation and computation.
 
-The `static` keyword modifies the `new` function so it can be called without instantiating the circuit.
+The `new` function is static and can be called without instantiating the circuit.
 
 Leo introduces `Self` and `self` keywords to access circuit member variables.
 
