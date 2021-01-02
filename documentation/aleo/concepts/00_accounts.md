@@ -73,7 +73,7 @@ AViewKey1cVP45x3E1TxJFgiJqawy7w5WQDsUXWTbpWAXSXB1sDw8
 ```
 
 An account view key is formatted as a Base58 string, comprised of 56 characters.
-The account view key is encoded with a [view key prefix](#account-prefixes) that reads `APrivateKey1`, indicating
+The account view key is encoded with a [view key prefix](#account-prefixes) that reads `AViewKey1`, indicating
 that it is a private key and should only be shared with authorized parties.
 
 ## Account Address
