@@ -40,8 +40,8 @@ address
 as
 bool
 circuit
-const
 console
+const
 else
 false
 field
@@ -55,8 +55,8 @@ i64
 i128
 if
 import
-input
 in
+input
 let
 mut
 return
