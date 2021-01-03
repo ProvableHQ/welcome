@@ -7,3 +7,6 @@
 [submodule "aleo-setup"]
 	path = aleo-setup
 	url = https://github.com/AleoHQ/aleo-setup
+[submodule "snarkVM"]
+	path = snarkVM
+	url = https://github.com/AleoHQ/snarkVM.git
