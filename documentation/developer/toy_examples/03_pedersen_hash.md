@@ -9,16 +9,17 @@ This design is not standardized and currently unstable.
 :::
 
 Let's learn how to write a Pedersen Hash in Leo and prove knowledge of a preimage.
-```leo title="src/256_bit.leo"
+
+```leo title="src/main.leo"
 circuit PedersenHash {
     parameters: [group; 256],
 
     // Instantiates a Pedersen hash circuit
-    static function new(parameters: [group; 256]) -> Self {
+    function new(parameters: [group; 256]) -> Self {
         return Self { parameters: parameters }
     }
 
-    function hash(bits: [bool; 256]) -> group {
+    function hash(self, bits: [bool; 256]) -> group {
         let mut digest: group = 0;
         for i in 0..256 {
             if bits[i] {
@@ -29,23 +30,21 @@ circuit PedersenHash {
     }
 }
 
-```
-
-```leo title="src/main.leo"
-// Import the PedersenHash circuit from another file
-import pedersen.256_bit.PedersenHash;
-
-// The 'pedersen_hash' main function.
-function main(parameters: [group; 256], input: [bool; 256]) -> group {
+// The 'pedersen-hash' main function.
+function main() -> group {
+    const parameters = [1group; 256];
     const pedersen = PedersenHash::new(parameters);
-    return pedersen.hash(input)
+    let hash_input: [bool; 256] = [true; 256];
+    return pedersen.hash(hash_input)
 }
+
 ```
 
 ```leo title="inputs/pedersen.in"
 [main]
-const parameters: [group; 256] = [1group; 256];
-input: [bool; 256] = [true; 256];
+
+[registers]
+r0: group = (1, 0)group;
 ```
 
 ### Circuit Execution

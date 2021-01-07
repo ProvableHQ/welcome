@@ -61,9 +61,9 @@ Copies the elements of one array into another. Element types must match.
 Equivalent to slicing all elements of an array.
 
 ```leo
-let arr: [u32; 4] = [0, 1, 2, 3];
+let arr_4: [u32; 4] = [1, 1, 1, 1];
 
-let arr_with_5: [u32; 5] = [...arr, 4];
+let arr_5: [u32; 5] = [...a, 1]; // Evaluates to [1, 1, 1, 1, 1]
 ```
 
 ### Notes on Fixed Size
@@ -84,7 +84,7 @@ a[2] = 4;
 let b = [42u32; 4];
 
 // initialize an array of 5 values copying all elements of b using a spread
-let c = [1, ...b];
+let c = [1u32, ...b];
 
 // initialize an array copying a slice from `c`
 let d = c[1..3];
@@ -94,8 +94,6 @@ let e = [5field; 2];
 
 // initialize a boolean array
 let f = [true, false || true, true];
-
-return d
 ```
 
 ## Multi-dimensional Arrays
@@ -105,12 +103,12 @@ These are simply arrays whose elements are arrays.
 
 ```leo
 function main() -> [[u32; 3]; 2] {
-    let a = [[0u32, 0u32, 0u32], 
+    let a = [[0u32, 0u32, 0u32],
              [0u32, 0u32, 0u32]];
 
     let b: [[u32; 3]; 2] = [[0; 3]; 2];
 
-    console.assert(a == b);
+    console.log("Arrays are equal: {}", a == b);
 
     return a
 }
@@ -129,7 +127,7 @@ function main() -> [u32; (2, 3)] {
 
     let b: [u32; (2, 3)] = [0; (2, 3)];
 
-    console.assert(a == b); 
+    console.log("Arrays are equal: {}", a == b);
 
     return a
 }
@@ -175,8 +173,8 @@ Tuple values are accessed with a dot `.` the index must be a `u32`.
 ```leo
 let a = (true, true);
 
-let a: (bool, bool) = (true, true);
+let b: (bool, bool) = (true, true);
 
 let first = a.0;
-let second = a.1;
+let second = b.1;
 ```
