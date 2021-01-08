@@ -39,7 +39,7 @@ circuit Point {
 You can import dependencies that are declared locally in the `src` directory or downloaded to the `imports` directory.
 
 ```leo
-import math.square;
+import math.square; // Import the function `square` from a package `math`.
 
 function main() {
     let a: u32 = square(5u32);

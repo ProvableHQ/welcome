@@ -80,11 +80,11 @@ circuit A {
     x: u32,
     y: u32,
 
-    static function new() {
+    function new() {
         // ...
     }
 
-    function foo() {
+    function foo(self) {
         // ...
     }
 }

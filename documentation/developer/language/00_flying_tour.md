@@ -8,26 +8,36 @@ The best way to get to know Leo is by writing some code. We will fly through a h
 To gain a deeper understanding of the Leo language, continue to the [next page](01_layout.md).
 
 
-**Square Root Example**: Let's prove that we know the square root of a number.
+**Square Example**: Let's prove that we know the square of a number.
 
 **`src/main.leo`**
 ```leo
 function main(a: u32, b: u32) -> bool {
-    return square_root(a, b)
+    return square(a, b)
 }
 
-function square_root(a: u32, b: u32) -> bool {
+function square(a: u32, b: u32) -> bool {
     return a * a == b
 }
 
-test function test_square_root() {
+test function test_square() {
     let a: u32 = 5;
     let b: u32 = 25;
     
-    let result = square_root(a, b);
+    let result = square(a, b);
 
     console.assert(result == true);
 }
+```
+**`inputs/square/square.in`**
+```leo
+// The program input for /src/main.leo
+[main]
+a: u32 = 5;
+b: u32 = 25;
+
+[registers]
+r: u32 = 0;
 ```
 ## 1. Data Types
 
@@ -39,18 +49,18 @@ Collections of data types can be created in the form of static [arrays and tuple
 The `main` [function](07_functions.md) is the entrypoint of a Leo program. 
 [`leo run`](../cli/08_run.md) will provide private [inputs](08_inputs.md) directly to the function for proving and store the program result in an output file.
 
-The `square_root` function is called by `main` with private inputs `a` and `b` which are both unsigned `u32` integers.
+The `square` function is called by `main` with private inputs `a` and `b` which are both unsigned `u32` integers.
 
 ## 3. Testing
 
-A naive way to test `square_root` would be to execute `leo run` several times on different inputs and check the output of the program each time.
+A naive way to test `square` would be to execute `leo run` several times on different inputs and check the output of the program each time.
 
-Luckily, we can write [unit tests](12_tests.md) in Leo using the `test function` syntax. 
-In `test_square_root` we can sanity check our code without having to load in private inputs from a file every time. 
+Luckily, we can write [unit tests](12_tests.md) in Leo using the `test function` syntax and run them using [`leo test`](../cli/05_test.md). 
+In `test_square` we can sanity check our code without having to load in private inputs from a file every time. 
 Want to upgrade your test function into an integration test? 
 In Leo you can add a [test context annotation](12_tests.md#test-context-annotation) that loads different sets of private inputs to make your test suite even more robust.
 
-The last line of `test_square_root` uses the console function `console.assert`. 
+The last line of `test_square` uses the console function `console.assert`. 
 This function along with `console.log`, `console.debug`, and `console.error` provide developers with tools that are run without
 affecting the underlying constraint system. 
 

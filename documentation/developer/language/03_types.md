@@ -67,7 +67,7 @@ let a = 1group; // the group generator
 
 let c = 2group; // 2 * the group generator
 
-let c = (0, 1)group; // coordinate notation
+let d = (0, 1)group; // coordinate notation
 ```
 
 ### Recovery From Coordinates

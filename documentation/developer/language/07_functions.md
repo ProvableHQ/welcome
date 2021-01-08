@@ -83,10 +83,10 @@ function main() {
     let a = 1field;
 
     let b = double(a);
-    let b: field = double(a); // explicit type
+    //let b: field = double(a); // explicit type
 
     let (c, d) = arrays();
-    let (c, d): (u32, [u32; 2]) = arrays(); // explicit types
+    //let (c, d): (u32, [u32; 2]) = arrays(); // explicit types
 }
 ```
 

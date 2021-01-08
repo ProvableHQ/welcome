@@ -181,7 +181,7 @@ test function token_withdraw() {
 
 **Example**
 Create a directory in the `/inputs` directory named `/production`.
-Add a file named `production.in` and a file named `production.out`. 
+Add a file named `production.in` and a file named `production.state`. 
 
 ```leo title="inputs/production/production.in"
 [main]
