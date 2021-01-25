@@ -29,31 +29,33 @@ Create an array of the same element with a fixed size.
 
 ```leo
 let a = [1u32; 3];
-let b: [u32; 2] = [1; 3];
+let b: [u32; 2] = [1; 2]; // length of values must match length of type
 ```
 
 ## Array Indexing
 
 Access an element of an array starting at index 0. Index must be a `u32`.
 ```leo
-let arr: [u32; 4] = [1, 2, 3, 4];
+let arr: [u8; 4] = [1, 2, 3, 4];
 
-let first = arr[0]; // access the first element
+let first = arr[0]; // access the first element, 1u8
 ```
 
 ## Array Slicing
-Access a subset of an array. 
-From index must be a `u32`. Omitting from index defaults to index 0.
-To index must be a `u32`. Omitting to_index defaults to the length of the array minus one.
+Access a subsequence of an array.
+*From* and *to* indices, if specified, must be literals of type `u32`.
+Omitting the *from* index defaults to 0.
+Omitting the *to* index defaults to the length of the array.
+Returns a new array containing elements from the given array starting at index *from*, up to but not including the element at index *to*.
 
 ```leo
-let arr: [u32; 4] = [0, 1, 2, 3];
+let arr: [u16; 4] = [0, 10, 20, 30];
 
-let first_two = arr[..1]; // = [0, 1]
+let first_two = arr[..2]; // = [0, 10]
 
-let middle_two = arr[1..2]; // = [1, 2]
+let middle_two = arr[1..3]; // = [10, 20]
 
-let last_two = arr[2..]; // = [2, 3]
+let last_two = arr[2..]; // = [20, 30]
 ```
 
 ## Array Spread Operator
