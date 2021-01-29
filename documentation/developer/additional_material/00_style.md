@@ -34,7 +34,8 @@ function foo() {
     // ...
 }
 
-test function test_foo() {
+@test
+function test_foo() {
     // ...
 }
 ```
@@ -51,8 +52,8 @@ function foo() {
     // ...
 }
 
-
-test function test_foo() {
+@test
+function test_foo() {
     // ...
 }
 ```

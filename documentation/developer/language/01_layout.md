@@ -49,7 +49,7 @@ function main() {
 ### Tests
 
 Each [test](12_tests.md) function generates new constraints for an isolated test circuit.
-The input to a test can be specified with the [context annotation](12_tests.md#test-context-annotation).
+The input to a test can be specified with the [test annotation](12_tests.md#annotation-arguments).
 Tests are executed with the Leo [test command](../cli/05_test.md).
 
 ```leo
@@ -57,7 +57,8 @@ function square(a: u32) -> u32 {
     return a * a
 }
 
-test function test_square() {
+@test
+function test_square() {
     let expected: u32 = 25;
 
     let actual = square(5u32);

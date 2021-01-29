@@ -86,7 +86,7 @@ The return function of main will automatically write to the output registers in 
 Intermediate runtime state will automatically be passed from one record's output register to the next record's input register.
 
 :::info
-To see how to load register files into tests, checkout [**Writing Tests**](../language/12_tests.md#test-context-annotation).
+To see how to load register files into tests, checkout [**Writing Tests**](../language/12_tests.md#annotation-arguments).
 :::
 
 ## State
@@ -149,7 +149,7 @@ The `[state_leaf]` section defines state leaf transition information that is enc
 The state leaf section must be defined below the private `[[private]]` section.
 
 :::info
-To see how to load state files into tests, checkout [**Writing Tests**](../language/12_tests.md#test-context-annotation)
+To see how to load state files into tests, checkout [**Writing Tests**](../language/12_tests.md#annotation-arguments)
 :::
 
 ## Where Register and State Files are Stored
