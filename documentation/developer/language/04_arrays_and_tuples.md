@@ -34,7 +34,7 @@ let b: [u32; 2] = [1; 2]; // length of values must match length of type
 
 ## Array Indexing
 
-Access an element of an array starting at index 0. Index must be a `u32`.
+Access an element of an array starting at index 0. Indices must be of type `u8`, `u16` or `u32`.
 ```leo
 let arr: [u8; 4] = [1, 2, 3, 4];
 
@@ -43,7 +43,7 @@ let first = arr[0]; // access the first element, 1u8
 
 ## Array Slicing
 Access a subsequence of an array.
-*From* and *to* indices, if specified, must be literals of type `u32`.
+*From* and *to* indices, if specified, must be of type `u8`, `u16` or `u32`.
 Omitting the *from* index defaults to 0.
 Omitting the *to* index defaults to the length of the array.
 Returns a new array containing elements from the given array starting at index *from*, up to but not including the element at index *to*.
