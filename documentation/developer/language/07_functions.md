@@ -39,6 +39,27 @@ function main() -> u32 {
 }
 ```
 
+#### Constant Arguments
+
+Use the `const` keyword to indicate that an argument is a constant value. 
+Doing this will constrain the function input to constant values only.
+
+```leo
+function one(const value: u32) -> u32 {
+    return value + 1
+}
+
+function main() {
+    let mut a = 0u32;
+
+    for i in 0..10 {
+        a += one(i);
+    }
+
+    console.assert(a == 20u32);
+}
+```
+
 
 ### Main function inputs
 The `main` function is the entry point of a Leo program.
