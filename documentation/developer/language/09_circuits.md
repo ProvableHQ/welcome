@@ -4,9 +4,11 @@ title: Circuits
 ---
 
 Circuits are a powerful complex data type in Leo - they share syntax with structs in object-oriented languages.  
+
+### Defining circuits
+
 Circuit names should be CamelCase.  
 Circuits can have one or more members.  
-Circuits are initialized by their defined name followed by their member variables in curly braces `{ }`.  
 Circuit types with the same members but different names are different types.
 
 ```leo
@@ -29,7 +31,35 @@ function main() {
 
     console.log("Rectangle area: {} square pixels", area);
 }
-```  
+```
+
+### Initializing circuits
+
+Circuits are initialized by their defined name followed by their member variables in curly braces `{ }`.  
+Leo supports implied member variable names when initializing a circuit.
+```leo
+circuit Rectangle {
+    width: u32,
+    height: u32,
+}
+
+function main() {
+    let width: u32 = 25;
+    let height: u32 = 50;
+
+    let r = Rectangle {
+        width: width,
+        height: height,
+    };
+
+    let r_implied = Rectangle {
+        width, // Defined as 25 above.
+        height, // Defined as 50 above.
+    };
+
+    console.log("Equal: {} == {}", r, r_implied);
+}
+```
 
 ## Circuit member variables
 Circuit member variables define the name and type of pieces of data grouped by the circuit.  
