@@ -111,7 +111,7 @@ Leo introduces `Self` and `self` keywords to access circuit member variables.
 
 [Imports](10_imports.md) fetch other circuits and functions and bring them into the current file scope. 
 Leo supports imports for dependencies that are declared locally or in an imported package.
-Importing packages can be accomplished using the [**`leo add`**](../cli/10_add.md) command in the CLI.
+Importing packages can be accomplished using the [**`leo add`**](../cli/11_add.md) command in the CLI.
 
 **This completes the flying tour!** 
 

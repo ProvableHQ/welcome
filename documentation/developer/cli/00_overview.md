@@ -30,11 +30,12 @@ You can print the list of commands by running `leo --help`
 * [`setup`](06_setup.md) - Run a program setup
 * [`prove`](07_prove.md) - Run the program and produce a proof
 * [`run`](08_run.md) - Run a program with input variables
-* [`login`](09_login.md) - Login to the Aleo Package Manager
-* [`add`](10_add.md) - Install a package from the package manager
-* [`remove`](11_remove.md) - Uninstall a package from the current package
-* [`publish`](12_publish.md) - Publish the current package to the Aleo Package Manager
-* [`deploy`](13_deploy.md) - Deploy the current package as a program to the network (under construction)
-* [`clean`](14_clean.md) - Clean the output directory
-* [`lint`](15_lint.md) - Lints the Leo files in the package (under construction)
-* [`update`](16_update.md) - Update Leo to the latest version (under construction)
+* [`login`](09_login.md) - Login to Aleo Package Manager
+* [`logout`](09_logout.md) - Logout of Aleo Package Manager
+* [`add`](11_add.md) - Install a package from the package manager
+* [`remove`](12_remove.md) - Uninstall a package from the current package
+* [`publish`](13_publish.md) - Publish the current package to the Aleo Package Manager
+* [`deploy`](14_deploy.md) - Deploy the current package as a program to the network (under construction)
+* [`clean`](15_clean.md) - Clean the output directory
+* [`lint`](16_lint.md) - Lints the Leo files in the package (under construction)
+* [`update`](17_update.md) - Update Leo to the latest version (under construction)
