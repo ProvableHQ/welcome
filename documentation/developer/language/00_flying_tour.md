@@ -20,7 +20,8 @@ function square(a: u32, b: u32) -> bool {
     return a * a == b
 }
 
-test function test_square() {
+@test
+function test_square() {
     let a: u32 = 5;
     let b: u32 = 25;
     
@@ -55,10 +56,10 @@ The `square` function is called by `main` with private inputs `a` and `b` which 
 
 A naive way to test `square` would be to execute `leo run` several times on different inputs and check the output of the program each time.
 
-Luckily, we can write [unit tests](12_tests.md) in Leo using the `test function` syntax and run them using [`leo test`](../cli/05_test.md). 
+Luckily, we can write [unit tests](12_tests.md) in Leo using the `@test` syntax and run them using [`leo test`](../cli/05_test.md). 
 In `test_square` we can sanity check our code without having to load in private inputs from a file every time. 
-Want to upgrade your test function into an integration test? 
-In Leo you can add a [test context annotation](12_tests.md#test-context-annotation) that loads different sets of private inputs to make your test suite even more robust.
+Want to upgrade your unit test into an integration test? 
+In Leo you can provide [arguments](12_tests.md#test-annotation-arguments) that load different sets of private inputs to make your test suite even more robust.
 
 The last line of `test_square` uses the console function `console.assert`. 
 This function along with `console.log`, `console.debug`, and `console.error` provide developers with tools that are run without

@@ -15,7 +15,8 @@ function square(a: u32) -> u32 {
     return a * a
 }
 
-test function test_square() {
+@test
+function test_square() {
     let expected: u32 = 25;
 
     let actual = square(5u32);

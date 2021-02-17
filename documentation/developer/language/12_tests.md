@@ -3,14 +3,23 @@ id: tests
 title: Writing Tests
 ---
 
-Use the `test` keyword to define tests in a leo program.
+## Annotations
+
+Annotations provide additional metadata to a definition in Leo.
+
+:::info
+Annotations are a work in progress. Currently only the `@test` annotation is supported.
+:::
+
+Use the `@test` annotation to define tests in a leo program.
 
 ```leo
 function main(a: u32) -> u32 {
     return a
 }
 
-test function test_main() {
+@test
+function test_main() {
     let a = 1u32;
 
     let res = main(a);
@@ -18,7 +27,8 @@ test function test_main() {
     console.assert(res == 1u32);
 }
 
-test function test_ne() {
+@test
+function test_ne() {
     console.assert(1u8 != 0u8);
 }
 ```
@@ -40,13 +50,14 @@ function main() {
 ```
 
 ## The Anatomy of a Test Function
-Inside the Leo `test function` signature you have access to all `imports`, `circuits`, and `functions` in the current scope.
+Inside the Leo `@test` function body you have access to all `imports`, `circuits`, and `functions` in the current scope.
 ```leo title="src/main.leo"
 function add_one(a: u32) -> u32 {
     return a + 1
 }
 
-test function test_add_one() {
+@test
+function test_add_one() {
     let one = 1u32;
     let two = 2u32;
 
@@ -83,7 +94,8 @@ function add_one(a: u32) -> u32 {
     return a + 1
 }
 
-test function test_add_one() {
+@test
+function test_add_one() {
     let one = 1u32;
     let two = 2u32;
 
@@ -114,7 +126,7 @@ leo test
       Done Tests failed in 10 milliseconds. 0 passed; 1 failed;
 ```
 
-As expected, the test now fails. The console output tells us the exact line where the assert failed.
+As expected, the test now fails. The console output tells us the exact line where the assertion failed.
 
 ### Failing Test Compilation 
 
@@ -125,7 +137,8 @@ function add_one(a: u32) -> u32 {
     return a + 1
 }
 
-test function test_add_one() {
+@test
+function test_add_one() {
     let one = 1u32;
     let two = 2u32;
 
@@ -154,27 +167,23 @@ Add a second `one` as input to the function call to `add_one`.
 As expected, the test fails telling us that we incorrectly provided 2 inputs to the `add_one` function.
 Since we failed before running the circuit, there is no output about the constraint system.
 
-## Annotations
+## Annotation Arguments
 
-Annotations provide additional metadata to a definition in Leo.
+One or more arguments can be passed into an annotation using parenthesis `()`
 
-:::info
-Annotations are a work in progress. Currently only the `@context` test annotation is supported
-:::
-
-### Test Context Annotation
-The context annotation takes one argument that will be used as the file name for input and output files.
+### Test Annotation Arguments
+The `@test` annotation can take one argument that will be used as the file name for input and output files.
 For integration tests, one can invoke [`.in`](08_inputs.md#program-inputs) and [`.state`](../programming_model/00_model.md#state-file) files to load the correct input and state as follows:
  
 For example, one could invoke it as any of the following examples:
 ```leo
-@context(production) //  production.in, production.state, production.out
-test function token_withdraw() {
+@test(production) //  production.in, production.state, production.out
+function token_withdraw() {
     ...
 }
 
-@context(custom)   //  custom.in, custom.state, custom.out
-test function token_withdraw() {
+@test(custom)   //  custom.in, custom.state, custom.out
+function token_withdraw() {
     ...
 }
 ```
@@ -191,15 +200,15 @@ a: u32 = 1;
 // empty
 ```
 
-Use the test context annotation to load the production input environment into the program test.
+Use the test annotation to load the production input environment into the program test.
 
 ```leo title="src/main.leo"
 function add_one(a: u32) -> u32 {
     return a + 1
 }
 
-@context(production)
-test function test_add_one_production(a: u32) { // `a` is provided by the `production.in` file
+@test(production)
+function test_add_one_production(a: u32) { // `a` is provided by the `production.in` file
     let expected = a + 1;
 
     let actual = add_one(a);
