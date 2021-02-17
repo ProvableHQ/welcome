@@ -29,7 +29,7 @@ Create an array of the same element with a fixed size.
 
 ```leo
 let a = [1u32; 3];
-let b: [u32; 2] = [1; 3];
+let b: [u32; 3] = [1; 3];
 ```
 
 ## Array Indexing
