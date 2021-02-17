@@ -58,7 +58,8 @@ let last_two = arr[2..]; // = [2, 3]
 
 ## Array Spread Operator
 Copies the elements of one array into another. Element types must match.
-Equivalent to slicing all elements of an array.
+An array spread may only occur inside an inline array construction expression `[..., ..., ...]`:
+the spread is equivalent to listing its elements in the inline array construction expression.
 
 ```leo
 let arr_4: [u32; 4] = [1, 1, 1, 1];
