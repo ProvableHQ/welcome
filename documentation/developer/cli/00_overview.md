@@ -31,7 +31,7 @@ You can print the list of commands by running `leo --help`
 * [`prove`](07_prove.md) - Run the program and produce a proof
 * [`run`](08_run.md) - Run a program with input variables
 * [`login`](09_login.md) - Login to Aleo Package Manager
-* [`logout`](09_logout.md) - Logout of Aleo Package Manager
+* [`logout`](10_logout.md) - Logout of Aleo Package Manager
 * [`add`](11_add.md) - Install a package from the package manager
 * [`remove`](12_remove.md) - Uninstall a package from the current package
 * [`publish`](13_publish.md) - Publish the current package to the Aleo Package Manager
