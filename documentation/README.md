@@ -70,13 +70,14 @@
 - [Execute a Program](./developer/cli/07_prove.md)
 - [Verify a Program](./developer/cli/08_run.md)
 - [Login to Aleo Package Manager](./developer/cli/09_login.md)
-- [Import a Package](developer/cli/11_add.md)
-- [Remove a Package](developer/cli/12_remove.md)
-- [Publish a Package to Aleo Package Manager](developer/cli/13_publish.md)
-- [Deploy a Package to Aleo](developer/cli/14_deploy.md)
-- [Clean a Package Workspace](developer/cli/15_clean.md)
-- [Lint a Package Workspace](developer/cli/16_lint.md)
-- [Update the Leo Compiler](developer/cli/17_update.md)
+- [Logout of Aleo Package Manager](./developer/cli/10_login.md)
+- [Import a Package](./developer/cli/11_add.md)
+- [Remove a Package](./developer/cli/12_remove.md)
+- [Publish a Package to Aleo Package Manager](./developer/cli/13_publish.md)
+- [Deploy a Package to Aleo](./developer/cli/14_deploy.md)
+- [Clean a Package Workspace](./developer/cli/15_clean.md)
+- [Lint a Package Workspace](./developer/cli/16_lint.md)
+- [Update the Leo Compiler](./developer/cli/17_update.md)
 
 
 ### Chapter 6: Toy Examples
