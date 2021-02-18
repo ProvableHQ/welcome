@@ -89,5 +89,5 @@ The steps to verify a block are as follows:
     - Verify the PoSW proof
 2. Verify that there is only 1 coinbase transaction included in the block
 3. Verify that the sum of all transaction value balances are equal to the expected block reward
-4. Verify each transaction included i the block
+4. Verify each transaction included in the block
  
