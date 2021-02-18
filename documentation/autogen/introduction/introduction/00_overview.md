@@ -78,7 +78,7 @@ to compile, execute, and finalize its state autonomously.
 - [Execute a Program](./developer/cli/07_prove.md)
 - [Verify a Program](./developer/cli/08_run.md)
 - [Login to Aleo Package Manager](./developer/cli/09_login.md)
-- [Logout of Aleo Package Manager](./developer/cli/10_login.md)
+- [Logout of Aleo Package Manager](./developer/cli/10_logout.md)
 - [Import a Package](./developer/cli/11_add.md)
 - [Remove a Package](./developer/cli/12_remove.md)
 - [Publish a Package to Aleo Package Manager](./developer/cli/13_publish.md)
