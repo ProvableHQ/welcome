@@ -26,3 +26,5 @@ in the `outputs` directory as `.lpk` and `.lvk` files:
 outputs/{$NAME}.lpk
 outputs/{$NAME}.lvk
 ```
+
+> If you're running `leo setup` more than once proving time may noticeably increase because of additional checks over existing proving key. `leo setup` (along with `leo prove` and `leo run`) supports optional flag `--skip-key-check` which would omit key checking. Use `leo setup --skip-key-check` to skip this checks.

@@ -12,9 +12,20 @@ leo login -u <username> -p <password>
      Login success
 ```
 
+Alternatively, if you already have login token, you can use it directly:
+```
+leo login <token>
+```
+```bash title="console output:"
+     Login Token passed, checking...
+     Login Success. You are now logged in.
+```
+
 If remote compilation is enabled, Leo will sync your workspace when
 you run `leo build`, `leo test`, `leo setup` and `leo prove`, your program will run the program setup
 and execution on remote machines.
+
+<!-- How do we set remote compilation? We should give link here -->
 
 ### USAGE
 ```

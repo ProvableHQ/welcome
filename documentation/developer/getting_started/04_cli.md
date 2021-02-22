@@ -18,7 +18,7 @@ leo clean
 ```
 
 ```bash title="console output:"
-      Done Program workspace cleaned
+      Done Finished in 10 milliseconds
 ```
 
 ### 1. Build
@@ -104,7 +104,7 @@ Try editing the inputs in `input/hello-world.in` and then executing `leo run`. I
 then you should see different results written to the output registers. Be sure to run `leo clean` to delete the old checksum.
 
 ## The Leo Language
-To learn more about how to use the Leo Language, start [here](../language/01_layout.md)
+To learn more about how to use the Leo Language, start [here](../language/01_layout.md).
 
 ## The Leo CLI
-To learn more about how to use the Leo CLI, start [here](../cli/01_new.md)
+To learn more about how to use the Leo CLI, start [here](../cli/01_new.md).

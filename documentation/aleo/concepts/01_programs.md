@@ -22,14 +22,14 @@ circuit Point {
     x: u32,
     y: u32,
 
-    static function new() -> Self {
+    function new() -> Self {
         return Self { 
             x: 0, 
             y: 0, 
         }
     }
 
-    function add() -> u32 {
+    function add(self) -> u32 {
         return self.x + self.y
     }
 }
