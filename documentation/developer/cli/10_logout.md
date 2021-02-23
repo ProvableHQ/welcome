@@ -18,5 +18,5 @@ leo logout [FLAGS]
 ```
 
 ### FLAGS
-* `-d`, `--debug` - Enables debugging mode
+* `-V`, `--version` - Prints version information
 * `-h`, `--help` - Prints help information

@@ -3,7 +3,8 @@ id: syntax
 title: File Syntax
 ---
 
-First, open your **hello-world** project in [Aleo Studio](https://aleo.studio/) (for pretty syntax highlighting) or your text editor of choice.  
+First, open your **hello-world** project in [Aleo Studio](https://aleo.studio/) (for pretty syntax highlighting) or your text editor of choice. 
+
 **Leo.toml** is the Leo manifest file that configures our package. 
 ```leo title="Leo.toml" 
 [package]
@@ -17,7 +18,7 @@ In a future release, Leo will support other sections to give information on `[de
 [package]
 ```  
 
-The package `name` is the official, unique name of the package that other developers will be able to look up after you have published your package.
+The package `name` is the official name of the package that other developers will be able to look up after you have published your package.
 Package names are kebab-case only allowing lowercase letters and numbers separated by hyphens.
 ```leo
 name = "hello-world"
