@@ -28,7 +28,7 @@ outputs/{$NAME}.lvk
 ```
 :::info
 If there are existing proving and verification keys in the `outputs` directory, then running `leo setup` will perform additional checks to ensure the keys are valid for the current program. To skip these checks, use the `--skip-key-check` flag.
-::
+:::
 
 ### USAGE
 ```
