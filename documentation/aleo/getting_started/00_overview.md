@@ -120,7 +120,7 @@ to compile, execute, and finalize its state autonomously.
 ### Chapter 10: Network Messages
 
 - [Block](./autogen/testnet/network_messages/00_block.md)
-- [GetBlock](./autogen/testnet/network_messages/01_get_block.md)
+- [GetBlocks](./autogen/testnet/network_messages/01_get_blocks.md)
 - [GetMemoryPool](./autogen/testnet/network_messages/02_get_memory_pool.md)
 - [GetPeers](./autogen/testnet/network_messages/03_get_peers.md)
 - [GetSync](./autogen/testnet/network_messages/04_get_sync.md)
@@ -131,8 +131,7 @@ to compile, execute, and finalize its state autonomously.
 - [Sync](./autogen/testnet/network_messages/09_sync.md)
 - [SyncBlock](./autogen/testnet/network_messages/10_sync_block.md)
 - [Transaction](./autogen/testnet/network_messages/11_transaction.md)
-- [Verack](./autogen/testnet/network_messages/12_verack.md)
-- [Version](./autogen/testnet/network_messages/13_version.md)
+- [Version](./autogen/testnet/network_messages/12_version.md)
 
 
 ### Chapter 11: Public RPC Endpoints
@@ -156,11 +155,13 @@ to compile, execute, and finalize its state autonomously.
 
 - [createaccount](./autogen/testnet/private_endpoints/00_createaccount.md)
 - [createrawtransaction](./autogen/testnet/private_endpoints/01_createrawtransaction.md)
-- [decoderecord](./autogen/testnet/private_endpoints/02_decoderecord.md)
-- [decryptrecord](./autogen/testnet/private_endpoints/03_decryptrecord.md)
-- [getrawrecord](./autogen/testnet/private_endpoints/04_getrawrecord.md)
-- [getrecordcommitmentcount](./autogen/testnet/private_endpoints/05_getrecordcommitmentcount.md)
-- [getrecordcommitments](./autogen/testnet/private_endpoints/06_getrecordcommitments.md)
+- [createtransaction](./autogen/testnet/private_endpoints/02_createtransaction.md)
+- [createtransactionkernel](./autogen/testnet/private_endpoints/03_createtransactionkernel.md)
+- [decoderecord](./autogen/testnet/private_endpoints/04_decoderecord.md)
+- [decryptrecord](./autogen/testnet/private_endpoints/05_decryptrecord.md)
+- [getrawrecord](./autogen/testnet/private_endpoints/06_getrawrecord.md)
+- [getrecordcommitmentcount](./autogen/testnet/private_endpoints/07_getrecordcommitmentcount.md)
+- [getrecordcommitments](./autogen/testnet/private_endpoints/08_getrecordcommitments.md)
 
 
 ## Explorer I
