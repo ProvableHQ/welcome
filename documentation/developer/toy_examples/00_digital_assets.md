@@ -90,7 +90,7 @@ function debit(
     let global_index = input.state.leaf_index;
     let vb_t_old = input.registers.value_balance;
     let is_zero = vb_t_old == 0;
-    let condition4 = if global_index == 0 ? is_zero : true;
+    let condition4 = global_index == 0 ? is_zero : true;
 
     // 5. Add payload value to register value balance
     let payload_vb_t = input.record.payload[1];
@@ -136,7 +136,7 @@ function credit(
     // 5. Handle new_record_1 value is conserved case
     let global_index = input.state.leaf_index;
     let is_zero = vb_t_new == 0;
-    let condition4 = if global_index == 3 ? is_zero : true;
+    let condition4 = global_index == 3 ? is_zero : true;
 
     // 6. Credit the funds if checks pass
     let passed = condition1 && condition2 && condition3 && condition4;

@@ -8,7 +8,7 @@ as well as the recommended code solution.
 
 ## Conditional Branches
 
-Conditional `if else` statements in Leo are expensive. It is preferred to use ternary `if ? :` expressions.
+Conditional `if else` statements in Leo are expensive. It is preferred to use ternary `? :` expressions.
 
 ```leo title="Example:"
 if (condition) {
@@ -19,7 +19,7 @@ if (condition) {
 ```
 
 ```leo title="Alternative:"
-return if condition? a : b
+return condition ? a : b
 ```
 
 ### Why?
