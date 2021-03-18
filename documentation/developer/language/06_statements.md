@@ -17,8 +17,8 @@ A conditional (ternary) expression takes three operands.
 3. A *second expression* to execute if the *condition* is false followed by a semicolon `;`
 
 ```leo
-let a = if x >= 5u8 ? 1u8 : 0u8;
-let b: u8 = if is_valid ? 1 : 0;
+let a = x >= 5u8 ? 1u8 : 0u8;
+let b: u8 = is_valid ? 1 : 0;
 ```
 
 :::info
