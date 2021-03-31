@@ -168,7 +168,7 @@ The `mut self` keyword provides mutable access to instantiated circuit member va
 It must be included as an argument in the circuit function signature.
 
 The circuit function must be called using dot `.` syntax (Similar to rust syntax)
-The instantiated circuit variable must also be defined as mutable `mut`.
+The instantiated circuit variable must be defined using a `let` declaration.
 
 All functions which do not contain the `self` or `mut self` keyword are considered static. They must be called using double colon `::` syntax.
 
@@ -193,7 +193,7 @@ circuit Foo {
 }
 
 function main() {
-    let mut f = Foo::new(); 
+    let f = Foo::new(); 
 
     f.mutate(); // Errors if "f" is not mutable.
     f.log(); // Prints "1"

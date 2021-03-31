@@ -76,9 +76,9 @@ You cannot change the length of an array once it is initialized.
 
 ```leo
 // initialize an integer array with integer values
-let mut a: [u32; 3] = [1, 2, 3];
+let a: [u32; 3] = [1, 2, 3];
 
-// set a mutable member to a value
+// set an element to a value
 a[2] = 4;
 
 // initialize an array of 4 values all equal to 42

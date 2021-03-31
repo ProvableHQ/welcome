@@ -24,14 +24,14 @@ function add_one() -> u8 {
 Computations are expressed in terms of arithmetic R1CS circuits. Thus computing on an **allocated** variable always results in another **allocated** variable. 
 
 ## Mutability
-All defined variables in Leo are immutable by default, which means they cannot be changed after assignment.
-Local variables can be made mutable with the `mut` keyword. This functionality does not persist across scopes since Leo 
-variables are **pass by value**.
+All `const` variables in Leo are immutable - they cannot be changed after assignment.
+All `let` variables in Leo are mutable - they can be changed after assignment.
+Mutable functionality does not persist across scopes since Leo variables are **pass by value**.
 
 ```leo
-let a: u32 = 0;
+const a: u32 = 0;
 //a = 1 <- Will fail
 
-let mut b: u32 = 0;
+let b: u32 = 0;
 b = 1; // <- Ok
 ```
