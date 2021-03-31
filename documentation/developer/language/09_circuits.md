@@ -170,7 +170,7 @@ It must be included as an argument in the circuit function signature.
 The circuit function must be called using dot `.` syntax (Similar to rust syntax)
 The instantiated circuit variable must be defined using a `let` declaration.
 
-All functions which do not contain the `self` or `mut self` keyword are considered static. They must be called using double colon `::` syntax.
+All functions which do not contain the `self`, `mut self`, or `const self` keyword are considered static. They must be called using double colon `::` syntax.
 
 ```leo
 circuit Foo {
@@ -200,6 +200,34 @@ function main() {
 }
 ```
 
+
+### `const self` keyword
+The `const self` keyword provides access to the instantiated constant circuit member variables.
+It must be included as an argument in the circuit function signature.
+
+The circuit function must be called using dot `.` syntax (Similar to rust syntax)
+The instantiated circuit variable must be defined using a `const` declaration.
+
+All functions which do not contain the `self`, `mut self`, or `const self` keyword are considered static. They must be called using double colon `::` syntax.
+
+```leo
+circuit Foo {
+    a: u32,
+
+    // Logs the self circuit variable to console.
+    function log_constant(const self) {
+        console.log("{}", self.a); // Errors if "self" keyword is not present.
+    }
+}
+
+function main() {
+    const f = Foo { a: 0u8 }; 
+    f.log_constant(); // Ok - "f" is constant.
+    
+    let g = Foo { a: 0u8 };
+    g.log_constant(); // Error - "g" is not constant.
+}
+```
 
 
 
