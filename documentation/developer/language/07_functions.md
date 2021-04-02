@@ -27,7 +27,7 @@ function and(a: bool, b: bool) -> bool { // two arguments `a`, `b` with types `b
 ```
 Function arguments are passed by value from the calling function. There are no references in Leo.
 ```leo
-function call(mut a: u32) {
+function call(a: u32) {
     a = 0; // the copied value of `a` is set to 0
 }
 
@@ -50,7 +50,7 @@ function one(const value: u32) -> u32 {
 }
 
 function main() {
-    let mut a = 0u32;
+    let a = 0u32;
 
     for i in 0..10 {
         a += one(i);

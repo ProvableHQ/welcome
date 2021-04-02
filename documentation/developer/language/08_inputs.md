@@ -12,6 +12,7 @@ more explicit type variable definitions.
 
 ## Program Inputs
 
+### Main inputs
 The `[main]` section header specifies the `main.leo` target file which must have a [`main` function](07_functions.md#main-function-inputs) with matching input names and types.
 The default inputs file is `inputs/package.in`. 
 
@@ -25,6 +26,28 @@ Program inputs can be accessed as main function [arguments](07_functions.md#argu
 
 ```leo title="src/main.leo"
 function main(a: u32, b: u32) -> u32 {
+    let c: u32 = a + b;
+    return c
+}
+```
+
+### Constant inputs
+
+The `[constants]` section header specifies the `main.leo` target file which must have a [`main` function](07_functions.md#main-function-inputs) with matching constant input names and types.
+The default inputs file is `inputs/package.in`.
+
+```leo title="inputs/package.in"
+[main]
+a: u32 = 1;
+
+[constants] // <- section header
+b: u32 = 2;
+```
+
+Constant program inputs can be accessed as main function [arguments](07_functions.md#arguments).
+
+```leo title="src/main.leo"
+function main(a: u32, const b: u32) -> u32 {
     let c: u32 = a + b;
     return c
 }
