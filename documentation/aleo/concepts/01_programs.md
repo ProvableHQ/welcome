@@ -35,7 +35,7 @@ circuit Point {
 }
 
 function main() {
-    let mut p = Point::new();
+    let p = Point::new();
     
     p.x = 4u32;
     p.y = 6u32;

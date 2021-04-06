@@ -17,12 +17,12 @@ function function_name() {
 Functions can take one or more arguments. Each function argument must have a name followed by an explicit type.
 
 ```leo
-function add_one(arg : u32) { // one argument `arg` with type `u32`
+function add_one(arg: u32) { // one argument `arg` with type `u32`
     arg += 1;
 }
 
 function and(a: bool, b: bool) -> bool { // two arguments `a`, `b` with types `bool`
-    return c && b
+    return a && b
 }
 ```
 Function arguments are passed by value from the calling function. There are no references in Leo.
@@ -32,7 +32,7 @@ function call(a: u32) {
 }
 
 function main() -> u32 {
-    let a = 1;
+    let a = 1u32;
     call(a); // the `call` function receives a copy of `a`
 
     return a // returns 1

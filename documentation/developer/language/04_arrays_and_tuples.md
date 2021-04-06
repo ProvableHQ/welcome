@@ -64,7 +64,7 @@ the spread is equivalent to listing its elements in the inline array constructio
 ```leo
 let arr_4: [u32; 4] = [1, 1, 1, 1];
 
-let arr_5: [u32; 5] = [...a, 1]; // Evaluates to [1, 1, 1, 1, 1]
+let arr_5: [u32; 5] = [...arr_4, 1]; // Evaluates to [1, 1, 1, 1, 1]
 ```
 
 ### Notes on Fixed Size
@@ -144,7 +144,7 @@ Array tuple syntax is merely syntactic sugar for the more verbose bracket notati
 ```leo
 let a: [[u32; 2]; 3] = [[0; 2]; 3]; // brackets only
 
-let b: [[u32: 2]; 3] = [0; (3, 2)]; // bracket array type and tuple array expression
+let b: [[u32; 2]; 3] = [0; (3, 2)]; // bracket array type and tuple array expression
 
 let c: [u32; (3, 2)] = [0; (3, 2)]; // tuples only
 
