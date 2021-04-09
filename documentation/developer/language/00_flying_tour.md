@@ -42,7 +42,7 @@ r: u32 = 0;
 ```
 ## 1. Data Types
 
-Leo supports boolean, unsigned integer, signed integer, field, group element, and address [data types](03_types.md). Data types in Leo 
+Leo supports boolean, unsigned integer, signed integer, field, group, and address [data types](03_types.md). Data types in Leo 
 must be explicitly stated `let a: u32 = 5`;
 Collections of data types can be created in the form of static [arrays and tuples](04_arrays_and_tuples.md).
 
