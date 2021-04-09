@@ -105,7 +105,7 @@ They provide a composite data type that can store any value and provide function
 
 The `new` function is static and can be called without instantiating the circuit.
 
-Leo introduces `Self` and `self` keywords to access circuit member variables.
+Leo introduces `Self` and `self` keywords to access circuit member variables and functions.
 
 ## 5. Imports
 
