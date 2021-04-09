@@ -34,7 +34,7 @@ let b: [u32; 3] = [1; 3];
 
 ## Array Indexing
 
-Access an element of an array starting at index 0. Index must be a `u32`.
+Access an element of an array starting at index 0. Index must be a `u8`, `u16`, or `u32`.
 ```leo
 let arr: [u32; 4] = [1, 2, 3, 4];
 
@@ -43,8 +43,8 @@ let first = arr[0]; // access the first element
 
 ## Array Slicing
 Access a subset of an array. 
-From index must be a `u32`. Omitting from index defaults to index 0.
-To index must be a `u32`. Omitting to_index defaults to the length of the array minus one.
+From index must be a `u8`, `u16`, or `u32`. Omitting from index defaults to index 0.
+To index must be a `u8`, `u16`, or `u32`. Omitting to_index defaults to the length of the array minus one.
 
 ```leo
 let arr: [u32; 4] = [0, 1, 2, 3];
