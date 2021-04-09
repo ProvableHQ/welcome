@@ -63,7 +63,7 @@ function main() {
 
 ## Circuit member variables
 Circuit member variables define the name and type of pieces of data grouped by the circuit.  
-Circuits member variables can be any type including other circuits.  
+Circuit member variables can be any type including other circuits.  
 They can be accessed using dot syntax `.`.  
 
 ```leo
@@ -228,7 +228,6 @@ function main() {
     g.log_constant(); // Error - "g" is not constant.
 }
 ```
-
 
 
 
