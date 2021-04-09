@@ -115,7 +115,7 @@ function main() -> [[u32; 3]; 2] {
 }
 ```
 
-The value `[[0; 3]; 2]` is read as: An array of length 2 of arrays of length 3 with elements 0u32.
+The value `[[0; 3]; 2]` is read as: An array of length 2 of arrays of length 3 with elements `0u32`.
 
 ### Multi-dimensional Array Tuple Syntax
 
@@ -134,7 +134,7 @@ function main() -> [u32; (2, 3)] {
 }
 ```
 
-The value `[0; (2, 3)]` is read the same as the bracket notation: An array of length 2 of arrays of length 3 with elements 0u32.
+The value `[0; (2, 3)]` is read the same as the bracket notation: An array of length 2 of arrays of length 3 with elements `0u32`.
 
 :::note
 Array tuple syntax is merely syntactic sugar for the more verbose bracket notation
@@ -161,7 +161,7 @@ function main() -> u32 {
     return m[1][2]
 }
 ```
-1. Allocate an array with 3 columns and 2 rows of type u32 `[[u32; 3]; 2]`. 
+1. Allocate an array with 3 columns and 2 rows of type `u32` `[[u32; 3]; 2]`. 
 2. We would like to return value `5u32`.
 3. Access the second row located at index 1 `m[1]`.
 4. Access the third column located at index 2 `m[1][2]`.
