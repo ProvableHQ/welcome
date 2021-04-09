@@ -63,7 +63,7 @@ function main() {
 
 ## Circuit member variables
 Circuit member variables define the name and type of pieces of data grouped by the circuit.  
-Circuits members variables can be any type including other circuits.  
+Circuits member variables can be any type including other circuits.  
 They can be accessed using dot syntax `.`.  
 
 ```leo
@@ -96,7 +96,7 @@ function main() -> u32 {
 ```
 
 ## Circuit member static functions
-Circuit functions that do not have a self argument are considered static, 
+Circuit functions that do not have a `self` argument are considered static, 
 enabling them to be called without instantiating the circuit.  
 They can be accessed using double colon syntax `::`.
 
@@ -167,7 +167,7 @@ function main() {
 The `mut self` keyword provides mutable access to instantiated circuit member variables.
 It must be included as an argument in the circuit function signature.
 
-The circuit function must be called using dot `.` syntax (Similar to rust syntax)
+The circuit function must be called using dot `.` syntax (similar to Rust syntax).
 The instantiated circuit variable must be defined using a `let` declaration.
 
 All functions which do not contain the `self`, `mut self`, or `const self` keyword are considered static. They must be called using double colon `::` syntax.
@@ -205,7 +205,7 @@ function main() {
 The `const self` keyword provides access to the instantiated constant circuit member variables.
 It must be included as an argument in the circuit function signature.
 
-The circuit function must be called using dot `.` syntax (Similar to rust syntax)
+The circuit function must be called using dot `.` syntax (similar to Rust syntax).
 The instantiated circuit variable must be defined using a `const` declaration.
 
 All functions which do not contain the `self`, `mut self`, or `const self` keyword are considered static. They must be called using double colon `::` syntax.
