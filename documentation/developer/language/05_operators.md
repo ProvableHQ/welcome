@@ -29,7 +29,7 @@ Otherwise, the error will be caught at proving time when main function inputs ar
 | Operation | Operators | Supported Types |
 |:---------:|:---------:|:---------------:|
 | AND       | `&&`      | `bool`          |
-| OR        | \| \|     | `bool`          |
+| OR        | `\|\|`    | `bool`          |
 | NOT       | `!`       | `bool`          |
 
 ## Relational Operators
@@ -56,7 +56,7 @@ Operators will prioritize evaluation according to:
 |             `+` `-`           | left to right |
 |  `==` `!=` `<` `>` `<=` `>=`  | left to right |
 |              `&&`             | left to right |
-|             \| \|             | left to right |
+|            `\|\|`             | left to right |
 | `=` `+=` `-=` `*=` `/=` `**=` |               |
 
 ### Parentheses
