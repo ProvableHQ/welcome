@@ -43,7 +43,7 @@ let first = arr[0]; // access the first element
 
 ## Array Slicing
 Access a subset of an array. 
-The `from` index must be a `u8`, `u16`, or `u32`. Omitting from index defaults to index 0.
+The `from` index must be a `u8`, `u16`, or `u32`. Omitting the `from` index will default to index 0.
 To index must be a `u8`, `u16`, or `u32`. Omitting to_index defaults to the length of the array minus one.
 
 ```leo
