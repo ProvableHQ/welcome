@@ -54,7 +54,8 @@ Operators will prioritize evaluation according to:
 |              `**`             | right to left |
 |             `*` `/`           | left to right |
 |             `+` `-`           | left to right |
-|  `==` `!=` `<` `>` `<=` `>=`  | left to right |
+|       `<` `>` `<=` `>=`       |               |
+|           `==` `!=`           | left to right |
 |              `&&`             | left to right |
 |             \| \|             | left to right |
 | `=` `+=` `-=` `*=` `/=` `**=` |               |
