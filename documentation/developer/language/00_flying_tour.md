@@ -38,7 +38,7 @@ a: u32 = 5;
 b: u32 = 25;
 
 [registers]
-r: u32 = 0;
+r: u32 = false;
 ```
 ## 1. Data Types
 
