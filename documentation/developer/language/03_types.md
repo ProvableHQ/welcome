@@ -61,7 +61,7 @@ coordinate pairs
 syntax would collide with normal tuple `(a, b)` values. 
 
 ```leo
-let b = 0group; // the zero group
+let b = 0group; // the zero of the group
 
 let a = 1group; // the group generator
 
