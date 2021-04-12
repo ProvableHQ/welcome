@@ -65,7 +65,6 @@ self
 Self
 static
 string
-test
 true
 u8
 u16
