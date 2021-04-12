@@ -169,7 +169,7 @@ function main() -> u32 {
 
 # Tuples
 Leo supports tuples of other data types.
-Tuple values are accessed with a dot `.` the index must be a `u32`.
+Tuple values are accessed with a dot `.` the index must be a non-negative numeric literal.
 
 ```leo
 let a = (true, true);
