@@ -27,7 +27,7 @@ circuit Point {
     x: u32,
     y: u32,
 
-    function sum() -> u32 {
+    function sum(self) -> u32 {
         return self.x + self.y
     }
 }
@@ -79,4 +79,3 @@ Therefore, it is required that all **.leo** files are imported by your **lib.leo
 
 It is possible to have a **main.leo** and **lib.leo** file in the same project. The compiler will look at **.leo** files 
 imported by both before publishing.
-

@@ -34,7 +34,7 @@ let b: [u32; 3] = [1; 3];
 
 ## Array Indexing
 
-Access an element of an array starting at index 0. Index must be a `u32`.
+Access an element of an array starting at index 0. Indices must be a `u8`, `u16`, or `u32`.
 ```leo
 let arr: [u32; 4] = [1, 2, 3, 4];
 
@@ -43,15 +43,15 @@ let first = arr[0]; // access the first element
 
 ## Array Slicing
 Access a subset of an array. 
-From index must be a `u32`. Omitting from index defaults to index 0.
-To index must be a `u32`. Omitting to_index defaults to the length of the array minus one.
+The `from` index must be a `u8`, `u16`, or `u32`: it is the first element of the range. Omitting the `from` index will default to index 0.
+The `to` index must be a `u8`, `u16`, or `u32`: it is one past the last element of the range. Omitting the `to` index defaults to the length of the array.
 
 ```leo
 let arr: [u32; 4] = [0, 1, 2, 3];
 
-let first_two = arr[..1]; // = [0, 1]
+let first_two = arr[..2]; // = [0, 1]
 
-let middle_two = arr[1..2]; // = [1, 2]
+let middle_two = arr[1..2]; // = [1]
 
 let last_two = arr[2..]; // = [2, 3]
 ```
@@ -64,7 +64,7 @@ the spread is equivalent to listing its elements in the inline array constructio
 ```leo
 let arr_4: [u32; 4] = [1, 1, 1, 1];
 
-let arr_5: [u32; 5] = [...a, 1]; // Evaluates to [1, 1, 1, 1, 1]
+let arr_5: [u32; 5] = [...arr_4, 1]; // Evaluates to [1, 1, 1, 1, 1]
 ```
 
 ### Notes on Fixed Size
@@ -115,7 +115,7 @@ function main() -> [[u32; 3]; 2] {
 }
 ```
 
-The value `[[0; 3]; 2]` is read as: An array of length 2 of arrays of length 3 with elements 0u32.
+The value `[[0; 3]; 2]` is read as: An array of length 2 of arrays of length 3 with elements `0u32`.
 
 ### Multi-dimensional Array Tuple Syntax
 
@@ -134,7 +134,7 @@ function main() -> [u32; (2, 3)] {
 }
 ```
 
-The value `[0; (2, 3)]` is read the same as the bracket notation: An array of length 2 of arrays of length 3 with elements 0u32.
+The value `[0; (2, 3)]` is read the same as the bracket notation: An array of length 2 of arrays of length 3 with elements `0u32`.
 
 :::note
 Array tuple syntax is merely syntactic sugar for the more verbose bracket notation
@@ -144,7 +144,7 @@ Array tuple syntax is merely syntactic sugar for the more verbose bracket notati
 ```leo
 let a: [[u32; 2]; 3] = [[0; 2]; 3]; // brackets only
 
-let b: [[u32: 2]; 3] = [0; (3, 2)]; // bracket array type and tuple array expression
+let b: [[u32; 2]; 3] = [0; (3, 2)]; // bracket array type and tuple array expression
 
 let c: [u32; (3, 2)] = [0; (3, 2)]; // tuples only
 
@@ -161,7 +161,7 @@ function main() -> u32 {
     return m[1][2]
 }
 ```
-1. Allocate an array with 3 columns and 2 rows of type u32 `[[u32; 3]; 2]`. 
+1. Allocate an array with 3 columns and 2 rows of type `u32` `[[u32; 3]; 2]`. 
 2. We would like to return value `5u32`.
 3. Access the second row located at index 1 `m[1]`.
 4. Access the third column located at index 2 `m[1][2]`.
@@ -169,7 +169,7 @@ function main() -> u32 {
 
 # Tuples
 Leo supports tuples of other data types.
-Tuple values are accessed with a dot `.` the index must be a `u32`.
+Tuple values are accessed with a dot `.` the index must be a non-negative numeric literal.
 
 ```leo
 let a = (true, true);

@@ -35,7 +35,7 @@ circuit Point {
 }
 
 function main() {
-    let mut p = Point::new();
+    let p = Point::new();
     
     p.x = 4u32;
     p.y = 6u32;
@@ -51,7 +51,7 @@ function main() {
 ### Program ID
 
 Each program has a unique a **program ID** that is produced from the
-hash of the [verifying key](#verifying-key). This program ID is used to indicate the program that was ran in the
+hash of the [verifying key](#verifying-key). This program ID is used to indicate the program that was run in the
 consumption or production of [records](02_records.md).
 
 ### Program Input
