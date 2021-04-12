@@ -38,11 +38,11 @@ a: u32 = 5;
 b: u32 = 25;
 
 [registers]
-r: u32 = 0;
+r: u32 = false;
 ```
 ## 1. Data Types
 
-Leo supports boolean, unsigned integer, signed integer, field, group element, and address [data types](03_types.md). Data types in Leo 
+Leo supports boolean, unsigned integer, signed integer, field, group, and address [data types](03_types.md). Data types in Leo 
 must be explicitly stated `let a: u32 = 5`;
 Collections of data types can be created in the form of static [arrays and tuples](04_arrays_and_tuples.md).
 
@@ -105,7 +105,7 @@ They provide a composite data type that can store any value and provide function
 
 The `new` function is static and can be called without instantiating the circuit.
 
-Leo introduces `Self` and `self` keywords to access circuit member variables.
+Leo introduces `Self` and `self` keywords to access circuit member variables and functions.
 
 ## 5. Imports
 

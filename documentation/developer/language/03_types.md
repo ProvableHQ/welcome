@@ -35,7 +35,7 @@ Higher bit length integers generate more constraints in the circuit, which can s
 :::
 
 ### A Note on Leo Integers
-Leo will not default to a integer type. The definition of a integer **must** include an explicit type.
+Leo will not default to an integer type. The definition of a integer **must** include an explicit type.
 After assignment, you can choose to explicitly add the type or let the compiler interpret implicitly.
 **Type casting is not yet supported.**
 
@@ -61,7 +61,7 @@ coordinate pairs
 syntax would collide with normal tuple `(a, b)` values. 
 
 ```leo
-let b = 0group; // the zero group
+let b = 0group; // the zero of the group
 
 let a = 1group; // the group generator
 

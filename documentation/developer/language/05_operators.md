@@ -51,7 +51,7 @@ Operators will prioritize evaluation according to:
 |            Operator           | Associativity |
 |:-----------------------------:|:-------------:|
 |              `!`              |               |
-|              `**`             | left to right |
+|              `**`             | right to left |
 |             `*` `/`           | left to right |
 |             `+` `-`           | left to right |
 |  `==` `!=` `<` `>` `<=` `>=`  | left to right |

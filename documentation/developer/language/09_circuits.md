@@ -221,15 +221,10 @@ circuit Foo {
 }
 
 function main() {
-    const f = Foo { a: 0u8 }; 
+    const f = Foo { a: 0u32 }; 
     f.log_constant(); // Ok - "f" is constant.
     
-    let g = Foo { a: 0u8 };
+    let g = Foo { a: 0u32 };
     g.log_constant(); // Error - "g" is not constant.
 }
 ```
-
-
-
-
-

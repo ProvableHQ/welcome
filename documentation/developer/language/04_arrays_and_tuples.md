@@ -34,7 +34,7 @@ let b: [u32; 3] = [1; 3];
 
 ## Array Indexing
 
-Access an element of an array starting at index 0. Index must be a `u32`.
+Access an element of an array starting at index 0. Indices must be a `u8`, `u16`, or `u32`.
 ```leo
 let arr: [u32; 4] = [1, 2, 3, 4];
 
@@ -43,8 +43,8 @@ let first = arr[0]; // access the first element
 
 ## Array Slicing
 Access a subset of an array. 
-From index must be a `u32`: it is the first element of the range. Omitting from index defaults to index 0.
-To index must be a `u32`: it is one past the last element of the range. Omitting to_index defaults to the length of the array.
+The `from` index must be a `u8`, `u16`, or `u32`: it is the first element of the range. Omitting the `from` index will default to index 0.
+The `to` index must be a `u8`, `u16`, or `u32`: it is one past the last element of the range. Omitting the `to` index defaults to the length of the array.
 
 ```leo
 let arr: [u32; 4] = [0, 1, 2, 3];
@@ -64,7 +64,7 @@ the spread is equivalent to listing its elements in the inline array constructio
 ```leo
 let arr_4: [u32; 4] = [1, 1, 1, 1];
 
-let arr_5: [u32; 5] = [...a, 1]; // Evaluates to [1, 1, 1, 1, 1]
+let arr_5: [u32; 5] = [...arr_4, 1]; // Evaluates to [1, 1, 1, 1, 1]
 ```
 
 ### Notes on Fixed Size
@@ -144,7 +144,7 @@ Array tuple syntax is merely syntactic sugar for the more verbose bracket notati
 ```leo
 let a: [[u32; 2]; 3] = [[0; 2]; 3]; // brackets only
 
-let b: [[u32: 2]; 3] = [0; (3, 2)]; // bracket array type and tuple array expression
+let b: [[u32; 2]; 3] = [0; (3, 2)]; // bracket array type and tuple array expression
 
 let c: [u32; (3, 2)] = [0; (3, 2)]; // tuples only
 
