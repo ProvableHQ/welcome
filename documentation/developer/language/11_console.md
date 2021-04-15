@@ -12,7 +12,7 @@ The assert function is most commonly used in [**testing**](12_tests.md).
 
 ```leo
 function square(a: u32) -> u32 {
-    return a * a
+    return a * a;
 }
 
 @test

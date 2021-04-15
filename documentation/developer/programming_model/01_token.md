@@ -182,9 +182,9 @@ function debit(
     let passed = condition1 && condition2 && condition3 && condition4 && condition5;
 
     if passed {
-        return (id_t, vb_t_new)
+        return (id_t, vb_t_new);
     } else {
-        return (id_t, vb_t_old)
+        return (id_t, vb_t_old);
     }
 }
 ```
@@ -319,9 +319,9 @@ function debit(
     let passed = condition1 && condition2 && condition3 && condition4 && condition6 && condition7
 
     if passed {
-        return (id_t, vb_t_new)
+        return (id_t, vb_t_new);
     } else {
-        return (id_t, vb_t_old)
+        return (id_t, vb_t_old);
     }
 }
 ```
@@ -469,9 +469,9 @@ function credit(
     let passed = condition1 && condition2 && condition3 && condition4;
 
     if passed {
-        return (id_t, vb_t_new)
+        return (id_t, vb_t_new);
     } else {
-        return (id_t, vb_t_old)
+        return (id_t, vb_t_old);
     }
 }
 ```

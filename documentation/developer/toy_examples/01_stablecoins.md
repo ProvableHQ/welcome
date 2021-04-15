@@ -70,7 +70,7 @@ payload: [ id || vb || signature ]
 6. If old record 0 == state leaf_index
 	Check registers vb == 0
 6. Add registers vb += record payload vb
-7. Return (registers id, registers vb, token_credit)
+7. Return (registers id, registers vb, token_credit);
 
 ### stable_token_credit pseudocode 
 1. Verify record payload signature.verify(policy, issuing_authority)
@@ -81,7 +81,7 @@ payload: [ id || vb || signature ]
 6. Registers vb += record payload vb
 7. If new record 1 == state leaf_index
 	Check registers vb == 0
-8. Return (registers id, registers vb, ?)
+8. Return (registers id, registers vb, ?);
 
 :::info
 For a more in-depth description of how tokens use records and state check out the [**programming model**](../programming_model/01_token.md) for tokens.

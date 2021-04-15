@@ -82,7 +82,6 @@
 
 ### Chapter 6: Toy Examples
 
-- [Digital Assets](./developer/toy_examples/00_digital_assets.md)
 - [Stablecoins](./developer/toy_examples/01_stablecoins.md)
 - [Private Swaps](./developer/toy_examples/02_private_swaps.md)
 - [Pedersen Hash](./developer/toy_examples/03_pedersen_hash.md)

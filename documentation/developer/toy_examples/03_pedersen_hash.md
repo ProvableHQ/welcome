@@ -16,7 +16,7 @@ circuit PedersenHash {
 
     // Instantiates a Pedersen hash circuit
     function new(parameters: [group; 256]) -> Self {
-        return Self { parameters: parameters }
+        return Self { parameters: parameters };
     }
 
     function hash(self, bits: [bool; 256]) -> group {
@@ -26,7 +26,7 @@ circuit PedersenHash {
                 digest += self.parameters[i];
             }
         }
-        return digest
+        return digest;
     }
 }
 
@@ -35,7 +35,7 @@ function main() -> group {
     const parameters = [1group; 256];
     const pedersen = PedersenHash::new(parameters);
     let hash_input: [bool; 256] = [true; 256];
-    return pedersen.hash(hash_input)
+    return pedersen.hash(hash_input);
 }
 
 ```
