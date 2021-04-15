@@ -32,7 +32,7 @@ A maker cancels an intention to trade by invoking the exchange_or_cancel_program
 5. Check registers values are 0
 6. Add payload value to register value 1 balance
 7. Set register taker_recv to record owner
-8. return registers;
+8. return registers
 
 ### 2. Exchange_or_cancel overview
 
@@ -51,7 +51,7 @@ A maker cancels an intention to trade by invoking the exchange_or_cancel_program
 4. Check registers value 0 is 0
 5. Check registers value 1 is matches
 6. Add payload value to register value 0
-7. return registers;
+7. return registers
 
 #### 2.2 Cancel
 
@@ -60,7 +60,7 @@ A maker cancels an intention to trade by invoking the exchange_or_cancel_program
 3. Check registers values are 0
 4. Add payload value to register value 0
 5. Set taker_recv to the refund address
-6. return registers ;
+6. return registers
 
 
 ### 3. Exchange_token_credit overview
@@ -71,13 +71,13 @@ A maker cancels an intention to trade by invoking the exchange_or_cancel_program
     2. Check registers token 0 ids match
     3. Subtract payload value from register value 0
     4. Check register value 0 is 0
-    5. return registers;
+    5. return registers
 3. Else record is new record 1
     1. Check record owner is the maker’s recv address
     2. Check registers token 1 ids match
     3. Subtract payload value from register value 1
     4. Check register value 1 is 0
-    5. return registers;
+    5. return registers
 
 
 ## Code:
@@ -130,7 +130,7 @@ Old record 0: Taker’s token debit function for 5Y
     4. Check exchange_token_debit == record death_predicate_id
     5. Add registers vb_1 += payload vb // Debit the taker amount for the trade
     6. Set registers taker_recv = record payload recv
-    7. return registers ( maker_recv, id_0, vb_0, taker_recv, id_1, vb_1);
+    7. return registers ( maker_recv, id_0, vb_0, taker_recv, id_1, vb_1)
 
 Old record 1: Makers’s intention to trade 10X for 5Y
 
@@ -146,7 +146,7 @@ Old record 1: Makers’s intention to trade 10X for 5Y
     8. Check registers vb_1 == record payload vb_1: 5
     9. Add registers vb_0 += record payload value // Debit the maker’s amount for the trade
     10. Set registers maker_recv = record payload recv
-    11. return registers ( maker_recv, id_0, vb_0, taker_recv, id_1, vb_1);
+    11. return registers ( maker_recv, id_0, vb_0, taker_recv, id_1, vb_1)
 
 New record 0: Takers token credit function for 10X
 
@@ -190,7 +190,7 @@ Old record 1: Cancel maker’s request to trade 10X for 5Y
     8. Check registers vb_1 == 0
     9. Add registers vb_0 += record payload vb_0
     10. Set registers taker_recv = record payload recv
-    11. return registers ( maker_recv, id_0, vb_0, taker_recv, id_1, vb_1);
+    11. return registers ( maker_recv, id_0, vb_0, taker_recv, id_1, vb_1)
 
 New record 0: Maker’s token credit function for 10X
     1. Check exchange_token_credit == record birth_predicate_id
