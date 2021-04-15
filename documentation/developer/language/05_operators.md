@@ -12,7 +12,7 @@ When evaluating an operator that has an implicit expression, Leo will try and re
 ## Arithmetic Operators
 
 Leo will try to detect arithmetic operation errors as soon as possible. 
-If an integer overflow or division by zero can be identified at compile time Leo will quickly tell the programmer.
+For example, if a division by zero can be identified at compile time Leo will quickly tell the programmer.
 Otherwise, the error will be caught at proving time when main function inputs are fetched.
 
 | Operation        |  Operators |         Supported Types        |
