@@ -84,6 +84,7 @@
 - [Bubble Sort](./developer/toy_examples/01_bubble_sort.md)
 - [Linear Regression](./developer/toy_examples/02_linear_regression.md)
 
+
 ### Chapter 7: Additional Material
 
 - [Style Guide](./developer/additional_material/00_style.md)
