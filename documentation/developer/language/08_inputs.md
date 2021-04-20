@@ -27,7 +27,7 @@ Program inputs can be accessed as main function [arguments](07_functions.md#argu
 ```leo title="src/main.leo"
 function main(a: u32, b: u32) -> u32 {
     let c: u32 = a + b;
-    return c
+    return c;
 }
 ```
 
@@ -49,7 +49,7 @@ Constant program inputs can be accessed as main function [arguments](07_function
 ```leo title="src/main.leo"
 function main(a: u32, const b: u32) -> u32 {
     let c: u32 = a + b;
-    return c
+    return c;
 }
 ```
 

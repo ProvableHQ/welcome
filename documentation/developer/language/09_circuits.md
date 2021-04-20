@@ -17,7 +17,7 @@ circuit Rectangle {
     height: u32,
 
     function area(self) -> u32 {
-        return self.width * self.height
+        return self.width * self.height;
     }
 }
 
@@ -73,7 +73,7 @@ circuit Point {
 }
 function main() -> u32 {
     let p = Point {x: 1u32, y: 0u32};
-    return p.x // Access the circuit member variable `x`
+    return p.x; // Access the circuit member variable `x`
 }
 ```
 
@@ -85,13 +85,13 @@ circuit Foo {
     x: u32,    
 
     function echo(self) -> u32 {
-        return self.x
+        return self.x;
     }
 }
 
 function main() -> u32 {
     let c = Foo { x: 1u32 };
-    return c.echo()
+    return c.echo();
 }
 ```
 
@@ -103,12 +103,12 @@ They can be accessed using double colon syntax `::`.
 ```leo
 circuit Foo {
     function echo(x: u32) -> u32 {
-        return x
+        return x;
     }
 }
 
 function main() -> u32 {
-    return Foo::echo(1u32)
+    return Foo::echo(1u32);
 }
 ```
 :::note
@@ -125,7 +125,7 @@ circuit Foo {
 
     // Instantiates a new Foo circuit with a = 0u32.
     function new() -> Self { // Self resolves to circuit type Foo
-        return Self { a: 0u32 }
+        return Self { a: 0u32 };
     }
 }
 
@@ -146,7 +146,7 @@ circuit Foo {
 
     // Instantiates a new Foo circuit with a = 0u32.
     function new() -> Self { // Self resolves to circuit type Foo
-        return Self { a: 0u32 }
+        return Self { a: 0u32 };
     }
 
     // Logs the self circuit variable to console.
@@ -178,7 +178,7 @@ circuit Foo {
 
     // Instantiates a new Foo circuit with a = 0u32.
     function new() -> Self { // Self resolves to circuit type Foo
-        return Self { a: 0u32 }
+        return Self { a: 0u32 };
     }
 
     // Logs the self circuit variable to console.

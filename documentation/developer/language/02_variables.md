@@ -18,7 +18,7 @@ function add_one() -> u8 {
     let a = 0u8;   // allocated, value enforced on this line
     const b = 1u8; // constant, value not enforced yet
 
-    return a + b   // allocated, computed value is enforced to be the sum of both values
+    return a + b;   // allocated, computed value is enforced to be the sum of both values
 }
 ```
 Computations are expressed in terms of arithmetic R1CS circuits. Thus computing on an **allocated** variable always results in another **allocated** variable. 
