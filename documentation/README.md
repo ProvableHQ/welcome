@@ -55,7 +55,6 @@
 ### Chapter 4: Programming Model
 
 - [The Leo Programming Model](./developer/programming_model/00_model.md)
-- [A Leo Token on Aleo](./developer/programming_model/01_token.md)
 
 
 ### Chapter 5: CLI
@@ -85,6 +84,7 @@
 - [Pedersen Hash](./developer/toy_examples/00_pedersen_hash.md)
 - [Bubble Sort](./developer/toy_examples/01_bubble_sort.md)
 - [Linear Regression](./developer/toy_examples/02_linear_regression.md)
+
 
 ### Chapter 7: Additional Material
 
