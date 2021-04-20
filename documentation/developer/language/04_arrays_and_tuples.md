@@ -111,7 +111,7 @@ function main() -> [[u32; 3]; 2] {
 
     console.log("Arrays are equal: {}", a == b);
 
-    return a
+    return a;
 }
 ```
 
@@ -130,7 +130,7 @@ function main() -> [u32; (2, 3)] {
 
     console.log("Arrays are equal: {}", a == b);
 
-    return a
+    return a;
 }
 ```
 
@@ -158,7 +158,7 @@ function main() -> u32 {
     let m: [[u32; 3]; 2] = [[0u32, 1u32, 2u32],
                             [3u32, 4u32, 5u32]];
 
-    return m[1][2]
+    return m[1][2];
 }
 ```
 1. Allocate an array with 3 columns and 2 rows of type `u32` `[[u32; 3]; 2]`. 

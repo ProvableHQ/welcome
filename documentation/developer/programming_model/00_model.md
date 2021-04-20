@@ -180,7 +180,7 @@ State register values can be accessed by passing the `state`, `record`, and `sta
 accessing each variable via dot `.` syntax.
 
 ```leo
-function main(input) {
+function main() {
     let index = input.state.index;
     
     let balance_is_zero = input.record.value_balance == 0u64;

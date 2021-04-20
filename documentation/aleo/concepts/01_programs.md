@@ -26,11 +26,11 @@ circuit Point {
         return Self { 
             x: 0, 
             y: 0, 
-        }
+        };
     }
 
     function add(self) -> u32 {
-        return self.x + self.y
+        return self.x + self.y;
     }
 }
 

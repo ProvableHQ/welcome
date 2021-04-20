@@ -14,7 +14,7 @@ Functions must be in a program's current scope to be called.
 
 ```leo
 function square(a: u32) -> u32 {
-    return a * a
+    return a * a;
 }
 ```
 
@@ -28,7 +28,7 @@ circuit Point {
     y: u32,
 
     function sum(self) -> u32 {
-        return self.x + self.y
+        return self.x + self.y;
     }
 }
 ```
@@ -54,7 +54,7 @@ Tests are executed with the Leo [test command](../cli/05_test.md).
 
 ```leo
 function square(a: u32) -> u32 {
-    return a * a
+    return a * a;
 }
 
 @test
