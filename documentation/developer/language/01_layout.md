@@ -67,15 +67,7 @@ function test_square() {
 }
 ```
 
-## Binaries vs. Libraries
+## Leo Binaries
 
 The **main.leo** file in a Leo project is similar to a binary executable created in languages such as Rust.
 Leo CLI commands use **main.leo** as a starting point to pass in witness input values and generate proofs to produce a result.
-
-If the goal of your project is to create circuits that other Leo developers can import into their projects, 
-then you should create a library **lib.leo** file. When publishing your project as a package, it is not necessary to have a **main.leo**
-in the source directory. The compiler will look at **lib.leo** and make sure all circuits and functions are valid including imports.
-Therefore, it is required that all **.leo** files are imported by your **lib.leo** before publishing.
-
-It is possible to have a **main.leo** and **lib.leo** file in the same project. The compiler will look at **.leo** files 
-imported by both before publishing.
