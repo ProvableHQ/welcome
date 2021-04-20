@@ -10,7 +10,7 @@ circuit Bar {
 }
 
 function baz() -> u32 {
-    return 1u32
+    return 1u32;
 }
 ```
 

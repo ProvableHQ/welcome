@@ -15,7 +15,7 @@ Use the `@test` annotation to define tests in a leo program.
 
 ```leo
 function main(a: u32) -> u32 {
-    return a
+    return a;
 }
 
 @test
@@ -53,7 +53,7 @@ function main() {
 Inside the Leo `@test` function body you have access to all `imports`, `circuits`, and `functions` in the current scope.
 ```leo title="src/main.leo"
 function add_one(a: u32) -> u32 {
-    return a + 1
+    return a + 1;
 }
 
 @test
@@ -91,7 +91,7 @@ The console output clearly states that our test passed, and our constraint syste
 ### Failing Tests
 ```leo title="src/main.leo"
 function add_one(a: u32) -> u32 {
-    return a + 1
+    return a + 1;
 }
 
 @test
@@ -134,7 +134,7 @@ Tests with invalid syntax will fail before their circuit is run.
 
 ```leo title="src/main.leo"
 function add_one(a: u32) -> u32 {
-    return a + 1
+    return a + 1;
 }
 
 @test
@@ -204,7 +204,7 @@ Use the test annotation to load the production input environment into the progra
 
 ```leo title="src/main.leo"
 function add_one(a: u32) -> u32 {
-    return a + 1
+    return a + 1;
 }
 
 @test(production)

@@ -22,7 +22,7 @@ function add_one(arg: u32) { // one argument `arg` with type `u32`
 }
 
 function and(a: bool, b: bool) -> bool { // two arguments `a`, `b` with types `bool`
-    return a && b
+    return a && b;
 }
 ```
 Function arguments are passed by value from the calling function. There are no references in Leo.
@@ -35,7 +35,7 @@ function main() -> u32 {
     let a = 1u32;
     call(a); // the `call` function receives a copy of `a`
 
-    return a // returns 1
+    return a; // returns 1
 }
 ```
 
@@ -46,7 +46,7 @@ Doing this will constrain the function input to constant values only.
 
 ```leo
 function one(const value: u32) -> u32 {
-    return value + 1
+    return value + 1;
 }
 
 function main() {
@@ -80,11 +80,11 @@ Functions can return one or more values. Multiple values are returned as a tuple
 ```leo
 function double(f: field) -> field { // one return value with type `field`
     let value = f * 2field;
-    return value
+    return value;
 }
 
 function arrays() -> (u32, [u32; 2]) { // two return values 
-    return (1, [2, 3])
+    return (1, [2, 3]);
 }
 ```
 
@@ -93,11 +93,11 @@ Functions can be called by their defined name followed by the typed arguments in
 ```leo
 function double(f: field) -> field {
     let value = f * 2field;
-    return value
+    return value;
 }
 
 function arrays() -> (u32, [u32; 2]) {
-    return (1, [2, 3])
+    return (1, [2, 3]);
 }
 
 function main() {
@@ -116,11 +116,11 @@ Functions in Leo have their own scope. There are no global variables.
 ```leo
 function foo() -> field {
     // return myGlobal <- not allowed
-    return 42field
+    return 42field;
 }
 
 function main() -> field {
     let myGlobal = 42field;
-    return foo()
+    return foo();
 }
 ```

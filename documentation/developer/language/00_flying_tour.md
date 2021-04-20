@@ -13,11 +13,11 @@ To gain a deeper understanding of the Leo language, continue to the [next page](
 **`src/main.leo`**
 ```leo
 function main(a: u32, b: u32) -> bool {
-    return square(a, b)
+    return square(a, b);
 }
 
 function square(a: u32, b: u32) -> bool {
-    return a * a == b
+    return a * a == b;
 }
 
 @test
@@ -80,11 +80,11 @@ circuit Point {
         return Self { 
             x: 0, 
             y: 0, 
-        }
+        };
     }
 
     function add(self) -> u32 {
-        return self.x + self.y
+        return self.x + self.y;
     }
 }
 
