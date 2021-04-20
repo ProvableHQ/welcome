@@ -61,9 +61,9 @@ accessing each variable via dot `.` syntax.
 
 ```leo
 function main(data: [u8; 32], registers) {
-    let a = registers.value_balance + 5;
-
-    assert_eq!(registers.token_id, data);
+    let new_balance = registers.value_balance + 5;
+    
+    let is_valid = registers.token_id == data;
 }
 ``` 
 
@@ -183,10 +183,8 @@ accessing each variable via dot `.` syntax.
 function main(input) {
     let index = input.state.index;
     
-    assert_eq!(input.record.value_balance, 0u64);
-
-    assert_eq!(input.state_leaf.network_id, 1u8);
+    let balance_is_zero = input.record.value_balance == 0u64;
+    
+    let id_is_one = input.state_leaf.network_id == 1u8;
 }
 ``` 
-
-To see how to access registers and state variables in an application, lets walk through a familiar example of [transferring a token](01_token.md) on Aleo.
