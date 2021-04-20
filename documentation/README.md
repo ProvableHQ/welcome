@@ -55,8 +55,6 @@
 ### Chapter 4: Programming Model
 
 - [The Leo Programming Model](./developer/programming_model/00_model.md)
-- [A Leo Token on Aleo](./developer/programming_model/01_token.md)
-
 
 ### Chapter 5: CLI
 
