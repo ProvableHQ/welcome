@@ -78,8 +78,8 @@ function test_foo() {
 
 ```leo
 circuit A {
-    x: u32,
-    y: u32,
+    x: u32;
+    y: u32;
 
     function new() {
         // ...
