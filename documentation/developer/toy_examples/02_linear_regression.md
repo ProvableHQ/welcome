@@ -19,8 +19,8 @@ as shown in Figure 15. Figure 16 shows the code used to instantiate the least-sq
 
 ```leo
 circuit Point {
-    x: i32,
-    y: i32,
+    x: i32;
+    y: i32;
     
     function new(x: i32, y: i32) -> Self { 
         return Self { x, y };
@@ -30,7 +30,7 @@ circuit Point {
 
 ```leo
 circuit LinearRegression {
-    points: [Point; 5],
+    points: [Point; 5];
     
     // Instantiates a linear regression circuit.
     function new(points: [Point; 5]) -> Self { 

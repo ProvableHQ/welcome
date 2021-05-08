@@ -73,8 +73,8 @@ affecting the underlying constraint system.
 **`src/main.leo`**
 ```leo
 circuit Point {
-    x: u32,
-    y: u32,
+    x: u32;
+    y: u32;
 
     function new() -> Self {
         return Self { 

@@ -6,7 +6,7 @@ title: Imports
 Import from a local file in the same package `src/` directory by its file name.
 ```leo title="src/bar.leo"
 circuit Bar {
-    b: u32
+    b: u32;
 }
 
 function baz() -> u32 {
@@ -33,7 +33,7 @@ Import from a foreign package in the `imports/` directory using its `[package]` 
 
 ```leo title="imports/bar/src/lib.leo"
 circuit Bar {
-    b: u32
+    b: u32;
 }
 ```
 
@@ -53,7 +53,7 @@ We wish to import the `Baz` circuit from the `baz.leo` file in the `bar` directo
 
 ```leo title="imports/foo/src/bar/baz.leo"
 circuit Baz {
-    b: u32
+    b: u32;
 }
 ```
 

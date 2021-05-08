@@ -21,7 +21,16 @@ function add_one() -> u8 {
     return a + b;   // allocated, computed value is enforced to be the sum of both values
 }
 ```
-Computations are expressed in terms of arithmetic R1CS circuits. Thus computing on an **allocated** variable always results in another **allocated** variable. 
+Computations are expressed in terms of arithmetic R1CS circuits. Thus computing on an **allocated** variable always results in another **allocated** variable.
+
+In addition to the above you can create global constants outside of the scopes of functions and circuits.
+```leo
+const x = 10u32;
+
+function print_x() {
+    console.log("x: {}", x); // will print 10
+}
+```
 
 ## Mutability
 All `const` variables in Leo are immutable - they cannot be changed after assignment.

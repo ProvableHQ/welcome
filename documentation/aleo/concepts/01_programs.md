@@ -19,8 +19,8 @@ existing developer frameworks to supercharge web apps with privacy and integrity
 
 ```leo
 circuit Point {
-    x: u32,
-    y: u32,
+    x: u32;
+    y: u32;
 
     function new() -> Self {
         return Self { 

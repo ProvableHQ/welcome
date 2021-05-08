@@ -13,8 +13,8 @@ Circuit types with the same members but different names are different types.
 
 ```leo
 circuit Rectangle {
-    width: u32,
-    height: u32,
+    width: u32;
+    height: u32;
 
     function area(self) -> u32 {
         return self.width * self.height;
@@ -39,8 +39,8 @@ Circuits are initialized by their defined name followed by their member variable
 Leo supports implied member variable names when initializing a circuit.
 ```leo
 circuit Rectangle {
-    width: u32,
-    height: u32,
+    width: u32;
+    height: u32;
 }
 
 function main() {
@@ -68,8 +68,8 @@ They can be accessed using dot syntax `.`.
 
 ```leo
 circuit Point {
-    x: u32
-    y: u32
+    x: u32;
+    y: u32;
 }
 function main() -> u32 {
     let p = Point {x: 1u32, y: 0u32};
@@ -82,7 +82,7 @@ Circuit member functions define pieces of code that are run in the context of a 
 
 ```leo
 circuit Foo {
-    x: u32,    
+    x: u32;  
 
     function echo(self) -> u32 {
         return self.x;
@@ -121,7 +121,7 @@ The `Self` type references the circuit's definition.
 
 ```leo
 circuit Foo {
-    a: u32,
+    a: u32;
 
     // Instantiates a new Foo circuit with a = 0u32.
     function new() -> Self { // Self resolves to circuit type Foo
@@ -142,7 +142,7 @@ The circuit function must be called using dot `.` syntax. (Similar to rust synta
 
 ```leo
 circuit Foo {
-    a: u32,
+    a: u32;
 
     // Instantiates a new Foo circuit with a = 0u32.
     function new() -> Self { // Self resolves to circuit type Foo
@@ -174,7 +174,7 @@ All functions which do not contain the `self`, `mut self`, or `const self` keywo
 
 ```leo
 circuit Foo {
-    a: u32,
+    a: u32;
 
     // Instantiates a new Foo circuit with a = 0u32.
     function new() -> Self { // Self resolves to circuit type Foo
@@ -212,7 +212,7 @@ All functions which do not contain the `self`, `mut self`, or `const self` keywo
 
 ```leo
 circuit Foo {
-    a: u32,
+    a: u32;
 
     // Logs the self circuit variable to console.
     function log_constant(const self) {
