@@ -38,7 +38,9 @@ circuit LinearRegression {
     }
     
     // Return the slope of the linear regression.
-    function slope(self) -> i32 { let num_points = 5i32;
+    function slope(self) -> i32 { 
+        let num_points = 5i32;
+        
         // Calculate the sums.
         let x_sum = 0i32; 
         let y_sum = 0i32; 
@@ -55,9 +57,11 @@ circuit LinearRegression {
         let slope = numerator / denominator;
         return slope;
     }
+    
     // Return the offset of the linear regression.
     function offset(self, slope: i32) -> i32 {
-        let num_points = 5i32; 
+        let num_points = 5i32;
+        
         // Calculate the sum. 
         let x_sum = 0i32;
         let y_sum = 0i32;
