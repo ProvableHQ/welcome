@@ -57,7 +57,7 @@ Operators will prioritize evaluation according to:
 |       `<` `>` `<=` `>=`       |               |
 |           `==` `!=`           | left to right |
 |              `&&`             | left to right |
-|            `\|\|`             | left to right |
+|            <code>&#124;&#124;</code>             | left to right |
 | `=` `+=` `-=` `*=` `/=` `**=` |               |
 
 ### Parentheses
