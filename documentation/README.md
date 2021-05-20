@@ -134,11 +134,12 @@
 - [getblocktemplate](./autogen/testnet/public_endpoints/05_getblocktemplate.md)
 - [getconnectioncount](./autogen/testnet/public_endpoints/06_getconnectioncount.md)
 - [getnodeinfo](./autogen/testnet/public_endpoints/07_getnodeinfo.md)
-- [getpeerinfo](./autogen/testnet/public_endpoints/08_getpeerinfo.md)
-- [getrawtransaction](./autogen/testnet/public_endpoints/09_getrawtransaction.md)
-- [gettransactioninfo](./autogen/testnet/public_endpoints/10_gettransactioninfo.md)
-- [sendtransaction](./autogen/testnet/public_endpoints/11_sendtransaction.md)
-- [validaterawtransaction](./autogen/testnet/public_endpoints/12_validaterawtransaction.md)
+- [getnodestats](./autogen/testnet/public_endpoints/08_getnodestats.md)
+- [getpeerinfo](./autogen/testnet/public_endpoints/09_getpeerinfo.md)
+- [getrawtransaction](./autogen/testnet/public_endpoints/10_getrawtransaction.md)
+- [gettransactioninfo](./autogen/testnet/public_endpoints/11_gettransactioninfo.md)
+- [sendtransaction](./autogen/testnet/public_endpoints/12_sendtransaction.md)
+- [validaterawtransaction](./autogen/testnet/public_endpoints/13_validaterawtransaction.md)
 
 
 ### Chapter 12: Private RPC Endpoints
@@ -149,9 +150,10 @@
 - [createtransactionkernel](./autogen/testnet/private_endpoints/03_createtransactionkernel.md)
 - [decoderecord](./autogen/testnet/private_endpoints/04_decoderecord.md)
 - [decryptrecord](./autogen/testnet/private_endpoints/05_decryptrecord.md)
-- [getrawrecord](./autogen/testnet/private_endpoints/06_getrawrecord.md)
-- [getrecordcommitmentcount](./autogen/testnet/private_endpoints/07_getrecordcommitmentcount.md)
-- [getrecordcommitments](./autogen/testnet/private_endpoints/08_getrecordcommitments.md)
+- [disconnect](./autogen/testnet/private_endpoints/06_disconnect.md)
+- [getrawrecord](./autogen/testnet/private_endpoints/07_getrawrecord.md)
+- [getrecordcommitmentcount](./autogen/testnet/private_endpoints/08_getrecordcommitmentcount.md)
+- [getrecordcommitments](./autogen/testnet/private_endpoints/09_getrecordcommitments.md)
 
 
 ## Explorer I
