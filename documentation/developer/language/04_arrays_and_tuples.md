@@ -99,7 +99,7 @@ let f = [true, false || true, true];
 
 ## Arrays of Chars as Strings
 
-Leo features string literal for defining arrays of chars. Strings are not a type but a simple way of defining
+Leo features string literals for defining arrays of chars. Strings are not a type but a simple way of defining
 arrays of characters. 
 
 ```leo
@@ -108,7 +108,7 @@ let hello = "hello";
 let h: char = hello[0];
 ```
 
-It is also possible to use string literal for comparing values (just like arrays):
+It is also possible to use string literals for comparing values (just like arrays):
 
 ```leo
 function main(hello: [char; 5]) -> bool {
