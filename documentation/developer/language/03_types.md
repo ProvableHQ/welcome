@@ -55,31 +55,31 @@ let b: field = 21888242871839275222246405745257275088548364400416034343698204186
 
 ## Char type
 
-Leo has `char` type for using characters.
+Leo has a `char` type for using characters.
 ```leo
 let c = 'c';
 let d: char = '¢';
 let e = '😉'; // emojis are also supported
 ```
 
-It is also possible to define characters in Rust like manner, allowed escapes are:
+It is also possible to define characters in a Rust-like manner; allowed escapes are:
 ```leo
 let unicode_escape = '\u{11FA}';
 let ascii = '\x1F';
 let escape = '\\';
 ```
 
-Character specification is described in [Leo RFC 1](https://github.com/AleoHQ/leo/blob/master/docs/rfc/001-initial-strings.md).
+A more comprehensive character specification is described in [Leo RFC 1](https://github.com/AleoHQ/leo/blob/master/docs/rfc/001-initial-strings.md).
 
 :::warn
-Some emojis (such as this one: `🤷🏿‍♀️`) can not be represented as a single character because they are actually [unicode sequences](https://unicode.org/Public/emoji/13.1/emoji-sequences.txt) - sequences of multiple emojis which are viewed as one. Most common groups of emojis of this kind are: flags and emojis with skin tone.
+Some emojis (such as this one: `🤷🏿‍♀️`) cannot be represented as a single character because they are actually [unicode sequences](https://unicode.org/Public/emoji/13.1/emoji-sequences.txt) - sequences of multiple emojis which are viewed as one. Most common groups of emojis of this kind are: flags and emojis with skin tone.
 :::
 
 ### Character escapes
 
 - *Unicode escapes* - use `\u{}` escape with 1-6 HEX digits in curly braces for unicode character numbers.
 - *ASCII HEX escapes* - use `\x` escape followed by 2 HEX digits with max value of 127 (`\x7F`).
-- *Escapes* - following symbols can be escaped: `\0`, `\\`, `\"`, `\'`, `\n`, `\r` and `\t`.
+- *Simple escapes* - the following symbols can be escaped: `\0`, `\\`, `\"`, `\'`, `\n`, `\r` and `\t`.
 
 
 ## Group Elements
