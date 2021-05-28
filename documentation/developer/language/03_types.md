@@ -55,7 +55,7 @@ let b: field = 21888242871839275222246405745257275088548364400416034343698204186
 
 ## Char type
 
-Leo has a `char` type for using characters.
+Leo has a `char` type for using characters. Char contains 1 Unicode code point.
 ```leo
 let c = 'c';
 let d: char = '¢';
@@ -72,8 +72,18 @@ let escape = '\\';
 A more comprehensive character specification is described in [Leo RFC 1](https://github.com/AleoHQ/leo/blob/master/docs/rfc/001-initial-strings.md).
 
 :::warn
-Some emojis (such as this one: `🤷🏿‍♀️`) cannot be represented as a single character because they are actually [unicode sequences](https://unicode.org/Public/emoji/13.1/emoji-sequences.txt) - sequences of multiple emojis which are viewed as one. Most common groups of emojis of this kind are: flags and emojis with skin tone.
+Some emojis (such as this one: `🤷🏿‍♀️`) and diacritics cannot be represented as a single char because they are actually [unicode sequences](https://unicode.org/Public/emoji/13.1/emoji-sequences.txt) - sequences of multiple Unicode code points which are viewed as one symbol.
 :::
+
+Examples of Unicode sequences:
+```leo
+let c: char = 'у́'; // illegal
+let c: [1; char] = "у́"; // illegal
+let c: [2; char] = "у́"; // correct
+
+let e: char = "🤷🏿‍♀️"; // illegal
+let e: [char; 5] = "🤷🏿‍♀️"; // correct
+```
 
 ### Character escapes
 
