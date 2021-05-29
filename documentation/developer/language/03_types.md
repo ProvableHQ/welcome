@@ -73,7 +73,7 @@ A more comprehensive specification is described in [Leo RFC 1](https://github.co
 
 :::warn
 When a user-perceived character is represented by more than one Unicode code point,
-it can not be represented by a single Leo `char`.  Furthermore, since the length of an
+it cannot be represented by a single Leo `char`.  Furthermore, since the length of an
 array must be declared, you will need to know how many Unicode code points are used
 when you want a literal string containing such a character.
 Here are some examples:
