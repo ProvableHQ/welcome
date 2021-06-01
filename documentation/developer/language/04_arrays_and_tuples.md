@@ -1,7 +1,7 @@
 ---
 id: arrays_and_tuples
 title: Arrays
-sidebar_label: Arrays and Tuples
+sidebar_label: Arrays, Strings and Tuples
 ---
 
 ## Indexing
@@ -9,7 +9,7 @@ Arrays and tuples in Leo are zero indexed.
 
 ## Array Types
 Leo supports arrays of all types:
-arrays of integers, arrays of field elements, arrays of circuits, etc.
+arrays of integers, arrays of field elements, arrays of circuits, arrays of chars, etc.
 An array type is defined by both the type and the number of its elements:
 for example, the type of arrays of `u8` integers of length 3
 is different from
@@ -95,6 +95,25 @@ let e = [5field; 2];
 
 // initialize a boolean array
 let f = [true, false || true, true];
+```
+
+## Arrays of Chars as Strings
+
+Leo features string literals for defining arrays of chars. Strings are not a type but a simple way of defining
+arrays of characters. 
+
+```leo
+let hello_world: [char; 12] = "hello world!";
+let hello = "hello";
+let h: char = hello[0];
+```
+
+It is also possible to use string literals for comparing values (just like arrays):
+
+```leo
+function main(hello: [char; 5]) -> bool {
+    return hello == "hello";
+} 
 ```
 
 ## Multi-dimensional Arrays

@@ -53,6 +53,56 @@ let a = 1field;
 let b: field = 21888242871839275222246405745257275088548364400416034343698204186575808495617;
 ```
 
+## Char type
+
+Leo has a `char` type for using characters. Each `char` contains 1 Unicode code point.
+```leo
+let c = 'c';
+let d: char = '¢';
+let e = '😉'; // emojis are also supported
+```
+
+It is also possible to define characters in a Rust-like manner; some allowed escapes are:
+```leo
+let unicode_escape = '\u{11FA}';
+let ascii = '\x1F';
+let escape = '\\';
+```
+
+A more comprehensive specification is described in [Leo RFC 1](https://github.com/AleoHQ/leo/blob/master/docs/rfc/001-initial-strings.md).
+
+:::warn
+When a user-perceived character is represented by more than one Unicode code point,
+it cannot be represented by a single Leo `char`.  Furthermore, since the length of an
+array must be declared, you will need to know how many Unicode code points are used
+when you want a literal string containing such a character.
+Here are some examples:
+ - `אֶ` // Hebrew alef with segol
+ - `у́` // Cyrillic u with accent
+ - `🤷🏿‍♀️` // shrug with various modifiers
+
+If you are not sure how many code points a given user-perceived character requires,
+you can use a tool such as [Richard Cook's Namelist tool](http://linguistics.berkeley.edu/~rscook/cgi/nameslistsearch.html)
+or [r12a's List characters](https://r12a.github.io/app-listcharacters/).
+:::
+
+Examples of Unicode sequences:
+```leo
+let c: char = 'у́'; // illegal
+let c: [1; char] = "у́"; // illegal
+let c: [2; char] = "у́"; // correct, same as "\u{443}\u{301}"
+
+let e: char = '🤷🏿‍♀️'; // illegal
+let e: [char; 5] = "🤷🏿‍♀️"; // correct, same as "\u{1F937}\u{1F3FF}\u{200D}\u{2640}\u{FE0F}"
+```
+
+### Character escapes
+
+- *Unicode escapes* - use `\u{}` escape with 1-6 HEX digits in curly braces for unicode character numbers.
+- *ASCII HEX escapes* - use `\x` escape followed by 2 HEX digits with max value of 127 (`\x7F`).
+- *Simple escapes* - the following symbols can be escaped: `\0` (meaning `\x00`), `\\`, `\"`, `\'`, `\n`, `\r` and `\t`.
+
+
 ## Group Elements
 The set of affine points on the elliptic curve passed into the Leo compiler forms a group.
 Leo supports this set as a primitive data type. Group elements are special since their values can be defined as 
