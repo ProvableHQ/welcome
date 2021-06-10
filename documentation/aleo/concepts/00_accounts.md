@@ -137,7 +137,7 @@ Given global instantiated Aleo parameters and subroutines.
 
 #### Generate a View Key 
 
-1. Construct `pk_sig` = AccountSignature,GeneratePublicKey(<code>pp<sub>account_sig</sub></code>, `sk_sig`)
+1. Construct `pk_sig` = AccountSignature.GeneratePublicKey(<code>pp<sub>account_sig</sub></code>, `sk_sig`)
 
 2. `view_key` = AccountCommitment.Commit(<code>pp<sub>account_cm</sub></code>, (`pk_sig`, `sk_prf`), `r_pk`)
 
