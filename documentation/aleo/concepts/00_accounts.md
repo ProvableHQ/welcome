@@ -133,7 +133,7 @@ Given global instantiated Aleo parameters and subroutines.
            
 3.`private_key` = (`seed`, `sk_sig`, `sk_prf`, `r_pk`)
 
-`counter` is a `u16` value that is iterated on until a valid `view_key` can be derived from `private_key`
+`counter` is a `u16` value that is iterated on, starting from 2, until a valid `view_key` can be derived from `private_key`
 
 #### Generate a View Key 
 
