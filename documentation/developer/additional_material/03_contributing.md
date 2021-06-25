@@ -5,7 +5,7 @@ title: Contributing
 
 Thank you for helping make Leo better!
 
-Before contributing, please view the [Contributor Code of Conduct](). 
+Before contributing, please view the [Contributor Code of Conduct](https://github.com/AleoHQ/leo/blob/master/CONTRIBUTING.md). 
 By participating in this project - In the issues, pull requests, or Gitter channels - 
 you agree to abide by the terms.
 

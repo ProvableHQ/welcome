@@ -145,5 +145,3 @@ The steps to verify a transaction are as follows:
 3. Verify that the memo `memorandum` does not already exist in the ledger.
 4. Verify that the transaction proof `transaction_proof` verifies.
 
-
-Formal Definitions are defined [here]()
