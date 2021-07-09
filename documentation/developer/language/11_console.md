@@ -42,7 +42,7 @@ Format string syntax is intended to be familiar to those coming from C's `printf
 ```leo
 console.log("Hello");                   // => "Hello"
 console.log("The number is {}", 1u32);  // => "the number is 1u32"
-console.log("{} {}", 1u32, 2u32);)      // => "1 2"
+console.log("{} {}", 1u32, 2u32);       // => "1 2"
 ```
 
 
