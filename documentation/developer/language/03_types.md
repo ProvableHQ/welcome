@@ -71,7 +71,7 @@ let escape = '\\';
 
 A more comprehensive specification is described in [Leo RFC 1](https://github.com/AleoHQ/leo/blob/master/docs/rfc/001-initial-strings.md).
 
-:::warn
+:::warning
 When a user-perceived character is represented by more than one Unicode code point,
 it cannot be represented by a single Leo `char`.  Furthermore, since the length of an
 array must be declared, you will need to know how many Unicode code points are used
