@@ -153,16 +153,17 @@ to compile, execute, and finalize its state autonomously.
 
 ### Chapter 12: Private RPC Endpoints
 
-- [createaccount](./autogen/testnet/private_endpoints/00_createaccount.md)
-- [createrawtransaction](./autogen/testnet/private_endpoints/01_createrawtransaction.md)
-- [createtransaction](./autogen/testnet/private_endpoints/02_createtransaction.md)
-- [createtransactionkernel](./autogen/testnet/private_endpoints/03_createtransactionkernel.md)
-- [decoderecord](./autogen/testnet/private_endpoints/04_decoderecord.md)
-- [decryptrecord](./autogen/testnet/private_endpoints/05_decryptrecord.md)
-- [disconnect](./autogen/testnet/private_endpoints/06_disconnect.md)
-- [getrawrecord](./autogen/testnet/private_endpoints/07_getrawrecord.md)
-- [getrecordcommitmentcount](./autogen/testnet/private_endpoints/08_getrecordcommitmentcount.md)
-- [getrecordcommitments](./autogen/testnet/private_endpoints/09_getrecordcommitments.md)
+- [connect](./autogen/testnet/private_endpoints/00_connect.md)
+- [createaccount](./autogen/testnet/private_endpoints/01_createaccount.md)
+- [createrawtransaction](./autogen/testnet/private_endpoints/02_createrawtransaction.md)
+- [createtransaction](./autogen/testnet/private_endpoints/03_createtransaction.md)
+- [createtransactionkernel](./autogen/testnet/private_endpoints/04_createtransactionkernel.md)
+- [decoderecord](./autogen/testnet/private_endpoints/05_decoderecord.md)
+- [decryptrecord](./autogen/testnet/private_endpoints/06_decryptrecord.md)
+- [disconnect](./autogen/testnet/private_endpoints/07_disconnect.md)
+- [getrawrecord](./autogen/testnet/private_endpoints/08_getrawrecord.md)
+- [getrecordcommitmentcount](./autogen/testnet/private_endpoints/09_getrecordcommitmentcount.md)
+- [getrecordcommitments](./autogen/testnet/private_endpoints/10_getrecordcommitments.md)
 
 
 ## Explorer I
