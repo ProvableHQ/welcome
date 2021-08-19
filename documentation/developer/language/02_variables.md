@@ -46,7 +46,7 @@ constants inside the function:
 const MAGIC_NUMBER: u8 = 42;
 
 function main() -> u8 {
-    // here you can access these variables
+    // here you can access these constants
     return MAGIC_NUMBER;
 }
 
@@ -66,3 +66,6 @@ Constants can also be used in the other constant definitions:
 const MAGIC_NUMBER : u8 = 42;
 const MAGIC_PLUS_TWO : u8 = MAGIC_NUMBER + 2;
 ```
+
+Note that, unlike functions, constants can only be used in the order they are defined. In the example above constant
+`MAGIC_NUMBER` is defined before constant `MAGIC_PLUS_TWO`, swapping these two lines would lead to compilation error. 
