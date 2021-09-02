@@ -15,7 +15,7 @@ An Aleo transaction spends two old records: `old_record_0`, `old_record_1` and c
 ## Registers
 
 A register stores intermediate record state during runtime.
-During runtime, we load an initial input state into a record and expect and output state after the record is run.
+During runtime, we load an initial input state into a record and expect an output state after the record is run.
 
 * Input state is stored in the input register.
 * Output state is stored in the output register.
