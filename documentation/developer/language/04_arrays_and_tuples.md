@@ -72,6 +72,30 @@ Leo supports static arrays with fixed size.
 **Dynamic arrays do not exist in Leo**. 
 You cannot change the length of an array once it is initialized.
 
+### Arrays without size 
+Leo allows developers to define arrays, sizes of which will be defined at compile time. Arrays with unknown
+size are marked with `_` (underscore):
+
+```leo
+let arr: [char; _] = "hello world"; // length 11
+let arr = "hello world"; // also 11
+```
+
+This feature is the most useful in function arguments:
+```leo
+// array of any length can be passed here:
+function first_char(arr: [char; _]) -> char {
+    return arr[0];
+}
+
+function main() {
+    console.log("{}", first_char("a"));
+    console.log("{}", first_char("ab"));
+    console.log("{}", first_char("abc"));
+    console.log("{}", first_char("abcd"));
+}
+```
+
 ### More Array Examples
 
 ```leo
