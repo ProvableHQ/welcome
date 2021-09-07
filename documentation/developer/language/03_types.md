@@ -111,7 +111,7 @@ function add(a: int, b: int) -> int {
 }
 ```
 
-However, do note that type inference would never infer a value as an alias, as aliases themselves reduce to the standard included types.
+However, do note that type inference never infers a type alias (e.g. for a variable), as aliases themselves reduce to the standard language types.
 ### Character escapes
 
 - *Unicode escapes* - use `\u{}` escape with 1-6 HEX digits in curly braces for unicode character numbers.
