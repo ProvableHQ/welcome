@@ -95,6 +95,18 @@ function main() {
 }
 ```
 
+For getting an array length, Leo has a `.len()` call on the arrays:
+
+```leo
+function main() {
+    console.log("{} == {}", "hello".len(), strlen("world"));
+}
+
+function strlen(str: [char; _]) -> u32 {
+    return str.len();
+}
+```
+
 ### More Array Examples
 
 ```leo
