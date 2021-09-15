@@ -3,6 +3,7 @@ id: imports
 title: Imports
 ---
 ## Local
+
 Import from a local file in the same package `src/` directory by its file name.
 ```leo title="src/bar.leo"
 circuit Bar {
@@ -28,6 +29,7 @@ function main() {
 ```
 
 ## Foreign
+
 Import from a foreign package in the `imports/` directory using its `[package]` name.
 >import [package].[name];
 
@@ -45,7 +47,28 @@ function main() {
 }
 ```
 
+## Built-ins
+
+Built-ins are Leo definitions built into the language.
+Import a package built-in to Leo.
+
+```
+import std.unstable.blake2s.Blake2s;
+
+import std.unstable.blake2s.Blake2s;
+
+function main(message: [u8; 32]) -> [u8; 32] {
+    const seed: [u8; 32] = [1; 32];
+    let result = Blake2s::hash(seed, message);
+
+    console.log("Result: {}", result);
+
+    return result;
+}
+```
+
 ## Package Paths
+
 Nested import paths can be accessed using dot `.` syntax.
 
 **Example:**
@@ -66,12 +89,14 @@ function main() {
 ```
 
 ### Import Aliases
+
 Import a name using an alias:
 ```leo
 import foo.Bar as Baz
 ```
 
 ### Import Multiple
+
 Import multiple names from the same package:
 ```leo
 import foo.(
@@ -81,6 +106,7 @@ import foo.(
 ```
 
 ### Import Star
+
 Import all symbols from a package or file:
 ```leo
 import foo.*;
