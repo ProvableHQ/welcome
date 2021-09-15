@@ -67,7 +67,7 @@ function main(message: [u8; 32]) -> [u8; 32] {
 }
 ```
 
-You can see more about these built-in types [here](https://github.com/AleoHQ/leo/stdlib).
+You can see more about these built-in types [here](https://github.com/AleoHQ/leo/tree/master/stdlib).
 
 ### Automatic Built-ins
 
