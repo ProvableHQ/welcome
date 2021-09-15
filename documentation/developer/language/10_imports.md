@@ -71,8 +71,8 @@ You can see more about these built-in types [here](https://github.com/AleoHQ/leo
 
 ### Automatic Built-ins
 
-Some built-ins are automatically imported to the language.
-For Example, the type alias `string` is imported and usable with no import statement necessary.
+Some built-ins are automatically imported into every program.
+For example, the type alias `string` is imported and usable with no import statement necessary.
 
 ```
 function main() {
@@ -84,7 +84,7 @@ function main() {
 
 Nested import paths can be accessed using dot `.` syntax.
 
-** Example:**
+**Example:**
 We wish to import the `Baz` circuit from the `baz.leo` file in the `bar` directory in the `foo` package
 
 ```leo title="imports/foo/src/bar/baz.leo"
