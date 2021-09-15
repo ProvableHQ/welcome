@@ -96,6 +96,22 @@ let e: char = '🤷🏿‍♀️'; // illegal
 let e: [char; 5] = "🤷🏿‍♀️"; // correct, same as "\u{1F937}\u{1F3FF}\u{200D}\u{2640}\u{FE0F}"
 ```
 
+## Type Aliases
+
+Leo supports type aliases, which is when a user declares an alternative name for an existing type.
+You could then use these types anywhere you would normally use types, like in functions, or on variables types.
+
+```leo
+type int = u32;
+
+function add(a: int, b: int) -> int {
+    let _added: int = a + b; // This works.
+    let addedu32: u32 = a + b; // This also works since it's the same as a u32.
+    return addedu32;
+}
+```
+
+However, do note that type inference never infers a type alias (e.g. for a variable), as aliases themselves reduce to the standard language types.
 ### Character escapes
 
 - *Unicode escapes* - use `\u{}` escape with 1-6 HEX digits in curly braces for unicode character numbers.
