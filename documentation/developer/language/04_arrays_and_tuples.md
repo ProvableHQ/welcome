@@ -51,7 +51,7 @@ let arr: [u32; 4] = [3, 9, 27, 81];
 
 let first_two = arr[..2]; // = [3, 9]
 
-let middle_two = arr[1..=2]; // = [9, 27]
+let middle_two = arr[1..3]; // = [9, 27]
 
 let last_two = arr[2..]; // = [27, 81]
 ```
