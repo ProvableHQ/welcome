@@ -36,7 +36,7 @@ let b: [u32; 3] = [1; 3];
 
 Access an element of an array starting at index 0. Indices must be a `u8`, `u16`, or `u32`.
 ```leo
-let arr: [u32; 4] = [1, 2, 3, 4];
+let arr: [u32; 4] = [3, 9, 27, 81];
 
 let first = arr[0]; // access the first element
 ```
@@ -47,14 +47,16 @@ The `from` index must be a `u8`, `u16`, or `u32`: it is the first element of the
 The `to` index must be a `u8`, `u16`, or `u32`: it is one past the last element of the range. Omitting the `to` index defaults to the length of the array.
 
 ```leo
-let arr: [u32; 4] = [0, 1, 2, 3];
+let arr: [u32; 4] = [3, 9, 27, 81];
 
-let first_two = arr[..2]; // = [0, 1]
+let first_two = arr[..2]; // = [3, 9]
 
-let middle_two = arr[1..2]; // = [1]
+let middle_two = arr[1..3]; // = [9, 27]
 
-let last_two = arr[2..]; // = [2, 3]
+let last_two = arr[2..]; // = [27, 81]
 ```
+
+In the above, notice how the array slicing defaults when we do not explicitly state the `from` and `to` conditions. When we do not state the `from` condition, it defaults from the start of the array, and when we do not state the `to` condition it defaults to the end of the array.
 
 ## Array Spread Operator
 Copies the elements of one array into another. Element types must match.
