@@ -17,4 +17,4 @@ The results of compiling `main.leo` or `lib.leo` and it's imported dependencies 
  Compiling Complete
       Done Finished in 10 milliseconds
 ```
-This will create a new directory `outputs/`, as serialized program file `.json`, and a checksum file `.sum` in the directory. 
+This will create a new directory `outputs/`, a serialized program file `.json`, and a checksum file `.sum` in the directory. 
