@@ -163,14 +163,14 @@ function main() {
 ```
 
 
-### `mut self` keyword
-The `mut self` keyword provides mutable access to instantiated circuit member variables.
+### `&self` keyword
+The `&self` keyword provides mutable access to instantiated circuit member variables.
 It must be included as an argument in the circuit function signature.
 
 The circuit function must be called using dot `.` syntax (similar to Rust syntax).
 The instantiated circuit variable must be defined using a `let` declaration.
 
-All functions which do not contain the `self`, `mut self`, or `const self` keyword are considered static. They must be called using double colon `::` syntax.
+All functions which do not contain the `self`, `&self`, or `const self` keyword are considered static. They must be called using double colon `::` syntax.
 
 ```leo
 circuit Foo {
@@ -187,8 +187,8 @@ circuit Foo {
     }
 
     // Mutates the self circuit variable a = 1u32.
-    function mutate(mut self) {
-        self.a = 1u32; // Errors if "mut self" keyword is not present.
+    function mutate(&self) {
+        self.a = 1u32; // Errors if "&self" keyword is not present.
     }
 }
 
@@ -208,7 +208,7 @@ It must be included as an argument in the circuit function signature.
 The circuit function must be called using dot `.` syntax (similar to Rust syntax).
 The instantiated circuit variable must be defined using a `const` declaration.
 
-All functions which do not contain the `self`, `mut self`, or `const self` keyword are considered static. They must be called using double colon `::` syntax.
+All functions which do not contain the `self`, `&self`, or `const self` keyword are considered static. They must be called using double colon `::` syntax.
 
 ```leo
 circuit Foo {
