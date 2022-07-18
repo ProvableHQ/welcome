@@ -50,7 +50,7 @@ function main() {
 
 ### Program ID
 
-Each program has a unique a **program ID** that is produced from the
+Each program has a unique **program ID** that is produced from the
 hash of the [verifying key](#verifying-key). This program ID is used to indicate the program that was run in the
 consumption or production of [records](02_records.md).
 
