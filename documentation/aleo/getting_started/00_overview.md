@@ -30,92 +30,143 @@ to compile, execute, and finalize its state autonomously.
 - [Consensus](./aleo/concepts/05_consensus.md)
 - [Glossary](./aleo/concepts/06_glossary.md)
 
+[//]: # ()
+[//]: # (## Developer Preview I)
 
-## Developer Preview I
+[//]: # ()
+[//]: # (### Chapter 2: Hello Leo!)
 
-### Chapter 2: Hello Leo!
+[//]: # ()
+[//]: # (- [The Leo Programming Language]&#40;./developer/getting_started/00_overview.md&#41;)
 
-- [The Leo Programming Language](./developer/getting_started/00_overview.md)
-- [Installation](./developer/getting_started/01_installation.md)
-- [Hello World in Leo](./developer/getting_started/02_hello_world.md)
-- [File Syntax](./developer/getting_started/03_syntax.md)
-- [CLI Commands](./developer/getting_started/04_cli.md)
+[//]: # (- [Installation]&#40;./developer/getting_started/01_installation.md&#41;)
+
+[//]: # (- [Hello World in Leo]&#40;./developer/getting_started/02_hello_world.md&#41;)
+
+[//]: # (- [File Syntax]&#40;./developer/getting_started/03_syntax.md&#41;)
+
+[//]: # (- [CLI Commands]&#40;./developer/getting_started/04_cli.md&#41;)
+
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 3: Language)
+
+[//]: # ()
+[//]: # (- [A Flying Tour of Leo]&#40;./developer/language/00_flying_tour.md&#41;)
+
+[//]: # (- [Layout of a Leo Program]&#40;./developer/language/01_layout.md&#41;)
+
+[//]: # (- [Defining Variables]&#40;./developer/language/02_variables.md&#41;)
+
+[//]: # (- [Data Types and Values]&#40;./developer/language/03_types.md&#41;)
+
+[//]: # (- [Arrays]&#40;./developer/language/04_arrays_and_tuples.md&#41;)
+
+[//]: # (- [Operators]&#40;./developer/language/05_operators.md&#41;)
+
+[//]: # (- [Statements]&#40;./developer/language/06_statements.md&#41;)
+
+[//]: # (- [Functions]&#40;./developer/language/07_functions.md&#41;)
+
+[//]: # (- [Leo Inputs]&#40;./developer/language/08_inputs.md&#41;)
+
+[//]: # (- [Circuits]&#40;./developer/language/09_circuits.md&#41;)
+
+[//]: # (- [Imports]&#40;./developer/language/10_imports.md&#41;)
+
+[//]: # (- [Console Functions]&#40;./developer/language/11_console.md&#41;)
+
+[//]: # (- [Writing Tests]&#40;./developer/language/12_tests.md&#41;)
+
+[//]: # (- [Lexical Structure]&#40;./developer/language/13_lexical.md&#41;)
+
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 4: Programming Model)
+
+[//]: # ()
+[//]: # (- [The Leo Programming Model]&#40;./developer/programming_model/00_model.md&#41;)
+
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 5: CLI)
+
+[//]: # ()
+[//]: # (- [The Leo Command Line Interface]&#40;./developer/cli/00_overview.md&#41;)
+
+[//]: # (- [Create a Package]&#40;./developer/cli/01_new.md&#41;)
+
+[//]: # (- [Initialize a Package]&#40;./developer/cli/02_init.md&#41;)
+
+[//]: # (- [Build a Package]&#40;./developer/cli/03_build.md&#41;)
+
+[//]: # (- [Auto-Compile a Program]&#40;./developer/cli/04_watch.md&#41;)
+
+[//]: # (- [Test a Program]&#40;./developer/cli/05_test.md&#41;)
+
+[//]: # (- [Setup a Program]&#40;./developer/cli/06_setup.md&#41;)
+
+[//]: # (- [Execute a Program]&#40;./developer/cli/07_prove.md&#41;)
+
+[//]: # (- [Verify a Program]&#40;./developer/cli/08_run.md&#41;)
+
+[//]: # (- [Login to Aleo Package Manager]&#40;./developer/cli/09_login.md&#41;)
+
+[//]: # (- [Logout of Aleo Package Manager]&#40;./developer/cli/10_logout.md&#41;)
+
+[//]: # (- [Import a Package]&#40;./developer/cli/11_add.md&#41;)
+
+[//]: # (- [Remove a Package]&#40;./developer/cli/12_remove.md&#41;)
+
+[//]: # (- [Publish a Package to Aleo Package Manager]&#40;./developer/cli/13_publish.md&#41;)
+
+[//]: # (- [Deploy a Package to Aleo]&#40;./developer/cli/14_deploy.md&#41;)
+
+[//]: # (- [Clean a Package Workspace]&#40;./developer/cli/15_clean.md&#41;)
+
+[//]: # (- [Lint a Package Workspace]&#40;./developer/cli/16_lint.md&#41;)
+
+[//]: # (- [Update the Leo Compiler]&#40;./developer/cli/17_update.md&#41;)
+
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 6: Toy Examples)
+
+[//]: # ()
+[//]: # (- [Pedersen Hash]&#40;./developer/toy_examples/00_pedersen_hash.md&#41;)
+
+[//]: # (- [Bubble Sort]&#40;./developer/toy_examples/01_bubble_sort.md&#41;)
+
+[//]: # (- [Linear Regression]&#40;./developer/toy_examples/02_linear_regression.md&#41;)
+
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 7: Additional Material)
+
+[//]: # ()
+[//]: # (- [Style Guide]&#40;./developer/additional_material/00_style.md&#41;)
+
+[//]: # (- [Common Patterns]&#40;./developer/additional_material/01_common.md&#41;)
+
+[//]: # (- [List of Known Bugs]&#40;./developer/additional_material/02_bugs.md&#41;)
+
+[//]: # (- [Contributing]&#40;./developer/additional_material/03_contributing.md&#41;)
 
 
-### Chapter 3: Language
+## Testnet III
 
-- [A Flying Tour of Leo](./developer/language/00_flying_tour.md)
-- [Layout of a Leo Program](./developer/language/01_layout.md)
-- [Defining Variables](./developer/language/02_variables.md)
-- [Data Types and Values](./developer/language/03_types.md)
-- [Arrays](./developer/language/04_arrays_and_tuples.md)
-- [Operators](./developer/language/05_operators.md)
-- [Statements](./developer/language/06_statements.md)
-- [Functions](./developer/language/07_functions.md)
-- [Leo Inputs](./developer/language/08_inputs.md)
-- [Circuits](./developer/language/09_circuits.md)
-- [Imports](./developer/language/10_imports.md)
-- [Console Functions](./developer/language/11_console.md)
-- [Writing Tests](./developer/language/12_tests.md)
-- [Lexical Structure](./developer/language/13_lexical.md)
-
-
-### Chapter 4: Programming Model
-
-- [The Leo Programming Model](./developer/programming_model/00_model.md)
-
-
-### Chapter 5: CLI
-
-- [The Leo Command Line Interface](./developer/cli/00_overview.md)
-- [Create a Package](./developer/cli/01_new.md)
-- [Initialize a Package](./developer/cli/02_init.md)
-- [Build a Package](./developer/cli/03_build.md)
-- [Auto-Compile a Program](./developer/cli/04_watch.md)
-- [Test a Program](./developer/cli/05_test.md)
-- [Setup a Program](./developer/cli/06_setup.md)
-- [Execute a Program](./developer/cli/07_prove.md)
-- [Verify a Program](./developer/cli/08_run.md)
-- [Login to Aleo Package Manager](./developer/cli/09_login.md)
-- [Logout of Aleo Package Manager](./developer/cli/10_logout.md)
-- [Import a Package](./developer/cli/11_add.md)
-- [Remove a Package](./developer/cli/12_remove.md)
-- [Publish a Package to Aleo Package Manager](./developer/cli/13_publish.md)
-- [Deploy a Package to Aleo](./developer/cli/14_deploy.md)
-- [Clean a Package Workspace](./developer/cli/15_clean.md)
-- [Lint a Package Workspace](./developer/cli/16_lint.md)
-- [Update the Leo Compiler](./developer/cli/17_update.md)
-
-
-### Chapter 6: Toy Examples
-
-- [Pedersen Hash](./developer/toy_examples/00_pedersen_hash.md)
-- [Bubble Sort](./developer/toy_examples/01_bubble_sort.md)
-- [Linear Regression](./developer/toy_examples/02_linear_regression.md)
-
-
-### Chapter 7: Additional Material
-
-- [Style Guide](./developer/additional_material/00_style.md)
-- [Common Patterns](./developer/additional_material/01_common.md)
-- [List of Known Bugs](./developer/additional_material/02_bugs.md)
-- [Contributing](./developer/additional_material/03_contributing.md)
-
-
-## Testnet I
-
-### Chapter 8: Getting Started
+### Chapter 2: Getting Started
 
 - [Testnet I.](./testnet/getting_started/00_overview.md)
 - [Install snarkOS](./testnet/getting_started/01_installation.md)
 
 
-### Chapter 9: Concepts
+### Chapter 3: Concepts
 
 - [RPC Server](./autogen/testnet/concepts/00_rpc_server.md)
 
 
-### Chapter 10: Network Messages
+### Chapter 4: Network Messages
 
 - [Block](./autogen/testnet/network_messages/00_block.md)
 - [GetBlocks](./autogen/testnet/network_messages/01_get_blocks.md)
@@ -132,7 +183,7 @@ to compile, execute, and finalize its state autonomously.
 - [Version](./autogen/testnet/network_messages/12_version.md)
 
 
-### Chapter 11: Public RPC Endpoints
+### Chapter 5: Public RPC Endpoints
 
 - [decoderawtransaction](./autogen/testnet/public_endpoints/00_decoderawtransaction.md)
 - [getbestblockhash](./autogen/testnet/public_endpoints/01_getbestblockhash.md)
@@ -151,7 +202,7 @@ to compile, execute, and finalize its state autonomously.
 - [validaterawtransaction](./autogen/testnet/public_endpoints/14_validaterawtransaction.md)
 
 
-### Chapter 12: Private RPC Endpoints
+### Chapter 6: Private RPC Endpoints
 
 - [connect](./autogen/testnet/private_endpoints/00_connect.md)
 - [createaccount](./autogen/testnet/private_endpoints/01_createaccount.md)
@@ -166,15 +217,15 @@ to compile, execute, and finalize its state autonomously.
 - [getrecordcommitments](./autogen/testnet/private_endpoints/10_getrecordcommitments.md)
 
 
-## Explorer I
+## Explorer III
 
-### Chapter 13: Authentication
+### Chapter 7: Authentication
 
 - [Authentication API](./explorer/authentication/00_authentication_api.md)
 - [createapikey](./explorer/authentication/01_createapikey.md)
 
 
-### Chapter 14: Blocks
+### Chapter 8: Blocks
 
 - [Block API](./explorer/blocks/00_block_api.md)
 - [getbestblock](./explorer/blocks/01_getbestblock.md)
@@ -183,7 +234,7 @@ to compile, execute, and finalize its state autonomously.
 - [getbyhash](./explorer/blocks/04_getbyhash.md)
 
 
-### Chapter 15: Transactions
+### Chapter 9: Transactions
 
 - [Transaction API](./explorer/transactions/00_transaction_api.md)
 - [getbyhash](./explorer/transactions/01_getbyhash.md)
@@ -192,7 +243,7 @@ to compile, execute, and finalize its state autonomously.
 - [validate](./explorer/transactions/04_validate.md)
 
 
-### Chapter 16: Metrics
+### Chapter 10: Metrics
 
 - [Metrics API](./explorer/metrics/00_metrics_api.md)
 - [get](./explorer/metrics/01_get.md)
@@ -201,7 +252,7 @@ to compile, execute, and finalize its state autonomously.
 
 ## Advanced Topics
 
-### Chapter 17: The Aleo Curves
+### Chapter 11: The Aleo Curves
 
 - [Overview](./autogen/advanced/the_aleo_curves/00_overview.md)
 - [Edwards BLS12](./autogen/advanced/the_aleo_curves/01_edwards_bls12.md)
@@ -210,7 +261,7 @@ to compile, execute, and finalize its state autonomously.
 - [BW6-761](./autogen/advanced/the_aleo_curves/04_bw6-761.md)
 
 
-### Chapter 18: Proof of Succinct Work
+### Chapter 12: Proof of Succinct Work
 
 - [Overview](./advanced/posw/00_overview.md)
 - [Consensus Security](./advanced/posw/01_consensus_security.md)
