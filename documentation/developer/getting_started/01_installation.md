@@ -17,13 +17,20 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="mac">
 
-[**Install for Mac**](https://github.com/AleoHQ/leo/releases/download/v1.0.3/leo-v1.0.3-x86_64-apple-darwin.zip)
+[**Install for Intel Mac**](https://github.com/AleoHQ/leo/releases/download/v1.5.3/leo-v1.5.3-x86_64-apple-darwin.zip)  
+[**Install for Arm Mac**](https://github.com/AleoHQ/leo/releases/download/v1.5.3/leo-v1.5.3-aarch64-apple-darwin.zip)
 
 </TabItem>
 
 <TabItem value="ubuntu">
 
-[**Install for Ubuntu**](https://github.com/AleoHQ/leo/releases/download/v1.0.3/leo-v1.0.3-x86_64-unknown-linux-gnu.zip)
+[**Install for Ubuntu**](https://github.com/AleoHQ/leo/releases/download/v1.5.3/leo-v1.5.3-x86_64-unknown-linux-gnu.zip)
+
+</TabItem>
+    
+<TabItem value="windows">
+
+[**Install for Windows**](https://github.com/AleoHQ/leo/releases/download/v1.5.3/leo-v1.5.3-x86_64-pc-windows-msvc.zip)
 
 </TabItem>
 
@@ -53,7 +60,7 @@ We recommend installing Rust using [rustup](https://www.rustup.rs/). You can ins
 We recommend installing Leo this way. In your terminal, run:
 
 ```bash
-cargo install leo-lang
+cargo install leo-lang --locked
 ```
 
 Now to use Leo, in your terminal, run:
