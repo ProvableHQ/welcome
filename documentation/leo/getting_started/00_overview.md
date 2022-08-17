@@ -5,7 +5,7 @@ sidebar_label: Overview
 ---
 
 Welcome to the Leo programming language. Leo is a functional, statically-typed programming language built
-for writing private applications.
+for writing private applications. Leo is a high-level programming language that compiles down to low-level Aleo Instructions.
 
 :::info
 The Leo language is currently in active development. Please monitor the repository on [**GitHub**](https://github.com/AleoHQ/leo) for breaking changes

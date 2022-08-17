@@ -1,21 +1,21 @@
 ---
 id: overview
-title: Testnet I.
+title: Testnet III.
 sidebar_label: Overview
 ---
 
 :::note
-Aleo Testnet I is **not** ready for production use and will undergo thorough audit and testing before reaching production.
-Aleo Testnet I is a trusted testnet - subsequent testnets will undergo a trusted setup process.
+Aleo Testnet III is **not** ready for production use and will undergo thorough audit and testing before reaching production.
+Aleo Testnet III is a trusted testnet - subsequent testnets will undergo a trusted setup process.
 :::
 
-**Aleo Testnet I** is an experimental network for developers to begin building and testing applications on Aleo.
+**Aleo Testnet III** is an experimental network for developers to begin building and testing applications on Aleo.
 Testnet I is used by the core team for designing and evaluating new circuits, planning and staging network upgrades,
 and running experimental features for inclusion on mainnet.
 
 ## The Network
 
-To connect to the network, the following is a list of Aleo Testnet I bootnodes.
+To connect to the network, the following is a list of Aleo Testnet III bootnodes.
 
 #### Americas
 
