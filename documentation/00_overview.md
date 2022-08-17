@@ -21,15 +21,19 @@ to compile, execute, and finalize its state autonomously.
 ### Chapter 1: Concepts
 
 - [Accounts](./concepts/accounts)
-- [Programs](./concepts/01_programs.md)
-- [Records](./concepts/02_records.md)
-- [Transactions](./concepts/03_transactions.md)
-- [Blocks](./concepts/04_blocks.md)
-- [Consensus](./concepts/05_consensus.md)
-- [Glossary](./concepts/06_glossary.md)
+- [Programs](./concepts/programs)
+- [Records](./concepts/records)
+
+[//]: # (- [Transactions]&#40;./concepts/03_transactions.md&#41;)
+
+[//]: # (- [Blocks]&#40;./concepts/04_blocks.md&#41;)
+
+[//]: # (- [Consensus]&#40;./concepts/05_consensus.md&#41;)
+
+[//]: # (- [Glossary]&#40;./concepts/06_glossary.md&#41;)
 
 ### Chapter 2: Getting Started
-- [The Aleo Programming Model](./aleo/overview)
+- [The Aleo SDK](./aleo/overview)
 - [Aleo Instructions](./aleo/instructions)
 - [Aleo Opcodes](./aleo/opcodes)
 - [Formal Specification of Aleo Instructions](./aleo/specification)
@@ -38,93 +42,69 @@ to compile, execute, and finalize its state autonomously.
 
 
 ### Chapter 3: Hello Leo!
-- [The Leo Programming Language](./leo/getting_started/00_overview.md)
-- [Installation](./leo/getting_started/01_installation.md)
-- [Hello World in Leo](./leo/getting_started/02_hello_world.md)
-- [File Syntax](./leo/getting_started/03_syntax.md)
-- [CLI Commands](./leo/getting_started/04_cli.md)
+- [The Leo Programming Language](./leo/getting_started/overview)
+- [Installation](./leo/getting_started/installation)
+- [Hello World in Leo](./leo/getting_started/hello_world)
+- [File Syntax](./leo/getting_started/syntax)
+- [CLI Commands](./leo/getting_started/cli)
 
 
+[//]: # ()
+[//]: # (### Chapter 4: Language)
 
-### Chapter 4: Language
-- [A Flying Tour of Leo](./leo/language/00_flying_tour.md)
-- [Layout of a Leo Program](./leo/language/01_layout.md)
-- [Defining Variables](./leo/language/02_variables.md)
-- [Data Types and Values](./leo/language/03_types.md)
-- [Arrays](./leo/language/04_arrays_and_tuples.md)
-- [Operators](./leo/language/05_operators.md)
-- [Statements](./leo/language/06_statements.md)
-- [Functions](./leo/language/07_functions.md)
-- [Leo Inputs](./leo/language/08_inputs.md)
-- [Circuits](./leo/language/09_circuits.md)
-- [Imports](./leo/language/10_imports.md)
-- [Console Functions](./leo/language/11_console.md)
-- [Writing Tests](./leo/language/12_tests.md)
-- [Lexical Structure](./leo/language/13_lexical.md)
+[//]: # (- [A Flying Tour of Leo]&#40;./leo/language/00_flying_tour.md&#41;)
 
+[//]: # (- [Layout of a Leo Program]&#40;./leo/language/01_layout.md&#41;)
 
+[//]: # (- [Defining Variables]&#40;./leo/language/02_variables.md&#41;)
 
-### Chapter 4: Programming Model
+[//]: # (- [Data Types and Values]&#40;./leo/language/03_types.md&#41;)
 
-- [The Leo Programming Model](./leo/programming_model/00_model.md)
+[//]: # (- [Arrays]&#40;./leo/language/04_arrays_and_tuples.md&#41;)
 
+[//]: # (- [Operators]&#40;./leo/language/05_operators.md&#41;)
 
+[//]: # (- [Statements]&#40;./leo/language/06_statements.md&#41;)
 
-### Chapter 5: CLI
+[//]: # (- [Functions]&#40;./leo/language/07_functions.md&#41;)
 
+[//]: # (- [Leo Inputs]&#40;./leo/language/08_inputs.md&#41;)
 
-- [The Leo Command Line Interface](./leo/cli/00_overview.md)
-- [Create a Package](./leo/cli/01_new.md)
-- [Initialize a Package](./leo/cli/02_init.md)
-- [Build a Package](./leo/cli/03_build.md)
-- [Auto-Compile a Program](./leo/cli/04_watch.md)
-- [Test a Program](./leo/cli/05_test.md)
-- [Setup a Program](./leo/cli/06_setup.md)
-- [Execute a Program](./leo/cli/07_prove.md)
-- [Verify a Program](./leo/cli/08_run.md)
-- [Login to Aleo Package Manager](./leo/cli/09_login.md)
-- [Logout of Aleo Package Manager](./leo/cli/10_logout.md)
-- [Import a Package](./leo/cli/11_add.md)
-- [Remove a Package](./leo/cli/12_remove.md)
-- [Publish a Package to Aleo Package Manager](./leo/cli/13_publish.md)
-- [Deploy a Package to Aleo](./leo/cli/14_deploy.md)
-- [Clean a Package Workspace](./leo/cli/15_clean.md)
-- [Lint a Package Workspace](./leo/cli/16_lint.md)
-- [Update the Leo Compiler](./leo/cli/17_update.md)
+[//]: # (- [Circuits]&#40;./leo/language/09_circuits.md&#41;)
+
+[//]: # (- [Imports]&#40;./leo/language/10_imports.md&#41;)
+
+[//]: # (- [Console Functions]&#40;./leo/language/11_console.md&#41;)
+
+[//]: # (- [Writing Tests]&#40;./leo/language/12_tests.md&#41;)
+
+[//]: # (- [Lexical Structure]&#40;./leo/language/13_lexical.md&#41;)
+
+[//]: # ()
+
+### Chapter 4: CLI
 
 
-
-### Chapter 6: Toy Examples
-
-- [Pedersen Hash](./leo/toy_examples/00_pedersen_hash.md)
-- [Bubble Sort](./leo/toy_examples/01_bubble_sort.md)
-- [Linear Regression](./leo/toy_examples/02_linear_regression.md)
-
-
-
-### Chapter 7: Additional Material
-
-
-- [Style Guide](./leo/additional_material/00_style.md)
-- [Common Patterns](./leo/additional_material/01_common.md)
-- [List of Known Bugs](./leo/additional_material/02_bugs.md)
-- [Contributing](./leo/additional_material/03_contributing.md)
-
+- [The Leo Command Line Interface](./leo/cli/overview)
+- [Create a Package](./leo/cli/new)
+- [Build a Package](./leo/cli/build)
+- [Verify a Program](./leo/cli/run)
+- [Clean a Package Workspace](./leo/cli/clean)
 
 ## Testnet III
 
-### Chapter 2: Getting Started
+### Chapter 5: Getting Started
 
 - [Testnet III.](./testnet/getting_started/00_overview.md)
 - [Install snarkOS](./testnet/getting_started/01_installation.md)
 
 
-### Chapter 3: Concepts
+### Chapter 6: Concepts
 
 - [RPC Server](./testnet/concepts/00_rpc_server.md)
 
 
-### Chapter 4: Network Messages
+### Chapter 7: Network Messages
 
 - [Block](./testnet/network_messages/00_block.md)
 - [GetBlocks](./testnet/network_messages/01_get_blocks.md)
@@ -141,7 +121,7 @@ to compile, execute, and finalize its state autonomously.
 - [Version](./testnet/network_messages/12_version.md)
 
 
-### Chapter 5: Public RPC Endpoints
+### Chapter 8: Public RPC Endpoints
 
 - [decoderawtransaction](./testnet/public_endpoints/00_decoderawtransaction.md)
 - [getbestblockhash](./testnet/public_endpoints/01_getbestblockhash.md)
@@ -160,7 +140,7 @@ to compile, execute, and finalize its state autonomously.
 - [validaterawtransaction](./testnet/public_endpoints/14_validaterawtransaction.md)
 
 
-### Chapter 6: Private RPC Endpoints
+### Chapter 9: Private RPC Endpoints
 
 - [connect](./testnet/private_endpoints/00_connect.md)
 - [createaccount](./testnet/private_endpoints/01_createaccount.md)
@@ -177,13 +157,13 @@ to compile, execute, and finalize its state autonomously.
 
 ## Explorer III
 
-### Chapter 7: Authentication
+### Chapter 10: Authentication
 
 - [Authentication API](./explorer/authentication/00_authentication_api.md)
 - [createapikey](./explorer/authentication/01_createapikey.md)
 
 
-### Chapter 8: Blocks
+### Chapter 11: Blocks
 
 - [Block API](./explorer/blocks/00_block_api.md)
 - [getbestblock](./explorer/blocks/01_getbestblock.md)
@@ -192,7 +172,7 @@ to compile, execute, and finalize its state autonomously.
 - [getbyhash](./explorer/blocks/04_getbyhash.md)
 
 
-### Chapter 9: Transactions
+### Chapter 12: Transactions
 
 - [Transaction API](./explorer/transactions/00_transaction_api.md)
 - [getbyhash](./explorer/transactions/01_getbyhash.md)
@@ -201,7 +181,7 @@ to compile, execute, and finalize its state autonomously.
 - [validate](./explorer/transactions/04_validate.md)
 
 
-### Chapter 10: Metrics
+### Chapter 13: Metrics
 
 - [Metrics API](./explorer/metrics/00_metrics_api.md)
 - [get](./explorer/metrics/01_get.md)
@@ -210,7 +190,7 @@ to compile, execute, and finalize its state autonomously.
 
 ## Advanced Topics
 
-### Chapter 11: The Aleo Curves
+### Chapter 14: The Aleo Curves
 
 - [Overview](./advanced/the_aleo_curves/00_overview.md)
 - [Edwards BLS12](./advanced/the_aleo_curves/01_edwards_bls12.md)
@@ -219,7 +199,7 @@ to compile, execute, and finalize its state autonomously.
 - [BW6-761](./advanced/the_aleo_curves/04_bw6-761.md)
 
 
-### Chapter 12: Proof of Succinct Work
+### Chapter 15: Proof of Succinct Work
 
 - [Overview](./advanced/posw/00_overview.md)
 - [Consensus Security](./advanced/posw/01_consensus_security.md)
