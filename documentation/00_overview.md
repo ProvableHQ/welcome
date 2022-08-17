@@ -13,7 +13,7 @@ performant, secure, and anonymous. Aleo introduces an application runtime enviro
 to compile, execute, and finalize its state autonomously.
 
 <!-- markdown-link-check-disable -->
-### Chapter 0: Getting Started
+### Chapter 0: Table of Contents
 
 - [Welcome to Aleo.](./00_overview.md)
 
@@ -28,62 +28,43 @@ to compile, execute, and finalize its state autonomously.
 - [Consensus](./concepts/05_consensus.md)
 - [Glossary](./concepts/06_glossary.md)
 
-### Chapter 2: Aleo Programming
-- [The Aleo Programming Model](./aleo/00_overview.md)
+### Chapter 2: Getting Started
+- [The Aleo Programming Model](./aleo/overview)
+- [Aleo Instructions](./aleo/instructions)
+- [Aleo Opcodes](./aleo/opcodes)
+- [Formal Specification of Aleo Instructions](./aleo/specification)
 
 ## Leo
 
 
-### Chapter 2: Hello Leo!
-
-
+### Chapter 3: Hello Leo!
 - [The Leo Programming Language](./leo/getting_started/00_overview.md)
-
 - [Installation](./leo/getting_started/01_installation.md)
-
 - [Hello World in Leo](./leo/getting_started/02_hello_world.md)
-
 - [File Syntax](./leo/getting_started/03_syntax.md)
-
 - [CLI Commands](./leo/getting_started/04_cli.md)
 
 
 
-### Chapter 3: Language
-
-
+### Chapter 4: Language
 - [A Flying Tour of Leo](./leo/language/00_flying_tour.md)
-
 - [Layout of a Leo Program](./leo/language/01_layout.md)
-
 - [Defining Variables](./leo/language/02_variables.md)
-
 - [Data Types and Values](./leo/language/03_types.md)
-
 - [Arrays](./leo/language/04_arrays_and_tuples.md)
-
 - [Operators](./leo/language/05_operators.md)
-
 - [Statements](./leo/language/06_statements.md)
-
 - [Functions](./leo/language/07_functions.md)
-
 - [Leo Inputs](./leo/language/08_inputs.md)
-
 - [Circuits](./leo/language/09_circuits.md)
-
 - [Imports](./leo/language/10_imports.md)
-
 - [Console Functions](./leo/language/11_console.md)
-
 - [Writing Tests](./leo/language/12_tests.md)
-
 - [Lexical Structure](./leo/language/13_lexical.md)
 
 
 
 ### Chapter 4: Programming Model
-
 
 - [The Leo Programming Model](./leo/programming_model/00_model.md)
 
@@ -93,50 +74,30 @@ to compile, execute, and finalize its state autonomously.
 
 
 - [The Leo Command Line Interface](./leo/cli/00_overview.md)
-
 - [Create a Package](./leo/cli/01_new.md)
-
 - [Initialize a Package](./leo/cli/02_init.md)
-
 - [Build a Package](./leo/cli/03_build.md)
-
 - [Auto-Compile a Program](./leo/cli/04_watch.md)
-
 - [Test a Program](./leo/cli/05_test.md)
-
 - [Setup a Program](./leo/cli/06_setup.md)
-
 - [Execute a Program](./leo/cli/07_prove.md)
-
 - [Verify a Program](./leo/cli/08_run.md)
-
 - [Login to Aleo Package Manager](./leo/cli/09_login.md)
-
 - [Logout of Aleo Package Manager](./leo/cli/10_logout.md)
-
 - [Import a Package](./leo/cli/11_add.md)
-
 - [Remove a Package](./leo/cli/12_remove.md)
-
 - [Publish a Package to Aleo Package Manager](./leo/cli/13_publish.md)
-
 - [Deploy a Package to Aleo](./leo/cli/14_deploy.md)
-
 - [Clean a Package Workspace](./leo/cli/15_clean.md)
-
 - [Lint a Package Workspace](./leo/cli/16_lint.md)
-
 - [Update the Leo Compiler](./leo/cli/17_update.md)
 
 
 
 ### Chapter 6: Toy Examples
 
-
 - [Pedersen Hash](./leo/toy_examples/00_pedersen_hash.md)
-
 - [Bubble Sort](./leo/toy_examples/01_bubble_sort.md)
-
 - [Linear Regression](./leo/toy_examples/02_linear_regression.md)
 
 
@@ -145,11 +106,8 @@ to compile, execute, and finalize its state autonomously.
 
 
 - [Style Guide](./leo/additional_material/00_style.md)
-
 - [Common Patterns](./leo/additional_material/01_common.md)
-
 - [List of Known Bugs](./leo/additional_material/02_bugs.md)
-
 - [Contributing](./leo/additional_material/03_contributing.md)
 
 

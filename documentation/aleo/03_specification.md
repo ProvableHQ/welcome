@@ -1,5 +1,5 @@
 ---
-id: grammar
+id: specification
 title: Formal Specification
 sidebar_label: Formal Specification
 ---
