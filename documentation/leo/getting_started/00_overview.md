@@ -19,27 +19,33 @@ Proceed to [**Installation**](01_installation.md) for information on how to inst
 
 Check out the [**Hello World**](02_hello_world.md) tutorial for a brief walk-through of Leo and the Leo CLI.
 
-## Language Documentation
+## Formal Language Documentation
 
-To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**](../language/01_layout.md).
-Leo comes with an advanced testing framework for writing unit and integration tests. Read [**Writing Tests**](../language/12_tests.md) to learn more.
+A formal ABNF grammar specification for Leo can be viewed [here](https://github.com/AleoHQ/leo/tree/testnet3/docs/grammar).
 
-## Programming Model
+[//]: # ()
+[//]: # (To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**]&#40;../language/01_layout.md&#41;.)
 
-Leo programs are designed to work with Aleo [**record**](../../aleo/concepts/02_records.md) and [**transaction**](../../aleo/concepts/03_transactions.md) data. 
-Understanding how to access and compute on this data is essential to writing private applications. 
-Read the [**Model**](../programming_model/00_model.md) to learn more.
+[//]: # (Leo comes with an advanced testing framework for writing unit and integration tests. Read [**Writing Tests**]&#40;../language/12_tests.md&#41; to learn more.)
+
+[//]: # (## Programming Model)
+
+[//]: # ()
+[//]: # (Leo programs are designed to work with Aleo [**record**]&#40;../../aleo/concepts/02_records.md&#41; and [**transaction**]&#40;../../aleo/concepts/03_transactions.md&#41; data. )
+
+[//]: # (Understanding how to access and compute on this data is essential to writing private applications. )
+
+[//]: # (Read the [**Model**]&#40;../programming_model/00_model.md&#41; to learn more.)
 
 ## Command Line Interface Documentation
 
 The Leo CLI provides a suite of commands to make programming in Leo easy.
 
-- Develop your program with [**new**](../cli/01_new.md), [**build**](../cli/03_build.md), [**watch**](../cli/04_watch.md), 
-[**test**](../cli/05_test.md), and [**clean**](../cli/15_clean.md).
-
-- Download packages from the Aleo Package Manager with [**add**](../cli/11_add.md), [**remove**](../cli/12_remove.md), [**login**](../cli/09_login.md), and [**publish**](../cli/13_publish.md).
-
-- Once your Leo program is compiled, generate proofs with [**setup**](../cli/06_setup.md), [**prove**](../cli/07_prove.md), and [**run**](../cli/08_run.md).
+- [**leo new**](../cli/01_new.md)
+- [**leo build**](../cli/02_build.md)
+- [**leo run**](../cli/03_run.md)
+- [**leo clean**](../cli/04_clean.md).
+- [**leo test**](../cli/05_test.md)
 
 ## Additional Material
 

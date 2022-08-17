@@ -112,7 +112,7 @@ function main() {
 let a = A { };
 ```
 ### Semicolons
-Every statement except for the `return` statement should end in a semicolon.
+Every statement including the `return` statement should end in a semicolon.
 ```leo
 let a = 1u32;
 let mut b = a + 5;

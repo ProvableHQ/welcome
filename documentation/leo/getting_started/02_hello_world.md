@@ -7,19 +7,18 @@ sidebar_label: Hello World
 Use the Leo CLI to create a new project.
 In your terminal, run:
 ```bash
-leo new hello-world
-cd hello-world
+leo new hello
+cd hello
 ```
 
 This creates a directory with the following structure:
 
 ```bash
 hello-world/
-├── Leo.toml # Your program manifest
+├── program.json # Your program manifest
 ├── README.md # Your program description
 ├── inputs/ 
-│ ├── hello-world.in # Your program inputs
-│ └── hello-world.state # Record state information
+│ ├── hello.in # Your program inputs
 └── src/    
   └── main.leo # Your program file
 ```
@@ -28,32 +27,31 @@ Let's run the project.
 
 ## Zero Knowledge in one line
 
-The `leo run` command will compile the program, generate keys for a trusted setup, fetch inputs, generate a proof and verify it.
+The `leo run` command will compile and execute the program.
 In your terminal, run:
 ```bash
-leo run
+leo run main
 ```
 
 ```bash title="console output:"
-Compiling Starting...
- Compiling Compiling main program... ("hello-world/src/main.leo")
- Compiling Complete
-      Done Finished in 10 milliseconds
+ Build ✅ Compiled 'main.leo' into Aleo instructions (in "/hello/build/main.aleo")
+⏳ Compiling 'hello.aleo'...
 
-     Setup Starting...
-     Setup Saving proving key ("hello-world/outputs/hello-world.lpk")
-     Setup Complete
-     Setup Saving verification key ("hello-world/outputs/hello-world.lvk")
-     Setup Complete
-      Done Finished in 10 milliseconds
+ • Loaded universal setup (in 100 ms)
+ • Built 'main' (in 1000 ms)
 
-   Proving Starting...
-   Proving Saving proof... ("hello-world/outputs/hello-world.proof")
-      Done Finished in 10 milliseconds
+     Build ✅ Built 'hello.aleo' (in "/hello/build")
+ • Loaded universal setup (in 100 ms)
+🚀 Executing 'hello.aleo/main'...
 
- Verifying Starting...
- Verifying Proof is valid
-      Done Finished in 10 milliseconds
+ • Executing 'hello.aleo/main'...
+ • Executed 'main' (in 1000 ms)
+
+➡️  Output
+
+ • 3u32
+
+ Executing ✅ Executed 'hello.aleo/main' (in "/hello/build")
 ```
 
 Congratulations! You've just run your first Leo program.

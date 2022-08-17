@@ -3,35 +3,52 @@ id: installation
 title: Installation
 ---
 
-## 1. Install the Latest Release
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+[//]: # (## 1. Install the Latest Release)
 
-<Tabs
-    defaultValue="mac"
-    values={[
-        {label: 'macOS', value: 'mac'},
-        {label: 'Ubuntu', value: 'ubuntu'},
-    ]
-}>
+[//]: # (import Tabs from '@theme/Tabs';)
 
-<TabItem value="mac">
+[//]: # (import TabItem from '@theme/TabItem';)
 
-[**Install for Mac**](https://github.com/AleoHQ/leo/releases/download/v1.0.3/leo-v1.0.3-x86_64-apple-darwin.zip)
+[//]: # ()
+[//]: # (<Tabs)
 
-</TabItem>
+[//]: # (    defaultValue="mac")
 
-<TabItem value="ubuntu">
+[//]: # (    values={[)
 
-[**Install for Ubuntu**](https://github.com/AleoHQ/leo/releases/download/v1.0.3/leo-v1.0.3-x86_64-unknown-linux-gnu.zip)
+[//]: # (        {label: 'macOS', value: 'mac'},)
 
-</TabItem>
+[//]: # (        {label: 'Ubuntu', value: 'ubuntu'},)
 
-</Tabs>
+[//]: # (    ])
 
-Browse all Leo releases [**here**](https://github.com/AleoHQ/leo/releases).
+[//]: # (}>)
 
-## 2.1 Install with Rust
+[//]: # ()
+[//]: # (<TabItem value="mac">)
+
+[//]: # ()
+[//]: # ([**Install for Mac**]&#40;https://github.com/AleoHQ/leo/releases/download/v1.0.3/leo-v1.0.3-x86_64-apple-darwin.zip&#41;)
+
+[//]: # ()
+[//]: # (</TabItem>)
+
+[//]: # ()
+[//]: # (<TabItem value="ubuntu">)
+
+[//]: # ()
+[//]: # ([**Install for Ubuntu**]&#40;https://github.com/AleoHQ/leo/releases/download/v1.0.3/leo-v1.0.3-x86_64-unknown-linux-gnu.zip&#41;)
+
+[//]: # ()
+[//]: # (</TabItem>)
+
+[//]: # ()
+[//]: # (</Tabs>)
+
+[//]: # ()
+[//]: # (Browse all Leo releases [**here**]&#40;https://github.com/AleoHQ/leo/releases&#41;.)
+
+## 1. Install with Rust
 
 We recommend installing Rust using [rustup](https://www.rustup.rs/). You can install `rustup` as follows:
 
@@ -48,20 +65,19 @@ We recommend installing Rust using [rustup](https://www.rustup.rs/). You can ins
   
   Download the [Windows 32-bit executable](https://win.rustup.rs/i686) and follow the on-screen instructions.
 
-## 2.2a Build from Crates.io
+[//]: # (## 2.2a Build from Crates.io)
 
-We recommend installing Leo this way. In your terminal, run:
+[//]: # ()
+[//]: # (We recommend installing Leo this way. In your terminal, run:)
 
-```bash
-cargo install leo-lang
-```
+[//]: # ()
+[//]: # (```bash)
 
-Now to use Leo, in your terminal, run:
-```bash
-leo
-```
+[//]: # (cargo install leo-lang)
+
+[//]: # (```)
  
-## 3. Build from Source Code
+## 2. Build from Source Code
 
 Alternatively, you can install Leo by building from the source code as follows:
 
@@ -79,3 +95,7 @@ This will generate an executable under the `./target/release` directory. To run 
 ./target/release/leo
 ```
 
+Now to use Leo, in your terminal, run:
+```bash
+leo
+```

@@ -6,10 +6,10 @@ sidebar_label: leo clean
 
 ### `leo clean`
 
-To clean the output directory, run:
+To clean the build directory, run:
 ```bash
 leo clean
 ```
 ```bash title="console output:"
-      Done Program workspace cleaned
+  Cleaning ✅ Cleaned the build directory (in "/build/")
 ```
