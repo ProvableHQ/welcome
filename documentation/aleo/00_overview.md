@@ -55,12 +55,12 @@ Now to use Aleo, in your terminal, run:
 aleo
 ```
 
-## List of Commands
+# List of Commands
 :::tip
 You can print the list of commands by running `aleo --help`
 :::
 
-### 1. `aleo account`
+## 1. `aleo account`
 
 To create a new account, run:
 ```bash
@@ -75,7 +75,7 @@ aleo account new -s {$SEED}
 The Aleo private key, view key and address will be printed to console.
 See [`concepts/accounts`](../concepts/accounts) for more information.
 
-### 2. `aleo new`
+## 2. `aleo new`
 
 To create a new package, run:
 ```bash
@@ -93,7 +93,7 @@ package-name/
 └── main.leo # Your program file
 ```
 
-### 3. `aleo build`
+## 3. `aleo build`
 
 To compile your program and verify that it builds properly, run:
 ```bash
@@ -110,7 +110,7 @@ To compile your program to a specified endpoint run:
 aleo build --endpoint {$ENDPOINT}
 ```
 
-### 4. `aleo run`
+## 4. `aleo run`
 
 To execute your Aleo program function run:
 ```bash
@@ -130,7 +130,7 @@ To execute your Aleo program function to a specified endpoint run:
 aleo run {$FUNCTION} {$INPUTS} --endpoint {$ENDPOINT}
 ```
 
-### 5. `aleo node`
+## 5. `aleo node`
 
 To start a local development node run:
 ```bash
@@ -142,14 +142,14 @@ To start a local development node without deploying the local program at genesis
 aleo node start --nodeploy
 ```
 
-### 6. `aleo clean`
+## 6. `aleo clean`
 
 To clean the Aleo package build directory run:
 ```bash
 aleo clean
 ```
 
-### 7. `aleo update`
+## 7. `aleo update`
 
 To update the Aleo SDK to the latest version run:
 ```

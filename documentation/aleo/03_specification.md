@@ -6,6 +6,9 @@ sidebar_label: Formal Specification
 
 # Formal Specification for Aleo Instructions
 
+This chapter briefly describes Aleo instructions by their formal syntax.   
+A more advanced language specification written in ABNF format is currently in development.
+
 ```
 program = *import title 1*definition
 import = "import" program-id ";"
