@@ -1,6 +1,6 @@
 ---
 id: opcodes
-title: Aleo Opcodes
+title: Aleo Opcodes Reference
 sidebar_label: Aleo Opcodes
 ---
 

@@ -1,7 +1,7 @@
 ---
-id: instructions
-title: Aleo Instructions
-sidebar_label: Aleo Instructions
+id: tour
+title: Aleo Instructions Tour
+sidebar_label: Aleo Instructions Tour
 ---
 ## 1. Create and build a new project
 

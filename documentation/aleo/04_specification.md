@@ -1,6 +1,6 @@
 ---
 id: specification
-title: Formal Specification
+title: Aleo Instruction Formal Specification
 sidebar_label: Formal Specification
 ---
 
