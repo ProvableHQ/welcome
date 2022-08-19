@@ -19,9 +19,10 @@ This will create **foo** directory and the files with the basic structure of the
 
 The main.aleo file should have contents like this:
 
-```
+```aleo showLineNumbers
 // The 'foo.aleo' program.
 program foo.aleo;
+
 function hello:
     input r0 as u32.public;
     input r1 as u32.private;
@@ -79,7 +80,7 @@ As you can see, the output register was assigned with the `5u32` value, represen
 
 Let's examine the foo program inside the *main.aleo* file:
 
-```
+```aleo showLineNumbers
 // The 'foo.aleo' program.
 program foo.aleo;
 
@@ -92,7 +93,7 @@ function hello:
 
 First, we need to declare the program as the following:
 
-```
+```aleo
 program foo.aleo;
 ```
 
@@ -168,7 +169,7 @@ Interfaces are user-defined data structures. They are very much like traditional
 
 For example, let's build an interface representing a fixed-size array of 3 elements. Add this at the bottom of the *main.aleo* file:
 
-```
+```aleo
 interface array3:
     a0 as u32;
     a1 as u32;
@@ -177,7 +178,7 @@ interface array3:
 
 Now, just for example purposes, let's code a function that adds one to each element of a register with an array3 data type stored in it.
 
-```
+```aleo
 function sum_one_to_array3:
     input r0 as array3.private;
     add r0.a0 1u32 into r1;
@@ -220,7 +221,7 @@ And we get the new `array3` element as output:
 
 A record is a fundamental data structure for encoding user assets and application state. They are very similar to interfaces, but they have two non-optional parameters:
 
-```
+```aleo 
 record token:
     owner as address.private
     gates as u64.private
@@ -256,7 +257,7 @@ In Aleo, the state of an application is managed through records. An Aleo account
 
 
 Consider this program:
-```
+```aleo showLineNumbers
 // The 'foo.aleo' program.
 program foo.aleo;
 record token:

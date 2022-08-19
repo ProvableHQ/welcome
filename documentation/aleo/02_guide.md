@@ -6,7 +6,7 @@ sidebar_label: Language Guide
 
 ## Layout of an Aleo Program
 
-An Aleo program contains declarations of a [ProgramID](#programid), [Imports](#import), [Functions](#function), [Closures](#closure), [Records](#record),
+An Aleo program contains declarations of a [ProgramID](#programid), [Imports](#import), [Functions](#function), [Closures](#closure), [Interfaces](#interface), [Records](#record),
 [Mappings](#mapping), and [Finalize](#finalize). Ordering is only enforced for imports which must be at the top of file.
 Declarations are locally accessible within a program file.
 If you need a declaration from another program file, you must import it.
@@ -16,7 +16,7 @@ If you need a declaration from another program file, you must import it.
 A program ID is declared as `{name}.{network}`.  
 Currently, `aleo` is the only supported `network` domain.
 
-```leo
+```aleo showLineNumbers
 program hello.aleo;
 ```
 
@@ -26,7 +26,7 @@ An import is declared as `import {ProgramID};`
 Imports fetch other declarations by their program ID and bring them into the current file scope.
 You can import dependencies that are downloaded to the `imports` directory.
 
-```leo
+```aleo showLineNumbers
 import foo.aleo; // Import the `foo.aleo` program into the `hello.aleo` program.
 
 program hello.aleo;
@@ -38,7 +38,7 @@ A function is declared as `function {name}:`
 Functions contain instructions that can compute values.
 Functions must be in a program's current scope to be called.
 
-```leo
+```aleo showLineNumbers
 function foo:
     input r0 as field.public;
     input r1 as field.private;
@@ -51,7 +51,7 @@ function foo:
 A function input is declared as `input {register} as {type}.{visibility};`  
 Function inputs must be declared after the function definition.
 
-```leo
+```aleo showLineNumbers
 // The function `foo` takes a single input `r0` with type `field` and visibility `public`.
 function foo:
     input r0 as field.public; 
@@ -62,7 +62,7 @@ function foo:
 A function output is declared as `output {register} as {type}.{visibility};`  
 Function outputs must be declared at the end of the function definition.
 
-```leo
+```aleo showLineNumbers
 ...
     output r0 as field.public;
 ```
@@ -73,12 +73,26 @@ A closure is declared as `closure {name}:`
 Functions contain instructions that can compute values.
 Closures are helper functions that cannot be executed directly. Closures must be called by other functions.
 
-```leo
+```aleo showLineNumbers
 closure foo:
     input r0 as field;
     input r1 as field;
     add r0 r1 into r2;
     output r2 as field;
+```
+
+### Interface
+
+A interface is a data structure is declared as `interface {name}:`  
+Records contain declarations `{name} as {type}.{visibility};`  
+Record data structures must contain the `owner` and `gates` declarations as shown below.  
+When passing a record as input to a program function the `_nonce as group.{visibility}` declaration is also required.
+
+```aleo showLineNumbers
+interface array3:
+    a0 as u32;
+    a1 as u32;
+    a2 as u32;
 ```
 
 ### Record
@@ -88,7 +102,7 @@ Records contain declarations `{name} as {type}.{visibility};`
 Record data structures must contain the `owner` and `gates` declarations as shown below.  
 When passing a record as input to a program function the `_nonce as group.{visibility}` declaration is also required.
 
-```leo
+```aleo showLineNumbers
 record token:
     // The token owner.
     owner as address.private;
@@ -103,7 +117,7 @@ record token:
 A mapping is declared as `mapping {name}:`  
 Mappings contain key-value pairs.
 
-```leo
+```aleo showLineNumbers
 // On-chain storage of an `account` map, with `owner` as the key,
 // and `amount` as the value.
 mapping account:
@@ -117,7 +131,7 @@ mapping account:
 An increment instruction is declared as `increment {name}[{register}] by {register};`
 A decrement instruction is declared as `decrement {name}[{register}] by {register};`
 
-```leo
+```aleo showLineNumbers
 finalize transfer_public:
     // Input the token sender.
     input r0 as address.public;
@@ -144,7 +158,7 @@ Finalize a program [function](#function).
 Upon success of the finalize function, the program logic is executed.  
 Upon failure of the finalize function, the program logic is reverted.  
 
-```leo
+```aleo showLineNumbers
 // The function `transfer_public_to_private` turns a specified token amount
 // from `account` into a token record for the specified receiver.
 // 

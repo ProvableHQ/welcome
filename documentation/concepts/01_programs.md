@@ -17,7 +17,7 @@ Aleo instructions offers developers with an easy-to-use environment for writing 
 syntax familiar to developers and composable in features, Aleo instructions is well-suited to integrate with
 existing developer frameworks to supercharge web apps with privacy and integrity.
 
-```
+```aleo showLineNumbers
 program token.aleo;
 
 record token:

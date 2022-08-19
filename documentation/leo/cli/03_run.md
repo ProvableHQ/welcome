@@ -1,6 +1,6 @@
 ---
 id: run
-title: Verify a Program
+title: Execute a Program
 sidebar_label: leo run
 ---
 
