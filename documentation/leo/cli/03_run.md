@@ -6,9 +6,15 @@ sidebar_label: leo run
 
 ### `leo run`
 
-To execute a Leo program function.
+To execute a Leo program function using inputs from the program input `.in` file.
 ```bash
 leo run {$FUNCTION}
+```
+
+To execute a Leo program function with inputs from the command line.
+`{$INPUTS}` should be a list of inputs to the program separated by spaces.
+```bash
+leo run {$FUNCTION} {$INPUTS}
 ```
 
 

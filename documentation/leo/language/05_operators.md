@@ -5,26 +5,44 @@ title: Operators
 
 Operators in Leo compute a value based off of one or more expressions.
 
-## Implicit Evaluation
-Since Leo programs compile down to a circuit, Leo enforces a strict type system.
-When evaluating an operator that has an implicit expression, Leo will try and resolve the type based off of previous statements.
-
-## Arithmetic Operators
+# Arithmetic Operators
 
 Leo will try to detect arithmetic operation errors as soon as possible. 
 If an integer overflow or division by zero can be identified at compile time Leo will quickly tell the programmer.
 Otherwise, the error will be caught at proving time when main function inputs are fetched.
 
-| Operation        |  Operators |         Supported Types        |
-|:----------------:|:----------:|:------------------------------:|
-| addition         |  `+` `+=`  | `group`, `field`, integers |
-| negation(unary)  |   `-`      | `group`, `field`, integers | 
-| subtraction(binary)|  `-` `-=`  | `group`, `field`, integers |
-| multiplication   |  `*` `*=`  |     `field`, integers      |
-| division         |  `/` `/=`  |     `field`, integers      |
-| exponentiation   | `**` `**=` |        integers            |
+## Addition
 
-## Logical Operators
+Adds `first` with `second`, storing the outcome in `destination`.
+For integer types, a constraint is added to check for overflow. 
+For cases where wrapping semantics are needed for integer types, see the `Add Wrapped` operator.
+
+```leo
+let a: u8 = 1u8 + 1u8;
+// a is equal to 2
+
+a += 1;
+// a is now equal to 3
+
+a = a.add(1u8);
+// a is now equal to 4
+```
+
+|          Operation           |      Operators      |                                   Supported Types                                    |
+|:----------------------------:|:-------------------:|:------------------------------------------------------------------------------------:|
+|           addition           |  `+` `+=` `.add()`  | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|      wrapping addition       |  `.add_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |                              
+|       negation(unary)        |    `-` `.neg()`     |                    `field` `group` `i8` `i16` `i32` `i64` `i128`                     | 
+|     subtraction(binary)      |  `-` `-=` `.sub()`  |     `field` `group` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`      |
+| wrapping subtraction(binary) |  `.sub_wrapped()`   |     `field` `group` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`      |
+|        multiplication        |  `*` `*=` `.mul()`  | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|   wrapping multiplication    |  `.mul_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|           division           |  `/` `/=` `.div()`  |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
+|      wrapping division       |  `.div_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|        exponentiation        | `**` `**=` `.pow()` |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
+|   wrapping exponentiation    |  `.pow_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+
+# Logical Operators
 
 | Operation | Operators | Supported Types |
 |:---------:|:---------:|:---------------:|
@@ -32,7 +50,7 @@ Otherwise, the error will be caught at proving time when main function inputs ar
 | OR        | `\|\|`    | `bool`          |
 | NOT       | `!`       | `bool`          |
 
-## Relational Operators
+# Relational Operators
 
 Relational operators will always resolve to a boolean `bool` value.
 
@@ -45,7 +63,7 @@ Relational operators will always resolve to a boolean `bool` value.
 | greater than          | `>`       |           integers              |
 | greater than or equal | `>=`      |           integers              |
 
-## Operator Precedence
+# Operator Precedence
 Operators will prioritize evaluation according to:
 
 |            Operator           | Associativity |
@@ -60,7 +78,7 @@ Operators will prioritize evaluation according to:
 |            <code>&#124;&#124;</code>             | left to right |
 | `=` `+=` `-=` `*=` `/=` `**=` |               |
 
-### Parentheses
+## Parentheses
 
 To prioritize a different evaluation use parentheses `()` around the expression.
 

@@ -54,7 +54,7 @@ bracket on the same line as the function definition, adding one space in between
 function main(public a: u32, b: u32) -> u32 {
 ```
 
-Inside the `main` function is a single return statement that returns the function input `a`.
+Inside the `main` function is a single return statement that returns the variable `c`.
 ```leo
     return c;
 ```
