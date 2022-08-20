@@ -38,7 +38,7 @@ aleo build
 
 You will see output like this:
 
-```
+```bash
 ⏳ Compiling 'foo.aleo'...
  • Loaded universal setup (in 1478 ms)
  • Built 'hello' (in 3250 ms)
@@ -101,7 +101,7 @@ Afterwards, we can start writing its functions (or other aleo structures such as
 
 In the case of functions we have it very easy:
 
-```
+```aleo
 function [function_name]: 
 ```
 
@@ -109,7 +109,7 @@ The functions are composed of three main parts:
 
 - **The input section**
   Here we declare its input parameters:
-  ```
+  ```aleo
       input r0 as u32.public;
       input r1 as u32.private;
   ```
@@ -120,7 +120,7 @@ The functions are composed of three main parts:
 - **The instructions section**
 
   The next section, consists in the core of our function, here we call the amount of Aleo Instructions we need to make our program do what we want. For example, performing an add operation:
-  ```
+  ```aleo
       add r0 r1 into r2;
   ```
   Every aleo instruction is followed by its input parameters with its specific types, and the result is store in the *into* register.
@@ -130,7 +130,7 @@ The functions are composed of three main parts:
 - **The output section**
 
   Similar to the input sections, the output section does the same for the output of the program. It's the return of the function.
-  ```
+  ```aleo
       output r2 as u32.private;
   ```
 
@@ -139,7 +139,7 @@ The functions are composed of three main parts:
 Aleo uses a strongly-typed syntax. The language supports 16 primitive types, and allows users to define custom types.
 
 The Aleo primitive types include:
-```
+```aleo
 boolean
 field
 group
@@ -169,7 +169,7 @@ Interfaces are user-defined data structures. They are very much like traditional
 
 For example, let's build an interface representing a fixed-size array of 3 elements. Add this at the bottom of the *main.aleo* file:
 
-```aleo
+```aleo showLineNumbers
 interface array3:
     a0 as u32;
     a1 as u32;
@@ -178,7 +178,7 @@ interface array3:
 
 Now, just for example purposes, let's code a function that adds one to each element of a register with an array3 data type stored in it.
 
-```aleo
+```aleo showLineNumbers
 function sum_one_to_array3:
     input r0 as array3.private;
     add r0.a0 1u32 into r1;
@@ -192,19 +192,19 @@ As you can see, we can input an interface into register `r0` and access interfac
 
 Now, let's run it. In this case, the only new thing you need to know is that interfaces are passed to the cli in the following format:
 
-```
+```bash
 "{a0: 1u32, a1: 2u32, a2: 3u32}"
 ```
 
 Now we can execute the `aleo run` command. We will clean the project to pick up the new code:
 
-```
+```bash
 aleo clean && aleo run sum_one_to_array3 "{a0: 0u32, a1: 1u32, a2: 2u32}"
 ```
 
 And we get the new `array3` element as output:
 
-```
+```bash
 🚀 Executing 'foo.aleo/sum_one_to_array3'...
  • Calling 'foo.aleo/sum_one_to_array3'...
  • Executed 'sum_one_to_array3' (in 1331 ms)
@@ -221,7 +221,7 @@ And we get the new `array3` element as output:
 
 A record is a fundamental data structure for encoding user assets and application state. They are very similar to interfaces, but they have two non-optional parameters:
 
-```aleo 
+```aleo showLineNumbers
 record token:
     owner as address.private
     gates as u64.private
@@ -235,7 +235,7 @@ When running an Aleo function, only registers that belong to the application add
 
 You can find your development application address inside the *program.json* file:
 
-```
+```json
 {
     "program": "foo.aleo",
     "version": "0.0.0",
@@ -290,7 +290,7 @@ This `transfer_amount` function receives 3 input parameters (`sender` record, `r
 
 To run this function, the first parameter is the input record of the program. The format of this parameter is the same as for interface types:
 
-```
+```json
 {
   owner: aleo1x5nz5u4j50w482t5xtqc3jdwly9s8saaxlgjz0wvmuzmxv2l5q9qmypx09.private,
   gates: 0u64.private,
@@ -316,7 +316,7 @@ amount: 50u64.private
 
 We get the following output records:
 
-```
+```bash
 🚀 Executing 'foo.aleo/transfer_amount'...
  • Calling 'foo.aleo/transfer_amount'...
  • Executed 'transfer_amount' (in 3520 ms)
