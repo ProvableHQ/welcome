@@ -73,7 +73,7 @@ aleo account new -s {$SEED}
 ```
 
 The Aleo private key, view key and address will be printed to console.
-See [`concepts/accounts`](../concepts/accounts) for more information.
+See [`concepts/accounts`](../concepts/00_accounts.md) for more information.
 
 ## 2. `aleo new`
 

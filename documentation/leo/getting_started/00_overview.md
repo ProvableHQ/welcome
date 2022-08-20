@@ -45,7 +45,6 @@ The Leo CLI provides a suite of commands to make programming in Leo easy.
 - [**leo build**](../cli/02_build.md)
 - [**leo run**](../cli/03_run.md)
 - [**leo clean**](../cli/04_clean.md).
-- [**leo test**](../cli/05_test.md)
 
 ## Additional Material
 

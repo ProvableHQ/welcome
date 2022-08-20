@@ -97,7 +97,7 @@ interface array3:
 
 ### Record
 
-A [record](../concepts/records) is declared as `record {name}:`  
+A [record](../concepts/02_records.md) is declared as `record {name}:`  
 Records contain declarations `{name} as {type}.{visibility};`  
 Record data structures must contain the `owner` and `gates` declarations as shown below.  
 When passing a record as input to a program function the `_nonce as group.{visibility}` declaration is also required.

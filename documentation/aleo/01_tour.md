@@ -45,7 +45,7 @@ You will see output like this:
 ✅ Built 'foo.aleo' (in "~/foo")
 ```
 
-First, a "universal setup" is loaded into your environment. You can read more about this [here](https://www.aleo.org/post/announcing-aleo-setup) or in the [Marlin paper](https://eprint.iacr.org/2019/1047.pdf).
+First, a "universal setup" is loaded into your environment. You can read more about this in the [Marlin paper](https://eprint.iacr.org/2019/1047.pdf).
 
 Once the universal setup is ready, every function in your *main.aleo* file is built, generating this in the output folder:
 
