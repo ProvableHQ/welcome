@@ -57,7 +57,7 @@ As you can already guess, we have only one `.avm` file for the whole program, bu
 
 ## 2. Running a program
 
-You can run a program with the `aleo run` command, followed by the function name you want to execute and its input parameters
+You can run a program with the `aleo run` command, followed by the function name you want to execute and its input parameters:
 
 ``` bash
 aleo run hello 2u32 3u32
@@ -97,7 +97,7 @@ First, we need to declare the program as the following:
 program foo.aleo;
 ```
 
-Afterwards, we can start writing its functions (or other aleo structures such as interfaces, records, closures, as we will see later)
+Afterwards, we can start writing its functions (or other Aleo structures such as interfaces, records, closures, as we will see later)
 
 In the case of functions we have it very easy:
 
@@ -108,28 +108,29 @@ function [function_name]:
 The functions are composed of three main parts:
 
 - **The input section**
+
   Here we declare its input parameters:
   ```aleo
       input r0 as u32.public;
       input r1 as u32.private;
   ```
-  Everything in aleo instructions are declared/stored inside a register with a type (`i8`,`field`,`bool`, etc) and a visibility option (`public` or `private`), registers are named as `r0`, `r1`, ..., `rn`.
+  Everything in Aleo instructions are declared/stored inside a register with a type (`i8`,`field`,`bool`, etc) and a visibility option (`public` or `private`), registers are named as `r0`, `r1`, ..., `rn`.
 
-  In this case we use `r0`, and `r1` to store the inputs passed in sequential order to a program as `u32` values, where we can store 32bits unsigned integers to perform our sum operation.
+  In this case we use `r0` and `r1` to store the inputs passed in sequential order to a program as `u32` values, where we can store 32bits unsigned integers to perform our sum operation.
 
 - **The instructions section**
 
-  The next section, consists in the core of our function, here we call the amount of Aleo Instructions we need to make our program do what we want. For example, performing an add operation:
+  The next section consists of the core of our function: here we call the amount of Aleo Instructions we need to make our program do what we want. For example, performing an addition operation:
   ```aleo
       add r0 r1 into r2;
   ```
-  Every aleo instruction is followed by its input parameters with its specific types, and the result is store in the *into* register.
+  Every aleo instruction is followed by its input parameters with its specific types, and the result is stored in the *into* register.
 
   You can find all the available aleo instructions [here](https://hackmd.io/@aleo/SJ0mrYRv5#shr).
 
 - **The output section**
 
-  Similar to the input sections, the output section does the same for the output of the program. It's the return of the function.
+  Similar to the input section, the output section does the same for the output of the program. It's the return of the function.
   ```aleo
       output r2 as u32.private;
   ```
@@ -140,6 +141,7 @@ Aleo uses a strongly-typed syntax. The language supports 16 primitive types, and
 
 The Aleo primitive types include:
 ```aleo
+address
 boolean
 field
 group
@@ -176,7 +178,7 @@ interface array3:
     a2 as u32;
 ```
 
-Now, just for example purposes, let's code a function that adds one to each element of a register with an array3 data type stored in it.
+Now, just for example purposes, let's code a function that adds one to each element of a register with an `array3` data type stored in it.
 
 ```aleo showLineNumbers
 function sum_one_to_array3:
@@ -188,7 +190,7 @@ function sum_one_to_array3:
     output r4 as array3.private;
 ```
 
-As you can see, we can input an interface into register `r0` and access interface elements with the `.` syntax. We perform the `add` instruction on every element, storing the results in registers `r1`, `r2` and `r3` and, finally, we make use of the cast command to create a new array3 interface into `r4`.
+As you can see, we can input an interface into register `r0` and access interface elements with the `.` syntax. We perform the `add` instruction on every element, storing the results in registers `r1`, `r2` and `r3` and, finally, we make use of the cast command to create a new `array3` interface into `r4`.
 
 Now, let's run it. In this case, the only new thing you need to know is that interfaces are passed to the cli in the following format:
 

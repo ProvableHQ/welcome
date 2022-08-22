@@ -4,7 +4,7 @@ title: Aleo Instruction Formal Specification
 sidebar_label: Formal Specification
 ---
 
-# Formal Specification for Aleo Instructions
+# Formal Specification for Aleo Instructions Syntax
 
 This chapter briefly describes Aleo instructions by their formal syntax.   
 A more advanced language specification written in ABNF format is currently in development.

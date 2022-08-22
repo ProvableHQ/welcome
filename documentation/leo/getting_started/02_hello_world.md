@@ -14,7 +14,7 @@ cd hello
 This creates a directory with the following structure:
 
 ```bash
-hello-world/
+hello/
 ├── program.json # Your program manifest
 ├── README.md # Your program description
 ├── inputs/ 

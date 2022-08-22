@@ -7,7 +7,7 @@ sidebar_label: Programs
 A **program** is a fundamental data structure for representing application logic and application state.
 
 Aleo introduces a new programming language called **Aleo instructions** that enables developers to write
-anonymous web applications. Leo is a statically-typed, functional programming language for
+anonymous web applications. Aleo instructions is a statically-typed programming language for
 writing privacy-preserving, secure programs on Aleo. By leveraging zero-knowledge proofs, Aleo instructions offers computational
 integrity for real-world applications.
 

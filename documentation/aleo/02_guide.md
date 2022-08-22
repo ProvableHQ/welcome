@@ -49,7 +49,7 @@ function foo:
 #### Function Inputs
 
 A function input is declared as `input {register} as {type}.{visibility};`  
-Function inputs must be declared after the function definition.
+Function inputs must be declared just after the function name declaration.
 
 ```aleo showLineNumbers
 // The function `foo` takes a single input `r0` with type `field` and visibility `public`.
