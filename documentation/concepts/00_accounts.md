@@ -53,7 +53,7 @@ AProvingKey1z3f8dMA8f9GffPsP2s85qWfiYYmBWcccorK9RkaVpAAFB
 ```
 
 An account proving key is formatted as a Base58 string, comprised of 58 characters.
-The account proving key is encoded with a [private key prefix](#account-prefixes) that reads `AProvingKey1`, indicating
+The account proving key is encoded with a [proving key prefix](#account-prefixes) that reads `AProvingKey1`, indicating
 that it is a proving key and should only be shared with authorized parties.
 
 ## Account View Key
@@ -74,7 +74,7 @@ AViewKey1cVP45x3E1TxJFgiJqawy7w5WQDsUXWTbpWAXSXB1sDw8
 
 An account view key is formatted as a Base58 string, comprised of 56 characters.
 The account view key is encoded with a [view key prefix](#account-prefixes) that reads `AViewKey1`, indicating
-that it is a private key and should only be shared with authorized parties.
+that it is a view key and should only be shared with authorized parties.
 
 ## Account Address
 

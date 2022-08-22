@@ -11,7 +11,7 @@ The following is a list of opcodes supported by the Aleo Virtual Machine (AVM).
 | [abs](#abs)                       | Absolute value operation           |
 | [abs.w](#abs.w)                   | Wrapping absolute value operation  |
 | [add](#add)                       | Addition operation                 |
-| [add.w](#add.w)                   | Wrapping add operation             |
+| [add.w](#add.w)                   | Wrapping addition operation        |
 | [and](#and)                       | AND operation                      |
 | [assert.eq](#assert.eq)           | Assert equality                    |
 | [assert.neq](#assert.neq)         | Assert non-equality                |
@@ -53,13 +53,13 @@ The following is a list of opcodes supported by the Aleo Virtual Machine (AVM).
 | [rem](#rem)                       | Remainder operation                |
 | [rem.w](#rem.w)                   | Wrapping remainder operation       |
 | [shl](#shl)                       | Shift left operation               |
-| [shl.w](#shl.w)                   | Wrapping Shift left operation      |
+| [shl.w](#shl.w)                   | Wrapping shift left operation      |
 | [shr](#shr)                       | Shift right operation              |
-| [shr.w](#shr.w)                   | Wrapping Shift right operation     |
+| [shr.w](#shr.w)                   | Wrapping shift right operation     |
 | [sqrt](#sqrt)                     | Square root operation              |
 | [square](#square)                 | Square operation                   |
 | [sub](#sub)                       | Subtraction operation              |
-| [sub.w](#sub.w)                   | Wrapping Subtraction operation     |
+| [sub.w](#sub.w)                   | Wrapping subtraction operation     |
 | [ternary](#ternary)               | Ternary select operation           |
 | [xor](#xor)                       | XOR operation                      |
 
@@ -86,11 +86,11 @@ For integer types, a constraint is added to check for underflow. For cases where
 | `I32`  | `I32`       |
 | `I64`  | `I64`       |
 | `I128` | `I128`      |
-<!-- | `U8`   | `U8`        |
-| `U16`  | `U16`       |
-| `U32`  | `U32`       |
-| `U64`  | `U64`       |
-| `U128` | `U128`      | -->
+<!-- | `U8`   | `U8`        | -->
+<!-- | `U16`  | `U16`       | -->
+<!-- | `U32`  | `U32`       | -->
+<!-- | `U64`  | `U64`       | -->
+<!-- | `U128` | `U128`      | -->
 
 ***
 
@@ -111,11 +111,11 @@ Compute the absolute value of the input, wrapping around at the boundary of the 
 | `I32`  | `I32`       |
 | `I64`  | `I64`       |
 | `I128` | `I128`      |
-<!-- | `U8`   | `U8`        |
-| `U16`  | `U16`       |
-| `U32`  | `U32`       |
-| `U64`  | `U64`       |
-| `U128` | `U128`      | -->
+<!-- | `U8`   | `U8`        | -->
+<!-- | `U16`  | `U16`       | -->
+<!-- | `U32`  | `U32`       | -->
+<!-- | `U64`  | `U64`       | -->
+<!-- | `U128` | `U128`      | -->
 
 ***
 

@@ -14,11 +14,11 @@ Feel free to add your comments and recommendations [here](03_contributing.md).
 ## Code Layout
 
 ### Indentation
-4 spaces per indentation level
+4 spaces per indentation level.
 
 ### Blank lines
 
-A single blank line should separate `circuits`, `functions`, and `tests`.
+A single blank line should separate `circuit`s and `function`s.
 Multiple imports can be optionally separated by a single blank line. 
 The last import at the top of the file should be followed by a blank line.
 

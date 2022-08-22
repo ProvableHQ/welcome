@@ -21,7 +21,7 @@ Check out the [**Hello World**](02_hello_world.md) tutorial for a brief walk-thr
 
 ## Formal Language Documentation
 
-A formal ABNF grammar specification for Leo can be viewed [here](https://github.com/AleoHQ/leo/tree/testnet3/docs/grammar).
+A formal ABNF grammar specification for the syntax of Leo can be viewed [here](https://github.com/AleoHQ/leo/tree/testnet3/docs/grammar).
 
 [//]: # ()
 [//]: # (To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**]&#40;../language/01_layout.md&#41;.)
@@ -44,7 +44,7 @@ The Leo CLI provides a suite of commands to make programming in Leo easy.
 - [**leo new**](../cli/01_new.md)
 - [**leo build**](../cli/02_build.md)
 - [**leo run**](../cli/03_run.md)
-- [**leo clean**](../cli/04_clean.md).
+- [**leo clean**](../cli/04_clean.md)
 
 ## Additional Material
 

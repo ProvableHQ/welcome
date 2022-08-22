@@ -3,9 +3,9 @@ id: syntax
 title: File Syntax
 ---
 
-First, open your **hello-world** project in [Aleo Studio](https://aleo.studio/) (for pretty syntax highlighting) or your text editor of choice. 
+First, open your **hello** project in [Aleo Studio](https://aleo.studio/) (for pretty syntax highlighting) or your text editor of choice. 
 
-**Leo.toml** is the Leo manifest file that configures our package. 
+**program.json** is the Leo manifest file that configures our package. 
 ```json title="program.json" 
 {
     "program": "hello.aleo",
@@ -19,7 +19,7 @@ First, open your **hello-world** project in [Aleo Studio](https://aleo.studio/) 
 }
 ```
 
-The program id `program` is the official name of the other developers will be able to look up after you have published your program.
+The program id `program` is the official name that other developers will be able to look up after you have published your program.
 ```json
     "program": "hello.aleo",
 ```
@@ -32,7 +32,7 @@ All files in the current package will be compiled with the specified Leo `versio
 
 ## Syntax to circuits
 Open up **src/main.leo**.
-The **main.leo** file is the entry point of a Leo project. It should contain a function named `main`. 
+The **main.leo** file is the entry point of a Leo project. It often contains a function named `main`. 
 Let's break down the structure of a Leo file.
 ```leo title="src/main.leo"
 // The 'hello' main function.
