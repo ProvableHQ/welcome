@@ -6,7 +6,7 @@ sidebar_label: The Mining Process
 
 We specify a mining algorithm for the PoSW consensus protocol that is based on modular exponentiation
 over some group `G`. We denote by `R` the relation representing the PoSW circuit,
-and set a NIZK tuple `(G, P, V` to generate the
+and set a NIZK tuple `(G, P, V)` to generate the
 common reference string `CRS = G(R)`. We are interested in defining an
 algorithm for `P` with a size `S` precomputation string that minimizes the number of multiplications
 performed in `G`.
