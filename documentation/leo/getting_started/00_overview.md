@@ -47,7 +47,8 @@ The Leo CLI provides a suite of commands to make programming in Leo easy.
 - [**leo clean**](../cli/04_clean.md)
 
 ## Additional Material
+Install Leo for your favorite code [**editor**](../additional_material/00_tooling.md).
 
-Is your Leo code formatted correctly? Check out the [**Style Guide**](../additional_material/00_style.md) and [**Common Patterns**](../additional_material/01_common.md) for the official guidelines.
+Is your Leo code formatted correctly? Check out the [**Style Guide**](../additional_material/01_style.md) and [**Common Patterns**](../additional_material/02_common.md) for the official guidelines.
 
-Found a bug? Have an idea for a feature? Proceed to the [**Known Bugs**](../additional_material/02_bugs.md) section and the [**Contributing Guide**](../additional_material/03_contributing.md).
+Found a bug? Have an idea for a feature? Proceed to the [**Known Bugs**](../additional_material/03_bugs.md) section and the [**Contributing Guide**](../additional_material/04_contributing.md).
