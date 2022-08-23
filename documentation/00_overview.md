@@ -20,9 +20,9 @@ to compile, execute, and finalize its state autonomously.
 
 ### Chapter 1: Concepts
 
-- [Accounts](./concepts/accounts)
-- [Programs](./concepts/programs)
-- [Records](./concepts/records)
+- [Accounts](./concepts/00_accounts.md)
+- [Programs](./concepts/01_programs.md)
+- [Records](./concepts/02_records.md)
 
 [//]: # (- [Transactions]&#40;./concepts/03_transactions.md&#41;)
 
@@ -33,20 +33,21 @@ to compile, execute, and finalize its state autonomously.
 [//]: # (- [Glossary]&#40;./concepts/06_glossary.md&#41;)
 
 ### Chapter 2: Getting Started
-- [The Aleo SDK](./aleo/overview)
-- [Aleo Instructions](./aleo/instructions)
-- [Aleo Opcodes](./aleo/opcodes)
-- [Formal Specification of Aleo Instructions](./aleo/specification)
+- [The Aleo SDK](./aleo/00_overview.md)
+- [Aleo Instructions](./aleo/01_tour.md)
+- [Aleo Opcodes](./aleo/03_opcodes.md)
+- [Formal Specification of Aleo Instructions](./aleo/04_specification.md)
+- [Code Editor Support for Aleo Instructions](./aleo/05_tooling.md)
 
 ## Leo
 
 
 ### Chapter 3: Hello Leo!
-- [The Leo Programming Language](./leo/getting_started/overview)
-- [Installation](./leo/getting_started/installation)
-- [Hello World in Leo](./leo/getting_started/hello_world)
-- [File Syntax](./leo/getting_started/syntax)
-- [CLI Commands](./leo/getting_started/cli)
+- [The Leo Programming Language](./leo/getting_started/00_overview.md)
+- [Installation](./leo/getting_started/01_installation.md)
+- [Hello World in Leo](./leo/getting_started/02_hello_world.md)
+- [File Syntax](./leo/getting_started/03_syntax.md)
+- [CLI Commands](./leo/getting_started/04_cli.md)
 
 
 [//]: # ()
@@ -84,12 +85,19 @@ to compile, execute, and finalize its state autonomously.
 
 ### Chapter 4: CLI
 
+- [The Leo Command Line Interface](./leo/cli/00_overview.md)
+- [Create a Package](./leo/cli/01_new.md)
+- [Build a Package](./leo/cli/02_build.md)
+- [Execute a Program](./leo/cli/03_run.md)
+- [Clean a Package Workspace](./leo/cli/04_clean.md)
 
-- [The Leo Command Line Interface](./leo/cli/overview)
-- [Create a Package](./leo/cli/new)
-- [Build a Package](./leo/cli/build)
-- [Verify a Program](./leo/cli/run)
-- [Clean a Package Workspace](./leo/cli/clean)
+### Chapter 5: Additional Material
+
+- [Code Editor Support for Leo](./leo/additional_material/00_tooling.md)
+- [Leo Style Guide](./leo/additional_material/01_style.md)
+- [Leo Common Patterns](./leo/additional_material/02_common.md)
+- [Known Issues](./leo/additional_material/03_bugs.md)
+- [Contribute to Leo](./leo/additional_material/04_contributing.md)
 
 ## Testnet III
 
