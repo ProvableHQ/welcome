@@ -37,7 +37,7 @@ Download the editor here: https://code.visualstudio.com/download.
 
 ### Install from Marketplace (recommended)
 
-Install the [leo language plugin](vscode:extension/aleohq.leo-language-features-extension) from VSCode marketplace.   
+Install the [leo language plugin](https://marketplace.visualstudio.com/items?itemName=aleohq.leo-language-features-extension) from VSCode marketplace.   
 The correct extension ID is `aleohq.leo-language-features-extension`.
 
 ### Manual Install
