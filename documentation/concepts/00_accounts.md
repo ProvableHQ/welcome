@@ -16,6 +16,8 @@ third parties. For real-world applications on Aleo, users should derive an [acco
 from their account private key to allow third parties to *trustlessly* run applications and generate transactions
 on a user's behalf.
 
+Generate a new Aleo account [here](https://aleohq.github.io/aleo/). 
+
 ## Account Private Key
 
 An account private key is constructed from a randomly-sampled **account seed**. This account seed is used to generate:
