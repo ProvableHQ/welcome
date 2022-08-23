@@ -6,6 +6,7 @@ sidebar_label: Aleo SDK
 
 Welcome to the Aleo SDK guide. 
 The Aleo SDK is a toolkit that supports account generation, program compilation, and program deployment.
+Use the Aleo SDK to generate yourself a new Aleo account [here](https://aleohq.github.io/aleo/).
 
 Aleo programs are files with a `.aleo` extension. 
 Aleo programs contain Aleo instructions - an assembly-like programming language. 
