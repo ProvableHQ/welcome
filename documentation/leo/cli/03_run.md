@@ -4,7 +4,7 @@ title: Execute a Program
 sidebar_label: leo run
 ---
 
-### `leo run`
+## `leo run`
 
 To execute a Leo program function using inputs from the program input `.in` file.
 ```bash

@@ -133,7 +133,7 @@ aleo run {$FUNCTION} {$INPUTS} --endpoint {$ENDPOINT}
 
 ## 5. `aleo node`
 
-To start a local development node run:
+To start a local development node and deploy the local program at genesis run:
 ```bash
 aleo node start
 ```
