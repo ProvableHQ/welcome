@@ -4,7 +4,7 @@ title: Build a Package
 sidebar_label: leo build
 ---
 
-### `leo build`
+## `leo build`
 
 To compile your program and verify that it builds properly, run:
 ```bash
