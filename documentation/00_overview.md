@@ -89,7 +89,8 @@ to compile, execute, and finalize its state autonomously.
 - [Create a Package](./leo/cli/01_new.md)
 - [Build a Package](./leo/cli/02_build.md)
 - [Execute a Program](./leo/cli/03_run.md)
-- [Clean a Package Workspace](./leo/cli/04_clean.md)
+- [Start a Development Server](./leo/cli/04_node.md)
+- [Clean a Package Workspace](./leo/cli/05_clean.md)
 
 ### Chapter 5: Additional Material
 
