@@ -9,6 +9,7 @@ If you do not see your favorite editor on this list, please reach out on [github
 
 1. [Sublime Text](#sublime).
 2. [Visual Studio Code](#vscode).
+3. [Intellij](#intellij).
 
 ## Sublime Text
 ![](./images/sublime.png)  
@@ -46,3 +47,12 @@ The correct extension ID is `aleohq.leo-language-features-extension`.
 2. Run ```code --install-extension leo-language-features.vsix```.
 
 Mirrored from the official VSCode [documentation](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix).
+
+## Intellij
+
+[//]: # (![]&#40;./images/intellij.png&#41;)
+Download the editor here: https://www.jetbrains.com/idea/download/.
+
+### Install from Marketplace
+
+Install the [leo LSP plugin](https://plugins.jetbrains.com/plugin/19766-leo-lsp) from JetBrains marketplace.   
