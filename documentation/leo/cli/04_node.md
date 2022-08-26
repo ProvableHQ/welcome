@@ -1,7 +1,7 @@
 ---
 id: node
 title: Start a Local Development Node
-sidebar_label: leo run
+sidebar_label: leo node
 ---
 
 ## `leo node start`
