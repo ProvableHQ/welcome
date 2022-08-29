@@ -25,4 +25,5 @@ You can print the list of commands by running `leo --help`
 * [`build`](02_build.md) - Compile the current package as a program.
 * [`run`](03_run.md) - Run a program with input variables.
 * [`node`](04_node.md) - Start a local development server.
-* [`clean`](05_clean.md) - Clean the output directory.
+* [`deploy`](05_deploy.md) - Deploy a program.
+* [`clean`](06_clean.md) - Clean the output directory.
