@@ -16,7 +16,7 @@ To start a local development node without deploying the compiled program.
 leo node start --nodeploy
 ```
 
-## Tesnet3 Development Endpoints
+## Testnet3 Development Endpoints
 
 The server will start at the following endpoint:
 ```bash

@@ -61,6 +61,15 @@ aleo
 You can print the list of commands by running `aleo --help`
 :::
 
+1. [aleo account](#1-aleo-account)
+2. [aleo new](#2-aleo-new)
+3. [aleo build](#3-aleo-build)
+4. [aleo run](#4-aleo-run)
+5. [aleo node](#5-aleo-node)
+6. [aleo deploy](#6-aleo-deploy)
+7. [aleo clean](#7-aleo-clean)
+8. [aleo update](#8-aleo-update)
+
 ## 1. `aleo account`
 
 To create a new account, run:
@@ -143,14 +152,21 @@ To start a local development node without deploying the local program at genesis
 aleo node start --nodeploy
 ```
 
-## 6. `aleo clean`
+## 6. `aleo deploy`
+
+To deploy a program to Aleo Testnet3 run:
+```bash
+aleo deploy
+```
+
+## 7. `aleo clean`
 
 To clean the Aleo package build directory run:
 ```bash
 aleo clean
 ```
 
-## 7. `aleo update`
+## 8. `aleo update`
 
 To update the Aleo SDK to the latest version run:
 ```
