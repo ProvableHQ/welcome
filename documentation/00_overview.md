@@ -32,12 +32,13 @@ to compile, execute, and finalize its state autonomously.
 
 [//]: # (- [Glossary]&#40;./concepts/06_glossary.md&#41;)
 
-### Chapter 2: Getting Started
+### Chapter 2: Aleo
 - [The Aleo SDK](./aleo/00_overview.md)
 - [Aleo Instructions](./aleo/01_tour.md)
 - [Aleo Opcodes](./aleo/03_opcodes.md)
-- [Formal Specification of Aleo Instructions](./aleo/04_specification.md)
-- [Code Editor Support for Aleo Instructions](./aleo/05_tooling.md)
+- [Aleo Grammar](./aleo/04_grammar.md)
+- [Aleo ABNF](./aleo/05_abnf.md)
+- [Code Editor Support for Aleo Instructions](./aleo/06_tooling.md)
 
 ## Leo
 

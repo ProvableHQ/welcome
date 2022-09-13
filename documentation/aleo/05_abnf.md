@@ -1,10 +1,8 @@
 ---
-id: specification
-title: Aleo Instruction Formal Specification
-sidebar_label: Formal Specification
+id: abnf
+title: Aleo Instructions ABNF Specification
+sidebar_label: ABNF
 ---
-
-# Formal Specification for Aleo Instructions Syntax
 
 This chapter describes Aleo instructions by their formal syntax.
 The specification of the grammar is derived from the current implementation of
@@ -37,7 +35,7 @@ at least in lexical grammars of two-level grammars,
 but should also work for this one-level grammar.
 We plan to formally prove this eventually.
 
-The rules below are separated into sections delimited by 40 semicolons.
+The rules below are separated into sections delimited by semicolons.
 The sections do not have a very deep significance,
 but are meant to group related rules.
 For instance, the first section gives names to characters
@@ -167,7 +165,7 @@ Go to: _[block-comment](#block-comment), [line-comment](#line-comment)_;
 
 ###### line comment
 ```abnf
-line-comment = "//" *( not-lf-or-cr escaped-lf )
+line-comment = "//" *( escaped-lf / not-lf-or-cr )
 ```
 
 ###### not lf or cr
@@ -737,63 +735,63 @@ hash-op = %s"hash.bhp" ( "256" / "512" / "768" / "1024" )
          / %s"hash.psd" ( "2" / "4" / "8" )
 ```
 
-<a name="unary"></a>
+###### unary
 ```abnf
 unary = unary-op ws ( operand ws ) %s"into" ws register
 ```
 
-Go to: _[operand](#operand), [register](#register), [unary-op](#unary-op), [ws](#whitespace)_;
+Go to: _[operand](#operand), [register](#register), [unary-op](#unary-operator), [ws](#whitespace)_;
 
 
-<a name="binary"></a>
+###### binary
 ```abnf
 binary = unary-op ws 2( operand ws ) %s"into" ws register
 ```
 
-Go to: _[register](#register), [unary-op](#unary-op), [ws](#whitespace)_;
+Go to: _[register](#register), [unary-op](#unary-operator), [ws](#whitespace)_;
 
 
-<a name="ternary"></a>
+###### ternary
 ```abnf
 ternary = unary-op ws 3( operand ws ) %s"into" ws register
 ```
 
-Go to: _[register](#register), [unary-op](#unary-op), [ws](#whitespace)_;
+Go to: _[register](#register), [unary-op](#unary-operator), [ws](#whitespace)_;
 
 
-<a name="is"></a>
+###### is
 ```abnf
 is = is-op ws operand ws operand %s"into" ws register
 ```
 
-Go to: _[is-op](#is-op), [operand](#operand), [register](#register), [ws](#whitespace)_;
+Go to: _[is-op](#is-operator), [operand](#operand), [register](#register), [ws](#whitespace)_;
 
 
-<a name="assert"></a>
+###### assert
 ```abnf
 assert = assert-op ws operand ws operand
 ```
 
-Go to: _[assert-op](#assert-op), [operand](#operand), [ws](#whitespace)_;
+Go to: _[assert-op](#assert-operator), [operand](#operand), [ws](#whitespace)_;
 
 
-<a name="commit"></a>
+###### commit
 ```abnf
 commit = commit-op ws operand ws operand ws %s"into" ws register
 ```
 
-Go to: _[commit-op](#commit-op), [operand](#operand), [register](#register), [ws](#whitespace)_;
+Go to: _[commit-op](#commit-operator), [operand](#operand), [register](#register), [ws](#whitespace)_;
 
 
-<a name="hash"></a>
+###### hash
 ```abnf
 hash = hash-op ws operand ws %s"into" ws register
 ```
 
-Go to: _[hash-op](#hash-op), [operand](#operand), [register](#register), [ws](#whitespace)_;
+Go to: _[hash-op](#hash-operator), [operand](#operand), [register](#register), [ws](#whitespace)_;
 
 
-<a name="cast"></a>
+###### cast
 ```abnf
 cast = %s"cast" 1*( ws operand )
        ws %s"into" ws register ws %s"as" ws register-type
@@ -802,7 +800,7 @@ cast = %s"cast" 1*( ws operand )
 Go to: _[register-type](#register-type), [register](#register), [ws](#whitespace)_;
 
 
-<a name="call"></a>
+###### call
 ```abnf
 call = %s"call" ws ( locator / identifier ) ws 1*( ws operand )
        ws %s"into" ws 1*( ws register )
@@ -811,7 +809,7 @@ call = %s"call" ws ( locator / identifier ) ws 1*( ws operand )
 Go to: _[identifier](#identifier), [locator](#locator), [ws](#whitespace)_;
 
 
-<a name="instruction"></a>
+###### instruction
 ```abnf
 instruction = cws
               ( unary
@@ -829,7 +827,7 @@ instruction = cws
 Go to: _[assert](#assert), [binary](#binary), [call](#call), [cast](#cast), [commit](#commit), [cws](#comments-or-whitespace), [hash](#hash), [is](#is), [ternary](#ternary), [unary](#unary), [ws](#whitespace)_;
 
 
-<a name="decrement"></a>
+###### decrement
 ```abnf
 decrement = cws %s"decrement"
             ws identifier "[" ws operand ws "]"
@@ -838,8 +836,7 @@ decrement = cws %s"decrement"
 
 Go to: _[cws](#comments-or-whitespace), [identifier](#identifier), [operand](#operand), [ws](#whitespace)_;
 
-
-<a name="increment"></a>
+###### increment
 ```abnf
 increment = cws %s"increment"
             ws identifier "[" ws operand ws "]"
@@ -849,7 +846,7 @@ increment = cws %s"increment"
 Go to: _[cws](#comments-or-whitespace), [identifier](#identifier), [operand](#operand), [ws](#whitespace)_;
 
 
-<a name="command"></a>
+###### command
 ```abnf
 command = decrement / increment / instruction
 ```
@@ -857,7 +854,7 @@ command = decrement / increment / instruction
 Go to: _[decrement](#decrement), [increment](#increment), [instruction](#instruction)_;
 
 
-<a name="finalize-command"></a>
+###### finalize command
 ```abnf
 finalize-command = cws %s"finalize" *( ws operand ) cws ";"
 ```
@@ -869,7 +866,7 @@ Go to: _[cws](#comments-or-whitespace)_;
 --------
 
 
-<a name="closure"></a>
+###### closure
 ```abnf
 closure = cws %s"closure" ws identifier ws ":"
           *closure-input
@@ -880,7 +877,7 @@ closure = cws %s"closure" ws identifier ws ":"
 Go to: _[cws](#comments-or-whitespace), [identifier](#identifier), [ws](#whitespace)_;
 
 
-<a name="closure-input"></a>
+###### closure input
 ```abnf
 closure-input = cws %s"input" ws register
                 ws %s"as" ws register-type ws ";"
@@ -889,7 +886,7 @@ closure-input = cws %s"input" ws register
 Go to: _[cws](#comments-or-whitespace), [register-type](#register-type), [register](#register), [ws](#whitespace)_;
 
 
-<a name="closure-output"></a>
+###### closure output
 ```abnf
 closure-output = cws %s"output" ws register-access
                  ws %s"as" ws register-type ws ";"
@@ -902,7 +899,7 @@ Go to: _[cws](#comments-or-whitespace), [register-access](#register-access), [re
 --------
 
 
-<a name="function"></a>
+###### function
 ```abnf
 function = cws %s"function" ws identifier ws ":"
            *function-input
@@ -914,7 +911,7 @@ function = cws %s"function" ws identifier ws ":"
 Go to: _[cws](#comments-or-whitespace), [finalize-command](#finalize-command), [finalize](#finalize), [identifier](#identifier), [ws](#whitespace)_;
 
 
-<a name="function-input"></a>
+###### function input
 ```abnf
 function-input = cws %s"input" ws register
                  ws %s"as" ws value-type ws ";"
@@ -923,7 +920,7 @@ function-input = cws %s"input" ws register
 Go to: _[cws](#comments-or-whitespace), [register](#register), [value-type](#value-type), [ws](#whitespace)_;
 
 
-<a name="function-output"></a>
+###### function output
 ```abnf
 function-output = cws %s"output" ws register-access
                   ws %s"as" ws value-type ws ";"
@@ -932,7 +929,7 @@ function-output = cws %s"output" ws register-access
 Go to: _[cws](#comments-or-whitespace), [register-access](#register-access), [value-type](#value-type), [ws](#whitespace)_;
 
 
-<a name="finalize"></a>
+###### finalize
 ```abnf
 finalize = cws %s"finalize" ws identifier ws ":"
            *finalize-input
@@ -943,7 +940,7 @@ finalize = cws %s"finalize" ws identifier ws ":"
 Go to: _[cws](#comments-or-whitespace), [identifier](#identifier), [ws](#whitespace)_;
 
 
-<a name="finalize-input"></a>
+###### finalize input
 ```abnf
 finalize-input = cws %s"input" ws register
                  %s"as" ws finalize-type ws ":"
@@ -952,7 +949,7 @@ finalize-input = cws %s"input" ws register
 Go to: _[cws](#comments-or-whitespace), [finalize-type](#finalize-type), [register](#register), [ws](#whitespace)_;
 
 
-<a name="finalize-output"></a>
+###### finalize output
 ```abnf
 finalize-output = cws %s"output" ws register-access
                   ws %s"as" ws finalize-type ws ";"
@@ -965,7 +962,7 @@ Go to: _[cws](#comments-or-whitespace), [finalize-type](#finalize-type), [regist
 --------
 
 
-<a name="program"></a>
+###### program
 ```abnf
 program = *import
           cws %s"program" ws program-id ws ";"
