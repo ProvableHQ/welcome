@@ -1,13 +1,11 @@
 ---
-id: specification
-title: Aleo Instruction Formal Specification
-sidebar_label: Formal Specification
+id: grammar
+title: Aleo Instructions Grammar
+sidebar_label: Grammar
 ---
 
-# Formal Specification for Aleo Instructions Syntax
-
-This chapter briefly describes Aleo instructions by their formal syntax.   
-A more advanced language specification written in ABNF format is currently in development.
+This chapter briefly describes the Aleo instructions grammar.
+A more advanced language specification written in ABNF format can be found [here](05_abnf.md).
 
 ```
 program = *import title 1*definition
