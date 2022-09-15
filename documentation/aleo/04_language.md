@@ -1,7 +1,7 @@
 ---
-id: guide
+id: language
 title: Aleo Instructions Language Guide
-sidebar_label: Language Guide
+sidebar_label: Language
 ---
 
 ## Layout of an Aleo Program
