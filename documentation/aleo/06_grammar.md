@@ -5,7 +5,7 @@ sidebar_label: Grammar
 ---
 
 This chapter briefly describes the Aleo instructions grammar.
-A more advanced language specification written in ABNF format can be found [here](05_abnf.md).
+A more advanced language specification written in ABNF format can be found [here](07_abnf.md).
 
 ```
 program = *import title 1*definition
