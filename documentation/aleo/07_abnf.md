@@ -35,7 +35,7 @@ at least in lexical grammars of two-level grammars,
 but should also work for this one-level grammar.
 We plan to formally prove this eventually.
 
-The rules below are separated into sections delimited by semicolons.
+The rules below are separated into sections.
 The sections do not have a very deep significance,
 but are meant to group related rules.
 For instance, the first section gives names to characters

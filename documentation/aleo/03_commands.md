@@ -1,60 +1,8 @@
 ---
-id: overview
-title: Aleo SDK
-sidebar_label: Aleo SDK
+id: commands
+title: Aleo Command Line Interface
+sidebar_label: Commands
 ---
-
-Welcome to the Aleo SDK guide. 
-The Aleo SDK is a toolkit that supports account generation, program compilation, and program deployment.
-Use the Aleo SDK to generate yourself a new Aleo account [here](https://aleohq.github.io/aleo/).
-
-Aleo programs are files with a `.aleo` extension. 
-Aleo programs contain Aleo instructions - an assembly-like programming language. 
-Aleo instructions are compiled into AVM opcodes that can be executed by the Aleo Virtual Machine.
-
-:::info
-The Aleo SDK is currently in active development. Please monitor the repository on [**GitHub**](https://github.com/AleoHQ/aleo) for breaking changes
-:::
-## Installation
-### 1. Install Rust
-
-We recommend installing Rust using [rustup](https://www.rustup.rs/). You can install `rustup` as follows:
-
-- macOS or Linux:
-  ```bash
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  ```
-
-- Windows (64-bit):
-
-  Download the [Windows 64-bit executable](https://win.rustup.rs/x86_64) and follow the on-screen instructions.
-
-- Windows (32-bit):
-
-  Download the [Windows 32-bit executable](https://win.rustup.rs/i686) and follow the on-screen instructions.
-
-### 2. Build Source Code
-
-You can install the Aleo SDK by building from the source code as follows:
-
-```bash
-# Download the source code
-git clone https://github.com/AleoHQ/aleo
-cd aleo
-
-# Build in release mode
-$ cargo build --release
-```
-
-This will generate an executable under the `./target/release` directory. To run Leo, run the following command:
-```bash
-./target/release/aleo
-```
-
-Now to use Aleo, in your terminal, run:
-```bash
-aleo
-```
 
 # List of Commands
 :::tip

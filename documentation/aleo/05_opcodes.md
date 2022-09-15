@@ -1,7 +1,7 @@
 ---
 id: opcodes
 title: Aleo Opcodes Reference
-sidebar_label: Aleo Opcodes
+sidebar_label: Opcodes
 ---
 
 The following is a list of opcodes supported by the Aleo Virtual Machine (AVM).
