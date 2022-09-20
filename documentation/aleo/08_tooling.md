@@ -33,8 +33,8 @@ Download the editor here: https://code.visualstudio.com/download.
 
 ### Install
 
-Install the [Aleo Developer Plugin](https://marketplace.visualstudio.com/items?itemName=aleohq.aleo-developer-extension) from VSCode marketplace.   
-The correct extension ID is `aleohq.aleo-developer-extension`.
+Install [Leo for VSCode](https://marketplace.visualstudio.com/items?itemName=aleohq.leo-extension) from VSCode marketplace.   
+The correct extension ID is `aleohq.leo-extension`.
 
 ### Usage
 
