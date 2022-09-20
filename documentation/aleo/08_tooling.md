@@ -54,7 +54,7 @@ Install the [Aleo Developer Plugin](https://plugins.jetbrains.com/plugin/19890-a
 ## Vim
 
 ![](./images/vim.png)
-Download the editor here: https://www.vim.org/
+Download the editor here: https://www.vim.org/ <br>
 Or use the more up-to-date Neovim, from here: https://neovim.io/
 
 ### Install
