@@ -104,106 +104,173 @@ to compile, execute, and finalize its state autonomously.
 - [Known Issues](./leo/additional_material/03_bugs.md)
 - [Contribute to Leo](./leo/additional_material/04_contributing.md)
 
-## Testnet III
+[//]: # (## Testnet III)
 
-### Chapter 5: Getting Started
+[//]: # ()
+[//]: # (### Chapter 5: Getting Started)
 
-- [Testnet III.](./testnet/getting_started/00_overview.md)
-- [Install snarkOS](./testnet/getting_started/01_installation.md)
+[//]: # ()
+[//]: # (- [Testnet III.]&#40;./testnet/getting_started/00_overview.md&#41;)
 
+[//]: # (- [Install snarkOS]&#40;./testnet/getting_started/01_installation.md&#41;)
 
-### Chapter 6: Concepts
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 6: Concepts)
 
-- [RPC Server](./testnet/concepts/00_rpc_server.md)
+[//]: # ()
+[//]: # (- [RPC Server]&#40;./testnet/concepts/00_rpc_server.md&#41;)
 
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 7: Network Messages)
 
-### Chapter 7: Network Messages
+[//]: # ()
+[//]: # (- [Block]&#40;./testnet/network_messages/00_block.md&#41;)
 
-- [Block](./testnet/network_messages/00_block.md)
-- [GetBlocks](./testnet/network_messages/01_get_blocks.md)
-- [GetMemoryPool](./testnet/network_messages/02_get_memory_pool.md)
-- [GetPeers](./testnet/network_messages/03_get_peers.md)
-- [GetSync](./testnet/network_messages/04_get_sync.md)
-- [MemoryPool](./testnet/network_messages/05_memory_pool.md)
-- [Peers](./testnet/network_messages/06_peers.md)
-- [Ping](./testnet/network_messages/07_ping.md)
-- [Pong](./testnet/network_messages/08_pong.md)
-- [Sync](./testnet/network_messages/09_sync.md)
-- [SyncBlock](./testnet/network_messages/10_sync_block.md)
-- [Transaction](./testnet/network_messages/11_transaction.md)
-- [Version](./testnet/network_messages/12_version.md)
+[//]: # (- [GetBlocks]&#40;./testnet/network_messages/01_get_blocks.md&#41;)
 
+[//]: # (- [GetMemoryPool]&#40;./testnet/network_messages/02_get_memory_pool.md&#41;)
 
-### Chapter 8: Public RPC Endpoints
+[//]: # (- [GetPeers]&#40;./testnet/network_messages/03_get_peers.md&#41;)
 
-- [decoderawtransaction](./testnet/public_endpoints/00_decoderawtransaction.md)
-- [getbestblockhash](./testnet/public_endpoints/01_getbestblockhash.md)
-- [getblock](./testnet/public_endpoints/02_getblock.md)
-- [getblockcount](./testnet/public_endpoints/03_getblockcount.md)
-- [getblockhash](./testnet/public_endpoints/04_getblockhash.md)
-- [getblocktemplate](./testnet/public_endpoints/05_getblocktemplate.md)
-- [getconnectioncount](./testnet/public_endpoints/06_getconnectioncount.md)
-- [getnetworkgraph](./testnet/public_endpoints/07_getnetworkgraph.md)
-- [getnodeinfo](./testnet/public_endpoints/08_getnodeinfo.md)
-- [getnodestats](./testnet/public_endpoints/09_getnodestats.md)
-- [getpeerinfo](./testnet/public_endpoints/10_getpeerinfo.md)
-- [getrawtransaction](./testnet/public_endpoints/11_getrawtransaction.md)
-- [gettransactioninfo](./testnet/public_endpoints/12_gettransactioninfo.md)
-- [sendtransaction](./testnet/public_endpoints/13_sendtransaction.md)
-- [validaterawtransaction](./testnet/public_endpoints/14_validaterawtransaction.md)
+[//]: # (- [GetSync]&#40;./testnet/network_messages/04_get_sync.md&#41;)
 
+[//]: # (- [MemoryPool]&#40;./testnet/network_messages/05_memory_pool.md&#41;)
 
-### Chapter 9: Private RPC Endpoints
+[//]: # (- [Peers]&#40;./testnet/network_messages/06_peers.md&#41;)
 
-- [connect](./testnet/private_endpoints/00_connect.md)
-- [createaccount](./testnet/private_endpoints/01_createaccount.md)
-- [createrawtransaction](./testnet/private_endpoints/02_createrawtransaction.md)
-- [createtransaction](./testnet/private_endpoints/03_createtransaction.md)
-- [createtransactionkernel](./testnet/private_endpoints/04_createtransactionkernel.md)
-- [decoderecord](./testnet/private_endpoints/05_decoderecord.md)
-- [decryptrecord](./testnet/private_endpoints/06_decryptrecord.md)
-- [disconnect](./testnet/private_endpoints/07_disconnect.md)
-- [getrawrecord](./testnet/private_endpoints/08_getrawrecord.md)
-- [getrecordcommitmentcount](./testnet/private_endpoints/09_getrecordcommitmentcount.md)
-- [getrecordcommitments](./testnet/private_endpoints/10_getrecordcommitments.md)
+[//]: # (- [Ping]&#40;./testnet/network_messages/07_ping.md&#41;)
 
+[//]: # (- [Pong]&#40;./testnet/network_messages/08_pong.md&#41;)
 
-## Explorer III
+[//]: # (- [Sync]&#40;./testnet/network_messages/09_sync.md&#41;)
 
-### Chapter 10: Authentication
+[//]: # (- [SyncBlock]&#40;./testnet/network_messages/10_sync_block.md&#41;)
 
-- [Authentication API](./explorer/authentication/00_authentication_api.md)
-- [createapikey](./explorer/authentication/01_createapikey.md)
+[//]: # (- [Transaction]&#40;./testnet/network_messages/11_transaction.md&#41;)
 
+[//]: # (- [Version]&#40;./testnet/network_messages/12_version.md&#41;)
 
-### Chapter 11: Blocks
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 8: Public RPC Endpoints)
 
-- [Block API](./explorer/blocks/00_block_api.md)
-- [getbestblock](./explorer/blocks/01_getbestblock.md)
-- [getbyheight](./explorer/blocks/02_getbyheight.md)
-- [getbyheightrange](./explorer/blocks/03_getbyheightrange.md)
-- [getbyhash](./explorer/blocks/04_getbyhash.md)
+[//]: # ()
+[//]: # (- [decoderawtransaction]&#40;./testnet/public_endpoints/00_decoderawtransaction.md&#41;)
 
+[//]: # (- [getbestblockhash]&#40;./testnet/public_endpoints/01_getbestblockhash.md&#41;)
 
-### Chapter 12: Transactions
+[//]: # (- [getblock]&#40;./testnet/public_endpoints/02_getblock.md&#41;)
 
-- [Transaction API](./explorer/transactions/00_transaction_api.md)
-- [getbyhash](./explorer/transactions/01_getbyhash.md)
-- [getbyhashbatch](./explorer/transactions/02_getbyhashbatch.md)
-- [broadcast](./explorer/transactions/03_broadcast.md)
-- [validate](./explorer/transactions/04_validate.md)
+[//]: # (- [getblockcount]&#40;./testnet/public_endpoints/03_getblockcount.md&#41;)
 
+[//]: # (- [getblockhash]&#40;./testnet/public_endpoints/04_getblockhash.md&#41;)
 
-### Chapter 13: Metrics
+[//]: # (- [getblocktemplate]&#40;./testnet/public_endpoints/05_getblocktemplate.md&#41;)
 
-- [Metrics API](./explorer/metrics/00_metrics_api.md)
-- [get](./explorer/metrics/01_get.md)
-- [graph](./explorer/metrics/02_graph.md)
+[//]: # (- [getconnectioncount]&#40;./testnet/public_endpoints/06_getconnectioncount.md&#41;)
+
+[//]: # (- [getnetworkgraph]&#40;./testnet/public_endpoints/07_getnetworkgraph.md&#41;)
+
+[//]: # (- [getnodeinfo]&#40;./testnet/public_endpoints/08_getnodeinfo.md&#41;)
+
+[//]: # (- [getnodestats]&#40;./testnet/public_endpoints/09_getnodestats.md&#41;)
+
+[//]: # (- [getpeerinfo]&#40;./testnet/public_endpoints/10_getpeerinfo.md&#41;)
+
+[//]: # (- [getrawtransaction]&#40;./testnet/public_endpoints/11_getrawtransaction.md&#41;)
+
+[//]: # (- [gettransactioninfo]&#40;./testnet/public_endpoints/12_gettransactioninfo.md&#41;)
+
+[//]: # (- [sendtransaction]&#40;./testnet/public_endpoints/13_sendtransaction.md&#41;)
+
+[//]: # (- [validaterawtransaction]&#40;./testnet/public_endpoints/14_validaterawtransaction.md&#41;)
+
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 9: Private RPC Endpoints)
+
+[//]: # ()
+[//]: # (- [connect]&#40;./testnet/private_endpoints/00_connect.md&#41;)
+
+[//]: # (- [createaccount]&#40;./testnet/private_endpoints/01_createaccount.md&#41;)
+
+[//]: # (- [createrawtransaction]&#40;./testnet/private_endpoints/02_createrawtransaction.md&#41;)
+
+[//]: # (- [createtransaction]&#40;./testnet/private_endpoints/03_createtransaction.md&#41;)
+
+[//]: # (- [createtransactionkernel]&#40;./testnet/private_endpoints/04_createtransactionkernel.md&#41;)
+
+[//]: # (- [decoderecord]&#40;./testnet/private_endpoints/05_decoderecord.md&#41;)
+
+[//]: # (- [decryptrecord]&#40;./testnet/private_endpoints/06_decryptrecord.md&#41;)
+
+[//]: # (- [disconnect]&#40;./testnet/private_endpoints/07_disconnect.md&#41;)
+
+[//]: # (- [getrawrecord]&#40;./testnet/private_endpoints/08_getrawrecord.md&#41;)
+
+[//]: # (- [getrecordcommitmentcount]&#40;./testnet/private_endpoints/09_getrecordcommitmentcount.md&#41;)
+
+[//]: # (- [getrecordcommitments]&#40;./testnet/private_endpoints/10_getrecordcommitments.md&#41;)
+
+[//]: # ()
+[//]: # ()
+[//]: # (## Explorer III)
+
+[//]: # ()
+[//]: # (### Chapter 10: Authentication)
+
+[//]: # ()
+[//]: # (- [Authentication API]&#40;./explorer/authentication/00_authentication_api.md&#41;)
+
+[//]: # (- [createapikey]&#40;./explorer/authentication/01_createapikey.md&#41;)
+
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 11: Blocks)
+
+[//]: # ()
+[//]: # (- [Block API]&#40;./explorer/blocks/00_block_api.md&#41;)
+
+[//]: # (- [getbestblock]&#40;./explorer/blocks/01_getbestblock.md&#41;)
+
+[//]: # (- [getbyheight]&#40;./explorer/blocks/02_getbyheight.md&#41;)
+
+[//]: # (- [getbyheightrange]&#40;./explorer/blocks/03_getbyheightrange.md&#41;)
+
+[//]: # (- [getbyhash]&#40;./explorer/blocks/04_getbyhash.md&#41;)
+
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 12: Transactions)
+
+[//]: # ()
+[//]: # (- [Transaction API]&#40;./explorer/transactions/00_transaction_api.md&#41;)
+
+[//]: # (- [getbyhash]&#40;./explorer/transactions/01_getbyhash.md&#41;)
+
+[//]: # (- [getbyhashbatch]&#40;./explorer/transactions/02_getbyhashbatch.md&#41;)
+
+[//]: # (- [broadcast]&#40;./explorer/transactions/03_broadcast.md&#41;)
+
+[//]: # (- [validate]&#40;./explorer/transactions/04_validate.md&#41;)
+
+[//]: # ()
+[//]: # ()
+[//]: # (### Chapter 13: Metrics)
+
+[//]: # ()
+[//]: # (- [Metrics API]&#40;./explorer/metrics/00_metrics_api.md&#41;)
+
+[//]: # (- [get]&#40;./explorer/metrics/01_get.md&#41;)
+
+[//]: # (- [graph]&#40;./explorer/metrics/02_graph.md&#41;)
 
 
 ## Advanced Topics
 
-### Chapter 14: The Aleo Curves
+### Chapter 6: The Aleo Curves
 
 - [Overview](./advanced/the_aleo_curves/00_overview.md)
 - [Edwards BLS12](./advanced/the_aleo_curves/01_edwards_bls12.md)
@@ -212,7 +279,7 @@ to compile, execute, and finalize its state autonomously.
 - [BW6-761](./advanced/the_aleo_curves/04_bw6-761.md)
 
 
-### Chapter 15: Proof of Succinct Work
+### Chapter 7: Proof of Succinct Work
 
 - [Overview](./advanced/posw/00_overview.md)
 - [Consensus Security](./advanced/posw/01_consensus_security.md)
