@@ -5,18 +5,17 @@ sidebar_label: Transitions
 ---
 
 ## Components of a Transition
-An Aleo transaction is serialized in the following format:
+An Aleo transition is serialized in the following format:
 
-|        Parameter        |                       Type                       | Size (bytes) |
-|:-----------------------:|:------------------------------------------------:|:------------:|
-|   `old_serial_numbers`  |                     bytes                        |       64     |
-|    `new_commitments`    |                     bytes                        |       64     |
-|  `program_commitment`   |                     bytes                        |       32     |
-|    `local_data_root`    |                     bytes                        |       32     |
-|     `value_balance`     |                      i64                         |        8     |
-|       `memorandum`      |                     bytes                        |       32     |
-|       `network_id`      |                      u8                          |        1     |
-|       `signatures`      |                     bytes                        |      128     |
-|     `ledger_digest`     |                     bytes                        |       32     |
-|   `transaction_proof`   |                     bytes                        |      579     |
-|   `encrypted_records`   |                     bytes                        |      518     |
+|    Parameter    |  Type  |        Description        |
+|:---------------:|:------:|:-------------------------:|
+|      `id`       | string |     The transition id     |
+|  `program_id`   | string |      The program id       |
+| `function_name` | string |     The function name     |
+|    `inputs`     | array  |   The transition inputs   |
+|    `outputs`    | array  |  The transition outputs   |
+|   `finalize`    | array  |  The inputs for finalize  |
+|     `proof`     | string |   The transition proof    |
+|      `tpk`      | string | The transition public key |
+|      `tcm`      | string | The transition commitment |
+|      `fee`      |  i64   |      The network fee      |

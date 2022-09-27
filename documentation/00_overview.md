@@ -23,6 +23,9 @@ to compile, execute, and finalize its state autonomously.
 - [Accounts](./concepts/00_accounts.md)
 - [Programs](./concepts/01_programs.md)
 - [Records](./concepts/02_records.md)
+- [Transactions](./concepts/03_transactions.md)
+- [Transitions](./concepts/04_transitions.md)
+- [Blocks](./concepts/05_blocks.md)
 
 [//]: # (- [Transactions]&#40;./concepts/03_transactions.md&#41;)
 
@@ -104,28 +107,29 @@ to compile, execute, and finalize its state autonomously.
 - [Known Issues](./leo/additional_material/03_bugs.md)
 - [Contribute to Leo](./leo/additional_material/04_contributing.md)
 
-[//]: # (## Testnet III)
+## Testnet III
 
-[//]: # ()
-[//]: # (### Chapter 5: Getting Started)
 
-[//]: # ()
-[//]: # (- [Testnet III.]&#40;./testnet/getting_started/00_overview.md&#41;)
+### Chapter 6: Getting Started
+
+
+- [Testnet III.](./testnet/getting_started/00_overview.md)
 
 [//]: # (- [Install snarkOS]&#40;./testnet/getting_started/01_installation.md&#41;)
 
-[//]: # ()
-[//]: # ()
+
+
 [//]: # (### Chapter 6: Concepts)
 
 [//]: # ()
+[//]: # ()
 [//]: # (- [RPC Server]&#40;./testnet/concepts/00_rpc_server.md&#41;)
 
-[//]: # ()
-[//]: # ()
+
+
 [//]: # (### Chapter 7: Network Messages)
 
-[//]: # ()
+
 [//]: # (- [Block]&#40;./testnet/network_messages/00_block.md&#41;)
 
 [//]: # (- [GetBlocks]&#40;./testnet/network_messages/01_get_blocks.md&#41;)
@@ -152,43 +156,29 @@ to compile, execute, and finalize its state autonomously.
 
 [//]: # (- [Version]&#40;./testnet/network_messages/12_version.md&#41;)
 
-[//]: # ()
-[//]: # ()
-[//]: # (### Chapter 8: Public RPC Endpoints)
 
-[//]: # ()
-[//]: # (- [decoderawtransaction]&#40;./testnet/public_endpoints/00_decoderawtransaction.md&#41;)
 
-[//]: # (- [getbestblockhash]&#40;./testnet/public_endpoints/01_getbestblockhash.md&#41;)
+### Chapter 7: API Reference
 
-[//]: # (- [getblock]&#40;./testnet/public_endpoints/02_getblock.md&#41;)
+- [latest height](./testnet/public_endpoints/00_latest_height.md)
+- [latest hash](./testnet/public_endpoints/01_latest_hash.md)
+- [latest block](./testnet/public_endpoints/02_latest_block.md)
+- [get block](./testnet/public_endpoints/03_get_block.md)
+- [get blocks](./testnet/public_endpoints/04_get_blocks.md)
+- [get transactions](./testnet/public_endpoints/05_get_transactions.md)
+- [get transaction](./testnet/public_endpoints/06_get_transaction.md)
+- [get transactions mempool](./testnet/public_endpoints/07_get_transactions_mempool.md)
+- [get program](./testnet/public_endpoints/08_get_program.md)
+- [get validators](./testnet/public_endpoints/09_get_validators.md)
+- [get state path](./testnet/public_endpoints/10_get_state_path.md)
+- [records all](./testnet/public_endpoints/11_records_all.md)
+- [records spent](./testnet/public_endpoints/12_records_spent.md)
+- [records unspent](./testnet/public_endpoints/13_records_unspent.md)
+- [transaction broadcast](./testnet/public_endpoints/14_transaction_broadcast.md)
+- [node address](./testnet/public_endpoints/15_node_address.md)
+- [peers count](./testnet/public_endpoints/16_peers_count.md)
+- [peers all](./testnet/public_endpoints/17_peers_all.md)
 
-[//]: # (- [getblockcount]&#40;./testnet/public_endpoints/03_getblockcount.md&#41;)
-
-[//]: # (- [getblockhash]&#40;./testnet/public_endpoints/04_getblockhash.md&#41;)
-
-[//]: # (- [getblocktemplate]&#40;./testnet/public_endpoints/05_getblocktemplate.md&#41;)
-
-[//]: # (- [getconnectioncount]&#40;./testnet/public_endpoints/06_getconnectioncount.md&#41;)
-
-[//]: # (- [getnetworkgraph]&#40;./testnet/public_endpoints/07_getnetworkgraph.md&#41;)
-
-[//]: # (- [getnodeinfo]&#40;./testnet/public_endpoints/08_getnodeinfo.md&#41;)
-
-[//]: # (- [getnodestats]&#40;./testnet/public_endpoints/09_getnodestats.md&#41;)
-
-[//]: # (- [getpeerinfo]&#40;./testnet/public_endpoints/10_getpeerinfo.md&#41;)
-
-[//]: # (- [getrawtransaction]&#40;./testnet/public_endpoints/11_getrawtransaction.md&#41;)
-
-[//]: # (- [gettransactioninfo]&#40;./testnet/public_endpoints/12_gettransactioninfo.md&#41;)
-
-[//]: # (- [sendtransaction]&#40;./testnet/public_endpoints/13_sendtransaction.md&#41;)
-
-[//]: # (- [validaterawtransaction]&#40;./testnet/public_endpoints/14_validaterawtransaction.md&#41;)
-
-[//]: # ()
-[//]: # ()
 [//]: # (### Chapter 9: Private RPC Endpoints)
 
 [//]: # ()
@@ -270,7 +260,7 @@ to compile, execute, and finalize its state autonomously.
 
 ## Advanced Topics
 
-### Chapter 6: The Aleo Curves
+### Chapter 8: The Aleo Curves
 
 - [Overview](./advanced/the_aleo_curves/00_overview.md)
 - [Edwards BLS12](./advanced/the_aleo_curves/01_edwards_bls12.md)
@@ -279,12 +269,16 @@ to compile, execute, and finalize its state autonomously.
 - [BW6-761](./advanced/the_aleo_curves/04_bw6-761.md)
 
 
-### Chapter 7: Proof of Succinct Work
+[//]: # (### Chapter 9: Proof of Succinct Work)
 
-- [Overview](./advanced/posw/00_overview.md)
-- [Consensus Security](./advanced/posw/01_consensus_security.md)
-- [The PoSW Predicate](./advanced/posw/02_posw_predicate.md)
-- [The Mining Process](./advanced/posw/03_mining.md)
+[//]: # ()
+[//]: # (- [Overview]&#40;./advanced/posw/00_overview.md&#41;)
+
+[//]: # (- [Consensus Security]&#40;./advanced/posw/01_consensus_security.md&#41;)
+
+[//]: # (- [The PoSW Predicate]&#40;./advanced/posw/02_posw_predicate.md&#41;)
+
+[//]: # (- [The Mining Process]&#40;./advanced/posw/03_mining.md&#41;)
 
 
 <!-- markdown-link-check-enable -->

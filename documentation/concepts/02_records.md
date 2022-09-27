@@ -14,12 +14,12 @@ Records on Aleo are encrypted to the record owner address, ensuring that all rec
 
 An Aleo record is serialized in the following format:
 
-| Parameter |          Type          |
-|:---------:|:----------------------:|
-|  `owner`  |        address         |
-|  `gates`  |          u64           | 
-|  `data`   | Map<Identifier, Entry> |
-|  `nonce`  |         group          |
+| Parameter |          Type          |                    Description                    |
+|:---------:|:----------------------:|:-------------------------------------------------:|
+|  `owner`  |        address         |          The owner of the program record          |
+|  `gates`  |          u64           | The Aleo balance (in gates) of the program record |
+|  `data`   | Map<Identifier, Entry> |                 The program data                  |
+|  `nonce`  |         group          |          The nonce of the program record          |
 
 ### Owner
 
