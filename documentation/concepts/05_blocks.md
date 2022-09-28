@@ -5,8 +5,6 @@ sidebar_label: Blocks
 ---
 
 A **block** is a fundamental data structure for organizing Aleo [transactions](03_transactions.md) over time.
-Blocks are produced through a process called [mining](05_consensus.md#mining-on-aleo) and included as
-permanent history on Aleo.
 
 ## Components of a Block
 

@@ -42,10 +42,10 @@ The transaction execution represents a call to an Aleo program.
 
 #### Execution Info
 
-|   Parameter   | Type  |             Description             |
-|:-------------:|:-----:|:-----------------------------------:|
-|   `edition`   |  u16  |             The edition             |
-| `transitions` | array | The [transitions](./04_transitions) |
+|   Parameter   | Type  |              Description               |
+|:-------------:|:-----:|:--------------------------------------:|
+|   `edition`   |  u16  |              The edition               |
+| `transitions` | array | The [transitions](./04_transitions.md) |
 
 [//]: # ()
 [//]: # (An Aleo transaction is serialized in the following format:)
