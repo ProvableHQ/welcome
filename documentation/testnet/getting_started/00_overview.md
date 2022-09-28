@@ -20,9 +20,9 @@ The Aleo Testnet3 API is organized around [REST](https://en.wikipedia.org/wiki/R
 To connect to the network, make a request to an Aleo Testnet III bootnode.
 
 
-| Status |  Region  | URL         |
-|:------:|:--------:|-------------|
-|  Live  | Americas | vm.aleo.org |
+| Status |  Region  | URL              |
+|:------:|:--------:|------------------|
+|  Live  | Americas | vm.aleo.org/api/ |
 
 [//]: # (#### Americas)
 
