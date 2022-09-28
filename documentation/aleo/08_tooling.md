@@ -10,6 +10,7 @@ If you do not see your favorite editor on this list, please reach out on [github
 1. [Sublime Text](#sublime).
 2. [Visual Studio Code](#vscode).
 3. [Intellij](#intellij).
+3. [Vim](#vim).
 
 ## Sublime Text
 ![](./images/sublime.png)  
@@ -49,3 +50,68 @@ Download the editor here: https://www.jetbrains.com/idea/download/.
 ### Install
 
 Install the [Aleo Developer Plugin](https://plugins.jetbrains.com/plugin/19890-aleo-developer) from JetBrains marketplace.   
+
+## Vim
+
+![](./images/vim.png)
+Download the editor here: https://www.vim.org/ <br>
+Or use the more up-to-date Neovim, from here: https://neovim.io/
+
+### Install
+
+For activating the full functionality, this plugin requires either the plugin
+manager or the `.vimrc` to have the following:
+
+```vim
+syntax enable
+filetype plugin indent on
+```
+
+Most plugin managers don't do this automatically, so these statements are
+usually added by users in their `vimrc` _right after_ the plugin manager load
+section.
+
+Then, just install the plugin with your favorite plugin manager.
+
+#### [Vim8 packages][vim8pack]
+
+```sh
+git clone https://github.com/julesdesmit/aleo.vim ~/.vim/pack/plugins/start/aleo.vim
+```
+
+#### [Vundle][v]
+
+```vim
+Plugin 'julesdesmit/aleo.vim'
+```
+
+#### [Pathogen][p]
+
+```sh
+git clone --depth=1 https://github.com/julesdesmit/aleo.vim.git ~/.vim/bundle/aleo.vim
+```
+
+#### [vim-plug][vp]
+
+```vim
+Plug 'julesdesmit/aleo.vim'
+```
+
+#### [dein.vim][d]
+
+```vim
+call dein#add('julesdesmit/aleo.vim')
+```
+
+#### [NeoBundle][nb]
+
+```vim
+NeoBundle 'julesdesmit/aleo.vim'
+```
+
+[v]: https://github.com/gmarik/vundle
+[p]: https://github.com/tpope/vim-pathogen
+[nb]: https://github.com/Shougo/neobundle.vim
+[vp]: https://github.com/junegunn/vim-plug
+[d]: https://github.com/Shougo/dein.vim
+[vim8pack]: http://vimhelp.appspot.com/repeat.txt.html#packages
