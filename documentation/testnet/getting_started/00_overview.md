@@ -10,23 +10,21 @@ Aleo Testnet III is a trusted testnet - subsequent testnets will undergo a trust
 :::
 
 **Aleo Testnet III** is an experimental network for developers to begin building and testing applications on Aleo.
-Testnet I is used by the core team for designing and evaluating new circuits, planning and staging network upgrades,
+Testnet III is used by the core team for designing and evaluating new programs, planning and staging network upgrades,
 and running experimental features for inclusion on mainnet.
 
-[//]: # (## The Network)
+## The Network
 
-[//]: # ()
-[//]: # (To connect to the network, the following is a list of Aleo Testnet III bootnodes.)
+The Aleo Testnet3 API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer).
 
-[//]: # ()
+To connect to the network, make a request to an Aleo Testnet III bootnode.
+
+
+| Status |  Region  | URL         |
+|:------:|:--------:|-------------|
+|  Live  | Americas | vm.aleo.org |
+
 [//]: # (#### Americas)
-
-[//]: # ()
-[//]: # (| Status  | Region        | URL                       | Network Port | RPC Port |)
-
-[//]: # (|:-------:|:-------------:|---------------------------|:------------:|:--------:|)
-
-[//]: # (| Live    | Americas      | us1.testnet1.aleo.network |     4131     |   3030   |)
 
 [//]: # (| Live    | Americas      | us2.testnet1.aleo.network |     4131     |   3030   |)
 
@@ -83,6 +81,7 @@ enables developers to checkpoint and finalize application state in a publicly-ve
 
 `snarkOS` is open-source and publicly-hosted on [GitHub](https://github.com/AleoHQ/snarkOS).
 
-### Run a Full Node
+[//]: # (### Run a Full Node)
 
-To run a full node and support Aleo, start by following the instructions to [install snarkOS](01_installation.md).
+[//]: # ()
+[//]: # (To run a full node and support Aleo, start by following the instructions to [install snarkOS]&#40;01_installation.md&#41;.)
