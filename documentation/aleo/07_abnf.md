@@ -745,23 +745,23 @@ Go to: _[operand](#operand), [register](#register), [unary-op](#unary-operator),
 
 ###### binary
 ```abnf
-binary = unary-op ws 2( operand ws ) %s"into" ws register
+binary = binary-op ws 2( operand ws ) %s"into" ws register
 ```
 
-Go to: _[register](#register), [unary-op](#unary-operator), [ws](#whitespace)_;
+Go to: _[register](#register), [binary-op](#unary-operator), [ws](#whitespace)_;
 
 
 ###### ternary
 ```abnf
-ternary = unary-op ws 3( operand ws ) %s"into" ws register
+ternary = ternary-op ws 3( operand ws ) %s"into" ws register
 ```
 
-Go to: _[register](#register), [unary-op](#unary-operator), [ws](#whitespace)_;
+Go to: _[register](#register), [ternary-op](#unary-operator), [ws](#whitespace)_;
 
 
 ###### is
 ```abnf
-is = is-op ws operand ws operand %s"into" ws register
+is = is-op ws operand ws operand ws %s"into" ws register
 ```
 
 Go to: _[is-op](#is-operator), [operand](#operand), [register](#register), [ws](#whitespace)_;
@@ -943,7 +943,7 @@ Go to: _[cws](#comments-or-whitespace), [identifier](#identifier), [ws](#whitesp
 ###### finalize input
 ```abnf
 finalize-input = cws %s"input" ws register
-                 %s"as" ws finalize-type ws ":"
+                 ws %s"as" ws finalize-type ws ";"
 ```
 
 Go to: _[cws](#comments-or-whitespace), [finalize-type](#finalize-type), [register](#register), [ws](#whitespace)_;
