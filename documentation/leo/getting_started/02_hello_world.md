@@ -34,7 +34,7 @@ leo run main
 ```
 
 ```bash title="console output:"
- Build ✅ Compiled 'main.leo' into Aleo instructions (in "/hello/build/main.aleo")
+ Leo Compiled 'main.leo' into Aleo instructions
 ⏳ Compiling 'hello.aleo'...
 
  • Loaded universal setup (in 100 ms)

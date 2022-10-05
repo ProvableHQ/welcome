@@ -26,6 +26,6 @@ leo build
 [//]: # (```)
 This will create a new directory `build/` with an Aleo program file `.aleo`. 
 ```bash title="console output:"
-     Build ✅ Compiled 'main.leo' into Aleo instructions (in "/hello/build/main.aleo")
-     Build ✅ Built 'hello.aleo' (in "/hello/build")
+     Leo ✅ Compiled 'main.leo' into Aleo instructions
+     Leo ✅ Built 'hello.aleo' (in "/hello/build")
 ```

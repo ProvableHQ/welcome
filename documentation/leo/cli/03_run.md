@@ -19,13 +19,13 @@ leo run {$FUNCTION} {$INPUTS}
 
 
 ```bash title="console output:"
- Build ✅ Compiled 'main.leo' into Aleo instructions (in "/hello/build/main.aleo")
+ Leo ✅ Compiled 'main.leo' into Aleo instructions
 ⏳ Compiling 'hello.aleo'...
 
  • Loaded universal setup (in 100 ms)
  • Built 'main' (in 1000 ms)
 
-     Build ✅ Built 'hello.aleo' (in "/hello/build")
+     Leo ✅ Built 'hello.aleo' (in "/hello/build")
  • Loaded universal setup (in 100 ms)
 🚀 Executing 'hello.aleo/main'...
 
@@ -36,7 +36,7 @@ leo run {$FUNCTION} {$INPUTS}
 
  • 3u32
 
- Executing ✅ Executed 'hello.aleo/main' (in "/hello/build")
+ Leo ✅ Executed 'hello.aleo/main' (in "/hello/build")
 ```
 
 [//]: # (```bash title="console output:")
