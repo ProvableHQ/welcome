@@ -48,7 +48,16 @@ title: Installation
 [//]: # ()
 [//]: # (Browse all Leo releases [**here**]&#40;https://github.com/AleoHQ/leo/releases&#41;.)
 
-## 1. Install with Rust
+## 0. Preliminaries (Linux only)
+
+For a Debian-based distro such as Ubuntu or Mint, you will probably need the following:
+  ```bash
+  sudo apt install git
+  sudo apt install build-essential
+  sudo apt install libssl-dev
+  ```
+
+## 1. Install Rust
 
 We recommend installing Rust using [rustup](https://www.rustup.rs/). You can install `rustup` as follows:
 
@@ -56,6 +65,9 @@ We recommend installing Rust using [rustup](https://www.rustup.rs/). You can ins
   ```bash
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   ```
+  When this finishes, it will suggest that you restart the shell or 
+  evaluate a form to add the `.cargo/bin` directory to your search path.
+  You will need to do one or the other prior to step 2.
 
 - Windows (64-bit):  
   
@@ -77,23 +89,19 @@ We recommend installing Rust using [rustup](https://www.rustup.rs/). You can ins
 
 [//]: # (```)
  
-## 2. Build from Source Code
+## 2. Build Leo from Source Code
 
-Alternatively, you can install Leo by building from the source code as follows:
+You can build and install Leo from the source code as follows:
 
 ```bash
 # Download the source code
 git clone https://github.com/AleoHQ/leo
 cd leo
 
-# Build in release mode
-$ cargo build --release
+# Build and install
+cargo install --path .
 ```
-
-This will generate an executable under the `./target/release` directory. To run Leo, run the following command:
-```bash
-./target/release/leo
-```
+That will generate the executable `.cargo/bin/leo`.
 
 Now to use Leo, in your terminal, run:
 ```bash
