@@ -11,5 +11,5 @@ To clean the build directory, run:
 leo clean
 ```
 ```bash title="console output:"
-  Cleaning ✅ Cleaned the build directory (in "/build/")
+  Leo cleaned the build directory (in "/build/")
 ```

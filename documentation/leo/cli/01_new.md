@@ -17,11 +17,10 @@ The new package will have a directory structure as follows:
 
 ```bash
 package-name/
-├── Leo.toml # Your program manifest
+├── program.json # Your program manifest
 ├── README.md # Your program description
 ├── inputs/ 
-│ ├── hello-world.in # Your program inputs
-│ └── hello-world.state # Record state information
+│ ├── hello.in # Your program inputs
 └── src/    
   └── main.leo # Your program file
 ```
