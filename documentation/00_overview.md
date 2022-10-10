@@ -27,15 +27,8 @@ to compile, execute, and finalize its state autonomously.
 - [Transitions](./concepts/04_transitions.md)
 - [Blocks](./concepts/05_blocks.md)
 
-[//]: # (- [Transactions]&#40;./concepts/03_transactions.md&#41;)
-
-[//]: # (- [Blocks]&#40;./concepts/04_blocks.md&#41;)
-
-[//]: # (- [Consensus]&#40;./concepts/05_consensus.md&#41;)
-
-[//]: # (- [Glossary]&#40;./concepts/06_glossary.md&#41;)
-
 ### Chapter 2: Aleo
+
 - [Installation](./aleo/00_installation.md)
 - [Hello Aleo Instructions](./aleo/01_hello_aleo.md)
 - [Aleo CLI](./aleo/03_commands.md)
@@ -47,49 +40,22 @@ to compile, execute, and finalize its state autonomously.
 
 ## Leo
 
-
 ### Chapter 3: Hello Leo!
+
 - [The Leo Programming Language](./leo/getting_started/00_overview.md)
 - [Installation](./leo/getting_started/01_installation.md)
 - [Hello World in Leo](./leo/getting_started/02_hello_world.md)
 - [File Syntax](./leo/getting_started/03_syntax.md)
 - [CLI Commands](./leo/getting_started/04_cli.md)
 
+### Chapter 4: Language
 
-[//]: # ()
-[//]: # (### Chapter 4: Language)
+- [Data Types and Values](./leo/language/00_types.md)
+- [Layout of a Leo Program](./leo/language/01_language.md)
+- [Operators](./leo/language/02_operators.md)
+- [Developer Resources](./leo/language/03_resources.md)
 
-[//]: # (- [A Flying Tour of Leo]&#40;./leo/language/00_flying_tour.md&#41;)
-
-[//]: # (- [Layout of a Leo Program]&#40;./leo/language/01_layout.md&#41;)
-
-[//]: # (- [Defining Variables]&#40;./leo/language/02_variables.md&#41;)
-
-[//]: # (- [Data Types and Values]&#40;./leo/language/03_types.md&#41;)
-
-[//]: # (- [Arrays]&#40;./leo/language/04_arrays_and_tuples.md&#41;)
-
-[//]: # (- [Operators]&#40;./leo/language/05_operators.md&#41;)
-
-[//]: # (- [Statements]&#40;./leo/language/06_statements.md&#41;)
-
-[//]: # (- [Functions]&#40;./leo/language/07_functions.md&#41;)
-
-[//]: # (- [Leo Inputs]&#40;./leo/language/08_inputs.md&#41;)
-
-[//]: # (- [Circuits]&#40;./leo/language/09_circuits.md&#41;)
-
-[//]: # (- [Imports]&#40;./leo/language/10_imports.md&#41;)
-
-[//]: # (- [Console Functions]&#40;./leo/language/11_console.md&#41;)
-
-[//]: # (- [Writing Tests]&#40;./leo/language/12_tests.md&#41;)
-
-[//]: # (- [Lexical Structure]&#40;./leo/language/13_lexical.md&#41;)
-
-[//]: # ()
-
-### Chapter 4: CLI
+### Chapter 5: CLI
 
 - [The Leo Command Line Interface](./leo/cli/00_overview.md)
 - [Create a Package](./leo/cli/01_new.md)
@@ -99,7 +65,7 @@ to compile, execute, and finalize its state autonomously.
 - [Deploy a Program](./leo/cli/05_deploy.md)
 - [Clean a Package Workspace](./leo/cli/06_clean.md)
 
-### Chapter 5: Additional Material
+### Chapter 6: Additional Material
 
 - [Code Editor Support for Leo](./leo/additional_material/00_tooling.md)
 - [Leo Style Guide](./leo/additional_material/01_style.md)
@@ -109,56 +75,11 @@ to compile, execute, and finalize its state autonomously.
 
 ## Testnet III
 
-
-### Chapter 6: Getting Started
-
+### Chapter 7: Getting Started
 
 - [Testnet III.](./testnet/getting_started/00_overview.md)
 
-[//]: # (- [Install snarkOS]&#40;./testnet/getting_started/01_installation.md&#41;)
-
-
-
-[//]: # (### Chapter 6: Concepts)
-
-[//]: # ()
-[//]: # ()
-[//]: # (- [RPC Server]&#40;./testnet/concepts/00_rpc_server.md&#41;)
-
-
-
-[//]: # (### Chapter 7: Network Messages)
-
-
-[//]: # (- [Block]&#40;./testnet/network_messages/00_block.md&#41;)
-
-[//]: # (- [GetBlocks]&#40;./testnet/network_messages/01_get_blocks.md&#41;)
-
-[//]: # (- [GetMemoryPool]&#40;./testnet/network_messages/02_get_memory_pool.md&#41;)
-
-[//]: # (- [GetPeers]&#40;./testnet/network_messages/03_get_peers.md&#41;)
-
-[//]: # (- [GetSync]&#40;./testnet/network_messages/04_get_sync.md&#41;)
-
-[//]: # (- [MemoryPool]&#40;./testnet/network_messages/05_memory_pool.md&#41;)
-
-[//]: # (- [Peers]&#40;./testnet/network_messages/06_peers.md&#41;)
-
-[//]: # (- [Ping]&#40;./testnet/network_messages/07_ping.md&#41;)
-
-[//]: # (- [Pong]&#40;./testnet/network_messages/08_pong.md&#41;)
-
-[//]: # (- [Sync]&#40;./testnet/network_messages/09_sync.md&#41;)
-
-[//]: # (- [SyncBlock]&#40;./testnet/network_messages/10_sync_block.md&#41;)
-
-[//]: # (- [Transaction]&#40;./testnet/network_messages/11_transaction.md&#41;)
-
-[//]: # (- [Version]&#40;./testnet/network_messages/12_version.md&#41;)
-
-
-
-### Chapter 7: API Reference
+### Chapter 8: API Reference
 
 - [latest height](./testnet/public_endpoints/00_latest_height.md)
 - [latest hash](./testnet/public_endpoints/01_latest_hash.md)
@@ -179,106 +100,14 @@ to compile, execute, and finalize its state autonomously.
 - [peers count](./testnet/public_endpoints/16_peers_count.md)
 - [peers all](./testnet/public_endpoints/17_peers_all.md)
 
-[//]: # (### Chapter 9: Private RPC Endpoints)
-
-[//]: # ()
-[//]: # (- [connect]&#40;./testnet/private_endpoints/00_connect.md&#41;)
-
-[//]: # (- [createaccount]&#40;./testnet/private_endpoints/01_createaccount.md&#41;)
-
-[//]: # (- [createrawtransaction]&#40;./testnet/private_endpoints/02_createrawtransaction.md&#41;)
-
-[//]: # (- [createtransaction]&#40;./testnet/private_endpoints/03_createtransaction.md&#41;)
-
-[//]: # (- [createtransactionkernel]&#40;./testnet/private_endpoints/04_createtransactionkernel.md&#41;)
-
-[//]: # (- [decoderecord]&#40;./testnet/private_endpoints/05_decoderecord.md&#41;)
-
-[//]: # (- [decryptrecord]&#40;./testnet/private_endpoints/06_decryptrecord.md&#41;)
-
-[//]: # (- [disconnect]&#40;./testnet/private_endpoints/07_disconnect.md&#41;)
-
-[//]: # (- [getrawrecord]&#40;./testnet/private_endpoints/08_getrawrecord.md&#41;)
-
-[//]: # (- [getrecordcommitmentcount]&#40;./testnet/private_endpoints/09_getrecordcommitmentcount.md&#41;)
-
-[//]: # (- [getrecordcommitments]&#40;./testnet/private_endpoints/10_getrecordcommitments.md&#41;)
-
-[//]: # ()
-[//]: # ()
-[//]: # (## Explorer III)
-
-[//]: # ()
-[//]: # (### Chapter 10: Authentication)
-
-[//]: # ()
-[//]: # (- [Authentication API]&#40;./explorer/authentication/00_authentication_api.md&#41;)
-
-[//]: # (- [createapikey]&#40;./explorer/authentication/01_createapikey.md&#41;)
-
-[//]: # ()
-[//]: # ()
-[//]: # (### Chapter 11: Blocks)
-
-[//]: # ()
-[//]: # (- [Block API]&#40;./explorer/blocks/00_block_api.md&#41;)
-
-[//]: # (- [getbestblock]&#40;./explorer/blocks/01_getbestblock.md&#41;)
-
-[//]: # (- [getbyheight]&#40;./explorer/blocks/02_getbyheight.md&#41;)
-
-[//]: # (- [getbyheightrange]&#40;./explorer/blocks/03_getbyheightrange.md&#41;)
-
-[//]: # (- [getbyhash]&#40;./explorer/blocks/04_getbyhash.md&#41;)
-
-[//]: # ()
-[//]: # ()
-[//]: # (### Chapter 12: Transactions)
-
-[//]: # ()
-[//]: # (- [Transaction API]&#40;./explorer/transactions/00_transaction_api.md&#41;)
-
-[//]: # (- [getbyhash]&#40;./explorer/transactions/01_getbyhash.md&#41;)
-
-[//]: # (- [getbyhashbatch]&#40;./explorer/transactions/02_getbyhashbatch.md&#41;)
-
-[//]: # (- [broadcast]&#40;./explorer/transactions/03_broadcast.md&#41;)
-
-[//]: # (- [validate]&#40;./explorer/transactions/04_validate.md&#41;)
-
-[//]: # ()
-[//]: # ()
-[//]: # (### Chapter 13: Metrics)
-
-[//]: # ()
-[//]: # (- [Metrics API]&#40;./explorer/metrics/00_metrics_api.md&#41;)
-
-[//]: # (- [get]&#40;./explorer/metrics/01_get.md&#41;)
-
-[//]: # (- [graph]&#40;./explorer/metrics/02_graph.md&#41;)
-
-
 ## Advanced Topics
 
-### Chapter 8: The Aleo Curves
+### Chapter 9: The Aleo Curves
 
 - [Overview](./advanced/the_aleo_curves/00_overview.md)
 - [Edwards BLS12](./advanced/the_aleo_curves/01_edwards_bls12.md)
 - [BLS12-377](./advanced/the_aleo_curves/02_bls12-377.md)
 - [Edwards BW6](./advanced/the_aleo_curves/03_edwards_bw6.md)
 - [BW6-761](./advanced/the_aleo_curves/04_bw6-761.md)
-
-
-[//]: # (### Chapter 9: Proof of Succinct Work)
-
-[//]: # ()
-[//]: # (- [Overview]&#40;./advanced/posw/00_overview.md&#41;)
-
-[//]: # (- [Consensus Security]&#40;./advanced/posw/01_consensus_security.md&#41;)
-
-[//]: # (- [The PoSW Predicate]&#40;./advanced/posw/02_posw_predicate.md&#41;)
-
-[//]: # (- [The Mining Process]&#40;./advanced/posw/03_mining.md&#41;)
-
 
 <!-- markdown-link-check-enable -->
