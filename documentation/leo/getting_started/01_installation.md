@@ -48,47 +48,23 @@ title: Installation
 [//]: # ()
 [//]: # (Browse all Leo releases [**here**]&#40;https://github.com/AleoHQ/leo/releases&#41;.)
 
-## 0. Preliminaries (Linux only)
+## 1. Install the Prerequisites
 
-For a Debian-based distro such as Ubuntu or Mint, you will probably need the following:
-  ```bash
-  sudo apt install git
-  sudo apt install build-essential
-  sudo apt install libssl-dev
-  ```
+### 1.1 Install Git:
 
-## 1. Install Rust
+**[bit.ly/start-git](https://bit.ly/start-git)**
 
-We recommend installing Rust using [rustup](https://www.rustup.rs/). You can install `rustup` as follows:
+### 1.2 Install Rust:
 
-- macOS or Linux:
-  ```bash
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  ```
-  When this finishes, it will suggest that you restart the shell or 
-  evaluate a form to add the `.cargo/bin` directory to your search path.
-  You will need to do one or the other prior to step 2.
+**[bit.ly/start-rust](https://bit.ly/start-rust)**
 
-- Windows (64-bit):  
-  
-  Download the [Windows 64-bit executable](https://win.rustup.rs/x86_64) and follow the on-screen instructions.
+### 1.3 Check the Prerequisites
 
-- Windows (32-bit):  
-  
-  Download the [Windows 32-bit executable](https://win.rustup.rs/i686) and follow the on-screen instructions.
+```bash
+git --version
+cargo --version
+```
 
-[//]: # (## 2.2a Build from Crates.io)
-
-[//]: # ()
-[//]: # (We recommend installing Leo this way. In your terminal, run:)
-
-[//]: # ()
-[//]: # (```bash)
-
-[//]: # (cargo install leo-lang)
-
-[//]: # (```)
- 
 ## 2. Build Leo from Source Code
 
 You can build and install Leo from the source code as follows:
@@ -107,3 +83,11 @@ Now to use Leo, in your terminal, run:
 ```bash
 leo
 ```
+
+## 3. IDE Syntax Highlighting
+Aleo maintains syntax highlighting implementations across different platforms.   
+If you do not see your favorite editor on this list, please reach out on [github](https://github.com/AleoHQ/welcome/issues/new).
+
+1. [Sublime Text](../additional_material/00_tooling.md#sublime-text)
+2. [Visual Studio Code](../additional_material/00_tooling.md#vs-code)
+3. [Intellij](../additional_material/00_tooling.md#intellij)

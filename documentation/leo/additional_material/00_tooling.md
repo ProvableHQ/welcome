@@ -4,12 +4,12 @@ title: Tooling for Leo
 sidebar_label: Tooling
 ---
 
-Aleo maintains several syntax highlighting implementations across different platforms.   
+Aleo maintains syntax highlighting implementations across different platforms.   
 If you do not see your favorite editor on this list, please reach out on [github](https://github.com/AleoHQ/welcome/issues/new).
 
-1. [Sublime Text](#sublime).
-2. [Visual Studio Code](#vscode).
-3. [Intellij](#intellij).
+1. [Sublime Text](#sublime-text)
+2. [Visual Studio Code](#vs-code)
+3. [Intellij](#intellij)
 
 ## Sublime Text
 
@@ -28,19 +28,19 @@ Follow these steps to toggle the `Leo` syntax highlighting, hover, and tokens.
 1. Open `Sublime Text`.
 2. From Preferences > Select Color Scheme... > LSP-aleo-developer
 
-## VSCode
+## VS Code
 
 [//]: # (![]&#40;./images/vscode.png&#41;)
 Download the editor here: https://code.visualstudio.com/download.
 
 ### Install
 
-Install [VSCode for Leo](https://marketplace.visualstudio.com/items?itemName=aleohq.leo-extension) from VSCode marketplace.   
+Install [VS Code for Leo](https://marketplace.visualstudio.com/items?itemName=aleohq.leo-extension) from VSCode marketplace.   
 The correct extension ID is `aleohq.leo-extension`.
 
 ### Usage
 
-1. Open `VSCode`.
+1. Open `VS Code`.
 2. From Preferences > Color Theme... > Aleo Theme
 
 [//]: # (### Manual Install)
