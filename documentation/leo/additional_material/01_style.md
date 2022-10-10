@@ -18,7 +18,7 @@ Feel free to add your comments and recommendations [here](04_contributing.md).
 
 ### Blank lines
 
-A single blank line should separate `circuit`s and `function`s.
+A single blank line should separate `structs`s and `function`s.
 Multiple imports can be optionally separated by a single blank line. 
 The last import at the top of the file should be followed by a blank line.
 
@@ -26,7 +26,7 @@ The last import at the top of the file should be followed by a blank line.
 import std.io.Write;
 import std.math.Add;
 
-circuit A {
+struct A {
     // ...
 }
 
@@ -45,7 +45,7 @@ import std.io.Write;
 
 
 import std.math.Add;
-circuit A {
+struct A {
     // ...
 }
 function foo() {
@@ -77,7 +77,7 @@ function test_foo() {
 * Static functions should be defined before non-static functions.
 
 ```leo
-circuit A {
+struct A {
     x: u32,
     y: u32,
 
@@ -101,7 +101,7 @@ Leo file elements should be ordered:
 ### Braces
 Opening braces always go on the same line.
 ```leo
-circuit A {
+struct A {
     // ...
 }
 

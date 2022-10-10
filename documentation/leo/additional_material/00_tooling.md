@@ -12,7 +12,8 @@ If you do not see your favorite editor on this list, please reach out on [github
 3. [Intellij](#intellij).
 
 ## Sublime Text
-![](./images/sublime.png)  
+
+[//]: # (![]&#40;./images/sublime.png&#41;  )
 Download the editor here: https://www.sublimetext.com/download.
 Leo support for Sublime's LSP plugin is provided through a language-server.
 ### Install
@@ -28,7 +29,8 @@ Follow these steps to toggle the `Leo` syntax highlighting, hover, and tokens.
 2. From Preferences > Select Color Scheme... > LSP-aleo-developer
 
 ## VSCode
-![](./images/vscode.png)
+
+[//]: # (![]&#40;./images/vscode.png&#41;)
 Download the editor here: https://code.visualstudio.com/download.
 
 ### Install
@@ -53,7 +55,7 @@ The correct extension ID is `aleohq.leo-extension`.
 
 ## Intellij
 
-![](./images/intellij.png)
+[//]: # (![]&#40;./images/intellij.png&#41;)
 Download the editor here: https://www.jetbrains.com/idea/download/.
 
 ### Install
