@@ -77,7 +77,7 @@ cd leo
 # Build and install
 cargo install --path .
 ```
-That will generate the executable `.cargo/bin/leo`.
+That will generate the executable `~/.cargo/bin/leo`.
 
 Now to use Leo, in your terminal, run:
 ```bash

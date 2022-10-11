@@ -18,7 +18,7 @@ Download the editor here: https://www.sublimetext.com/download.
 Leo support for Sublime's LSP plugin is provided through a language-server.
 ### Install
 
-1. Install [LSP](https://packagecontrol.io/packages/LSP) and [LSP-aleo-developer](https://packagecontrol.io/packages/LSP-aleo-developer) from Package Control.
+1. Install [LSP](https://packagecontrol.io/packages/LSP) and [LSP-Leo](https://packagecontrol.io/packages/LSP-leo) from Package Control.
 2. Restart Sublime.
 
 ### Usage
@@ -35,23 +35,13 @@ Download the editor here: https://code.visualstudio.com/download.
 
 ### Install
 
-Install [VS Code for Leo](https://marketplace.visualstudio.com/items?itemName=aleohq.leo-extension) from VSCode marketplace.   
+Install [Leo for VS Code](https://marketplace.visualstudio.com/items?itemName=aleohq.leo-extension) from the VS Code marketplace.   
 The correct extension ID is `aleohq.leo-extension`.
 
 ### Usage
 
 1. Open `VS Code`.
 2. From Preferences > Color Theme... > Aleo Theme
-
-[//]: # (### Manual Install)
-
-[//]: # ()
-[//]: # (1. Download the [leo-language-features.vsix]&#40;https://leo-lsp-packages.sfo2.digitaloceanspaces.com/vscode-extension/next/leo-language-features.vsix&#41;.)
-
-[//]: # (2. Run ```code --install-extension leo-language-features.vsix```.)
-
-[//]: # ()
-[//]: # (Mirrored from the official VSCode [documentation]&#40;https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix&#41;.)
 
 ## Intellij
 
@@ -60,4 +50,4 @@ Download the editor here: https://www.jetbrains.com/idea/download/.
 
 ### Install
 
-Install the [Aleo Developer Plugin](https://plugins.jetbrains.com/plugin/19890-aleo-developer) from JetBrains marketplace.   
+Install the [Leo for Intellij](https://plugins.jetbrains.com/plugin/19979-leo) from the JetBrains marketplace.   
