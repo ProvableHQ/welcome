@@ -23,19 +23,15 @@ Check out the [**Hello World**](02_hello_world.md) tutorial for a brief walk-thr
 
 A formal ABNF grammar specification for the syntax of Leo can be viewed [here](https://github.com/AleoHQ/leo/tree/testnet3/docs/grammar).
 
-[//]: # ()
-[//]: # (To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**]&#40;../language/01_layout.md&#41;.)
+## Language Guide
 
-[//]: # (Leo comes with an advanced testing framework for writing unit and integration tests. Read [**Writing Tests**]&#40;../language/12_tests.md&#41; to learn more.)
+To learn about Leo's supported types, start with [**Data Types and Values**](../language/00_types.md).
 
-[//]: # (## Programming Model)
+To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**](../language/01_language.md).
 
-[//]: # ()
-[//]: # (Leo programs are designed to work with Aleo [**record**]&#40;../../aleo/concepts/02_records.md&#41; and [**transaction**]&#40;../../aleo/concepts/03_transactions.md&#41; data. )
+To view the full list of supported operators in Leo, see [**Operators**](../language/02_operators.md).
 
-[//]: # (Understanding how to access and compute on this data is essential to writing private applications. )
-
-[//]: # (Read the [**Model**]&#40;../programming_model/00_model.md&#41; to learn more.)
+For additional developer resources such as examples and community projects, see [**Developer Resources**](../language/03_resources.md).
 
 ## Command Line Interface Documentation
 
