@@ -44,9 +44,9 @@ program hello.aleo {
 }
 ```
 
-`program hello.aleo {` defines the name of the [program](../language/04_language.md#program-scope) inside the Leo file. 
+`program hello.aleo {` defines the name of the [program](../language/01_language.md#program-scope) inside the Leo file. 
 The program ID must match the `program.json` manifest file.  
-The keyword `transition` indicates a [transition](../language/04_language.md#transition-function) function definition in Leo. 
+The keyword `transition` indicates a [transition](../language/01_language.md#transition-function) function definition in Leo. 
 Our **hello** `main` function takes an input `a` with type `u32` and `public` visibility and an input `b` with type `u32` and `private` visibility by default.
 The program returns one result with type `u32`.
 The transition function body is enclosed in curly braces `{ }`. It is a common convention in Leo to place the opening curly 
@@ -84,7 +84,7 @@ b: u32 = 2u32;
 
 An input file begins with a section enclosed in brackets `[ ]`.
 `main` indicates that we are defining the inputs to the program function `main`.
-You can only define inputs to [transition functions](../language/04_language.md#transition-function).
+You can only define inputs to [transition functions](../language/01_language.md#transition-function).
 
 ```leo
 [main]
