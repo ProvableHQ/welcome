@@ -48,54 +48,46 @@ title: Installation
 [//]: # ()
 [//]: # (Browse all Leo releases [**here**]&#40;https://github.com/AleoHQ/leo/releases&#41;.)
 
-## 1. Install with Rust
+## 1. Install the Prerequisites
 
-We recommend installing Rust using [rustup](https://www.rustup.rs/). You can install `rustup` as follows:
+### 1.1 Install Git:
 
-- macOS or Linux:
-  ```bash
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  ```
+**[bit.ly/start-git](https://bit.ly/start-git)**
 
-- Windows (64-bit):  
-  
-  Download the [Windows 64-bit executable](https://win.rustup.rs/x86_64) and follow the on-screen instructions.
+### 1.2 Install Rust:
 
-- Windows (32-bit):  
-  
-  Download the [Windows 32-bit executable](https://win.rustup.rs/i686) and follow the on-screen instructions.
+**[bit.ly/start-rust](https://bit.ly/start-rust)**
 
-[//]: # (## 2.2a Build from Crates.io)
+### 1.3 Check the Prerequisites
 
-[//]: # ()
-[//]: # (We recommend installing Leo this way. In your terminal, run:)
+```bash
+git --version
+cargo --version
+```
 
-[//]: # ()
-[//]: # (```bash)
+## 2. Build Leo from Source Code
 
-[//]: # (cargo install leo-lang)
-
-[//]: # (```)
- 
-## 2. Build from Source Code
-
-Alternatively, you can install Leo by building from the source code as follows:
+You can build and install Leo from the source code as follows:
 
 ```bash
 # Download the source code
 git clone https://github.com/AleoHQ/leo
 cd leo
 
-# Build in release mode
-$ cargo build --release
+# Build and install
+cargo install --path .
 ```
-
-This will generate an executable under the `./target/release` directory. To run Leo, run the following command:
-```bash
-./target/release/leo
-```
+That will generate the executable `~/.cargo/bin/leo`.
 
 Now to use Leo, in your terminal, run:
 ```bash
 leo
 ```
+
+## 3. IDE Syntax Highlighting
+Aleo maintains syntax highlighting implementations across different platforms.   
+If you do not see your favorite editor on this list, please reach out on [github](https://github.com/AleoHQ/welcome/issues/new).
+
+1. [Sublime Text](../additional_material/00_tooling.md#sublime-text)
+2. [Visual Studio Code](../additional_material/00_tooling.md#vs-code)
+3. [Intellij](../additional_material/00_tooling.md#intellij)
