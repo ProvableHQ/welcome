@@ -38,12 +38,13 @@ program hello.aleo {
     transition mint_public(
         public receiver: address,
         public amount: u64,
-    ) -> token { 
+    ) -> token {
+        async finalize(receiver, amount); 
         return token {
             owner: receiver,
             gates: 0u64,
             amount,
-        } then finalize(receiver, amount);
+        };
     }
     
     finalize mint_public(
@@ -249,7 +250,8 @@ program transfer.aleo {
         };
 
         // Return the receiver's record, then decrement the token amount of the caller publicly.
-        return new then finalize(self.caller, amount);
+        async finalize(self.caller, amount);
+        return new;
     }
 
     // Decrements `account[owner]` by `amount`.
