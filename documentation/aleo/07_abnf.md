@@ -470,6 +470,17 @@ Go to: _[literal](#literal), [program-id](#program-id), [register-access](#regis
 
 --------
 
+###### operand
+```abnf
+operand = literal / register-access / %s"self.parent" / program-id
+```
+
+Go to: _[literal](#literal), [program-id](#program-id), [register-access](#register-access)_;
+
+
+
+--------
+
 
 ###### unsigned type
 ```abnf
