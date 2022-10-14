@@ -12,9 +12,8 @@ view key is used to decrypt account records, which are encrypted under the user'
 address enables users to interact with one another, sending and receiving records that encode values and application data.
 
 To protect user *assets* and *record data*, one should **never disclose their account private key** to any
-third parties. For real-world applications on Aleo, users should derive an [account proving key](#account-proving-key)
-from their account private key to allow third parties to *trustlessly* run applications and generate transactions
-on a user's behalf.
+third parties. For real-world applications on Aleo, users should derive a compute key from their account private key to 
+allow third parties to *trustlessly* run applications and generate transactions on a user's behalf.
 
 Generate a new Aleo account [here](https://aleohq.github.io/aleo/). 
 
@@ -35,33 +34,10 @@ An account private key is formatted as a Base58 string, comprised of 58 characte
 The account private key is encoded with a [private key prefix](#account-prefixes) that reads `APrivateKey1`, indicating
 that it is a private key and should not be shared with other users.
 
-## Account Proving Key
-
-To facilitate user interactions at scale with ease, users can derive an account proving key which allows a prover to
-trustlessly process applications and user transactions on the user's behalf.
-
-The account proving key is comprised of:
-- a **public key** for the account signature scheme,
-- the **pseudorandom function seed** from the account private key, and
-- the **commitment randomness** from the account private key.
-
-While the account proving key does **not** allow the prover to arbitrarily spend assets or forge record data, it does allow the
-prover to access and view account data. As such, users should provide this key only to authorized parties.
-
-### Proving Key Format
-
-```
-AProvingKey1z3f8dMA8f9GffPsP2s85qWfiYYmBWcccorK9RkaVpAAFB
-```
-
-An account proving key is formatted as a Base58 string, comprised of 58 characters.
-The account proving key is encoded with a [proving key prefix](#account-prefixes) that reads `AProvingKey1`, indicating
-that it is a proving key and should only be shared with authorized parties.
-
 ## Account View Key
 
 An Aleo account view key is derived from an account private key and enables users to decrypt their
-[records](03_transactions.md#record-ciphertexts) from the global ledger.
+[records](02_records.md) from the global ledger.
 As account view keys are able to access every record in a user's account, this key can be used by
 third-party auditors to verify the complete history of an account.
 
@@ -101,7 +77,6 @@ The account address is encoded with an [address prefix](#account-prefixes) that 
 |                         |  Type  | Human-Readable Prefix |                    Prefix Bytes                    |
 |:-----------------------:|:------:|:---------------------:|:--------------------------------------------------:|
 | **Account Private Key** | bytes  | `APrivateKey1`        | `[ 127, 134, 189, 116, 210, 221, 210, 137, 144 ]`  |
-| **Account Proving Key** | bytes  | `AProvingKey1`        | `[ 109, 249, 98, 224, 36, 15, 213, 187, 79, 190 ]` |
 | **Account View Key**    | bytes  | `AViewKey1`           | `[ 14, 138, 223, 204, 247, 224, 122 ]`             |
 | **Account Address**     | string | `aleo1`               | `aleo1`                                            |
 
