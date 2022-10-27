@@ -83,10 +83,8 @@ closure foo:
 
 ### Interface
 
-A interface is a data structure is declared as `interface {name}:`  
-Records contain declarations `{name} as {type}.{visibility};`  
-Record data structures must contain the `owner` and `gates` declarations as shown below.  
-When passing a record as input to a program function the `_nonce as group.{visibility}` declaration is also required.
+An interface is a data structure is declared as `interface {name}:`  
+Interfaces contain declarations `{name} as {type}.{visibility};`
 
 ```aleo showLineNumbers
 interface array3:
