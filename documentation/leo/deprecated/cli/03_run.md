@@ -4,40 +4,6 @@ title: Execute a Program
 sidebar_label: leo run
 ---
 
-## `leo run`
-
-To execute a Leo program function using inputs from the program input `.in` file.
-```bash
-leo run {$FUNCTION}
-```
-
-To execute a Leo program function with inputs from the command line.
-`{$INPUTS}` should be a list of inputs to the program separated by spaces.
-```bash
-leo run {$FUNCTION} {$INPUTS}
-```
-
-
-```bash title="console output:"
- Leo ✅ Compiled 'main.leo' into Aleo instructions
-⏳ Compiling 'hello.aleo'...
-
- • Loaded universal setup (in 100 ms)
- • Built 'main' (in 1000 ms)
-
-     Leo ✅ Built 'hello.aleo' (in "/hello/build")
- • Loaded universal setup (in 100 ms)
-🚀 Executing 'hello.aleo/main'...
-
- • Executing 'hello.aleo/main'...
- • Executed 'main' (in 1000 ms)
-
-➡️  Output
-
- • 3u32
-
- Leo ✅ Executed 'hello.aleo/main' (in "/hello/build")
-```
 
 [//]: # (```bash title="console output:")
 

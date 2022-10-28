@@ -24,9 +24,9 @@ Reducing the source code that caused the issue to a bare minimum is always very 
 
 ## Make a Pull Request
 
-Start by forking off of the `master` branch to make your changes. Commit messages should clearly explain why and what you changed.
+Start by forking off of the `testnet3` branch to make your changes. Commit messages should clearly explain why and what you changed.
 
-If you need to pull in any changes from the `master` branch after making your fork (for example, to resolve potential merge conflicts), 
+If you need to pull in any changes from the `testnet3` branch after making your fork (for example, to resolve potential merge conflicts), 
 please avoid using git merge and instead, git rebase your branch. Rebasing will help us review your changes easily.
 
 ### Tools Required
@@ -39,7 +39,7 @@ To build Leo from source you will need the following tools:
 - Clippy
   - Via rustup, if you didn't do the default rustup install `rustup componenet add clippy`.
 
-### Formating
+### Formatting
 
 Please do the following before opening a PR.
 - `cargo +nightly fmt --all` will format all your code.
@@ -57,10 +57,6 @@ Then when running the test command, make sure you have the environment variable 
 
 ### Grammar
 
-In the root directory of the repository, there exists a "grammar" directory. In that directory, there is an "abnf-grammar.txt" file that has the grammar rules in ABNF format. If your changes affect a grammar rule, we may ask you to modify it in that txt file. After you do so, make sure to go into the directory and run `cargo run > README.md`. Doing so will ensure that the README file for the grammar is up to date.
-
-### Changelog
-
-We will be adding a `Changelog.md` to Leo in the near future. Please add an entry if your code fixes a bug or adds a feature.
+In the root directory of the repository, there exists a "docs/grammar" directory. In that directory, there is an "abnf-grammar.txt" file that has the grammar rules in ABNF format. If your changes affect a grammar rule, we may ask you to modify it in that txt file. After you do so, make sure to go into the directory and run `cargo run > README.md`. Doing so will ensure that the README file for the grammar is up to date.
 
 We appreciate your hard work!

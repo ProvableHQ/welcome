@@ -4,6 +4,83 @@ title: Leo Language Guide
 sidebar_label: Language
 ---
 
+### Statically Typed
+Leo is a **statically typed language**, which means we must know the type of each variable before executing a circuit.
+
+### Explicit Types Required
+There is no `undefined` or `null` value in Leo. When assigning a new variable, **the type of the value must be explicitly stated**.
+The exception to this rule is when a new variable inherits its type from a previous variable.
+
+### Pass by Value
+Variables in Leo are always **passed by value**, which means they are always copied when they are used as function inputs or in assignments.
+
+## Booleans
+Leo supports the traditional `true` or `false` boolean values. The explicit `bool` type for booleans in statements is required.
+
+```leo
+let b: bool = false;
+```
+
+## Integers
+Leo supports signed integers `i8`, `i16`, `i32`, `i64`, `i128`
+and unsigned integers `u8`, `u16`, `u32`, `u64`, `u128`;
+
+```leo
+let b: u8 = 1u8;
+```
+
+:::info
+Higher bit length integers generate more constraints in the circuit, which can slow down computation time.
+:::
+
+### A Note on Leo Integers
+Leo will not default to an integer type. The definition of a integer **must** include an explicit type.
+**Type casting is not yet supported.**
+
+```leo
+let a: u8 = 2u8; // explicit type    
+let b: u8 = 2; // implicit type
+```
+
+## Field Elements
+
+Leo supports a `field` type for native field elements as unsigned numbers up to the modulus length of the field.
+```leo
+let a: field = 1field; 
+let b: field = 21888242871839275222246405745257275088548364400416034343698204186575808495617;
+```
+
+## Group Elements
+The set of affine points on the elliptic curve passed into the Leo compiler forms a group.
+Leo supports this set as a primitive data type.
+Group elements are special since their values can be defined from the x-coordinate of a coordinate pair.  
+`1group`. The group type keyword `group` must be used when specifying a group coordinate.
+
+```leo
+let b: group = 0group; // the zero of the group
+
+let a: group = 1group; // the group generator
+
+let c: group = 2group; // 2 * the group generator
+```
+
+## Scalar Elements
+Leo supports the `scalar` type for field elements in the scalar field.
+```leo
+let a: scalar = 1scalar;
+```
+
+## Addresses
+
+Addresses are defined to enable compiler-optimized routines for parsing and operating over addresses.
+These semantics will be accompanied by a standard library in a future sprint.
+
+```leo
+function main(owner: address) {
+    let receiver: address = aleo1ezamst4pjgj9zfxqq0fwfj8a4cjuqndmasgata3hggzqygggnyfq6kmyd4;
+}
+```
+
 ## Layout of a Leo Program
 
 A Leo program contains declarations of a [Program Scope](#program-scope), [Imports](#import), [Transitions](#transition-function), [Helper Functions](#helper-function), [Structs](#struct), [Records](#record),
@@ -265,4 +342,87 @@ program transfer.aleo {
     }
 }
 ```
+
+# Arithmetic Operators
+
+Operators in Leo compute a value based off of one or more expressions.
+Leo will try to detect arithmetic operation errors as soon as possible.
+If an integer overflow or division by zero can be identified at compile time Leo will quickly tell the programmer.
+Otherwise, the error will be caught at proving time when main function inputs are fetched.
+
+## Addition
+
+Adds `first` with `second`, storing the outcome in `destination`.
+For integer types, a constraint is added to check for overflow.
+For cases where wrapping semantics are needed for integer types, see the `Add Wrapped` operator.
+
+```leo
+let a: u8 = 1u8 + 1u8;
+// a is equal to 2
+
+a += 1;
+// a is now equal to 3
+
+a = a.add(1u8);
+// a is now equal to 4
+```
+
+|          Operation           |      Operators      |                                   Supported Types                                    |
+|:----------------------------:|:-------------------:|:------------------------------------------------------------------------------------:|
+|           addition           |  `+` `+=` `.add()`  | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|      wrapping addition       |  `.add_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |                              
+|       negation(unary)        |    `-` `.neg()`     |                    `field` `group` `i8` `i16` `i32` `i64` `i128`                     | 
+|     subtraction(binary)      |  `-` `-=` `.sub()`  |     `field` `group` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`      |
+| wrapping subtraction(binary) |  `.sub_wrapped()`   |     `field` `group` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`      |
+|        multiplication        |  `*` `*=` `.mul()`  | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|   wrapping multiplication    |  `.mul_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|           division           |  `/` `/=` `.div()`  |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
+|      wrapping division       |  `.div_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|        exponentiation        | `**` `**=` `.pow()` |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
+|   wrapping exponentiation    |  `.pow_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+
+# Logical Operators
+
+| Operation | Operators | Supported Types |
+|:---------:|:---------:|:---------------:|
+| AND       | `&&`      | `bool`          |
+| OR        | `\|\|`    | `bool`          |
+| NOT       | `!`       | `bool`          |
+
+# Relational Operators
+
+Relational operators will always resolve to a boolean `bool` value.
+
+|       Operation       | Operators |                            Supported Types                             |
+|:---------------------:|:---------:|:----------------------------------------------------------------------:|
+| equal                 | `==`      | `bool`, `group`, `field`, integers, addresses, arrays, tuples, structs |
+| not-equal             | `!=`      | `bool`, `group`, `field`, integers, addresses, arrays, tuples, structs |
+| less than             | `<`       |                                integers                                |
+| less than or equal    | `<=`      |                                integers                                |
+| greater than          | `>`       |                                integers                                |
+| greater than or equal | `>=`      |                                integers                                |
+
+# Operator Precedence
+Operators will prioritize evaluation according to:
+
+|            Operator           | Associativity |
+|:-----------------------------:|:-------------:|
+|              `!`              |               |
+|              `**`             | right to left |
+|             `*` `/`           | left to right |
+|             `+` `-`           | left to right |
+|       `<` `>` `<=` `>=`       |               |
+|           `==` `!=`           | left to right |
+|              `&&`             | left to right |
+|            <code>&#124;&#124;</code>             | left to right |
+| `=` `+=` `-=` `*=` `/=` `**=` |               |
+
+## Parentheses
+
+To prioritize a different evaluation use parentheses `()` around the expression.
+
+```leo
+let result = (a + 1) * 2; 
+```
+`(a + 1)` will be evaluated before multiplying by two `* 2`
 
