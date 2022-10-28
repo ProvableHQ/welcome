@@ -190,7 +190,7 @@ struct array3 {
 
 ### Record
 
-A [record](../../concepts/02_records.md) data type is declared as `record {name} {}`  
+A [record](../concepts/02_records.md) data type is declared as `record {name} {}`  
 Records contain declarations `{name}: {type},`  
 Record data structures must contain the `owner` and `gates` declarations as shown below.  
 When passing a record as input to a program function the `_nonce: group,` declaration is also required.
@@ -343,7 +343,7 @@ program transfer.aleo {
 }
 ```
 
-# Arithmetic Operators
+# Operators
 
 Operators in Leo compute a value based off of one or more expressions.
 Leo will try to detect arithmetic operation errors as soon as possible.

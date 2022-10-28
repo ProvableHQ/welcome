@@ -29,7 +29,7 @@ There are many conventions that are unique to Leo language and the circuits it g
 
 This guide is a living document.
 As new Leo programming conventions arise and old ones become obsolete this guide should reflect the changes.
-Feel free to add your comments and recommendations [here](04_contributing.md).
+Feel free to add your comments and recommendations [here](#contributing).
 
 
 ## Code Layout
@@ -243,7 +243,7 @@ Please do the following before opening a PR.
 
 ### Tests
 
-If your code adds new functionality, please write tests to confirm the new features function as expected. Refer to existing tests for examples of how tests are expected to be written. Please read refer to the [parser tests section](#Parser-Tests). To run the tests please use the following command `cargo test --all --features ci_skip --no-fail-fast`.
+If your code adds new functionality, please write tests to confirm the new features function as expected. Refer to existing tests for examples of how tests are expected to be written. Please read refer to the [parser tests section](#parser-tests). To run the tests please use the following command `cargo test --all --features ci_skip --no-fail-fast`.
 
 #### **Parser Tests**
 

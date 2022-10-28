@@ -8,7 +8,7 @@ The Leo CLI is a command line interface tool that comes equipped with both the L
 
 ## Installation
 
-[**Install Leo**](../getting_started/01_installation.md)
+[**Install Leo**](01_installation.md)
 
 ## Global Flags
 

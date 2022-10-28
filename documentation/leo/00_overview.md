@@ -17,7 +17,7 @@ Proceed to [**Installation**](01_installation.md) for information on how to inst
 
 ## Getting Started
 
-Check out the [**Hello World**](02_hello_world.md) tutorial for a brief walk-through of Leo and the Leo CLI.
+Check out the [**Hello World**](02_hello.md) tutorial for a brief walk-through of Leo and the Leo CLI.
 
 ## Formal Language Documentation
 
@@ -25,28 +25,31 @@ A formal ABNF grammar specification for the syntax of Leo can be viewed [here](h
 
 ## Language Guide
 
-To learn about Leo's supported types, start with [**Data Types and Values**](../language/00_types.md).
+To learn about Leo's supported types, start with [**Data Types and Values**](03_language.md).
 
-To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**](../language/01_language.md).
+To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo Program**](03_language.md#layout-of-a-leo-program).
 
-To view the full list of supported operators in Leo, see [**Operators**](../language/02_operators.md).
+To view the full list of supported operators in Leo, see [**Operators**](03_language.md#operators).
 
-For additional developer resources such as examples and community projects, see [**Developer Resources**](../language/03_resources.md).
 
 ## Command Line Interface Documentation
 
 The Leo CLI provides a suite of commands to make programming in Leo easy.
 
-- [**leo new**](../cli/01_new.md)
-- [**leo build**](../cli/02_build.md)
-- [**leo run**](../cli/03_run.md)
-- [**leo node**](../cli/04_node.md)
-- [**leo deploy**](../cli/05_deploy.md)
-- [**leo clean**](../cli/06_clean.md)
+- [**leo new**](04_commands.md#leo-new)
+- [**leo build**](04_commands.md#leo-build)
+- [**leo run**](04_commands.md#leo-run)
+- [**leo node**](04_commands.md#leo-node)
+- [**leo deploy**](04_commands.md#leo-deploy)
+- [**leo clean**](04_commands.md#leo-clean)
 
 ## Additional Material
-Install Leo for your favorite code [**editor**](../additional_material/00_tooling.md).
+Install Leo for your favorite code [**editor**](05_tooling.md).
 
-Is your Leo code formatted correctly? Check out the [**Style Guide**](../additional_material/01_style.md) and [**Common Patterns**](../additional_material/02_common.md) for the official guidelines.
+For additional developer resources such as examples and community projects, see [**Developer Resources**](06_resources.md).
 
-Found a bug? Have an idea for a feature? Proceed to the [**Known Bugs**](../additional_material/03_bugs.md) section and the [**Contributing Guide**](../additional_material/04_contributing.md).
+Is your Leo code formatted correctly? Check out the [**Style Guide**](06_resources.md#style-guide) and [**Common Patterns**](06_resources.md#common-patterns) for the official guidelines.
+
+Found a bug? Have an idea for a feature? File an issue on the [**Leo GitHub**](https://github.com/AleoHQ/leo/issues/new/choose)
+
+See the [**Contributing Guide**](06_resources.md#contributing) for more information.
