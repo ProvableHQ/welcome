@@ -5,7 +5,7 @@ sidebar_label: Tooling
 ---
 
 Aleo maintains syntax highlighting implementations across different platforms.   
-If you do not see your favorite editor on this list, please reach out on [github](https://github.com/AleoHQ/welcome/issues/new).
+If you do not see your favorite editor on this list, please reach out on [GitHub](https://github.com/AleoHQ/welcome/issues/new).
 
 1. [Sublime Text](#sublime-text)
 2. [Visual Studio Code](#vs-code)

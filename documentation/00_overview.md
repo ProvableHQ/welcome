@@ -27,59 +27,35 @@ to compile, execute, and finalize its state autonomously.
 - [Transitions](./concepts/04_transitions.md)
 - [Blocks](./concepts/05_blocks.md)
 
-### Chapter 2: Aleo
+### Chapter 2: Leo
 
-- [Installation](./aleo/00_installation.md)
-- [Hello Aleo Instructions](./aleo/01_hello_aleo.md)
-- [Aleo CLI](./aleo/03_commands.md)
-- [Aleo Instructions Features](./aleo/04_language.md)
-- [Aleo Opcodes](./aleo/05_opcodes.md)
-- [Aleo Grammar](./aleo/06_grammar.md)
-- [Aleo ABNF](./aleo/07_abnf.md)
-- [Aleo Syntax Highlighting for Your IDE](./aleo/08_tooling.md)
+- [Overview](./00_leo_overview.md)
+- [Installation](./leo/01_installation.md)
+- [Hello Leo](./leo/02_hello.md)
+- [Leo Language Guide](./leo/03_language.md)
+- [Leo Command Line Interface](./leo/04_commands.md)
+- [Leo Code Editor Plugins](./leo/05_tooling.md)
+- [Leo Examples, Guides, and Developer Resources](./leo/06_resources.md)
 
-## Leo
+### Chapter 3: Aleo Instructions
 
-### Chapter 3: Hello Leo!
-
-- [The Leo Programming Language](./leo/getting_started/00_overview.md)
-- [Installation](./leo/getting_started/01_installation.md)
-- [Hello World in Leo](./leo/getting_started/02_hello_world.md)
-- [File Syntax](./leo/getting_started/03_syntax.md)
-- [CLI Commands](./leo/getting_started/04_cli.md)
-
-### Chapter 4: Language
-
-- [Data Types and Values](./leo/language/00_types.md)
-- [Layout of a Leo Program](./leo/language/01_language.md)
-- [Operators](./leo/language/02_operators.md)
-- [Developer Resources](./leo/language/03_resources.md)
-
-### Chapter 5: CLI
-
-- [The Leo Command Line Interface](./leo/cli/00_overview.md)
-- [Create a Package](./leo/cli/01_new.md)
-- [Build a Package](./leo/cli/02_build.md)
-- [Execute a Program](./leo/cli/03_run.md)
-- [Start a Development Server](./leo/cli/04_node.md)
-- [Deploy a Program](./leo/cli/05_deploy.md)
-- [Clean a Package Workspace](./leo/cli/06_clean.md)
-
-### Chapter 6: Additional Material
-
-- [Code Editor Support for Leo](./leo/additional_material/00_tooling.md)
-- [Leo Style Guide](./leo/additional_material/01_style.md)
-- [Leo Common Patterns](./leo/additional_material/02_common.md)
-- [Known Issues](./leo/additional_material/03_bugs.md)
-- [Contribute to Leo](./leo/additional_material/04_contributing.md)
+- [Overview](./00_aleo_overview.md)
+- [Installation](./aleo/01_installation.md)
+- [Hello Aleo](./aleo/02_hello.md)
+- [Aleo Instructions Guide](./aleo/03_language.md)
+- [AVM Opcodes](./aleo/04_opcodes.md)
+- [Aleo Command Line Interface](./aleo/05_commands.md)
+- [Aleo Instructions Grammar](./aleo/06_grammar.md)
+- [Formal Aleo Instructions ABNF Documentation](./aleo/07_abnf.md)
+- [Aleo Instructions Code Editor Plugins](./aleo/08_tooling.md)
 
 ## Testnet III
 
-### Chapter 7: Getting Started
+### Chapter 4: Getting Started
 
 - [Testnet III.](./testnet/getting_started/00_overview.md)
 
-### Chapter 8: API Reference
+### Chapter 5: API Reference
 
 - [latest height](./testnet/public_endpoints/00_latest_height.md)
 - [latest hash](./testnet/public_endpoints/01_latest_hash.md)
@@ -102,7 +78,7 @@ to compile, execute, and finalize its state autonomously.
 
 ## Advanced Topics
 
-### Chapter 9: The Aleo Curves
+### Chapter 6: The Aleo Curves
 
 - [Overview](./advanced/the_aleo_curves/00_overview.md)
 - [Edwards BLS12](./advanced/the_aleo_curves/01_edwards_bls12.md)

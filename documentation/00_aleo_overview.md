@@ -1,68 +1,63 @@
 ---
-id: installation
-title: Installation
-sidebar_label: Installation
+id: aleo
+title: Aleo Instructions and the Aleo SDK
+sidebar_label: Overview
 ---
+Welcome to the Aleo instructions guide. Aleo instructions is the intermediate representation of Aleo programs.
+All Leo programs compile to Aleo instructions which compile to bytecode. 
+We recommend learning and using Aleo instructions if your goal is fine-grained circuit design or 
+if you are implementing a compiler that reads in a high-level language other than Leo and want your programs to run on Aleo.
 
-Welcome to the Aleo SDK guide. 
+Aleo programs are files with a `.aleo` extension.
+Aleo programs contain Aleo instructions - an assembly-like programming language.
+Aleo instructions are compiled into AVM opcodes that can be executed by the Aleo Virtual Machine.
+
 The Aleo SDK is a toolkit that supports account generation, program compilation, and program deployment.
 Use the Aleo SDK to generate yourself a new Aleo account [here](https://aleohq.github.io/aleo/).
 
-Aleo programs are files with a `.aleo` extension. 
-Aleo programs contain Aleo instructions - an assembly-like programming language. 
-Aleo instructions are compiled into AVM opcodes that can be executed by the Aleo Virtual Machine.
+Install the Aleo SDK to compile and execute Aleo instructions.
 
 :::info
 The Aleo SDK is currently in active development. Please monitor the repository on [**GitHub**](https://github.com/AleoHQ/aleo) for breaking changes
 :::
-## Installation
-### 1. Install Rust
 
-We recommend installing Rust using [rustup](https://www.rustup.rs/). You can install `rustup` as follows:
+## Installing the Aleo SDK
 
-- macOS or Linux:
-  ```bash
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  ```
+Proceed to [**Installation**](./aleo/01_installation.md) for information on how to install the Aleo SDK.
 
-- Windows (64-bit):
+## Hello Aleo Instructions
 
-  Download the [Windows 64-bit executable](https://win.rustup.rs/x86_64) and follow the on-screen instructions.
+Develop your first [**Hello World**](./aleo/02_hello.md) Aleo instructions program.
 
-- Windows (32-bit):
+## Aleo Instructions Guide
 
-  Download the [Windows 32-bit executable](https://win.rustup.rs/i686) and follow the on-screen instructions.
+Learn the core concepts and syntax of [Aleo instructions](./aleo/03_language.md).
 
-### 2. Build Source Code
+Read the full list of supported [AVM opcodes](./aleo/04_opcodes.md).
 
-You can install the Aleo SDK by building from the source code as follows:
+## Formal Language Documentation
 
-```bash
-# Download the source code
-git clone https://github.com/AleoHQ/aleo
-cd aleo
+Check your program or compiler implementation against the [Aleo instructions grammar](./aleo/06_grammar.md).
 
-# Build in release mode
-$ cargo build --release
-```
+Study the formal [ABNF grammar specification](./aleo/07_abnf.md) for the full formal syntax of Aleo instructions. 
 
-This will generate an executable under the `./target/release` directory. To run Leo, run the following command:
-```bash
-./target/release/aleo
-```
+## Aleo Command Line Interface Documentation
 
-Now to use Aleo, in your terminal, run:
-```bash
-aleo
-```
+The Aleo CLI provides a suite of commands to make programming in Aleo instructions easy.
 
-:::info
+1. [aleo account](./aleo/05_commands.md#1-aleo-account)
+2. [aleo new](./aleo/05_commands.md#2-aleo-new)
+3. [aleo build](./aleo/05_commands.md#3-aleo-build)
+4. [aleo run](./aleo/05_commands.md#4-aleo-run)
+5. [aleo node](./aleo/05_commands.md#5-aleo-node)
+6. [aleo deploy](./aleo/05_commands.md#6-aleo-deploy)
+7. [aleo clean](./aleo/05_commands.md#7-aleo-clean)
+8. [aleo update](./aleo/05_commands.md#8-aleo-update)
 
-Dive into some code with [**Hello Aleo**](01_hello_aleo.md).
 
-:::
+## Additional Material
 
----
+Install Aleo instructions for your favorite code [**editor**](./aleo/08_tooling.md).
 
 ## Testnet3 Development Endpoints
 
