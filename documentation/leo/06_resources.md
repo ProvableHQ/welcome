@@ -21,6 +21,9 @@ https://github.com/howardwu/awesome-aleo
 
 https://discord.gg/aleohq
 
+
+### Looking for [More Aleo Resources?](../00_resources.md)
+
 # Style Guide
 
 
