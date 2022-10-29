@@ -4,6 +4,11 @@ title: Tooling for Aleo Instructions
 sidebar_label: Tooling
 ---
 
+:::hint
+If you have installed a Leo syntax [plugin](../leo/05_tooling.md) 
+then you should already be able to see syntax highlighting for `.aleo` Aleo instructions.
+:::
+
 Aleo maintains several syntax highlighting implementations across different platforms.  
 If you do not see your favorite editor on this list, please reach out on [github](https://github.com/AleoHQ/welcome/issues/new).
 

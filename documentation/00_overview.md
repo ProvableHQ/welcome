@@ -29,13 +29,25 @@ to compile, execute, and finalize its state autonomously.
 
 ### Chapter 2: Leo
 
-- [Overview](./leo/00_overview.md)
+- [Overview](./00_leo_overview.md)
 - [Installation](./leo/01_installation.md)
 - [Hello Leo](./leo/02_hello.md)
 - [Leo Language Guide](./leo/03_language.md)
 - [Leo Command Line Interface](./leo/04_commands.md)
 - [Leo Code Editor Plugins](./leo/05_tooling.md)
 - [Leo Examples, Guides, and Developer Resources](./leo/06_resources.md)
+
+### Chapter 3: Aleo Instructions
+
+- [Overview](./00_aleo_overview.md)
+- [Installation](./aleo/01_installation.md)
+- [Hello Aleo](./aleo/02_hello.md)
+- [Aleo Instructions Guide](./aleo/03_language.md)
+- [AVM Opcodes](./aleo/04_opcodes.md)
+- [Aleo Command Line Interface](./aleo/05_commands.md)
+- [Aleo Instructions Grammar](./aleo/06_grammar.md)
+- [Formal Aleo Instructions ABNF Documentation](./aleo/07_abnf.md)
+- [Aleo Instructions Code Editor Plugins](./aleo/08_tooling.md)
 
 ## Testnet III
 

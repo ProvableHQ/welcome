@@ -1,5 +1,5 @@
 ---
-id: hello_aleo
+id: hello
 title: Hello Aleo Instructions
 sidebar_label: Hello Aleo
 ---
