@@ -29,7 +29,7 @@ To view the full list of supported operators in Leo, see [**Operators**](./leo/0
 
 ## Formal Language Documentation
 
-A formal ABNF grammar specification for the syntax of Leo can be viewed [here](./leo/https://github.com/AleoHQ/leo/tree/testnet3/docs/grammar).
+A formal ABNF grammar specification for the syntax of Leo can be viewed [here](https://github.com/AleoHQ/leo/tree/testnet3/docs/grammar).
 
 ## Command Line Interface Documentation
 
