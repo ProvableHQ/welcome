@@ -20,10 +20,6 @@ Talks and videos from the Aleo community.
 ## More Aleo Resources
 If you're interested in learning more about Aleo:
 
-🏡 | Website ~ https://www.aleo.org/
-
-📅 | Community Calendar ~ https://www.aleo.org/community/calendar
-
 🐦 | Twitter ~ @AleoHQ ~ https://twitter.com/AleoHQ
 
 🤝 | Community Twitter ~ @aleocommunity ~ https://twitter.com/aleocommunity
@@ -37,7 +33,5 @@ If you're interested in learning more about Aleo:
 🔎 | Aleo Block Explorer ~ https://www.aleo.network/
 
 ✍️ | Community Blog ~ https://medium.com/@AleoHQ
-
-📣 | Announcements Blog ~ https://www.aleo.org/blog
 
 ### Looking for [Developer Resources?](./leo/06_resources.md)

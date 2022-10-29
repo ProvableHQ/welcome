@@ -126,7 +126,7 @@ The functions are composed of three main parts:
   ```
   Every aleo instruction is followed by its input parameters with its specific types, and the result is stored in the *into* register.
 
-  You can find all the available aleo instruction opcodes [here](./05_opcodes.md).
+  You can find all the available aleo instruction opcodes [here](./04_opcodes.md).
 
 - **The output section**
 
