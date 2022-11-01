@@ -6,12 +6,12 @@ sidebar_label: Language
 
 ## Layout of an Aleo Program
 
-An Aleo program contains declarations of a [ProgramID](#programid), [Imports](#import), [Functions](#function), [Closures](#closure), [Interfaces](#interface), [Records](#record),
-[Mappings](#mapping), and [Finalize](#finalize). Ordering is only enforced for imports which must be at the top of file.
+An Aleo program contains declarations of a [Program ID](#programid), [Imports](#import), [Functions](#function), [Closures](#closure), [Interfaces](#interface), [Records](#record),
+[Mappings](#mapping), and [Finalizers](#finalizes). Ordering is only enforced for imports which must be at the top of file.
 Declarations are locally accessible within a program file.
 If you need a declaration from another program file, you must import it.
 
-### ProgramID
+### Program ID
 
 A program ID is declared as `{name}.{network}`.  
 Currently, `aleo` is the only supported `network` domain.
@@ -22,7 +22,7 @@ program hello.aleo;
 
 ### Import
 
-An import is declared as `import {ProgramID};`  
+An import is declared as `import {ProgramID};`.  
 Imports fetch other declarations by their program ID and bring them into the current file scope.
 You can import dependencies that are downloaded to the `imports` directory.
 
@@ -34,7 +34,7 @@ program hello.aleo;
 
 ### Function
 
-A function is declared as `function {name}:`  
+A function is declared as `function {name}:`.  
 Functions contain instructions that can compute values.
 Functions must be in a program's current scope to be called.
 
@@ -48,7 +48,7 @@ function foo:
 
 #### Function Inputs
 
-A function input is declared as `input {register} as {type}.{visibility};`  
+A function input is declared as `input {register} as {type}.{visibility};`.  
 Function inputs must be declared just after the function name declaration.
 
 ```aleo showLineNumbers
@@ -59,7 +59,7 @@ function foo:
 
 #### Function Outputs
 
-A function output is declared as `output {register} as {type}.{visibility};`  
+A function output is declared as `output {register} as {type}.{visibility};`.  
 Function outputs must be declared at the end of the function definition.
 
 ```aleo showLineNumbers
@@ -69,9 +69,9 @@ Function outputs must be declared at the end of the function definition.
 
 ### Closure
 
-A closure is declared as `closure {name}:`  
-Functions contain instructions that can compute values.
-Closures are helper functions that cannot be executed directly. Closures must be called by other functions.
+A closure is declared as `closure {name}:`.  
+Closures contain instructions that can compute values.
+Closures are helper functions that cannot be executed directly. Closures may be called by other functions.
 
 ```aleo showLineNumbers
 closure foo:
@@ -83,8 +83,8 @@ closure foo:
 
 ### Interface
 
-An interface is a data structure is declared as `interface {name}:`  
-Interfaces contain declarations `{name} as {type}.{visibility};`
+An interface is a data type declared as `interface {name}:`.  
+Interfaces contain component declarations `{name} as {type}.{visibility};`.
 
 ```aleo showLineNumbers
 interface array3:
@@ -95,8 +95,8 @@ interface array3:
 
 ### Record
 
-A [record](../concepts/02_records.md) is declared as `record {name}:`  
-Records contain declarations `{name} as {type}.{visibility};`  
+A [record](../concepts/02_records.md) type is declared as `record {name}:`.  
+Records contain component declarations `{name} as {type}.{visibility};`.  
 Record data structures must contain the `owner` and `gates` declarations as shown below.  
 When passing a record as input to a program function the `_nonce as group.{visibility}` declaration is also required.
 
@@ -112,7 +112,7 @@ record token:
 
 ### Mapping
 
-A mapping is declared as `mapping {name}:`  
+A mapping is declared as `mapping {name}:`.  
 Mappings contain key-value pairs.
 
 ```aleo showLineNumbers
@@ -126,8 +126,9 @@ mapping account:
 ```
 
 #### Increment and Decrement
-An increment instruction is declared as `increment {name}[{register}] by {register};`
-A decrement instruction is declared as `decrement {name}[{register}] by {register};`
+An increment instruction has the form `increment {name}[{register}] by {register};`.  
+A decrement instruction has the form `decrement {name}[{register}] by {register};`.  
+These instructions are used in [finalizers](#finalizer).
 
 ```aleo showLineNumbers
 finalize transfer_public:
@@ -149,10 +150,13 @@ finalize transfer_public:
     increment account[r1] by r2;
 ```
 
-### Finalize
+### Finalizer
 
-A finalize function is declared as `finalize {name}:`  
-Finalize a program [function](#function).  
+A finalizer is declared as `finalize {name}:`.  
+A finalizer must immediately follow a [function](#function), and must have the same name;
+it is associated with the function and is executed on chain,
+after the zero-knowledge proof of the execution of the associated function is verified;
+a finalizer *finalizes* a function on chain.  
 Upon success of the finalize function, the program logic is executed.  
 Upon failure of the finalize function, the program logic is reverted.  
 

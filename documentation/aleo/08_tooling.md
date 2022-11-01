@@ -4,15 +4,15 @@ title: Tooling for Aleo Instructions
 sidebar_label: Tooling
 ---
 
-:::hint
+:::info
 If you have installed a Leo syntax [plugin](../leo/05_tooling.md) 
 then you should already be able to see syntax highlighting for `.aleo` Aleo instructions.
 :::
 
 Aleo maintains several syntax highlighting implementations across different platforms.  
-If you do not see your favorite editor on this list, please reach out on [github](https://github.com/AleoHQ/welcome/issues/new).
+If you do not see your favorite editor on this list, please reach out on [GitHub](https://github.com/AleoHQ/welcome/issues/new).
 
-1. [Sublime Text](#sublime).
+1. [Sublime Text](#sublime-text).
 2. [Visual Studio Code](#vscode).
 3. [Intellij](#intellij).
 4. [Vim](#vim).
@@ -59,8 +59,8 @@ Install the [Aleo Developer Plugin](https://plugins.jetbrains.com/plugin/19890-a
 ## Vim
 
 ![](./images/vim.png)
-Download the editor here: https://www.vim.org/
-Or use the more up-to-date Neovim, from here: https://neovim.io/
+Download the editor here: https://www.vim.org/.
+Or use the more up-to-date Neovim, from here: https://neovim.io/.
 
 ### Install
 

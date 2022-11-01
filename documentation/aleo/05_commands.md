@@ -30,7 +30,7 @@ To create a new account from seeded randomness, run:
 aleo account new -s {$SEED}
 ```
 
-The Aleo private key, view key and address will be printed to console.
+The Aleo private key, view key, and address will be printed to console.
 See [`concepts/accounts`](../concepts/00_accounts.md) for more information.
 
 ## 2. `aleo new`
@@ -40,7 +40,7 @@ To create a new package, run:
 aleo new {$NAME}
 ```
 
-Valid package names are snake-case: lowercase letters and numbers separated by underscore.
+Valid package names are snake_case: lowercase letters and numbers separated by underscore.
 This command will create a new directory with the given package name.
 The new package will have a directory structure as follows:
 

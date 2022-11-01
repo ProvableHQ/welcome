@@ -30,13 +30,10 @@ git clone https://github.com/AleoHQ/aleo
 cd aleo
 
 # Build in release mode
-$ cargo build --release
+$ cargo install --path .
 ```
 
-This will generate an executable under the `./target/release` directory. To run Leo, run the following command:
-```bash
-./target/release/aleo
-```
+This will generate the executable `~/.cargo/bin/aleo`.
 
 Now to use Aleo, in your terminal, run:
 ```bash
