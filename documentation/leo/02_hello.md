@@ -17,9 +17,10 @@ This creates a directory with the following structure:
 hello/
 ├── program.json # Your program manifest
 ├── README.md # Your program description
-├── inputs/ 
+├── build/
+├── inputs/
 │ ├── hello.in # Your program inputs
-└── src/    
+└── src/
   └── main.leo # Your program file
 ```
 
@@ -73,7 +74,7 @@ Let's go through the file syntax of the program we just executed.
 }
 ```
 
-The program id `program` is the official name that other developers will be able to look up after you have published your program.
+The program ID in `program` is the official name that other developers will be able to look up after you have published your program.
 ```json
     "program": "hello.aleo",
 ```
@@ -89,7 +90,7 @@ Open up **src/main.leo**.
 The **main.leo** file is the entry point of a Leo project. It often contains a function named `main`.
 Let's break down the structure of a Leo file.
 ```leo title="src/main.leo" showLineNumbers
-// The 'hello' main function.
+// The 'hello' program.
 program hello.aleo {
     transition main(public a: u32, b: u32) -> u32 {
         let c: u32 = a + b;
@@ -101,10 +102,10 @@ program hello.aleo {
 `program hello.aleo {` defines the name of the [program](03_language.md#program-scope) inside the Leo file.
 The program ID must match the `program.json` manifest file.  
 The keyword `transition` indicates a [transition](03_language.md#transition-function) function definition in Leo.
-Our **hello** `main` function takes an input `a` with type `u32` and `public` visibility and an input `b` with type `u32` and `private` visibility by default.
+Our **hello** `main` function takes an input `a` with type `u32` and `public` visibility, and an input `b` with type `u32` and `private` visibility (by default).
 The program returns one result with type `u32`.
 The transition function body is enclosed in curly braces `{ }`. It is a common convention in Leo to place the opening curly
-bracket on the same line as the function definition, adding one space in between.
+brace on the same line as the function definition, adding one space in between.
 ```leo
 transition main(public a: u32, b: u32) -> u32 {
 ```
@@ -136,8 +137,8 @@ public a: u32 = 1u32;
 b: u32 = 2u32;
 ```
 
-An input file begins with a section enclosed in brackets `[ ]`.
-`main` indicates that we are defining the inputs to the program function `main`.
+An input file begins with a section enclosed in square brackets `[ ]`.
+The `main` inside the square brackets indicates that we are defining the inputs to the transition function `main`.
 You can only define inputs to [transition functions](03_language.md#transition-function).
 
 ```leo
@@ -145,7 +146,9 @@ You can only define inputs to [transition functions](03_language.md#transition-f
 ```
 
 An input assignment shares syntax with an explicit variable assignment in normal `.leo` files.
-Here we assign the `public` input named `a` with type `u32` to the value `1`. Leo's compiler will fetch these values and provide them as inputs to the circuit at proving time.
+Here we assign the value `1` of type `u32` to the `public` input named `a`.
+We also assign the value `2` of type `u32` to the (private, by default) input named `b`.
+Leo's compiler will fetch these values and provide them as inputs to the circuit at proving time.
 
 ```leo
 public a: u32 = 1u32;
@@ -217,8 +220,8 @@ leo run
 ```
 
 The `leo run` command will attempt to verify a proof only if all previous steps completed successfully.
-Under the hood, the Leo [CLI](04_commands.md) will check for existing `.sum`, `.lpk`, `.lvk`, or `.proof` files
-in the **outputs** directory before running each command. This ensures that we don't run unnecessary commands.
+Under the hood, the Leo [CLI](04_commands.md) will check for existing `.prover`, `.verifier`, and `.avm` files
+in the **build** directory before running each command. This ensures that we don't run unnecessary commands.
 
 [//]: # ()
 [//]: # (## The Leo Language)

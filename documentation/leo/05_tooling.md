@@ -15,7 +15,7 @@ If you do not see your favorite editor on this list, please reach out on [GitHub
 
 [//]: # (![]&#40;./images/sublime.png&#41;  )
 Download the editor here: https://www.sublimetext.com/download.
-Leo support for Sublime's LSP plugin is provided through a language-server.
+Leo support for Sublime's LSP plugin is provided through a language server.
 ### Install
 
 1. Install [LSP](https://packagecontrol.io/packages/LSP) and [LSP-Leo](https://packagecontrol.io/packages/LSP-leo) from Package Control.
