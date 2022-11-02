@@ -30,9 +30,9 @@ function hello:
     output r2 as u32.private;
 ```
 
-To compile the project, run in the main directory:
+To compile the project, run in the project directory:
 
-``` bash 
+``` bash
 aleo build
 ```
 
@@ -47,7 +47,7 @@ You will see output like this:
 
 First, a "universal setup" is loaded into your environment. You can read more about this in the [Marlin paper](https://eprint.iacr.org/2019/1047.pdf).
 
-Once the universal setup is ready, every function in your *main.aleo* file is built, generating this in the output folder:
+Once the universal setup is ready, every function in your `main.aleo` file is built, generating this in the output folder:
 
 - **hello.prover** the prover for the `hello` function.
 - **hello.verifier** the verifier for the `hello` function.
@@ -74,11 +74,11 @@ When the execution is finished, you should see the following output:
 ✅ Executed 'foo.aleo/hello' (in "[...]/foo")
 ```
 
-As you can see, the output register was assigned with the `5u32` value, representing the sum of the inputs.
+As you can see, the output has the `5u32` value, representing the sum of the inputs.
 
 ## 3. Overview of a program
 
-Let's examine the foo program inside the *main.aleo* file:
+Let's examine the foo program inside the `main.aleo` file:
 
 ```aleo showLineNumbers
 // The 'foo.aleo' program.
@@ -97,12 +97,12 @@ First, we need to declare the program as the following:
 program foo.aleo;
 ```
 
-Afterwards, we can start writing its functions (or other Aleo structures such as interfaces, records, closures, as we will see later)
+Afterwards, we can start writing its functions (or other Aleo structures such as interfaces, records, closures, as we will see later).
 
 In the case of functions we have it very easy:
 
 ```aleo
-function [function_name]: 
+function [function_name]:
 ```
 
 The functions are composed of three main parts:
@@ -114,19 +114,19 @@ The functions are composed of three main parts:
       input r0 as u32.public;
       input r1 as u32.private;
   ```
-  Everything in Aleo instructions are declared/stored inside a register with a type (`i8`,`field`,`bool`, etc) and a visibility option (`public` or `private`), registers are named as `r0`, `r1`, ..., `rn`.
+  Everything in Aleo instructions are declared/stored inside a register with a type (`i8`,`field`,`bool`, etc.) and a visibility option (`public` or `private`), registers are named as `r0`, `r1`, ..., `rn`.
 
-  In this case we use `r0` and `r1` to store the inputs passed in sequential order to a program as `u32` values, where we can store 32bits unsigned integers to perform our sum operation.
+  In this case we use `r0` and `r1` to store the inputs passed in sequential order to a program as `u32` values, where we can store 32-bit unsigned integers to perform our sum operation.
 
 - **The instructions section**
 
-  The next section consists of the core of our function: here we call the amount of Aleo Instructions we need to make our program do what we want. For example, performing an addition operation:
+  The next section consists of the core of our function: here we call the Aleo Instructions we need to make our program do what we want. For example, performing an addition operation:
   ```aleo
       add r0 r1 into r2;
   ```
-  Every aleo instruction is followed by its input parameters with its specific types, and the result is stored in the *into* register.
+  Every aleo instruction is followed by its input parameters with its specific types, and the result is stored in the register specified after `into`.
 
-  You can find all the available aleo instruction opcodes [here](./04_opcodes.md).
+  You can find all the available Aleo instruction opcodes [here](./04_opcodes.md).
 
 - **The output section**
 
@@ -135,7 +135,7 @@ The functions are composed of three main parts:
       output r2 as u32.private;
   ```
 
-## 4 Types
+## 4. Types
 
 Aleo uses a strongly-typed syntax. The language supports 16 primitive types, and allows users to define custom types.
 
@@ -169,7 +169,7 @@ Registers are the places where you store data to then be able to modify it.
 
 Interfaces are user-defined data structures. They are very much like traditional structs in conventional programming languages. You can store interfaces into registers, like with any other Aleo data types.
 
-For example, let's build an interface representing a fixed-size array of 3 elements. Add this at the bottom of the *main.aleo* file:
+For example, let's build an interface representing a fixed-size array of 3 elements. Add this at the bottom of the `main.aleo` file:
 
 ```aleo showLineNumbers
 interface array3:
@@ -221,7 +221,7 @@ And we get the new `array3` element as output:
 
 ### 4.3 Records
 
-A record is a fundamental data structure for encoding user assets and application state. They are very similar to interfaces, but they have two non-optional parameters:
+A record is a fundamental data structure for encoding user assets and application state. Records are very similar to interfaces, but they have two non-optional components:
 
 ```aleo showLineNumbers
 record token:
@@ -233,9 +233,9 @@ the `owner` refers to the Aleo address that owns the record and `gates` is the a
 
 Records are important because they represent the basic Aleo structure to handle state in your application.
 
-When running an Aleo function, only registers that belong to the application address can be passed as input registers. Otherwise, an error would be raised and the application wouldn't run.
+When running an Aleo function, only registers that belong to the application address can be passed as input registers. Otherwise, an error is raised and the application doesn't run.
 
-You can find your development application address inside the *program.json* file:
+You can find your development application address inside the `program.json` file:
 
 ```json
 {
@@ -302,7 +302,7 @@ To run this function, the first parameter is the input record of the program. Th
 
 Where:
 
-- owner: the public address of the program, as found in the `development.address` of the build/program.json file.
+- owner: the public address of the program, as found in the `development.address` of the `build/program.json` file.
 - gates: the gates that the record has.
 - other parameters: depending on the program itself (in this example, we used the parameter _amount_ with the value 50).
 
@@ -338,6 +338,6 @@ We get the following output records:
 ✅ Executed 'foo.aleo/transfer_amount' (in "[...]/foo")
 ```
 
-And that's it. You have transferred your first own-defined tokens in Aleo!
+And that's it. You have transferred your first owner-defined tokens in Aleo!
 
-Note: the `_nonce` is not written in Aleo instructions. The compiler outputs the _nonce in record outputs. The user needs to provide it as input when using a record.
+Note: the `_nonce` is not written in Aleo instructions. The compiler outputs the `_nonce` in record outputs. The user needs to provide it as input when using a record.

@@ -18,7 +18,7 @@ Use the Aleo SDK to generate yourself a new Aleo account [here](https://aleohq.g
 Install the Aleo SDK to compile and execute Aleo instructions.
 
 :::info
-The Aleo SDK is currently in active development. Please monitor the repository on [**GitHub**](https://github.com/AleoHQ/aleo) for breaking changes
+The Aleo SDK is currently in active development. Please monitor the repository on [**GitHub**](https://github.com/AleoHQ/aleo) for possibly breaking changes.
 :::
 
 ## Installing the Aleo SDK
@@ -27,7 +27,7 @@ Proceed to [**Installation**](./aleo/01_installation.md) for information on how 
 
 ## Hello Aleo Instructions
 
-Develop your first [**Hello World**](./aleo/02_hello.md) Aleo instructions program.
+Develop your first [**Hello Aleo**](./aleo/02_hello.md) Aleo instructions program.
 
 ## Aleo Instructions Guide
 
