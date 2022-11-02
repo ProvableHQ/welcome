@@ -142,7 +142,7 @@ program hello.aleo {
 ```
 
 The following must be declared inside the program scope in a Leo file:
-* mappingd
+* mappings
 * record types
 * struct types
 * transition functions
