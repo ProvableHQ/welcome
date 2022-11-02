@@ -42,25 +42,25 @@ Feel free to add your comments and recommendations [here](#contributing).
 
 ### Blank lines
 
-A single blank line should separate `structs`s and `function`s.
-Multiple imports can be optionally separated by a single blank line.
-The last import at the top of the file should be followed by a blank line.
+A single blank line should separate the top-level declarations in a `program` scope,
+namely `transition`, `function`, `struct`, `record`, and `mapping` declarations.
+Multiple imports can be optionally separated by a single blank line;
+the last import at the top of the file should be followed by a blank line.
 
 ```leo title="Yes:"
 import std.io.Write;
 import std.math.Add;
 
-struct A {
-    // ...
-}
+program prog.aleo {
 
-function foo() {
-    // ...
-}
+    struct A {
+        // ...
+    }
 
-@test
-function test_foo() {
-    // ...
+    function foo() {
+        // ...
+    }
+
 }
 ```
 
@@ -69,50 +69,27 @@ import std.io.Write;
 
 
 import std.math.Add;
-struct A {
-    // ...
-}
-function foo() {
-    // ...
-}
-
-@test
-function test_foo() {
-    // ...
+program prog.aleo {
+    struct A {
+        // ...
+    }
+    function foo() {
+        // ...
+    }
 }
 ```
+
 ### Naming Conventions
 
-| Item                | Convention                          |
-|---------------------|-------------------------------------|
-| Packages            | kebab-case (but prefer single word) |
-| Circuits            | CamelCase                           |
-| Circuit Members     | snake_case                          |
-| Functions           | snake_case                          |
-| Function Parameters | snake_case                          |
-| Variables           | snake_case                          |
-| Inputs              | snake_case                          |
-| Tests               | snake_case                          |
-
-### Circuit Definitions
-
-* Circuits should have value members defined above function members and be separated by a single blank line.
-* Multiple value members should be comma separated and have their own line.
-* Static functions should be defined before non-static functions.
-
-```leo
-struct A {
-    x: u32,
-    y: u32,
-
-    function new() {
-        // ...
-    }
-
-    function foo(self) {
-        // ...
-    }
-}
+| Item                      | Convention                          |
+|---------------------------|-------------------------------------|
+| Packages                  | snake_case (but prefer single word) |
+| Structs and Records       | CamelCase                           |
+| Struct and Record Members | snake_case                          |
+| Functions                 | snake_case                          |
+| Function Parameters       | snake_case                          |
+| Variables                 | snake_case                          |
+| Inputs                    | snake_case                          |
 ```
 
 ### Layout
@@ -120,9 +97,8 @@ Leo file elements should be ordered:
 1. Imports
 2. Program declaration
 3. Mappings
-4. Circuits + Structs 
-5. Functions
-6. Tests
+4. Records + Structs
+5. Functions + Transitions
 
 ### Braces
 Opening braces always go on the same line.
@@ -131,12 +107,13 @@ struct A {
     // ...
 }
 
-function main() {
+transition main() {
     // ...
 }
 
 let a = A { };
 ```
+
 ### Semicolons
 Every statement including the `return` statement should end in a semicolon.
 ```leo
@@ -149,7 +126,7 @@ return b
 
 ### Commas
 Trailing commas should be included whenever the closing delimiter appears on a separate line.
-```leo 
+```leo
 let a = A { x: 0, y: 1 };
 
 let a = A {
@@ -158,12 +135,12 @@ let a = A {
 };
 ```
 
-# Common Patterns
+## Common Patterns
 
 Building off of the style guide, here is a list of common patterns that a Leo developer may encounter
 as well as the recommended code solution.
 
-## Conditional Branches
+### Conditional Branches
 
 Conditional `if else` statements in Leo are expensive. It is preferred to use ternary `? :` expressions.
 
@@ -179,7 +156,7 @@ if (condition) {
 return condition ? a : b
 ```
 
-### Why?
+#### Why?
 Ternary expressions are the cheapest form of conditional.
 We can resolve the *first expression* and *second expression* values before evaluating the *condition*.
 This is very easy to convert into a circuit because we know that each expression does not depend on information in later statements.
@@ -200,7 +177,7 @@ Observe that the statement `return a` is repeated in both branches.
 The cost of every computation within the conditional will be doubled.
 This greatly increases the constraint numbers and slows down the circuit.
 
-# Contributing
+## Contributing
 
 Thank you for helping make Leo better!
 
@@ -231,7 +208,7 @@ please avoid using git merge and instead, git rebase your branch. Rebasing will 
 ### Tools Required
 
 To build Leo from source you will need the following tools:
-- The latest rust stable version and nightly version.
+- The latest Rust stable version and nightly version.
     - Recommend that you install multiple versions using `rustup`.
 - Cargo
     - Rusty Hook install via `cargo install rusty-hook`.
@@ -256,6 +233,7 @@ Then when running the test command, make sure you have the environment variable 
 
 ### Grammar
 
-In the root directory of the repository, there exists a "docs/grammar" directory. In that directory, there is an "abnf-grammar.txt" file that has the grammar rules in ABNF format. If your changes affect a grammar rule, we may ask you to modify it in that txt file. After you do so, make sure to go into the directory and run `cargo run > README.md`. Doing so will ensure that the README file for the grammar is up to date.
+[The `grammars` repository](https://github.com/AleoHQ/grammars) contains a file [`leo.abnf`](https://github.com/AleoHQ/grammars/blob/master/leo.abnf) that has the Leo grammar rules in the ABNF format.
+If your changes affect a grammar rule, we may ask you to modify it in that `.abnf` file.
 
 We appreciate your hard work!

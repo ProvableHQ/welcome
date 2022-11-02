@@ -4,7 +4,7 @@ title: The Leo Command Line Interface
 sidebar_label: Commands
 ---
 
-The Leo CLI is a command line interface tool that comes equipped with both the Leo compiler and the [**Aleo Package Manager**](https://aleo.pm/)
+The Leo CLI is a command line interface tool that comes equipped with the Leo compiler.
 
 ## Installation
 
@@ -36,7 +36,7 @@ To create a new package, run:
 leo new {$NAME}
 ```
 
-Valid package names are kebab-case: lowercase letters and numbers separated by hyphens.
+Valid package names are snake_case: lowercase letters and numbers separated by underscores.
 This command will create a new directory with the given package name.
 The new package will have a directory structure as follows:
 
@@ -44,9 +44,10 @@ The new package will have a directory structure as follows:
 package-name/
 ├── program.json # Your program manifest
 ├── README.md # Your program description
-├── inputs/ 
+├── build/
+├── inputs/
 │ ├── hello.in # Your program inputs
-└── src/    
+└── src/
   └── main.leo # Your program file
 ```
 
@@ -70,7 +71,7 @@ leo build
 [//]: # (      Done Finished in 10 milliseconds)
 
 [//]: # (```)
-This will create a new directory `build/` with an Aleo program file `.aleo`.
+This will populate the directory `build/` (creating it if it doesn't exist) with an Aleo instructions file `.aleo`.
 ```bash title="console output:"
      Leo ✅ Compiled 'main.leo' into Aleo instructions
      Leo ✅ Built 'hello.aleo' (in "/hello/build")
@@ -78,15 +79,15 @@ This will create a new directory `build/` with an Aleo program file `.aleo`.
 
 ## `leo run`
 
-To execute a Leo program function using inputs from the program input `.in` file.
+To execute a Leo transition function using inputs from the program input `.in` file.
 ```bash
-leo run {$FUNCTION}
+leo run {$TRANSITION}
 ```
 
-To execute a Leo program function with inputs from the command line.
+To execute a Leo transition function with inputs from the command line.
 `{$INPUTS}` should be a list of inputs to the program separated by spaces.
 ```bash
-leo run {$FUNCTION} {$INPUTS}
+leo run {$TRANSITION} {$INPUTS}
 ```
 
 
