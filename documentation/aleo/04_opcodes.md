@@ -5,7 +5,7 @@ sidebar_label: Opcodes
 ---
 
 The following is a list of opcodes supported by the Aleo Virtual Machine (AVM).
-
+## Table of Opcodes
 | Name                              | Description                        |
 | --------------------------------- |:---------------------------------- |
 | [abs](#abs)                       | Absolute value operation           |
@@ -69,7 +69,7 @@ The following is the specification for each opcode in the Aleo Virtual Machine (
 
 ### `abs`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -96,7 +96,7 @@ For integer types, a constraint is added to check for underflow. For cases where
 
 ### `abs.w`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -121,7 +121,7 @@ Compute the absolute value of the input, wrapping around at the boundary of the 
 
 ### `add`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -151,7 +151,7 @@ For integer types, a constraint is added to check for overflow. For cases where 
 
 ### `add.w`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -176,7 +176,7 @@ Adds `first` with `second`, wrapping around at the boundary of the type, and sto
 
 ### `and`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -203,7 +203,7 @@ storing the outcome in `destination`.
 
 ### `assert.eq`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -235,7 +235,7 @@ Checks whether `first` and `second` are equal, halting if they are not equal.
 
 ### `assert.neq`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -267,7 +267,7 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 
 ### `commit.bhp256`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -301,7 +301,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 
 ### `commit.bhp512`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -335,7 +335,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 ### `commit.bhp768`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -369,7 +369,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 
 ### `commit.bhp1024`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -403,7 +403,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 ### `commit.ped64`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -431,7 +431,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 
 ### `commit.ped128`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -461,7 +461,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 
 ### `div`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -492,7 +492,7 @@ For cases where wrapping semantics are needed for integer types, see the [div.w]
 
 ### `div.w`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -517,7 +517,7 @@ Divides `first` by `second`, wrapping around at the boundary of the type, and st
 
 ### `double`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -535,7 +535,7 @@ Doubles the input, storing the outcome in `destination`.
 
 ### `gt`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -564,7 +564,7 @@ Checks if `first` is greater than `second`, storing the result in `destination`.
 
 ### `gte`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -594,7 +594,7 @@ Checks if `first` is greater than or equal to `second`, storing the result in `d
 
 ### `hash.bhp256`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -628,7 +628,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 
 ### `hash.bhp512`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -662,7 +662,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 ### `hash.bhp768`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -696,7 +696,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 
 ### `hash.bhp1024`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -730,7 +730,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 ### `hash.ped64`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -758,7 +758,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 
 ### `hash.ped128`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -788,7 +788,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 
 ### `hash.psd2`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -817,7 +817,7 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 
 ### `hash.psd4`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -846,7 +846,7 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 
 ### `hash.psd8`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -875,7 +875,7 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 
 ### `inv`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -891,7 +891,7 @@ Computes the multiplicative inverse of the input, storing the outcome in `destin
 
 ### `is.eq`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -923,7 +923,7 @@ Compares `first` and `second`, storing the result in `destination`.
 
 ### `is.neq`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -955,7 +955,7 @@ Returns true if `first` is not equal to `second`, storing the result in `destina
 
 ### `lt`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -984,7 +984,7 @@ Checks if `first` is less than `second`, storing the outcome in `destination`.
 
 ### `lte`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1012,7 +1012,7 @@ Checks if `first` is less than or equal to `second`, storing the outcome in `des
 
 ### `mod`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1034,7 +1034,7 @@ The semantics of this operation are consistent with the mathematical definition 
 
 ### `mul`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1064,7 +1064,7 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 
 ### `mul.w`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1089,7 +1089,7 @@ Multiplies `first` with `second`, wrapping around at the boundary of the type, a
 
 ### `nand`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1105,7 +1105,7 @@ Returns false only if `first` and `second` are true, storing the outcome in `des
 
 ### `neg`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1129,7 +1129,7 @@ For signed integer types, calling `neg` on the minimum value is an invalid opera
 
 ### `nor`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1145,7 +1145,7 @@ Returns true when neither `first` nor `second` is true, storing the outcome in `
 
 ### `not`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1171,7 +1171,7 @@ Perform a NOT operation on an integer (bitwise) or boolean input, storing the ou
 
 ### or
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1197,7 +1197,7 @@ Performs an OR operation on integer (bitwise) or boolean `first` and `second`, s
 
 ### `pow`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1227,7 +1227,7 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 
 ### `pow.w`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1255,7 +1255,7 @@ Raises `first` to the power of `second`, wrapping around at the boundary of the 
 
 ### `rem`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1285,7 +1285,7 @@ For cases where wrapping semantics are needed for integer types, see the [rem.w]
 
 ### `rem.w`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 Computes the truncated remainder of `first` divided by `second`, wrapping around at the boundary of the type, and storing the outcome in destination.
@@ -1309,7 +1309,7 @@ Computes the truncated remainder of `first` divided by `second`, wrapping around
 
 ### `shl`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1336,7 +1336,7 @@ Shifts `first` left by `second` bits, storing the outcome in `destination`.
 
 ### `shl.w`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1363,7 +1363,7 @@ Shifts `first` left by `second` bits, wrapping around at the boundary of the typ
 
 ### `shr`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1390,7 +1390,7 @@ Shifts `first` right by `second` bits, storing the outcome in `destination`.
 
 ### `shr.w`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1417,7 +1417,7 @@ Shifts `first` right by `second` bits, wrapping around at the boundary of the ty
 
 ### `square`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1433,7 +1433,7 @@ Squares the input, storing the outcome in `destination`.
 
 ### `sqrt`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1450,7 +1450,7 @@ Computes the square root of the input, storing the outcome in `destination`.
 
 ### `sub`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1477,7 +1477,7 @@ Computes `first - second`, storing the outcome in `destination`.
 
 ### `sub.w`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1502,7 +1502,7 @@ Computes `first - second`, wrapping around at the boundary of the type, and stor
 
 ### `ternary`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
@@ -1533,7 +1533,7 @@ Example: `ternary r0 r1 r2 into r3`, where `r0` is the condition, `r1` is first,
 
 ### `xor`
 
-[Back to Top](#aleo-opcodes-reference)
+[Back to Top](#table-of-opcodes)
 
 #### Description
 
