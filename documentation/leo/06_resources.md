@@ -111,15 +111,15 @@ transition main() {
     // ...
 }
 
-let a = A { };
+let a: A = A { };
 ```
 
 ### Semicolons
 Every statement including the `return` statement should end in a semicolon.
 ```leo
-let a = 1u32;
-let mut b = a + 5;
-b *= 2;
+let a: u32 = 1u32;
+let b: u32 = a + 5u32;
+b *= 2u32;
 
 return b
 ```
@@ -127,9 +127,9 @@ return b
 ### Commas
 Trailing commas should be included whenever the closing delimiter appears on a separate line.
 ```leo
-let a = A { x: 0, y: 1 };
+let a: A = A { x: 0, y: 1 };
 
-let a = A {
+let a: A = A {
     x: 0,
     y: 1,
 };
