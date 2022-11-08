@@ -129,7 +129,7 @@ return c;
 
 ## Wiring program inputs
 Leo's compiler will build a **circuit** out of the **main.leo** program. Open up **inputs/hello.in**.
-Files ending in **.in** provide inputs to the program. You can also specify program arguments via the [command line](04_commands.md#leo-run).
+Files ending in **.in** provide inputs to the program. You can also specify program arguments via the [command line](05_commands.md#leo-run).
 ```leo title="inputs/hello.in"
 // The program input for hello/src/main.leo
 [main]
@@ -220,7 +220,7 @@ leo run
 ```
 
 The `leo run` command will attempt to verify a proof only if all previous steps completed successfully.
-Under the hood, the Leo [CLI](04_commands.md) will check for existing `.prover`, `.verifier`, and `.avm` files
+Under the hood, the Leo [CLI](05_commands.md) will check for existing `.prover`, `.verifier`, and `.avm` files
 in the **build** directory before running each command. This ensures that we don't run unnecessary commands.
 
 [//]: # ()
@@ -232,4 +232,4 @@ in the **build** directory before running each command. This ensures that we don
 
 To learn more about the Leo language and its syntax, start [here](03_language.md).
 
-To learn more about how to use the Leo CLI, start [here](04_commands.md).
+To learn more about how to use the Leo CLI, start [here](05_commands.md).

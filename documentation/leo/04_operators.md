@@ -1,67 +1,68 @@
 ---
-id: opcodes
-title: Aleo Opcodes Reference
-sidebar_label: Opcodes
+id: operators
+title: Leo Operators Reference
+sidebar_label: Operators
 ---
 
-The following is a list of opcodes supported by the Aleo Virtual Machine (AVM).
+The following is a list of operators supported by Leo. 
+The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes.md) executable by the Aleo Virtual Machine (AVM).
 
-| Name                              | Description                        |
-| --------------------------------- |:---------------------------------- |
-| [abs](#abs)                       | Absolute value operation           |
-| [abs.w](#abs.w)                   | Wrapping absolute value operation  |
-| [add](#add)                       | Addition operation                 |
-| [add.w](#add.w)                   | Wrapping addition operation        |
-| [and](#and)                       | AND operation                      |
-| [assert.eq](#assert.eq)           | Assert equality                    |
-| [assert.neq](#assert.neq)         | Assert non-equality                |
-| [commit.bhp256](#commit.bhp256)   | 256-bit input BHP commitment       |
-| [commit.bhp512](#commit.bhp512)   | 512-bit input BHP commitment       |
-| [commit.bhp768](#commit.bhp768)   | 768-bit input BHP commitment       |
-| [commit.bhp1024](#commit.bhp1024) | 1024-bit input BHP commitment      |
-| [commit.ped64](#commit.ped64)     | 64-bit input Pedersen commitment   |
-| [commit.ped128](#commit.ped128)   | 128-bit input Pedersen commitment  |
-| [div](#div)                       | Division operation                 |
-| [div.w](#div.w)                   | Wrapping division operation        |
-| [double](#double)                 | Double operation                   |
-| [gt](#gt)                         | Greater than comparison            |
-| [gte](#gte)                       | Greater than or equal to comparison|
-| [hash.bhp256](#hash.bhp256)       | 256-bit input BHP hash             |
-| [hash.bhp512](#hash.bhp512)       | 512-bit input BHP hash             |
-| [hash.bhp768](#hash.bhp768)       | 768-bit input BHP hash             |
-| [hash.bhp1024](#hash.bhp1024)     | 1024-bit input BHP hash            |
-| [hash.ped64](#hash.ped64)         | 64-bit input Pedersen hash         |
-| [hash.ped128](#hash.ped128)       | 128-bit input Pedersen hash        |
-| [hash.psd2](#hash.psd2)           | Poseidon hash with input rate 2    |
-| [hash.psd4](#hash.psd4)           | Poseidon hash with input rate 4    |
-| [hash.psd8](#hash.psd8)           | Poseidon hash with input rate 8    |
-| [inv](#inv)                       | Multiplicative inverse operation   |
-| [is.eq](#is.eq)                   | Equality comparison                |
-| [is.neq](#is.neq)                 | Not equal comparison               |
-| [lt](#lt)                         | Less than comparison               |
-| [lte](#lte)                       | Less than or equal to comparison   |
-| [mod](#mod)                       | Arithmetic modulo operation        |
-| [mul](#mul)                       | Multiplication operation           |
-| [mul.w](#mul.w)                   | Wrapping multiplication operation  |
-| [nand](#nand)                     | `Boolean` NAND operation           |
-| [neg](#neg)                       | Additive inverse operation         |
-| [nor](#nor)                       | `Boolean` NOR operation            |
-| [not](#not)                       | NOT operation                      |
-| [or](#or)                         | OR Operation                       |
-| [pow](#pow)                       | Exponentiation operation           |
-| [pow.w](#pow.w)                   | Wrapping exponentiation operation  |
-| [rem](#rem)                       | Remainder operation                |
-| [rem.w](#rem.w)                   | Wrapping remainder operation       |
-| [shl](#shl)                       | Shift left operation               |
-| [shl.w](#shl.w)                   | Wrapping shift left operation      |
-| [shr](#shr)                       | Shift right operation              |
-| [shr.w](#shr.w)                   | Wrapping shift right operation     |
-| [sqrt](#sqrt)                     | Square root operation              |
-| [square](#square)                 | Square operation                   |
-| [sub](#sub)                       | Subtraction operation              |
-| [sub.w](#sub.w)                   | Wrapping subtraction operation     |
-| [ternary](#ternary)               | Ternary select operation           |
-| [xor](#xor)                       | XOR operation                      |
+| Name                                        | Description                         |
+|---------------------------------------------|:------------------------------------|
+| [abs](#abs)                                 | Absolute value operation            |
+| [abs_wrapped](#abs_wrapped)                 | Wrapping absolute value operation   |
+| [add](#add)                                 | Addition operation                  |
+| [add_wrapped](#add_wrapped)                 | Wrapping addition operation         |
+| [and](#and)                                 | AND operation                       |
+| [assert_eq](#assert_eq)                     | Assert equality                     |
+| [assert_neq](#assert_neq)                   | Assert non-equality                 |
+| [BHP256::commit](#BHP256::commit)           | 256-bit input BHP commitment        |
+| [BHP512::commit](#BHP512::commit)           | 512-bit input BHP commitment        |
+| [BHP768::commit](#BHP768::commit)           | 768-bit input BHP commitment        |
+| [BHP1024::commit](#BHP1024::commit)         | 1024-bit input BHP commitment       |
+| [Pedersen64::commit](#Pedersen64::commit)   | 64-bit input Pedersen commitment    |
+| [Pedersen128::commit](#Pedersen128::commit) | 128-bit input Pedersen commitment   |
+| [div](#div)                                 | Division operation                  |
+| [div_wrapped](#div_wrapped)                 | Wrapping division operation         |
+| [double](#double)                           | Double operation                    |
+| [gt](#gt)                                   | Greater than comparison             |
+| [gte](#gte)                                 | Greater than or equal to comparison |
+| [BHP256::hash](#BHP256::hash)               | 256-bit input BHP hash              |
+| [BHP512::hash](#BHP512::hash)               | 512-bit input BHP hash              |
+| [BHP768::hash](#BHP768::hash)               | 768-bit input BHP hash              |
+| [BHP1024::hash](#BHP1024::hash)             | 1024-bit input BHP hash             |
+| [Pedersen64::hash](#Pedersen64::hash)       | 64-bit input Pedersen hash          |
+| [Pedersen128::hash](#Pedersen128::hash)     | 128-bit input Pedersen hash         |
+| [Poseidon2::hash](#Poseidon2::hash)         | Poseidon hash with input rate 2     |
+| [Poseidon4::hash](#Poseidon4::hash)         | Poseidon hash with input rate 4     |
+| [Poseidon8::hash](#Poseidon8::hash)         | Poseidon hash with input rate 8     |
+| [inv](#inv)                                 | Multiplicative inverse operation    |
+| [eq](#eq)                                   | Equality comparison                 |
+| [neq](#neq)                                 | Not equal comparison                |
+| [lt](#lt)                                   | Less than comparison                |
+| [lte](#lte)                                 | Less than or equal to comparison    |
+| [mod](#mod)                                 | Arithmetic modulo operation         |
+| [mul](#mul)                                 | Multiplication operation            |
+| [mul_wrapped](#mul_wrapped)                 | Wrapping multiplication operation   |
+| [nand](#nand)                               | `Boolean` NAND operation            |
+| [neg](#neg)                                 | Additive inverse operation          |
+| [nor](#nor)                                 | `Boolean` NOR operation             |
+| [not](#not)                                 | NOT operation                       |
+| [or](#or)                                   | OR Operation                        |
+| [pow](#pow)                                 | Exponentiation operation            |
+| [pow_wrapped](#pow_wrapped)                 | Wrapping exponentiation operation   |
+| [rem](#rem)                                 | Remainder operation                 |
+| [rem_wrapped](#rem_wrapped)                 | Wrapping remainder operation        |
+| [shl](#shl)                                 | Shift left operation                |
+| [shl_wrapped](#shl_wrapped)                 | Wrapping shift left operation       |
+| [shr](#shr)                                 | Shift right operation               |
+| [shr_wrapped](#shr_wrapped)                 | Wrapping shift right operation      |
+| [square_root](#square_root)                 | Square root operation               |
+| [square](#square)                           | Square operation                    |
+| [sub](#sub)                                 | Subtraction operation               |
+| [sub_wrapped](#sub_wrapped)                 | Wrapping subtraction operation      |
+| [ternary](#ternary)                         | Ternary select operation            |
+| [xor](#xor)                                 | XOR operation                       |
 
 ## Specification
 
@@ -69,13 +70,16 @@ The following is the specification for each opcode in the Aleo Virtual Machine (
 
 ### `abs`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i8 = -1i8;
+let b: i8 = a.abs(); // 1i8
+```
 
 #### Description
 
-Computes the absolute value of the input, checking for overflow, storing the result in the destination register.
+Computes the absolute value of the input, checking for overflow, storing the result in the destination.
 
-For integer types, a constraint is added to check for underflow. For cases where wrapping semantics are needed, see the [abs.w](#abs.w) instruction. This underflow happens when the input is the minimum value of a signed integer type. For example, `abs -128i8` would result in underflow, since `128` cannot be represented as an `i8`.
+For integer types, a constraint is added to check for underflow. For cases where wrapping semantics are needed, see the [abs_wrapped](#abs_wrapped) instruction. This underflow happens when the input is the minimum value of a signed integer type. For example, `abs -128i8` would result in underflow, since `128` cannot be represented as an `i8`.
 
 #### Supported Types
 
@@ -92,15 +96,19 @@ For integer types, a constraint is added to check for underflow. For cases where
 <!-- | `U64`  | `U64`       | -->
 <!-- | `U128` | `U128`      | -->
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `abs.w`
+### `abs_wrapped`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i8 = -128i8;
+let b: i8 = a.abs_wrapped(); // -128i8
+```
 
 #### Description
 
-Compute the absolute value of the input, wrapping around at the boundary of the type, and storing the result in the destination register.
+Compute the absolute value of the input, wrapping around at the boundary of the type, and storing the result in the destination.
 
 #### Supported Types
 
@@ -117,17 +125,22 @@ Compute the absolute value of the input, wrapping around at the boundary of the 
 <!-- | `U64`  | `U64`       | -->
 <!-- | `U128` | `U128`      | -->
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `add`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 1u8;
+let b: u8 = a + 1u8; // 2u8
+let c: u8 = b.add(1u8); // 3u8
+```
 
 #### Description
 
 Adds `first` with `second`, storing the outcome in `destination`.
 
-For integer types, a constraint is added to check for overflow. For cases where wrapping semantics are needed for integer types, see the [add.w](#add.w) instruction.
+For integer types, a constraint is added to check for overflow. For cases where wrapping semantics are needed for integer types, see the [add_wrapped](#add_wrapped) instruction.
 
 #### Supported Types
 
@@ -147,11 +160,15 @@ For integer types, a constraint is added to check for overflow. For cases where 
 | `U128`   | `U128`   | `U128`      |
 | `Scalar` | `Scalar` | `Scalar`    |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `add.w`
+### `add_wrapped`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 255u8;
+let b: u8 = a.add_wrapped(1u8); // 0u8
+```
 
 #### Description
 
@@ -172,11 +189,16 @@ Adds `first` with `second`, wrapping around at the boundary of the type, and sto
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `and`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i8 = 1i8 & 1i8; // 1i8
+let b: i8 = 1i8.and(2i8); // 0i8
+```
+
 
 #### Description
 
@@ -199,11 +221,18 @@ storing the outcome in `destination`.
 | `U64`     | `U64`     | `U64`       |
 | `U128`    | `U128`    | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `assert.eq`
+### `assert_eq`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 1u8;
+let b: u8 = 2u8;
+
+console.assert_eq(a, a); // will not halt
+console.assert_eq(a, b); // program halts
+```
 
 #### Description
 
@@ -231,11 +260,18 @@ Checks whether `first` and `second` are equal, halting if they are not equal.
 | `Interface` | `Interface` |
 | `Record`    | `Record`    |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `assert.neq`
+### `assert_neq`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 1u8;
+let b: u8 = 2u8;
+
+console.assert_neq(a, b); // will not halt
+console.assert_neq(a, a); // program halts
+```
 
 #### Description
 
@@ -263,11 +299,15 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 | `Interface` | `Interface` |
 | `Record`    | `Record`    |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `commit.bhp256`
+### `BHP256::commit`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i128 = 1i128;
+let b: field = BHP256::commit(a, 1scalar);
+```
 
 #### Description
 
@@ -297,11 +337,15 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Interface` | `Scalar`  | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `commit.bhp512`
+### `BHP512::commit`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i128 = 1i128;
+let b: field = BHP512::commit(a, 1scalar);
+```
 
 #### Description
 
@@ -331,11 +375,15 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Interface` | `Scalar`  | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `commit.bhp768`
+### `BHP768::commit`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i128 = 1i128;
+let b: field = BHP768::commit(a, 1scalar);
+```
 
 #### Description
 
@@ -365,11 +413,15 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Interface` | `Scalar`  | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `commit.bhp1024`
+### `BHP1024::commit`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i128 = 1i128;
+let b: field = BHP1024::commit(a, 1scalar);
+```
 
 #### Description
 
@@ -399,11 +451,15 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Interface` | `Scalar`  | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `commit.ped64`
+### `Pedersen64::commit`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i64 = 1i64;
+let b: group = Pedersen64::commit(a, 1scalar);
+```
 
 #### Description
 
@@ -427,11 +483,15 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `String`    | `Scalar`  | `Group`     |
 | `Interface` | `Scalar`  | `Group`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `commit.ped128`
+### `Pedersen128::commit`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i128 = 1i128;
+let b: group = Pedersen128::commit(a, 1scalar);
+```
 
 #### Description
 
@@ -457,12 +517,16 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `String`    | `Scalar`  | `Group`     |
 | `Interface` | `Scalar`  | `Group`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `div`
 
-[Back to Top](#aleo-opcodes-reference)
-
+```leo
+let a: u8 = 4u8;
+let b: u8 = a / 2u8; // 2u8
+let c: u8 = b.div(2u8); // 1u8
+```
 #### Description
 
 Divides `first` by `second`, storing the outcome in `destination`. Halts on division by zero.
@@ -470,7 +534,7 @@ Divides `first` by `second`, storing the outcome in `destination`. Halts on divi
 For integer types, this operation performs truncated division. Furthermore, a constraint is added to check for underflow. This underflow happens when dividing the minimum value of a signed integer type by `-1`. For example, `div -128i8 -1i8` would result in underflow, since `128` cannot be represented as an `i8`.
 
 
-For cases where wrapping semantics are needed for integer types, see the [div.w](#div.w) instruction.
+For cases where wrapping semantics are needed for integer types, see the [div_wrapped](#div_wrapped) instruction.
 
 #### Supported Types
 
@@ -488,11 +552,15 @@ For cases where wrapping semantics are needed for integer types, see the [div.w]
 | `U64`   | `U64`   | `U64`       |
 | `U128`  | `U128`  | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `div.w`
+### `div_wrapped`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i8 = -128i8;
+let b: i8 = a.div_wrapped(-1i8); // -128i8
+```
 
 #### Description
 
@@ -513,11 +581,15 @@ Divides `first` by `second`, wrapping around at the boundary of the type, and st
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `double`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: group = (0, 4)group;
+let b: group = a.double();
+```
 
 #### Description
 
@@ -531,11 +603,15 @@ Doubles the input, storing the outcome in `destination`.
 | `Field` | `Field`     |
 | `Group` | `Group`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `gt`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: bool = 2u8 > 1u8; // true
+let b: bool = 1u8.gt(1u8); // false
+```
 
 #### Description
 
@@ -559,12 +635,15 @@ Checks if `first` is greater than `second`, storing the result in `destination`.
 | `Scalar` | `Scalar` | `Boolean`   |
 <!-- | `Address`| `Address`| `Boolean`   | -->
 
-
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `gte`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: bool = 2u8 >= 1u8; // true
+let b: bool = 1u8.gte(1u8); // true
+```
 
 #### Description
 
@@ -588,13 +667,15 @@ Checks if `first` is greater than or equal to `second`, storing the result in `d
 | `Scalar` | `Scalar` | `Boolean`   |
 <!-- | `Address`| `Address`| `Boolean`   | -->
 
-
-
+[Back to Top](#leo-operators-reference)
 ***
 
-### `hash.bhp256`
+### `BHP256::hash`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: address = aleo10qerras5799u6k7rjtc9y3hcwxuykr45qra7x7dp6jgnc0923czqm0lgta;
+let b: field = BHP256::hash(a);
+```
 
 #### Description
 
@@ -624,11 +705,15 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `hash.bhp512`
+### `BHP512::hash`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: address = aleo10qerras5799u6k7rjtc9y3hcwxuykr45qra7x7dp6jgnc0923czqm0lgta;
+let b: field = BHP512::hash(a);
+```
 
 #### Description
 
@@ -658,11 +743,15 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `hash.bhp768`
+### `BHP768::hash`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: address = aleo10qerras5799u6k7rjtc9y3hcwxuykr45qra7x7dp6jgnc0923czqm0lgta;
+let b: field = BHP768::hash(a);
+```
 
 #### Description
 
@@ -692,11 +781,15 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `hash.bhp1024`
+### `BHP1024::hash`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: address = aleo10qerras5799u6k7rjtc9y3hcwxuykr45qra7x7dp6jgnc0923czqm0lgta;
+let b: field = BHP1024::hash(a);
+```
 
 #### Description
 
@@ -726,11 +819,14 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `hash.ped64`
+### `Pedersen64::hash`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: field = Pedersen64::hash(1u64);
+```
 
 #### Description
 
@@ -754,11 +850,14 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `hash.ped128`
+### `Pedersen128::hash`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: field = Pedersen64::hash(1u64);
+```
 
 #### Description
 
@@ -784,11 +883,14 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `hash.psd2`
+### `Poseidon2::hash`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: field = Poseidon2::hash(1u128);
+```
 
 #### Description
 
@@ -813,11 +915,14 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `hash.psd4`
+### `Poseidon4::hash`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: field = Poseidon4::hash(1u128);
+```
 
 #### Description
 
@@ -842,11 +947,14 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `hash.psd8`
+### `Poseidon8::hash`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: field = Poseidon8::hash(1u128);
+```
 
 #### Description
 
@@ -871,11 +979,14 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `inv`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: field = 1field.inv();
+```
 
 #### Description
 
@@ -887,11 +998,15 @@ Computes the multiplicative inverse of the input, storing the outcome in `destin
 | ------- | ----------- |
 | `Field` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `is.eq`
+### `eq`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: bool = 1u8 == 1u8; // true
+let b: bool = 1u8.eq(2u8); // false
+```
 
 #### Description
 
@@ -919,11 +1034,15 @@ Compares `first` and `second`, storing the result in `destination`.
 | `Interface` | `Interface` | `Interface` |
 | `Record`    | `Record`    | `Record`    |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `is.neq`
+### `neq`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: bool = 1u8 != 1u8; // false
+let b: bool = 1u8.neq(2u8); // true
+```
 
 #### Description
 
@@ -951,11 +1070,15 @@ Returns true if `first` is not equal to `second`, storing the result in `destina
 | `Interface` | `Interface` | `Interface` |
 | `Record`    | `Record`    | `Record`    |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `lt`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: bool = 1u8 < 2u8; // true
+let b: bool = 1u8.lt(1u8); // false
+```
 
 #### Description
 
@@ -979,12 +1102,15 @@ Checks if `first` is less than `second`, storing the outcome in `destination`.
 | `Scalar` | `Scalar` | `Boolean`   |
 <!-- | `Address`| `Address`| `Boolean`   | -->
 
-
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `lte`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: bool = 1u8 <= 2u8; // true
+let b: bool = 1u8.lte(1u8); // true
+```
 
 #### Description
 
@@ -1008,11 +1134,14 @@ Checks if `first` is less than or equal to `second`, storing the outcome in `des
 | `Scalar` | `Scalar` | `Boolean`   |
 <!-- | `Address`| `Address`| `Boolean`   | -->
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `mod`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 3u8.mod(2u8); // 1u8
+```
 
 #### Description
 
@@ -1030,17 +1159,21 @@ The semantics of this operation are consistent with the mathematical definition 
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `mul`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 2u8 * 2u8; // 4u8
+let b: u8 = a.mul(2u8); // 8u8
+```
 
 #### Description
 
 Multiplies `first` with `second`, storing the outcome in `destination`.
 
-For integer types, a constraint is added to check for overflow/underflow. For cases where wrapping semantics are needed for integer types, see the [mul.w](#mul.w) instruction.
+For integer types, a constraint is added to check for overflow/underflow. For cases where wrapping semantics are needed for integer types, see the [mul_wrapped](#mul_wrapped) instruction.
 
 #### Supported Types
 
@@ -1060,11 +1193,14 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `mul.w`
+### `mul_wrapped`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 128u8.mul_wrapped(2u8); // 0u8
+```
 
 #### Description
 
@@ -1085,11 +1221,14 @@ Multiplies `first` with `second`, wrapping around at the boundary of the type, a
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `nand`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: bool = true.nand(false); // true
+```
 
 #### Description
 
@@ -1101,11 +1240,14 @@ Returns false only if `first` and `second` are true, storing the outcome in `des
 | --------- | --------- | ----------- |
 | `Boolean` | `Boolean` | `Boolean`   |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `neg`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i8 = -1i8.neg(); // 1i8
+```
 
 #### Description
 
@@ -1125,11 +1267,14 @@ For signed integer types, calling `neg` on the minimum value is an invalid opera
 | `I64`   | `I64`       |
 | `I128`  | `I128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `nor`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: bool = false.nor(false); // true
+```
 
 #### Description
 
@@ -1141,11 +1286,14 @@ Returns true when neither `first` nor `second` is true, storing the outcome in `
 | --------- | --------- | ----------- |
 | `Boolean` | `Boolean` | `Boolean`   |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `not`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: bool = true.not(); // false
+```
 
 #### Description
 
@@ -1167,11 +1315,15 @@ Perform a NOT operation on an integer (bitwise) or boolean input, storing the ou
 | `U64`     | `U64`       |
 | `U128`    | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### or
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: bool = true || false; // true
+let b: bool = false.or(false); // false
+```
 
 #### Description
 
@@ -1193,17 +1345,21 @@ Performs an OR operation on integer (bitwise) or boolean `first` and `second`, s
 | `U64`     | `U64`     | `U64`       |
 | `U128`    | `U128`    | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `pow`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 2u8 ** 2u8; // 4u8
+let b: u8 = b.pow(2u8); // 16u8
+```
 
 #### Description
 
 Raises `first` to the power of `second`, storing the outcome in `destination`.
 
-For integer types, a constraint is added to check for overflow/underflow. For cases where wrapping semantics are needed for integer types, see the [pow.w](#pow.w) instruction.
+For integer types, a constraint is added to check for overflow/underflow. For cases where wrapping semantics are needed for integer types, see the [pow_wrapped](#pow_wrapped) instruction.
 
 #### Supported Types
 
@@ -1223,11 +1379,14 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 | `U64`   | `Magnitude` | `U64`       |
 | `U128`  | `Magnitude` | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `pow.w`
+### `pow_wrapped`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 16u8 ** 2u8; // 0u8
+```
 
 #### Description
 
@@ -1250,12 +1409,16 @@ Raises `first` to the power of `second`, wrapping around at the boundary of the 
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 
 ### `rem`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 3u8 % 2u8; // 1u8
+let b: u8 = 4u8.rem(2u8); // 0u8
+```
 
 #### Description
 
@@ -1264,7 +1427,7 @@ Computes the truncated remainder of `first` divided by `second`, storing the out
 
 A constraint is added to check for underflow.  This underflow happens when the associated division operation, [div](#div), underflows.
 
-For cases where wrapping semantics are needed for integer types, see the [rem.w](#rem.w) instruction.
+For cases where wrapping semantics are needed for integer types, see the [rem_wrapped](#rem_wrapped) instruction.
 
 #### Supported Types
 
@@ -1281,11 +1444,15 @@ For cases where wrapping semantics are needed for integer types, see the [rem.w]
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `rem.w`
+### `rem_wrapped`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: i128 = -128i8;
+let b: i128 = a.rem_wrapped(-1i8); // 0i8
+```
 
 #### Description
 Computes the truncated remainder of `first` divided by `second`, wrapping around at the boundary of the type, and storing the outcome in destination.
@@ -1305,11 +1472,15 @@ Computes the truncated remainder of `first` divided by `second`, wrapping around
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `shl`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 1u8 << 1u8; // 2u8
+let b: u8 = a.shl(1u8); // 4u8
+```
 
 #### Description
 
@@ -1332,11 +1503,14 @@ Shifts `first` left by `second` bits, storing the outcome in `destination`.
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `shl.w`
+### `shl_wrapped`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 128u8.shl_wrapped(1u8); // 0u8
+```
 
 #### Description
 
@@ -1359,11 +1533,15 @@ Shifts `first` left by `second` bits, wrapping around at the boundary of the typ
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `shr`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 4u8 >> 1u8; // 2u8 
+let b: u8 = a.shr(1u8); // 1u8
+```
 
 #### Description
 
@@ -1386,11 +1564,14 @@ Shifts `first` right by `second` bits, storing the outcome in `destination`.
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `shr.w`
+### `shr_wrapped`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 128u8.shr_wrapped(7u8); // 1u8
+```
 
 #### Description
 
@@ -1413,11 +1594,14 @@ Shifts `first` right by `second` bits, wrapping around at the boundary of the ty
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `square`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: field = 1field.square(); // 1field
+```
 
 #### Description
 
@@ -1429,11 +1613,14 @@ Squares the input, storing the outcome in `destination`.
 | ------- | ----------- |
 | `Field` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `sqrt`
+### `square_root`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: field = 1field.square_root(); // 1field
+```
 
 #### Description
 
@@ -1445,12 +1632,16 @@ Computes the square root of the input, storing the outcome in `destination`.
 | ------- | ----------- |
 | `Field` | `Field`     |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 
 ### `sub`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 2u8 - 1u8; // 1u8
+let b: u8 = a.sub(1u8); // 0u8
+```
 
 #### Description
 
@@ -1473,11 +1664,14 @@ Computes `first - second`, storing the outcome in `destination`.
 | `U64`   | `U64`   | `U64`       |
 | `U128`  | `U128`  | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
-### `sub.w`
+### `sub_wrapped`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = 0u8.sub_wrapped(1u8); // 255u8
+```
 
 #### Description
 
@@ -1498,17 +1692,18 @@ Computes `first - second`, wrapping around at the boundary of the type, and stor
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `ternary`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: u8 = true ? 1u8 : 2u8; // 1u8
+```
 
 #### Description
 
 Selects `first`, if `condition` is true, otherwise selects `second`, storing the result in `destination`.
-
-Example: `ternary r0 r1 r2 into r3`, where `r0` is the condition, `r1` is first, `r2` is second, and `r3` is the destination.
 
 #### Supported Types
 
@@ -1529,11 +1724,14 @@ Example: `ternary r0 r1 r2 into r3`, where `r0` is the condition, `r1` is first,
 | `Boolean` | `U128`    | `U128`    | `U128`      |
 | `Boolean` | `Scalar`  | `Scalar`  | `Scalar`    |
 
+[Back to Top](#leo-operators-reference)
 ***
 
 ### `xor`
 
-[Back to Top](#aleo-opcodes-reference)
+```leo
+let a: bool = true.xor(false); // true
+```
 
 #### Description
 
@@ -1555,4 +1753,5 @@ Performs a XOR operation on integer (bitwise) or boolean `first` and `second`, s
 | `U64`     | `U64`     | `U64`       |
 | `U128`    | `U128`    | `U128`      |
 
+[Back to Top](#leo-operators-reference)
 ***

@@ -88,7 +88,7 @@ let receiver: address = aleo1ezamst4pjgj9zfxqq0fwfj8a4cjuqndmasgata3hggzqygggnyf
 ## Layout of a Leo Program
 
 A Leo program contains declarations of a [Program Scope](#program-scope), [Imports](#import), [Transitio Functionns](#transition-function), [Helper Functions](#helper-function), [Structs](#struct), [Records](#record),
-[Mappings](#mapping), and [Finalizers](#finalize).
+[Mappings](#mapping), and [Finalize Functions](#finalize).
 Declarations are locally accessible within a program file.
 If you need a declaration from another Leo file, you must import it.
 
@@ -147,7 +147,7 @@ The following must be declared inside the program scope in a Leo file:
 * struct types
 * transition functions
 * helper functions
-* finalizers
+* finalize functions
 
 The following must be declared outside the program scope in a Leo file:
 * imports
@@ -228,7 +228,7 @@ mapping account: address => u64;
 
 Transition functions in Leo are declared as `transition {name}() {}`.  
 Transition functions can be called directly when running a Leo program (via `leo run`).  
-Transitino functions contain expressions and statements that can compute values.  
+Transition functions contain expressions and statements that can compute values.  
 Transition functions must be in a program's current scope to be called.
 
 ```leo showLineNumbers
@@ -284,7 +284,7 @@ function foo(
 #### Increment and Decrement
 An increment statement has the form `increment(mapping, key, value);`.  
 A decrement statement has the form `decrement(mapping, key, value);`.  
-Increment and decrement statements can only be used in finalizers.
+Increment and decrement statements can only be used in finalize functions.
 
 ```leo showLineNumbers
 program transfer.aleo {
@@ -311,14 +311,14 @@ program transfer.aleo {
 }
 ```
 
-### Finalizer
+### Finalize Function
 
-A finalizer is declared as `finalize {name}:`.  
-A finalizer must immediately followed a [transition function](#transition-function), and must have the same name;
+A finalize function is declared as `finalize {name}:`.  
+A finalize function must immediately followed a [transition function](#transition-function), and must have the same name;
 it is associated with the transition function and is executed on chain,
 after the zero-knowledge proof of the execution of the associated transition is verified;
-a finalizer *finalizes* a transition function on chain.  
-Upon success of the finalizer, the program logic is executed.  
+a finalize function *finalizes* a transition function on chain.  
+Upon success of the finalize function, the program logic is executed.  
 Upon failure of the finalize function, the program logic is reverted.  
 
 ```leo showLineNumbers
