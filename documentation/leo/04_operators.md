@@ -7,6 +7,7 @@ sidebar_label: Operators
 The following is a list of operators supported by Leo. 
 The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes.md) executable by the Aleo Virtual Machine (AVM).
 
+## Table of Operators
 | Name                                        | Description                         |
 |---------------------------------------------|:------------------------------------|
 | [abs](#abs)                                 | Absolute value operation            |
@@ -96,7 +97,7 @@ For integer types, a constraint is added to check for underflow. For cases where
 <!-- | `U64`  | `U64`       | -->
 <!-- | `U128` | `U128`      | -->
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `abs_wrapped`
@@ -125,7 +126,7 @@ Compute the absolute value of the input, wrapping around at the boundary of the 
 <!-- | `U64`  | `U64`       | -->
 <!-- | `U128` | `U128`      | -->
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `add`
@@ -160,7 +161,7 @@ For integer types, a constraint is added to check for overflow. For cases where 
 | `U128`   | `U128`   | `U128`      |
 | `Scalar` | `Scalar` | `Scalar`    |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `add_wrapped`
@@ -189,7 +190,7 @@ Adds `first` with `second`, wrapping around at the boundary of the type, and sto
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `and`
@@ -221,7 +222,7 @@ storing the outcome in `destination`.
 | `U64`     | `U64`     | `U64`       |
 | `U128`    | `U128`    | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `assert_eq`
@@ -260,7 +261,7 @@ Checks whether `first` and `second` are equal, halting if they are not equal.
 | `Interface` | `Interface` |
 | `Record`    | `Record`    |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `assert_neq`
@@ -299,7 +300,7 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 | `Interface` | `Interface` |
 | `Record`    | `Record`    |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `BHP256::commit`
@@ -337,7 +338,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Interface` | `Scalar`  | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `BHP512::commit`
@@ -375,7 +376,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Interface` | `Scalar`  | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `BHP768::commit`
@@ -413,7 +414,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Interface` | `Scalar`  | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `BHP1024::commit`
@@ -451,7 +452,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Interface` | `Scalar`  | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `Pedersen64::commit`
@@ -483,7 +484,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `String`    | `Scalar`  | `Group`     |
 | `Interface` | `Scalar`  | `Group`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `Pedersen128::commit`
@@ -517,7 +518,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `String`    | `Scalar`  | `Group`     |
 | `Interface` | `Scalar`  | `Group`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `div`
@@ -552,7 +553,7 @@ For cases where wrapping semantics are needed for integer types, see the [div_wr
 | `U64`   | `U64`   | `U64`       |
 | `U128`  | `U128`  | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `div_wrapped`
@@ -581,7 +582,7 @@ Divides `first` by `second`, wrapping around at the boundary of the type, and st
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `double`
@@ -603,7 +604,7 @@ Doubles the input, storing the outcome in `destination`.
 | `Field` | `Field`     |
 | `Group` | `Group`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `gt`
@@ -635,7 +636,7 @@ Checks if `first` is greater than `second`, storing the result in `destination`.
 | `Scalar` | `Scalar` | `Boolean`   |
 <!-- | `Address`| `Address`| `Boolean`   | -->
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `gte`
@@ -667,7 +668,7 @@ Checks if `first` is greater than or equal to `second`, storing the result in `d
 | `Scalar` | `Scalar` | `Boolean`   |
 <!-- | `Address`| `Address`| `Boolean`   | -->
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `BHP256::hash`
@@ -705,7 +706,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `BHP512::hash`
@@ -743,7 +744,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `BHP768::hash`
@@ -781,7 +782,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `BHP1024::hash`
@@ -819,7 +820,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `Pedersen64::hash`
@@ -850,7 +851,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `Pedersen128::hash`
@@ -883,7 +884,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `Poseidon2::hash`
@@ -915,7 +916,7 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `Poseidon4::hash`
@@ -947,7 +948,7 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `Poseidon8::hash`
@@ -979,7 +980,7 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 | `String`    | `Field`     |
 | `Interface` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `inv`
@@ -998,7 +999,7 @@ Computes the multiplicative inverse of the input, storing the outcome in `destin
 | ------- | ----------- |
 | `Field` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `eq`
@@ -1034,7 +1035,7 @@ Compares `first` and `second`, storing the result in `destination`.
 | `Interface` | `Interface` | `Interface` |
 | `Record`    | `Record`    | `Record`    |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `neq`
@@ -1070,7 +1071,7 @@ Returns true if `first` is not equal to `second`, storing the result in `destina
 | `Interface` | `Interface` | `Interface` |
 | `Record`    | `Record`    | `Record`    |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `lt`
@@ -1102,7 +1103,7 @@ Checks if `first` is less than `second`, storing the outcome in `destination`.
 | `Scalar` | `Scalar` | `Boolean`   |
 <!-- | `Address`| `Address`| `Boolean`   | -->
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `lte`
@@ -1134,7 +1135,7 @@ Checks if `first` is less than or equal to `second`, storing the outcome in `des
 | `Scalar` | `Scalar` | `Boolean`   |
 <!-- | `Address`| `Address`| `Boolean`   | -->
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `mod`
@@ -1159,7 +1160,7 @@ The semantics of this operation are consistent with the mathematical definition 
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `mul`
@@ -1193,7 +1194,7 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `mul_wrapped`
@@ -1221,7 +1222,7 @@ Multiplies `first` with `second`, wrapping around at the boundary of the type, a
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `nand`
@@ -1240,7 +1241,7 @@ Returns false only if `first` and `second` are true, storing the outcome in `des
 | --------- | --------- | ----------- |
 | `Boolean` | `Boolean` | `Boolean`   |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `neg`
@@ -1267,7 +1268,7 @@ For signed integer types, calling `neg` on the minimum value is an invalid opera
 | `I64`   | `I64`       |
 | `I128`  | `I128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `nor`
@@ -1286,7 +1287,7 @@ Returns true when neither `first` nor `second` is true, storing the outcome in `
 | --------- | --------- | ----------- |
 | `Boolean` | `Boolean` | `Boolean`   |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `not`
@@ -1315,7 +1316,7 @@ Perform a NOT operation on an integer (bitwise) or boolean input, storing the ou
 | `U64`     | `U64`       |
 | `U128`    | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### or
@@ -1345,7 +1346,7 @@ Performs an OR operation on integer (bitwise) or boolean `first` and `second`, s
 | `U64`     | `U64`     | `U64`       |
 | `U128`    | `U128`    | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `pow`
@@ -1379,7 +1380,7 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 | `U64`   | `Magnitude` | `U64`       |
 | `U128`  | `Magnitude` | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `pow_wrapped`
@@ -1409,7 +1410,7 @@ Raises `first` to the power of `second`, wrapping around at the boundary of the 
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 
@@ -1444,7 +1445,7 @@ For cases where wrapping semantics are needed for integer types, see the [rem_wr
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `rem_wrapped`
@@ -1472,7 +1473,7 @@ Computes the truncated remainder of `first` divided by `second`, wrapping around
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `shl`
@@ -1503,7 +1504,7 @@ Shifts `first` left by `second` bits, storing the outcome in `destination`.
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `shl_wrapped`
@@ -1533,7 +1534,7 @@ Shifts `first` left by `second` bits, wrapping around at the boundary of the typ
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `shr`
@@ -1564,7 +1565,7 @@ Shifts `first` right by `second` bits, storing the outcome in `destination`.
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `shr_wrapped`
@@ -1594,7 +1595,7 @@ Shifts `first` right by `second` bits, wrapping around at the boundary of the ty
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `square`
@@ -1613,7 +1614,7 @@ Squares the input, storing the outcome in `destination`.
 | ------- | ----------- |
 | `Field` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `square_root`
@@ -1632,7 +1633,7 @@ Computes the square root of the input, storing the outcome in `destination`.
 | ------- | ----------- |
 | `Field` | `Field`     |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 
@@ -1664,7 +1665,7 @@ Computes `first - second`, storing the outcome in `destination`.
 | `U64`   | `U64`   | `U64`       |
 | `U128`  | `U128`  | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `sub_wrapped`
@@ -1692,7 +1693,7 @@ Computes `first - second`, wrapping around at the boundary of the type, and stor
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `ternary`
@@ -1724,7 +1725,7 @@ Selects `first`, if `condition` is true, otherwise selects `second`, storing the
 | `Boolean` | `U128`    | `U128`    | `U128`      |
 | `Boolean` | `Scalar`  | `Scalar`  | `Scalar`    |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
 
 ### `xor`
@@ -1753,5 +1754,5 @@ Performs a XOR operation on integer (bitwise) or boolean `first` and `second`, s
 | `U64`     | `U64`     | `U64`       |
 | `U128`    | `U128`    | `U128`      |
 
-[Back to Top](#leo-operators-reference)
+[Back to Top](#table-of-operators)
 ***
