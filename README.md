@@ -9,16 +9,15 @@
 
 This repository serves as a guide for getting started with building on Aleo. Here is a quick summary of the key components:
 
-- [Aleo Studio](https://aleo.studio) - The first IDE for zero-knowledge proofs
-- [Aleo Package Manager](https://aleo.pm) - Official package manager of the Leo programming language
-- [Aleo Explorer](https://aleo.network) - Validate and broadcast on Aleo Testnet I
-- [Aleo Developer Portal](https://developer.aleo.org) - The documentation portal for Aleo and the Leo programming language.
+- [Aleo Explorer](https://aleo.network) - Validate and broadcast on Aleo Testnet III
+- [Aleo Developer Docs](https://developer.aleo.org) - Developer documentation for Aleo and the Leo programming language.
 - [Leo Playground](http://play.leo-lang.org) - A browser interface to the Leo compiler for rapid ZK development and testing.
 
-For help getting set up, please join the Discord channel to ask questions and help others answer their questions.
+For help setting up, join us on [Discord](https://aleo.org/discord) to ask questions and help others answer their questions.
 
 We will be updating this page with FAQs to make it easy for finding common issues and to fix them quickly.
 
+<!-- 
 ## Aleo Testnet I
 
 ### The Network
@@ -54,3 +53,4 @@ To connect to the network, the following is a list of Aleo Testnet I bootnodes.
 | Pending | Asia   | as3.testnet1.aleo.network |     4131     |   3030   |
 | Pending | Asia   | as4.testnet1.aleo.network |     4131     |   3030   |
 | Pending | Asia   | as5.testnet1.aleo.network |     4131     |   3030   |
+-->
