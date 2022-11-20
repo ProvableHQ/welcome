@@ -1,7 +1,7 @@
 ---
 id: node_address
-title: Latest Height
-sidebar_label: Latest Height
+title: Node Address
+sidebar_label: Node Address
 ---
 
 ```bash title=ENDPOINT
