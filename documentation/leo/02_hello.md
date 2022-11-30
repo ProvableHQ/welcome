@@ -61,7 +61,7 @@ Let's go through the file syntax of the program we just executed.
 
 
 **program.json** is the Leo manifest file that configures our package.
-```json title="program.json" 
+```json title="program.json"
 {
     "program": "hello.aleo",
     "version": "0.0.0",
@@ -100,7 +100,7 @@ program hello.aleo {
 ```
 
 `program hello.aleo {` defines the name of the [program](03_language.md#program-scope) inside the Leo file.
-The program ID must match the `program.json` manifest file.  
+The program ID must match the `program.json` manifest file.
 The keyword `transition` indicates a [transition](03_language.md#transition-function) function definition in Leo.
 Our **hello** `main` function takes an input `a` with type `u32` and `public` visibility, and an input `b` with type `u32` and `private` visibility (by default).
 The program returns one result with type `u32`.
@@ -155,7 +155,7 @@ public a: u32 = 1u32;
 b: u32 = 2u32;
 ```
 
-Now lets use the Leo CLI and see what commands we can run on our program.
+Now let us use the Leo CLI and see what commands we can run on our program.
 
 
 Previously we executed the program with `leo run`.

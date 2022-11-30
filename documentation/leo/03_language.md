@@ -87,7 +87,7 @@ let receiver: address = aleo1ezamst4pjgj9zfxqq0fwfj8a4cjuqndmasgata3hggzqygggnyf
 
 ## Layout of a Leo Program
 
-A Leo program contains declarations of a [Program Scope](#program-scope), [Imports](#import), [Transitio Functionns](#transition-function), [Helper Functions](#helper-function), [Structs](#struct), [Records](#record),
+A Leo program contains declarations of a [Program Scope](#program-scope), [Imports](#import), [Transition Functionns](#transition-function), [Helper Functions](#helper-function), [Structs](#struct), [Records](#record),
 [Mappings](#mapping), and [Finalize Functions](#finalize).
 Declarations are locally accessible within a program file.
 If you need a declaration from another Leo file, you must import it.
@@ -96,46 +96,45 @@ If you need a declaration from another Leo file, you must import it.
 
 ### Program Scope
 
-A program scope in the sense of Leo is a collection of code (its functions) and data (its types) that resides at a 
+A program scope in the sense of Leo is a collection of code (its functions) and data (its types) that resides at a
 [program ID](#program-id) on the Aleo blockchain.
 
-```leo 
+```leo
 import foo.leo;
 
 program hello.aleo {
     mapping balances: address => u64;
-    
+
     record token {
         owner: address,
         gates: u64,
         amount: u64,
     }
-    
+
     struct message {
         sender: address,
         object: u64,
     }
-    
+
     transition mint_public(
         public receiver: address,
         public amount: u64,
     ) -> token {
-        async finalize(receiver, amount); 
         return token {
             owner: receiver,
             gates: 0u64,
             amount,
-        };
+        } then finalize(receiver, amount);
     }
-    
+
     finalize mint_public(
         public receiver: address,
         public amount: u64,
     ) {
         increment(balances, receiver, amount);
     }
-    
-    function compute(a: u64, b: u64) -> u64 { 
+
+    function compute(a: u64, b: u64) -> u64 {
         return a + b;
     }
 }
@@ -153,7 +152,7 @@ The following must be declared outside the program scope in a Leo file:
 * imports
 
 #### Program ID
-A program ID is declared as `{name}.{network}`.  
+A program ID is declared as `{name}.{network}`.
 Currently, `aleo` is the only supported `network` domain.
 
 ```leo
@@ -169,8 +168,8 @@ If there are duplicate names for declarations, Leo will fail to compile.
 Ordering is enforced for imports, which must be at the top of file.
 
 :::caution
-Leo imports are unstable and currently only provide minimal functionality. 
-Their syntax is expected to change. 
+Leo imports are unstable and currently only provide minimal functionality.
+Their syntax is expected to change.
 :::
 
 ```leo showLineNumbers
@@ -181,7 +180,7 @@ program hello.aleo { }
 
 ### Struct
 
-A struct data type is declared as `struct {name} {}`.  
+A struct data type is declared as `struct {name} {}`.
 Structs contain component declarations `{name}: {type},`.
 
 ```leo showLineNumbers
@@ -194,9 +193,9 @@ struct array3 {
 
 ### Record
 
-A [record](../concepts/02_records.md) data type is declared as `record {name} {}`.  
-Records contain component declarations `{name}: {type},`.  
-Record data structures must contain the `owner` and `gates` components as shown below.  
+A [record](../concepts/02_records.md) data type is declared as `record {name} {}`.
+Records contain component declarations `{name}: {type},`.
+Record data structures must contain the `owner` and `gates` components as shown below.
 When passing a record as input to a program function, the `_nonce: group,` component is also required
 (but it does not need to be declared in the Leo program).
 
@@ -213,8 +212,8 @@ record token {
 
 ### Mapping
 
-A mapping is declared as `mapping {name}: {key-type} => {value-type}`.  
-Mappings contain key-value pairs.  
+A mapping is declared as `mapping {name}: {key-type} => {value-type}`.
+Mappings contain key-value pairs.
 Mappings are stored on chain.
 
 ```leo showLineNumbers
@@ -226,9 +225,9 @@ mapping account: address => u64;
 
 ### Transition Function
 
-Transition functions in Leo are declared as `transition {name}() {}`.  
-Transition functions can be called directly when running a Leo program (via `leo run`).  
-Transition functions contain expressions and statements that can compute values.  
+Transition functions in Leo are declared as `transition {name}() {}`.
+Transition functions can be called directly when running a Leo program (via `leo run`).
+Transition functions contain expressions and statements that can compute values.
 Transition functions must be in a program's current scope to be called.
 
 ```leo showLineNumbers
@@ -244,7 +243,7 @@ program hello.aleo {
 
 #### Function Inputs
 
-A function input is declared as `{visibility} {name}: {type},`  
+A function input is declared as `{visibility} {name}: {type},`
 Function inputs must be declared just after the function name declaration, in parentheses.
 
 ```leo showLineNumbers
@@ -254,8 +253,8 @@ transition foo(public a: field) { }
 
 #### Function Outputs
 
-A function output is calculated as `return {expression};`.  
-Returning an output ends the execution of the function.  
+A function output is calculated as `return {expression};`.
+Returning an output ends the execution of the function.
 The return type of the function declaration must match the type of the returned `{expression}`.
 
 ```leo showLineNumbers
@@ -267,13 +266,15 @@ transition foo(public a: field) -> field {
 
 ### Helper Function
 
-A helper function is declared as `function {name}() {}`.  
-Helper functions contain expressions and statements that can compute values.  
+A helper function is declared as `function {name}() {}`.
+Helper functions contain expressions and statements that can compute values.
 Helper functions that cannot be executed directly. Helper functions must be called by other functions.
+Inputs of helper functions cannot have `{visibility}` modifiers like transition functions,
+since they are used only internally, not as part of a program's external interface.
 
 ```leo showLineNumbers
 function foo(
-    public a: field, 
+    a: field,
     b: field,
 ) -> field {
     return a + b;
@@ -282,8 +283,8 @@ function foo(
 
 
 #### Increment and Decrement
-An increment statement has the form `increment(mapping, key, value);`.  
-A decrement statement has the form `decrement(mapping, key, value);`.  
+An increment statement has the form `increment(mapping, key, value);`.
+A decrement statement has the form `decrement(mapping, key, value);`.
 Increment and decrement statements can only be used in finalize functions.
 
 ```leo showLineNumbers
@@ -292,6 +293,8 @@ program transfer.aleo {
     // with `address` as the key,
     // and `u64` as the value.
     mapping account: address => u64;
+
+    transition transfer_public(...) {...}
 
     finalize transfer_public(
         public sender: address,
@@ -313,23 +316,23 @@ program transfer.aleo {
 
 ### Finalize Function
 
-A finalize function is declared as `finalize {name}:`.  
+A finalize function is declared as `finalize {name}:`.
 A finalize function must immediately followed a [transition function](#transition-function), and must have the same name;
 it is associated with the transition function and is executed on chain,
 after the zero-knowledge proof of the execution of the associated transition is verified;
-a finalize function *finalizes* a transition function on chain.  
-Upon success of the finalize function, the program logic is executed.  
-Upon failure of the finalize function, the program logic is reverted.  
+a finalize function *finalizes* a transition function on chain.
+Upon success of the finalize function, the program logic is executed.
+Upon failure of the finalize function, the program logic is reverted.
 
 ```leo showLineNumbers
 program transfer.aleo {
     // The function `transfer_public_to_private` turns a specified token amount
     // from `account` into a token record for the specified receiver.
-    // 
+    //
     // This function preserves privacy for the receiver's record, however
     // it publicly reveals the caller and the specified token amount.
-    function transfer_public_to_private(
-        public receiver: address, 
+    transition transfer_public_to_private(
+        public receiver: address,
         public amount: u64
     ) -> token {
         // Produce a token record for the token receiver.
@@ -340,8 +343,7 @@ program transfer.aleo {
         };
 
         // Return the receiver's record, then decrement the token amount of the caller publicly.
-        async finalize(self.caller, amount);
-        return new;
+        return new then finalize(self.caller, amount);
     }
 
     // Decrements `account[owner]` by `amount`.
@@ -371,7 +373,7 @@ For cases where wrapping semantics are needed for integer types, see the `Add Wr
 let a: u8 = 1u8 + 1u8;
 // a is equal to 2
 
-a += 1;
+a += 1u8;
 // a is now equal to 3
 
 a = a.add(1u8);
@@ -457,6 +459,6 @@ Operators will prioritize evaluation according to:
 To prioritize a different evaluation, use parentheses `()` around the expression.
 
 ```leo
-let result = (a + 1) * 2; 
+let result = (a + 1u8) * 2u8;
 ```
-`(a + 1)` will be evaluated before multiplying by two `* 2`.
+`(a + 1u8)` will be evaluated before multiplying by two `* 2u8`.
