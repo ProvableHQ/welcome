@@ -84,6 +84,6 @@ leo
 Aleo maintains syntax highlighting implementations across different platforms.   
 If you do not see your favorite editor on this list, please reach out on [GitHub](https://github.com/AleoHQ/welcome/issues/new).
 
-1. [Sublime Text](07_tooling.md#sublime-text)
-2. [Visual Studio Code](07_tooling.md#vs-code)
-3. [Intellij](07_tooling.md#intellij)
+1. [Sublime Text](06_tooling.md#sublime-text)
+2. [Visual Studio Code](06_tooling.md#vs-code)
+3. [Intellij](06_tooling.md#intellij)

@@ -43,12 +43,15 @@ The Leo CLI provides a suite of commands to make programming in Leo easy.
 - [**leo clean**](./leo/05_commands.md#leo-clean)
 
 ## Additional Material
-Install Leo for your favorite code [**editor**](./leo/07_tooling.md).
+Install Leo for your favorite code [**editor**](./leo/06_tooling.md).
 
-For additional developer resources such as examples and community projects, see [**Developer Resources**](./leo/06_resources.md).
+For additional developer resources such as examples and community projects, see [**Developer Resources**](./leo/07_resources.md).
 
-Is your Leo code formatted correctly? Check out the [**Style Guide**](./leo/06_resources.md#style-guide) and [**Common Patterns**](./leo/06_resources.md#common-patterns) for the official guidelines.
+Is your Leo code formatted correctly? Check out the [**Style Guide**](./leo/07_resources.md#style-guide) and [**Common Patterns**](./leo/07_resources.md#common-patterns) for the official guidelines.
 
 Found a bug? Have an idea for a feature? File an issue on the [**Leo GitHub**](https://github.com/AleoHQ/leo/issues/new/choose).
 
-See the [**Contributing Guide**](./leo/06_resources.md#contributing) for more information.
+See the [**Contributing Guide**](./leo/07_resources.md#contributing) for more information.
+
+## Examples
+- [Private Auction](./leo/08_auction.md)
