@@ -1,52 +1,48 @@
 ---
 id: installation
-title: Installation
+title: Install the Latest Release
 ---
 
-[//]: # (## 1. Install the Latest Release)
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-[//]: # (import Tabs from '@theme/Tabs';)
 
-[//]: # (import TabItem from '@theme/TabItem';)
+<Tabs
+    defaultValue="mac"
+    values={[
+        {label: 'MacOS', value: 'mac'},
+        {label: 'Windows', value: 'windows'},
+        {label: 'Ubuntu', value: 'ubuntu'},
+    ]}>
+    <TabItem value="mac">
+        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.1/leo-v1.6.1-aarch64-apple-darwin.zip">
+            <b>Install Leo for MacOS M1</b>
+        </a>
+    </TabItem>
+    <TabItem value="mac">
+        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.1/leo-v1.6.1-x86_64-apple-darwin.zip">
+            <b>Install Leo for MacOS Intel</b>
+        </a>
+    </TabItem>
+    <TabItem value="windows">
+        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.1/leo-v1.6.1-x86_64-pc-windows-msvc.zip">
+            <b>Install Leo for Windows</b>
+        </a>
+    </TabItem>
+    <TabItem value="ubuntu">
+        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.1/leo-v1.6.1-x86_64-unknown-linux-gnu.zip">
+            <b>Install Leo for Ubuntu</b>
+        </a>
+    </TabItem>
+</Tabs>
 
-[//]: # ()
-[//]: # (<Tabs)
+#### Browse all Leo releases [**here**](https://github.com/AleoHQ/leo/releases).
 
-[//]: # (    defaultValue="mac")
+-----
 
-[//]: # (    values={[)
 
-[//]: # (        {label: 'macOS', value: 'mac'},)
-
-[//]: # (        {label: 'Ubuntu', value: 'ubuntu'},)
-
-[//]: # (    ])
-
-[//]: # (}>)
-
-[//]: # ()
-[//]: # (<TabItem value="mac">)
-
-[//]: # ()
-[//]: # ([**Install for Mac**]&#40;https://github.com/AleoHQ/leo/releases/download/v1.0.3/leo-v1.0.3-x86_64-apple-darwin.zip&#41;)
-
-[//]: # ()
-[//]: # (</TabItem>)
-
-[//]: # ()
-[//]: # (<TabItem value="ubuntu">)
-
-[//]: # ()
-[//]: # ([**Install for Ubuntu**]&#40;https://github.com/AleoHQ/leo/releases/download/v1.0.3/leo-v1.0.3-x86_64-unknown-linux-gnu.zip&#41;)
-
-[//]: # ()
-[//]: # (</TabItem>)
-
-[//]: # ()
-[//]: # (</Tabs>)
-
-[//]: # ()
-[//]: # (Browse all Leo releases [**here**]&#40;https://github.com/AleoHQ/leo/releases&#41;.)
+# Install From Source
+To use the latest Leo features, install the Leo source code from GitHub.
 
 ## 1. Install the Prerequisites
 
