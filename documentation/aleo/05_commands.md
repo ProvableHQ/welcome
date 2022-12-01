@@ -13,10 +13,11 @@ You can print the list of commands by running `aleo --help`
 2. [aleo new](#2-aleo-new)
 3. [aleo build](#3-aleo-build)
 4. [aleo run](#4-aleo-run)
-5. [aleo node](#5-aleo-node)
-6. [aleo deploy](#6-aleo-deploy)
-7. [aleo clean](#7-aleo-clean)
-8. [aleo update](#8-aleo-update)
+5. [aleo clean](#5-aleo-clean)
+6. [aleo update](#6-aleo-update)
+
+[//]: # (5. [aleo node]&#40;#5-aleo-node&#41;)
+[//]: # (5. [aleo deploy]&#40;#6-aleo-deploy&#41;)
 
 ## 1. `aleo account`
 
@@ -88,33 +89,47 @@ To execute your Aleo program function to a specified endpoint run:
 aleo run {$FUNCTION} {$INPUTS} --endpoint {$ENDPOINT}
 ```
 
-## 5. `aleo node`
+[//]: # ()
+[//]: # (## 5. `aleo node`)
 
-To start a local development node and deploy the local program at genesis run:
-```bash
-aleo node start
-```
+[//]: # ()
+[//]: # (To start a local development node and deploy the local program at genesis run:)
 
-To start a local development node without deploying the local program at genesis run:
-```bash
-aleo node start --nodeploy
-```
+[//]: # (```bash)
 
-## 6. `aleo deploy`
+[//]: # (aleo node start)
 
-To deploy a program to Aleo Testnet3 run:
-```bash
-aleo deploy
-```
+[//]: # (```)
 
-## 7. `aleo clean`
+[//]: # ()
+[//]: # (To start a local development node without deploying the local program at genesis run:)
+
+[//]: # (```bash)
+
+[//]: # (aleo node start --nodeploy)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (## 6. `aleo deploy`)
+
+[//]: # ()
+[//]: # (To deploy a program to Aleo Testnet3 run:)
+
+[//]: # (```bash)
+
+[//]: # (aleo deploy)
+
+[//]: # (```)
+
+## 5. `aleo clean`
 
 To clean the Aleo package build directory run:
 ```bash
 aleo clean
 ```
 
-## 8. `aleo update`
+## 6. `aleo update`
 
 To update the Aleo SDK to the latest version run:
 ```
