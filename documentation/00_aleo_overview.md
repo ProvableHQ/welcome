@@ -49,11 +49,12 @@ The Aleo CLI provides a suite of commands to make programming in Aleo instructio
 2. [aleo new](./aleo/05_commands.md#2-aleo-new)
 3. [aleo build](./aleo/05_commands.md#3-aleo-build)
 4. [aleo run](./aleo/05_commands.md#4-aleo-run)
-5. [aleo node](./aleo/05_commands.md#5-aleo-node)
-6. [aleo deploy](./aleo/05_commands.md#6-aleo-deploy)
-7. [aleo clean](./aleo/05_commands.md#7-aleo-clean)
-8. [aleo update](./aleo/05_commands.md#8-aleo-update)
+5. [aleo clean](./aleo/05_commands.md#5-aleo-clean)
+6. [aleo update](./aleo/05_commands.md#6-aleo-update)
 
+[//]: # (5. [aleo node]&#40;./aleo/05_commands.md#5-aleo-node&#41;)
+
+[//]: # (6. [aleo deploy]&#40;./aleo/05_commands.md#6-aleo-deploy&#41;)
 
 ## Additional Material
 

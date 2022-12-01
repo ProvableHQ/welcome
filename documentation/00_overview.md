@@ -35,8 +35,8 @@ to compile, execute, and finalize its state autonomously.
 - [Leo Language Guide](./leo/03_language.md)
 - [Leo Operators List](./leo/04_operators.md)
 - [Leo Command Line Interface](./leo/05_commands.md)
-- [Leo Code Editor Plugins](./leo/07_tooling.md)
-- [Leo Examples, Guides, and Developer Resources](./leo/06_resources.md)
+- [Leo Code Editor Plugins](./leo/06_tooling.md)
+- [Leo Examples, Guides, and Developer Resources](./leo/07_resources.md)
 
 ### Chapter 3: Aleo Instructions
 

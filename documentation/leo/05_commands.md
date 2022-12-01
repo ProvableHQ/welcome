@@ -24,9 +24,10 @@ You can print the list of commands by running `leo --help`
 * [`new`](#leo-new) - Create a new Leo package in a new directory.
 * [`build`](#leo-build) - Compile the current package as a program.
 * [`run`](#leo-run) - Run a program with input variables.
-* [`node`](#leo-node) - Start a local development server.
 * [`deploy`](#leo-deploy) - Deploy a program.
 * [`clean`](#leo-clean) - Clean the output directory.
+
+[//]: # (* [`node`]&#40;#leo-node&#41; - Start a local development server.)
 
 
 ## `leo new`
@@ -112,17 +113,26 @@ leo run {$TRANSITION} {$INPUTS}
  Leo ✅ Executed 'hello.aleo/main' (in "/hello/build")
 ```
 
-## `leo node`
+[//]: # ()
+[//]: # (## `leo node`)
 
-To start a local development node and deploy the compiled program run.
-```bash
-leo node start
-```
+[//]: # ()
+[//]: # (To start a local development node and deploy the compiled program run.)
 
-To start a local development node without deploying the compiled program.
-```bash
-leo node start --nodeploy
-```
+[//]: # (```bash)
+
+[//]: # (leo node start)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (To start a local development node without deploying the compiled program.)
+
+[//]: # (```bash)
+
+[//]: # (leo node start --nodeploy)
+
+[//]: # (```)
 
 ## Testnet3 Development Endpoints
 
