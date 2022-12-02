@@ -4,7 +4,7 @@ title: Leo Operators Reference
 sidebar_label: Operators
 ---
 
-The following is a list of operators supported by Leo. 
+The following is a list of operators supported by Leo.
 The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes.md) executable by the Aleo Virtual Machine (AVM).
 
 ## Table of Operators
@@ -91,11 +91,6 @@ For integer types, a constraint is added to check for underflow. For cases where
 | `I32`  | `I32`       |
 | `I64`  | `I64`       |
 | `I128` | `I128`      |
-<!-- | `U8`   | `U8`        | -->
-<!-- | `U16`  | `U16`       | -->
-<!-- | `U32`  | `U32`       | -->
-<!-- | `U64`  | `U64`       | -->
-<!-- | `U128` | `U128`      | -->
 
 [Back to Top](#table-of-operators)
 ***
@@ -120,11 +115,6 @@ Compute the absolute value of the input, wrapping around at the boundary of the 
 | `I32`  | `I32`       |
 | `I64`  | `I64`       |
 | `I128` | `I128`      |
-<!-- | `U8`   | `U8`        | -->
-<!-- | `U16`  | `U16`       | -->
-<!-- | `U32`  | `U32`       | -->
-<!-- | `U64`  | `U64`       | -->
-<!-- | `U128` | `U128`      | -->
 
 [Back to Top](#table-of-operators)
 ***
@@ -258,7 +248,7 @@ Checks whether `first` and `second` are equal, halting if they are not equal.
 | `U64`       | `U64`       |
 | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    |
-| `Interface` | `Interface` |
+| `Struct`    | `Struct`    |
 | `Record`    | `Record`    |
 
 [Back to Top](#table-of-operators)
@@ -297,7 +287,7 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 | `U64`       | `U64`       |
 | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    |
-| `Interface` | `Interface` |
+| `Struct`    | `Struct`    |
 | `Record`    | `Record`    |
 
 [Back to Top](#table-of-operators)
@@ -336,7 +326,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Interface` | `Scalar`  | `Field`     |
+| `Struct`    | `Scalar`  | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -374,7 +364,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Interface` | `Scalar`  | `Field`     |
+| `Struct`    | `Scalar`  | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -412,7 +402,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Interface` | `Scalar`  | `Field`     |
+| `Struct`    | `Scalar`  | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -450,7 +440,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Interface` | `Scalar`  | `Field`     |
+| `Struct`    | `Scalar`  | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -466,7 +456,7 @@ let b: group = Pedersen64::commit(a, 1scalar);
 
 Computes a Pedersen commitment up to a 64-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
 
-The instruction will halt if the given `String` or `Interface` value exceeds the 64-bit limit.
+The instruction will halt if the given `String` or `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -482,7 +472,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `U32`       | `Scalar`  | `Group`     |
 | `U64`       | `Scalar`  | `Group`     |
 | `String`    | `Scalar`  | `Group`     |
-| `Interface` | `Scalar`  | `Group`     |
+| `Struct`    | `Scalar`  | `Group`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -498,7 +488,7 @@ let b: group = Pedersen128::commit(a, 1scalar);
 
 Computes a Pedersen commitment up to a 128-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
 
-The instruction will halt if the given `String` or `Interface` value exceeds the 128-bit limit.
+The instruction will halt if the given `String` or `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
@@ -516,7 +506,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `U64`       | `Scalar`  | `Group`     |
 | `U128`      | `Scalar`  | `Group`     |
 | `String`    | `Scalar`  | `Group`     |
-| `Interface` | `Scalar`  | `Group`     |
+| `Struct`    | `Scalar`  | `Group`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -634,7 +624,6 @@ Checks if `first` is greater than `second`, storing the result in `destination`.
 | `U64`    | `U64`    | `Boolean`   |
 | `U128`   | `U128`   | `Boolean`   |
 | `Scalar` | `Scalar` | `Boolean`   |
-<!-- | `Address`| `Address`| `Boolean`   | -->
 
 [Back to Top](#table-of-operators)
 ***
@@ -666,7 +655,6 @@ Checks if `first` is greater than or equal to `second`, storing the result in `d
 | `U64`    | `U64`    | `Boolean`   |
 | `U128`   | `U128`   | `Boolean`   |
 | `Scalar` | `Scalar` | `Boolean`   |
-<!-- | `Address`| `Address`| `Boolean`   | -->
 
 [Back to Top](#table-of-operators)
 ***
@@ -704,7 +692,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct`    | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -742,7 +730,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct`    | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -780,7 +768,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct`    | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -818,7 +806,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct`    | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -833,7 +821,7 @@ let a: field = Pedersen64::hash(1u64);
 
 Computes a Pedersen hash up to a 64-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
-The instruction will halt if the given `String` or `Interface` value exceeds the 64-bit limit.
+The instruction will halt if the given `String` or `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -849,7 +837,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `U32`       | `Field`     |
 | `U64`       | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct`    | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -857,14 +845,14 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 ### `Pedersen128::hash`
 
 ```leo
-let a: field = Pedersen64::hash(1u64);
+let a: field = Pedersen128::hash(1u128);
 ```
 
 #### Description
 
 Computes a Pedersen hash up to a 128-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
-The instruction will halt if the given `String` or `Interface` value exceeds the 128-bit limit.
+The instruction will halt if the given `String` or `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
@@ -882,7 +870,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `U64`       | `Field`     |
 | `U128`      | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct`    | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -914,7 +902,7 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct`    | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -946,7 +934,7 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct`    | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -978,7 +966,7 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct`    | `Field`     |
 
 [Back to Top](#table-of-operators)
 ***
@@ -1032,7 +1020,7 @@ Compares `first` and `second`, storing the result in `destination`.
 | `U64`       | `U64`       | `U64`       |
 | `U128`      | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    | `Scalar`    |
-| `Interface` | `Interface` | `Interface` |
+| `Struct`    | `Struct`    | `Struct`    |
 | `Record`    | `Record`    | `Record`    |
 
 [Back to Top](#table-of-operators)
@@ -1068,7 +1056,7 @@ Returns true if `first` is not equal to `second`, storing the result in `destina
 | `U64`       | `U64`       | `U64`       |
 | `U128`      | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    | `Scalar`    |
-| `Interface` | `Interface` | `Interface` |
+| `Struct`    | `Struct`    | `Struct`    |
 | `Record`    | `Record`    | `Record`    |
 
 [Back to Top](#table-of-operators)
@@ -1101,7 +1089,6 @@ Checks if `first` is less than `second`, storing the outcome in `destination`.
 | `U64`    | `U64`    | `Boolean`   |
 | `U128`   | `U128`   | `Boolean`   |
 | `Scalar` | `Scalar` | `Boolean`   |
-<!-- | `Address`| `Address`| `Boolean`   | -->
 
 [Back to Top](#table-of-operators)
 ***
@@ -1133,7 +1120,6 @@ Checks if `first` is less than or equal to `second`, storing the outcome in `des
 | `U64`    | `U64`    | `Boolean`   |
 | `U128`   | `U128`   | `Boolean`   |
 | `Scalar` | `Scalar` | `Boolean`   |
-<!-- | `Address`| `Address`| `Boolean`   | -->
 
 [Back to Top](#table-of-operators)
 ***
@@ -1353,7 +1339,7 @@ Performs an OR operation on integer (bitwise) or boolean `first` and `second`, s
 
 ```leo
 let a: u8 = 2u8 ** 2u8; // 4u8
-let b: u8 = b.pow(2u8); // 16u8
+let b: u8 = a.pow(2u8); // 16u8
 ```
 
 #### Description
@@ -1386,7 +1372,7 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 ### `pow_wrapped`
 
 ```leo
-let a: u8 = 16u8 ** 2u8; // 0u8
+let a: u8 = 16u8.pow_wrapped(2u8); // 0u8
 ```
 
 #### Description
@@ -1451,8 +1437,8 @@ For cases where wrapping semantics are needed for integer types, see the [rem_wr
 ### `rem_wrapped`
 
 ```leo
-let a: i128 = -128i8;
-let b: i128 = a.rem_wrapped(-1i8); // 0i8
+let a: i8 = -128i8;
+let b: i8 = a.rem_wrapped(-1i8); // 0i8
 ```
 
 #### Description
@@ -1540,7 +1526,7 @@ Shifts `first` left by `second` bits, wrapping around at the boundary of the typ
 ### `shr`
 
 ```leo
-let a: u8 = 4u8 >> 1u8; // 2u8 
+let a: u8 = 4u8 >> 1u8; // 2u8
 let b: u8 = a.shr(1u8); // 1u8
 ```
 
