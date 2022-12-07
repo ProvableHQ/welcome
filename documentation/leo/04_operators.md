@@ -15,6 +15,7 @@ The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes
 | [add](#add)                                 | Addition operation                  |
 | [add_wrapped](#add_wrapped)                 | Wrapping addition operation         |
 | [and](#and)                                 | AND operation                       |
+| [assert](#assert)                           | Assert boolean true                 |
 | [assert_eq](#assert_eq)                     | Assert equality                     |
 | [assert_neq](#assert_neq)                   | Assert non-equality                 |
 | [BHP256::commit](#BHP256::commit)           | 256-bit input BHP commitment        |
@@ -209,7 +210,7 @@ storing the outcome in `destination`.
 #### Supported Types
 
 | First     | Second    | Destination |
-| --------- | --------- |:----------- |
+|-----------|-----------|:------------|
 | `Boolean` | `Boolean` | `Boolean`   |
 | `I8`      | `I8`      | `I8`        |
 | `I16`     | `I16`     | `I16`       |
@@ -225,14 +226,38 @@ storing the outcome in `destination`.
 [Back to Top](#table-of-operators)
 ***
 
+
+### `assert`
+
+```leo
+let a: bool = true;
+let b: bool = false;
+
+assert(a); // will not halt
+assert(b); // program halts
+```
+
+#### Description
+
+Checks whether the expression evaluates to a `true` boolean value, halting if evaluates to `false`.
+
+#### Supported Types
+
+| Expression |
+|------------|
+| `Boolean`  |
+
+[Back to Top](#table-of-operators)
+***
+
 ### `assert_eq`
 
 ```leo
 let a: u8 = 1u8;
 let b: u8 = 2u8;
 
-console.assert_eq(a, a); // will not halt
-console.assert_eq(a, b); // program halts
+assert_eq(a, a); // will not halt
+assert_eq(a, b); // program halts
 ```
 
 #### Description
@@ -270,8 +295,8 @@ Checks whether `first` and `second` are equal, halting if they are not equal.
 let a: u8 = 1u8;
 let b: u8 = 2u8;
 
-console.assert_neq(a, b); // will not halt
-console.assert_neq(a, a); // program halts
+assert_neq(a, b); // will not halt
+assert_neq(a, a); // program halts
 ```
 
 #### Description
