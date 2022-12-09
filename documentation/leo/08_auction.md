@@ -1,7 +1,6 @@
 ---
 id: auction
 title: A Private Auction on Aleo
-sidebar_label: Example - Auction
 ---
 
 ## Summary

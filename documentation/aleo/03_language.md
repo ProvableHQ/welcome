@@ -128,7 +128,7 @@ mapping account:
 #### Increment and Decrement
 An increment instruction has the form `increment {name}[{register}] by {register};`.  
 A decrement instruction has the form `decrement {name}[{register}] by {register};`.  
-These instructions are used in [finalizers](#finalizer).
+These instructions are used in [finalize](#finalize).
 
 ```aleo showLineNumbers
 finalize transfer_public:
@@ -150,13 +150,13 @@ finalize transfer_public:
     increment account[r1] by r2;
 ```
 
-### Finalizer
+### Finalize
 
-A finalizer is declared as `finalize {name}:`.  
-A finalizer must immediately follow a [function](#function), and must have the same name;
+A finalize is declared as `finalize {name}:`.  
+A finalize must immediately follow a [function](#function), and must have the same name;
 it is associated with the function and is executed on chain,
 after the zero-knowledge proof of the execution of the associated function is verified;
-a finalizer *finalizes* a function on chain.  
+a finalize *finalizes* a function on chain.  
 Upon success of the finalize function, the program logic is executed.  
 Upon failure of the finalize function, the program logic is reverted.  
 
