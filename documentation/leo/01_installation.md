@@ -1,6 +1,6 @@
 ---
 id: installation
-title: Install the Latest Release
+title: Installation
 ---
 
 import Tabs from '@theme/Tabs';

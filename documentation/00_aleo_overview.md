@@ -60,75 +60,124 @@ The Aleo CLI provides a suite of commands to make programming in Aleo instructio
 
 Install Aleo instructions for your favorite code [**editor**](./aleo/08_tooling.md).
 
-## Testnet3 Development Endpoints
+[//]: # ()
+[//]: # (## Testnet3 Development Endpoints)
 
-:::caution
+[//]: # ()
+[//]: # (:::caution)
 
-Aleo Testnet III is **not** ready for production use and will undergo thorough audit and testing before reaching production.
+[//]: # ()
+[//]: # (Aleo Testnet III is **not** ready for production use and will undergo thorough audit and testing before reaching production.)
 
-:::
+[//]: # ()
+[//]: # (:::)
 
-The server will start at the following endpoint:
-```bash
-aleo node start
+[//]: # ()
+[//]: # (The server will start at the following endpoint:)
 
-🌐 Server is running at http://0.0.0.0:4180
-```
+[//]: # (```bash)
 
-### Latest Block Height
-Returns the number of blocks in the canonical chain.
+[//]: # (aleo node start)
 
-```bash
-http://localhost:4180/testnet3/latest/block/height
-```
+[//]: # ()
+[//]: # (🌐 Server is running at http://0.0.0.0:4180)
 
-### Latest Block Hash
-Returns the block hash from the head of the canonical chain.
+[//]: # (```)
 
-```bash
-http://localhost:4180/testnet3/latest/block/hash
-```
+[//]: # ()
+[//]: # (### Latest Block Height)
 
-### Latest Block
-Returns the block from the head of the canonical chain.
+[//]: # (Returns the number of blocks in the canonical chain.)
 
-```bash
-http://localhost:4180/testnet3/latest/block
-```
+[//]: # ()
+[//]: # (```bash)
 
-### Get Block
-Returns the block given the block height.
+[//]: # (http://localhost:4180/testnet3/latest/block/height)
 
-```bash
-http://localhost:4180/testnet3/block/{height}
-```
+[//]: # (```)
 
-## Getting records belonging to an account
-You can retrieve records in three different ways, depending on what type of records you want to query. You will need your ViewKey at your disposal. There are two types of records, spent and unspent, we will talk about these later on. You can see the list of the endpoints associated below:
+[//]: # ()
+[//]: # (### Latest Block Hash)
 
-### Get All Owned Records
-`GET /testnet3/records/all`
+[//]: # (Returns the block hash from the head of the canonical chain.)
 
-This endpoint retrieves all the records belonging to a given ViewKey.
+[//]: # ()
+[//]: # (```bash)
 
-```bash
-curl --location --request GET 'localhost:4180/testnet3/records/all' -H 'Content-Type: application/json' -d '"AViewKey1iAf6a7fv6ELA4ECwAth1hDNUJJNNoWNThmREjpybqder"'
-```
+[//]: # (http://localhost:4180/testnet3/latest/block/hash)
 
-### Get All Spent Records
-`GET /testnet3/records/spent`
+[//]: # (```)
 
-This endpoint retrieves only the spent records belonging to a given ViewKey.
+[//]: # ()
+[//]: # (### Latest Block)
 
-```bash
-curl --location --request GET 'localhost:4180/testnet3/records/spent' -H 'Content-Type: application/json' -d '"AViewKey1iAf6a7fv6ELA4ECwAth1hDNUJJNNoWNThmREjpybqder"'
-```
+[//]: # (Returns the block from the head of the canonical chain.)
 
-### Get All Unspent Records
-`GET /testnet3/records/unspent`
+[//]: # ()
+[//]: # (```bash)
 
-This endpoint retrieves only the unspent records belonging to a given ViewKey.
+[//]: # (http://localhost:4180/testnet3/latest/block)
 
-```bash
-curl --location --request GET 'localhost:4180/testnet3/records/unspent' -H 'Content-Type: application/json' -d '"AViewKey1iAf6a7fv6ELA4ECwAth1hDNUJJNNoWNThmREjpybqder"'
-```
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### Get Block)
+
+[//]: # (Returns the block given the block height.)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (http://localhost:4180/testnet3/block/{height})
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (## Getting records belonging to an account)
+
+[//]: # (You can retrieve records in three different ways, depending on what type of records you want to query. You will need your ViewKey at your disposal. There are two types of records, spent and unspent, we will talk about these later on. You can see the list of the endpoints associated below:)
+
+[//]: # ()
+[//]: # (### Get All Owned Records)
+
+[//]: # (`GET /testnet3/records/all`)
+
+[//]: # ()
+[//]: # (This endpoint retrieves all the records belonging to a given ViewKey.)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (curl --location --request GET 'localhost:4180/testnet3/records/all' -H 'Content-Type: application/json' -d '"AViewKey1iAf6a7fv6ELA4ECwAth1hDNUJJNNoWNThmREjpybqder"')
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### Get All Spent Records)
+
+[//]: # (`GET /testnet3/records/spent`)
+
+[//]: # ()
+[//]: # (This endpoint retrieves only the spent records belonging to a given ViewKey.)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (curl --location --request GET 'localhost:4180/testnet3/records/spent' -H 'Content-Type: application/json' -d '"AViewKey1iAf6a7fv6ELA4ECwAth1hDNUJJNNoWNThmREjpybqder"')
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### Get All Unspent Records)
+
+[//]: # (`GET /testnet3/records/unspent`)
+
+[//]: # ()
+[//]: # (This endpoint retrieves only the unspent records belonging to a given ViewKey.)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (curl --location --request GET 'localhost:4180/testnet3/records/unspent' -H 'Content-Type: application/json' -d '"AViewKey1iAf6a7fv6ELA4ECwAth1hDNUJJNNoWNThmREjpybqder"')
+
+[//]: # (```)
