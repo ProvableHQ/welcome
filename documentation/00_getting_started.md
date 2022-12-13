@@ -8,41 +8,26 @@ Welcome to the Aleo community. Together we are working to build a platform for w
 performant, secure, and anonymous. Aleo introduces an application runtime environment that allows your software
 to compile, execute, and finalize its state autonomously.
 
-## Develop on Aleo with Leo
+# Develop on Aleo with Leo
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+## 1. Build Guide
 
-<Tabs
-    defaultValue="mac"
-    values={[
-        {label: 'MacOS', value: 'mac'},
-        {label: 'Windows', value: 'windows'},
-        {label: 'Ubuntu', value: 'ubuntu'},
-    ]}>
-    <TabItem value="mac">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.1/leo-v1.6.1-aarch64-apple-darwin.zip">
-            <b>Install Leo for MacOS M1</b>
-        </a>
-    </TabItem>
-    <TabItem value="mac">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.1/leo-v1.6.1-x86_64-apple-darwin.zip">
-            <b>Install Leo for MacOS Intel</b>
-        </a>
-    </TabItem>
-    <TabItem value="windows">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.1/leo-v1.6.1-x86_64-pc-windows-msvc.zip">
-            <b>Install Leo for Windows</b>
-        </a>
-    </TabItem>
-    <TabItem value="ubuntu">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.1/leo-v1.6.1-x86_64-unknown-linux-gnu.zip">
-            <b>Install Leo for Ubuntu</b>
-        </a>
-    </TabItem>
-</Tabs>
+### 1.1 Install Git:
+
+**[bit.ly/start-git](https://bit.ly/start-git)**
+
+### 1.2 Install Rust:
+
+**[bit.ly/start-rust](https://bit.ly/start-rust)**
+
+### 1.3 Install Leo
+
+```bash
+curl -L https://raw.githubusercontent.com/AleoHQ/workshop/master/install.sh | sh 
+```
 
 Learning Leo is the fastest way to develop private applications on Aleo. 
+
 <!-- markdown-link-check-disable -->
 
 * [**Hello Leo**](./leo/02_hello.md) - Run your first Leo program.
