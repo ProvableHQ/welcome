@@ -6,7 +6,7 @@ sidebar_label: Language
 
 ## Layout of an Aleo Program
 
-An Aleo program contains declarations of a [Program ID](#programid), [Imports](#import), [Functions](#function), [Closures](#closure), [Interfaces](#interface), [Records](#record),
+An Aleo program contains declarations of a [Program ID](#programid), [Imports](#import), [Functions](#function), [Closures](#closure), [Structs](#struct), [Records](#record),
 [Mappings](#mapping), and [Finalizers](#finalizes). Ordering is only enforced for imports which must be at the top of file.
 Declarations are locally accessible within a program file.
 If you need a declaration from another program file, you must import it.
@@ -81,13 +81,13 @@ closure foo:
     output r2 as field;
 ```
 
-### Interface
+### Struct
 
-An interface is a data type declared as `interface {name}:`.  
-Interfaces contain component declarations `{name} as {type}.{visibility};`.
+A struct is a data type declared as `struct {name}:`.  
+Structs contain component declarations `{name} as {type}.{visibility};`.
 
 ```aleo showLineNumbers
-interface array3:
+struct array3:
     a0 as u32;
     a1 as u32;
     a2 as u32;
