@@ -629,9 +629,9 @@ Go to: _[cws](#comments-or-whitespace), [finalize-type](#finalize-type), [identi
 --------
 
 
-###### interface
+###### struct
 ```abnf
-interface = cws %s"interface"  ws identifier ws ":" 1*tuple
+struct = cws %s"struct"  ws identifier ws ":" 1*tuple
 ```
 
 Go to: _[cws](#comments-or-whitespace), [identifier](#identifier), [ws](#whitespace)_;
@@ -966,6 +966,6 @@ Go to: _[cws](#comments-or-whitespace), [finalize-type](#finalize-type), [regist
 ```abnf
 program = *import
           cws %s"program" ws program-id ws ";"
-          1*( mapping / interface / record / closure / function )
+          1*( mapping / struct / record / closure / function )
           cws
 

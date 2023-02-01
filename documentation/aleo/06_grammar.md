@@ -12,12 +12,12 @@ program = *import title 1*definition
 import = "import" program-id ";"
 title = "program" program-id ";"
 program-id = identifier [ "." identifier ]
-definition = mapping / interface / record / function / closure
+definition = mapping / struct / record / function / closure
 mapping = "mapping" identifier ":" mapping-key mapping-value
 mapping-key = "key" identifier "as" finalize-type ";"
 mapping-value = "value" identifier "as" finalize-type ";"
-interface = "interface" identifier ":" 1*interface-component
-interface-component = identifier "as" plain-type ";"
+struct = "struct" identifier ":" 1*struct-component
+struct-component = identifier "as" plain-type ";"
 record = "record" identifier ":"
          "owner" "as" ( "address.private" / "address.public" )
          "gates" "as" ( "u64.private" / "u64.public" )

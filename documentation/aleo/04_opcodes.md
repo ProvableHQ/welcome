@@ -228,7 +228,7 @@ Checks whether `first` and `second` are equal, halting if they are not equal.
 | `U64`       | `U64`       |
 | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    |
-| `Interface` | `Interface` |
+| `Struct` | `Struct` |
 | `Record`    | `Record`    |
 
 ***
@@ -260,7 +260,7 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 | `U64`       | `U64`       |
 | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    |
-| `Interface` | `Interface` |
+| `Struct` | `Struct` |
 | `Record`    | `Record`    |
 
 ***
@@ -295,7 +295,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Interface` | `Scalar`  | `Field`     |
+| `Struct` | `Scalar`  | `Field`     |
 
 ***
 
@@ -329,7 +329,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Interface` | `Scalar`  | `Field`     |
+| `Struct` | `Scalar`  | `Field`     |
 
 ***
 
@@ -363,7 +363,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Interface` | `Scalar`  | `Field`     |
+| `Struct` | `Scalar`  | `Field`     |
 
 ***
 
@@ -397,7 +397,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Interface` | `Scalar`  | `Field`     |
+| `Struct` | `Scalar`  | `Field`     |
 
 ***
 
@@ -409,7 +409,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 Computes a Pedersen commitment up to a 64-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
 
-The instruction will halt if the given `String` or `Interface` value exceeds the 64-bit limit.
+The instruction will halt if the given `String` or `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -425,7 +425,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `U32`       | `Scalar`  | `Group`     |
 | `U64`       | `Scalar`  | `Group`     |
 | `String`    | `Scalar`  | `Group`     |
-| `Interface` | `Scalar`  | `Group`     |
+| `Struct` | `Scalar`  | `Group`     |
 
 ***
 
@@ -437,7 +437,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 
 Computes a Pedersen commitment up to a 128-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
 
-The instruction will halt if the given `String` or `Interface` value exceeds the 128-bit limit.
+The instruction will halt if the given `String` or `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
@@ -455,7 +455,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `U64`       | `Scalar`  | `Group`     |
 | `U128`      | `Scalar`  | `Group`     |
 | `String`    | `Scalar`  | `Group`     |
-| `Interface` | `Scalar`  | `Group`     |
+| `Struct` | `Scalar`  | `Group`     |
 
 ***
 
@@ -622,7 +622,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct` | `Field`     |
 
 ***
 
@@ -656,7 +656,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct` | `Field`     |
 
 ***
 
@@ -690,7 +690,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct` | `Field`     |
 
 ***
 
@@ -724,7 +724,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct` | `Field`     |
 
 ***
 
@@ -736,7 +736,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 Computes a Pedersen hash up to a 64-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
-The instruction will halt if the given `String` or `Interface` value exceeds the 64-bit limit.
+The instruction will halt if the given `String` or `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -752,7 +752,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `U32`       | `Field`     |
 | `U64`       | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct` | `Field`     |
 
 ***
 
@@ -764,7 +764,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 
 Computes a Pedersen hash up to a 128-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
-The instruction will halt if the given `String` or `Interface` value exceeds the 128-bit limit.
+The instruction will halt if the given `String` or `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
@@ -782,7 +782,7 @@ The instruction will halt if the given `String` or `Interface` value exceeds the
 | `U64`       | `Field`     |
 | `U128`      | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct` | `Field`     |
 
 ***
 
@@ -811,7 +811,7 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct` | `Field`     |
 
 ***
 
@@ -840,7 +840,7 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct` | `Field`     |
 
 ***
 
@@ -869,7 +869,7 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Interface` | `Field`     |
+| `Struct` | `Field`     |
 
 ***
 
@@ -916,7 +916,7 @@ Compares `first` and `second`, storing the result in `destination`.
 | `U64`       | `U64`       | `U64`       |
 | `U128`      | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    | `Scalar`    |
-| `Interface` | `Interface` | `Interface` |
+| `Struct` | `Struct` | `Struct` |
 | `Record`    | `Record`    | `Record`    |
 
 ***
@@ -948,7 +948,7 @@ Returns true if `first` is not equal to `second`, storing the result in `destina
 | `U64`       | `U64`       | `U64`       |
 | `U128`      | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    | `Scalar`    |
-| `Interface` | `Interface` | `Interface` |
+| `Struct` | `Struct` | `Struct` |
 | `Record`    | `Record`    | `Record`    |
 
 ***

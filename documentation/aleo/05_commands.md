@@ -1,6 +1,6 @@
 ---
 id: commands
-title: Aleo Command Line Interface
+title: Aleo Command Line Struct
 sidebar_label: Commands
 ---
 
