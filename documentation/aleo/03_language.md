@@ -84,7 +84,7 @@ closure foo:
 ### Struct
 
 A struct is a data type declared as `struct {name}:`.  
-Structs contain component declarations `{name} as {type}.{visibility};`.
+Structs contain component declarations `{name} as {type}`.
 
 ```aleo showLineNumbers
 struct array3:
