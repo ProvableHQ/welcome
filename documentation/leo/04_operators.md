@@ -4,10 +4,10 @@ title: Leo Operators Reference
 sidebar_label: Operators
 ---
 
-The following is a list of operators supported by Leo.
+The following lists show the standard and cryptographic operators supported by Leo.
 The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes.md) executable by the Aleo Virtual Machine (AVM).
 
-## Table of Operators
+## Table of standard Operators
 | Name                                        | Description                         |
 |---------------------------------------------|:------------------------------------|
 | [abs](#abs)                                 | Absolute value operation            |
@@ -18,26 +18,11 @@ The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes
 | [assert](#assert)                           | Assert boolean true                 |
 | [assert_eq](#assert_eq)                     | Assert equality                     |
 | [assert_neq](#assert_neq)                   | Assert non-equality                 |
-| [BHP256::commit](#BHP256::commit)           | 256-bit input BHP commitment        |
-| [BHP512::commit](#BHP512::commit)           | 512-bit input BHP commitment        |
-| [BHP768::commit](#BHP768::commit)           | 768-bit input BHP commitment        |
-| [BHP1024::commit](#BHP1024::commit)         | 1024-bit input BHP commitment       |
-| [Pedersen64::commit](#Pedersen64::commit)   | 64-bit input Pedersen commitment    |
-| [Pedersen128::commit](#Pedersen128::commit) | 128-bit input Pedersen commitment   |
 | [div](#div)                                 | Division operation                  |
 | [div_wrapped](#div_wrapped)                 | Wrapping division operation         |
 | [double](#double)                           | Double operation                    |
 | [gt](#gt)                                   | Greater than comparison             |
 | [gte](#gte)                                 | Greater than or equal to comparison |
-| [BHP256::hash](#BHP256::hash)               | 256-bit input BHP hash              |
-| [BHP512::hash](#BHP512::hash)               | 512-bit input BHP hash              |
-| [BHP768::hash](#BHP768::hash)               | 768-bit input BHP hash              |
-| [BHP1024::hash](#BHP1024::hash)             | 1024-bit input BHP hash             |
-| [Pedersen64::hash](#Pedersen64::hash)       | 64-bit input Pedersen hash          |
-| [Pedersen128::hash](#Pedersen128::hash)     | 128-bit input Pedersen hash         |
-| [Poseidon2::hash](#Poseidon2::hash)         | Poseidon hash with input rate 2     |
-| [Poseidon4::hash](#Poseidon4::hash)         | Poseidon hash with input rate 4     |
-| [Poseidon8::hash](#Poseidon8::hash)         | Poseidon hash with input rate 8     |
 | [inv](#inv)                                 | Multiplicative inverse operation    |
 | [eq](#eq)                                   | Equality comparison                 |
 | [neq](#neq)                                 | Not equal comparison                |
@@ -66,6 +51,26 @@ The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes
 | [ternary](#ternary)                         | Ternary select operation            |
 | [xor](#xor)                                 | XOR operation                       |
 
+## Table of cryptographic Operators
+| Name                                        | Description                         |
+|---------------------------------------------|:------------------------------------|
+| [BHP256::commit](#bhp256commit)             | 256-bit input BHP commitment        |
+| [BHP512::commit](#bhp512commit)             | 512-bit input BHP commitment        |
+| [BHP768::commit](#bhp768commit)             | 768-bit input BHP commitment        |
+| [BHP1024::commit](#bhp1024commit)           | 1024-bit input BHP commitment       |
+| [Pedersen64::commit](#pedersen64commit)     | 64-bit input Pedersen commitment    |
+| [Pedersen128::commit](#pedersen128commit)   | 128-bit input Pedersen commitment   |
+| [BHP256::hash](#bhp256hash)                 | 256-bit input BHP hash              |
+| [BHP512::hash](#bhp512hash)                 | 512-bit input BHP hash              |
+| [BHP768::hash](#bhp768hash)                 | 768-bit input BHP hash              |
+| [BHP1024::hash](#bhp1024hash)               | 1024-bit input BHP hash             |
+| [Pedersen64::hash](#pedersen64hash)         | 64-bit input Pedersen hash          |
+| [Pedersen128::hash](#pedersen128hash)       | 128-bit input Pedersen hash         |
+| [Poseidon2::hash](#Poseidon2hash)           | Poseidon hash with input rate 2     |
+| [Poseidon4::hash](#Poseidon4hash)           | Poseidon hash with input rate 4     |
+| [Poseidon8::hash](#Poseidon8hash)           | Poseidon hash with input rate 8     |
+
+
 ## Specification
 
 The following is the specification for each opcode in the Aleo Virtual Machine (AVM).
@@ -93,7 +98,7 @@ For integer types, a constraint is added to check for underflow. For cases where
 | `I64`  | `I64`       |
 | `I128` | `I128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `abs_wrapped`
@@ -117,7 +122,7 @@ Compute the absolute value of the input, wrapping around at the boundary of the 
 | `I64`  | `I64`       |
 | `I128` | `I128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `add`
@@ -152,7 +157,7 @@ For integer types, a constraint is added to check for overflow. For cases where 
 | `U128`   | `U128`   | `U128`      |
 | `Scalar` | `Scalar` | `Scalar`    |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `add_wrapped`
@@ -181,7 +186,7 @@ Adds `first` with `second`, wrapping around at the boundary of the type, and sto
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `and`
@@ -213,7 +218,7 @@ storing the outcome in `destination`.
 | `U64`     | `U64`     | `U64`       |
 | `U128`    | `U128`    | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 
@@ -237,7 +242,7 @@ Checks whether the expression evaluates to a `true` boolean value, halting if ev
 |------------|
 | `Boolean`  |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `assert_eq`
@@ -276,7 +281,7 @@ Checks whether `first` and `second` are equal, halting if they are not equal.
 | `Struct`    | `Struct`    |
 | `Record`    | `Record`    |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `assert_neq`
@@ -315,7 +320,7 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 | `Struct`    | `Struct`    |
 | `Record`    | `Record`    |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `BHP256::commit`
@@ -327,7 +332,7 @@ let b: field = BHP256::commit(a, 1scalar);
 
 #### Description
 
-Computes a BHP commitment on inputs of 256-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 256-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 129 bits.
 
@@ -353,7 +358,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Struct`    | `Scalar`  | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `BHP512::commit`
@@ -365,7 +370,7 @@ let b: field = BHP512::commit(a, 1scalar);
 
 #### Description
 
-Computes a BHP commitment on inputs of 512-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 512-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 171 bits.
 
@@ -391,7 +396,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Struct`    | `Scalar`  | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `BHP768::commit`
@@ -403,7 +408,7 @@ let b: field = BHP768::commit(a, 1scalar);
 
 #### Description
 
-Computes a BHP commitment on inputs of 768-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 768-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 129 bits.
 
@@ -429,7 +434,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Struct`    | `Scalar`  | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `BHP1024::commit`
@@ -441,7 +446,7 @@ let b: field = BHP1024::commit(a, 1scalar);
 
 #### Description
 
-Computes a BHP commitment on inputs of 1024-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 1024-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 171 bits.
 
@@ -467,7 +472,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Scalar`  | `Field`     |
 | `Struct`    | `Scalar`  | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `Pedersen64::commit`
@@ -499,7 +504,7 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 | `String`    | `Scalar`  | `Group`     |
 | `Struct`    | `Scalar`  | `Group`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `Pedersen128::commit`
@@ -533,7 +538,7 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 12
 | `String`    | `Scalar`  | `Group`     |
 | `Struct`    | `Scalar`  | `Group`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `div`
@@ -568,7 +573,7 @@ For cases where wrapping semantics are needed for integer types, see the [div_wr
 | `U64`   | `U64`   | `U64`       |
 | `U128`  | `U128`  | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `div_wrapped`
@@ -597,7 +602,7 @@ Divides `first` by `second`, wrapping around at the boundary of the type, and st
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `double`
@@ -619,7 +624,7 @@ Doubles the input, storing the outcome in `destination`.
 | `Field` | `Field`     |
 | `Group` | `Group`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `gt`
@@ -650,7 +655,7 @@ Checks if `first` is greater than `second`, storing the result in `destination`.
 | `U128`   | `U128`   | `Boolean`   |
 | `Scalar` | `Scalar` | `Boolean`   |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `gte`
@@ -681,7 +686,7 @@ Checks if `first` is greater than or equal to `second`, storing the result in `d
 | `U128`   | `U128`   | `Boolean`   |
 | `Scalar` | `Scalar` | `Boolean`   |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `BHP256::hash`
@@ -693,7 +698,7 @@ let b: field = BHP256::hash(a);
 
 #### Description
 
-Computes a BHP hash on inputs of 256-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 256-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 129 bits.
 
@@ -719,7 +724,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Field`     |
 | `Struct`    | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `BHP512::hash`
@@ -731,7 +736,7 @@ let b: field = BHP512::hash(a);
 
 #### Description
 
-Computes a BHP hash on inputs of 512-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 512-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 171 bits.
 
@@ -757,7 +762,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Field`     |
 | `Struct`    | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `BHP768::hash`
@@ -769,7 +774,7 @@ let b: field = BHP768::hash(a);
 
 #### Description
 
-Computes a BHP hash on inputs of 768-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 768-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 129 bits.
 
@@ -795,7 +800,7 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `String`    | `Field`     |
 | `Struct`    | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `BHP1024::hash`
@@ -807,7 +812,7 @@ let b: field = BHP1024::hash(a);
 
 #### Description
 
-Computes a BHP hash on inputs of 1024-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 1024-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 171 bits.
 
@@ -833,7 +838,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `String`    | `Field`     |
 | `Struct`    | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `Pedersen64::hash`
@@ -864,7 +869,7 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 | `String`    | `Field`     |
 | `Struct`    | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `Pedersen128::hash`
@@ -897,7 +902,7 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 12
 | `String`    | `Field`     |
 | `Struct`    | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `Poseidon2::hash`
@@ -929,7 +934,7 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 | `String`    | `Field`     |
 | `Struct`    | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `Poseidon4::hash`
@@ -961,7 +966,7 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 | `String`    | `Field`     |
 | `Struct`    | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `Poseidon8::hash`
@@ -993,7 +998,7 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 | `String`    | `Field`     |
 | `Struct`    | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `inv`
@@ -1012,7 +1017,7 @@ Computes the multiplicative inverse of the input, storing the outcome in `destin
 | ------- | ----------- |
 | `Field` | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `eq`
@@ -1048,7 +1053,7 @@ Compares `first` and `second`, storing the result in `destination`.
 | `Struct`    | `Struct`    | `Struct`    |
 | `Record`    | `Record`    | `Record`    |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `neq`
@@ -1084,7 +1089,7 @@ Returns true if `first` is not equal to `second`, storing the result in `destina
 | `Struct`    | `Struct`    | `Struct`    |
 | `Record`    | `Record`    | `Record`    |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `lt`
@@ -1115,7 +1120,7 @@ Checks if `first` is less than `second`, storing the outcome in `destination`.
 | `U128`   | `U128`   | `Boolean`   |
 | `Scalar` | `Scalar` | `Boolean`   |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `lte`
@@ -1146,7 +1151,7 @@ Checks if `first` is less than or equal to `second`, storing the outcome in `des
 | `U128`   | `U128`   | `Boolean`   |
 | `Scalar` | `Scalar` | `Boolean`   |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `mod`
@@ -1171,7 +1176,7 @@ The semantics of this operation are consistent with the mathematical definition 
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `mul`
@@ -1205,7 +1210,7 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `mul_wrapped`
@@ -1233,7 +1238,7 @@ Multiplies `first` with `second`, wrapping around at the boundary of the type, a
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `nand`
@@ -1252,7 +1257,7 @@ Returns false only if `first` and `second` are true, storing the outcome in `des
 | --------- | --------- | ----------- |
 | `Boolean` | `Boolean` | `Boolean`   |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `neg`
@@ -1279,7 +1284,7 @@ For signed integer types, calling `neg` on the minimum value is an invalid opera
 | `I64`   | `I64`       |
 | `I128`  | `I128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `nor`
@@ -1298,7 +1303,7 @@ Returns true when neither `first` nor `second` is true, storing the outcome in `
 | --------- | --------- | ----------- |
 | `Boolean` | `Boolean` | `Boolean`   |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `not`
@@ -1327,7 +1332,7 @@ Perform a NOT operation on an integer (bitwise) or boolean input, storing the ou
 | `U64`     | `U64`       |
 | `U128`    | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### or
@@ -1357,7 +1362,7 @@ Performs an OR operation on integer (bitwise) or boolean `first` and `second`, s
 | `U64`     | `U64`     | `U64`       |
 | `U128`    | `U128`    | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `pow`
@@ -1391,7 +1396,7 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 | `U64`   | `Magnitude` | `U64`       |
 | `U128`  | `Magnitude` | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `pow_wrapped`
@@ -1421,7 +1426,7 @@ Raises `first` to the power of `second`, wrapping around at the boundary of the 
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 
@@ -1456,7 +1461,7 @@ For cases where wrapping semantics are needed for integer types, see the [rem_wr
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `rem_wrapped`
@@ -1484,7 +1489,7 @@ Computes the truncated remainder of `first` divided by `second`, wrapping around
 | `U64`    | `U64`    | `U64`       |
 | `U128`   | `U128`   | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `shl`
@@ -1515,7 +1520,7 @@ Shifts `first` left by `second` bits, storing the outcome in `destination`.
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `shl_wrapped`
@@ -1545,7 +1550,7 @@ Shifts `first` left by `second` bits, wrapping around at the boundary of the typ
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `shr`
@@ -1576,7 +1581,7 @@ Shifts `first` right by `second` bits, storing the outcome in `destination`.
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `shr_wrapped`
@@ -1606,7 +1611,7 @@ Shifts `first` right by `second` bits, wrapping around at the boundary of the ty
 | `U64`  | `Magnitude` | `U64`       |
 | `U128` | `Magnitude` | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `square`
@@ -1625,7 +1630,7 @@ Squares the input, storing the outcome in `destination`.
 | ------- | ----------- |
 | `Field` | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `square_root`
@@ -1644,7 +1649,7 @@ Computes the square root of the input, storing the outcome in `destination`.
 | ------- | ----------- |
 | `Field` | `Field`     |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 
@@ -1676,7 +1681,7 @@ Computes `first - second`, storing the outcome in `destination`.
 | `U64`   | `U64`   | `U64`       |
 | `U128`  | `U128`  | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `sub_wrapped`
@@ -1704,7 +1709,7 @@ Computes `first - second`, wrapping around at the boundary of the type, and stor
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `ternary`
@@ -1736,7 +1741,7 @@ Selects `first`, if `condition` is true, otherwise selects `second`, storing the
 | `Boolean` | `U128`    | `U128`    | `U128`      |
 | `Boolean` | `Scalar`  | `Scalar`  | `Scalar`    |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***
 
 ### `xor`
@@ -1765,5 +1770,5 @@ Performs a XOR operation on integer (bitwise) or boolean `first` and `second`, s
 | `U64`     | `U64`     | `U64`       |
 | `U128`    | `U128`    | `U128`      |
 
-[Back to Top](#table-of-operators)
+[Back to Top](#table-of-standard-operators)
 ***

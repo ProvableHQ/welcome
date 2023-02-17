@@ -4,64 +4,70 @@ title: Aleo Opcodes Reference
 sidebar_label: Opcodes
 ---
 
-The following is a list of opcodes supported by the Aleo Virtual Machine (AVM).
-## Table of Opcodes
+The following lists show the standard and cryptographic opcodes supported by Leo.
+
+## Table of standard Opcodes
 | Name                              | Description                        |
 | --------------------------------- |:---------------------------------- |
 | [abs](#abs)                       | Absolute value operation           |
-| [abs.w](#abs.w)                   | Wrapping absolute value operation  |
+| [abs.w](#absw)                    | Wrapping absolute value operation  |
 | [add](#add)                       | Addition operation                 |
-| [add.w](#add.w)                   | Wrapping addition operation        |
+| [add.w](#addw)                    | Wrapping addition operation        |
 | [and](#and)                       | AND operation                      |
-| [assert.eq](#assert.eq)           | Assert equality                    |
-| [assert.neq](#assert.neq)         | Assert non-equality                |
-| [commit.bhp256](#commit.bhp256)   | 256-bit input BHP commitment       |
-| [commit.bhp512](#commit.bhp512)   | 512-bit input BHP commitment       |
-| [commit.bhp768](#commit.bhp768)   | 768-bit input BHP commitment       |
-| [commit.bhp1024](#commit.bhp1024) | 1024-bit input BHP commitment      |
-| [commit.ped64](#commit.ped64)     | 64-bit input Pedersen commitment   |
-| [commit.ped128](#commit.ped128)   | 128-bit input Pedersen commitment  |
+| [assert.eq](#asserteq)            | Assert equality                    |
+| [assert.neq](#assertneq)          | Assert non-equality                |
 | [div](#div)                       | Division operation                 |
-| [div.w](#div.w)                   | Wrapping division operation        |
+| [div.w](#divw)                    | Wrapping division operation        |
 | [double](#double)                 | Double operation                   |
 | [gt](#gt)                         | Greater than comparison            |
 | [gte](#gte)                       | Greater than or equal to comparison|
-| [hash.bhp256](#hash.bhp256)       | 256-bit input BHP hash             |
-| [hash.bhp512](#hash.bhp512)       | 512-bit input BHP hash             |
-| [hash.bhp768](#hash.bhp768)       | 768-bit input BHP hash             |
-| [hash.bhp1024](#hash.bhp1024)     | 1024-bit input BHP hash            |
-| [hash.ped64](#hash.ped64)         | 64-bit input Pedersen hash         |
-| [hash.ped128](#hash.ped128)       | 128-bit input Pedersen hash        |
-| [hash.psd2](#hash.psd2)           | Poseidon hash with input rate 2    |
-| [hash.psd4](#hash.psd4)           | Poseidon hash with input rate 4    |
-| [hash.psd8](#hash.psd8)           | Poseidon hash with input rate 8    |
 | [inv](#inv)                       | Multiplicative inverse operation   |
-| [is.eq](#is.eq)                   | Equality comparison                |
-| [is.neq](#is.neq)                 | Not equal comparison               |
+| [is.eq](#iseq)                    | Equality comparison                |
+| [is.neq](#isneq)                  | Not equal comparison               |
 | [lt](#lt)                         | Less than comparison               |
 | [lte](#lte)                       | Less than or equal to comparison   |
 | [mod](#mod)                       | Arithmetic modulo operation        |
 | [mul](#mul)                       | Multiplication operation           |
-| [mul.w](#mul.w)                   | Wrapping multiplication operation  |
+| [mul.w](#mulw)                    | Wrapping multiplication operation  |
 | [nand](#nand)                     | `Boolean` NAND operation           |
 | [neg](#neg)                       | Additive inverse operation         |
 | [nor](#nor)                       | `Boolean` NOR operation            |
 | [not](#not)                       | NOT operation                      |
 | [or](#or)                         | OR Operation                       |
 | [pow](#pow)                       | Exponentiation operation           |
-| [pow.w](#pow.w)                   | Wrapping exponentiation operation  |
+| [pow.w](#poww)                    | Wrapping exponentiation operation  |
 | [rem](#rem)                       | Remainder operation                |
-| [rem.w](#rem.w)                   | Wrapping remainder operation       |
+| [rem.w](#remw)                    | Wrapping remainder operation       |
 | [shl](#shl)                       | Shift left operation               |
-| [shl.w](#shl.w)                   | Wrapping shift left operation      |
+| [shl.w](#shlw)                    | Wrapping shift left operation      |
 | [shr](#shr)                       | Shift right operation              |
-| [shr.w](#shr.w)                   | Wrapping shift right operation     |
+| [shr.w](#shrw)                    | Wrapping shift right operation     |
 | [sqrt](#sqrt)                     | Square root operation              |
 | [square](#square)                 | Square operation                   |
 | [sub](#sub)                       | Subtraction operation              |
-| [sub.w](#sub.w)                   | Wrapping subtraction operation     |
+| [sub.w](#subw)                    | Wrapping subtraction operation     |
 | [ternary](#ternary)               | Ternary select operation           |
 | [xor](#xor)                       | XOR operation                      |
+
+## Table of cryptographic Opcodes
+| Name                              | Description                        |
+| --------------------------------- |:---------------------------------- |
+| [commit.bhp256](#commitbhp256)   | 256-bit input BHP commitment        |
+| [commit.bhp512](#commitbhp512)   | 512-bit input BHP commitment        |
+| [commit.bhp768](#commitbhp768)   | 768-bit input BHP commitment        |
+| [commit.bhp1024](#commitbhp1024) | 1024-bit input BHP commitment       |
+| [commit.ped64](#commitped64)     | 64-bit input Pedersen commitment    |
+| [commit.ped128](#commitped128)   | 128-bit input Pedersen commitment   |
+| [hash.bhp256](#hashbhp256)       | 256-bit input BHP hash              |
+| [hash.bhp512](#hashbhp512)       | 512-bit input BHP hash              |
+| [hash.bhp768](#hashbhp768)       | 768-bit input BHP hash              |
+| [hash.bhp1024](#hashbhp1024)     | 1024-bit input BHP hash             |
+| [hash.ped64](#hashped64)         | 64-bit input Pedersen hash          |
+| [hash.ped128](#hashped128)       | 128-bit input Pedersen hash         |
+| [hash.psd2](#hashpsd2)           | Poseidon hash with input rate 2     |
+| [hash.psd4](#hashpsd4)           | Poseidon hash with input rate 4     |
+| [hash.psd8](#hashpsd8)           | Poseidon hash with input rate 8     |
+
 
 ## Specification
 
@@ -69,7 +75,7 @@ The following is the specification for each opcode in the Aleo Virtual Machine (
 
 ### `abs`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -96,7 +102,7 @@ For integer types, a constraint is added to check for underflow. For cases where
 
 ### `abs.w`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -121,7 +127,7 @@ Compute the absolute value of the input, wrapping around at the boundary of the 
 
 ### `add`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -151,7 +157,7 @@ For integer types, a constraint is added to check for overflow. For cases where 
 
 ### `add.w`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -176,7 +182,7 @@ Adds `first` with `second`, wrapping around at the boundary of the type, and sto
 
 ### `and`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -203,7 +209,7 @@ storing the outcome in `destination`.
 
 ### `assert.eq`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -228,14 +234,14 @@ Checks whether `first` and `second` are equal, halting if they are not equal.
 | `U64`       | `U64`       |
 | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    |
-| `Struct` | `Struct` |
+| `Struct`    | `Struct`    |
 | `Record`    | `Record`    |
 
 ***
 
 ### `assert.neq`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -260,18 +266,18 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 | `U64`       | `U64`       |
 | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    |
-| `Struct` | `Struct` |
+| `Struct`    | `Struct`    |
 | `Record`    | `Record`    |
 
 ***
 
 ### `commit.bhp256`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
-Computes a BHP commitment on inputs of 256-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 256-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 129 bits.
 
@@ -295,17 +301,17 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Struct` | `Scalar`  | `Field`     |
+| `Struct`    | `Scalar`  | `Field`     |
 
 ***
 
 ### `commit.bhp512`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
-Computes a BHP commitment on inputs of 512-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 512-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 171 bits.
 
@@ -329,17 +335,17 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Struct` | `Scalar`  | `Field`     |
+| `Struct`    | `Scalar`  | `Field`     |
 
 ***
 
 ### `commit.bhp768`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
-Computes a BHP commitment on inputs of 768-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 768-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 129 bits.
 
@@ -363,17 +369,17 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Struct` | `Scalar`  | `Field`     |
+| `Struct`    | `Scalar`  | `Field`     |
 
 ***
 
 ### `commit.bhp1024`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
-Computes a BHP commitment on inputs of 1024-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 1024-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 171 bits.
 
@@ -397,13 +403,13 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Scalar`  | `Field`     |
 | `Scalar`    | `Scalar`  | `Field`     |
 | `String`    | `Scalar`  | `Field`     |
-| `Struct` | `Scalar`  | `Field`     |
+| `Struct`    | `Scalar`  | `Field`     |
 
 ***
 
 ### `commit.ped64`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -425,13 +431,13 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 | `U32`       | `Scalar`  | `Group`     |
 | `U64`       | `Scalar`  | `Group`     |
 | `String`    | `Scalar`  | `Group`     |
-| `Struct` | `Scalar`  | `Group`     |
+| `Struct`    | `Scalar`  | `Group`     |
 
 ***
 
 ### `commit.ped128`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -455,13 +461,13 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 12
 | `U64`       | `Scalar`  | `Group`     |
 | `U128`      | `Scalar`  | `Group`     |
 | `String`    | `Scalar`  | `Group`     |
-| `Struct` | `Scalar`  | `Group`     |
+| `Struct`    | `Scalar`  | `Group`     |
 
 ***
 
 ### `div`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -492,7 +498,7 @@ For cases where wrapping semantics are needed for integer types, see the [div.w]
 
 ### `div.w`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -517,7 +523,7 @@ Divides `first` by `second`, wrapping around at the boundary of the type, and st
 
 ### `double`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -535,7 +541,7 @@ Doubles the input, storing the outcome in `destination`.
 
 ### `gt`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -564,7 +570,7 @@ Checks if `first` is greater than `second`, storing the result in `destination`.
 
 ### `gte`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -594,11 +600,11 @@ Checks if `first` is greater than or equal to `second`, storing the result in `d
 
 ### `hash.bhp256`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
-Computes a BHP hash on inputs of 256-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 256-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 129 bits.
 
@@ -622,17 +628,17 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Struct` | `Field`     |
+| `Struct`    | `Field`     |
 
 ***
 
 ### `hash.bhp512`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
-Computes a BHP hash on inputs of 512-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 512-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 171 bits.
 
@@ -656,17 +662,17 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Struct` | `Field`     |
+| `Struct`    | `Field`     |
 
 ***
 
 ### `hash.bhp768`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
-Computes a BHP hash on inputs of 768-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 768-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 129 bits.
 
@@ -690,17 +696,17 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Struct` | `Field`     |
+| `Struct`    | `Field`     |
 
 ***
 
 ### `hash.bhp1024`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
-Computes a BHP hash on inputs of 1024-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 1024-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
 The instruction will halt if the given input is smaller than 171 bits.
 
@@ -724,13 +730,13 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Struct` | `Field`     |
+| `Struct`    | `Field`     |
 
 ***
 
 ### `hash.ped64`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -752,13 +758,13 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 | `U32`       | `Field`     |
 | `U64`       | `Field`     |
 | `String`    | `Field`     |
-| `Struct` | `Field`     |
+| `Struct`    | `Field`     |
 
 ***
 
 ### `hash.ped128`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -782,13 +788,13 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 12
 | `U64`       | `Field`     |
 | `U128`      | `Field`     |
 | `String`    | `Field`     |
-| `Struct` | `Field`     |
+| `Struct`    | `Field`     |
 
 ***
 
 ### `hash.psd2`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -811,13 +817,13 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Struct` | `Field`     |
+| `Struct`    | `Field`     |
 
 ***
 
 ### `hash.psd4`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -840,13 +846,13 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Struct` | `Field`     |
+| `Struct`    | `Field`     |
 
 ***
 
 ### `hash.psd8`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -869,13 +875,13 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 | `U128`      | `Field`     |
 | `Scalar`    | `Field`     |
 | `String`    | `Field`     |
-| `Struct` | `Field`     |
+| `Struct`    | `Field`     |
 
 ***
 
 ### `inv`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -891,7 +897,7 @@ Computes the multiplicative inverse of the input, storing the outcome in `destin
 
 ### `is.eq`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -916,14 +922,14 @@ Compares `first` and `second`, storing the result in `destination`.
 | `U64`       | `U64`       | `U64`       |
 | `U128`      | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    | `Scalar`    |
-| `Struct` | `Struct` | `Struct` |
+| `Struct`    | `Struct`    | `Struct`    |
 | `Record`    | `Record`    | `Record`    |
 
 ***
 
 ### `is.neq`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -948,14 +954,14 @@ Returns true if `first` is not equal to `second`, storing the result in `destina
 | `U64`       | `U64`       | `U64`       |
 | `U128`      | `U128`      | `U128`      |
 | `Scalar`    | `Scalar`    | `Scalar`    |
-| `Struct` | `Struct` | `Struct` |
+| `Struct`    | `Struct`    | `Struct`    |
 | `Record`    | `Record`    | `Record`    |
 
 ***
 
 ### `lt`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -984,7 +990,7 @@ Checks if `first` is less than `second`, storing the outcome in `destination`.
 
 ### `lte`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1012,7 +1018,7 @@ Checks if `first` is less than or equal to `second`, storing the outcome in `des
 
 ### `mod`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1034,7 +1040,7 @@ The semantics of this operation are consistent with the mathematical definition 
 
 ### `mul`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1064,7 +1070,7 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 
 ### `mul.w`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1089,7 +1095,7 @@ Multiplies `first` with `second`, wrapping around at the boundary of the type, a
 
 ### `nand`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1105,7 +1111,7 @@ Returns false only if `first` and `second` are true, storing the outcome in `des
 
 ### `neg`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1129,7 +1135,7 @@ For signed integer types, calling `neg` on the minimum value is an invalid opera
 
 ### `nor`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1145,7 +1151,7 @@ Returns true when neither `first` nor `second` is true, storing the outcome in `
 
 ### `not`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1171,7 +1177,7 @@ Perform a NOT operation on an integer (bitwise) or boolean input, storing the ou
 
 ### or
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1197,7 +1203,7 @@ Performs an OR operation on integer (bitwise) or boolean `first` and `second`, s
 
 ### `pow`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1227,7 +1233,7 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 
 ### `pow.w`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1255,7 +1261,7 @@ Raises `first` to the power of `second`, wrapping around at the boundary of the 
 
 ### `rem`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1285,7 +1291,7 @@ For cases where wrapping semantics are needed for integer types, see the [rem.w]
 
 ### `rem.w`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 Computes the truncated remainder of `first` divided by `second`, wrapping around at the boundary of the type, and storing the outcome in destination.
@@ -1309,7 +1315,7 @@ Computes the truncated remainder of `first` divided by `second`, wrapping around
 
 ### `shl`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1336,7 +1342,7 @@ Shifts `first` left by `second` bits, storing the outcome in `destination`.
 
 ### `shl.w`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1363,7 +1369,7 @@ Shifts `first` left by `second` bits, wrapping around at the boundary of the typ
 
 ### `shr`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1390,7 +1396,7 @@ Shifts `first` right by `second` bits, storing the outcome in `destination`.
 
 ### `shr.w`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1417,7 +1423,7 @@ Shifts `first` right by `second` bits, wrapping around at the boundary of the ty
 
 ### `square`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1433,7 +1439,7 @@ Squares the input, storing the outcome in `destination`.
 
 ### `sqrt`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1450,7 +1456,7 @@ Computes the square root of the input, storing the outcome in `destination`.
 
 ### `sub`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1477,7 +1483,7 @@ Computes `first - second`, storing the outcome in `destination`.
 
 ### `sub.w`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1502,7 +1508,7 @@ Computes `first - second`, wrapping around at the boundary of the type, and stor
 
 ### `ternary`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
@@ -1533,7 +1539,7 @@ Example: `ternary r0 r1 r2 into r3`, where `r0` is the condition, `r1` is first,
 
 ### `xor`
 
-[Back to Top](#table-of-opcodes)
+[Back to Top](#table-of-standard-opcodes)
 
 #### Description
 
