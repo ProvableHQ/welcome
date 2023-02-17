@@ -1,6 +1,6 @@
 ---
 id: getting_started
-title: Getting Started
+title: Hello World
 sidebar_label: Getting Started
 ---
 
