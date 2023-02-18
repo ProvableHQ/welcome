@@ -6,7 +6,7 @@ sidebar_label: Opcodes
 
 The following lists show the standard and cryptographic opcodes supported by Leo.
 
-## Table of standard Opcodes
+## Table of Standard Opcodes
 | Name                              | Description                        |
 | --------------------------------- |:---------------------------------- |
 | [abs](#abs)                       | Absolute value operation           |
