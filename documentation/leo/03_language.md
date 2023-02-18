@@ -194,9 +194,13 @@ struct array3 {
 ### Record
 
 A [record](../concepts/02_records.md) data type is declared as `record {name} {}`.
-Records contain component declarations `{name}: {type},`.
+Records contain component declarations `{visibility} {name}: {type},`.
+
+A visibility can be either `constant`, `public`, or `private`.
+Users may also omit the visibility, in which case, Leo will default to `private`.
+
 Record data structures must contain the `owner` and `gates` components as shown below.
-When passing a record as input to a program function, the `_nonce: group,` component is also required
+When passing a record as input to a program function, the `_nonce: group`, component is also required
 (but it does not need to be declared in the Leo program).
 
 ```aleo showLineNumbers
@@ -267,8 +271,10 @@ transition foo(public a: field) -> field {
 ### Helper Function
 
 A helper function is declared as `function {name}() {}`.
-Helper functions contain expressions and statements that can compute values.
-Helper functions that cannot be executed directly. Helper functions must be called by other functions.
+Helper functions contain expressions and statements that can compute values,
+however helper functions cannot produce `records`.
+
+Helper functions that cannot be executed directly. Instead, they must be called by other functions.
 Inputs of helper functions cannot have `{visibility}` modifiers like transition functions,
 since they are used only internally, not as part of a program's external interface.
 
@@ -281,6 +287,24 @@ function foo(
 }
 ```
 
+### Inline Function
+
+An inline function is declared as `inline {name}() {}`.
+Inline functions contain expressions and statements that can compute values.
+Inline functions that cannot be executed directly, 
+instead the Leo compiler “inlines” the body of the function at each call site.
+
+Inputs of inline functions cannot have `{visibility}` modifiers like transition functions,
+since they are used only internally, not as part of a program's external interface.
+
+```leo showLineNumbers
+inline foo(
+    a: field,
+    b: field,
+) -> field {
+    return a + b;
+}
+```
 
 #### Increment and Decrement
 An increment statement has the form `increment(mapping, key, value);`.
