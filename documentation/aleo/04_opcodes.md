@@ -49,7 +49,7 @@ The following lists show the standard and cryptographic opcodes supported by Leo
 | [ternary](#ternary)               | Ternary select operation           |
 | [xor](#xor)                       | XOR operation                      |
 
-## Table of cryptographic Opcodes
+## Table of Cryptographic Opcodes
 | Name                              | Description                        |
 | --------------------------------- |:---------------------------------- |
 | [commit.bhp256](#commitbhp256)   | 256-bit input BHP commitment        |
