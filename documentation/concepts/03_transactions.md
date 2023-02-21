@@ -28,7 +28,7 @@ The transaction deployment publishes an Aleo program to the network.
 |    `program`     | object  |                             The program                              |
 | `verifying_keys` | mapping | The mapping of function names to their verifying key and certificate |
 
-### Execute Transaction 
+### Execute Transaction
 The transaction execution represents a call to an Aleo program.
 
 |    Parameter     |          Type           |                                                       Description                                                       |
