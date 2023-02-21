@@ -21,8 +21,8 @@ An Aleo transition is serialized in the following format:
 |      `fee`      |         i64          |                                                       The network fee associated to the transition.                                                       |
 
 #### Input Record
-An `inputRecord` is a tuple consisting of a serial number and a `tag`. Recall that serial numbers are posted onto the ledger to announce that previously unspent records have now been spent. Each record has an associated `tag` which
-is used to keep track of records which are spendable by the user.
+An `inputRecord` is a tuple consisting of a `serial_number` and a `tag`. Recall that since the serial number is disclosed on the ledger, this publicly announces the record which is being spent. 
+Recall that serial numbers are posted onto the ledger to announce that previously unspent records have now been spent. Each record has an associated `tag` which is used to keep track of records which are spendable by the user. A tag is computed via `tag` = CRH.Eval(`sk_tag`, `record_commitment`).
 
 #### Output Record
-An `outputRecord` consists of a record commitment, checksum, an a record ciphertext. 
+An `outputRecord` consists of a `record_commitment`, `checksum`, an a `record_ciphertext`. A `record_commitment` is computed via Pedersen.Commit(`pp`, `apk` || `data` || `nonce` || `gates` ; r). The `record_encryption` is computed via SymmEnc.Eval(`pp`, `apk` || `data` || `nonce` || `gates` ; r) and the checksum, used to verify the integrity of the record commitment, is computed via `record_commitment` = CRH.Eval(`record_encryption`).  
