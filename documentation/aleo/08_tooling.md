@@ -138,7 +138,7 @@ NeoBundle 'julesdesmit/aleo.vim'
 ```
 
 
-[v]: https://github.com/gmarik/vundle
+[//]: # ([v]: https://github.com/gmarik/vundle)
 
 [p]: https://github.com/tpope/vim-pathogen
 

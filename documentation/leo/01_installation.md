@@ -18,22 +18,22 @@ Download the latest Leo release using a pre-built installer for your platform, a
         {label: 'Ubuntu', value: 'ubuntu'},
     ]}>
     <TabItem value="mac">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.2/leo-v1.6.2-aarch64-apple-darwin.zip">
+        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.3/leo-v1.6.3-aarch64-apple-darwin.zip">
             <b>Install Leo for MacOS M1</b>
         </a>
     </TabItem>
     <TabItem value="mac">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.2/leo-v1.6.2-x86_64-apple-darwin.zip">
+        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.3/leo-v1.6.3-x86_64-apple-darwin.zip">
             <b>Install Leo for MacOS Intel</b>
         </a>
     </TabItem>
     <TabItem value="windows">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.2/leo-v1.6.2-x86_64-pc-windows-msvc.zip">
+        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.3/leo-v1.6.3-x86_64-pc-windows-msvc.zip">
             <b>Install Leo for Windows</b>
         </a>
     </TabItem>
     <TabItem value="ubuntu">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.2/leo-v1.6.2-x86_64-unknown-linux-gnu.zip">
+        <a href="https://github.com/AleoHQ/leo/releases/download/v1.6.3/leo-v1.6.3-x86_64-unknown-linux-gnu.zip">
             <b>Install Leo for Ubuntu</b>
         </a>
     </TabItem>
