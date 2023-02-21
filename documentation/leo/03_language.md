@@ -200,7 +200,7 @@ A visibility can be either `constant`, `public`, or `private`.
 Users may also omit the visibility, in which case, Leo will default to `private`.
 
 Record data structures must contain the `owner` and `gates` components as shown below.
-When passing a record as input to a program function, the `_nonce: group`, component is also required
+When passing a record as input to a program function, the `_nonce: group` component is also required
 (but it does not need to be declared in the Leo program).
 
 ```aleo showLineNumbers
