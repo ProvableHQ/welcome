@@ -88,7 +88,7 @@ git clone https://github.com/julesdesmit/aleo.vim ~/.vim/pack/plugins/start/aleo
 ```
 
 
-#### [Vundle][v]
+#### Vundle
 
 
 ```vim
