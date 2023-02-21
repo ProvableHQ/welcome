@@ -291,7 +291,7 @@ function foo(
 
 An inline function is declared as `inline {name}() {}`.
 Inline functions contain expressions and statements that can compute values.
-Inline functions that cannot be executed directly, 
+Inline functions cannot be executed directly from the outside, 
 instead the Leo compiler “inlines” the body of the function at each call site.
 
 Inputs of inline functions cannot have `{visibility}` modifiers like transition functions,
