@@ -33,12 +33,12 @@ The transaction execution represents a call to an Aleo program.
 
 #### Execute Transaction
 
-|    Parameter     |  Type  |              Description               |
-|:----------------:|:------:|:--------------------------------------:|
-|      `type`      | string |        The type of transaction         |
-|       `id`       | string |         The ID of transaction          |
-|   `execution`    | object |     The execution transaction info     |
-| `additional_fee` | object | The additional fee for the transaction |
+|    Parameter     |          Type           |                                                       Description                                                       |
+|:----------------:|:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------:|
+|      `type`      |         string          |                                  The type of transaction, either `Deploy` or `Execute`                                  |
+|       `id`       |         string          |                    The ID of transaction, computed via the Merkle Tree Digest of the transition IDs                     |
+|  `transitions`   | Map<Identifier, Object> | A mapping of transition IDs to the corresponding [transition](04_transitions.md) objects contained in the transaction.  |
+| `additional_fee` |           i64           |                                         The additional fee for the transaction                                          |
 
 #### Execution Info
 
