@@ -274,7 +274,7 @@ A helper function is declared as `function {name}() {}`.
 Helper functions contain expressions and statements that can compute values,
 however helper functions cannot produce `records`.
 
-Helper functions that cannot be executed directly. Instead, they must be called by other functions.
+Helper functions cannot be called directly from the outside. Instead, they must be called by other functions.
 Inputs of helper functions cannot have `{visibility}` modifiers like transition functions,
 since they are used only internally, not as part of a program's external interface.
 
