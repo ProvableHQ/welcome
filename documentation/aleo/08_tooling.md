@@ -88,7 +88,7 @@ git clone https://github.com/julesdesmit/aleo.vim ~/.vim/pack/plugins/start/aleo
 ```
 
 
-#### [Vundle][v]
+#### Vundle
 
 
 ```vim
@@ -138,7 +138,7 @@ NeoBundle 'julesdesmit/aleo.vim'
 ```
 
 
-[v]: https://github.com/gmarik/vundle
+[//]: # ([v]: https://github.com/gmarik/vundle)
 
 [p]: https://github.com/tpope/vim-pathogen
 
