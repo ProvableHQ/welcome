@@ -29,7 +29,7 @@ The auction is conducted in a series of stages.
 
 ## Language Features and Concepts
 - `record` declarations
-- `console.assert_eq`
+- `assert_eq`
 - record ownership
 
 ## Setup
@@ -162,7 +162,7 @@ Have the auctioneer select the winning bid.
     // In the event of a tie, the first bid is selected.
     transition resolve(first: Bid, second: Bid) -> Bid {
         // Ensure the caller is the auctioneer.
-        console.assert_eq(self.caller, aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh);
+        assert_eq(self.caller, aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh);
         // Resolve the winner of the auction.
         if (first.amount >= second.amount) {
             return first;
