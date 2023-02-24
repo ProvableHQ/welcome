@@ -8,6 +8,14 @@ Welcome to the Aleo community. Together we are working to build a platform for w
 performant, secure, and anonymous. Aleo introduces an application runtime environment that allows your software
 to compile, execute, and finalize its state autonomously.
 
+:::tip
+# What's new on Aleo?  
+### Program execution and deployment on Testnet3! 
+### Try the [**Testnet3 demo**](./testnet/getting_started/03_deploy_and_execute_demo.md).
+:::
+
+---
+
 # Develop on Aleo with Leo
 
 ## 1. Build Guide
