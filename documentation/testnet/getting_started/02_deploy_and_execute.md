@@ -4,7 +4,7 @@ title: Aleo Deploy and Execute
 sidebar_label: Deploy and Execute Programs
 ---
 
-These changes support the first iteration of deploying and executing program on the network.
+These changes support the first iteration of deploying and executing programs on the Aleo network.
 
 *Bugs, usability suggestions, and feedback in general would be greatly appreciated.*
 
@@ -211,13 +211,15 @@ snarkos developer transfer <AMOUNT_TO_TRANSFER> --input-record <INPUT_RECORD> --
 
 To deploy and execute programs on Testnet3
 
-1. Replace step 3 with the faucet `<Faucet_Link_Here>` to obtain spendable credits.
+1. Replace [step 3](#3-scan-the-node-for-spendable-records) with the Aleo faucet to obtain spendable credits. You can request credits from [@AleoFaucet](https://twitter.com/AleoFaucet)
 2. Replace the use of `http://localhost:3030` with `https://vm.aleo.org/api`
 
 
 Deployment transactions have an additional requirement where the included fee must have at least `deployment_size_in_bytes` gates.
 
 Execution transactions do not currently have any fee requirements.
+
+*If you'd like to try out deploying an Aleo app, you can follow the demo in the next section, [Deploy and Execute Demo](./03_deploy_and_execute_demo.md).*
 
 
 
