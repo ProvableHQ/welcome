@@ -4,11 +4,15 @@ title: Aleo Deploy and Execute Demo
 sidebar_label: Deploy and Execute Demo
 ---
 
+These changes supports the first iteration of deploying and executing program on the network.
+
+Bugs, usability suggestions, and feedback in general would be greatly appreciated.
+
 ## Overview
 
 Learn how to deploy and execute a basic "hello world!" program on Aleo's network using Leo and snarkOS. 
 
-## Guide
+## Usage guide
 
 ### 1. Prerequisites
 
@@ -99,7 +103,7 @@ By this point, [@AleoFaucet](https://twitter.com/AleoFaucet) should have retweet
 ### 5. Obtain your records plaintext
 
 * Navigate to [https://aleo.tools/](https://aleo.tools/) and click the **Record** button in the nav bar at the top of the page
-* Place the recrod ciphertext you copied in the previous step in the `Record (Ciphertext)`field
+* Place the recrod ciphertext you copied in the previous step in the `Record (Ciphertext)` field
 * Place your view key in the `View Key` field
 * Copy the plaintext record provided. If you do not see it, it's likely you copied the wrong ciphertext record in step 4. Consider revisting or reach out to `hello@aleo.org`.
 * Save your plaintext record in the same place as you did your address, view key, and private key. You will need it later.
