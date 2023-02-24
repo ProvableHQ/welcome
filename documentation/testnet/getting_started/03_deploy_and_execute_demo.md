@@ -4,7 +4,7 @@ title: Aleo Deploy and Execute Demo
 sidebar_label: Deploy and Execute Demo
 ---
 
-These changes supports the first iteration of deploying and executing program on the network.
+These changes support the first iteration of deploying and executing program on the network.
 
 Bugs, usability suggestions, and feedback in general would be greatly appreciated.
 
@@ -18,7 +18,7 @@ Learn how to deploy and execute a basic "hello world!" program on Aleo's network
 
 Make sure you have both Leo and snarkOS installed on your machine.
 
-* To verify if you have Leo, open your termal and type `leo`. If you don't see soemthing like `zsh: command not found: leo`, you're good
+* To verify if you have Leo, open your terminal and type `leo`. If you don't see something like `zsh: command not found: leo`, you're good
 
 * To verify if you have snarkOS, do the same thing you did with Leo but replace `leo` with `snarkos`
 
@@ -97,15 +97,15 @@ PATHTOAPP=$(realpath -q $APPNAME)
 
 By this point, [@AleoFaucet](https://twitter.com/AleoFaucet) should have retweeted your request along with a URL with a prefix of `vm.aleo.org/api/testnet3/transaction...`
 
-* Click on the link retweeted by @AleoFaucet. You should be presented with a JSON object in a new browser window. If you haven't already, we highly reccomend you install the [JSON Beautifier & Editor](https://chrome.google.com/webstore/detail/json-beautifier-editor/lpopeocbeepakdnipejhlpcmifheolpl) Chrome extension.
+* Click on the link retweeted by @AleoFaucet. You should be presented with a JSON object in a new browser window. If you haven't already, we highly recommend you install the [JSON Beautifier & Editor](https://chrome.google.com/webstore/detail/json-beautifier-editor/lpopeocbeepakdnipejhlpcmifheolpl) Chrome extension.
 * Navigate to `object.execution.transitions[0].outputs[0].value` and copy the ciphertext stored there
 
 ### 5. Obtain your records plaintext
 
 * Navigate to [https://aleo.tools/](https://aleo.tools/) and click the **Record** button in the nav bar at the top of the page
-* Place the recrod ciphertext you copied in the previous step in the `Record (Ciphertext)` field
+* Place the record ciphertext you copied in the previous step in the `Record (Ciphertext)` field
 * Place your view key in the `View Key` field
-* Copy the plaintext record provided. If you do not see it, it's likely you copied the wrong ciphertext record in step 4. Consider revisting or reach out to `hello@aleo.org`.
+* Copy the plaintext record provided. If you do not see it, it's likely you copied the wrong ciphertext record in step 4. Consider revisiting or reach out to `hello@aleo.org`.
 * Save your plaintext record in the same place as you did your address, view key, and private key. You will need it later.
 
 ### 6. Deploy your test application
@@ -126,7 +126,7 @@ cd $PATHTOAPP && cd ..
 PRIVATEKEY=""
 ```
 
-* ⚠️ Assign $RECORD to the the plaintext record you saved earlier
+* ⚠️ Assign $RECORD to the plaintext record you saved earlier
 
 ```
 RECORD=""
