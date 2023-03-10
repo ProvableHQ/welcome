@@ -7,7 +7,7 @@ sidebar_label: Language
 ## Layout of an Aleo Program
 
 An Aleo program contains declarations of a [Program ID](#programid), [Imports](#import), [Functions](#function), [Closures](#closure), [Structs](#struct), [Records](#record),
-[Mappings](#mapping), and [Finalizers](#finalizes). Ordering is only enforced for imports which must be at the top of file.
+[Mappings](#mapping), and [Finalize](#finalize). Ordering is only enforced for imports which must be at the top of file.
 Declarations are locally accessible within a program file.
 If you need a declaration from another program file, you must import it.
 
