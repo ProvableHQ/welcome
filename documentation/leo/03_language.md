@@ -4,8 +4,6 @@ title: Leo Language Guide
 sidebar_label: Language
 ---
 
-## Generalities
-
 ### Statically Typed
 Leo is a **statically typed language**, which means we must know the type of each variable before executing a circuit.
 
@@ -341,7 +339,7 @@ program transfer.aleo {
 ### Finalize Function
 
 A finalize function is declared as `finalize {name}:`.
-A finalize function must immediately followed a [transition function](#transition-function), and must have the same name;
+A finalize function must immediately follow a [transition function](#transition-function), and must have the same name;
 it is associated with the transition function and is executed on chain,
 after the zero-knowledge proof of the execution of the associated transition is verified;
 a finalize function *finalizes* a transition function on chain.
