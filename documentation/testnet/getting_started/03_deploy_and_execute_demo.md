@@ -140,7 +140,7 @@ snarkos developer deploy "${APPNAME}.aleo" --private-key "${PRIVATEKEY}" --query
 
 You should have seen a confirmation that your Aleo application was deployed.
 
-### 7. Obtain your records plaintext
+### 7. Execute your test application
 
 Finally, it is time to execute the application you just deployed! To do that, just paste the following command in your terminal
 
