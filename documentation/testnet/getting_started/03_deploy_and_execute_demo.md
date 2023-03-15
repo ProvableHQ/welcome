@@ -148,4 +148,4 @@ Finally, it is time to execute the application you just deployed! To do that, ju
 snarkos developer execute "${APPNAME}.aleo" "main" "1u32" "2u32" --private-key "${PRIVATEKEY}" --query "https://vm.aleo.org/api" --broadcast "https://vm.aleo.org/api/testnet3/transaction/broadcast"
 ```
 
-Awesome! You have successfully deployed and executed a Leo application to the Aleo blockchain, how exciting 🎉
+Awesome! You have successfully deployed and executed a Leo application to Testnet III, how exciting 🎉
