@@ -138,4 +138,14 @@ RECORD=""
 snarkos developer deploy "${APPNAME}.aleo" --private-key "${PRIVATEKEY}" --query "https://vm.aleo.org/api" --path "./${APPNAME}/build/" --broadcast "https://vm.aleo.org/api/testnet3/transaction/broadcast" --fee 600000 --record "${RECORD}"
 ```
 
-Awesome! You should have seen a confirmation that your Aleo application was deployed, how exciting 🎉
+You should have seen a confirmation that your Aleo application was deployed.
+
+### 7. Execute your test application
+
+Finally, it is time to execute the application you just deployed! To do that, just paste the following command in your terminal
+
+```
+snarkos developer execute "${APPNAME}.aleo" "main" "1u32" "2u32" --private-key "${PRIVATEKEY}" --query "https://vm.aleo.org/api" --broadcast "https://vm.aleo.org/api/testnet3/transaction/broadcast"
+```
+
+Awesome! You have successfully deployed and executed a Leo application to Testnet III, how exciting 🎉
