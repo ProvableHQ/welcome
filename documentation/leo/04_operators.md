@@ -52,23 +52,23 @@ The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes
 | [xor](#xor)                                 | XOR operation                       |
 
 ## Table of cryptographic Operators
-| Name                                        | Description                         |
-|---------------------------------------------|:------------------------------------|
-| [BHP256::commit](#bhp256commit)             | 256-bit input BHP commitment        |
-| [BHP512::commit](#bhp512commit)             | 512-bit input BHP commitment        |
-| [BHP768::commit](#bhp768commit)             | 768-bit input BHP commitment        |
-| [BHP1024::commit](#bhp1024commit)           | 1024-bit input BHP commitment       |
-| [Pedersen64::commit](#pedersen64commit)     | 64-bit input Pedersen commitment    |
-| [Pedersen128::commit](#pedersen128commit)   | 128-bit input Pedersen commitment   |
-| [BHP256::hash](#bhp256hash)                 | 256-bit input BHP hash              |
-| [BHP512::hash](#bhp512hash)                 | 512-bit input BHP hash              |
-| [BHP768::hash](#bhp768hash)                 | 768-bit input BHP hash              |
-| [BHP1024::hash](#bhp1024hash)               | 1024-bit input BHP hash             |
-| [Pedersen64::hash](#pedersen64hash)         | 64-bit input Pedersen hash          |
-| [Pedersen128::hash](#pedersen128hash)       | 128-bit input Pedersen hash         |
-| [Poseidon2::hash](#Poseidon2hash)           | Poseidon hash with input rate 2     |
-| [Poseidon4::hash](#Poseidon4hash)           | Poseidon hash with input rate 4     |
-| [Poseidon8::hash](#Poseidon8hash)           | Poseidon hash with input rate 8     |
+| Name                                      | Description                         |
+|-------------------------------------------|:------------------------------------|
+| [BHP256::commit](#bhp256commit)           | 256-bit input BHP commitment        |
+| [BHP512::commit](#bhp512commit)           | 512-bit input BHP commitment        |
+| [BHP768::commit](#bhp768commit)           | 768-bit input BHP commitment        |
+| [BHP1024::commit](#bhp1024commit)         | 1024-bit input BHP commitment       |
+| [Pedersen64::commit](#pedersen64commit)   | 64-bit input Pedersen commitment    |
+| [Pedersen128::commit](#pedersen128commit) | 128-bit input Pedersen commitment   |
+| [BHP256::hash](#bhp256hash)               | 256-bit input BHP hash              |
+| [BHP512::hash](#bhp512hash)               | 512-bit input BHP hash              |
+| [BHP768::hash](#bhp768hash)               | 768-bit input BHP hash              |
+| [BHP1024::hash](#bhp1024hash)             | 1024-bit input BHP hash             |
+| [Pedersen64::hash](#pedersen64hash)       | 64-bit input Pedersen hash          |
+| [Pedersen128::hash](#pedersen128hash)     | 128-bit input Pedersen hash         |
+| [Poseidon2::hash](#poseidon2hash)         | Poseidon hash with input rate 2     |
+| [Poseidon4::hash](#poseidon4hash)         | Poseidon hash with input rate 4     |
+| [Poseidon8::hash](#poseidon8hash)         | Poseidon hash with input rate 8     |
 
 
 ## Specification
@@ -91,7 +91,7 @@ For integer types, a constraint is added to check for underflow. For cases where
 #### Supported Types
 
 | Input  | Destination |
-| ------ |:----------- |
+|--------|:------------|
 | `I8`   | `I8`        |
 | `I16`  | `I16`       |
 | `I32`  | `I32`       |
@@ -115,7 +115,7 @@ Compute the absolute value of the input, wrapping around at the boundary of the 
 #### Supported Types
 
 | Input  | Destination |
-| ------ |:----------- |
+|--------|:------------|
 | `I8`   | `I8`        |
 | `I16`  | `I16`       |
 | `I32`  | `I32`       |
@@ -142,7 +142,7 @@ For integer types, a constraint is added to check for overflow. For cases where 
 #### Supported Types
 
 | First    | Second   | Destination |
-| -------- | -------- | ----------- |
+|----------|----------|-------------|
 | `Field`  | `Field`  | `Field`     |
 | `Group`  | `Group`  | `Group`     |
 | `I8`     | `I8`     | `I8`        |
@@ -174,7 +174,7 @@ Adds `first` with `second`, wrapping around at the boundary of the type, and sto
 #### Supported Types
 
 | First  | Second | Destination |
-| ------ | ------ |:----------- |
+|--------|--------|:------------|
 | `I8`   | `I8`   | `I8`        |
 | `I16`  | `I16`  | `I16`       |
 | `I32`  | `I32`  | `I32`       |
@@ -261,25 +261,25 @@ Checks whether `first` and `second` are equal, halting if they are not equal.
 
 #### Supported Types
 
-| First       | Second      |
-| ----------- | ----------- |
-| `Address`   | `Address`   |
-| `Boolean`   | `Boolean`   |
-| `Field`     | `Field`     |
-| `Group`     | `Group`     |
-| `I8`        | `I8`        |
-| `I16`       | `I16`       |
-| `I32`       | `I32`       |
-| `I64`       | `I64`       |
-| `I128`      | `I128`      |
-| `U8`        | `U8`        |
-| `U16`       | `U16`       |
-| `U32`       | `U32`       |
-| `U64`       | `U64`       |
-| `U128`      | `U128`      |
-| `Scalar`    | `Scalar`    |
-| `Struct`    | `Struct`    |
-| `Record`    | `Record`    |
+| First     | Second    |
+|-----------|-----------|
+| `Address` | `Address` |
+| `Boolean` | `Boolean` |
+| `Field`   | `Field`   |
+| `Group`   | `Group`   |
+| `I8`      | `I8`      |
+| `I16`     | `I16`     |
+| `I32`     | `I32`     |
+| `I64`     | `I64`     |
+| `I128`    | `I128`    |
+| `U8`      | `U8`      |
+| `U16`     | `U16`     |
+| `U32`     | `U32`     |
+| `U64`     | `U64`     |
+| `U128`    | `U128`    |
+| `Scalar`  | `Scalar`  |
+| `Struct`  | `Struct`  |
+| `Record`  | `Record`  |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -300,25 +300,25 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 
 #### Supported Types
 
-| First       | Second      |
-| ----------- | ----------- |
-| `Address`   | `Address`   |
-| `Boolean`   | `Boolean`   |
-| `Field`     | `Field`     |
-| `Group`     | `Group`     |
-| `I8`        | `I8`        |
-| `I16`       | `I16`       |
-| `I32`       | `I32`       |
-| `I64`       | `I64`       |
-| `I128`      | `I128`      |
-| `U8`        | `U8`        |
-| `U16`       | `U16`       |
-| `U32`       | `U32`       |
-| `U64`       | `U64`       |
-| `U128`      | `U128`      |
-| `Scalar`    | `Scalar`    |
-| `Struct`    | `Struct`    |
-| `Record`    | `Record`    |
+| First     | Second    |
+|-----------|-----------|
+| `Address` | `Address` |
+| `Boolean` | `Boolean` |
+| `Field`   | `Field`   |
+| `Group`   | `Group`   |
+| `I8`      | `I8`      |
+| `I16`     | `I16`     |
+| `I32`     | `I32`     |
+| `I64`     | `I64`     |
+| `I128`    | `I128`    |
+| `U8`      | `U8`      |
+| `U16`     | `U16`     |
+| `U32`     | `U32`     |
+| `U64`     | `U64`     |
+| `U128`    | `U128`    |
+| `Scalar`  | `Scalar`  |
+| `Struct`  | `Struct`  |
+| `Record`  | `Record`  |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -338,25 +338,25 @@ The instruction will halt if the given input is smaller than 129 bits.
 
 #### Supported Types
 
-| First       | Second    | Destination |
-| ----------- | --------- |:----------- |
-| `Address`   | `Scalar`  | `Field`     |
-| `Boolean`   | `Scalar`  | `Field`     |
-| `Field`     | `Scalar`  | `Field`     |
-| `Group`     | `Scalar`  | `Field`     |
-| `I8`        | `Scalar`  | `Field`     |
-| `I16`       | `Scalar`  | `Field`     |
-| `I32`       | `Scalar`  | `Field`     |
-| `I64`       | `Scalar`  | `Field`     |
-| `I128`      | `Scalar`  | `Field`     |
-| `U8`        | `Scalar`  | `Field`     |
-| `U16`       | `Scalar`  | `Field`     |
-| `U32`       | `Scalar`  | `Field`     |
-| `U64`       | `Scalar`  | `Field`     |
-| `U128`      | `Scalar`  | `Field`     |
-| `Scalar`    | `Scalar`  | `Field`     |
-| `String`    | `Scalar`  | `Field`     |
-| `Struct`    | `Scalar`  | `Field`     |
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Address` | `Scalar` | `Field`     |
+| `Boolean` | `Scalar` | `Field`     |
+| `Field`   | `Scalar` | `Field`     |
+| `Group`   | `Scalar` | `Field`     |
+| `I8`      | `Scalar` | `Field`     |
+| `I16`     | `Scalar` | `Field`     |
+| `I32`     | `Scalar` | `Field`     |
+| `I64`     | `Scalar` | `Field`     |
+| `I128`    | `Scalar` | `Field`     |
+| `U8`      | `Scalar` | `Field`     |
+| `U16`     | `Scalar` | `Field`     |
+| `U32`     | `Scalar` | `Field`     |
+| `U64`     | `Scalar` | `Field`     |
+| `U128`    | `Scalar` | `Field`     |
+| `Scalar`  | `Scalar` | `Field`     |
+| `String`  | `Scalar` | `Field`     |
+| `Struct`  | `Scalar` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -376,25 +376,25 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 #### Supported Types
 
-| First       | Second    | Destination |
-| ----------- | --------- |:----------- |
-| `Address`   | `Scalar`  | `Field`     |
-| `Boolean`   | `Scalar`  | `Field`     |
-| `Field`     | `Scalar`  | `Field`     |
-| `Group`     | `Scalar`  | `Field`     |
-| `I8`        | `Scalar`  | `Field`     |
-| `I16`       | `Scalar`  | `Field`     |
-| `I32`       | `Scalar`  | `Field`     |
-| `I64`       | `Scalar`  | `Field`     |
-| `I128`      | `Scalar`  | `Field`     |
-| `U8`        | `Scalar`  | `Field`     |
-| `U16`       | `Scalar`  | `Field`     |
-| `U32`       | `Scalar`  | `Field`     |
-| `U64`       | `Scalar`  | `Field`     |
-| `U128`      | `Scalar`  | `Field`     |
-| `Scalar`    | `Scalar`  | `Field`     |
-| `String`    | `Scalar`  | `Field`     |
-| `Struct`    | `Scalar`  | `Field`     |
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Address` | `Scalar` | `Field`     |
+| `Boolean` | `Scalar` | `Field`     |
+| `Field`   | `Scalar` | `Field`     |
+| `Group`   | `Scalar` | `Field`     |
+| `I8`      | `Scalar` | `Field`     |
+| `I16`     | `Scalar` | `Field`     |
+| `I32`     | `Scalar` | `Field`     |
+| `I64`     | `Scalar` | `Field`     |
+| `I128`    | `Scalar` | `Field`     |
+| `U8`      | `Scalar` | `Field`     |
+| `U16`     | `Scalar` | `Field`     |
+| `U32`     | `Scalar` | `Field`     |
+| `U64`     | `Scalar` | `Field`     |
+| `U128`    | `Scalar` | `Field`     |
+| `Scalar`  | `Scalar` | `Field`     |
+| `String`  | `Scalar` | `Field`     |
+| `Struct`  | `Scalar` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -414,25 +414,25 @@ The instruction will halt if the given input is smaller than 129 bits.
 
 #### Supported Types
 
-| First       | Second    | Destination |
-| ----------- | --------- |:----------- |
-| `Address`   | `Scalar`  | `Field`     |
-| `Boolean`   | `Scalar`  | `Field`     |
-| `Field`     | `Scalar`  | `Field`     |
-| `Group`     | `Scalar`  | `Field`     |
-| `I8`        | `Scalar`  | `Field`     |
-| `I16`       | `Scalar`  | `Field`     |
-| `I32`       | `Scalar`  | `Field`     |
-| `I64`       | `Scalar`  | `Field`     |
-| `I128`      | `Scalar`  | `Field`     |
-| `U8`        | `Scalar`  | `Field`     |
-| `U16`       | `Scalar`  | `Field`     |
-| `U32`       | `Scalar`  | `Field`     |
-| `U64`       | `Scalar`  | `Field`     |
-| `U128`      | `Scalar`  | `Field`     |
-| `Scalar`    | `Scalar`  | `Field`     |
-| `String`    | `Scalar`  | `Field`     |
-| `Struct`    | `Scalar`  | `Field`     |
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Address` | `Scalar` | `Field`     |
+| `Boolean` | `Scalar` | `Field`     |
+| `Field`   | `Scalar` | `Field`     |
+| `Group`   | `Scalar` | `Field`     |
+| `I8`      | `Scalar` | `Field`     |
+| `I16`     | `Scalar` | `Field`     |
+| `I32`     | `Scalar` | `Field`     |
+| `I64`     | `Scalar` | `Field`     |
+| `I128`    | `Scalar` | `Field`     |
+| `U8`      | `Scalar` | `Field`     |
+| `U16`     | `Scalar` | `Field`     |
+| `U32`     | `Scalar` | `Field`     |
+| `U64`     | `Scalar` | `Field`     |
+| `U128`    | `Scalar` | `Field`     |
+| `Scalar`  | `Scalar` | `Field`     |
+| `String`  | `Scalar` | `Field`     |
+| `Struct`  | `Scalar` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -452,25 +452,25 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 #### Supported Types
 
-| First       | Second    | Destination |
-| ----------- | --------- |:----------- |
-| `Address`   | `Scalar`  | `Field`     |
-| `Boolean`   | `Scalar`  | `Field`     |
-| `Field`     | `Scalar`  | `Field`     |
-| `Group`     | `Scalar`  | `Field`     |
-| `I8`        | `Scalar`  | `Field`     |
-| `I16`       | `Scalar`  | `Field`     |
-| `I32`       | `Scalar`  | `Field`     |
-| `I64`       | `Scalar`  | `Field`     |
-| `I128`      | `Scalar`  | `Field`     |
-| `U8`        | `Scalar`  | `Field`     |
-| `U16`       | `Scalar`  | `Field`     |
-| `U32`       | `Scalar`  | `Field`     |
-| `U64`       | `Scalar`  | `Field`     |
-| `U128`      | `Scalar`  | `Field`     |
-| `Scalar`    | `Scalar`  | `Field`     |
-| `String`    | `Scalar`  | `Field`     |
-| `Struct`    | `Scalar`  | `Field`     |
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Address` | `Scalar` | `Field`     |
+| `Boolean` | `Scalar` | `Field`     |
+| `Field`   | `Scalar` | `Field`     |
+| `Group`   | `Scalar` | `Field`     |
+| `I8`      | `Scalar` | `Field`     |
+| `I16`     | `Scalar` | `Field`     |
+| `I32`     | `Scalar` | `Field`     |
+| `I64`     | `Scalar` | `Field`     |
+| `I128`    | `Scalar` | `Field`     |
+| `U8`      | `Scalar` | `Field`     |
+| `U16`     | `Scalar` | `Field`     |
+| `U32`     | `Scalar` | `Field`     |
+| `U64`     | `Scalar` | `Field`     |
+| `U128`    | `Scalar` | `Field`     |
+| `Scalar`  | `Scalar` | `Field`     |
+| `String`  | `Scalar` | `Field`     |
+| `Struct`  | `Scalar` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -490,19 +490,19 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 
 #### Supported Types
 
-| First       | Second    | Destination |
-| ----------- | --------- |:----------- |
-| `Boolean`   | `Scalar`  | `Group`     |
-| `I8`        | `Scalar`  | `Group`     |
-| `I16`       | `Scalar`  | `Group`     |
-| `I32`       | `Scalar`  | `Group`     |
-| `I64`       | `Scalar`  | `Group`     |
-| `U8`        | `Scalar`  | `Group`     |
-| `U16`       | `Scalar`  | `Group`     |
-| `U32`       | `Scalar`  | `Group`     |
-| `U64`       | `Scalar`  | `Group`     |
-| `String`    | `Scalar`  | `Group`     |
-| `Struct`    | `Scalar`  | `Group`     |
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Boolean` | `Scalar` | `Group`     |
+| `I8`      | `Scalar` | `Group`     |
+| `I16`     | `Scalar` | `Group`     |
+| `I32`     | `Scalar` | `Group`     |
+| `I64`     | `Scalar` | `Group`     |
+| `U8`      | `Scalar` | `Group`     |
+| `U16`     | `Scalar` | `Group`     |
+| `U32`     | `Scalar` | `Group`     |
+| `U64`     | `Scalar` | `Group`     |
+| `String`  | `Scalar` | `Group`     |
+| `Struct`  | `Scalar` | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -522,21 +522,21 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 12
 
 #### Supported Types
 
-| First       | Second    | Destination |
-| ----------- | --------- |:----------- |
-| `Boolean`   | `Scalar`  | `Group`     |
-| `I8`        | `Scalar`  | `Group`     |
-| `I16`       | `Scalar`  | `Group`     |
-| `I32`       | `Scalar`  | `Group`     |
-| `I64`       | `Scalar`  | `Group`     |
-| `I128`      | `Scalar`  | `Group`     |
-| `U8`        | `Scalar`  | `Group`     |
-| `U16`       | `Scalar`  | `Group`     |
-| `U32`       | `Scalar`  | `Group`     |
-| `U64`       | `Scalar`  | `Group`     |
-| `U128`      | `Scalar`  | `Group`     |
-| `String`    | `Scalar`  | `Group`     |
-| `Struct`    | `Scalar`  | `Group`     |
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Boolean` | `Scalar` | `Group`     |
+| `I8`      | `Scalar` | `Group`     |
+| `I16`     | `Scalar` | `Group`     |
+| `I32`     | `Scalar` | `Group`     |
+| `I64`     | `Scalar` | `Group`     |
+| `I128`    | `Scalar` | `Group`     |
+| `U8`      | `Scalar` | `Group`     |
+| `U16`     | `Scalar` | `Group`     |
+| `U32`     | `Scalar` | `Group`     |
+| `U64`     | `Scalar` | `Group`     |
+| `U128`    | `Scalar` | `Group`     |
+| `String`  | `Scalar` | `Group`     |
+| `Struct`  | `Scalar` | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -560,7 +560,7 @@ For cases where wrapping semantics are needed for integer types, see the [div_wr
 #### Supported Types
 
 | First   | Second  | Destination |
-| ------- | ------- |:----------- |
+|---------|---------|:------------|
 | `Field` | `Field` | `Field`     |
 | `I8`    | `I8`    | `I8`        |
 | `I16`   | `I16`   | `I16`       |
@@ -590,7 +590,7 @@ Divides `first` by `second`, wrapping around at the boundary of the type, and st
 #### Supported Types
 
 | First  | Second | Destination |
-| ------ | ------ |:----------- |
+|--------|--------|:------------|
 | `I8`   | `I8`   | `I8`        |
 | `I16`  | `I16`  | `I16`       |
 | `I32`  | `I32`  | `I32`       |
@@ -620,7 +620,7 @@ Doubles the input, storing the outcome in `destination`.
 #### Supported Types
 
 | Input   | Destination |
-| ------- | ----------- |
+|---------|-------------|
 | `Field` | `Field`     |
 | `Group` | `Group`     |
 
@@ -641,7 +641,7 @@ Checks if `first` is greater than `second`, storing the result in `destination`.
 #### Supported Types
 
 | First    | Second   | Destination |
-| -------- | -------- | ----------- |
+|----------|----------|-------------|
 | `Field`  | `Field`  | `Boolean`   |
 | `I8`     | `I8`     | `Boolean`   |
 | `I16`    | `I16`    | `Boolean`   |
@@ -672,7 +672,7 @@ Checks if `first` is greater than or equal to `second`, storing the result in `d
 #### Supported Types
 
 | First    | Second   | Destination |
-| -------- | -------- | ----------- |
+|----------|----------|-------------|
 | `Field`  | `Field`  | `Boolean`   |
 | `I8`     | `I8`     | `Boolean`   |
 | `I16`    | `I16`    | `Boolean`   |
@@ -704,25 +704,25 @@ The instruction will halt if the given input is smaller than 129 bits.
 
 #### Supported Types
 
-| First       | Destination |
-| ----------- |:----------- |
-| `Address`   | `Field`     |
-| `Boolean`   | `Field`     |
-| `Field`     | `Field`     |
-| `Group`     | `Field`     |
-| `I8`        | `Field`     |
-| `I16`       | `Field`     |
-| `I32`       | `Field`     |
-| `I64`       | `Field`     |
-| `I128`      | `Field`     |
-| `U8`        | `Field`     |
-| `U16`       | `Field`     |
-| `U32`       | `Field`     |
-| `U64`       | `Field`     |
-| `U128`      | `Field`     |
-| `Scalar`    | `Field`     |
-| `String`    | `Field`     |
-| `Struct`    | `Field`     |
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Field`     |
+| `Boolean` | `Field`     |
+| `Field`   | `Field`     |
+| `Group`   | `Field`     |
+| `I8`      | `Field`     |
+| `I16`     | `Field`     |
+| `I32`     | `Field`     |
+| `I64`     | `Field`     |
+| `I128`    | `Field`     |
+| `U8`      | `Field`     |
+| `U16`     | `Field`     |
+| `U32`     | `Field`     |
+| `U64`     | `Field`     |
+| `U128`    | `Field`     |
+| `Scalar`  | `Field`     |
+| `String`  | `Field`     |
+| `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -742,25 +742,25 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 #### Supported Types
 
-| First       | Destination |
-| ----------- |:----------- |
-| `Address`   | `Field`     |
-| `Boolean`   | `Field`     |
-| `Field`     | `Field`     |
-| `Group`     | `Field`     |
-| `I8`        | `Field`     |
-| `I16`       | `Field`     |
-| `I32`       | `Field`     |
-| `I64`       | `Field`     |
-| `I128`      | `Field`     |
-| `U8`        | `Field`     |
-| `U16`       | `Field`     |
-| `U32`       | `Field`     |
-| `U64`       | `Field`     |
-| `U128`      | `Field`     |
-| `Scalar`    | `Field`     |
-| `String`    | `Field`     |
-| `Struct`    | `Field`     |
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Field`     |
+| `Boolean` | `Field`     |
+| `Field`   | `Field`     |
+| `Group`   | `Field`     |
+| `I8`      | `Field`     |
+| `I16`     | `Field`     |
+| `I32`     | `Field`     |
+| `I64`     | `Field`     |
+| `I128`    | `Field`     |
+| `U8`      | `Field`     |
+| `U16`     | `Field`     |
+| `U32`     | `Field`     |
+| `U64`     | `Field`     |
+| `U128`    | `Field`     |
+| `Scalar`  | `Field`     |
+| `String`  | `Field`     |
+| `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -780,25 +780,25 @@ The instruction will halt if the given input is smaller than 129 bits.
 
 #### Supported Types
 
-| First       | Destination |
-| ----------- |:----------- |
-| `Address`   | `Field`     |
-| `Boolean`   | `Field`     |
-| `Field`     | `Field`     |
-| `Group`     | `Field`     |
-| `I8`        | `Field`     |
-| `I16`       | `Field`     |
-| `I32`       | `Field`     |
-| `I64`       | `Field`     |
-| `I128`      | `Field`     |
-| `U8`        | `Field`     |
-| `U16`       | `Field`     |
-| `U32`       | `Field`     |
-| `U64`       | `Field`     |
-| `U128`      | `Field`     |
-| `Scalar`    | `Field`     |
-| `String`    | `Field`     |
-| `Struct`    | `Field`     |
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Field`     |
+| `Boolean` | `Field`     |
+| `Field`   | `Field`     |
+| `Group`   | `Field`     |
+| `I8`      | `Field`     |
+| `I16`     | `Field`     |
+| `I32`     | `Field`     |
+| `I64`     | `Field`     |
+| `I128`    | `Field`     |
+| `U8`      | `Field`     |
+| `U16`     | `Field`     |
+| `U32`     | `Field`     |
+| `U64`     | `Field`     |
+| `U128`    | `Field`     |
+| `Scalar`  | `Field`     |
+| `String`  | `Field`     |
+| `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -818,25 +818,25 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 #### Supported Types
 
-| First       | Destination |
-| ----------- |:----------- |
-| `Address`   | `Field`     |
-| `Boolean`   | `Field`     |
-| `Field`     | `Field`     |
-| `Group`     | `Field`     |
-| `I8`        | `Field`     |
-| `I16`       | `Field`     |
-| `I32`       | `Field`     |
-| `I64`       | `Field`     |
-| `I128`      | `Field`     |
-| `U8`        | `Field`     |
-| `U16`       | `Field`     |
-| `U32`       | `Field`     |
-| `U64`       | `Field`     |
-| `U128`      | `Field`     |
-| `Scalar`    | `Field`     |
-| `String`    | `Field`     |
-| `Struct`    | `Field`     |
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Field`     |
+| `Boolean` | `Field`     |
+| `Field`   | `Field`     |
+| `Group`   | `Field`     |
+| `I8`      | `Field`     |
+| `I16`     | `Field`     |
+| `I32`     | `Field`     |
+| `I64`     | `Field`     |
+| `I128`    | `Field`     |
+| `U8`      | `Field`     |
+| `U16`     | `Field`     |
+| `U32`     | `Field`     |
+| `U64`     | `Field`     |
+| `U128`    | `Field`     |
+| `Scalar`  | `Field`     |
+| `String`  | `Field`     |
+| `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -855,19 +855,19 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 
 #### Supported Types
 
-| First       | Destination |
-| ----------- |:----------- |
-| `Boolean`   | `Field`     |
-| `I8`        | `Field`     |
-| `I16`       | `Field`     |
-| `I32`       | `Field`     |
-| `I64`       | `Field`     |
-| `U8`        | `Field`     |
-| `U16`       | `Field`     |
-| `U32`       | `Field`     |
-| `U64`       | `Field`     |
-| `String`    | `Field`     |
-| `Struct`    | `Field`     |
+| First     | Destination |
+|-----------|:------------|
+| `Boolean` | `Field`     |
+| `I8`      | `Field`     |
+| `I16`     | `Field`     |
+| `I32`     | `Field`     |
+| `I64`     | `Field`     |
+| `U8`      | `Field`     |
+| `U16`     | `Field`     |
+| `U32`     | `Field`     |
+| `U64`     | `Field`     |
+| `String`  | `Field`     |
+| `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -886,21 +886,21 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 12
 
 #### Supported Types
 
-| First       | Destination |
-| ----------- |:----------- |
-| `Boolean`   | `Field`     |
-| `I8`        | `Field`     |
-| `I16`       | `Field`     |
-| `I32`       | `Field`     |
-| `I64`       | `Field`     |
-| `I128`      | `Field`     |
-| `U8`        | `Field`     |
-| `U16`       | `Field`     |
-| `U32`       | `Field`     |
-| `U64`       | `Field`     |
-| `U128`      | `Field`     |
-| `String`    | `Field`     |
-| `Struct`    | `Field`     |
+| First     | Destination |
+|-----------|:------------|
+| `Boolean` | `Field`     |
+| `I8`      | `Field`     |
+| `I16`     | `Field`     |
+| `I32`     | `Field`     |
+| `I64`     | `Field`     |
+| `I128`    | `Field`     |
+| `U8`      | `Field`     |
+| `U16`     | `Field`     |
+| `U32`     | `Field`     |
+| `U64`     | `Field`     |
+| `U128`    | `Field`     |
+| `String`  | `Field`     |
+| `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -917,22 +917,22 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 
 #### Supported Types
 
-| First       | Destination |
-| ----------- |:----------- |
-| `Field`     | `Field`     |
-| `I8`        | `Field`     |
-| `I16`       | `Field`     |
-| `I32`       | `Field`     |
-| `I64`       | `Field`     |
-| `I128`      | `Field`     |
-| `U8`        | `Field`     |
-| `U16`       | `Field`     |
-| `U32`       | `Field`     |
-| `U64`       | `Field`     |
-| `U128`      | `Field`     |
-| `Scalar`    | `Field`     |
-| `String`    | `Field`     |
-| `Struct`    | `Field`     |
+| First    | Destination |
+|----------|:------------|
+| `Field`  | `Field`     |
+| `I8`     | `Field`     |
+| `I16`    | `Field`     |
+| `I32`    | `Field`     |
+| `I64`    | `Field`     |
+| `I128`   | `Field`     |
+| `U8`     | `Field`     |
+| `U16`    | `Field`     |
+| `U32`    | `Field`     |
+| `U64`    | `Field`     |
+| `U128`   | `Field`     |
+| `Scalar` | `Field`     |
+| `String` | `Field`     |
+| `Struct` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -949,22 +949,22 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 
 #### Supported Types
 
-| First       | Destination |
-| ----------- |:----------- |
-| `Field`     | `Field`     |
-| `I8`        | `Field`     |
-| `I16`       | `Field`     |
-| `I32`       | `Field`     |
-| `I64`       | `Field`     |
-| `I128`      | `Field`     |
-| `U8`        | `Field`     |
-| `U16`       | `Field`     |
-| `U32`       | `Field`     |
-| `U64`       | `Field`     |
-| `U128`      | `Field`     |
-| `Scalar`    | `Field`     |
-| `String`    | `Field`     |
-| `Struct`    | `Field`     |
+| First    | Destination |
+|----------|:------------|
+| `Field`  | `Field`     |
+| `I8`     | `Field`     |
+| `I16`    | `Field`     |
+| `I32`    | `Field`     |
+| `I64`    | `Field`     |
+| `I128`   | `Field`     |
+| `U8`     | `Field`     |
+| `U16`    | `Field`     |
+| `U32`    | `Field`     |
+| `U64`    | `Field`     |
+| `U128`   | `Field`     |
+| `Scalar` | `Field`     |
+| `String` | `Field`     |
+| `Struct` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -981,22 +981,22 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 
 #### Supported Types
 
-| First       | Destination |
-| ----------- |:----------- |
-| `Field`     | `Field`     |
-| `I8`        | `Field`     |
-| `I16`       | `Field`     |
-| `I32`       | `Field`     |
-| `I64`       | `Field`     |
-| `I128`      | `Field`     |
-| `U8`        | `Field`     |
-| `U16`       | `Field`     |
-| `U32`       | `Field`     |
-| `U64`       | `Field`     |
-| `U128`      | `Field`     |
-| `Scalar`    | `Field`     |
-| `String`    | `Field`     |
-| `Struct`    | `Field`     |
+| First    | Destination |
+|----------|:------------|
+| `Field`  | `Field`     |
+| `I8`     | `Field`     |
+| `I16`    | `Field`     |
+| `I32`    | `Field`     |
+| `I64`    | `Field`     |
+| `I128`   | `Field`     |
+| `U8`     | `Field`     |
+| `U16`    | `Field`     |
+| `U32`    | `Field`     |
+| `U64`    | `Field`     |
+| `U128`   | `Field`     |
+| `Scalar` | `Field`     |
+| `String` | `Field`     |
+| `Struct` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -1014,7 +1014,7 @@ Computes the multiplicative inverse of the input, storing the outcome in `destin
 #### Supported Types
 
 | Input   | Destination |
-| ------- | ----------- |
+|---------|-------------|
 | `Field` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1033,25 +1033,25 @@ Compares `first` and `second`, storing the result in `destination`.
 
 #### Supported Types
 
-| First       | Second      | Destination |
-| ----------- | ----------- | ----------- |
-| `Address`   | `Address`   | `Address`   |
-| `Boolean`   | `Boolean`   | `Boolean`   |
-| `Field`     | `Field`     | `Field`     |
-| `Group`     | `Group`     | `Group`     |
-| `I8`        | `I8`        | `I8`        |
-| `I16`       | `I16`       | `I16`       |
-| `I32`       | `I32`       | `I32`       |
-| `I64`       | `I64`       | `I64`       |
-| `I128`      | `I128`      | `I128`      |
-| `U8`        | `U8`        | `U8`        |
-| `U16`       | `U16`       | `U16`       |
-| `U32`       |  `U32`      | `U32`       |
-| `U64`       | `U64`       | `U64`       |
-| `U128`      | `U128`      | `U128`      |
-| `Scalar`    | `Scalar`    | `Scalar`    |
-| `Struct`    | `Struct`    | `Struct`    |
-| `Record`    | `Record`    | `Record`    |
+| First     | Second    | Destination |
+|-----------|-----------|-------------|
+| `Address` | `Address` | `Boolean`   |
+| `Boolean` | `Boolean` | `Boolean`   |
+| `Field`   | `Field`   | `Boolean`   |
+| `Group`   | `Group`   | `Boolean`   |
+| `I8`      | `I8`      | `Boolean`   |
+| `I16`     | `I16`     | `Boolean`   |
+| `I32`     | `I32`     | `Boolean`   |
+| `I64`     | `I64`     | `Boolean`   |
+| `I128`    | `I128`    | `Boolean`   |
+| `U8`      | `U8`      | `Boolean`   |
+| `U16`     | `U16`     | `Boolean`   |
+| `U32`     | `U32`     | `Boolean`   |
+| `U64`     | `U64`     | `Boolean`   |
+| `U128`    | `U128`    | `Boolean`   |
+| `Scalar`  | `Scalar`  | `Boolean`   |
+| `Struct`  | `Struct`  | `Boolean`   |
+| `Record`  | `Record`  | `Boolean`   |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -1069,25 +1069,25 @@ Returns true if `first` is not equal to `second`, storing the result in `destina
 
 #### Supported Types
 
-| First       | Second      | Destination |
-| ----------- | ----------- | ----------- |
-| `Address`   | `Address`   | `Address`   |
-| `Boolean`   | `Boolean`   | `Boolean`   |
-| `Field`     | `Field`     | `Field`     |
-| `Group`     | `Group`     | `Group`     |
-| `I8`        | `I8`        | `I8`        |
-| `I16`       | `I16`       | `I16`       |
-| `I32`       | `I32`       | `I32`       |
-| `I64`       | `I64`       | `I64`       |
-| `I128`      | `I128`      | `I128`      |
-| `U8`        | `U8`        | `U8`        |
-| `U16`       | `U16`       | `U16`       |
-| `U32`       |  `U32`      | `U32`       |
-| `U64`       | `U64`       | `U64`       |
-| `U128`      | `U128`      | `U128`      |
-| `Scalar`    | `Scalar`    | `Scalar`    |
-| `Struct`    | `Struct`    | `Struct`    |
-| `Record`    | `Record`    | `Record`    |
+| First     | Second    | Destination |
+|-----------|-----------|-------------|
+| `Address` | `Address` | `Boolean`   |
+| `Boolean` | `Boolean` | `Boolean`   |
+| `Field`   | `Field`   | `Boolean`   |
+| `Group`   | `Group`   | `Boolean`   |
+| `I8`      | `I8`      | `Boolean`   |
+| `I16`     | `I16`     | `Boolean`   |
+| `I32`     | `I32`     | `Boolean`   |
+| `I64`     | `I64`     | `Boolean`   |
+| `I128`    | `I128`    | `Boolean`   |
+| `U8`      | `U8`      | `Boolean`   |
+| `U16`     | `U16`     | `Boolean`   |
+| `U32`     | `U32`     | `Boolean`   |
+| `U64`     | `U64`     | `Boolean`   |
+| `U128`    | `U128`    | `Boolean`   |
+| `Scalar`  | `Scalar`  | `Boolean`   |
+| `Struct`  | `Struct`  | `Boolean`   |
+| `Record`  | `Record`  | `Boolean`   |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -1106,7 +1106,7 @@ Checks if `first` is less than `second`, storing the outcome in `destination`.
 #### Supported Types
 
 | First    | Second   | Destination |
-| -------- | -------- | ----------- |
+|----------|----------|-------------|
 | `Field`  | `Field`  | `Boolean`   |
 | `I8`     | `I8`     | `Boolean`   |
 | `I16`    | `I16`    | `Boolean`   |
@@ -1137,7 +1137,7 @@ Checks if `first` is less than or equal to `second`, storing the outcome in `des
 #### Supported Types
 
 | First    | Second   | Destination |
-| -------- | -------- | ----------- |
+|----------|----------|-------------|
 | `Field`  | `Field`  | `Boolean`   |
 | `I8`     | `I8`     | `Boolean`   |
 | `I16`    | `I16`    | `Boolean`   |
@@ -1168,13 +1168,13 @@ The semantics of this operation are consistent with the mathematical definition 
 
 #### Supported Types
 
-| First    | Second   | Destination |
-| -------- | -------- | ----------- |
-| `U8`     | `U8`     | `U8`        |
-| `U16`    | `U16`    | `U16`       |
-| `U32`    | `U32`    | `U32`       |
-| `U64`    | `U64`    | `U64`       |
-| `U128`   | `U128`   | `U128`      |
+| First  | Second | Destination |
+|--------|--------|-------------|
+| `U8`   | `U8`   | `U8`        |
+| `U16`  | `U16`  | `U16`       |
+| `U32`  | `U32`  | `U32`       |
+| `U64`  | `U64`  | `U64`       |
+| `U128` | `U128` | `U128`      |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -1195,7 +1195,7 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 #### Supported Types
 
 | First    | Second   | Destination |
-| -------- | -------- | ----------- |
+|----------|----------|-------------|
 | `Field`  | `Field`  | `Field`     |
 | `Group`  | `Scalar` | `Group`     |
 | `Scalar` | `Group`  | `Group`     |
@@ -1226,7 +1226,7 @@ Multiplies `first` with `second`, wrapping around at the boundary of the type, a
 #### Supported Types
 
 | First  | Second | Destination |
-| ------ | ------ | ----------- |
+|--------|--------|-------------|
 | `I8`   | `I8`   | `I8`        |
 | `I16`  | `I16`  | `I16`       |
 | `I32`  | `I32`  | `I32`       |
@@ -1254,7 +1254,7 @@ Returns false only if `first` and `second` are true, storing the outcome in `des
 #### Supported Types
 
 | First     | Second    | Destination |
-| --------- | --------- | ----------- |
+|-----------|-----------|-------------|
 | `Boolean` | `Boolean` | `Boolean`   |
 
 [Back to Top](#table-of-standard-operators)
@@ -1275,7 +1275,7 @@ For signed integer types, calling `neg` on the minimum value is an invalid opera
 #### Supported Types
 
 | Input   | Destination |
-| ------- | ----------- |
+|---------|-------------|
 | `Field` | `Field`     |
 | `Group` | `Group`     |
 | `I8`    | `I8`        |
@@ -1300,7 +1300,7 @@ Returns true when neither `first` nor `second` is true, storing the outcome in `
 #### Supported Type
 
 | First     | Second    | Destination |
-| --------- | --------- | ----------- |
+|-----------|-----------|-------------|
 | `Boolean` | `Boolean` | `Boolean`   |
 
 [Back to Top](#table-of-standard-operators)
@@ -1319,7 +1319,7 @@ Perform a NOT operation on an integer (bitwise) or boolean input, storing the ou
 #### Supported Types
 
 | Input     | Destination |
-| --------- | ----------- |
+|-----------|-------------|
 | `Boolean` | `Boolean`   |
 | `I8`      | `I8`        |
 | `I16`     | `I16`       |
@@ -1349,7 +1349,7 @@ Performs an OR operation on integer (bitwise) or boolean `first` and `second`, s
 #### Supported Types
 
 | First     | Second    | Destination |
-| --------- | --------- | ----------- |
+|-----------|-----------|-------------|
 | `Boolean` | `Boolean` | `Boolean`   |
 | `I8`      | `I8`      | `I8`        |
 | `I16`     | `I16`     | `I16`       |
@@ -1383,7 +1383,7 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 `Magnitude` can be a `U8`, `U16`, or `U32`.
 
 | First   | Second      | Destination |
-| ------- | ----------- | ----------- |
+|---------|-------------|-------------|
 | `Field` | `Field`     | `Field`     |
 | `I8`    | `Magnitude` | `I8`        |
 | `I16`   | `Magnitude` | `I16`       |
@@ -1414,7 +1414,7 @@ Raises `first` to the power of `second`, wrapping around at the boundary of the 
 `Magnitude` can be a `U8`, `U16`, or `U32`.
 
 | First  | Second      | Destination |
-| ------ | ----------- | ----------- |
+|--------|-------------|-------------|
 | `I8`   | `Magnitude` | `I8`        |
 | `I16`  | `Magnitude` | `I16`       |
 | `I32`  | `Magnitude` | `I32`       |
@@ -1448,18 +1448,18 @@ For cases where wrapping semantics are needed for integer types, see the [rem_wr
 
 #### Supported Types
 
-| First    | Second   | Destination |
-| -------- | -------- | ----------- |
-| `I8`     | `I8`     | `I8`        |
-| `I16`    | `I16`    | `I16`       |
-| `I32`    | `I32`    | `I32`       |
-| `I64`    | `I64`    | `I64`       |
-| `I128`   | `I128`   | `I128`      |
-| `U8`     | `U8`     | `U8`        |
-| `U16`    | `U16`    | `U16`       |
-| `U32`    | `U32`    | `U32`       |
-| `U64`    | `U64`    | `U64`       |
-| `U128`   | `U128`   | `U128`      |
+| First  | Second | Destination |
+|--------|--------|-------------|
+| `I8`   | `I8`   | `I8`        |
+| `I16`  | `I16`  | `I16`       |
+| `I32`  | `I32`  | `I32`       |
+| `I64`  | `I64`  | `I64`       |
+| `I128` | `I128` | `I128`      |
+| `U8`   | `U8`   | `U8`        |
+| `U16`  | `U16`  | `U16`       |
+| `U32`  | `U32`  | `U32`       |
+| `U64`  | `U64`  | `U64`       |
+| `U128` | `U128` | `U128`      |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -1476,18 +1476,18 @@ Computes the truncated remainder of `first` divided by `second`, wrapping around
 
 #### Supported Types
 
-| First    | Second   | Destination |
-| -------- | -------- | ----------- |
-| `I8`     | `I8`     | `I8`        |
-| `I16`    | `I16`    | `I16`       |
-| `I32`    | `I32`    | `I32`       |
-| `I64`    | `I64`    | `I64`       |
-| `I128`   | `I128`   | `I128`      |
-| `U8`     | `U8`     | `U8`        |
-| `U16`    | `U16`    | `U16`       |
-| `U32`    | `U32`    | `U32`       |
-| `U64`    | `U64`    | `U64`       |
-| `U128`   | `U128`   | `U128`      |
+| First  | Second | Destination |
+|--------|--------|-------------|
+| `I8`   | `I8`   | `I8`        |
+| `I16`  | `I16`  | `I16`       |
+| `I32`  | `I32`  | `I32`       |
+| `I64`  | `I64`  | `I64`       |
+| `I128` | `I128` | `I128`      |
+| `U8`   | `U8`   | `U8`        |
+| `U16`  | `U16`  | `U16`       |
+| `U32`  | `U32`  | `U32`       |
+| `U64`  | `U64`  | `U64`       |
+| `U128` | `U128` | `U128`      |
 
 [Back to Top](#table-of-standard-operators)
 ***
@@ -1508,7 +1508,7 @@ Shifts `first` left by `second` bits, storing the outcome in `destination`.
 `Magnitude` can be a `U8`, `U16`, or `U32`.
 
 | First  | Second      | Destination |
-| ------ | ----------- | ----------- |
+|--------|-------------|-------------|
 | `I8`   | `Magnitude` | `I8`        |
 | `I16`  | `Magnitude` | `I16`       |
 | `I32`  | `Magnitude` | `I32`       |
@@ -1538,7 +1538,7 @@ Shifts `first` left by `second` bits, wrapping around at the boundary of the typ
 `Magnitude` can be a `U8`, `U16`, or `U32`.
 
 | First  | Second      | Destination |
-| ------ | ----------- | ----------- |
+|--------|-------------|-------------|
 | `I8`   | `Magnitude` | `I8`        |
 | `I16`  | `Magnitude` | `I16`       |
 | `I32`  | `Magnitude` | `I32`       |
@@ -1569,7 +1569,7 @@ Shifts `first` right by `second` bits, storing the outcome in `destination`.
 `Magnitude` can be a `U8`, `U16`, or `U32`.
 
 | First  | Second      | Destination |
-| ------ | ----------- | ----------- |
+|--------|-------------|-------------|
 | `I8`   | `Magnitude` | `I8`        |
 | `I16`  | `Magnitude` | `I16`       |
 | `I32`  | `Magnitude` | `I32`       |
@@ -1599,7 +1599,7 @@ Shifts `first` right by `second` bits, wrapping around at the boundary of the ty
 `Magnitude` can be a `U8`, `U16`, or `U32`.
 
 | First  | Second      | Destination |
-| ------ | ----------- | ----------- |
+|--------|-------------|-------------|
 | `I8`   | `Magnitude` | `I8`        |
 | `I16`  | `Magnitude` | `I16`       |
 | `I32`  | `Magnitude` | `I32`       |
@@ -1627,7 +1627,7 @@ Squares the input, storing the outcome in `destination`.
 #### Supported Types
 
 | Input   | Destination |
-| ------- | ----------- |
+|---------|-------------|
 | `Field` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1646,7 +1646,7 @@ Computes the square root of the input, storing the outcome in `destination`.
 #### Supported Types
 
 | Input   | Destination |
-| ------- | ----------- |
+|---------|-------------|
 | `Field` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1667,7 +1667,7 @@ Computes `first - second`, storing the outcome in `destination`.
 #### Supported Types
 
 | First   | Second  | Destination |
-| ------- | ------- | ----------- |
+|---------|---------|-------------|
 | `Field` | `Field` | `Field`     |
 | `Group` | `Group` | `Group`     |
 | `I8`    | `I8`    | `I8`        |
@@ -1697,7 +1697,7 @@ Computes `first - second`, wrapping around at the boundary of the type, and stor
 #### Supported Types
 
 | First  | Second | Destination |
-| ------ | ------ | ----------- |
+|--------|--------|-------------|
 | `I8`   | `I8`   | `I8`        |
 | `I16`  | `I16`  | `I16`       |
 | `I32`  | `I32`  | `I32`       |
@@ -1725,7 +1725,7 @@ Selects `first`, if `condition` is true, otherwise selects `second`, storing the
 #### Supported Types
 
 | Condition | First     | Second    | Destination |
-| --------- | --------- | --------- | ----------- |
+|-----------|-----------|-----------|-------------|
 | `Boolean` | `Boolean` | `Boolean` | `Boolean`   |
 | `Boolean` | `Field`   | `Field`   | `Field`     |
 | `Boolean` | `Group`   | `Group`   | `Group`     |
@@ -1757,7 +1757,7 @@ Performs a XOR operation on integer (bitwise) or boolean `first` and `second`, s
 #### Supported Types
 
 | First     | Second    | Destination |
-| --------- | --------- | ----------- |
+|-----------|-----------|-------------|
 | `Boolean` | `Boolean` | `Boolean`   |
 | `I8`      | `I8`      | `I8`        |
 | `I16`     | `I16`     | `I16`       |
