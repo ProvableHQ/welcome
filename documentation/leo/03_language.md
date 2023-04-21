@@ -129,8 +129,9 @@ program hello.aleo {
         public receiver: address,
         public amount: u64,
     ) {
-        increment(balances, receiver, amount);
-    }
+        let current_amount: u64 = Mapping::get_or_init(account, receiver, 0u64);
+        Mapping::set(account, receiver, current_amount + amount);
+   }
 
     function compute(a: u64, b: u64) -> u64 {
         return a + b;
@@ -304,10 +305,16 @@ inline foo(
 }
 ```
 
+The rules for functions (in the traditional sense) are as follows:
+* There are three variants of functions: transition, function, inline.
+* transitions can only call functions and inlines.
+* functions can only call inlines.
+* inlines can only call inlines.
+* Direct/indirect recursive calls are not allowed
+
 #### Increment and Decrement
-An increment statement has the form `increment(mapping, key, value);`.
-A decrement statement has the form `decrement(mapping, key, value);`.
-Increment and decrement statements can only be used in finalize functions.
+`increment()` and `decrement()` functions are deprecated as of Leo v1.7.0.
+Please use the `Mapping::set()` function instead.
 
 ```leo showLineNumbers
 program transfer.aleo {
@@ -319,19 +326,21 @@ program transfer.aleo {
     transition transfer_public(...) {...}
 
     finalize transfer_public(
-        public sender: address,
-        public receiver: address,
-        public amount: u64,
+        public sender: address, 
+        public receiver: address, 
+        public amount: u64
     ) {
         // Decrements `account[sender]` by `amount`.
         // If `account[sender]` does not exist, it will be created.
         // If `account[sender] - amount` underflows, `transfer_public` is reverted.
-        decrement(account, sender, amount);
-
+        let sender_amount: u64 = Mapping::get_or_init(account, sender, 0u64);
+        Mapping::set(account, sender, sender_amount - amount);
+        
         // Increments `account[receiver]` by `amount`.
         // If `account[receiver]` does not exist, it will be created.
         // If `account[receiver] + amount` overflows, `transfer_public` is reverted.
-        increment(account, receiver, amount);
+        let receiver_amount: u64 = Mapping::get_or_init(account, receiver, 0u64);
+        Mapping::set(account, receiver, receiver_amount + amount);
     }
 }
 ```
@@ -368,17 +377,57 @@ program transfer.aleo {
         return new then finalize(self.caller, amount);
     }
 
-    // Decrements `account[owner]` by `amount`.
-    // If `account[owner]` does not exist, it will be created.
-    // If `account[owner] - amount` underflows, `transfer_public_to_private` is reverted.
     finalize transfer_public_to_private(
-        public owner: address,
-        public amount: u64,
+        public sender: address,
+        public amount: u64
     ) {
-        decrement(account, owner, amount);
+        // Decrements `account[sender]` by `amount`.
+        // If `account[sender]` does not exist, it will be created.
+        // If `account[sender] - amount` underflows, `transfer_public_to_private` is reverted.
+        let current_amount: u64 = Mapping::get_or_init(account, sender, 0u64);
+        Mapping::set(account, sender, current_amount - amount);
     }
 }
 ```
+
+### Mapping and finalize
+The syntax around mapping and finalize has been updated to support `get`, `get_or_init`, `set` functions.
+
+```leo showLineNumbers
+program test.aleo {
+    mapping counter: address => u64;
+
+    transition dubble() {
+        return then finalize(self.caller);
+    }
+
+    finalize dubble(addr: address) {
+        let current_value: u64 = Mapping::get_or_init(counter, addr, 0u64);
+        Mapping::set(counter, addr, current_value + 1u64);
+        current_value = Mapping::get(counter, addr);
+        Mapping::set(counter, addr, current_value + 1u64);
+    }
+
+}
+```
+
+#### Mapping
+The mapping struct allows the programmer to apply updates to a program mapping data structure by calling one of the following functions.
+
+#### get
+A get command, e.g. `current_value = Mapping::get(counter, addr);`
+Gets the value stored at `addr` in `counter` and stores the result in `current_value`
+If the value at `addr` does not exist, then the program will fail to execute.
+
+#### get_or_init
+A get command that initializes the mapping in case of failure, e.g.
+`let current_value: u64 = Mapping::get_or_init(counter, addr, 0u64);`
+Gets the value stored at `addr` in `counter` and stores the result in `current_value`.
+If the key is not present, `0u64`  is stored in `counter` and stored in `current_value`.
+
+#### set
+A set command, e.g. `Mapping::set(counter, addr, current_value + 1u64);`
+Sets the `addr` entry as `current_value + 1u64` in `counter`.
 
 ## Operators
 

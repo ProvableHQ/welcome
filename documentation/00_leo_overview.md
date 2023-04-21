@@ -38,9 +38,9 @@ The Leo CLI provides a suite of commands to make programming in Leo easy.
 - [**leo new**](./leo/05_commands.md#leo-new)
 - [**leo build**](./leo/05_commands.md#leo-build)
 - [**leo run**](./leo/05_commands.md#leo-run)
-- [**leo deploy**](./leo/05_commands.md#leo-deploy)
 - [**leo clean**](./leo/05_commands.md#leo-clean)
 
+[//]: # (- [**leo deploy**]&#40;./leo/05_commands.md#leo-deploy&#41;)
 [//]: # (- [**leo node**]&#40;./leo/05_commands.md#leo-node&#41;)
 
 ## Additional Material

@@ -24,8 +24,8 @@ You can print the list of commands by running `leo --help`
 * [`new`](#leo-new) - Create a new Leo package in a new directory.
 * [`build`](#leo-build) - Compile the current package as a program.
 * [`run`](#leo-run) - Run a program with input variables.
-* [`deploy`](#leo-deploy) - Deploy a program.
 * [`clean`](#leo-clean) - Clean the output directory.
+[//]: # (* [`deploy`]&#40;#leo-deploy&#41; - Deploy a program.)
 
 [//]: # (* [`node`]&#40;#leo-node&#41; - Start a local development server.)
 
@@ -101,15 +101,14 @@ leo run {$TRANSITION} {$INPUTS}
 
      Leo ✅ Built 'hello.aleo' (in "/hello/build")
  • Loaded universal setup (in 100 ms)
+ 
 🚀 Executing 'hello.aleo/main'...
-
- • Executing 'hello.aleo/main'...
- • Executed 'main' (in 1000 ms)
+⛓  Constraints
+ • 'hello.aleo/main' - 35 constraints (called 1 time)
 
 ➡️  Output
-
  • 3u32
-
+ 
  Leo ✅ Executed 'hello.aleo/main' (in "/hello/build")
 ```
 
@@ -199,12 +198,17 @@ This endpoint retrieves only the unspent records belonging to a given ViewKey.
 curl --location --request GET 'localhost:4180/testnet3/records/unspent' -H 'Content-Type: application/json' -d '"AViewKey1iAf6a7fv6ELA4ECwAth1hDNUJJNNoWNThmREjpybqder"'
 ```
 
-## `leo deploy`
+[//]: # ()
+[//]: # (## `leo deploy`)
 
-To deploy a program to Aleo Testnet3 run.
-```bash
-leo deploy
-```
+[//]: # ()
+[//]: # (To deploy a program to Aleo Testnet3 run.)
+
+[//]: # (```bash)
+
+[//]: # (leo deploy)
+
+[//]: # (```)
 
 ## `leo clean`
 
