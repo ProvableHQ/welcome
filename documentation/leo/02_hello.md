@@ -35,24 +35,16 @@ leo run main
 ```
 
 ```bash title="console output:"
- Leo Compiled 'main.leo' into Aleo instructions
-⏳ Compiling 'hello.aleo'...
+Leo Compiled 'main.leo' into Aleo instructions
+Leo ✅ Built 'hello.aleo' (in "/hello/build")
 
- • Loaded universal setup (in 100 ms)
- • Built 'main' (in 1000 ms)
-
-     Build ✅ Built 'hello.aleo' (in "/hello/build")
- • Loaded universal setup (in 100 ms)
-🚀 Executing 'hello.aleo/main'...
-
- • Executing 'hello.aleo/main'...
- • Executed 'main' (in 1000 ms)
+⛓  Constraints
+ •  'hello.aleo/main' - 35 constraints (called 1 time)
 
 ➡️  Output
-
  • 3u32
-
- Executing ✅ Executed 'hello.aleo/main' (in "/hello/build")
+ 
+Leo ✅ Executed 'hello.aleo/main' (in "/hello/build")
 ```
 
 Congratulations! You've just run your first Leo program.
@@ -200,24 +192,23 @@ leo run
 
 ```bash title="console output:"
  Leo ✅ Compiled 'main.leo' into Aleo instructions (in "/hello/build/main.aleo")
-⏳ Compiling 'hello.aleo'...
+ ⏳ Compiling 'hello.aleo'...
 
- • Loaded universal setup (in 100 ms)
- • Built 'main' (in 1000 ms)
+   • Loaded universal setup (in 100 ms)
+   • Built 'main' (in 1000 ms)
 
  Leo ✅ Built 'hello.aleo' (in "/hello/build")
- • Loaded universal setup (in 100 ms)
-🚀 Executing 'hello.aleo/main'...
+   • Loaded universal setup (in 100 ms)
 
- • Executing 'hello.aleo/main'...
- • Executed 'main' (in 1000 ms)
+ ⛓  Constraints
+   • 'hello.aleo/main' - 35 constraints (called 1 time)
 
-➡️  Output
-
- • 3u32
-
+ ➡️  Output
+   • 3u32
+ 
  Leo ✅ Executed 'hello.aleo/main' (in "/hello/build")
 ```
+
 
 The `leo run` command will attempt to verify a proof only if all previous steps completed successfully.
 Under the hood, the Leo [CLI](05_commands.md) will check for existing `.prover`, `.verifier`, and `.avm` files
