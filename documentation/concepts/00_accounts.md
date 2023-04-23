@@ -27,10 +27,10 @@ An account private key is constructed from a randomly-sampled **account seed**. 
 ### Private Key Format
 
 ```
-APrivateKey1b47dMA8f9GfXPsW9s16qWfiYYmWGAAcorK9RkaVpBeFA
+APrivateKey1zkp4X9ApjTb7Rv8EABfZRugXBhbPzCL245GyNtYJP5GYY2k
 ```
 
-An account private key is formatted as a Base58 string, comprised of 58 characters.
+An account private key is formatted as a Base58 string, comprised of 59 characters.
 The account private key is encoded with a [private key prefix](#account-prefixes) that reads `APrivateKey1`, indicating
 that it is a private key and should not be shared with other users.
 
@@ -47,10 +47,10 @@ The account view key is comprised of:
 ### View Key Format
 
 ```
-AViewKey1cVP45x3E1TxJFgiJqawy7w5WQDsUXWTbpWAXSXB1sDw8
+AViewKey1nKB4qr9b5gK8wQvmM5sTPEuBwshtDdkCZB1SPWppAG9Y
 ```
 
-An account view key is formatted as a Base58 string, comprised of 56 characters.
+An account view key is formatted as a Base58 string, comprised of 53 characters.
 The account view key is encoded with a [view key prefix](#account-prefixes) that reads `AViewKey1`, indicating
 that it is a view key and should only be shared with authorized parties.
 
@@ -64,7 +64,7 @@ The account address is comprised of:
 ### Address Format
 
 ```
-aleo1y90yg3yzs4g7q25f9nn8khuu00m8ysynxmcw8aca2d0phdx8dgpq4vw348
+aleo1dg722m22fzpz6xjdrvl9tzu5t68zmypj5p74khlqcac0gvednygqxaax0j
 ```
 
 An account address is formatted as a Bech32 string, comprised of 63 characters.
