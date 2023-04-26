@@ -1,5 +1,5 @@
 ---
-id: transactions
+id: transaction_fees
 title: Transaction Fees
 sidebar_label: Transaction Fees
 ---
