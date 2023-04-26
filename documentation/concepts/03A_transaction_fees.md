@@ -44,7 +44,7 @@ A fee incurred when deploying an application on the Aleo blockchain
 ## Execute Transaction Fee
 A fee incurred when executing an application on the Aleo blockchain
 
-### Structure (optimistic)
+### Structure (minimum cost example)
 
 |Part of Execute Transaction|Size| Multiplier|Cost|
 |:-:|:-:|:-:|:-:|
@@ -58,7 +58,7 @@ A fee incurred when executing an application on the Aleo blockchain
 |:-:|:-:|:-:|:-:|
 |`Transaction -> Transition`|5 KB|1|5 millicredits|
 
-### Structure (pessimistic)
+### Structure (maximum cost example)
 
 |Part of Execute Transaction|Size| Multiplier|Cost|
 |:-:|:-:|:-:|:-:|
