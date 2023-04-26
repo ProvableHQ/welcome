@@ -6,7 +6,7 @@ sidebar_label: Transaction Fees
 
 # Transactions Fees
 
-A **transaction fee** is a fee that is required in order to process a transaction on the Aleo network. Currently, there are three types of transaction fees that correspond to each transaction type: **deploy** and **execute**. Transaction sizes are averages using [Big _O_ notation (on the order of)](https://en.wikipedia.org/wiki/Big_O_notation).
+A **transaction fee** is a fee that is required in order to process a transaction on the Aleo network. Currently, there are three types of transaction fees that correspond to each transaction type: **deploy** and **execute**.
 
 ## Aleo Credits Demonination Table
 
@@ -15,6 +15,8 @@ A **transaction fee** is a fee that is required in order to process a transactio
 |Byte|microcredit|1|Lowest denomination|
 |Kilobyte (KB)|millicredit|1000 microcredits|Most transaction types average between 3 and 10 millicredits|
 |Megabyte (MB)|credit|1000 millicredits|Assuming a 1:1 USD mapping|
+
+Note that transaction sizes are averages using [Big _O_ notation (on the order of)](https://en.wikipedia.org/wiki/Big_O_notation).
 
 # Types of Transaction Fees
 
