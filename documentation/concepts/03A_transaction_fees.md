@@ -6,7 +6,7 @@ sidebar_label: Transaction Fees
 
 # Transactions Fees
 
-A **transaction fee** is a fee that is required in order to process a transaction on the Aleo network. Currently, there are three types of transaction fees that correspond to each transaction type: **transfer**, **deploy**, and **execute**. Transaction sizes are averages using [Big _O_ notation (on the order of)](https://en.wikipedia.org/wiki/Big_O_notation).
+A **transaction fee** is a fee that is required in order to process a transaction on the Aleo network. Currently, there are three types of transaction fees that correspond to each transaction type: **deploy** and **execute**. Transaction sizes are averages using [Big _O_ notation (on the order of)](https://en.wikipedia.org/wiki/Big_O_notation).
 
 ## Aleo Credits Demonination Table
 
@@ -17,30 +17,6 @@ A **transaction fee** is a fee that is required in order to process a transactio
 |Megabyte (MB)|credit|1000 millicredits|Assuming a 1:1 USD mapping|
 
 # Types of Transaction Fees
-
-## Transfer Transaction Fee
-A fee incurred when processing a transfer on the Aleo blockchain, such as sending funds
-
-### Structure
-
-|Part of Transfer Transaction|Size| Multiplier|Cost|
-|:-:|:-:|:-:|:-:|
-|`Transaction wrapper`|0 KB|1|0 millicredits|
-|`Transition wrapper`|0 KB|1|0 millicredits|
-|`Input`|1 KB|1|1 millicredit|
-|`Output`|1 KB|1|1 millicredit|
-|`Proof`|1 KB|1|1 millicredit|
-
-|Total|Size|Multiplier|Total cost|
-|:-:|:-:|:-:|:-:|
-|`Transaction -> Transition`|3 KB|1|3 millicredits|
-
-
-
-#### Notes
-* The transfer transaction fee may increase to prevent spamming; it is currently stable between 3 and 5 millicredits
-
-
 
 ## Execute Transaction Fee
 A fee incurred when executing an application on the Aleo blockchain
@@ -72,6 +48,9 @@ A fee incurred when executing an application on the Aleo blockchain
 |Total|Size|Multiplier|Total cost|
 |:-:|:-:|:-:|:-:|
 |`Transaction -> Transition`|32 MB|1|32 credits|
+
+Notes
+* The optimistic execute transaction fee may increase to prevent spamming; it is currently stable between 3 and 5 millicredits
 
 
 ## Deploy Transaction Fee
