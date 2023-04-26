@@ -12,9 +12,9 @@ A **transaction fee** is a fee that is required in order to process a transactio
 
 |Size of Transaction|Denomination|Value|Example|
 |:-:|:-:|:-:|:-:|
-|Byte|microcredit|1|Lowest denomination|
+|Byte|microcredit|1|Smallest denomination|
 |Kilobyte (KB)|millicredit|1000 microcredits|Most transaction types average between 3 and 10 millicredits|
-|Megabyte (MB)|credit|1000 millicredits|Assuming a 1:1 USD mapping|
+|Megabyte (MB)|credit|1000 millicredits|Largest denomination|
 
 Note that transaction sizes are averages using [Big _O_ notation (on the order of)](https://en.wikipedia.org/wiki/Big_O_notation).
 
