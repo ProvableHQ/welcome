@@ -16,7 +16,7 @@ A **transaction fee** is a fee that is required in order to process a transactio
 |Kilobyte (KB)|millicredit|1000 microcredits|Most transaction types average between 3 and 10 millicredits|
 |Megabyte (MB)|credit|1000 millicredits|Assuming a 1:1 USD mapping|
 
-# Types of Transactions Fees
+# Types of Transaction Fees
 
 ## Transfer Transaction Fee
 A fee incurred when processing a transfer on the Aleo blockchain, such as sending funds
