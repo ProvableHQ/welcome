@@ -4,20 +4,26 @@ title: Transactions Fees
 sidebar_label: Transaction Fees
 ---
 
-A **transaction fee** is a fee that is required in order to process a transaction on the Aleo network. Currently, there are three types of transaction fees that correspond to each transaction type: **transfer**, **deploy**, and **execute**.
+# Transactions Fees
 
-**Consider**
+A **transaction fee** is a fee that is required in order to process a transaction on the Aleo network. Currently, there are three types of transaction fees that correspond to each transaction type: **transfer**, **deploy**, and **execute**. Transaction sizes are averages using [Big _O_ notation (on the order of)](https://en.wikipedia.org/wiki/Big_O_notation).
 
-* **1 Byte = 1 microcredit, 1 KB = 1 millicredit, 1 MB = 1 credit**, assuming a 1:1 USD mapping
-* Transaction sizes are averages using BigO notation (on the order of)
+## Aleo Credits Demonination Table
 
+|Size of Transaction|Denomination|Value|Example|
+|:-:|:-:|:-:|:-:|
+|Byte|microcredit|1|Lowest denomination|
+|Kilobyte (KB)|millicredit|1000 microcredits|Most transaction types average between 3 and 10 millicredits|
+|Megabyte (MB)|credit|1000 millicredits|Assuming a 1:1 USD mapping|
 
-## Types of Transactions Fees
+# Types of Transactions Fees
 
-### Transfer Transaction Fee
+## Transfer Transaction Fee
 A fee incurred when processing a transfer on the Aleo blockchain, such as sending funds
 
-|Part of transfer transaction|Size| Multiplier|Cost|
+### Structure
+
+|Part of Transfer Transaction|Size| Multiplier|Cost|
 |:-:|:-:|:-:|:-:|
 |`Transaction wrapper`|0 KB|1|0 millicredits|
 |`Transition wrapper`|0 KB|1|0 millicredits|
@@ -34,14 +40,14 @@ A fee incurred when processing a transfer on the Aleo blockchain, such as sendin
 #### Notes
 * The transfer transaction fee may increase to prevent spamming; it is currently stable between 3-5 millicredits
 
----
 
-### Execute Transaction Fee
+
+## Execute Transaction Fee
 A fee incurred when executing an application on the Aleo blockchain
 
-#### Structure (optimistic)
+### Structure (optimistic)
 
-|Part of execute transaction|Size| Multiplier|Cost|
+|Part of Execute Transaction|Size| Multiplier|Cost|
 |:-:|:-:|:-:|:-:|
 |`Transaction wrapper`|0 KB|1|0 millicredits|
 |`Transition wrapper`|0 KB|1|0 millicredits|
@@ -53,13 +59,11 @@ A fee incurred when executing an application on the Aleo blockchain
 |:-:|:-:|:-:|:-:|
 |`Transaction -> Transition`|5 KB|1|5 millicredits|
 
---
+### Structure (pessimistic)
 
-#### Structure (pessimistic)
-
-|Part of execute transaction|Size| Multiplier|Cost|
+|Part of Execute Transaction|Size| Multiplier|Cost|
 |:-:|:-:|:-:|:-:|
-|`Transaction wrapper`|1 KB|65|0 millicredits|
+|`Transaction wrapper`|1 KB|65|65 millicredits|
 |`Transition wrapper`|1 MB|32|32 credits|
 |`Input`|1 KB|16 * 32|512 millicredits|
 |`Output`|1 KB| 16 * 32|512 millicredits|
@@ -70,14 +74,12 @@ A fee incurred when executing an application on the Aleo blockchain
 |`Transaction -> Transition`|32 MB|1|32 credits|
 
 
---
-
-### Deploy Transaction Fee
+## Deploy Transaction Fee
 A fee incurred when deploying an application on the Aleo blockchain
 
-#### Structure
+### Structure
 
-|Part of deploy transaction|Size| Multiplier|Cost|
+|Part of Deploy Transaction|Size| Multiplier|Cost|
 |:-:|:-:|:-:|:-:|
 |`Verifying key`|1 KB|2|2 millicredits|
 |`Certificate`|1 MB|2|2 millicredits|
