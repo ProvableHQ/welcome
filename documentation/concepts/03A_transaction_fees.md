@@ -20,6 +20,27 @@ Note that transaction sizes are averages using [Big _O_ notation (on the order o
 
 # Types of Transaction Fees
 
+## Deploy Transaction Fee
+A fee incurred when deploying an application on the Aleo blockchain
+
+### Structure
+
+|Part of Deploy Transaction|Size| Multiplier|Cost|
+|:-:|:-:|:-:|:-:|
+|`Transaction wrapper`|0 KB|1|0 millicredits|
+|`Transition wrapper`|0 KB|1|0 millicredits|
+|`Verifying key`|1 KB|2|2 millicredits|
+|`Certificate`|1 MB|2|2 millicredits|
+|`Program bytecode`|1 KB|1|1 millicredit|
+
+|Total|Size|Multiplier|Total cost|
+|:-:|:-:|:-:|:-:|
+|`Transaction -> Transition`|5 KB|1000 *|5 credits|
+
+
+#### Notes
+* To prevent bad actors from spamming the network with superfluous transactions, a variable **Deploy Transaction Multiplier** will be added to all deploy transactions.
+
 ## Execute Transaction Fee
 A fee incurred when executing an application on the Aleo blockchain
 
@@ -53,28 +74,6 @@ A fee incurred when executing an application on the Aleo blockchain
 
 Notes
 * The optimistic execute transaction fee may increase to prevent spamming; it is currently stable between 3 and 5 millicredits for a basic `credits.aleo` transfer
-
-
-## Deploy Transaction Fee
-A fee incurred when deploying an application on the Aleo blockchain
-
-### Structure
-
-|Part of Deploy Transaction|Size| Multiplier|Cost|
-|:-:|:-:|:-:|:-:|
-|`Transaction wrapper`|0 KB|1|0 millicredits|
-|`Transition wrapper`|0 KB|1|0 millicredits|
-|`Verifying key`|1 KB|2|2 millicredits|
-|`Certificate`|1 MB|2|2 millicredits|
-|`Program bytecode`|1 KB|1|1 millicredit|
-
-|Total|Size|Multiplier|Total cost|
-|:-:|:-:|:-:|:-:|
-|`Transaction -> Transition`|5 KB|1000 *|5 credits|
-
-
-#### Notes
-* To prevent bad actors from spamming the network with superfluous transactions, a variable **Deploy Transaction Multiplier** will be added to all deploy transactions.
 
 
 
