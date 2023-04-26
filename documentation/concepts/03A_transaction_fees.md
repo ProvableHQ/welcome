@@ -81,6 +81,8 @@ A fee incurred when deploying an application on the Aleo blockchain
 
 |Part of Deploy Transaction|Size| Multiplier|Cost|
 |:-:|:-:|:-:|:-:|
+|`Transaction wrapper`|0 KB|1|0 millicredits|
+|`Transition wrapper`|0 KB|1|0 millicredits|
 |`Verifying key`|1 KB|2|2 millicredits|
 |`Certificate`|1 MB|2|2 millicredits|
 |`Program bytecode`|1 KB|1|1 millicredit|
