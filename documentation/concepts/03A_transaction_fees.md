@@ -38,7 +38,7 @@ A fee incurred when processing a transfer on the Aleo blockchain, such as sendin
 
 
 #### Notes
-* The transfer transaction fee may increase to prevent spamming; it is currently stable between 3-5 millicredits
+* The transfer transaction fee may increase to prevent spamming; it is currently stable between 3 and 5 millicredits
 
 
 
