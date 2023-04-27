@@ -38,6 +38,7 @@ An index of all pages available in this documentation.
 - [Programs](./concepts/01_programs.md)
 - [Records](./concepts/02_records.md)
 - [Transactions](./concepts/03_transactions.md)
+- [Transaction Fees](./concepts/03A_transaction_fees.md)
 - [Transitions](./concepts/04_transitions.md)
 - [Blocks](./concepts/05_blocks.md)
 

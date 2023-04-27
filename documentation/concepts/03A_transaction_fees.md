@@ -8,7 +8,7 @@ sidebar_label: Transaction Fees
 
 A **transaction fee** is a fee that is required in order to process a transaction on the Aleo network. Currently, there are two types of transaction fees that correspond to each transaction type: **deploy** and **execute**.
 
-## Aleo Credits Demonination Table
+## Aleo Credits Denomination Table
 
 |Denomination|Size of Transaction|Value|Example|
 |:-:|:-:|:-:|:-:|
@@ -73,7 +73,7 @@ A fee incurred when executing an application on the Aleo blockchain
 |`Transaction -> Transition`|32 MB|1|32 credits|
 
 Notes
-* The optimistic execute transaction fee may increase to prevent spamming; it is currently stable between 3 and 5 millicredits for a basic `credits.aleo` transfer
+* The minimum execute transaction fee may increase to prevent spamming; it is currently stable between 3 and 5 millicredits for a basic `credits.aleo` transfer
 
 
 
