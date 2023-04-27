@@ -8,7 +8,7 @@ sidebar_label: Transaction Fees
 
 A **transaction fee** is a fee that is required in order to process a transaction on the Aleo network. Currently, there are two types of transaction fees that correspond to each transaction type: **deploy** and **execute**.
 
-## Aleo Credits Demonination Table
+## Aleo Credits Denomination Table
 
 |Denomination|Size of Transaction|Value|Example|
 |:-:|:-:|:-:|:-:|
