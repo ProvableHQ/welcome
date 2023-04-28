@@ -35,8 +35,11 @@ Make sure you have both Leo and snarkOS installed on your machine.
 * Save your **Address**, **View Key**, and **Private Key** in a safe place, you'll need them later
 
 ### 3a. Seeding your wallet with credits
+<!-- markdown-link-check-disable -->
 
 To seed your wallet, you'll need to request credits from Aleo's faucet at [faucet.aleo.org](https://faucet.aleo.org/) ⛲️. 
+
+<!-- markdown-link-check-enable -->
 
 **Note**: 
 
@@ -138,6 +141,7 @@ snarkos developer deploy "${APPNAME}.aleo" --private-key "${PRIVATEKEY}" --query
 You should have seen a confirmation that your Aleo application was deployed in the form of a transaction ID that looks like the following `at1rkkpqu5k4rt86zzccczw6cxeyvrl7hxydvvv7dhl7zr7p9w40c8s70kwm8`. Make sure to copy this string as you'll need it for the last step.
 
 ### 7. Execute your test application
+<!-- markdown-link-check-disable -->
 
 Finally, it is time to execute the application you just deployed!
 
@@ -146,6 +150,7 @@ Finally, it is time to execute the application you just deployed!
 * Head to [aleo.tools](https://aleo.tools/) and navigate to the **Record** tab and paste the record ciphertext you just copied as well as your wallet's view key
 * Similar to the steps we followed for a deploy transaction, update your `RECORD` variable with the record plaintext you just decrypted by doing the following:
 
+<!-- markdown-link-check-enable -->
 
 ⚠️ Assign $RECORD to the plaintext record you saved earlier
 
