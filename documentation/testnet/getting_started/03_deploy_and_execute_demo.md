@@ -95,7 +95,11 @@ By this point, the Aleo faucet should have sent your wallet credits. Next, you'l
 
 If you requested credits by texting with your phone number, you should also receive a confirmation with a URL that has a prefix of `vm.aleo.org/api/testnet3/transaction...` 
 
+<!-- markdown-link-check-disable -->
+
 Alternatively, you can find your execute transaction confirmation by going to [the faucet](https://faucet.aleo.org/) and searching the table provided (supported on desktop only currently) for your address. Once a result is returned, click on the `Transaction ID` field. If you do not see a result in the table, your credits have not yet been sent.
+
+<!-- markdown-link-check-enable -->
 
 * You should be presented with a JSON object in a new browser window. If you haven't already, we highly recommend you install the [JSON Beautifier & Editor](https://chrome.google.com/webstore/detail/json-beautifier-editor/lpopeocbeepakdnipejhlpcmifheolpl) Chrome extension.
 * Navigate to `object.execution.transitions[0].outputs[0].value` and copy the ciphertext stored there
