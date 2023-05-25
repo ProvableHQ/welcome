@@ -210,9 +210,12 @@ snarkos developer transfer <AMOUNT_TO_TRANSFER> --input-record <INPUT_RECORD> --
 ## Usage on Testnet 3 (Phase 2)
 
 To deploy and execute programs on Testnet3
+<!-- markdown-link-check-disable -->
 
-1. Replace [step 3](#3-scan-the-node-for-spendable-records) with the Aleo faucet to obtain spendable credits. You can request credits from [@AleoFaucet](https://twitter.com/AleoFaucet)
+1. Replace [step 3](#3-scan-the-node-for-spendable-records) with the Aleo faucet to obtain spendable credits. You can request credits from [the faucet](https://faucet.aleo.org/)
 2. Replace the use of `http://localhost:3030` with `https://vm.aleo.org/api`
+
+<!-- markdown-link-check-enable -->
 
 
 Deployment transactions have an additional requirement where the included fee must have at least `deployment_size_in_bytes` gates.
