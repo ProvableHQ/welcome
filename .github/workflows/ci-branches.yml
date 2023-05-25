@@ -12,6 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: gaurav-nelson/github-action-markdown-link-check@v1.0.15
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1.0.14
         with:
           folder-path: 'documentation'
