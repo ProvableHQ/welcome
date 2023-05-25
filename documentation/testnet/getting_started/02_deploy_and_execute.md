@@ -211,7 +211,7 @@ snarkos developer transfer <AMOUNT_TO_TRANSFER> --input-record <INPUT_RECORD> --
 
 To deploy and execute programs on Testnet3
 
-1. Replace [step 3](#3-scan-the-node-for-spendable-records) with the Aleo faucet to obtain spendable credits. You can request credits from [@AleoFaucet](https://twitter.com/AleoFaucet)
+1. Replace [step 3](#3-scan-the-node-for-spendable-records) with the Aleo faucet to obtain spendable credits. You can request credits from [the faucet](https://faucet.aleo.org/)
 2. Replace the use of `http://localhost:3030` with `https://vm.aleo.org/api`
 
 
