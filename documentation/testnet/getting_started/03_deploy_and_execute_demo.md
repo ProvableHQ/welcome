@@ -4,7 +4,7 @@ title: Aleo Deploy and Execute Demo
 sidebar_label: Deploy and Execute Demo
 ---
 
-These changes support the first iteration of deploying and executing program on the network.
+These changes support the first iteration of deploying and executing programs on the network.
 
 Bugs, usability suggestions, and feedback in general would be greatly appreciated.
 
