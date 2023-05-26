@@ -421,7 +421,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 #### Description
 
-Computes a Pedersen commitment up to a 64-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
+Computes a Pedersen commitment up to a 64-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment is a `Field` value.
 
 The instruction will halt if the given `String` or `Struct` value exceeds the 64-bit limit.
 
@@ -449,7 +449,7 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 
 #### Description
 
-Computes a Pedersen commitment up to a 128-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
+Computes a Pedersen commitment up to a 128-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment is a `Field` value.
 
 The instruction will halt if the given `String` or `Struct` value exceeds the 128-bit limit.
 
