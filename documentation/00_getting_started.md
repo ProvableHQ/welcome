@@ -30,9 +30,19 @@ to compile, execute, and finalize its state autonomously.
 
 ### 1.3 Install Leo
 
+#### MAC OS
+Run this command on terminal
 ```bash
 curl -L https://raw.githubusercontent.com/AleoHQ/workshop/master/install.sh | sh 
 ```
+
+#### Windows
+Open Git Bash and run this command.
+
+```bash
+curl -L https://raw.githubusercontent.com/AleoHQ/workshop/master/install.sh | sh 
+```
+
 
 Learning Leo is the fastest way to develop private applications on Aleo. 
 
