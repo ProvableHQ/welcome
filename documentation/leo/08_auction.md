@@ -52,7 +52,7 @@ See `./run.sh` for an example of how to run the program as different parties.
 The [Aleo SDK](https://github.com/AleoHQ/leo/tree/testnet3) provides a command line interface for generating new accounts.
 To generate a new account, run
 ```
-leo account new
+aleo account new
 ```
 
 ### Using an input file.
