@@ -48,12 +48,9 @@ This is the account that will be used to sign transactions and is checked for re
 When executing programs as different parties, be sure to set the `private_key` and `address` fields in `program.json` to the appropriate values.
 See `./run.sh` for an example of how to run the program as different parties.
 
+Go to [**aleo.tools**](https://aleo.tools) to generate new accounts.
 
-The [Aleo SDK](https://github.com/AleoHQ/leo/tree/testnet3) provides a command line interface for generating new accounts.
-To generate a new account, run
-```
-leo account new
-```
+The web interface is powered by the [Aleo SDK](https://github.com/AleoHQ/sdk) and can be run locally.
 
 ### Using an input file.
 1. Modify `inputs/auction.in` with the desired inputs.
