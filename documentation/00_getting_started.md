@@ -66,9 +66,13 @@ Talks and videos from the Aleo community.
 ## More Aleo Resources
 If you're interested in learning more about Aleo:
 
+<!-- markdown-link-check-disable -->
+[//]: # (disabling markdown checks for twitter links)
 🐦 | Twitter ~ @AleoHQ ~ **https://twitter.com/AleoHQ**
 
 🤝 | Community Twitter ~ @aleocommunity ~ **https://twitter.com/aleocommunity**
+
+<!-- markdown-link-check-enable -->
 
 🐙 | GitHub ~ **https://github.com/AleoHQ**
 

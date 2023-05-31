@@ -13,7 +13,7 @@ Aleo programs contain Aleo instructions - an assembly-like programming language.
 Aleo instructions are compiled into AVM opcodes that can be executed by the Aleo Virtual Machine.
 
 The Aleo SDK is a toolkit that supports account generation, program compilation, and program deployment.
-Use the Aleo SDK to generate yourself a new Aleo account [here](https://aleohq.github.io/aleo/).
+Use the Aleo SDK to generate yourself a new Aleo account [here](https://aleo.tools).
 
 Install the Aleo SDK to compile and execute Aleo instructions.
 
