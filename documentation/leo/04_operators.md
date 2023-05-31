@@ -52,23 +52,41 @@ The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes
 | [xor](#xor)                                 | XOR operation                       |
 
 ## Table of cryptographic Operators
-| Name                                      | Description                         |
-|-------------------------------------------|:------------------------------------|
-| [BHP256::commit](#bhp256commit)           | 256-bit input BHP commitment        |
-| [BHP512::commit](#bhp512commit)           | 512-bit input BHP commitment        |
-| [BHP768::commit](#bhp768commit)           | 768-bit input BHP commitment        |
-| [BHP1024::commit](#bhp1024commit)         | 1024-bit input BHP commitment       |
-| [Pedersen64::commit](#pedersen64commit)   | 64-bit input Pedersen commitment    |
-| [Pedersen128::commit](#pedersen128commit) | 128-bit input Pedersen commitment   |
-| [BHP256::hash](#bhp256hash)               | 256-bit input BHP hash              |
-| [BHP512::hash](#bhp512hash)               | 512-bit input BHP hash              |
-| [BHP768::hash](#bhp768hash)               | 768-bit input BHP hash              |
-| [BHP1024::hash](#bhp1024hash)             | 1024-bit input BHP hash             |
-| [Pedersen64::hash](#pedersen64hash)       | 64-bit input Pedersen hash          |
-| [Pedersen128::hash](#pedersen128hash)     | 128-bit input Pedersen hash         |
-| [Poseidon2::hash](#poseidon2hash)         | Poseidon hash with input rate 2     |
-| [Poseidon4::hash](#poseidon4hash)         | Poseidon hash with input rate 4     |
-| [Poseidon8::hash](#poseidon8hash)         | Poseidon hash with input rate 8     |
+| Name                                                        | Description                                       |
+|-------------------------------------------------------------|:--------------------------------------------------|
+| [BHP256::commit](#bhp256commit)                             | 256-bit input BHP commitment of field type        |
+| [BHP512::commit](#bhp512commit)                             | 512-bit input BHP commitment of field type        |
+| [BHP768::commit](#bhp768commit)                             | 768-bit input BHP commitment of field type        |
+| [BHP1024::commit](#bhp1024commit)                           | 1024-bit input BHP commitment of field type       |
+| [Pedersen64::commit](#pedersen64commit)                     | 64-bit input Pedersen commitment of field type    |
+| [Pedersen128::commit](#pedersen128commit)                   | 128-bit input Pedersen commitment of field type   |
+| [BHP256::commit_to_group](#bhp256commit_to_group)           | 256-bit input BHP commitment of group type        |
+| [BHP512::commit_to_group](#bhp512commit_to_group)           | 512-bit input BHP commitment of group type        |
+| [BHP768::commit_to_group](#bhp768commit_to_group)           | 768-bit input BHP commitment of group type        |
+| [BHP1024::commit_to_group](#bhp1024commit_to_group)         | 1024-bit input BHP commitment of group type       |
+| [Pedersen64::commit_to_group](#pedersen64commit_to_group)   | 64-bit input Pedersen commitment of group type    |
+| [Pedersen128::commit_to_group](#pedersen128commit_to_group) | 128-bit input Pedersen commitment of group type   |
+| [BHP256::hash](#bhp256hash)                                 | 256-bit input BHP hash of field type              |
+| [BHP512::hash](#bhp512hash)                                 | 512-bit input BHP hash of field type              |
+| [BHP768::hash](#bhp768hash)                                 | 768-bit input BHP hash of field type              |
+| [BHP1024::hash](#bhp1024hash)                               | 1024-bit input BHP hash of field type             |
+| [Pedersen64::hash](#pedersen64hash)                         | 64-bit input Pedersen hash of field type          |
+| [Pedersen128::hash](#pedersen128hash)                       | 128-bit input Pedersen hash of field type         |
+| [Poseidon2::hash](#poseidon2hash)                           | Poseidon hash with input rate 2 of field type     |
+| [Poseidon4::hash](#poseidon4hash)                           | Poseidon hash with input rate 4 of field type     |
+| [Poseidon8::hash](#poseidon8hash)                           | Poseidon hash with input rate 8 of field type     |
+| [BHP256::hash_to_group](#bhp256hash_to_group)               | 256-bit input BHP hash of group type              |
+| [BHP512::hash_to_group](#bhp512hash_to_group)               | 512-bit input BHP hash of group type              |
+| [BHP768::hash_to_group](#bhp768hash_to_group)               | 768-bit input BHP hash of group type              |
+| [BHP1024::hash_to_group](#bhp1024hash_to_group)             | 1024-bit input BHP hash of group type             |
+| [Pedersen64::hash_to_group](#pedersen64hash_to_group)       | 64-bit input Pedersen hash of group type          |
+| [Pedersen128::hash_to_group](#pedersen128hash_to_group)     | 128-bit input Pedersen hash of group type         |
+| [Poseidon2::hash_to_group](#poseidon2hash_to_group)         | Poseidon hash with input rate 2 of group type     |
+| [Poseidon4::hash_to_group](#poseidon4hash_to_group)         | Poseidon hash with input rate 4 of group type     |
+| [Poseidon8::hash_to_group](#poseidon8hash_to_group)         | Poseidon hash with input rate 8 of group type     |
+| [Poseidon2::hash_to_scalar](#poseidon2hash_to_scalar)       | Poseidon hash with input rate 2 of scalar type    |
+| [Poseidon4::hash_to_scalar](#poseidon4hash_to_scalar)       | Poseidon hash with input rate 4 of scalar type    |
+| [Poseidon8::hash_to_scalar](#poseidon8hash_to_scalar)       | Poseidon hash with input rate 8 of scalar type    |
 
 
 ## Specification
@@ -479,7 +497,225 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 ```leo
 let a: i64 = 1i64;
-let b: group = Pedersen64::commit(a, 1scalar);
+let b: field = Pedersen64::commit(a, 1scalar);
+```
+
+#### Description
+
+Computes a Pedersen commitment up to a 64-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
+
+The instruction will halt if the given `String` or `Struct` value exceeds the 64-bit limit.
+
+#### Supported Types
+
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Boolean` | `Scalar` | `Field`     |
+| `I8`      | `Scalar` | `Field`     |
+| `I16`     | `Scalar` | `Field`     |
+| `I32`     | `Scalar` | `Field`     |
+| `I64`     | `Scalar` | `Field`     |
+| `U8`      | `Scalar` | `Field`     |
+| `U16`     | `Scalar` | `Field`     |
+| `U32`     | `Scalar` | `Field`     |
+| `U64`     | `Scalar` | `Field`     |
+| `String`  | `Scalar` | `Field`     |
+| `Struct`  | `Scalar` | `Field`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Pedersen128::commit`
+
+```leo
+let a: i128 = 1i128;
+let b: field = Pedersen128::commit(a, 1scalar);
+```
+
+#### Description
+
+Computes a Pedersen commitment up to a 128-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
+
+The instruction will halt if the given `String` or `Struct` value exceeds the 128-bit limit.
+
+#### Supported Types
+
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Boolean` | `Scalar` | `Field`     |
+| `I8`      | `Scalar` | `Field`     |
+| `I16`     | `Scalar` | `Field`     |
+| `I32`     | `Scalar` | `Field`     |
+| `I64`     | `Scalar` | `Field`     |
+| `I128`    | `Scalar` | `Field`     |
+| `U8`      | `Scalar` | `Field`     |
+| `U16`     | `Scalar` | `Field`     |
+| `U32`     | `Scalar` | `Field`     |
+| `U64`     | `Scalar` | `Field`     |
+| `U128`    | `Scalar` | `Field`     |
+| `String`  | `Scalar` | `Field`     |
+| `Struct`  | `Scalar` | `Field`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP256::commit_to_group`
+
+```leo
+let a: i128 = 1i128;
+let b: group = BHP256::commit_to_group(a, 1scalar);
+```
+
+#### Description
+
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 256-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
+
+The instruction will halt if the given input is smaller than 129 bits.
+
+#### Supported Types
+
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Address` | `Scalar` | `Group`     |
+| `Boolean` | `Scalar` | `Group`     |
+| `Field`   | `Scalar` | `Group`     |
+| `Group`   | `Scalar` | `Group`     |
+| `I8`      | `Scalar` | `Group`     |
+| `I16`     | `Scalar` | `Group`     |
+| `I32`     | `Scalar` | `Group`     |
+| `I64`     | `Scalar` | `Group`     |
+| `I128`    | `Scalar` | `Group`     |
+| `U8`      | `Scalar` | `Group`     |
+| `U16`     | `Scalar` | `Group`     |
+| `U32`     | `Scalar` | `Group`     |
+| `U64`     | `Scalar` | `Group`     |
+| `U128`    | `Scalar` | `Group`     |
+| `Scalar`  | `Scalar` | `Group`     |
+| `String`  | `Scalar` | `Group`     |
+| `Struct`  | `Scalar` | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP512::commit_to_group`
+
+```leo
+let a: i128 = 1i128;
+let b: group = BHP512::commit_to_group(a, 1scalar);
+```
+
+#### Description
+
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 512-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
+
+The instruction will halt if the given input is smaller than 171 bits.
+
+#### Supported Types
+
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Address` | `Scalar` | `Group`     |
+| `Boolean` | `Scalar` | `Group`     |
+| `Field`   | `Scalar` | `Group`     |
+| `Group`   | `Scalar` | `Group`     |
+| `I8`      | `Scalar` | `Group`     |
+| `I16`     | `Scalar` | `Group`     |
+| `I32`     | `Scalar` | `Group`     |
+| `I64`     | `Scalar` | `Group`     |
+| `I128`    | `Scalar` | `Group`     |
+| `U8`      | `Scalar` | `Group`     |
+| `U16`     | `Scalar` | `Group`     |
+| `U32`     | `Scalar` | `Group`     |
+| `U64`     | `Scalar` | `Group`     |
+| `U128`    | `Scalar` | `Group`     |
+| `Scalar`  | `Scalar` | `Group`     |
+| `String`  | `Scalar` | `Group`     |
+| `Struct`  | `Scalar` | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP768::commit_to_group`
+
+```leo
+let a: i128 = 1i128;
+let b: group = BHP768::commit_to_group(a, 1scalar);
+```
+
+#### Description
+
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 768-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
+
+The instruction will halt if the given input is smaller than 129 bits.
+
+#### Supported Types
+
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Address` | `Scalar` | `Group`     |
+| `Boolean` | `Scalar` | `Group`     |
+| `Field`   | `Scalar` | `Group`     |
+| `Group`   | `Scalar` | `Group`     |
+| `I8`      | `Scalar` | `Group`     |
+| `I16`     | `Scalar` | `Group`     |
+| `I32`     | `Scalar` | `Group`     |
+| `I64`     | `Scalar` | `Group`     |
+| `I128`    | `Scalar` | `Group`     |
+| `U8`      | `Scalar` | `Group`     |
+| `U16`     | `Scalar` | `Group`     |
+| `U32`     | `Scalar` | `Group`     |
+| `U64`     | `Scalar` | `Group`     |
+| `U128`    | `Scalar` | `Group`     |
+| `Scalar`  | `Scalar` | `Group`     |
+| `String`  | `Scalar` | `Group`     |
+| `Struct`  | `Scalar` | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP1024::commit_to_group`
+
+```leo
+let a: i128 = 1i128;
+let b: group = BHP1024::commit_to_group(a, 1scalar);
+```
+
+#### Description
+
+Computes a Bowe-Hopwood-Pedersen commitment on inputs of 1024-bit chunks in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
+
+The instruction will halt if the given input is smaller than 171 bits.
+
+#### Supported Types
+
+| First     | Second   | Destination |
+|-----------|----------|:------------|
+| `Address` | `Scalar` | `Group`     |
+| `Boolean` | `Scalar` | `Group`     |
+| `Field`   | `Scalar` | `Group`     |
+| `Group`   | `Scalar` | `Group`     |
+| `I8`      | `Scalar` | `Group`     |
+| `I16`     | `Scalar` | `Group`     |
+| `I32`     | `Scalar` | `Group`     |
+| `I64`     | `Scalar` | `Group`     |
+| `I128`    | `Scalar` | `Group`     |
+| `U8`      | `Scalar` | `Group`     |
+| `U16`     | `Scalar` | `Group`     |
+| `U32`     | `Scalar` | `Group`     |
+| `U64`     | `Scalar` | `Group`     |
+| `U128`    | `Scalar` | `Group`     |
+| `Scalar`  | `Scalar` | `Group`     |
+| `String`  | `Scalar` | `Group`     |
+| `Struct`  | `Scalar` | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Pedersen64::commit_to_group`
+
+```leo
+let a: i64 = 1i64;
+let b: group = Pedersen64::commit_to_group(a, 1scalar);
 ```
 
 #### Description
@@ -507,11 +743,11 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 [Back to Top](#table-of-standard-operators)
 ***
 
-### `Pedersen128::commit`
+### `Pedersen128::commit_to_group`
 
 ```leo
 let a: i128 = 1i128;
-let b: group = Pedersen128::commit(a, 1scalar);
+let b: group = Pedersen128::commit_to_group(a, 1scalar);
 ```
 
 #### Description
@@ -997,6 +1233,414 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 | `Scalar` | `Field`     |
 | `String` | `Field`     |
 | `Struct` | `Field`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP256::hash_to_group`
+
+```leo
+let a: address = aleo10qerras5799u6k7rjtc9y3hcwxuykr45qra7x7dp6jgnc0923czqm0lgta;
+let b: group = BHP256::hash_to_group(a);
+```
+
+#### Description
+
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 256-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
+
+The instruction will halt if the given input is smaller than 129 bits.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Group`     |
+| `Boolean` | `Group`     |
+| `Field`   | `Group`     |
+| `Group`   | `Group`     |
+| `I8`      | `Group`     |
+| `I16`     | `Group`     |
+| `I32`     | `Group`     |
+| `I64`     | `Group`     |
+| `I128`    | `Group`     |
+| `U8`      | `Group`     |
+| `U16`     | `Group`     |
+| `U32`     | `Group`     |
+| `U64`     | `Group`     |
+| `U128`    | `Group`     |
+| `Scalar`  | `Group`     |
+| `String`  | `Group`     |
+| `Struct`  | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP512::hash_to_group`
+
+```leo
+let a: address = aleo10qerras5799u6k7rjtc9y3hcwxuykr45qra7x7dp6jgnc0923czqm0lgta;
+let b: group = BHP512::hash_to_group(a);
+```
+
+#### Description
+
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 512-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
+
+The instruction will halt if the given input is smaller than 171 bits.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Group`     |
+| `Boolean` | `Group`     |
+| `Field`   | `Group`     |
+| `Group`   | `Group`     |
+| `I8`      | `Group`     |
+| `I16`     | `Group`     |
+| `I32`     | `Group`     |
+| `I64`     | `Group`     |
+| `I128`    | `Group`     |
+| `U8`      | `Group`     |
+| `U16`     | `Group`     |
+| `U32`     | `Group`     |
+| `U64`     | `Group`     |
+| `U128`    | `Group`     |
+| `Scalar`  | `Group`     |
+| `String`  | `Group`     |
+| `Struct`  | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP768::hash_to_group`
+
+```leo
+let a: address = aleo10qerras5799u6k7rjtc9y3hcwxuykr45qra7x7dp6jgnc0923czqm0lgta;
+let b: group = BHP768::hash_to_group(a);
+```
+
+#### Description
+
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 768-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
+
+The instruction will halt if the given input is smaller than 129 bits.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Group`     |
+| `Boolean` | `Group`     |
+| `Field`   | `Group`     |
+| `Group`   | `Group`     |
+| `I8`      | `Group`     |
+| `I16`     | `Group`     |
+| `I32`     | `Group`     |
+| `I64`     | `Group`     |
+| `I128`    | `Group`     |
+| `U8`      | `Group`     |
+| `U16`     | `Group`     |
+| `U32`     | `Group`     |
+| `U64`     | `Group`     |
+| `U128`    | `Group`     |
+| `Scalar`  | `Group`     |
+| `String`  | `Group`     |
+| `Struct`  | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP1024::hash_to_group`
+
+```leo
+let a: address = aleo10qerras5799u6k7rjtc9y3hcwxuykr45qra7x7dp6jgnc0923czqm0lgta;
+let b: group = BHP1024::hash_to_group(a);
+```
+
+#### Description
+
+Computes a Bowe-Hopwood-Pedersen hash on inputs of 1024-bit chunks in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
+
+The instruction will halt if the given input is smaller than 171 bits.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Group`     |
+| `Boolean` | `Group`     |
+| `Field`   | `Group`     |
+| `Group`   | `Group`     |
+| `I8`      | `Group`     |
+| `I16`     | `Group`     |
+| `I32`     | `Group`     |
+| `I64`     | `Group`     |
+| `I128`    | `Group`     |
+| `U8`      | `Group`     |
+| `U16`     | `Group`     |
+| `U32`     | `Group`     |
+| `U64`     | `Group`     |
+| `U128`    | `Group`     |
+| `Scalar`  | `Group`     |
+| `String`  | `Group`     |
+| `Struct`  | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Pedersen64::hash_to_group`
+
+```leo
+let a: group = Pedersen64::hash_to_group(1u64);
+```
+
+#### Description
+
+Computes a Pedersen hash up to a 64-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
+
+The instruction will halt if the given `String` or `Struct` value exceeds the 64-bit limit.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Boolean` | `Group`     |
+| `I8`      | `Group`     |
+| `I16`     | `Group`     |
+| `I32`     | `Group`     |
+| `I64`     | `Group`     |
+| `U8`      | `Group`     |
+| `U16`     | `Group`     |
+| `U32`     | `Group`     |
+| `U64`     | `Group`     |
+| `String`  | `Group`     |
+| `Struct`  | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Pedersen128::hash_to_group`
+
+```leo
+let a: group = Pedersen128::hash_to_group(1u128);
+```
+
+#### Description
+
+Computes a Pedersen hash up to a 128-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
+
+The instruction will halt if the given `String` or `Struct` value exceeds the 128-bit limit.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Boolean` | `Group`     |
+| `I8`      | `Group`     |
+| `I16`     | `Group`     |
+| `I32`     | `Group`     |
+| `I64`     | `Group`     |
+| `I128`    | `Group`     |
+| `U8`      | `Group`     |
+| `U16`     | `Group`     |
+| `U32`     | `Group`     |
+| `U64`     | `Group`     |
+| `U128`    | `Group`     |
+| `String`  | `Group`     |
+| `Struct`  | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Poseidon2::hash_to_group`
+
+```leo
+let a: group = Poseidon2::hash_to_group(1u128);
+```
+
+#### Description
+
+Calculates a Poseidon hash with an input rate of 2, from an input in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
+
+#### Supported Types
+
+| First    | Destination |
+|----------|:------------|
+| `Field`  | `Group`     |
+| `I8`     | `Group`     |
+| `I16`    | `Group`     |
+| `I32`    | `Group`     |
+| `I64`    | `Group`     |
+| `I128`   | `Group`     |
+| `U8`     | `Group`     |
+| `U16`    | `Group`     |
+| `U32`    | `Group`     |
+| `U64`    | `Group`     |
+| `U128`   | `Group`     |
+| `Scalar` | `Group`     |
+| `String` | `Group`     |
+| `Struct` | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Poseidon4::hash_to_group`
+
+```leo
+let a: group = Poseidon4::hash_to_group(1u128);
+```
+
+#### Description
+
+Calculates a Poseidon hash with an input rate of 4, from an input in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
+
+#### Supported Types
+
+| First    | Destination |
+|----------|:------------|
+| `Field`  | `Group`     |
+| `I8`     | `Group`     |
+| `I16`    | `Group`     |
+| `I32`    | `Group`     |
+| `I64`    | `Group`     |
+| `I128`   | `Group`     |
+| `U8`     | `Group`     |
+| `U16`    | `Group`     |
+| `U32`    | `Group`     |
+| `U64`    | `Group`     |
+| `U128`   | `Group`     |
+| `Scalar` | `Group`     |
+| `String` | `Group`     |
+| `Struct` | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Poseidon8::hash_to_group`
+
+```leo
+let a: group = Poseidon8::hash_to_group(1u128);
+```
+
+#### Description
+
+Calculates a Poseidon hash with an input rate of 8, from an input in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
+
+#### Supported Types
+
+| First    | Destination |
+|----------|:------------|
+| `Field`  | `Group`     |
+| `I8`     | `Group`     |
+| `I16`    | `Group`     |
+| `I32`    | `Group`     |
+| `I64`    | `Group`     |
+| `I128`   | `Group`     |
+| `U8`     | `Group`     |
+| `U16`    | `Group`     |
+| `U32`    | `Group`     |
+| `U64`    | `Group`     |
+| `U128`   | `Group`     |
+| `Scalar` | `Group`     |
+| `String` | `Group`     |
+| `Struct` | `Group`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Poseidon2::hash_to_scalar`
+
+```leo
+let a: scalar = Poseidon2::hash_to_scalar(1u128);
+```
+
+#### Description
+
+Calculates a Poseidon hash with an input rate of 2, from an input in `first`, storing the hash in `destination`. The produced hash will always be a `Scalar` value.
+
+#### Supported Types
+
+| First    | Destination  |
+|----------|:-------------|
+| `Field`  | `Scalar`     |
+| `I8`     | `Scalar`     |
+| `I16`    | `Scalar`     |
+| `I32`    | `Scalar`     |
+| `I64`    | `Scalar`     |
+| `I128`   | `Scalar`     |
+| `U8`     | `Scalar`     |
+| `U16`    | `Scalar`     |
+| `U32`    | `Scalar`     |
+| `U64`    | `Scalar`     |
+| `U128`   | `Scalar`     |
+| `Scalar` | `Scalar`     |
+| `String` | `Scalar`     |
+| `Struct` | `Scalar`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Poseidon4::hash_to_scalar`
+
+```leo
+let a: scalar = Poseidon4::hash_to_scalar(1u128);
+```
+
+#### Description
+
+Calculates a Poseidon hash with an input rate of 4, from an input in `first`, storing the hash in `destination`. The produced hash will always be a `Scalar` value.
+
+#### Supported Types
+
+| First    | Destination  |
+|----------|:-------------|
+| `Field`  | `Scalar`     |
+| `I8`     | `Scalar`     |
+| `I16`    | `Scalar`     |
+| `I32`    | `Scalar`     |
+| `I64`    | `Scalar`     |
+| `I128`   | `Scalar`     |
+| `U8`     | `Scalar`     |
+| `U16`    | `Scalar`     |
+| `U32`    | `Scalar`     |
+| `U64`    | `Scalar`     |
+| `U128`   | `Scalar`     |
+| `Scalar` | `Scalar`     |
+| `String` | `Scalar`     |
+| `Struct` | `Scalar`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Poseidon8::hash_to_scalar`
+
+```leo
+let a: scalar = Poseidon8::hash_to_scalar(1u128);
+```
+
+#### Description
+
+Calculates a Poseidon hash with an input rate of 8, from an input in `first`, storing the hash in `destination`. The produced hash will always be a `Scalar` value.
+
+#### Supported Types
+
+| First    | Destination  |
+|----------|:-------------|
+| `Field`  | `Scalar`     |
+| `I8`     | `Scalar`     |
+| `I16`    | `Scalar`     |
+| `I32`    | `Scalar`     |
+| `I64`    | `Scalar`     |
+| `I128`   | `Scalar`     |
+| `U8`     | `Scalar`     |
+| `U16`    | `Scalar`     |
+| `U32`    | `Scalar`     |
+| `U64`    | `Scalar`     |
+| `U128`   | `Scalar`     |
+| `Scalar` | `Scalar`     |
+| `String` | `Scalar`     |
+| `Struct` | `Scalar`     |
 
 [Back to Top](#table-of-standard-operators)
 ***
