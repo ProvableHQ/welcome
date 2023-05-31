@@ -22,6 +22,7 @@ These CLI commands currently live in snarkOS, but can also be migrated to the Al
 ### 1. Install snarkOS
 
 ```
+git clone https://github.com/AleoHQ/snarkOS.git
 cd snarkOS
 git checkout testnet3
 cargo install --path .
