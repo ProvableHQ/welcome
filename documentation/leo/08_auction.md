@@ -214,8 +214,6 @@ Have the auctioneer finish the auction.
     }
 ```
 
-Swap in the private key and address of the auctioneer to program.json.
-
 Call the `finish` transition function with the winning `Bid` record.
 
 ```bash 
