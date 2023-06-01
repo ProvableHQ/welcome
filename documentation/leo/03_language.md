@@ -412,22 +412,105 @@ program test.aleo {
 ```
 
 #### Mapping
-The mapping struct allows the programmer to apply updates to a program mapping data structure by calling one of the following functions.
+
+The mapping struct allows the programmer to apply updates to a program mapping data structure by calling one of the
+following functions.
 
 #### get
+
 A get command, e.g. `current_value = Mapping::get(counter, addr);`
 Gets the value stored at `addr` in `counter` and stores the result in `current_value`
 If the value at `addr` does not exist, then the program will fail to execute.
 
 #### get_or_init
+
 A get command that initializes the mapping in case of failure, e.g.
 `let current_value: u64 = Mapping::get_or_init(counter, addr, 0u64);`
 Gets the value stored at `addr` in `counter` and stores the result in `current_value`.
-If the key is not present, `0u64`  is stored in `counter` and stored in `current_value`.
+If the key is not present, `0u64` is stored in `counter` and stored in `current_value`.
 
 #### set
+
 A set command, e.g. `Mapping::set(counter, addr, current_value + 1u64);`
 Sets the `addr` entry as `current_value + 1u64` in `counter`.
+
+## Iteration
+
+In the Leo programming language, iteration is supported through the `for` loop construct. This section provides an
+overview of how
+iteration works in Leo and highlights its limitations.
+
+### `for` Loop Syntax
+
+The syntax for a `for` loop in Leo is as follows:
+
+```
+for <loop variable> in <lower bound>..<upper bound> {
+    // Loop body
+}
+```
+
+The `for` loop starts by declaring a loop variable that will take on different values in each iteration. The loop
+variable currently supports the `u8`, `u16`, or `u32` data types. It is then
+followed by the `in` keyword and a range specified by the lower and upper bounds.
+
+### Example:
+
+```leo
+program test.aleo {
+    transition main() {
+        for i: u32 in 0u32..5u32 {
+            // Loop body
+        }
+    }
+}
+```
+
+In this example, the `for` loop iterates over the range from 0 to 4 (inclusive). The loop body is then executed for 
+each value of `i` within the specified range.
+
+## Limitations of Iteration in Leo
+
+While iteration is a powerful construct, there are certain limitations to keep in mind when using iteration in Leo:
+
+1. **Literal Bounds**: The bounds of the iteration range in Leo must be specified as literal values. Non-literal bounds,
+   such as variables or complex expressions, are not supported.
+
+   ```leo
+   // Example of non-literal bounds
+   let start: u32 = 0u32;
+   let end: u32 = 5u32;
+
+   for i: u32 in start..end {  // This is not supported in Leo
+       // Loop body
+   }
+   ```
+
+1. **Early Returns**: Leo does not support early returns within loops. If a loop contains a return statement, it must be
+   the last statement within the loop body. Non-uniform control flow, such as returning from a loop prematurely, is not
+   allowed.
+
+   ```leo
+   // Example of early return within a loop
+   for i: u32 in 0u32..5u32 {
+       if i == 3u32 {
+           return;  // This is not supported in Leo
+       }
+       // Loop body
+   }
+   ```
+
+1. **Large Bounds**: Leo has limitations on the size of iteration bounds. Extremely large bounds, especially when
+   specified with non-literal values, may result in compilation failures.
+
+   ```leo
+   // Example of large bounds
+   let end: u64 = 1000000000000000000000000u64;
+
+   for i: u64 in 0u64..end {  // This may exceed Leo's bounds and fail to compile
+       // Loop body
+   }
+   ```
 
 ## Operators
 
