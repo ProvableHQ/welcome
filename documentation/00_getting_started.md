@@ -5,7 +5,7 @@ sidebar_label: Getting Started
 ---
 
 Welcome to the Aleo community. Together we are working to build a platform for web applications that are
-performant, secure, and anonymous. Aleo introduces an application runtime environment that allows your software
+performant, secure, and private. Aleo introduces an application runtime environment that allows your software
 to compile, execute, and finalize its state autonomously.
 
 :::tip
