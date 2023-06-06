@@ -434,83 +434,104 @@ If the key is not present, `0u64` is stored in `counter` and stored in `current_
 A set command, e.g. `Mapping::set(counter, addr, current_value + 1u64);`
 Sets the `addr` entry as `current_value + 1u64` in `counter`.
 
-## Iteration
+# Leo Loops Documentation
 
-In the Leo programming language, iteration is supported through the `for` loop construct. This section provides an
-overview of how
-iteration works in Leo and highlights its limitations.
+Leo supports the use of loops through `for` loops, which iterate over a range of values. Here's a detailed look at how
+loops work in Leo.
 
-### `for` Loop Syntax
+## Basic Loops
 
-The syntax for a `for` loop in Leo is as follows:
+### The `for` Loop
 
-```
-for <loop variable> in <lower bound>..<upper bound> {
-    // Loop body
+The `for` loop in Leo iterates over a range of values. This is similar to a `for` loop in many other programming
+languages, including Rust. Here is an example:
+
+```leo
+for i: u32 in 0u32..3u32 {
+    // loop body
 }
 ```
 
-The `for` loop starts by declaring a loop variable that will take on different values in each iteration. The loop
-variable currently supports the `u8`, `u16`, or `u32` data types. It is then
-followed by the `in` keyword and a range specified by the lower and upper bounds.
+The loop starts at the first value (0 in this example) and ends at the last value exclusive (3 in this example, so the
+loop iterates over 0, 1, 2).
 
-### Example:
+In the loop body, you can use the loop variable `i`. In every iteration, `i` takes the value of the current iteration.
+In this example, `i` takes the values 0, 1, 2 in sequence.
+
+## Loop Behavior
+
+### Nested Loops
+
+You can nest loops within loops. For example:
 
 ```leo
-program test.aleo {
-    transition main() {
-        for i: u32 in 0u32..5u32 {
-            // Loop body
-        }
+for i: u32 in 0u32..2u32 {
+    for j: u32 in 0u32..2u32 {
+        // inner loop body
     }
 }
 ```
 
-In this example, the `for` loop iterates over the range from 0 to 4 (inclusive). The loop body is then executed for 
-each value of `i` within the specified range.
+In this case, for each value of `i`, the inner loop runs fully, iterating over its entire range of values.
 
-## Limitations of Iteration in Leo
+### Non-Literal Loop Bounds
 
-While iteration is a powerful construct, there are certain limitations to keep in mind when using iteration in Leo:
+Leo does not currently support non-literal loop bounds. For example, the following code will fail:
 
-1. **Literal Bounds**: The bounds of the iteration range in Leo must be specified as literal values. Non-literal bounds,
-   such as variables or complex expressions, are not supported.
+```leo
+for i:u64 in 0u64..amount {
+    // loop body
+}
+```
 
-   ```leo
-   // Example of non-literal bounds
-   let start: u32 = 0u32;
-   let end: u32 = 5u32;
+The value of `amount` is not known at compile time, so the loop cannot be unrolled and compiled.
 
-   for i: u32 in start..end {  // This is not supported in Leo
-       // Loop body
-   }
-   ```
+### Return Statements in Loops
 
-1. **Early Returns**: Leo does not support early returns within loops. If a loop contains a return statement, it must be
-   the last statement within the loop body. Non-uniform control flow, such as returning from a loop prematurely, is not
-   allowed.
+Leo does not currently support return statements within loops. A function in Leo can only have one return statement, and
+it must be the last statement in the function. For example, the following code will fail:
 
-   ```leo
-   // Example of early return within a loop
-   for i: u32 in 0u32..5u32 {
-       if i == 3u32 {
-           return;  // This is not supported in Leo
-       }
-       // Loop body
-   }
-   ```
+```leo
+for i: u32 in 0u32..9u32 {
+    return false;
+}
+```
 
-1. **Large Bounds**: Leo has limitations on the size of iteration bounds. Extremely large bounds, especially when
-   specified with non-literal values, may result in compilation failures.
+The `return` statement is inside the loop, which is not allowed in Leo.
 
-   ```leo
-   // Example of large bounds
-   let end: u64 = 1000000000000000000000000u64;
+## Loop Errors
 
-   for i: u64 in 0u64..end {  // This may exceed Leo's bounds and fail to compile
-       // Loop body
-   }
-   ```
+### Loop Bounds
+
+Leo checks loop bounds at compile time. If the start bound is greater than the end bound, Leo will throw a compile
+error. For example, the following code will fail:
+
+```leo
+for i: u32 in 9u32..0u32 {
+    // loop body
+}
+```
+
+The start bound 9 is greater than the end bound 0, which is not valid.
+
+### Large Loop Bounds
+
+Leo does not support loop bounds larger than the maximum representable value of the loop variable's type. For example,
+the following code will fail:
+
+```leo
+for i:u64 in 0u64..1000000000000000000000000000000000000000000000000000000000000000000000000000000000000u64 {
+    // loop body
+}
+```
+
+The end bound is too large to be represented as a `u64`.
+
+## Notes
+
+1. Leo doesn't currently support the `break` and `continue` statements found in other languages such as
+   Rust. These statements allow for more complex control flow within loops, but are not currently
+   available in Leo.
 
 ## Operators
 
