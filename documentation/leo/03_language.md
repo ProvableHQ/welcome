@@ -434,25 +434,17 @@ If the key is not present, `0u64` is stored in `counter` and stored in `current_
 A set command, e.g. `Mapping::set(counter, addr, current_value + 1u64);`
 Sets the `addr` entry as `current_value + 1u64` in `counter`.
 
-
 ## For Loops
 
-The `for` loop in Leo iterates over a range of values. This is similar to a `for` loop in many other programming
-languages, including Rust. Here is an example:
+For Loops are declared as `for <loop variable> in <lower bound>..<upper bound>`.  Currently, the
+loop variable supports unsigned integer types u8, u16, u32, or u64. The lower bound must be
+less than the upper bound.
 
 ```leo
-for i: u32 in 0u32..3u32 {
-    // loop body
+for <loop variable> in <lower bound>..<upper bound> {
+    // Loop body
 }
 ```
-
-The loop starts at the first value (0 in this example) and ends at the last value exclusive (3 in this example, so the
-loop iterates over 0, 1, 2).
-
-In the loop body, you can use the loop variable `i`. In every iteration, `i` takes the value of the current iteration.
-In this example, `i` takes the values 0, 1, 2 in sequence.
-
-### Loop Behavior
 
 ### Nested Loops
 
@@ -465,67 +457,6 @@ for i: u32 in 0u32..2u32 {
     }
 }
 ```
-
-In this case, for each value of `i`, the inner loop runs fully, iterating over its entire range of values.
-
-### Non-Literal Loop Bounds
-
-Leo does not currently support non-literal loop bounds. For example, the following code will fail:
-
-```leo
-for i:u64 in 0u64..amount {
-    // loop body
-}
-```
-
-The value of `amount` is not known at compile time, so the loop cannot be unrolled and compiled.
-
-### Return Statements in Loops
-
-Leo does not currently support return statements within loops. A function in Leo can only have one return statement, and
-it must be the last statement in the function. For example, the following code will fail:
-
-```leo
-for i: u32 in 0u32..9u32 {
-    return false;
-}
-```
-
-The `return` statement is inside the loop, which is not allowed in Leo.
-
-## Loop Errors
-
-### Loop Bounds
-
-Leo checks loop bounds at compile time. If the start bound is greater than the end bound, Leo will throw a compile
-error. For example, the following code will fail:
-
-```leo
-for i: u32 in 9u32..0u32 {
-    // loop body
-}
-```
-
-The start bound 9 is greater than the end bound 0, which is not valid.
-
-### Large Loop Bounds
-
-Leo does not support loop bounds larger than the maximum representable value of the loop variable's type. For example,
-the following code will fail:
-
-```leo
-for i:u64 in 0u64..1000000000000000000000000000000000000000000000000000000000000000000000000000000000000u64 {
-    // loop body
-}
-```
-
-The end bound is too large to be represented as a `u64`.
-
-## Notes
-
-1. Leo doesn't currently support the `break` and `continue` statements found in other languages such as
-   Rust. These statements allow for more complex control flow within loops, but are not currently
-   available in Leo.
 
 ## Operators
 
