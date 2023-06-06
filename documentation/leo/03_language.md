@@ -417,20 +417,17 @@ The mapping struct allows the programmer to apply updates to a program mapping d
 following functions.
 
 #### get
-
 A get command, e.g. `current_value = Mapping::get(counter, addr);`
 Gets the value stored at `addr` in `counter` and stores the result in `current_value`
 If the value at `addr` does not exist, then the program will fail to execute.
 
 #### get_or_init
-
 A get command that initializes the mapping in case of failure, e.g.
 `let current_value: u64 = Mapping::get_or_init(counter, addr, 0u64);`
 Gets the value stored at `addr` in `counter` and stores the result in `current_value`.
 If the key is not present, `0u64` is stored in `counter` and stored in `current_value`.
 
 #### set
-
 A set command, e.g. `Mapping::set(counter, addr, current_value + 1u64);`
 Sets the `addr` entry as `current_value + 1u64` in `counter`.
 
