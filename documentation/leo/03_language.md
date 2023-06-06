@@ -435,7 +435,7 @@ A set command, e.g. `Mapping::set(counter, addr, current_value + 1u64);`
 Sets the `addr` entry as `current_value + 1u64` in `counter`.
 
 
-### The `for` Loop
+## For Loops
 
 The `for` loop in Leo iterates over a range of values. This is similar to a `for` loop in many other programming
 languages, including Rust. Here is an example:
