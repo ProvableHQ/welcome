@@ -458,7 +458,7 @@ loop iterates over 0, 1, 2).
 In the loop body, you can use the loop variable `i`. In every iteration, `i` takes the value of the current iteration.
 In this example, `i` takes the values 0, 1, 2 in sequence.
 
-## Loop Behavior
+### Loop Behavior
 
 ### Nested Loops
 
