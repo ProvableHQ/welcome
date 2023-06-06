@@ -419,7 +419,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 Computes a Pedersen commitment up to a 64-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment is a `Field` value.
 
-The instruction will halt if the given a `Struct` value exceeds the 64-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -446,7 +446,7 @@ The instruction will halt if the given a `Struct` value exceeds the 64-bit limit
 
 Computes a Pedersen commitment up to a 128-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment is a `Field` value.
 
-The instruction will halt if the given a `Struct` value exceeds the 128-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
@@ -607,7 +607,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 Computes a Pedersen commitment up to a 64-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
 
-The instruction will halt if the given a `Struct` value exceeds the 64-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -634,7 +634,7 @@ The instruction will halt if the given a `Struct` value exceeds the 64-bit limit
 
 Computes a Pedersen commitment up to a 128-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
 
-The instruction will halt if the given a `Struct` value exceeds the 128-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
@@ -923,7 +923,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 Computes a Pedersen hash up to a 64-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
-The instruction will halt if the given a `Struct` value exceeds the 64-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -950,7 +950,7 @@ The instruction will halt if the given a `Struct` value exceeds the 64-bit limit
 
 Computes a Pedersen hash up to a 128-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
-The instruction will halt if the given a `Struct` value exceeds the 128-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
@@ -1195,7 +1195,7 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 Computes a Pedersen hash up to a 64-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
 
-The instruction will halt if the given a `Struct` value exceeds the 64-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -1222,7 +1222,7 @@ The instruction will halt if the given a `Struct` value exceeds the 64-bit limit
 
 Computes a Pedersen hash up to a 128-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
 
-The instruction will halt if the given a `Struct` value exceeds the 128-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
