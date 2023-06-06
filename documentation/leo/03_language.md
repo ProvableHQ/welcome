@@ -434,12 +434,6 @@ If the key is not present, `0u64` is stored in `counter` and stored in `current_
 A set command, e.g. `Mapping::set(counter, addr, current_value + 1u64);`
 Sets the `addr` entry as `current_value + 1u64` in `counter`.
 
-# Leo Loops Documentation
-
-Leo supports the use of loops through `for` loops, which iterate over a range of values. Here's a detailed look at how
-loops work in Leo.
-
-## Basic Loops
 
 ### The `for` Loop
 
