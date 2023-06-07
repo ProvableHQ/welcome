@@ -412,7 +412,6 @@ program test.aleo {
 ```
 
 #### Mapping
-
 The mapping struct allows the programmer to apply updates to a program mapping data structure by calling one of the
 following functions.
 
