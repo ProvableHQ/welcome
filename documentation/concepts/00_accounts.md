@@ -110,7 +110,10 @@ Given global instantiated Aleo parameters and subroutines.
            
 3.`private_key` = (`seed`, `sk_sig`, `sk_prf`, `r_pk`)
 
-`counter` is a `u16` value that is iterated on until a valid `view_key` can be derived from `private_key`
+the 0 and 1 passed as second arguments to calculate sk_sig and sk_prf are encoded as unsigned 16-bit integers.
+`counter` is a `u16` value that is iterated on until a valid `view_key` can be 
+derived from `private_key`.
+Learn more about BLAKE2s [here](https://www.rfc-editor.org/rfc/rfc7693).
 
 #### Generate a View Key 
 
