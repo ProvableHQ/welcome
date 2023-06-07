@@ -32,7 +32,7 @@ On average, for each index we require at most `n/(3 + log(S) - log(k)- log(n))` 
 for a total of `q * k * n/(log(S) - log(k) - log(n))`.
 This means that the size of the precomputation string `S` grows exponentially with a linear improvement in proving time.
 
-## Security \& Miner Size
+## Security & Miner Size
 
 For a precomputation table of `S = k * (n/c) * (2^c - 1)` group elements,
 each exponentiation can be performed in `n/c` multiplications on average.
