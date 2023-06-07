@@ -104,9 +104,9 @@ Given global instantiated Aleo parameters and subroutines.
 1. Sample a 32 byte `seed` from random
     
 2. Construct private key components
-    - `sk_sig` = Blake2s(`seed`, 0)
-    - `sk_prf` = Blake2s(`seed`, 1)
-    - `r_pk` = Blake2s(`seed`, `counter`)
+    - `sk_sig` = BLAKE2s(`seed`, 0)
+    - `sk_prf` = BLAKE2s(`seed`, 1)
+    - `r_pk` = BLAKE2s(`seed`, `counter`)
            
 3.`private_key` = (`seed`, `sk_sig`, `sk_prf`, `r_pk`)
 
@@ -127,9 +127,9 @@ Given global instantiated Aleo parameters and subroutines.
 ```mermaid
 graph TD
 	A["Seed (32 Bytes)"] 
-    A --> |"Blake2s(Seed, 0)"| B(sk_sig)
-    A --> |"Blake2s(Seed, 1)"| C(sk_prf)
-    A --> |"Blake2s(Seed, counter)"| D(r_pk)
+    A --> |"BLAKE2s(Seed, 0)"| B(sk_sig)
+    A --> |"BLAKE2s(Seed, 1)"| C(sk_prf)
+    A --> |"BLAKE2s(Seed, counter)"| D(r_pk)
     
     B --> E(Account Private Key)
     C --> E(Account Private Key)
