@@ -456,7 +456,7 @@ Sets the `addr` entry as `current_value + 1u64` in `counter`.
 
 ## For Loops
 
-For Loops are declared as `for {variable: type} in {lower bound: type}..{upper bound: type}`. Unsigned integer 
+For Loops are declared as `for {variable: type} in {lower bound}..{upper bound}`. Unsigned integer 
 types `u8`, `u16`, and `u32` are recommended for loop variable types. The lower bound must be
 less than the upper bound. Nested loops are supported.
 
