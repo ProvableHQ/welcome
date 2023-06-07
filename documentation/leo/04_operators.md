@@ -373,7 +373,6 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U64`     | `Scalar` | `Field`     |
 | `U128`    | `Scalar` | `Field`     |
 | `Scalar`  | `Scalar` | `Field`     |
-| `String`  | `Scalar` | `Field`     |
 | `Struct`  | `Scalar` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -411,7 +410,6 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U64`     | `Scalar` | `Field`     |
 | `U128`    | `Scalar` | `Field`     |
 | `Scalar`  | `Scalar` | `Field`     |
-| `String`  | `Scalar` | `Field`     |
 | `Struct`  | `Scalar` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -449,7 +447,6 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U64`     | `Scalar` | `Field`     |
 | `U128`    | `Scalar` | `Field`     |
 | `Scalar`  | `Scalar` | `Field`     |
-| `String`  | `Scalar` | `Field`     |
 | `Struct`  | `Scalar` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -487,7 +484,6 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U64`     | `Scalar` | `Field`     |
 | `U128`    | `Scalar` | `Field`     |
 | `Scalar`  | `Scalar` | `Field`     |
-| `String`  | `Scalar` | `Field`     |
 | `Struct`  | `Scalar` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -504,7 +500,7 @@ let b: field = Pedersen64::commit(a, 1scalar);
 
 Computes a Pedersen commitment up to a 64-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
 
-The instruction will halt if the given `String` or `Struct` value exceeds the 64-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -519,7 +515,6 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 | `U16`     | `Scalar` | `Field`     |
 | `U32`     | `Scalar` | `Field`     |
 | `U64`     | `Scalar` | `Field`     |
-| `String`  | `Scalar` | `Field`     |
 | `Struct`  | `Scalar` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -536,7 +531,7 @@ let b: field = Pedersen128::commit(a, 1scalar);
 
 Computes a Pedersen commitment up to a 128-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Field` value.
 
-The instruction will halt if the given `String` or `Struct` value exceeds the 128-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
@@ -553,7 +548,6 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 12
 | `U32`     | `Scalar` | `Field`     |
 | `U64`     | `Scalar` | `Field`     |
 | `U128`    | `Scalar` | `Field`     |
-| `String`  | `Scalar` | `Field`     |
 | `Struct`  | `Scalar` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -591,7 +585,6 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U64`     | `Scalar` | `Group`     |
 | `U128`    | `Scalar` | `Group`     |
 | `Scalar`  | `Scalar` | `Group`     |
-| `String`  | `Scalar` | `Group`     |
 | `Struct`  | `Scalar` | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -629,7 +622,6 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U64`     | `Scalar` | `Group`     |
 | `U128`    | `Scalar` | `Group`     |
 | `Scalar`  | `Scalar` | `Group`     |
-| `String`  | `Scalar` | `Group`     |
 | `Struct`  | `Scalar` | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -667,7 +659,6 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U64`     | `Scalar` | `Group`     |
 | `U128`    | `Scalar` | `Group`     |
 | `Scalar`  | `Scalar` | `Group`     |
-| `String`  | `Scalar` | `Group`     |
 | `Struct`  | `Scalar` | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -705,7 +696,6 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U64`     | `Scalar` | `Group`     |
 | `U128`    | `Scalar` | `Group`     |
 | `Scalar`  | `Scalar` | `Group`     |
-| `String`  | `Scalar` | `Group`     |
 | `Struct`  | `Scalar` | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -722,7 +712,7 @@ let b: group = Pedersen64::commit_to_group(a, 1scalar);
 
 Computes a Pedersen commitment up to a 64-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
 
-The instruction will halt if the given `String` or `Struct` value exceeds the 64-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -737,7 +727,6 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 | `U16`     | `Scalar` | `Group`     |
 | `U32`     | `Scalar` | `Group`     |
 | `U64`     | `Scalar` | `Group`     |
-| `String`  | `Scalar` | `Group`     |
 | `Struct`  | `Scalar` | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -754,7 +743,7 @@ let b: group = Pedersen128::commit_to_group(a, 1scalar);
 
 Computes a Pedersen commitment up to a 128-bit input in `first`, and some randomness in `second`, storing the commitment in `destination`. Randomness should always be a `Scalar` value, and the produced commitment will always be a `Group` value.
 
-The instruction will halt if the given `String` or `Struct` value exceeds the 128-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
@@ -771,7 +760,6 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 12
 | `U32`     | `Scalar` | `Group`     |
 | `U64`     | `Scalar` | `Group`     |
 | `U128`    | `Scalar` | `Group`     |
-| `String`  | `Scalar` | `Group`     |
 | `Struct`  | `Scalar` | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -957,7 +945,6 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U64`     | `Field`     |
 | `U128`    | `Field`     |
 | `Scalar`  | `Field`     |
-| `String`  | `Field`     |
 | `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -995,7 +982,6 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U64`     | `Field`     |
 | `U128`    | `Field`     |
 | `Scalar`  | `Field`     |
-| `String`  | `Field`     |
 | `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1033,7 +1019,6 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U64`     | `Field`     |
 | `U128`    | `Field`     |
 | `Scalar`  | `Field`     |
-| `String`  | `Field`     |
 | `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1071,7 +1056,6 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U64`     | `Field`     |
 | `U128`    | `Field`     |
 | `Scalar`  | `Field`     |
-| `String`  | `Field`     |
 | `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1087,7 +1071,7 @@ let a: field = Pedersen64::hash(1u64);
 
 Computes a Pedersen hash up to a 64-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
-The instruction will halt if the given `String` or `Struct` value exceeds the 64-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -1102,7 +1086,6 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 | `U16`     | `Field`     |
 | `U32`     | `Field`     |
 | `U64`     | `Field`     |
-| `String`  | `Field`     |
 | `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1118,7 +1101,7 @@ let a: field = Pedersen128::hash(1u128);
 
 Computes a Pedersen hash up to a 128-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Field` value.
 
-The instruction will halt if the given `String` or `Struct` value exceeds the 128-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
@@ -1135,7 +1118,6 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 12
 | `U32`     | `Field`     |
 | `U64`     | `Field`     |
 | `U128`    | `Field`     |
-| `String`  | `Field`     |
 | `Struct`  | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1167,7 +1149,6 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 | `U64`    | `Field`     |
 | `U128`   | `Field`     |
 | `Scalar` | `Field`     |
-| `String` | `Field`     |
 | `Struct` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1199,7 +1180,6 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 | `U64`    | `Field`     |
 | `U128`   | `Field`     |
 | `Scalar` | `Field`     |
-| `String` | `Field`     |
 | `Struct` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1231,7 +1211,6 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 | `U64`    | `Field`     |
 | `U128`   | `Field`     |
 | `Scalar` | `Field`     |
-| `String` | `Field`     |
 | `Struct` | `Field`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1269,7 +1248,6 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U64`     | `Group`     |
 | `U128`    | `Group`     |
 | `Scalar`  | `Group`     |
-| `String`  | `Group`     |
 | `Struct`  | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1307,7 +1285,6 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U64`     | `Group`     |
 | `U128`    | `Group`     |
 | `Scalar`  | `Group`     |
-| `String`  | `Group`     |
 | `Struct`  | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1345,7 +1322,6 @@ The instruction will halt if the given input is smaller than 129 bits.
 | `U64`     | `Group`     |
 | `U128`    | `Group`     |
 | `Scalar`  | `Group`     |
-| `String`  | `Group`     |
 | `Struct`  | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1383,7 +1359,6 @@ The instruction will halt if the given input is smaller than 171 bits.
 | `U64`     | `Group`     |
 | `U128`    | `Group`     |
 | `Scalar`  | `Group`     |
-| `String`  | `Group`     |
 | `Struct`  | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1399,7 +1374,7 @@ let a: group = Pedersen64::hash_to_group(1u64);
 
 Computes a Pedersen hash up to a 64-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
 
-The instruction will halt if the given `String` or `Struct` value exceeds the 64-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 64-bit limit.
 
 #### Supported Types
 
@@ -1414,7 +1389,6 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 64
 | `U16`     | `Group`     |
 | `U32`     | `Group`     |
 | `U64`     | `Group`     |
-| `String`  | `Group`     |
 | `Struct`  | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1430,7 +1404,7 @@ let a: group = Pedersen128::hash_to_group(1u128);
 
 Computes a Pedersen hash up to a 128-bit input in `first`, storing the hash in `destination`. The produced hash will always be a `Group` value.
 
-The instruction will halt if the given `String` or `Struct` value exceeds the 128-bit limit.
+The instruction will halt if the given `Struct` value exceeds the 128-bit limit.
 
 #### Supported Types
 
@@ -1447,7 +1421,6 @@ The instruction will halt if the given `String` or `Struct` value exceeds the 12
 | `U32`     | `Group`     |
 | `U64`     | `Group`     |
 | `U128`    | `Group`     |
-| `String`  | `Group`     |
 | `Struct`  | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1479,7 +1452,6 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 | `U64`    | `Group`     |
 | `U128`   | `Group`     |
 | `Scalar` | `Group`     |
-| `String` | `Group`     |
 | `Struct` | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1511,7 +1483,6 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 | `U64`    | `Group`     |
 | `U128`   | `Group`     |
 | `Scalar` | `Group`     |
-| `String` | `Group`     |
 | `Struct` | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1543,7 +1514,6 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 | `U64`    | `Group`     |
 | `U128`   | `Group`     |
 | `Scalar` | `Group`     |
-| `String` | `Group`     |
 | `Struct` | `Group`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1575,7 +1545,6 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 | `U64`    | `Scalar`     |
 | `U128`   | `Scalar`     |
 | `Scalar` | `Scalar`     |
-| `String` | `Scalar`     |
 | `Struct` | `Scalar`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1607,7 +1576,6 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 | `U64`    | `Scalar`     |
 | `U128`   | `Scalar`     |
 | `Scalar` | `Scalar`     |
-| `String` | `Scalar`     |
 | `Struct` | `Scalar`     |
 
 [Back to Top](#table-of-standard-operators)
@@ -1639,7 +1607,6 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 | `U64`    | `Scalar`     |
 | `U128`   | `Scalar`     |
 | `Scalar` | `Scalar`     |
-| `String` | `Scalar`     |
 | `Struct` | `Scalar`     |
 
 [Back to Top](#table-of-standard-operators)
