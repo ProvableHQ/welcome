@@ -433,25 +433,13 @@ Sets the `addr` entry as `current_value + 1u64` in `counter`.
 
 ## For Loops
 
-For Loops are declared as `for <loop variable> in <lower bound>..<upper bound>`.  Currently, the
+For Loops are declared as `for {loop variable} in {lower bound}..{upper bound}`.  Currently, the
 loop variable supports unsigned integer types u8, u16, u32, or u64. The lower bound must be
-less than the upper bound.
+less than the upper bound. Nested loops are supported.
 
 ```leo
-for <loop variable> in <lower bound>..<upper bound> {
+for {loop variable} in {lower bound}..{upper bound} {
     // Loop body
-}
-```
-
-### Nested Loops
-
-You can nest loops within loops. For example:
-
-```leo
-for i: u32 in 0u32..2u32 {
-    for j: u32 in 0u32..2u32 {
-        // inner loop body
-    }
 }
 ```
 
