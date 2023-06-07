@@ -432,8 +432,7 @@ Sets the `addr` entry as `current_value + 1u64` in `counter`.
 
 ## For Loops
 
-For Loops are declared as `for {loop variable} in {lower bound}..{upper bound}`.  Currently, the
-loop variable supports unsigned integer types u8, u16, or u32. The lower bound must be
+For Loops are declared as `for {loop variable} in {lower bound}..{upper bound}`.  Typical Leo loop variable types include `u8`, `u16`, and `u32`. The lower bound must be
 less than the upper bound. Nested loops are supported.
 
 ```leo
