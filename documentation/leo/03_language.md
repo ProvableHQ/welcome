@@ -12,6 +12,7 @@ Leo is a **statically typed language**, which means we must know the type of eac
 
 There is no `undefined` or `null` value in Leo. When assigning a new variable, **the type of the value must be
 explicitly stated**.
+
 <!-- The exception to this rule is when a new variable inherits its type from a previous variable. -->
 
 ### Pass by Value
@@ -154,16 +155,16 @@ program hello.aleo {
 
 The following must be declared inside the program scope in a Leo file:
 
-* mappings
-* record types
-* struct types
-* transition functions
-* helper functions
-* finalize functions
+- mappings
+- record types
+- struct types
+- transition functions
+- helper functions
+- finalize functions
 
 The following must be declared outside the program scope in a Leo file:
 
-* imports
+- imports
 
 #### Program ID
 
@@ -323,11 +324,11 @@ inline foo(
 
 The rules for functions (in the traditional sense) are as follows:
 
-* There are three variants of functions: transition, function, inline.
-* transitions can only call functions and inlines.
-* functions can only call inlines.
-* inlines can only call inlines.
-* Direct/indirect recursive calls are not allowed
+- There are three variants of functions: transition, function, inline.
+- transitions can only call functions and inlines.
+- functions can only call inlines.
+- inlines can only call inlines.
+- Direct/indirect recursive calls are not allowed
 
 #### Increment and Decrement
 
@@ -344,8 +345,8 @@ program transfer.aleo {
     transition transfer_public(...) {...}
 
     finalize transfer_public(
-        public sender: address, 
-        public receiver: address, 
+        public sender: address,
+        public receiver: address,
         public amount: u64
     ) {
         // Decrements `account[sender]` by `amount`.
@@ -353,7 +354,7 @@ program transfer.aleo {
         // If `account[sender] - amount` underflows, `transfer_public` is reverted.
         let sender_amount: u64 = Mapping::get_or_init(account, sender, 0u64);
         Mapping::set(account, sender, sender_amount - amount);
-        
+
         // Increments `account[receiver]` by `amount`.
         // If `account[receiver]` does not exist, it will be created.
         // If `account[receiver] + amount` overflows, `transfer_public` is reverted.
@@ -369,7 +370,7 @@ A finalize function is declared as `finalize {name}:`.
 A finalize function must immediately follow a [transition function](#transition-function), and must have the same name;
 it is associated with the transition function and is executed on chain,
 after the zero-knowledge proof of the execution of the associated transition is verified;
-a finalize function *finalizes* a transition function on chain.
+a finalize function _finalizes_ a transition function on chain.
 Upon success of the finalize function, the program logic is executed.
 Upon failure of the finalize function, the program logic is reverted.
 
@@ -455,11 +456,8 @@ Sets the `addr` entry as `current_value + 1u64` in `counter`.
 
 ## For Loops
 
-For Loops are declared as `for {loop variable} in {lower bound}..{upper bound}`. A loop variable is a variable that is
-declared and used within a loop and is responsible for tracking the current value or state of the loop iteration. It
-typically takes on different values in each iteration of the loop, allowing you to perform operations or make decisions
-based on its value. Typical Leo loop variable types include `u8`, `u16`,
-and `u32`. The lower bound must be
+For Loops are declared as `for {variable_name: type} in {lower bound}..{upper bound}`. Unsigned integer types of up to
+u32 are recommended for iterator variables. The lower bound must be
 less than the upper bound. Nested loops are supported.
 
 ### Example
@@ -470,7 +468,7 @@ less than the upper bound. Nested loops are supported.
   for i:u32 in 0u32..5u32 {
     count += 1u32;
   }
-  
+
   return count;
 ```
 
@@ -498,76 +496,76 @@ a = a.add(1u8);
 
 ### Arithmetic Operators
 
-|          Operation           |      Operands        |                                   Supported Types                                    |
-|:----------------------------:|:--------------------:|:------------------------------------------------------------------------------------:|
-|           addition           |  `+` `+=` `.add()`   | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
-|      wrapping addition       |  `.add_wrapped()`    |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|       negation(unary)        |  `-` `.neg()`        |                    `field` `group` `i8` `i16` `i32` `i64` `i128`                     |
-|     subtraction(binary)      |  `-` `-=` `.sub()`   |     `field` `group` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`      |
-| wrapping subtraction(binary) |  `.sub_wrapped()`    |                     `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`      |
-|        multiplication        |  `*` `*=` `.mul()`   | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
-|   wrapping multiplication    |  `.mul_wrapped()`    |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|           division           |  `/` `/=` `.div()`   |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
-|      wrapping division       |  `.div_wrapped()`    |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|           remainder          |  `%` `%=` `.rem()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|      wrapping remainder      |  `.rem_wrapped()`    |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|        exponentiation        |  `**` `**=` `.pow()` |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
-|   wrapping exponentiation    |  `.pow_wrapped()`    |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|             left shift       |  `<<` `<<=` `.shl()` |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|    wrapping left shift       |  `.shl_wrapped()`    |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|             right shift      |  `>>` `>>=` `.shr()` |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|    wrapping right shift      |  `.shr_wrapped()`    |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|          absolute value      |  `.abs()`            | `i8` `i16` `i32` `i64` `i128`                                                        |
-| wrapping absolute value      |  `.abs_wrapped()`    | `i8` `i16` `i32` `i64` `i128`                                                        |
-|          doubling            |  `.double()`         | `field` `group`                                                                      |
-|          squaring            |  `.square()`         | `field`                                                                              |
-|          square root         |  `.square_root()`    | `field`                                                                              |
-|          inverse             |  `.square_root()`    | `field`                                                                              |
+|          Operation           |      Operands       |                                   Supported Types                                    |
+| :--------------------------: | :-----------------: | :----------------------------------------------------------------------------------: |
+|           addition           |  `+` `+=` `.add()`  | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|      wrapping addition       |  `.add_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|       negation(unary)        |    `-` `.neg()`     |                    `field` `group` `i8` `i16` `i32` `i64` `i128`                     |
+|     subtraction(binary)      |  `-` `-=` `.sub()`  |     `field` `group` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`      |
+| wrapping subtraction(binary) |  `.sub_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|        multiplication        |  `*` `*=` `.mul()`  | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|   wrapping multiplication    |  `.mul_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|           division           |  `/` `/=` `.div()`  |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
+|      wrapping division       |  `.div_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|          remainder           |  `%` `%=` `.rem()`  |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|      wrapping remainder      |  `.rem_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|        exponentiation        | `**` `**=` `.pow()` |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
+|   wrapping exponentiation    |  `.pow_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|          left shift          | `<<` `<<=` `.shl()` |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|     wrapping left shift      |  `.shl_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|         right shift          | `>>` `>>=` `.shr()` |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|     wrapping right shift     |  `.shr_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|        absolute value        |      `.abs()`       |                            `i8` `i16` `i32` `i64` `i128`                             |
+|   wrapping absolute value    |  `.abs_wrapped()`   |                            `i8` `i16` `i32` `i64` `i128`                             |
+|           doubling           |     `.double()`     |                                   `field` `group`                                    |
+|           squaring           |     `.square()`     |                                       `field`                                        |
+|         square root          |  `.square_root()`   |                                       `field`                                        |
+|           inverse            |  `.square_root()`   |                                       `field`                                        |
 
 ### Logical Operators
 
-| Operation       | Operands                                         | Supported Types                                                    |
-|:---------------:|:------------------------------------------------:|:------------------------------------------------------------------:|
-| NOT             | `!` `.not()`                                     | `bool` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
-| AND             | `&` `&=` `.and()`                                | `bool` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
-| OR              | <code>&#124;</code> <code>&#124;=</code> `.or()` | `bool` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
-| XOR             | `^` `^=` `.xor()`                                | `bool` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
-| NAND            | `.nand()`                                        | `bool`                                                             |
-| NOR             | `.nor()`                                         | `bool`                                                             |
-| conditional AND | `&&`                                             | `bool`                                                             |
-| conditional OR  | <code>&#124;&#124;</code>                        | `bool`                                                             |
+|    Operation    |                     Operands                     |                          Supported Types                           |
+| :-------------: | :----------------------------------------------: | :----------------------------------------------------------------: |
+|       NOT       |                   `!` `.not()`                   | `bool` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|       AND       |                `&` `&=` `.and()`                 | `bool` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|       OR        | <code>&#124;</code> <code>&#124;=</code> `.or()` | `bool` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|       XOR       |                `^` `^=` `.xor()`                 | `bool` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|      NAND       |                    `.nand()`                     |                               `bool`                               |
+|       NOR       |                     `.nor()`                     |                               `bool`                               |
+| conditional AND |                       `&&`                       |                               `bool`                               |
+| conditional OR  |            <code>&#124;&#124;</code>             |                               `bool`                               |
 
 ### Relational Operators
 
 Relational operators will always resolve to a boolean `bool` value.
 
-|       Operation       | Operands       |                            Supported Types                                 |
-|:---------------------:|:--------------:|:--------------------------------------------------------------------------:|
-| equal                 | `==` `.eq()`   | `bool`, `group`, `field`,           integers, addresses, structs, records  |
-| not-equal             | `!=` `.neq()`  | `bool`, `group`, `field`,           integers, addresses, structs, records  |
-| less than             | `<`  `.lt()`   |                  `field`, `scalar`, integers                               |
-| less than or equal    | `<=` `.lte()`  |                  `field`, `scalar`, integers                               |
-| greater than          | `>`  `.gt()`   |                  `field`, `scalar`, integers                               |
-| greater than or equal | `>=` `.gte()`  |                  `field`, `scalar`, integers                               |
+|       Operation       |   Operands    |                         Supported Types                         |
+| :-------------------: | :-----------: | :-------------------------------------------------------------: |
+|         equal         | `==` `.eq()`  | `bool`, `group`, `field`, integers, addresses, structs, records |
+|       not-equal       | `!=` `.neq()` | `bool`, `group`, `field`, integers, addresses, structs, records |
+|       less than       |  `<` `.lt()`  |                   `field`, `scalar`, integers                   |
+|  less than or equal   | `<=` `.lte()` |                   `field`, `scalar`, integers                   |
+|     greater than      |  `>` `.gt()`  |                   `field`, `scalar`, integers                   |
+| greater than or equal | `>=` `.gte()` |                   `field`, `scalar`, integers                   |
 
 ### Operator Precedence
 
 Operators will prioritize evaluation according to:
 
-|            Operator                                                           | Associativity |
-|:-----------------------------------------------------------------------------:|:-------------:|
-|              `!` `-`(unary)                                                   |               |
-|              `**`                                                             | right to left |
-|             `*` `/`                                                           | left to right |
-|             `+` `-`(binary)                                                   | left to right |
-|             `<<` `>>`                                                         | left to right |
-|             `&`                                                               | left to right |
-|      <code>&#124;</code>                                                      | left to right |
-|             `^`                                                               | left to right |
-|       `<` `>` `<=` `>=`                                                       |               |
-|           `==` `!=`                                                           | left to right |
-|              `&&`                                                             | left to right |
-|  <code>&#124;&#124;</code>                                                    | left to right |
+|                                   Operator                                    | Associativity |
+| :---------------------------------------------------------------------------: | :-----------: |
+|                                `!` `-`(unary)                                 |               |
+|                                     `**`                                      | right to left |
+|                                    `*` `/`                                    | left to right |
+|                                `+` `-`(binary)                                | left to right |
+|                                   `<<` `>>`                                   | left to right |
+|                                      `&`                                      | left to right |
+|                              <code>&#124;</code>                              | left to right |
+|                                      `^`                                      | left to right |
+|                               `<` `>` `<=` `>=`                               |               |
+|                                   `==` `!=`                                   | left to right |
+|                                     `&&`                                      | left to right |
+|                           <code>&#124;&#124;</code>                           | left to right |
 | `=` `+=` `-=` `*=` `/=` `%=` `**=` `<<=` `>>=` `&=` <code>&#124;=</code> `^=` |               |
 
 ### Parentheses
