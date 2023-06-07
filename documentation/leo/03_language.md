@@ -469,7 +469,7 @@ less than the upper bound. Nested loops are supported.
     count += 1u32;
   }
 
-  return count;
+  return count; // returns 5u32
 ```
 
 ## Operators
