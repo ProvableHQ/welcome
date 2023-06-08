@@ -104,7 +104,7 @@ Given global instantiated Aleo parameters and subroutines.
 1. Sample a 32 byte `seed` from random
     
 2. Construct private key components
-    - `sk_sig` = BLAKE2s(`seed` ∥ 0)
+    - `sk_sig` = BLAKE2s(`seed` ∥ 0), where | denotes concatenation
     - `sk_prf` = BLAKE2s(`seed`∥ 1)
     - `r_pk` = BLAKE2s(`seed` ∥ `counter`)
            
