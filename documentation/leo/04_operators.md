@@ -50,6 +50,7 @@ The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes
 | [sub_wrapped](#sub_wrapped)                 | Wrapping subtraction operation      |
 | [ternary](#ternary)                         | Ternary select operation            |
 | [xor](#xor)                                 | XOR operation                       |
+| [group::GEN](#groupgen)                     | Group generator                     |
 
 ## Table of cryptographic Operators
 | Name                                                        | Description                                       |
@@ -2380,6 +2381,32 @@ Performs a XOR operation on integer (bitwise) or boolean `first` and `second`, s
 | `U32`     | `U32`     | `U32`       |
 | `U64`     | `U64`     | `U64`       |
 | `U128`    | `U128`    | `U128`      |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `group::GEN`
+
+```leo
+let g: group = group::GEN; // the group generator
+```
+
+#### Description
+
+Returns the generator of the algebraic group that the `group` type consists of.
+
+The compilation of Leo is based on an elliptic curve, whose points form a group,
+and on a specified point on that curve, which generarates a subgroup, whose elements form the type `group`.
+
+This is a constant, not a function. Thus, it takes no inputs, and just returns an output.
+
+It is an associated constant, whose name is `GEN` and whose associated type is `group`.
+
+#### Supported Types
+
+| Destination |
+|-------------|
+| `Group`     |
 
 [Back to Top](#table-of-standard-operators)
 ***

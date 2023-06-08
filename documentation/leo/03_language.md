@@ -72,11 +72,17 @@ Group elements are special since their values can be defined from the x-coordina
 `1group`. The group type keyword `group` must be used when specifying a group value.
 
 ```leo
-let b: group = 0group; // the zero of the group
+let b: group = 0group; // the point with 0 x-coordinate
 
-let a: group = 1group; // the group generator
+let a: group = 1group; // the point with 1 x-coordinate
 
-let c: group = 2group; // 2 * the group generator
+let c: group = 2group; // the point with 2 x-coordinate
+```
+
+The aforementioned generator point can be obtained via a constant associated to the `group` type.
+
+```leo
+let g: group = group::GEN; // the group generator
 ```
 
 ### Scalar Elements
@@ -456,7 +462,7 @@ Sets the `addr` entry as `current_value + 1u64` in `counter`.
 
 ## For Loops
 
-For Loops are declared as `for {variable: type} in {lower bound}..{upper bound}`. Unsigned integer 
+For Loops are declared as `for {variable: type} in {lower bound}..{upper bound}`. Unsigned integer
 types `u8`, `u16`, and `u32` are recommended for loop variable types. The lower bound must be
 less than the upper bound. Nested loops are supported.
 
