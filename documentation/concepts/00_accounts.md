@@ -104,15 +104,16 @@ Given global instantiated Aleo parameters and subroutines.
 1. Sample a 32 byte `seed` from random
     
 2. Construct private key components
-    - `sk_sig` = BLAKE2s(`seed`, 0)
-    - `sk_prf` = BLAKE2s(`seed`, 1)
-    - `r_pk` = BLAKE2s(`seed`, `counter`)
+    - `sk_sig` = BLAKE2s(`seed` ∥ 0)
+    - `sk_prf` = BLAKE2s(`seed`∥ 1)
+    - `r_pk` = BLAKE2s(`seed` ∥ `counter`)
            
 3.`private_key` = (`seed`, `sk_sig`, `sk_prf`, `r_pk`)
 
-the 0 and 1 passed as second arguments to calculate sk_sig and sk_prf are encoded as unsigned 16-bit integers.
-`counter` is a `u16` value that is iterated on until a valid `view_key` can be 
-derived from `private_key`.
+The 0 and 1 passed as second arguments to calculate `sk_sig` and `sk_prf` are encoded as unsigned 16-bit integers.
+`counter` is a `u16` value that is iterated on, starting from 2, until a valid `view_key` can be 
+derived from `private_key`. The endianness of the 2 bytes that form these u16s are little-endian.
+
 Learn more about BLAKE2s [here](https://www.rfc-editor.org/rfc/rfc7693).
 
 #### Generate a View Key 
