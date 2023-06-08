@@ -2388,7 +2388,7 @@ Performs a XOR operation on integer (bitwise) or boolean `first` and `second`, s
 ### `group::GEN`
 
 ```leo
-let g: group = group::GEN; // true
+let g: group = group::GEN; // the group generator
 ```
 
 #### Description
