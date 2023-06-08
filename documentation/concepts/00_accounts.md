@@ -131,9 +131,9 @@ Learn more about BLAKE2s [here](https://www.rfc-editor.org/rfc/rfc7693).
 ```mermaid
 graph TD
 	A["Seed (32 Bytes)"] 
-    A --> |"BLAKE2s(Seed, 0)"| B(sk_sig)
-    A --> |"BLAKE2s(Seed, 1)"| C(sk_prf)
-    A --> |"BLAKE2s(Seed, counter)"| D(r_pk)
+    A --> |"BLAKE2s(Seed, 0)" | B(sk_sig)
+    A --> |"BLAKE2s(Seed, 1)" | C(sk_prf)
+    A --> |"BLAKE2s(Seed, counter)" | D(r_pk)
     
     B --> E(Account Private Key)
     C --> E(Account Private Key)
