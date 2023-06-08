@@ -104,13 +104,21 @@ Given global instantiated Aleo parameters and subroutines.
 1. Sample a 32 byte `seed` from random
     
 2. Construct private key components
-    - `sk_sig` = Blake2s(`seed`, 0)
-    - `sk_prf` = Blake2s(`seed`, 1)
-    - `r_pk` = Blake2s(`seed`, `counter`)
+    - `sk_sig` = BLAKE2s(`seed` | 0)
+    - `sk_prf` = BLAKE2s(`seed` | 1)
+    - `r_pk` = BLAKE2s(`seed` | `counter`)
+    - where | denotes concatenation
+    - where `BLAKE2s` denotes unkeyed BLAKE2s-256, as defined in [RFC 7693](https://www.rfc-editor.org/rfc/rfc7693)
            
 3.`private_key` = (`seed`, `sk_sig`, `sk_prf`, `r_pk`)
 
-`counter` is a `u16` value that is iterated on until a valid `view_key` can be derived from `private_key`
+The 0 and 1 used to calculate `sk_sig` and `sk_prf` are each encoded as an unsigned
+16-bit integer and turned into two bytes in little endian order before being
+concatenated to the right of the seed, then the resulting byte sequence is passed to BLAKE2s.
+Similarly to 0 and 1 used to calculate sk_sig and sk_prf, the unsigned 16-bit integer 
+counter is turned into two bytes in little endian order before being concatenated to the right of the seed.
+
+Learn more about BLAKE2s [here](https://www.rfc-editor.org/rfc/rfc7693).
 
 #### Generate a View Key 
 
@@ -127,9 +135,9 @@ Given global instantiated Aleo parameters and subroutines.
 ```mermaid
 graph TD
 	A["Seed (32 Bytes)"] 
-    A --> |"Blake2s(Seed, 0)"| B(sk_sig)
-    A --> |"Blake2s(Seed, 1)"| C(sk_prf)
-    A --> |"Blake2s(Seed, counter)"| D(r_pk)
+    A --> |"BLAKE2s(Seed, 0)" | B(sk_sig)
+    A --> |"BLAKE2s(Seed, 1)" | C(sk_prf)
+    A --> |"BLAKE2s(Seed, counter)" | D(r_pk)
     
     B --> E(Account Private Key)
     C --> E(Account Private Key)
