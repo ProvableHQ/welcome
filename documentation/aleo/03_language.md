@@ -251,29 +251,32 @@ mapping account:
     value amount as u64.public;
 ```
 
-#### Increment and Decrement
-An increment instruction has the form `increment {name}[{register}] by {register};`.  
-A decrement instruction has the form `decrement {name}[{register}] by {register};`.  
-These instructions are used in [finalize](#finalize).
+#### Get or Use
+
+A get command that uses the provided default in case of failure, e.g. `get.or_use accounts[r0] r1 into r2;`.
 
 ```aleo showLineNumbers
 finalize transfer_public:
-    // Input the token sender.
+    // Input the sender.
     input r0 as address.public;
-    // Input the token receiver.
+    // Input the receiver.
     input r1 as address.public;
-    // Input the token amount.
+    // Input the amount.
     input r2 as u64.public;
-
+    
     // Decrements `account[r0]` by `r2`.
-    // If `account[r0]` does not exist, it will be created.
+    // If `account[r0]` does not exist, 0u64 is used.
     // If `account[r0] - r2` underflows, `transfer_public` is reverted.
-    decrement account[r0] by r2;
-
+    get.or_use account[r0] 0u64 into r3;
+    sub r3 r2 into r4;
+    set r4 into account[r0];
+    
     // Increments `account[r1]` by `r2`.
-    // If `account[r1]` does not exist, it will be created.
+    // If `account[r1]` does not exist, 0u64 is used.
     // If `account[r1] + r2` overflows, `transfer_public` is reverted.
-    increment account[r1] by r2;
+    get.or_use account[r1] 0u64 into r5;
+    add r5 r2 into r6;
+    set r6 into account[r1];
 ```
 
 ### Finalize
