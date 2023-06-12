@@ -7,13 +7,13 @@ sidebar_label: Programs
 A **program** is a fundamental data structure for representing application logic and application state.
 
 Aleo introduces a new programming language called **Aleo instructions** that enables developers to write
-anonymous web applications. Aleo instructions is a statically-typed programming language for
+private web applications. Aleo instructions is a statically-typed programming language for
 writing privacy-preserving, secure programs on Aleo. By leveraging zero-knowledge proofs, Aleo instructions offers computational
 integrity for real-world applications.
 
 ## Program Logic
 
-Aleo instructions offers developers with an easy-to-use environment for writing programs. By designing an assembly language with 
+Aleo instructions offers developers with an easy-to-use environment for writing programs. By designing an assembly language with
 syntax familiar to developers and composable in features, Aleo instructions is well-suited to integrate with
 existing developer frameworks to supercharge web apps with privacy and integrity.
 
