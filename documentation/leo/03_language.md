@@ -149,7 +149,7 @@ program hello.aleo {
         public receiver: address,
         public amount: u64,
     ) {
-        let current_amount: u64 = Mapping::get_or_init(account, receiver, 0u64);
+        let current_amount: u64 = Mapping::get_or_use(account, receiver, 0u64);
         Mapping::set(account, receiver, current_amount + amount);
    }
 
@@ -358,13 +358,13 @@ program transfer.aleo {
         // Decrements `account[sender]` by `amount`.
         // If `account[sender]` does not exist, it will be created.
         // If `account[sender] - amount` underflows, `transfer_public` is reverted.
-        let sender_amount: u64 = Mapping::get_or_init(account, sender, 0u64);
+        let sender_amount: u64 = Mapping::get_or_use(account, sender, 0u64);
         Mapping::set(account, sender, sender_amount - amount);
 
         // Increments `account[receiver]` by `amount`.
         // If `account[receiver]` does not exist, it will be created.
         // If `account[receiver] + amount` overflows, `transfer_public` is reverted.
-        let receiver_amount: u64 = Mapping::get_or_init(account, receiver, 0u64);
+        let receiver_amount: u64 = Mapping::get_or_use(account, receiver, 0u64);
         Mapping::set(account, receiver, receiver_amount + amount);
     }
 }
@@ -409,7 +409,7 @@ program transfer.aleo {
         // Decrements `account[sender]` by `amount`.
         // If `account[sender]` does not exist, it will be created.
         // If `account[sender] - amount` underflows, `transfer_public_to_private` is reverted.
-        let current_amount: u64 = Mapping::get_or_init(account, sender, 0u64);
+        let current_amount: u64 = Mapping::get_or_use(account, sender, 0u64);
         Mapping::set(account, sender, current_amount - amount);
     }
 }
@@ -417,7 +417,7 @@ program transfer.aleo {
 
 ### Mapping and finalize
 
-The syntax around mapping and finalize has been updated to support `get`, `get_or_init`, `set` functions.
+The syntax around mapping and finalize has been updated to support `get`, `get_or_use`, `set` functions.
 
 ```leo showLineNumbers
 program test.aleo {
@@ -428,7 +428,7 @@ program test.aleo {
     }
 
     finalize dubble(addr: address) {
-        let current_value: u64 = Mapping::get_or_init(counter, addr, 0u64);
+        let current_value: u64 = Mapping::get_or_use(counter, addr, 0u64);
         Mapping::set(counter, addr, current_value + 1u64);
         current_value = Mapping::get(counter, addr);
         Mapping::set(counter, addr, current_value + 1u64);
@@ -448,10 +448,10 @@ A get command, e.g. `current_value = Mapping::get(counter, addr);`
 Gets the value stored at `addr` in `counter` and stores the result in `current_value`
 If the value at `addr` does not exist, then the program will fail to execute.
 
-#### get_or_init
+#### get_or_use
 
-A get command that initializes the mapping in case of failure, e.g.
-`let current_value: u64 = Mapping::get_or_init(counter, addr, 0u64);`
+A get command that uses the provided default in case of failure,  
+e.g. `let current_value: u64 = Mapping::get_or_use(counter, addr, 0u64);`  
 Gets the value stored at `addr` in `counter` and stores the result in `current_value`.
 If the key is not present, `0u64` is stored in `counter` and stored in `current_value`.
 
