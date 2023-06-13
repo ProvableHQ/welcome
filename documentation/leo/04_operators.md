@@ -784,7 +784,7 @@ For example:
 1. `7 / 3` yields `2`, not `2.3333`.
 2. `-7 / 3` yields `-2`, not `-2.3333`.
 
-A constraint is added to check for underflow. Underflow occurs when dividing the minimum value of a signed integer type by -1. For example, `-128i8 / -1i8` would result in underflow, since 128 cannot be represented as an `i8`.
+The operation halts if there is an underflow. Underflow occurs when dividing the minimum value of a signed integer type by -1. For example, `-128i8 / -1i8` would result in underflow, since 128 cannot be represented as an `i8`.
 
 For field types, division `a / b` is well-defined for any field values `a` and `b` except when `b = 0field`.
 
