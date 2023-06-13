@@ -12,4 +12,4 @@
 	url = https://github.com/AleoHQ/snarkVM.git
 [submodule "sdk"]
 	path = sdk
-	url = ./sdk
+	url = https://github.com/AleoHQ/sdk.git
