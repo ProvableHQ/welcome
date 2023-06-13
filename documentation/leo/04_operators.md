@@ -775,10 +775,18 @@ let c: u8 = b.div(2u8); // 1u8
 ```
 #### Description
 
-Divides `first` by `second`, storing the outcome in `destination`. Halts on division by zero.
+Performs division of the first operand by the second, storing the result in the destination. The operation halts if division by zero is attempted.
 
-For integer types, this operation performs truncated division. Furthermore, a constraint is added to check for underflow. This underflow happens when dividing the minimum value of a signed integer type by `-1`. For example, `div -128i8 -1i8` would result in underflow, since `128` cannot be represented as an `i8`.
+For integer types, this operation performs truncated division. Truncated division rounds towards zero, regardless of the sign of the operands. This means it cuts off any digits after the decimal, leaving the largest whole number less than or equal to the result.
 
+For example:
+
+1. `7 / 3` yields `2`, not `2.3333`.
+2. `-7 / 3` yields `-2`, not `-2.3333`.
+
+A constraint is added to check for underflow. Underflow occurs when dividing the minimum value of a signed integer type by -1. For example, `-128i8 / -1i8` would result in underflow, since 128 cannot be represented as an `i8`.
+
+For field types, division `a / b` is well-defined for any field values `a` and `b` except when `b = 0field`.
 
 For cases where wrapping semantics are needed for integer types, see the [div_wrapped](#div_wrapped) instruction.
 
