@@ -7,48 +7,48 @@ sidebar_label: Opcodes
 The following lists show the standard and cryptographic opcodes supported by Aleo instructions.
 
 ## Table of Standard Opcodes
-| Name                     | Description                         |
-|--------------------------|:------------------------------------|
-| [abs](#abs)              | Absolute value operation            |
-| [abs.w](#absw)           | Wrapping absolute value operation   |
-| [add](#add)              | Addition operation                  |
-| [add.w](#addw)           | Wrapping addition operation         |
-| [and](#and)              | AND operation                       |
-| [assert.eq](#asserteq)   | Assert equality                     |
-| [assert.neq](#assertneq) | Assert non-equality                 |
-| [div](#div)              | Division operation                  |
-| [div.w](#divw)           | Wrapping division operation         |
-| [double](#double)        | Double operation                    |
-| [gt](#gt)                | Greater than comparison             |
-| [gte](#gte)              | Greater than or equal to comparison |
-| [inv](#inv)              | Multiplicative inverse operation    |
-| [is.eq](#iseq)           | Equality comparison                 |
-| [is.neq](#isneq)         | Not equal comparison                |
-| [lt](#lt)                | Less than comparison                |
-| [lte](#lte)              | Less than or equal to comparison    |
-| [mod](#mod)              | Arithmetic modulo operation         |
-| [mul](#mul)              | Multiplication operation            |
-| [mul.w](#mulw)           | Wrapping multiplication operation   |
-| [nand](#nand)            | Boolean NAND operation              |
-| [neg](#neg)              | Additive inverse operation          |
-| [nor](#nor)              | Boolean NOR operation               |
-| [not](#not)              | NOT operation                       |
-| [or](#or)                | OR Operation                        |
-| [pow](#pow)              | Exponentiation operation            |
-| [pow.w](#poww)           | Wrapping exponentiation operation   |
-| [rand.chacha](#randchacha)| Generates a random value within the `finalize` scope.|
-| [rem](#rem)              | Remainder operation                 |
-| [rem.w](#remw)           | Wrapping remainder operation        |
-| [shl](#shl)              | Shift left operation                |
-| [shl.w](#shlw)           | Wrapping shift left operation       |
-| [shr](#shr)              | Shift right operation               |
-| [shr.w](#shrw)           | Wrapping shift right operation      |
-| [sqrt](#sqrt)            | Square root operation               |
-| [square](#square)        | Square operation                    |
-| [sub](#sub)              | Subtraction operation               |
-| [sub.w](#subw)           | Wrapping subtraction operation      |
-| [ternary](#ternary)      | Ternary select operation            |
-| [xor](#xor)              | XOR operation                       |
+| Name                       | Description                                           |
+|----------------------------|:------------------------------------------------------|
+| [abs](#abs)                | Absolute value operation                              |
+| [abs.w](#absw)             | Wrapping absolute value operation                     |
+| [add](#add)                | Addition operation                                    |
+| [add.w](#addw)             | Wrapping addition operation                           |
+| [and](#and)                | AND operation                                         |
+| [assert.eq](#asserteq)     | Assert equality                                       |
+| [assert.neq](#assertneq)   | Assert non-equality                                   |
+| [div](#div)                | Division operation                                    |
+| [div.w](#divw)             | Wrapping division operation                           |
+| [double](#double)          | Double operation                                      |
+| [gt](#gt)                  | Greater than comparison                               |
+| [gte](#gte)                | Greater than or equal to comparison                   |
+| [inv](#inv)                | Multiplicative inverse operation                      |
+| [is.eq](#iseq)             | Equality comparison                                   |
+| [is.neq](#isneq)           | Not equal comparison                                  |
+| [lt](#lt)                  | Less than comparison                                  |
+| [lte](#lte)                | Less than or equal to comparison                      |
+| [mod](#mod)                | Arithmetic modulo operation                           |
+| [mul](#mul)                | Multiplication operation                              |
+| [mul.w](#mulw)             | Wrapping multiplication operation                     |
+| [nand](#nand)              | `Boolean` NAND operation                              |
+| [neg](#neg)                | Additive inverse operation                            |
+| [nor](#nor)                | `Boolean` NOR operation                               |
+| [not](#not)                | NOT operation                                         |
+| [or](#or)                  | OR Operation                                          |
+| [pow](#pow)                | Exponentiation operation                              |
+| [pow.w](#poww)             | Wrapping exponentiation operation                     |
+| [rand.chacha](#randchacha) | Generates a random value within the `finalize` scope. |
+| [rem](#rem)                | Remainder operation                                   |
+| [rem.w](#remw)             | Wrapping remainder operation                          |
+| [shl](#shl)                | Shift left operation                                  |
+| [shl.w](#shlw)             | Wrapping shift left operation                         |
+| [shr](#shr)                | Shift right operation                                 |
+| [shr.w](#shrw)             | Wrapping shift right operation                        |
+| [sqrt](#sqrt)              | Square root operation                                 |
+| [square](#square)          | Square operation                                      |
+| [sub](#sub)                | Subtraction operation                                 |
+| [sub.w](#subw)             | Wrapping subtraction operation                        |
+| [ternary](#ternary)        | Ternary select operation                              |
+| [xor](#xor)                | XOR operation                                         |
 
 ## Table of Cryptographic Opcodes
 | Name                                               | Description                       |
