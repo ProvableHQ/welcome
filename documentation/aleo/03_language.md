@@ -86,11 +86,19 @@ If you need a declaration from another program file, you must import it.
 
 ### Program ID
 
-A program ID is declared as `{name}.{network}`.  
+A program ID is declared as `{name}.{network}`.
+The first character of a `name` must be lowercase.
+`name` can contain lowercase letters, numbers, and underscores.
 Currently, `aleo` is the only supported `network` domain.
 
 ```aleo showLineNumbers
-program hello.aleo;
+program hello.aleo; // valid
+
+program Foo.aleo;   // invalid
+program baR.aleo;   // invalid
+program 0foo.aleo;  // invalid
+program 0_foo.aleo; // invalid
+program _foo.aleo;  // invalid
 ```
 
 ### Import
