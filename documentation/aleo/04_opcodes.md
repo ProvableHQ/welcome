@@ -29,13 +29,14 @@ The following lists show the standard and cryptographic opcodes supported by Ale
 | [mod](#mod)              | Arithmetic modulo operation         |
 | [mul](#mul)              | Multiplication operation            |
 | [mul.w](#mulw)           | Wrapping multiplication operation   |
-| [nand](#nand)            | `Boolean` NAND operation            |
+| [nand](#nand)            | Boolean NAND operation              |
 | [neg](#neg)              | Additive inverse operation          |
-| [nor](#nor)              | `Boolean` NOR operation             |
+| [nor](#nor)              | Boolean NOR operation               |
 | [not](#not)              | NOT operation                       |
 | [or](#or)                | OR Operation                        |
 | [pow](#pow)              | Exponentiation operation            |
 | [pow.w](#poww)           | Wrapping exponentiation operation   |
+| [rand.chacha](#randchacha)| Generates a random value within the `finalize` scope.|
 | [rem](#rem)              | Remainder operation                 |
 | [rem.w](#remw)           | Wrapping remainder operation        |
 | [shl](#shl)              | Shift left operation                |
@@ -1225,6 +1226,40 @@ Raises `first` to the power of `second`, wrapping around at the boundary of the 
 
 ***
 
+### `rand.chacha`
+
+#### Description 
+
+The `rand.chacha` opcode is used to generate random values within the `finalize` scope. It supports a wide range of types for the random value.
+#### Example Usage
+
+```rust
+rand.chacha into r0 as field;
+rand.chacha r0 into r1 as field;
+rand.chacha r0 r1 into r2 as field;
+```
+
+#### Supported Types 
+
+| First     | Second    | Destination |
+|-----------|-----------|-------------|
+| Address   | Address   | Address     |
+| Boolean   | Boolean   | Boolean     |
+| Field     | Field     | Field       |
+| Group     | Group     | Group       |
+| I8        | I8        | I8          |
+| I16       | I16       | I16         |
+| I32       | I32       | I32         |
+| I64       | I64       | I64         |
+| I128      | I128      | I128        |
+| U8        | U8        | U8          |
+| U16       | U16       | U16         |
+| U32       | U32       | U32         |
+| U64       | U64       | U64         |
+| U128      | U128      | U128        |
+| Scalar    | Scalar    | Scalar      |
+
+***
 
 ### `rem`
 
