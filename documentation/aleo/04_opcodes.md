@@ -1233,7 +1233,7 @@ Raises `first` to the power of `second`, wrapping around at the boundary of the 
 The `rand.chacha` opcode is used to generate random values within the `finalize` scope. It supports a wide range of types for the random value.
 #### Example Usage
 
-```rust
+```aleo
 rand.chacha into r0 as field;
 rand.chacha r0 into r1 as field;
 rand.chacha r0 r1 into r2 as field;
