@@ -18,6 +18,8 @@ The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes
 | [assert](#assert)                           | Assert boolean true                 |
 | [assert_eq](#assert_eq)                     | Assert equality                     |
 | [assert_neq](#assert_neq)                   | Assert non-equality                 |
+| [cast](#cast)                               | Cast between literals               |
+| [cast.lossy](#cast.lossy)                   | Cast between literals with lossy truncation|
 | [div](#div)                                 | Division operation                  |
 | [div_wrapped](#div_wrapped)                 | Wrapping division operation         |
 | [double](#double)                           | Double operation                    |
@@ -341,6 +343,71 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 
 [Back to Top](#table-of-standard-operators)
 ***
+
+### `cast`
+
+```leo
+input r0 as field.private;
+cast r0 into r1 as group;
+cast r0 into r2 as u8;
+```
+
+#### Description
+
+Enables casting between different literals.
+
+#### Supported Types
+
+| First     | Second    |
+|-----------|-----------|
+| `Address` | `Address` |
+| `Boolean` | `Boolean` |
+| `Field`   | `Field`   |
+| `Group`   | `Group`   |
+| `I8`      | `I8`      |
+| `I16`     | `I16`     |
+| `I32`     | `I32`     |
+| `I64`     | `I64`     |
+| `I128`    | `I128`    |
+| `U8`      | `U8`      |
+| `U16`     | `U16`     |
+| `U32`     | `U32`     |
+| `U64`     | `U64`     |
+| `U128`    | `U128`    |
+| `Scalar`  | `Scalar`  |
+
+### `cast.lossy`
+
+```leo
+input r0 as field.private;
+cast r0 into r1 as group;
+cast r0 into r2 as u8;
+cast.lossy r0 into r3 as u8; // The bottom 8 bits of the r0 are extracted into a u8 and placed into r3
+```
+
+#### Description
+
+Perform casting with lossy truncation.
+
+#### Supported Types
+
+| First     | Second    |
+|-----------|-----------|
+| `Address` | `Address` |
+| `Boolean` | `Boolean` |
+| `Field`   | `Field`   |
+| `Group`   | `Group`   |
+| `I8`      | `I8`      |
+| `I16`     | `I16`     |
+| `I32`     | `I32`     |
+| `I64`     | `I64`     |
+| `I128`    | `I128`    |
+| `U8`      | `U8`      |
+| `U16`     | `U16`     |
+| `U32`     | `U32`     |
+| `U64`     | `U64`     |
+| `U128`    | `U128`    |
+| `Scalar`  | `Scalar`  |
 
 ### `BHP256::commit`
 
