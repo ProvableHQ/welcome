@@ -219,15 +219,15 @@ function new_array3:
 
 A [record](../concepts/02_records.md) type is declared as `record {name}:`.  
 Records contain component declarations `{name} as {type}.{visibility};`.  
-Record data structures must contain the `owner` and `gates` declarations as shown below.  
+Record data structures must contain the `owner` declaration as shown below.  
 When passing a record as input to a program function the `_nonce as group.{visibility}` declaration is also required.
 
 ```aleo showLineNumbers
 record token:
     // The token owner.
     owner as address.private;
-    // The Aleo balance (in gates).
-    gates as u64.private;
+    // The Aleo balance (in microcredits).
+    microcredits as u64.private;
     // The token amount.
     amount as u64.private;
 ```

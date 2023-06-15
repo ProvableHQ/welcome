@@ -76,7 +76,7 @@ snarkos developer deploy fibonacci.aleo --private-key <PRIVATE_KEY> --query "htt
 snarkos developer execute fibonacci.aleo fibonacci "1u8" --private-key <PRIVATE_KEY> --query "http://localhost:3030" --broadcast "http://localhost:3030/testnet3/transaction/broadcast" 
 ```
 
-*NOTE: Fees (in gates) must be greater than the transaction size in bytes. Fees can be excluded from execution transactions, but if one is specified, it must follow the above rule. *
+*NOTE: Fees (in microcredits) must be greater than the transaction size in bytes. Fees can be excluded from execution transactions, but if one is specified, it must follow the above rule. *
 
 ## Commands
 
@@ -109,7 +109,7 @@ Create an Aleo program deployment.
     - shortcut `-p`
 - `query` - The endpoint to query node state from
     - shortcut - `-q`
-- `fee` - The deployment fee in gates
+- `fee` - The deployment fee in microcredits
     - optional - defaults to 0
 - `record` - The record to spend the fee from
 - `display` - Display the generated transaction
@@ -138,7 +138,7 @@ Create an Aleo program execution.
     - shortcut `-p`
 - `query` - The endpoint to query node state from
     - shortcut - `-q`
-- `fee` - The deployment fee in gates
+- `fee` - The deployment fee in microcredits
     - optional
 - `record` - The record to spend the fee from
     - optional
@@ -184,12 +184,12 @@ Transfer credits with a `credits.aleo` program execution.
 
 - `input_record` - The record used to craft the transfer
 - `recipient` - The recipient address
-- `amount` - The number of gates to transfer
+- `amount` - The number of microcredits to transfer
 - `private_key` - The private key used to generate the deployment
     - shortcut `-p`
 - `query` - The endpoint to query node state from
     - shortcut - `-q`
-- `fee` - The deployment fee in gates
+- `fee` - The deployment fee in microcredits
     - optional
 - `record` - The record to spend the fee from
     - optional
@@ -219,7 +219,7 @@ To deploy and execute programs on Testnet3
 <!-- markdown-link-check-enable -->
 
 
-Deployment transactions have an additional requirement where the included fee must have at least `deployment_size_in_bytes` gates.
+Deployment transactions have an additional requirement where the included fee must have at least `deployment_size_in_bytes` microcredits.
 
 Execution transactions do not currently have any fee requirements.
 
