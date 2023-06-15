@@ -382,7 +382,7 @@ Enables casting between different literals.
 input r0 as field.private;
 cast r0 into r1 as group;
 cast r0 into r2 as u8;
-cast.lossy r0 into r3 as u8; // The bottom 8 bits of the r0 are extracted into a u8 and placed into r3
+cast.lossy r0 into r3 as u8;
 ```
 
 #### Description
