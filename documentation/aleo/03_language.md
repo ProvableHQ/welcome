@@ -259,6 +259,14 @@ mapping account:
     value amount as u64.public;
 ```
 
+#### Contains
+
+A contains command that checks if a key exists in a mapping, e.g. `contains accounts[r0] into r1;`.
+
+#### Get
+
+A get command that retrieves a value from a mapping, e.g. `get accounts[r0] into r1;`.
+
 #### Get or Use
 
 A get command that uses the provided default in case of failure, e.g. `get.or_use accounts[r0] r1 into r2;`.
@@ -287,6 +295,18 @@ finalize transfer_public:
     set r6 into account[r1];
 ```
 
+#### Set
+
+A set command that sets a value in a mapping, e.g. `set r0 into accounts[r0];`.
+
+#### Remove
+
+A remove command that removes a key-value pair from a mapping, e.g. `remove accounts[r0];`.
+
+
+
+```aleo showLineNumbers
+
 ### Finalize
 
 A finalize is declared as `finalize {name}:`.  
@@ -298,35 +318,41 @@ Upon success of the finalize function, the program logic is executed.
 Upon failure of the finalize function, the program logic is reverted.  
 
 ```aleo showLineNumbers
-// The function `transfer_public_to_private` turns a specified token amount
-// from `account` into a token record for the specified receiver.
-// 
+// The `transfer_public_to_private` function turns a specified amount
+// from the mapping `account` into a record for the specified receiver.
+//
 // This function preserves privacy for the receiver's record, however
-// it publicly reveals the caller and the specified token amount.
+// it publicly reveals the sender and the specified amount.
 function transfer_public_to_private:
-    // Input the token receiver.
+    // Input the receiver.
     input r0 as address.public;
-    // Input the token amount.
+    // Input the amount.
     input r1 as u64.public;
-
-    // Produces a token record for the token receiver.
-    cast r0 0u64 r1 into r2 as token.record;
-
-    // Output the receiver's record.
-    output r2 as token.record;
-
-    // Decrement the token amount of the caller publicly.
+    
+    // Construct a record for the receiver.
+    cast r0 r1 into r2 as credits.record;
+    
+    // Output the record of the receiver.
+    output r2 as credits.record;
+    
+    // Decrement the balance of the sender publicly.
     finalize self.caller r1;
 
 finalize transfer_public_to_private:
-    // Input the token owner.
+    // Input the sender.
     input r0 as address.public;
-    // Input the token amount.
+    // Input the amount.
     input r1 as u64.public;
-
+    
+    // Retrieve the balance of the sender.
+    // If `account[r0]` does not exist, 0u64 is used.
+    get.or_use account[r0] 0u64 into r2;
+    
     // Decrements `account[r0]` by `r1`.
-    // If `account[r0]` does not exist, it will be created.
-    // If `account[r0] - r1` underflows, `transfer_public_to_private` is reverted.
-    decrement account[r0] by r1;
+    // If `r2 - r1` underflows, `transfer_public_to_private` is reverted.
+    sub r2 r1 into r3;
+    
+    // Updates the balance of the sender.
+    set r3 into account[r0];
 ```
 
