@@ -8,7 +8,7 @@ sidebar_label: Changelog
 The Leo language and Aleo SDK are currently in active development. Please monitor their respective repositories for 
 the latest updates:
 [**Leo**]
-(https://github.com/AleoHQ/leo) [**Leo**]
+(https://github.com/AleoHQ/leo) [**Aleo**]
 (https://github.com/AleoHQ/aleo) .
 :::
 
