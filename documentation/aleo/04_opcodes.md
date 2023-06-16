@@ -265,7 +265,9 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 
 ### `cast`
 
-```leo
+[Back to Top](#table-of-standard-opcodes)
+
+```aleo
 input r0 as field.private;
 cast r0 into r1 as group;
 cast r0 into r2 as u8;
@@ -299,7 +301,9 @@ Enables casting between different literals.
 
 ### `cast.lossy`
 
-```leo
+[Back to Top](#table-of-standard-opcodes)
+
+```aleo
 input r0 as field.private;
 cast r0 into r1 as group;
 cast r0 into r2 as u8;
