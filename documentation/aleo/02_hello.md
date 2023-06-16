@@ -226,10 +226,10 @@ A record is a fundamental data structure for encoding user assets and applicatio
 ```aleo showLineNumbers
 record token:
     owner as address.private
-    gates as u64.private
+    microcredits as u64.private
 ```
 
-the `owner` refers to the Aleo address that owns the record and `gates` is the amount of credits that the record has to spend.
+the `owner` refers to the Aleo address that owns the record and `microcredits` is the amount of credits that the record has to spend.
 
 Records are important because they represent the basic Aleo structure to handle state in your application.
 
@@ -264,7 +264,7 @@ Consider this program:
 program foo.aleo;
 record token:
     owner as address.private;
-    gates as u64.private;
+    microcredits as u64.private;
     amount as u64.private;
 function transfer_amount:
     //  sender token record
@@ -278,7 +278,7 @@ function transfer_amount:
     // final balance of receiver
     add 0u64 r2 into r4;
     // sender token record after the transfer
-    cast r0.owner r0.gates r3 into r5 as token.record;
+    cast r0.owner r0.microcredits r3 into r5 as token.record;
     // receiver token record after the transfer
     cast r1 0u64 r4 into r6 as token.record;
     // sender new token record
@@ -286,7 +286,7 @@ function transfer_amount:
     // receiver new token record
     output r6 as token.record;
 ```
-First, we define our own record data type called `token`, that has the two non-optional parameters, `owner` and `gates`, and a user-defined parameter called `amount`, representing the amount of tokens we have.
+First, we define our own record data type called `token`, that has the required parameter `owner`, optional parameter `microcredits`, and a user-defined parameter called `amount`, representing the amount of tokens we have.
 
 This `transfer_amount` function receives 3 input parameters (`sender` record, `receiver` record and `amount`) and stores them in 3 registers (`r0`, `r1` and `r2`). After that, it computes the final balance for both of them and stores it in `r3` and `r4` (using **sub** and **add** instructions to compute the subtraction and addition respectively). With those final amounts, it creates the output records for sender and receiver, storing them in `r5` and `r6` . Finally, both records are sent out of the function with the **output** instruction.
 
@@ -295,7 +295,7 @@ To run this function, the first parameter is the input record of the program. Th
 ```json
 {
   owner: aleo1x5nz5u4j50w482t5xtqc3jdwly9s8saaxlgjz0wvmuzmxv2l5q9qmypx09.private,
-  gates: 0u64.private,
+  microcredits: 0u64.private,
   amount: 50u64.private
 }
 ```
@@ -303,7 +303,7 @@ To run this function, the first parameter is the input record of the program. Th
 Where:
 
 - owner: the public address of the program, as found in the `development.address` of the `build/program.json` file.
-- gates: the gates that the record has.
+- microcredits: the amount of credits that the record owns.
 - other parameters: depending on the program itself (in this example, we used the parameter _amount_ with the value 50).
 
 Let's run the `transfer_amount` function (if you are following along, remember to use the address found in the program.json for the owner field):
@@ -311,7 +311,7 @@ Let's run the `transfer_amount` function (if you are following along, remember t
 ``` bash
 aleo clean && aleo run transfer_amount "{
 owner: aleo1x5nz5u4j50w482t5xtqc3jdwly9s8saaxlgjz0wvmuzmxv2l5q9qmypx09.private,
-gates: 0u64.private,
+microcredits: 0u64.private,
 amount: 50u64.private
 }" aleo1h3gu7fky36y8r7v2x9phc434fgf20g8qd7c7u45v269jfw6vmugqjegcvp 10u64
 ```
@@ -325,13 +325,13 @@ We get the following output records:
 ➡️  Outputs
  • {
   owner: aleo1x5nz5u4j50w482t5xtqc3jdwly9s8saaxlgjz0wvmuzmxv2l5q9qmypx09.private,
-  gates: 0u64.private,
+  microcredits: 0u64.private,
   amount: 40u64.private
   _nonce: 2293253577170800572742339369209137467208538700597121244293392265726446806023group.public
 }
  • {
   owner: aleo1h3gu7fky36y8r7v2x9phc434fgf20g8qd7c7u45v269jfw6vmugqjegcvp.private,
-  gates: 0u64.private,
+  microcredits: 0u64.private,
   amount: 10u64.private
   _nonce: 2323253577170856894742339369235137467208538700597121244293392765726742543235group.public
 }

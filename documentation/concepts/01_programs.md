@@ -23,8 +23,8 @@ program token.aleo;
 record token:
     // The token owner.
     owner as address.private;
-    // The Aleo balance (in gates).
-    gates as u64.private;
+    // The Aleo balance (in microcredits).
+    microcredits as u64.private;
     // The token balance.
     amount as u64.private;
 
@@ -56,7 +56,7 @@ function transfer:
     cast r1 0u64 r2 into r4 as token.record;
 
     // Produces a token record with the change amount for the sender.
-    cast r0.owner r0.gates r3 into r5 as token.record;
+    cast r0.owner r0.microcredits r3 into r5 as token.record;
 
     // Output the receiver's record.
     output r4 as token.record;
