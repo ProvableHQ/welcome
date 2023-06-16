@@ -15,10 +15,8 @@ An Aleo transition is serialized in the following format:
 |    `inputs`     |  array of `Input`s   |                                 The transition `Input`s, which can be a `constant`, `public`, `private`, or `inputRecord`                                 |
 |    `outputs`    |  array of `Output`s  |                                The transition `Output`s, which can be a `constant`, `public`, `private`, or `outputRecord`                                |
 |   `finalize`    |        array         |                                                                  The inputs for finalize                                                                  |
-|     `proof`     |    group element     | The transition proof, used to verify the correctness of the program execution associated to `function_name` within the program associated to `program_id` |
 |      `tpk`      |    group element     |                    The transition public key, which is used to verify the digital signature provided by the `owner` in a `transaction`                    |
 |      `tcm`      | finite field element |                                                                 The transition commitment                                                                 |
-|      `fee`      |         i64          |                                                       The network fee associated to the transition.                                                       |
 
 #### Input Record
 An `inputRecord` is a tuple consisting of a `serial_number` and a `tag`. Recall that since the serial number is disclosed on the ledger, this publicly announces the record which is being spent. 
