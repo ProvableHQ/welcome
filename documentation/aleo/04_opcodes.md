@@ -7,50 +7,54 @@ sidebar_label: Opcodes
 The following lists show the standard and cryptographic opcodes supported by Aleo instructions.
 
 ## Table of Standard Opcodes
-| Name                       | Description                                           |
-|----------------------------|:------------------------------------------------------|
-| [abs](#abs)                | Absolute value operation                              |
-| [abs.w](#absw)             | Wrapping absolute value operation                     |
-| [add](#add)                | Addition operation                                    |
-| [add.w](#addw)             | Wrapping addition operation                           |
-| [and](#and)                | AND operation                                         |
-| [assert.eq](#asserteq)     | Assert equality                                       |
-| [assert.neq](#assertneq)   | Assert non-equality                                   |
-| [cast](#cast)              | Cast between literals                                 |
-| [cast.lossy](#castlossy)  | Cast between literals with lossy truncation           |
-| [div](#div)                | Division operation                                    |
-| [div.w](#divw)             | Wrapping division operation                           |
-| [double](#double)          | Double operation                                      |
-| [gt](#gt)                  | Greater than comparison                               |
-| [gte](#gte)                | Greater than or equal to comparison                   |
-| [inv](#inv)                | Multiplicative inverse operation                      |
-| [is.eq](#iseq)             | Equality comparison                                   |
-| [is.neq](#isneq)           | Not equal comparison                                  |
-| [lt](#lt)                  | Less than comparison                                  |
-| [lte](#lte)                | Less than or equal to comparison                      |
-| [mod](#mod)                | Arithmetic modulo operation                           |
-| [mul](#mul)                | Multiplication operation                              |
-| [mul.w](#mulw)             | Wrapping multiplication operation                     |
-| [nand](#nand)              | `Boolean` NAND operation                              |
-| [neg](#neg)                | Additive inverse operation                            |
-| [nor](#nor)                | `Boolean` NOR operation                               |
-| [not](#not)                | NOT operation                                         |
-| [or](#or)                  | OR Operation                                          |
-| [pow](#pow)                | Exponentiation operation                              |
-| [pow.w](#poww)             | Wrapping exponentiation operation                     |
-| [rand.chacha](#randchacha) | Generates a random value within the `finalize` scope. |
-| [rem](#rem)                | Remainder operation                                   |
-| [rem.w](#remw)             | Wrapping remainder operation                          |
-| [shl](#shl)                | Shift left operation                                  |
-| [shl.w](#shlw)             | Wrapping shift left operation                         |
-| [shr](#shr)                | Shift right operation                                 |
-| [shr.w](#shrw)             | Wrapping shift right operation                        |
-| [sqrt](#sqrt)              | Square root operation                                 |
-| [square](#square)          | Square operation                                      |
-| [sub](#sub)                | Subtraction operation                                 |
-| [sub.w](#subw)             | Wrapping subtraction operation                        |
-| [ternary](#ternary)        | Ternary select operation                              |
-| [xor](#xor)                | XOR operation                                         |
+| Name                         | Description                                           |
+|------------------------------|:------------------------------------------------------|
+| [abs](#abs)                  | Absolute value operation                              |
+| [abs.w](#absw)               | Wrapping absolute value operation                     |
+| [add](#add)                  | Addition operation                                    |
+| [add.w](#addw)               | Wrapping addition operation                           |
+| [and](#and)                  | AND operation                                         |
+| [assert.eq](#asserteq)       | Assert equality                                       |
+| [assert.neq](#assertneq)     | Assert non-equality                                   |
+| [block.height](#blockheight) | Returns height of the block within the finalize scope |
+| [branch.eq](#brancheq)       | Branches to a position if the arguments are equal     |
+| [branch.neq](#branchneq)     | Branches to a position if the arguments are not equal |
+| [cast](#cast)                | Cast between literals                                 |
+| [cast.lossy](#castlossy)     | Cast between literals with lossy truncation           |
+| [div](#div)                  | Division operation                                    |
+| [div.w](#divw)               | Wrapping division operation                           |
+| [double](#double)            | Double operation                                      |
+| [gt](#gt)                    | Greater than comparison                               |
+| [gte](#gte)                  | Greater than or equal to comparison                   |
+| [inv](#inv)                  | Multiplicative inverse operation                      |
+| [is.eq](#iseq)               | Equality comparison                                   |
+| [is.neq](#isneq)             | Not equal comparison                                  |
+| [lt](#lt)                    | Less than comparison                                  |
+| [lte](#lte)                  | Less than or equal to comparison                      |
+| [mod](#mod)                  | Arithmetic modulo operation                           |
+| [mul](#mul)                  | Multiplication operation                              |
+| [mul.w](#mulw)               | Wrapping multiplication operation                     |
+| [nand](#nand)                | `Boolean` NAND operation                              |
+| [neg](#neg)                  | Additive inverse operation                            |
+| [nor](#nor)                  | `Boolean` NOR operation                               |
+| [not](#not)                  | NOT operation                                         |
+| [or](#or)                    | OR Operation                                          |
+| [position](#position)        | The position command                                  |
+| [pow](#pow)                  | Exponentiation operation                              |
+| [pow.w](#poww)               | Wrapping exponentiation operation                     |
+| [rand.chacha](#randchacha)   | Generates a random value within the `finalize` scope. |
+| [rem](#rem)                  | Remainder operation                                   |
+| [rem.w](#remw)               | Wrapping remainder operation                          |
+| [shl](#shl)                  | Shift left operation                                  |
+| [shl.w](#shlw)               | Wrapping shift left operation                         |
+| [shr](#shr)                  | Shift right operation                                 |
+| [shr.w](#shrw)               | Wrapping shift right operation                        |
+| [sqrt](#sqrt)                | Square root operation                                 |
+| [square](#square)            | Square operation                                      |
+| [sub](#sub)                  | Subtraction operation                                 |
+| [sub.w](#subw)               | Wrapping subtraction operation                        |
+| [ternary](#ternary)          | Ternary select operation                              |
+| [xor](#xor)                  | XOR operation                                         |
 
 ## Table of Cryptographic Opcodes
 | Name                                               | Description                       |
@@ -263,6 +267,7 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 
 ***
 
+<<<<<<< HEAD
 ### `cast`
 
 [Back to Top](#table-of-standard-opcodes)
@@ -333,6 +338,82 @@ Perform casting with lossy truncation.
 | `U64`     | `U64`     |
 | `U128`    | `U128`    |
 | `Scalar`  | `Scalar`  |
+=======
+### `block.height`
+
+[Back to Top](#table-of-standard-opcodes)
+
+#### Description
+
+Returns the height of the block within the finalize scope.
+Currently, block height is the only supported property.
+
+```aleo
+assert.eq block.height 1337;
+```
+
+***
+
+### `branch.eq`
+
+[Back to Top](#table-of-standard-opcodes)
+
+#### Description
+
+The `branch.eq` command, e.g. `branch.eq <first> <second> to <destination>`, which branches execution to the [position](#position) indicated by `destination` if `first` and `second` are equal.
+
+
+| First     | Second    | Destination |
+|-----------|-----------|-------------|
+| `Address` | `Address` | `Position`  |
+| `Boolean` | `Boolean` | `Position`  |
+| `Field`   | `Field`   | `Position`  |
+| `Group`   | `Group`   | `Position`  |
+| `I8`      | `I8`      | `Position`  |
+| `I16`     | `I16`     | `Position`  |
+| `I32`     | `I32`     | `Position`  |
+| `I64`     | `I64`     | `Position`  |
+| `I128`    | `I128`    | `Position`  |
+| `U8`      | `U8`      | `Position`  |
+| `U16`     | `U16`     | `Position`  |
+| `U32`     | `U32`     | `Position`  |
+| `U64`     | `U64`     | `Position`  |
+| `U128`    | `U128`    | `Position`  |
+| `Scalar`  | `Scalar`  | `Position`  |
+| `Struct`  | `Struct`  | `Position`  |
+| `Record`  | `Record`  | `Position`  |
+
+***
+
+### `branch.neq`
+
+[Back to Top](#table-of-standard-opcodes)
+
+#### Description
+
+The `branch.neq` command, e.g. `branch.neq <first> <second> to <destination>`, which branches execution to the [position](#position) indicated by `destination` if `first` and `second` are equal.
+
+
+| First     | Second    | Destination |
+|-----------|-----------|-------------|
+| `Address` | `Address` | `Position`  |
+| `Boolean` | `Boolean` | `Position`  |
+| `Field`   | `Field`   | `Position`  |
+| `Group`   | `Group`   | `Position`  |
+| `I8`      | `I8`      | `Position`  |
+| `I16`     | `I16`     | `Position`  |
+| `I32`     | `I32`     | `Position`  |
+| `I64`     | `I64`     | `Position`  |
+| `I128`    | `I128`    | `Position`  |
+| `U8`      | `U8`      | `Position`  |
+| `U16`     | `U16`     | `Position`  |
+| `U32`     | `U32`     | `Position`  |
+| `U64`     | `U64`     | `Position`  |
+| `U128`    | `U128`    | `Position`  |
+| `Scalar`  | `Scalar`  | `Position`  |
+| `Struct`  | `Struct`  | `Position`  |
+| `Record`  | `Record`  | `Position`  |
+>>>>>>> master
 
 ***
 
@@ -486,11 +567,9 @@ The instruction will halt if the given `Struct` value exceeds the 64-bit limit.
 | `I8`      | `Scalar` | `Address`, `Field`, `Group` |
 | `I16`     | `Scalar` | `Address`, `Field`, `Group` |
 | `I32`     | `Scalar` | `Address`, `Field`, `Group` |
-| `I64`     | `Scalar` | `Address`, `Field`, `Group` |
 | `U8`      | `Scalar` | `Address`, `Field`, `Group` |
 | `U16`     | `Scalar` | `Address`, `Field`, `Group` |
 | `U32`     | `Scalar` | `Address`, `Field`, `Group` |
-| `U64`     | `Scalar` | `Address`, `Field`, `Group` |
 | `Struct`  | `Scalar` | `Address`, `Field`, `Group` |
 
 ***
@@ -514,12 +593,10 @@ The instruction will halt if the given `Struct` value exceeds the 128-bit limit.
 | `I16`     | `Scalar` | `Address`, `Field`, `Group` |
 | `I32`     | `Scalar` | `Address`, `Field`, `Group` |
 | `I64`     | `Scalar` | `Address`, `Field`, `Group` |
-| `I128`    | `Scalar` | `Address`, `Field`, `Group` |
 | `U8`      | `Scalar` | `Address`, `Field`, `Group` |
 | `U16`     | `Scalar` | `Address`, `Field`, `Group` |
 | `U32`     | `Scalar` | `Address`, `Field`, `Group` |
 | `U64`     | `Scalar` | `Address`, `Field`, `Group` |
-| `U128`    | `Scalar` | `Address`, `Field`, `Group` |
 | `Struct`  | `Scalar` | `Address`, `Field`, `Group` |
 
 ***
@@ -802,11 +879,9 @@ The instruction will halt if the given `Struct` value exceeds the 64-bit limit.
 | `I8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
-| `I64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `U8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `U16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `U32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
-| `U64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `Struct`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 
 ***
@@ -830,12 +905,10 @@ The instruction will halt if the given `Struct` value exceeds the 128-bit limit.
 | `I16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
-| `I128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `U8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `U16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `U32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `U64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
-| `U128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `Struct`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 
 ***
@@ -852,7 +925,10 @@ Calculates a Poseidon hash with an input rate of 2, from an input in `first`, st
 
 | First     | Destination                                                                                               |
 |-----------|:----------------------------------------------------------------------------------------------------------|
+| `Address` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Boolean` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `Field`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Group`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
@@ -880,7 +956,10 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 
 | First     | Destination                                                                                               |
 |-----------|:----------------------------------------------------------------------------------------------------------|
+| `Address` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Boolean` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `Field`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Group`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
@@ -908,7 +987,10 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 
 | First     | Destination                                                                                               |
 |-----------|:----------------------------------------------------------------------------------------------------------|
+| `Address` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Boolean` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `Field`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Group`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
 | `I32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
@@ -1241,6 +1323,17 @@ Performs an OR operation on integer (bitwise) or boolean `first` and `second`, s
 | `U32`     | `U32`     | `U32`       |
 | `U64`     | `U64`     | `U64`       |
 | `U128`    | `U128`    | `U128`      |
+
+***
+
+### position
+
+[Back to Top](#table-of-standard-opcodes)
+
+#### Description
+
+The position declaration, e.g. `position <name>`, which indicates a location `name` in the program to branch execution to.  
+Positions must be a lowercase alphanumeric string.  
 
 ***
 

@@ -654,7 +654,7 @@ Go to: _[cws](#comments-or-whitespace), [identifier](#identifier), [plaintext-ty
 record = cws %s"record" ws identifier ws ":"
          cws %s"owner" ws %s"as" ws
          cws ( %s"address.public" / %s"address.private" ) ws ";"
-         cws %s"gates" ws %s"as" ws
+         cws %s"microcredits" ws %s"as" ws
          cws ( %s"u64.public" / %s"u64.private" ) ws ";"
          *entry
 ```

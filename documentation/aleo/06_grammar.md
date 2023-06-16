@@ -20,7 +20,7 @@ struct = "struct" identifier ":" 1*struct-component
 struct-component = identifier "as" plain-type ";"
 record = "record" identifier ":"
          "owner" "as" ( "address.private" / "address.public" )
-         "gates" "as" ( "u64.private" / "u64.public" )
+         "microcredits" "as" ( "u64.private" / "u64.public" )
          *record-entry
 record-entry = identifier "as" entry-type ";"
 closure = "closure" identifier ":" *input 1*instruction *output
