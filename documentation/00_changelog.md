@@ -6,13 +6,11 @@ sidebar_label: Changelog
 
 :::info
 The Leo language and Aleo SDK are currently in active development. Please monitor their respective repositories for 
-the latest updates:
-[**Leo**]
-(https://github.com/AleoHQ/leo) [**Aleo**]
-(https://github.com/AleoHQ/aleo) .
+the latest updates: [**Leo**](https://github.com/AleoHQ/leo), [**Aleo**](https://github.com/AleoHQ/aleo)
 :::
 
 ## Changes **06.14.2023**
+
 ---
 ### Aleo Instructions: Hash Functions
 
