@@ -14,9 +14,9 @@ the latest updates:
 
 ## Changes **06.14.2023**
 ---
-### Hash Functions
+### Aleo Instructions: Hash Functions
 
-The previous hash opcodes have been replaced with a new, more flexible syntax that allows the output to be cast to any desired type. The new opcodes are:
+The previous hash opcodes have been replaced with a new, more flexible syntax that allows the output to be cast to any desired type. Check out the full documentation [here](https://developer.aleo.org/aleo/opcodes#table-of-cryptographic-opcodes). The new opcodes are:
 
 ```
 hash.bhp256
@@ -57,9 +57,9 @@ hash.bhp256 r0 into r1 as address;
 
 In this example, `hash.bhp256` is the hash function, `r0` is the source register, `r1` is the destination register, and `address` is the type to which the hash output will be cast. This syntax applies for all hash variants.
 
-### Commit Functions
+### Aleo Instructions: Commit Functions
 
-Similarly, commit opcodes have also been updated with new syntax:
+Similarly, commit opcodes have also been updated with new syntax. Check out the full documentation [here](https://developer.aleo.org/aleo/opcodes#table-of-cryptographic-opcodes). The new opcodes are:
 
 ```
 commit.bhp256
