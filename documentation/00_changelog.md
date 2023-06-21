@@ -12,6 +12,21 @@ the latest updates: [**Leo**](https://github.com/AleoHQ/leo), [**Aleo**](https:/
 ## Changes **06.14.2023**
 
 ---
+### Mapping Updates
+
+The mapping commands in Aleo Instructions have been enhanced with several new operations that provide a more efficient and fluent way of working with mapping data structures. These operations are as follows:
+
+**Contains**: The `contains` command checks if a key exists in a mapping. The syntax for this command is `contains accounts[r0] into r1;`.
+
+**Get**: The `get` command retrieves a value from a mapping. The syntax for this command is `get accounts[r0] into r1;`.
+
+**Get or Use**: This command is a variant of the `get` command that uses the provided default in case of a failure to retrieve a value from the mapping. The syntax for this command is `get.or_use accounts[r0] r1 into r2`.
+
+**Set**: The `set` command sets a value in a mapping. The syntax for this command is `set r0 into accounts[r0];`.
+
+**Remove**: The `remove` command removes a key-value pair from a mapping. The syntax for this command is `remove accounts[r0]`.
+
+The full documentation can be found [here](https://developer.aleo.org/aleo/language#mapping).
 
 ### New `rand.chacha`  Opcode:
 
