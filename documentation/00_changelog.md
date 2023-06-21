@@ -5,16 +5,50 @@ sidebar_label: Changelog
 ---
 
 :::info
-The Leo language and Aleo SDK are currently in active development. Please monitor their respective repositories for 
+The Leo language and Aleo SDK are currently in active development. Please monitor their respective repositories for
 the latest updates: [**Leo**](https://github.com/AleoHQ/leo), [**Aleo**](https://github.com/AleoHQ/aleo)
 :::
 
 ## Changes **06.14.2023**
 
 ---
+
+### New `rand.chacha`  Opcode:
+
+The `rand.chacha` opcode is used to generate random values within the `finalize` scope. This opcode supports a wide
+range of types for the random value.
+
+Here are some examples of how to use `rand.chacha` in Aleo Instructions:
+
+```aleo
+rand.chacha into r0 as field;
+rand.chacha r0 into r1 as field;
+rand.chacha r0 r1 into r2 as field;
+```
+
+The general syntax is as follows:
+
+```aleo
+rand.chacha [input1] [input2] into [destination] as [type];
+```
+
+**Note:** `input1` and `input2` are optional. If not provided, the opcode will generate a random value of the
+specified `type`.
+
+#### Supported Types
+
+`Literal` can be an `Address`, `Boolean`, `Field`, `Group`, `I8`, `I16`, `I32`, `I64`, `I128`, `U8`, `U16`, `U32`, `U64`
+, `U128`, or `Scalar`.
+
+| First   | Second  | Destination |
+|---------|---------|-------------|
+|`Literal`|`Literal`| `Literal`   |
+
 ### Aleo Instructions: Hash Functions
 
-The previous hash opcodes have been replaced with a new, more flexible syntax that allows the output to be cast to any desired type. Check out the full documentation [here](https://developer.aleo.org/aleo/opcodes#table-of-cryptographic-opcodes). The new opcodes are:
+The previous hash opcodes have been replaced with a new, more flexible syntax that allows the output to be cast to any
+desired type. Check out the full
+documentation [here](https://developer.aleo.org/aleo/opcodes#table-of-cryptographic-opcodes). The new opcodes are:
 
 ```
 hash.bhp256
@@ -28,7 +62,10 @@ hash.psd4
 hash.psd8
 ```
 
-The syntax for these opcodes is `hash.<variant> r0 into r1 as <type>;`, where `<variant>` is one of the hash function variants listed above, `r0` is the source register, `r1` is the destination register, and `<type>` is any supported type (including `address`, `field`, `group`, `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`, `scalar`).
+The syntax for these opcodes is `hash.<variant> r0 into r1 as <type>;`, where `<variant>` is one of the hash function
+variants listed above, `r0` is the source register, `r1` is the destination register, and `<type>` is any supported
+type (including `address`, `field`, `group`, `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`
+, `scalar`).
 
 The hash opcodes removed were:
 
@@ -53,11 +90,13 @@ In their place, you can now specify the output type for the hash function. Here'
 hash.bhp256 r0 into r1 as address;
 ```
 
-In this example, `hash.bhp256` is the hash function, `r0` is the source register, `r1` is the destination register, and `address` is the type to which the hash output will be cast. This syntax applies for all hash variants.
+In this example, `hash.bhp256` is the hash function, `r0` is the source register, `r1` is the destination register,
+and `address` is the type to which the hash output will be cast. This syntax applies for all hash variants.
 
 ### Aleo Instructions: Commit Functions
 
-Similarly, commit opcodes have also been updated with new syntax. Check out the full documentation [here](https://developer.aleo.org/aleo/opcodes#table-of-cryptographic-opcodes). The new opcodes are:
+Similarly, commit opcodes have also been updated with new syntax. Check out the full
+documentation [here](https://developer.aleo.org/aleo/opcodes#table-of-cryptographic-opcodes). The new opcodes are:
 
 ```
 commit.bhp256
@@ -68,7 +107,9 @@ commit.ped64
 commit.ped128
 ```
 
-The syntax for these opcodes is `commit.<variant> r0 r1 into r2 as <type>;`, where `<variant>` is one of the commit function variants listed above, `r0` and `r1` are the source registers, `r2` is the destination register, and `<type>` is any supported type (including `address`, `field`, `group`).
+The syntax for these opcodes is `commit.<variant> r0 r1 into r2 as <type>;`, where `<variant>` is one of the commit
+function variants listed above, `r0` and `r1` are the source registers, `r2` is the destination register, and `<type>`
+is any supported type (including `address`, `field`, `group`).
 
 The commit opcodes removed were:
 
@@ -87,4 +128,6 @@ In their place, you can now specify the output type for the commit function. Her
 commit.bhp256 r0 r1 into r2 as address;
 ```
 
-In this example, `commit.bhp256` is the commit function, `r0` and `r1` are the source registers, `r2` is the destination register, and `address` is the type to which the commit output will be cast. This syntax applies for all commit variants.
+In this example, `commit.bhp256` is the commit function, `r0` and `r1` are the source registers, `r2` is the destination
+register, and `address` is the type to which the commit output will be cast. This syntax applies for all commit
+variants.
