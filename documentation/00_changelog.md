@@ -12,6 +12,25 @@ the latest updates: [**Leo**](https://github.com/AleoHQ/leo), [**Aleo**](https:/
 ## Changes **06.14.2023**
 
 ---
+### New position, branch.eq, branch.neq
+The `position` command, e.g. `position exit`, indicates a point to branch execution to.  
+The `branch.eq` command, e.g. `branch.eq r0 r1 to exit`, which branches execution to the position indicated by `exit` if `r0` and `r1` are equal.  
+The `branch.neq` command, e.g. `branch.neq r0 r1 to exit`, which branches execution to the position indicated by `exit` if `r0` and `r1` are not equal.
+
+**Example**
+The finalize block exits successfully if the input is 0u8 and fails otherwise.
+```aleo
+program test_branch.aleo;
+function run_test:
+    input r0 as u8.public;
+    finalize r0;
+finalize run_test:
+    input r0 as u8.public;
+    branch.eq r0 0u8 to exit;
+    assert.eq true false;
+    position exit;
+```
+
 ### Mapping Updates
 
 The mapping commands in Aleo Instructions have been enhanced with several new operations that provide a more efficient and fluent way of working with mapping data structures. These operations are as follows:
