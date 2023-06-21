@@ -12,7 +12,15 @@ the latest updates: [**Leo**](https://github.com/AleoHQ/leo), [**Aleo**](https:/
 ## Changes **06.14.2023**
 
 ---
-### New position, branch.eq, branch.neq
+### Aleo Instructions: New `block.height` Opcode
+The `block.height` command returns the height of the block in which the program is executed (latest block height + 1).
+This can be useful for managing time-based access control to a program.
+The `block.height` command must be called within a finalize block.
+
+```aleo
+assert.eq block.height 100u64;
+```
+### Aleo Instructions: New `position`, `branch.eq`, `branch.neq` Opcodes
 The `position` command, e.g. `position exit`, indicates a point to branch execution to.  
 The `branch.eq` command, e.g. `branch.eq r0 r1 to exit`, which branches execution to the position indicated by `exit` if `r0` and `r1` are equal.  
 The `branch.neq` command, e.g. `branch.neq r0 r1 to exit`, which branches execution to the position indicated by `exit` if `r0` and `r1` are not equal.
@@ -31,7 +39,7 @@ finalize run_test:
     position exit;
 ```
 
-### Mapping Updates
+### Aleo Instructions: Mapping Updates
 
 The mapping commands in Aleo Instructions have been enhanced with several new operations that provide a more efficient and fluent way of working with mapping data structures. These operations are as follows:
 
@@ -47,7 +55,7 @@ The mapping commands in Aleo Instructions have been enhanced with several new op
 
 The full documentation can be found [here](https://developer.aleo.org/aleo/language#mapping).
 
-### New `rand.chacha`  Opcode:
+### Aleo Instructions: New `rand.chacha`  Opcode:
 
 The `rand.chacha` opcode is used to generate random values within the `finalize` scope. This opcode supports a wide
 range of types for the random value.
