@@ -116,8 +116,10 @@ Given global instantiated Aleo parameters and subroutines.
 The 0 and 1 used to calculate `sk_sig` and `sk_prf` are each encoded as an unsigned
 16-bit integer and turned into two bytes in little endian order before being
 concatenated to the right of the seed, then the resulting byte sequence is passed to BLAKE2s.
-Similarly to 0 and 1 used to calculate sk_sig and sk_prf, the unsigned 16-bit integer
-counter is turned into two bytes in little endian order before being concatenated to the right of the seed.
+The `counter` used to calculate `r_pk` is an unsigned 16-bit integer
+that is turned into two bytes in little endian order
+before being concatenated to the right of the seed, then the resulting byte sequence is passed to BLAKE2s;
+the counter is iterated on, starting from 2, until a valid `view_key` (see below) can be derived from the private key.
 
 Learn more about BLAKE2s [here](https://www.rfc-editor.org/rfc/rfc7693).
 
