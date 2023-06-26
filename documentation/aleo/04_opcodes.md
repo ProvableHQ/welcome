@@ -1330,27 +1330,16 @@ The `rand.chacha` opcode is used to generate random values within the `finalize`
 rand.chacha into r0 as field;
 rand.chacha r0 into r1 as field;
 rand.chacha r0 r1 into r2 as field;
+rand.chacha 1u8 2i16 into r27 as u32;
 ```
 
-#### Supported Types 
+#### Supported Types
 
-| First     | Second    | Destination |
-|-----------|-----------|-------------|
-| Address   | Address   | Address     |
-| Boolean   | Boolean   | Boolean     |
-| Field     | Field     | Field       |
-| Group     | Group     | Group       |
-| I8        | I8        | I8          |
-| I16       | I16       | I16         |
-| I32       | I32       | I32         |
-| I64       | I64       | I64         |
-| I128      | I128      | I128        |
-| U8        | U8        | U8          |
-| U16       | U16       | U16         |
-| U32       | U32       | U32         |
-| U64       | U64       | U64         |
-| U128      | U128      | U128        |
-| Scalar    | Scalar    | Scalar      |
+Single can be any of the following types `Address`, `Boolean`, `Field`, `Group`, `I8`, `I16`, `I32`, `I64`, `I128`, `U8`, `U16`, `U32`, `U64`, `U128`, or `Scalar`. Composite data types such as structs and mappings are not allowed.
+
+| First       | Second      | Destination |
+|-------------|-------------|-------------|
+| `Single` | `Single` | `Single` |
 
 ***
 
