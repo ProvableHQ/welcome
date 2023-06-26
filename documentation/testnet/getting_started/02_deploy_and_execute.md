@@ -182,7 +182,7 @@ Transfer credits with a `credits.aleo` program execution.
 
 ##### Arguments:
 
-- `input_record` - The record used to craft the transfer
+- `input-record` - The record used to craft the transfer
 - `recipient` - The recipient address
 - `amount` - The number of microcredits to transfer
 - `private_key` - The private key used to generate the deployment
@@ -204,11 +204,10 @@ Transfer credits with a `credits.aleo` program execution.
 
 ```
 snarkos developer transfer <AMOUNT_TO_TRANSFER> --input-record <INPUT_RECORD> --recipient <RECIPIENT_ADDRESS>  --private-key <PRIVATE_KEY> --query "<http://localhost:3030>" --broadcast "<http://localhost:3030/testnet3/transaction/broadcast>"
-
 ```
 
-Note: Replace `transfer` with `transfer_private`, `transfer_public`, `transfer_private_to_public`,
-or `transfer_public_to_private` based on your use case.
+Note: Replace `transfer` with `transfer-private`, `transfer-public`, `-- transfer-private-to-public`,
+or `-- transfer_public_to_private` based on your use case.
 
 ## Usage on Testnet 3 (Phase 2)
 
