@@ -342,6 +342,30 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 [Back to Top](#table-of-standard-operators)
 ***
 
+### `block.height`
+
+```leo
+transition matches(height: u32) {
+    return then finalize(height);
+} 
+finalize matches(height: u32) {
+    assert_eq(height, block.height);
+}
+```
+
+#### Description
+
+The `block.height` operator is used to fetch the latest block height in a Leo program. It represents the number of 
+blocks in the chain. In the above example, `block.height` is used in a `finalize` context to fetch the latest block 
+height in a program.
+
+#### Note:
+* The `block.height` operator can only be used in a `finalize` context. Using it outside a `finalize` context will result in a compilation error.
+* The `block.height` operator doesn't take any parameters.
+
+[Back to Top](#table-of-standard-operators)
+***
+
 ### `BHP256::commit`
 
 ```leo
