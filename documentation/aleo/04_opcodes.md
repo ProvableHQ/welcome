@@ -1335,7 +1335,7 @@ rand.chacha 1u8 2i16 into r27 as u32;
 
 #### Supported Types
 
-Magnitude can be an `Address`, `Boolean`, `Field`, `Group`, `I8`, `I16`, `I32`, `I64`, `I128`, `U8`, `U16`, `U32`, `U64`, `U128`, or `Scalar`.
+Single can be any of the following types `Address`, `Boolean`, `Field`, `Group`, `I8`, `I16`, `I32`, `I64`, `I128`, `U8`, `U16`, `U32`, `U64`, `U128`, or `Scalar`. Composite data types such as structs and mappings are not allowed.
 
 | First       | Second      | Destination |
 |-------------|-------------|-------------|
