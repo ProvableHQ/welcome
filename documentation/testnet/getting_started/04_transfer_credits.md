@@ -19,7 +19,7 @@ The `transfer_public` function is used to perform a public transfer of credits b
 
 ### `transfer_private_to_public`
 
-The `transfer_private_to_public` function is used to convert a private credit into a public credit.
+The `transfer_private_to_public` function is used to convert private credits into a public credits.
 ### `transfer_public_to_private`
 
 The `transfer_public_to_private` function is used to convert a public credit into a private credit.
