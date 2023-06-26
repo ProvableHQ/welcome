@@ -207,6 +207,8 @@ snarkos developer transfer <AMOUNT_TO_TRANSFER> --input-record <INPUT_RECORD> --
 
 ```
 
+Note: Replace `transfer` with `transfer_private`, `transfer_public`, `transfer_private_to_public`,
+or `transfer_public_to_private` based on your use case.
 
 ## Usage on Testnet 3 (Phase 2)
 

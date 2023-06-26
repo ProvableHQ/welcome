@@ -26,14 +26,9 @@ The `transfer_public_to_private` function is used to convert public credits into
 
 ## Function Usage
 
-To use these functions, one needs to craft a `credits.aleo` program execution. Here is an example:
+To use these functions, one needs to craft a `credits.aleo` program execution. Refer to our full [documentation](https://developer.aleo.org/testnet/getting_started/deploy_execute#usage-guide) on 
+deploying and executing programs for more details.
 
-```
-snarkos developer transfer <AMOUNT_TO_TRANSFER> --input-record <INPUT_RECORD> --recipient <RECIPIENT_ADDRESS> --private-key <PRIVATE_KEY> --query "<http://localhost:3030>" --broadcast "<http://localhost:3030/testnet3/transaction/broadcast>"
-```
-
-Note: Replace `transfer` with `transfer_private`, `transfer_public`, `transfer_private_to_public`,
-or `transfer_public_to_private` based on your use case.
 
 ### Arguments:
 
