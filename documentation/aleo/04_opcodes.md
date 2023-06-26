@@ -1339,7 +1339,7 @@ Single can be any of the following types `Address`, `Boolean`, `Field`, `Group`,
 
 | First       | Second      | Destination |
 |-------------|-------------|-------------|
-| `Magnitude` | `Magnitude` | `Magnitude` |
+| `Single` | `Single` | `Single` |
 
 ***
 
