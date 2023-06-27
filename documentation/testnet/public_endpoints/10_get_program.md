@@ -5,16 +5,16 @@ sidebar_label: Get Program
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/program/{id}
+GET /testnet3/program/{programID}
 ```
 
 Returns the program for the given program ID.
 
 ### Arguments
 
-| Parameter |  Type  | Required | Description                             |
-|:----------|:------:|:--------:|:----------------------------------------|
-| `id`      | string |   Yes    | The program id of the requested program |
+| Parameter   |  Type  | Required | Description                             |
+|:------------|:------:|:--------:|:----------------------------------------|
+| `programID` | string |   Yes    | The program id of the requested program |
 
 ### Response
 

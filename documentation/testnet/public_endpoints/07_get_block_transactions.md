@@ -1,11 +1,11 @@
 ---
-id: get_transactions
-title: Get Transactions
-sidebar_label: Get Transactions
+id: get_block_transactions
+title: Get Block Transactions
+sidebar_label: Get Block Transactions
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/transactions/{height}
+GET /testnet3/transactions/{height}/transactions
 ```
 
 Returns the transactions for the given block height.

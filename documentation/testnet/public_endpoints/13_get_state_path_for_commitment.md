@@ -1,7 +1,7 @@
 ---
-id: get_state_path
-title: Get State Path
-sidebar_label: Get State Path
+id: get_state_path_for_commitment
+title: Get State Path For Commitment
+sidebar_label: Get State Path For Commitment
 ---
 
 ```bash title=ENDPOINT
@@ -9,6 +9,7 @@ GET /testnet3/statePath/{commitment}
 ```
 
 Returns the state path for the given commitment.
+The state path proves existence of the transition leaf to either a global or local state root.
 
 ### Arguments
 
@@ -20,7 +21,7 @@ Returns the state path for the given commitment.
 
 |       Parameter       |  Type  |                Description                |
 |:---------------------:|:------:|:-----------------------------------------:|
-|     `state_root`      | string |              The state root               |
+|  `global_state_root`  | string |           The global state root           |
 |     `block_path`      | string |    The Merkle path for the block hash     |
 |     `block_hash`      | string |              The block hash               |
 | `previous_block_hash` | string |          The previous block hash          |

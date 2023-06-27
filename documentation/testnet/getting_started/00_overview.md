@@ -24,54 +24,6 @@ To connect to the network, make a request to an Aleo Testnet III bootnode.
 |:------:|:--------:|------------------|
 |  Live  | Americas | vm.aleo.org/api/ |
 
-[//]: # (#### Americas)
-
-[//]: # (| Live    | Americas      | us2.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # (| Live    | Americas      | us3.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # (| Live    | Americas      | us4.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # (| Live    | Americas      | us5.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # ()
-[//]: # (#### Europe)
-
-[//]: # ()
-[//]: # (| Status  | Region | URL                       | Network Port | RPC Port |)
-
-[//]: # (|:-------:|:------:|---------------------------|:------------:|:--------:|)
-
-[//]: # (| Pending | Europe | eu1.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # (| Pending | Europe | eu2.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # (| Pending | Europe | eu3.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # (| Pending | Europe | eu4.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # (| Pending | Europe | eu5.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # ()
-[//]: # (#### Asia)
-
-[//]: # ()
-[//]: # (| Status  | Region | URL                       | Network Port | RPC Port |)
-
-[//]: # (|:-------:|:------:|---------------------------|:------------:|:--------:|)
-
-[//]: # (| Pending | Asia   | as1.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # (| Pending | Asia   | as2.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # (| Pending | Asia   | as3.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # (| Pending | Asia   | as4.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # (| Pending | Asia   | as5.testnet1.aleo.network |     4131     |   3030   |)
-
-[//]: # ()
-
 ## snarkOS
 
 `snarkOS` is a decentralized operating system for anonymous web applications. It forms the backbone of Aleo and 
@@ -81,7 +33,31 @@ enables developers to checkpoint and finalize application state in a publicly-ve
 
 `snarkOS` is open-source and publicly-hosted on [GitHub](https://github.com/AleoHQ/snarkOS).
 
-[//]: # (### Run a Full Node)
+## API
+- [Latest Height](../public_endpoints/00_latest_height.md)
+- [Latest Hash](../public_endpoints/01_latest_hash.md)
+- [Latest Block](../public_endpoints/02_latest_block.md)
+- [Latest State Root](../public_endpoints/03_latest_state_root.md)
+- [Get Block](../public_endpoints/04_get_block.md)
+- [Get Blocks](../public_endpoints/05_get_blocks.md)
+- [Get Height](../public_endpoints/06_get_height.md)
+- [Get Block Transactions](../public_endpoints/07_get_block_transactions.md)
+- [Get Transaction](../public_endpoints/08_get_transaction.md)
+- [Get Memory Pool Transactions](../public_endpoints/09_get_memory_pool_transactions.md)
+- [Get Program](../public_endpoints/10_get_program.md)
+- [Get Mapping Names](../public_endpoints/11_get_mapping_names.md)
+- [Get Mapping Value](../public_endpoints/12_get_mapping_value.md)
+- [Get State Path for Commitment](../public_endpoints/13_get_state_path_for_commitment.md)
+- [Get Beacons](../public_endpoints/14_get_beacons.md)
+- [Get Peers Count](../public_endpoints/15_get_peers_count.md)
+- [Get Peers All](../public_endpoints/16_get_peers_all.md)
+- [Get Peers All Metrics](../public_endpoints/17_get_peers_all_metrics.md)
+- [Get Node Address](../public_endpoints/18_get_node_address.md)
+- [Find Block Hash](../public_endpoints/19_find_block_hash.md)
+- [Find Transaction ID from Program ID](../public_endpoints/20_find_transaction_id_from_program_id.md)
+- [Find Transaction ID from Transition ID](../public_endpoints/21_find_transaction_id_from_transition_id.md)
+- [Find Transition ID](../public_endpoints/22_find_transition_id.md)
+- [Get Environment Information](../public_endpoints/23_get_env_info.md)
+- [Transaction Broadcast](../public_endpoints/24_transaction_broadcast.md)
 
-[//]: # ()
-[//]: # (To run a full node and support Aleo, start by following the instructions to [install snarkOS]&#40;01_installation.md&#41;.)
+
