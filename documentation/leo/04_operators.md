@@ -67,6 +67,24 @@ The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes
 | [BHP1024::commit_to_group](#bhp1024commit_to_group)         | 1024-bit input BHP commitment of group type       |
 | [Pedersen64::commit_to_group](#pedersen64commit_to_group)   | 64-bit input Pedersen commitment of group type    |
 | [Pedersen128::commit_to_group](#pedersen128commit_to_group) | 128-bit input Pedersen commitment of group type   |
+| [BHP256::commit_to_address](#bhp256commit_to_address)       | BHP256 commit to address                   |
+| [BHP512::commit_to_address](#bhp512commit_to_address)       | BHP512 commit to address                   |
+| [BHP768::commit_to_address](#bhp768commit_to_address)       | BHP768 commit to address                   |
+| [BHP1024::commit_to_address](#bhp1024commit_to_address)     | BHP1024 commit to address                  |
+| [Pedersen64::commit_to_address](#pedersen64commit_to_address) | Pedersen64 commit to address              |
+| [Pedersen128::commit_to_address](#pedersen128commit_to_address) | Pedersen128 commit to address            |
+| [Poseidon2::commit_to_address](#poseidon2commit_to_address) | Poseidon2 commit to address                |
+| [Poseidon4::commit_to_address](#poseidon4commit_to_address) | Poseidon4 commit to address                |
+| [Poseidon8::commit_to_address](#poseidon8commit_to_address) | Poseidon8 commit to address                |
+| [BHP256::commit_to_field](#bhp256commit_to_field)           | BHP256 commit to field                     |
+| [BHP512::commit_to_field](#bhp512commit_to_field)           | BHP512 commit to field                     |
+| [BHP768::commit_to_field](#bhp768commit_to_field)           | BHP768 commit to field                     |
+| [BHP1024::commit_to_field](#bhp1024commit_to_field)         | BHP1024 commit to field                    |
+| [Pedersen64::commit_to_field](#pedersen64commit_to_field)   | Pedersen64 commit to field                 |
+| [Pedersen128::commit_to_field](#pedersen128commit_to_field) | Pedersen128 commit to field                |
+| [Poseidon2::commit_to_field](#poseidon2commit_to_field)     | Poseidon2 commit to field                  |
+| [Poseidon4::commit_to_field](#poseidon4commit_to_field)     | Poseidon4 commit to field                  |
+| [Poseidon8::commit_to_field](#poseidon8commit_to_field)     | Poseidon8 commit to field                  |
 | [BHP256::hash_to_field](#bhp256hash_to_field)               | BHP256 hash to field                       |
 | [BHP512::hash_to_field](#bhp512hash_to_field)               | BHP512 hash to field                       |
 | [BHP768::hash_to_field](#bhp768hash_to_field)               | BHP768 hash to field                       |
@@ -97,6 +115,96 @@ The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes
 | [Poseidon2::hash_to_scalar](#poseidon2hash_to_scalar)       | Poseidon hash with input rate 2 of scalar type    |
 | [Poseidon4::hash_to_scalar](#poseidon4hash_to_scalar)       | Poseidon hash with input rate 4 of scalar type    |
 | [Poseidon8::hash_to_scalar](#poseidon8hash_to_scalar)       | Poseidon hash with input rate 8 of scalar type    |
+| [BHP256::hash_to_i8](#bhp256hash_to_i8)               | BHP256 hash to signed 8-bit integer        |
+| [BHP256::hash_to_i16](#bhp256hash_to_i16)             | BHP256 hash to signed 16-bit integer       |
+| [BHP256::hash_to_i32](#bhp256hash_to_i32)             | BHP256 hash to signed 32-bit integer       |
+| [BHP256::hash_to_i64](#bhp256hash_to_i64)             | BHP256 hash to signed 64-bit integer       |
+| [BHP256::hash_to_i128](#bhp256hash_to_i128)           | BHP256 hash to signed 128-bit integer      |
+| [BHP256::hash_to_u8](#bhp256hash_to_u8)               | BHP256 hash to unsigned 8-bit integer      |
+| [BHP256::hash_to_u16](#bhp256hash_to_u16)             | BHP256 hash to unsigned 16-bit integer     |
+| [BHP256::hash_to_u32](#bhp256hash_to_u32)             | BHP256 hash to unsigned 32-bit integer     |
+| [BHP256::hash_to_u64](#bhp256hash_to_u64)             | BHP256 hash to unsigned 64-bit integer     |
+| [BHP256::hash_to_u128](#bhp256hash_to_u128)           | BHP256 hash to unsigned 128-bit integer    |
+| [BHP512::hash_to_i8](#bhp512hash_to_i8)               | BHP512 hash to signed 8-bit integer        |
+| [BHP512::hash_to_i16](#bhp512hash_to_i16)             | BHP512 hash to signed 16-bit integer       |
+| [BHP512::hash_to_i32](#bhp512hash_to_i32)             | BHP512 hash to signed 32-bit integer       |
+| [BHP512::hash_to_i64](#bhp512hash_to_i64)             | BHP512 hash to signed 64-bit integer       |
+| [BHP512::hash_to_i128](#bhp512hash_to_i128)           | BHP512 hash to signed 128-bit integer      |
+| [BHP512::hash_to_u8](#bhp512hash_to_u8)               | BHP512 hash to unsigned 8-bit integer      |
+| [BHP512::hash_to_u16](#bhp512hash_to_u16)             | BHP512 hash to unsigned 16-bit integer     |
+| [BHP512::hash_to_u32](#bhp512hash_to_u32)             | BHP512 hash to unsigned 32-bit integer     |
+| [BHP512::hash_to_u64](#bhp512hash_to_u64)             | BHP512 hash to unsigned 64-bit integer     |
+| [BHP512::hash_to_u128](#bhp512hash_to_u128)           | BHP512 hash to unsigned 128-bit integer    |
+| [BHP768::hash_to_i8](#bhp768hash_to_i8)               | BHP768 hash to signed 8-bit integer        |
+| [BHP768::hash_to_i16](#bhp768hash_to_i16)             | BHP768 hash to signed 16-bit integer       |
+| [BHP768::hash_to_i32](#bhp768hash_to_i32)             | BHP768 hash to signed 32-bit integer       |
+| [BHP768::hash_to_i64](#bhp768hash_to_i64)             | BHP768 hash to signed 64-bit integer       |
+| [BHP768::hash_to_i128](#bhp768hash_to_i128)           | BHP768 hash to signed 128-bit integer      |
+| [BHP768::hash_to_u8](#bhp768hash_to_u8)               | BHP768 hash to unsigned 8-bit integer      |
+| [BHP768::hash_to_u16](#bhp768hash_to_u16)             | BHP768 hash to unsigned 16-bit integer     |
+| [BHP768::hash_to_u32](#bhp768hash_to_u32)             | BHP768 hash to unsigned 32-bit integer     |
+| [BHP768::hash_to_u64](#bhp768hash_to_u64)             | BHP768 hash to unsigned 64-bit integer     |
+| [BHP768::hash_to_u128](#bhp768hash_to_u128)           | BHP768 hash to unsigned 128-bit integer    |
+| [BHP1024::hash_to_i8](#bhp1024hash_to_i8)             | BHP1024 hash to signed 8-bit integer       |
+| [BHP1024::hash_to_i16](#bhp1024hash_to_i16)           | BHP1024 hash to signed 16-bit integer      |
+| [BHP1024::hash_to_i32](#bhp1024hash_to_i32)           | BHP1024 hash to signed 32-bit integer      |
+| [BHP1024::hash_to_i64](#bhp1024hash_to_i64)           | BHP1024 hash to signed 64-bit integer      |
+| [BHP1024::hash_to_i128](#bhp1024hash_to_i128)         | BHP1024 hash to signed 128-bit integer     |
+| [BHP1024::hash_to_u8](#bhp1024hash_to_u8)             | BHP1024 hash to unsigned 8-bit integer     |
+| [BHP1024::hash_to_u16](#bhp1024hash_to_u16)           | BHP1024 hash to unsigned 16-bit integer    |
+| [BHP1024::hash_to_u32](#bhp1024hash_to_u32)           | BHP1024 hash to unsigned 32-bit integer    |
+| [BHP1024::hash_to_u64](#bhp1024hash_to_u64)           | BHP1024 hash to unsigned 64-bit integer    |
+| [BHP1024::hash_to_u128](#bhp1024hash_to_u128)         | BHP1024 hash to unsigned 128-bit integer   |
+| [Pedersen64::hash_to_i8](#pedersen64hash_to_i8)       | Pedersen64 hash to signed 8-bit integer    |
+| [Pedersen64::hash_to_i16](#pedersen64hash_to_i16)     | Pedersen64 hash to signed 16-bit integer   |
+| [Pedersen64::hash_to_i32](#pedersen64hash_to_i32)     | Pedersen64 hash to signed 32-bit integer   |
+| [Pedersen64::hash_to_i64](#pedersen64hash_to_i64)     | Pedersen64 hash to signed 64-bit integer   |
+| [Pedersen64::hash_to_i128](#pedersen64hash_to_i128)   | Pedersen64 hash to signed 128-bit integer  |
+| [Pedersen64::hash_to_u8](#pedersen64hash_to_u8)       | Pedersen64 hash to unsigned 8-bit integer  |
+| [Pedersen64::hash_to_u16](#pedersen64hash_to_u16)     | Pedersen64 hash to unsigned 16-bit integer |
+| [Pedersen64::hash_to_u32](#pedersen64hash_to_u32)     | Pedersen64 hash to unsigned 32-bit integer |
+| [Pedersen64::hash_to_u64](#pedersen64hash_to_u64)     | Pedersen64 hash to unsigned 64-bit integer |
+| [Pedersen64::hash_to_u128](#pedersen64hash_to_u128)   | Pedersen64 hash to unsigned 128-bit integer|
+| [Pedersen128::hash_to_i8](#pedersen128hash_to_i8)     | Pedersen128 hash to signed 8-bit integer   |
+| [Pedersen128::hash_to_i16](#pedersen128hash_to_i16)   | Pedersen128 hash to signed 16-bit integer  |
+| [Pedersen128::hash_to_i32](#pedersen128hash_to_i32)   | Pedersen128 hash to signed 32-bit integer  |
+| [Pedersen128::hash_to_i64](#pedersen128hash_to_i64)   | Pedersen128 hash to signed 64-bit integer  |
+| [Pedersen128::hash_to_i128](#pedersen128hash_to_i128) | Pedersen128 hash to signed 128-bit integer |
+| [Pedersen128::hash_to_u8](#pedersen128hash_to_u8)     | Pedersen128 hash to unsigned 8-bit integer |
+| [Pedersen128::hash_to_u16](#pedersen128hash_to_u16)   | Pedersen128 hash to unsigned 16-bit integer|
+| [Pedersen128::hash_to_u32](#pedersen128hash_to_u32)   | Pedersen128 hash to unsigned 32-bit integer|
+| [Pedersen128::hash_to_u64](#pedersen128hash_to_u64)   | Pedersen128 hash to unsigned 64-bit integer|
+| [Pedersen128::hash_to_u128](#pedersen128hash_to_u128) | Pedersen128 hash to unsigned 128-bit integer|
+| [Poseidon2::hash_to_i8](#poseidon2hash_to_i8)         | Poseidon2 hash to signed 8-bit integer     |
+| [Poseidon2::hash_to_i16](#poseidon2hash_to_i16)       | Poseidon2 hash to signed 16-bit integer    |
+| [Poseidon2::hash_to_i32](#poseidon2hash_to_i32)       | Poseidon2 hash to signed 32-bit integer    |
+| [Poseidon2::hash_to_i64](#poseidon2hash_to_i64)       | Poseidon2 hash to signed 64-bit integer    |
+| [Poseidon2::hash_to_i128](#poseidon2hash_to_i128)     | Poseidon2 hash to signed 128-bit integer   |
+| [Poseidon2::hash_to_u8](#poseidon2hash_to_u8)         | Poseidon2 hash to unsigned 8-bit integer   |
+| [Poseidon2::hash_to_u16](#poseidon2hash_to_u16)       | Poseidon2 hash to unsigned 16-bit integer  |
+| [Poseidon2::hash_to_u32](#poseidon2hash_to_u32)       | Poseidon2 hash to unsigned 32-bit integer  |
+| [Poseidon2::hash_to_u64](#poseidon2hash_to_u64)       | Poseidon2 hash to unsigned 64-bit integer  |
+| [Poseidon2::hash_to_u128](#poseidon2hash_to_u128)     | Poseidon2 hash to unsigned 128-bit integer |
+| [Poseidon4::hash_to_i8](#poseidon4hash_to_i8)         | Poseidon4 hash to signed 8-bit integer     |
+| [Poseidon4::hash_to_i16](#poseidon4hash_to_i16)       | Poseidon4 hash to signed 16-bit integer    |
+| [Poseidon4::hash_to_i32](#poseidon4hash_to_i32)       | Poseidon4 hash to signed 32-bit integer    |
+| [Poseidon4::hash_to_i64](#poseidon4hash_to_i64)       | Poseidon4 hash to signed 64-bit integer    |
+| [Poseidon4::hash_to_i128](#poseidon4hash_to_i128)     | Poseidon4 hash to signed 128-bit integer   |
+| [Poseidon4::hash_to_u8](#poseidon4hash_to_u8)         | Poseidon4 hash to unsigned 8-bit integer   |
+| [Poseidon4::hash_to_u16](#poseidon4hash_to_u16)       | Poseidon4 hash to unsigned 16-bit integer  |
+| [Poseidon4::hash_to_u32](#poseidon4hash_to_u32)       | Poseidon4 hash to unsigned 32-bit integer  |
+| [Poseidon4::hash_to_u64](#poseidon4hash_to_u64)       | Poseidon4 hash to unsigned 64-bit integer  |
+| [Poseidon4::hash_to_u128](#poseidon4hash_to_u128)     | Poseidon4 hash to unsigned 128-bit integer |
+| [Poseidon8::hash_to_i8](#poseidon8hash_to_i8)         | Poseidon8 hash to signed 8-bit integer     |
+| [Poseidon8::hash_to_i16](#poseidon8hash_to_i16)       | Poseidon8 hash to signed 16-bit integer    |
+| [Poseidon8::hash_to_i32](#poseidon8hash_to_i32)       | Poseidon8 hash to signed 32-bit integer    |
+| [Poseidon8::hash_to_i64](#poseidon8hash_to_i64)       | Poseidon8 hash to signed 64-bit integer    |
+| [Poseidon8::hash_to_i128](#poseidon8hash_to_i128)     | Poseidon8 hash to signed 128-bit integer   |
+| [Poseidon8::hash_to_u8](#poseidon8hash_to_u8)         | Poseidon8 hash to unsigned 8-bit integer   |
+| [Poseidon8::hash_to_u16](#poseidon8hash_to_u16)       | Poseidon8 hash to unsigned 16-bit integer  |
+| [Poseidon8::hash_to_u32](#poseidon8hash_to_u32)       | Poseidon8 hash to unsigned 32-bit integer  |
+| [Poseidon8::hash_to_u64](#poseidon8hash_to_u64)       | Poseidon8 hash to unsigned 64-bit integer  |
+| [Poseidon8::hash_to_u128](#poseidon8hash_to_u128)     | Poseidon8 hash to unsigned 128-bit integer |
 
 
 ## Specification
