@@ -67,15 +67,24 @@ The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes
 | [BHP1024::commit_to_group](#bhp1024commit_to_group)         | 1024-bit input BHP commitment of group type       |
 | [Pedersen64::commit_to_group](#pedersen64commit_to_group)   | 64-bit input Pedersen commitment of group type    |
 | [Pedersen128::commit_to_group](#pedersen128commit_to_group) | 128-bit input Pedersen commitment of group type   |
-| [BHP256::hash](#bhp256hash)                                 | 256-bit input BHP hash of field type              |
-| [BHP512::hash](#bhp512hash)                                 | 512-bit input BHP hash of field type              |
-| [BHP768::hash](#bhp768hash)                                 | 768-bit input BHP hash of field type              |
-| [BHP1024::hash](#bhp1024hash)                               | 1024-bit input BHP hash of field type             |
-| [Pedersen64::hash](#pedersen64hash)                         | 64-bit input Pedersen hash of field type          |
-| [Pedersen128::hash](#pedersen128hash)                       | 128-bit input Pedersen hash of field type         |
-| [Poseidon2::hash](#poseidon2hash)                           | Poseidon hash with input rate 2 of field type     |
-| [Poseidon4::hash](#poseidon4hash)                           | Poseidon hash with input rate 4 of field type     |
-| [Poseidon8::hash](#poseidon8hash)                           | Poseidon hash with input rate 8 of field type     |
+| [BHP256::hash_to_field](#bhp256hash_to_field)               | BHP256 hash to field                       |
+| [BHP512::hash_to_field](#bhp512hash_to_field)               | BHP512 hash to field                       |
+| [BHP768::hash_to_field](#bhp768hash_to_field)               | BHP768 hash to field                       |
+| [BHP1024::hash_to_field](#bhp1024hash_to_field)             | BHP1024 hash to field                      |
+| [Pedersen64::hash_to_field](#pedersen64hash_to_field)       | Pedersen64 hash to field                   |
+| [Pedersen128::hash_to_field](#pedersen128hash_to_field)     | Pedersen128 hash to field                  |
+| [Poseidon2::hash_to_field](#poseidon2hash_to_field)         | Poseidon2 hash to field                    |
+| [Poseidon4::hash_to_field](#poseidon4hash_to_field)         | Poseidon4 hash to field                    |
+| [Poseidon8::hash_to_field](#poseidon8hash_to_field)         | Poseidon8 hash to field                    |
+| [BHP256::hash_to_address](#bhp256hash_to_address)           | BHP256 hash to address                     |
+| [BHP512::hash_to_address](#bhp512hash_to_address)           | BHP512 hash to address                     |
+| [BHP768::hash_to_address](#bhp768hash_to_address)           | BHP768 hash to address                     |
+| [BHP1024::hash_to_address](#bhp1024hash_to_address)         | BHP1024 hash to address                    |
+| [Pedersen64::hash_to_address](#pedersen64hash_to_address)   | Pedersen64 hash to address                 |
+| [Pedersen128::hash_to_address](#pedersen128hash_to_address) | Pedersen128 hash to address                |
+| [Poseidon2::hash_to_address](#poseidon2hash_to_address)     | Poseidon2 hash to address                  |
+| [Poseidon4::hash_to_address](#poseidon4hash_to_address)     | Poseidon4 hash to address                  |
+| [Poseidon8::hash_to_address](#poseidon8hash_to_address)     | Poseidon8 hash to address                  |
 | [BHP256::hash_to_group](#bhp256hash_to_group)               | 256-bit input BHP hash of group type              |
 | [BHP512::hash_to_group](#bhp512hash_to_group)               | 512-bit input BHP hash of group type              |
 | [BHP768::hash_to_group](#bhp768hash_to_group)               | 768-bit input BHP hash of group type              |
@@ -1245,6 +1254,270 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 | `U128`   | `Field`     |
 | `Scalar` | `Field`     |
 | `Struct` | `Field`     |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP256::hash_to_address`
+
+```leo
+let input: Field = 1field;
+let result: address = BHP256::hash_to_address(input);
+```
+
+Hashes the given input and returns the result as an `Address`.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Address`   |
+| `Boolean` | `Address`   |
+| `Field`   | `Address`   |
+| `Group`   | `Address`   |
+| `I8`      | `Address`   |
+| `I16`     | `Address`   |
+| `I32`     | `Address`   |
+| `I64`     | `Address`   |
+| `I128`    | `Address`   |
+| `U8`      | `Address`   |
+| `U16`     | `Address`   |
+| `U32`     | `Address`   |
+| `U64`     | `Address`   |
+| `U128`    | `Address`   |
+| `Scalar`  | `Address`   |
+| `Struct`  | `Address`   |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP512::hash_to_address`
+
+```leo
+let input: Field = 1field;
+let result: address = BHP512::hash_to_address(input);
+```
+
+Hashes the given input and returns the result as an `Address`.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Address`   |
+| `Boolean` | `Address`   |
+| `Field`   | `Address`   |
+| `Group`   | `Address`   |
+| `I8`      | `Address`   |
+| `I16`     | `Address`   |
+| `I32`     | `Address`   |
+| `I64`     | `Address`   |
+| `I128`    | `Address`   |
+| `U8`      | `Address`   |
+| `U16`     | `Address`   |
+| `U32`     | `Address`   |
+| `U64`     | `Address`   |
+| `U128`    | `Address`   |
+| `Scalar`  | `Address`   |
+| `Struct`  | `Address`   |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP768::hash_to_address`
+
+```leo
+let input: Field = 1field;
+let result: address = BHP768::hash_to_address(input);
+```
+
+Hashes the given input and returns the result as an `Address`.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Address`   |
+| `Boolean` | `Address`   |
+| `Field`   | `Address`   |
+| `Group`   | `Address`   |
+| `I8`      | `Address`   |
+| `I16`     | `Address`   |
+| `I32`     | `Address`   |
+| `I64`     | `Address`   |
+| `I128`    | `Address`   |
+| `U8`      | `Address`   |
+| `U16`     | `Address`   |
+| `U32`     | `Address`   |
+| `U64`     | `Address`   |
+| `U128`    | `Address`   |
+| `Scalar`  | `Address`   |
+| `Struct`  | `Address`   |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `BHP1024::hash_to_address`
+
+```leo
+let input: Field = 1field;
+let result: address = BHP1024::hash_to_address(input);
+```
+
+Hashes the given input and returns the result as an `Address`.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Address`   |
+| `Boolean` | `Address`   |
+| `Field`   | `Address`   |
+| `Group`   | `Address`   |
+| `I8`      | `Address`   |
+| `I16`     | `Address`   |
+| `I32`     | `Address`   |
+| `I64`     | `Address`   |
+| `I128`    | `Address`   |
+| `U8`      | `Address`   |
+| `U16`     | `Address`   |
+| `U32`     | `Address`   |
+| `U64`     | `Address`   |
+| `U128`    | `Address`   |
+| `Scalar`  | `Address`   |
+| `Struct`  | `Address`   |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Pedersen64::hash_to_address`
+
+```leo
+let input: Field = 1field;
+let result: address = Pedersen64::hash_to_address(input);
+```
+
+Hashes the given input and returns the result as an `Address`.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Address`   |
+| `Boolean` | `Address`   |
+| `Field`   | `Address`   |
+| `Group`   | `Address`   |
+| `I8`      | `Address`   |
+| `I16`     | `Address`   |
+| `I32`     | `Address`   |
+| `I64`     | `Address`   |
+| `I128`    | `Address`   |
+| `U8`      | `Address`   |
+| `U16`     | `Address`   |
+| `U32`     | `Address`   |
+| `U64`     | `Address`   |
+| `U128`    | `Address`   |
+| `Scalar`  | `Address`   |
+| `Struct`  | `Address`   |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Pedersen128::hash_to_address`
+
+```leo
+let input: Field = 1field;
+let result: address = Pedersen128::hash_to_address(input);
+```
+
+Hashes the given input and returns the result as an `Address`.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Address`   |
+| `Boolean` | `Address`   |
+| `Field`   | `Address`   |
+| `Group`   | `Address`   |
+| `I8`      | `Address`   |
+| `I16`     | `Address`   |
+| `I32`     | `Address`   |
+| `I64`     | `Address`   |
+| `I128`    | `Address`   |
+| `U8`      | `Address`   |
+| `U16`     | `Address`   |
+| `U32`     | `Address`   |
+| `U64`     | `Address`   |
+| `U128`    | `Address`   |
+| `Scalar`  | `Address`   |
+| `Struct`  | `Address`   |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Poseidon2::hash_to_address`
+
+```leo
+let input: Field = 1field;
+let result: address = Poseidon2::hash_to_address(input);
+```
+
+Hashes the given input and returns the result as an `Address`.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Address`   |
+| `Boolean` | `Address`   |
+| `Field`   | `Address`   |
+| `Group`   | `Address`   |
+| `I8`      | `Address`   |
+| `I16`     | `Address`   |
+| `I32`     | `Address`   |
+| `I64`     | `Address`   |
+| `I128`    | `Address`   |
+| `U8`      | `Address`   |
+| `U16`     | `Address`   |
+| `U32`     | `Address`   |
+| `U64`     | `Address`   |
+| `U128`    | `Address`   |
+| `Scalar`  | `Address`   |
+| `Struct`  | `Address`   |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `Poseidon8::hash_to_address`
+
+```leo
+let input: Field = 1field;
+let result: address = Poseidon8::hash_to_address(input);
+```
+
+Hashes the given input and returns the result as an `Address`.
+
+#### Supported Types
+
+| First     | Destination |
+|-----------|:------------|
+| `Address` | `Address`   |
+| `Boolean` | `Address`   |
+| `Field`   | `Address`   |
+| `Group`   | `Address`   |
+| `I8`      | `Address`   |
+| `I16`     | `Address`   |
+| `I32`     | `Address`   |
+| `I64`     | `Address`   |
+| `I128`    | `Address`   |
+| `U8`      | `Address`   |
+| `U16`     | `Address`   |
+| `U32`     | `Address`   |
+| `U64`     | `Address`   |
+| `U128`    | `Address`   |
+| `Scalar`  | `Address`   |
+| `Struct`  | `Address`   |
 
 [Back to Top](#table-of-standard-operators)
 ***
