@@ -1,11 +1,11 @@
 ---
-id: get_transactions_mempool
-title: Get Transactions Mempool
-sidebar_label: Get Transactions Mempool
+id: get_memory_pool_transactions
+title: Get Memory Pool Transactions
+sidebar_label: Get Memory Pool Transactions
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/transactions/mempool
+GET /testnet3/memoryPool/transactions
 ```
 
 Returns the transactions in the memory pool.

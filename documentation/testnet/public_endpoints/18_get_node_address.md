@@ -1,7 +1,7 @@
 ---
-id: node_address
-title: Node Address
-sidebar_label: Node Address
+id: get_node_address
+title: Get Node Address
+sidebar_label: Get Node Address
 ---
 
 ```bash title=ENDPOINT

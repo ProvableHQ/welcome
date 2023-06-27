@@ -1,7 +1,7 @@
 ---
-id: peers_count
-title: Peers Count
-sidebar_label: Peers Count
+id: get_peers_count
+title: Get Peers Count
+sidebar_label: Get Peers Count
 ---
 
 ```bash title=ENDPOINT
