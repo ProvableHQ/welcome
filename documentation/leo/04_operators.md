@@ -269,7 +269,6 @@ storing the outcome in `destination`.
 [Back to Top](#table-of-standard-operators)
 ***
 
-
 ### `assert`
 
 ```leo
@@ -1428,11 +1427,13 @@ Calculates a Poseidon hash with an input rate of 8, from an input in `first`, st
 ```leo
 let input: Field = 1field;
 let result: i8 = BHP256::hash_to_i8(input);
+let input2: address = aleo1jxhzv8zwej0ekz2sv0pzfg2tmv56uh90rf2s3c7qt86qes2dmq6q3ng5fj;
+let result: i8 = BHP256::hash_to_i8(input2);
 ```
 
 #### Description
 
-Hashes the given input and returns the result as an Integer of type `TYPE`.
+Hashes the given input and returns the result as an integer of type `TYPE`, where `TYPE` is one of the following: `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`. 
 
 #### Supported Types
 
@@ -1460,11 +1461,13 @@ Hashes the given input and returns the result as an Integer of type `TYPE`.
 ```leo
 let input: Field = 1field;
 let result: i8 = BHP512::hash_to_i8(input);
+let input2: address = aleo1jxhzv8zwej0ekz2sv0pzfg2tmv56uh90rf2s3c7qt86qes2dmq6q3ng5fj;
+let result: i8 = BHP512::hash_to_i8(input2);
 ```
 
 #### Description
 
-Hashes the given input and returns the result as an Integer of type `TYPE`.
+Hashes the given input and returns the result as an integer of type `TYPE`, where `TYPE` is one of the following: `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`. 
 
 #### Supported Types
 
@@ -1492,11 +1495,13 @@ Hashes the given input and returns the result as an Integer of type `TYPE`.
 ```leo
 let input: Field = 1field;
 let result: i8 = BHP768::hash_to_i8(input);
+let input2: address = aleo1jxhzv8zwej0ekz2sv0pzfg2tmv56uh90rf2s3c7qt86qes2dmq6q3ng5fj;
+let result: i8 = BHP768::hash_to_i8(input2);
 ```
 
 #### Description
 
-Hashes the given input and returns the result as an Integer of type `TYPE`.
+Hashes the given input and returns the result as an integer of type `TYPE`, where `TYPE` is one of the following: `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`. 
 
 #### Supported Types
 
@@ -1524,11 +1529,13 @@ Hashes the given input and returns the result as an Integer of type `TYPE`.
 ```leo
 let input: Field = 1field;
 let result: i8 = BHP1024::hash_to_i8(input);
+let input2: address = aleo1jxhzv8zwej0ekz2sv0pzfg2tmv56uh90rf2s3c7qt86qes2dmq6q3ng5fj;
+let result: i8 = BHP1024::hash_to_i8(input2);
 ```
 
 #### Description
 
-Hashes the given input and returns the result as an Integer of type `TYPE`.
+Hashes the given input and returns the result as an integer of type `TYPE`, where `TYPE` is one of the following: `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`. 
 
 #### Supported Types
 
@@ -1556,11 +1563,13 @@ Hashes the given input and returns the result as an Integer of type `TYPE`.
 ```leo
 let input: Field = 1field;
 let result: i8 = Pederson64::hash_to_i8(input);
+let input2: address = aleo1jxhzv8zwej0ekz2sv0pzfg2tmv56uh90rf2s3c7qt86qes2dmq6q3ng5fj;
+let result: i8 = Pederson64::hash_to_i8(input2);
 ```
 
 #### Description
 
-Hashes the given input and returns the result as an Integer of type `TYPE`.
+Hashes the given input and returns the result as an integer of type `TYPE`, where `TYPE` is one of the following: `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`. 
 
 #### Supported Types
 
@@ -1588,11 +1597,13 @@ Hashes the given input and returns the result as an Integer of type `TYPE`.
 ```leo
 let input: Field = 1field;
 let result: i8 = Pederson128::hash_to_i8(input);
+let input2: address = aleo1jxhzv8zwej0ekz2sv0pzfg2tmv56uh90rf2s3c7qt86qes2dmq6q3ng5fj;
+let result: i8 = Pederson128::hash_to_i8(input2);
 ```
 
 #### Description
 
-Hashes the given input and returns the result as an Integer of type `TYPE`.
+Hashes the given input and returns the result as an integer of type `TYPE`, where `TYPE` is one of the following: `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`. 
 
 #### Supported Types
 
@@ -1620,11 +1631,13 @@ Hashes the given input and returns the result as an Integer of type `TYPE`.
 ```leo
 let input: Field = 1field;
 let result: i8 = Poseidon2::hash_to_i8(input);
+let input2: address = aleo1jxhzv8zwej0ekz2sv0pzfg2tmv56uh90rf2s3c7qt86qes2dmq6q3ng5fj;
+let result: i8 = Poseidon2::hash_to_i8(input2);
 ```
 
 #### Description
 
-Hashes the given input and returns the result as an Integer of type `TYPE`.
+Hashes the given input and returns the result as an integer of type `TYPE`, where `TYPE` is one of the following: `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`. 
 
 #### Supported Types
 
@@ -1652,11 +1665,13 @@ Hashes the given input and returns the result as an Integer of type `TYPE`.
 ```leo
 let input: Field = 1field;
 let result: i8 = Poseidon4::hash_to_i8(input);
+let input2: address = aleo1jxhzv8zwej0ekz2sv0pzfg2tmv56uh90rf2s3c7qt86qes2dmq6q3ng5fj;
+let result: i8 = Poseidon4::hash_to_i8(input2);
 ```
 
 #### Description
 
-Hashes the given input and returns the result as an Integer of type `TYPE`.
+Hashes the given input and returns the result as an integer of type `TYPE`, where `TYPE` is one of the following: `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`. 
 
 #### Supported Types
 
@@ -1684,11 +1699,13 @@ Hashes the given input and returns the result as an Integer of type `TYPE`.
 ```leo
 let input: Field = 1field;
 let result: i8 = Poseidon8::hash_to_i8(input);
+let input2: address = aleo1jxhzv8zwej0ekz2sv0pzfg2tmv56uh90rf2s3c7qt86qes2dmq6q3ng5fj;
+let result: i8 = Poseidon8::hash_to_i8(input2);
 ```
 
 #### Description
 
-Hashes the given input and returns the result as an Integer of type `TYPE`.
+Hashes the given input and returns the result as an integer of type `TYPE`, where `TYPE` is one of the following: `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`. 
 
 #### Supported Types
 
