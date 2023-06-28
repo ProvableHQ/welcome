@@ -4,8 +4,8 @@ title: Aleo Instructions and the Aleo SDK
 sidebar_label: Overview
 ---
 Welcome to the Aleo instructions guide. Aleo instructions is the intermediate representation of Aleo programs.
-All Leo programs compile to Aleo instructions which compile to bytecode. 
-We recommend learning and using Aleo instructions if your goal is fine-grained circuit design or 
+All Leo programs compile to Aleo instructions which compile to bytecode.
+We recommend learning and using Aleo instructions if your goal is fine-grained circuit design or
 if you are implementing a compiler that reads in a high-level language other than Leo and want your programs to run on Aleo.
 
 Aleo programs are files with a `.aleo` extension.
@@ -39,7 +39,7 @@ Read the full list of supported [AVM opcodes](./aleo/04_opcodes.md).
 
 Check your program or compiler implementation against the [Aleo instructions grammar](./aleo/06_grammar.md).
 
-Study the formal [ABNF grammar specification](./aleo/07_abnf.md) for the full formal syntax of Aleo instructions. 
+Study the formal [ABNF grammar specification](https://github.com/AleoHQ/grammars) for the full formal syntax of Aleo instructions.
 
 ## Aleo Command Line Interface Documentation
 
@@ -58,7 +58,7 @@ The Aleo CLI provides a suite of commands to make programming in Aleo instructio
 
 ## Additional Material
 
-Install Aleo instructions for your favorite code [**editor**](./aleo/08_tooling.md).
+Install Aleo instructions for your favorite code [**editor**](./aleo/07_tooling.md).
 
 [//]: # ()
 [//]: # (## Testnet3 Development Endpoints)
