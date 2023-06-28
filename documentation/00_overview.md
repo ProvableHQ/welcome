@@ -52,8 +52,7 @@ An index of all pages available in this documentation.
 - [AVM Opcodes](./aleo/04_opcodes.md)
 - [Aleo Command Line Interface](./aleo/05_commands.md)
 - [Aleo Instructions Grammar](./aleo/06_grammar.md)
-- [Formal Aleo Instructions ABNF Documentation](./aleo/07_abnf.md)
-- [Aleo Instructions Code Editor Plugins](./aleo/08_tooling.md)
+- [Aleo Instructions Code Editor Plugins](./aleo/07_tooling.md)
 
 ## Testnet III
 
