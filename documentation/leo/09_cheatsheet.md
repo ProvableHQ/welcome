@@ -4,19 +4,19 @@ title: Leo Syntax Cheatsheet
 ---
 
 ## 1. File Import
-```Leo
+```leo
 import foo.leo;
 ```
 
 ## 2. Programs
-```Leo
+```leo
 program hello.aleo {
     // code
 }
 ```
 
 ## 3. Data Types
-```Leo
+```leo
 let b: bool = false; // boolean
 let i: u8 = 1u8; // unsigned integer
 let a: field = 1field; // field element
@@ -26,7 +26,7 @@ let receiver: address = aleo1ezamst4pjgj9zfxqq0fwfj8a4cjuqndmasgata3hggzqygggnyf
 ```
 
 ## 4. Records
-```Leo
+```leo
 record token {
     owner: address,
     microcredits: u64,
@@ -35,7 +35,7 @@ record token {
 ```
 
 ## 5. Structs
-```Leo
+```leo
 struct message {
     sender: address,
     object: u64,
@@ -43,7 +43,7 @@ struct message {
 ```
 
 ## 6. Transitions
-```Leo
+```leo
 transition mint_public(
     public receiver: address,
     public amount: u64,
@@ -51,14 +51,14 @@ transition mint_public(
 ```
 
 ## 7. Functions
-```Leo
+```leo
 function compute(a: u64, b: u64) -> u64 {
     return a + b;
 }
 ```
 
 ## 8. Inline Functions
-```Leo
+```leo
 inline foo(
     a: field,
     b: field,
@@ -77,7 +77,7 @@ Direct/indirect recursive calls are not allowed
 
 
 ## 9. For Loops
-```Leo
+```leo
 let count: u32 = 0u32;
 
 for i: u32 in 0u32..5u32 {
@@ -86,7 +86,7 @@ for i: u32 in 0u32..5u32 {
 ```
 
 ## 10. Mappings
-```Leo
+```leo
 mapping balances: address => u64;
 
 let contains_bal: bool = Mapping::contains(balances, receiver);
@@ -97,7 +97,7 @@ let remove_bal: () = Mapping::remove(balances, receiver);
 ```
 
 ## 11. Commands
-```Leo
+```leo
 transition matches(height: u32) { 
     return then finalize(height); 
 }
@@ -122,7 +122,7 @@ assert_neq(a, b); // assert a and b are not equal
 
 
 ## 12. Operators
-```Leo
+```leo
 let sum: u64 = a + b; // arithmetic addition
 let diff: u64 = a - b; // arithmetic subtraction
 let prod: u64 = a * b; // arithmetic multiplication
@@ -144,7 +144,7 @@ let gte: bool = a >= b; // greater than or equal
 ```
 
 ## 13. Type Casting
-```Leo
+```leo
 transition main(a: address, b: bool, c: field, d: i8, e: i16, f: i64, g: i128, h: u8, i: u16, j: u32, k: u64, l: u128, m: scalar) -> bool {
     let a_field: field = a as field;
     let a_group: group = a as group;
