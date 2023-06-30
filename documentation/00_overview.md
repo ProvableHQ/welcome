@@ -23,7 +23,7 @@ An index of all pages available in this documentation.
 - [Leo Code Editor Plugins](./leo/06_tooling.md)
 - [Leo Examples, Guides, and Developer Resources](./leo/07_resources.md)
 
-### Chapter 2: Leo Examples
+### Chapter 2: Leo by Example
 
 - [Auction](./leo/08_auction.md)
 - [Basic Bank](https://github.com/AleoHQ/workshop/tree/master/basic_bank)

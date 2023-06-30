@@ -144,6 +144,8 @@ let gte: bool = a >= b; // greater than or equal
 ```
 
 ## 13. Type Casting
+The primitive types are: `address`, `bool`, `field`, `group`, `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`, `scalar`.
+We can cast between all of these types.
 ```leo
 transition main(a: address, b: bool, c: field, d: i8, e: i16, f: i64, g: i128, h: u8, i: u16, j: u32, k: u64, l: u128, m: scalar) -> bool {
     let a_field: field = a as field;
