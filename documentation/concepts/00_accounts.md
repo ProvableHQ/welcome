@@ -12,10 +12,10 @@ view key is used to decrypt account records, which are encrypted under the user'
 address enables users to interact with one another, sending and receiving records that encode values and application data.
 
 To protect user *assets* and *record data*, one should **never disclose their account private key** to any
-third parties. For real-world applications on Aleo, users should derive a compute key from their account private key to 
+third parties. For real-world applications on Aleo, users should derive a compute key from their account private key to
 allow third parties to *trustlessly* run applications and generate transactions on a user's behalf.
 
-Generate a new Aleo account [here](https://aleo.tools). 
+Generate a new Aleo account [here](https://aleo.tools).
 
 ## Account Private Key
 
@@ -91,7 +91,7 @@ leaking one's account private key to unintended parties.
 
 ### Account Commitment Outputs
 
-The account commitment output is used to create an account view key, which is comprised of an encryption secret key. 
+The account commitment output is used to create an account view key, which is comprised of an encryption secret key.
 This encryption secret key is a scalar field element derived from the account commitment output. To ensure the validity
 of the account view key, the account commitment output should be representable in the scalar field.
 
@@ -99,28 +99,31 @@ of the account view key, the account commitment output should be representable i
 
 Given global instantiated Aleo parameters and subroutines.
 
-#### Generate a Private Key 
+#### Generate a Private Key
 
 1. Sample a 32 byte `seed` from random
-    
+
 2. Construct private key components
     - `sk_sig` = BLAKE2s(`seed` | 0)
     - `sk_prf` = BLAKE2s(`seed` | 1)
     - `r_pk` = BLAKE2s(`seed` | `counter`)
-    - where | denotes concatenation
-    - where `BLAKE2s` denotes unkeyed BLAKE2s-256, as defined in [RFC 7693](https://www.rfc-editor.org/rfc/rfc7693)
-           
+
+    where | denotes concatenation,
+    and where `BLAKE2s` denotes unkeyed BLAKE2s-256, as defined in [RFC 7693](https://www.rfc-editor.org/rfc/rfc7693).
+
 3.`private_key` = (`seed`, `sk_sig`, `sk_prf`, `r_pk`)
 
 The 0 and 1 used to calculate `sk_sig` and `sk_prf` are each encoded as an unsigned
 16-bit integer and turned into two bytes in little endian order before being
 concatenated to the right of the seed, then the resulting byte sequence is passed to BLAKE2s.
-Similarly to 0 and 1 used to calculate sk_sig and sk_prf, the unsigned 16-bit integer 
-counter is turned into two bytes in little endian order before being concatenated to the right of the seed.
+The `counter` used to calculate `r_pk` is an unsigned 16-bit integer
+that is turned into two bytes in little endian order
+before being concatenated to the right of the seed, then the resulting byte sequence is passed to BLAKE2s;
+the counter is iterated on, starting from 2, until a valid `view_key` (see below) can be derived from the private key.
 
 Learn more about BLAKE2s [here](https://www.rfc-editor.org/rfc/rfc7693).
 
-#### Generate a View Key 
+#### Generate a View Key
 
 1. Construct `pk_sig` = AccountSignature.GeneratePublicKey(<code>pp<sub>account_sig</sub></code>, `sk_sig`)
 
@@ -134,16 +137,15 @@ Learn more about BLAKE2s [here](https://www.rfc-editor.org/rfc/rfc7693).
 
 ```mermaid
 graph TD
-	A["Seed (32 Bytes)"] 
+	A["Seed (32 Bytes)"]
     A --> |"BLAKE2s(Seed, 0)" | B(sk_sig)
     A --> |"BLAKE2s(Seed, 1)" | C(sk_prf)
     A --> |"BLAKE2s(Seed, counter)" | D(r_pk)
-    
+
     B --> E(Account Private Key)
     C --> E(Account Private Key)
     D --> E(Account Private Key)
-    
-    E --> F(Account View Key) 
-    F --> G(Account Address) 
-```
 
+    E --> F(Account View Key)
+    F --> G(Account Address)
+```
