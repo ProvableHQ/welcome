@@ -267,78 +267,6 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 
 ***
 
-<<<<<<< HEAD
-### `cast`
-
-[Back to Top](#table-of-standard-opcodes)
-
-```aleo
-input r0 as field.private;
-cast r0 into r1 as group;
-cast r0 into r2 as u8;
-```
-
-#### Description
-
-Enables casting between different literals.
-
-#### Supported Types
-
-| First     | Second    |
-|-----------|-----------|
-| `Address` | `Address` |
-| `Boolean` | `Boolean` |
-| `Field`   | `Field`   |
-| `Group`   | `Group`   |
-| `I8`      | `I8`      |
-| `I16`     | `I16`     |
-| `I32`     | `I32`     |
-| `I64`     | `I64`     |
-| `I128`    | `I128`    |
-| `U8`      | `U8`      |
-| `U16`     | `U16`     |
-| `U32`     | `U32`     |
-| `U64`     | `U64`     |
-| `U128`    | `U128`    |
-| `Scalar`  | `Scalar`  |
-
-***
-
-### `cast.lossy`
-
-[Back to Top](#table-of-standard-opcodes)
-
-```aleo
-input r0 as field.private;
-cast r0 into r1 as group;
-cast r0 into r2 as u8;
-cast.lossy r0 into r3 as u8; // The bottom 8 bits of the r0 are extracted into a u8 and placed into r3
-```
-
-#### Description
-
-Perform casting with lossy truncation.
-
-#### Supported Types
-
-| First     | Second    |
-|-----------|-----------|
-| `Address` | `Address` |
-| `Boolean` | `Boolean` |
-| `Field`   | `Field`   |
-| `Group`   | `Group`   |
-| `I8`      | `I8`      |
-| `I16`     | `I16`     |
-| `I32`     | `I32`     |
-| `I64`     | `I64`     |
-| `I128`    | `I128`    |
-| `U8`      | `U8`      |
-| `U16`     | `U16`     |
-| `U32`     | `U32`     |
-| `U64`     | `U64`     |
-| `U128`    | `U128`    |
-| `Scalar`  | `Scalar`  |
-=======
 ### `block.height`
 
 [Back to Top](#table-of-standard-opcodes)
@@ -413,8 +341,79 @@ The `branch.neq` command, e.g. `branch.neq <first> <second> to <destination>`, w
 | `Scalar`  | `Scalar`  | `Position`  |
 | `Struct`  | `Struct`  | `Position`  |
 | `Record`  | `Record`  | `Position`  |
->>>>>>> master
 
+***
+
+### `cast`
+
+[Back to Top](#table-of-standard-opcodes)
+
+```aleo
+input r0 as field.private;
+cast r0 into r1 as group;
+cast r0 into r2 as u8;
+```
+
+#### Description
+
+Enables casting between different literals.
+
+#### Supported Types
+
+| First     | Second    |
+|-----------|-----------|
+| `Address` | `Address` |
+| `Boolean` | `Boolean` |
+| `Field`   | `Field`   |
+| `Group`   | `Group`   |
+| `I8`      | `I8`      |
+| `I16`     | `I16`     |
+| `I32`     | `I32`     |
+| `I64`     | `I64`     |
+| `I128`    | `I128`    |
+| `U8`      | `U8`      |
+| `U16`     | `U16`     |
+| `U32`     | `U32`     |
+| `U64`     | `U64`     |
+| `U128`    | `U128`    |
+| `Scalar`  | `Scalar`  |
+
+***
+
+### `cast.lossy`
+
+[Back to Top](#table-of-standard-opcodes)
+
+```aleo
+input r0 as field.private;
+cast r0 into r1 as group;
+cast r0 into r2 as u8;
+cast.lossy r0 into r3 as u8; // The bottom 8 bits of the r0 are extracted into a u8 and placed into r3
+```
+
+#### Description
+
+Perform casting with lossy truncation.
+
+#### Supported Types
+
+| First     | Second    |
+|-----------|-----------|
+| `Address` | `Address` |
+| `Boolean` | `Boolean` |
+| `Field`   | `Field`   |
+| `Group`   | `Group`   |
+| `I8`      | `I8`      |
+| `I16`     | `I16`     |
+| `I32`     | `I32`     |
+| `I64`     | `I64`     |
+| `I128`    | `I128`    |
+| `U8`      | `U8`      |
+| `U16`     | `U16`     |
+| `U32`     | `U32`     |
+| `U64`     | `U64`     |
+| `U128`    | `U128`    |
+| `Scalar`  | `Scalar`  |
 ***
 
 ### `commit.bhp256`
