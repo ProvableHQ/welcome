@@ -46,11 +46,12 @@ Higher bit length integers generate more constraints in the circuit, which can s
 
 #### A Note on Leo Integers
 
-Leo will not default to an integer type. The definition of a integer **must** include an explicit type.
-**Type casting is not yet supported.**
+Leo will not default to an integer type. The definition of a integer **must** include an explicit type.  
+**Type casting is supported as of Leo v1.8.2**
 
 ```leo
 let a: u8 = 2u8; // explicit type
+let b: u16 = a as u16; // type casting
 let b: u8 = 2; // implicit type -- not supported
 ```
 

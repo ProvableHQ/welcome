@@ -25,6 +25,15 @@ let s: scalar = 1scalar; // scalar element
 let receiver: address = aleo1ezamst4pjgj9zfxqq0fwfj8a4cjuqndmasgata3hggzqygggnyfq6kmyd4; // address
 ```
 
+### Type Casting
+```leo
+let a: u8 = 1u8;
+let b: u32 = a as u32; // cast 1u8 to 1u32
+```
+The primitive types are: `address`, `bool`, `field`, `group`, `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`, `scalar`.
+We can cast between all of these types.
+
+
 ## 4. Records
 ```leo
 record token {
@@ -143,24 +152,3 @@ let gt: bool = a > b; // greater than
 let gte: bool = a >= b; // greater than or equal
 ```
 
-## 13. Type Casting
-The primitive types are: `address`, `bool`, `field`, `group`, `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`, `scalar`.
-We can cast between all of these types.
-```leo
-transition main(a: address, b: bool, c: field, d: i8, e: i16, f: i64, g: i128, h: u8, i: u16, j: u32, k: u64, l: u128, m: scalar) -> bool {
-    let a_field: field = a as field;
-    let a_group: group = a as group;
-    let a_bool: bool = a as bool;
-    let a_i8: i8 = a as i8;
-    let a_i16: i16 = a as i16;
-    let a_i32: i32 = a as i32;
-    let a_i64: i64 = a as i64;
-    let a_i128: i128 = a as i128;
-    let a_u8: u8 = a as u8;
-    let a_u16: u16 = a as u16;
-    let a_u32: u32 = a as u32;
-    let a_u64: u64 = a as u64;
-    let a_u128: u128 = a as u128;
-    let a_scalar: scalar = a as scalar;
-}
-```
