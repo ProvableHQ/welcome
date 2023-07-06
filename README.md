@@ -52,6 +52,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/CrypticDriver"><img src="https://avatars.githubusercontent.com/u/107245892?v=4?s=100" width="100px;" alt="CrypticDriver"/><br /><sub><b>CrypticDriver</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=CrypticDriver" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/rapiz1"><img src="https://avatars.githubusercontent.com/u/20105061?v=4?s=100" width="100px;" alt="Yujia Qiao"/><br /><sub><b>Yujia Qiao</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=rapiz1" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/joshbeal"><img src="https://avatars.githubusercontent.com/u/3038886?v=4?s=100" width="100px;" alt="Josh Beal"/><br /><sub><b>Josh Beal</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=joshbeal" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/unordered-set"><img src="https://avatars.githubusercontent.com/u/78592281?v=4?s=100" width="100px;" alt="Kostyan"/><br /><sub><b>Kostyan</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=unordered-set" title="Documentation">📖</a></td>
     </tr>
   </tbody>
   <tfoot>

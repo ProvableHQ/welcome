@@ -215,6 +215,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "unordered-set",
+      "name": "Kostyan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78592281?v=4",
+      "profile": "https://github.com/unordered-set",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
