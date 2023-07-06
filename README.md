@@ -38,6 +38,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://move-book.com/"><img src="https://avatars.githubusercontent.com/u/8008055?v=4?s=100" width="100px;" alt="Damir Shamanaev"/><br /><sub><b>Damir Shamanaev</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=damirka" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://louiswt.github.io/"><img src="https://avatars.githubusercontent.com/u/22902565?v=4?s=100" width="100px;" alt="LouisWT"/><br /><sub><b>LouisWT</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=LouisWT" title="Documentation">📖</a></td>
     </tr>
   </tbody>
   <tfoot>
