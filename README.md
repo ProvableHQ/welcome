@@ -59,6 +59,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://about.me/schaeff"><img src="https://avatars.githubusercontent.com/u/7441798?v=4?s=100" width="100px;" alt="Thibaut Schaeffer"/><br /><sub><b>Thibaut Schaeffer</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=Schaeff" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/gluax"><img src="https://avatars.githubusercontent.com/u/16431709?v=4?s=100" width="100px;" alt="gluax"/><br /><sub><b>gluax</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=gluax" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/graemecode"><img src="https://avatars.githubusercontent.com/u/36094097?v=4?s=100" width="100px;" alt="Graeme"/><br /><sub><b>Graeme</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=graemecode" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/pkrasam"><img src="https://avatars.githubusercontent.com/u/4514654?v=4?s=100" width="100px;" alt="pk"/><br /><sub><b>pk</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=pkrasam" title="Documentation">📖</a></td>
     </tr>
   </tbody>
   <tfoot>

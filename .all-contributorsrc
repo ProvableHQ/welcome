@@ -260,6 +260,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "pkrasam",
+      "name": "pk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4514654?v=4",
+      "profile": "https://github.com/pkrasam",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
