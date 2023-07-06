@@ -56,6 +56,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://detailyang.github.io/"><img src="https://avatars.githubusercontent.com/u/3370345?v=4?s=100" width="100px;" alt="detailyang"/><br /><sub><b>detailyang</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=detailyang" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://about.me/schaeff"><img src="https://avatars.githubusercontent.com/u/7441798?v=4?s=100" width="100px;" alt="Thibaut Schaeffer"/><br /><sub><b>Thibaut Schaeffer</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=Schaeff" title="Documentation">📖</a></td>
     </tr>
   </tbody>
   <tfoot>

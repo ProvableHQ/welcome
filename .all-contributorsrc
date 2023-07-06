@@ -233,6 +233,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Schaeff",
+      "name": "Thibaut Schaeffer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7441798?v=4",
+      "profile": "https://about.me/schaeff",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
