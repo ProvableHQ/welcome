@@ -107,6 +107,26 @@
       ]
     },
     {
+      "login": "mdelle1",
+      "name": "mdelle1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108158289?v=4",
+      "profile": "https://github.com/mdelle1",
+      "contributions": [
+        "doc",
+        "research"
+      ]
+    },
+    {
+      "login": "vicsn",
+      "name": "vicsn",
+      "avatar_url": "https://avatars.githubusercontent.com/u/24724627?v=4",
+      "profile": "https://victorsintnicolaas.com/",
+      "contributions": [
+        "doc",
+        "research"
+      ]
+    },
+    {
       "login": "damirka",
       "name": "Damir Shamanaev",
       "avatar_url": "https://avatars.githubusercontent.com/u/8008055?v=4",
@@ -143,19 +163,10 @@
       ]
     },
     {
-      "login": "mdelle1",
-      "name": "mdelle1",
-      "avatar_url": "https://avatars.githubusercontent.com/u/108158289?v=4",
-      "profile": "https://github.com/mdelle1",
-      "contributions": [
-        "doc"
-      ]
-    },
-    {
-      "login": "vicsn",
-      "name": "vicsn",
-      "avatar_url": "https://avatars.githubusercontent.com/u/24724627?v=4",
-      "profile": "https://victorsintnicolaas.com/",
+      "login": "ofloxacin",
+      "name": "ofloxacin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9795941?v=4",
+      "profile": "https://github.com/ofloxacin",
       "contributions": [
         "doc"
       ]
