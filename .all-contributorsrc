@@ -1,0 +1,25 @@
+{
+  "projectName": "welcome",
+  "projectOwner": "AleoHQ",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "howardwu",
+      "name": "Howard Wu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9260812?v=4",
+      "profile": "https://github.com/howardwu",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": true
+}
