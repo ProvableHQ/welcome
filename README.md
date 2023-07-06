@@ -40,6 +40,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://move-book.com/"><img src="https://avatars.githubusercontent.com/u/8008055?v=4?s=100" width="100px;" alt="Damir Shamanaev"/><br /><sub><b>Damir Shamanaev</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=damirka" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://louiswt.github.io/"><img src="https://avatars.githubusercontent.com/u/22902565?v=4?s=100" width="100px;" alt="LouisWT"/><br /><sub><b>LouisWT</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=LouisWT" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jules"><img src="https://avatars.githubusercontent.com/u/30194392?v=4?s=100" width="100px;" alt="jules"/><br /><sub><b>jules</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=jules" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/errol-drummond-354b8885/"><img src="https://avatars.githubusercontent.com/u/57955633?v=4?s=100" width="100px;" alt="EDGD"/><br /><sub><b>EDGD</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=EDGDrummond" title="Documentation">📖</a></td>
     </tr>
   </tbody>
   <tfoot>
