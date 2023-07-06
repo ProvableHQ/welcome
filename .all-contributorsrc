@@ -40,7 +40,10 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/14917648?v=4",
       "profile": "https://github.com/raychu86",
       "contributions": [
-        "bug"
+        "bug",
+        "code",
+        "ideas",
+        "review"
       ]
     },
     {
@@ -48,6 +51,17 @@
       "name": "Alessandro Coglio",
       "avatar_url": "https://avatars.githubusercontent.com/u/2409151?v=4",
       "profile": "http://www.kestrel.edu/~coglio",
+      "contributions": [
+        "doc",
+        "research",
+        "review"
+      ]
+    },
+    {
+      "login": "aharshbe",
+      "name": "a h",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17191728?v=4",
+      "profile": "https://github.com/aharshbe",
       "contributions": [
         "doc"
       ]
