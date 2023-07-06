@@ -63,6 +63,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/WietzeSlagman"><img src="https://avatars.githubusercontent.com/u/5808153?v=4?s=100" width="100px;" alt="Wietze"/><br /><sub><b>Wietze</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=WietzeSlagman" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/features/security"><img src="https://avatars.githubusercontent.com/u/27347476?v=4?s=100" width="100px;" alt="Dependabot"/><br /><sub><b>Dependabot</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=dependabot" title="Code">💻</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/actions"><img src="https://avatars.githubusercontent.com/u/65916846?v=4?s=100" width="100px;" alt="actions-user"/><br /><sub><b>actions-user</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=actions-user" title="Documentation">📖</a></td>
+    </tr>
   </tbody>
   <tfoot>
     <tr>
