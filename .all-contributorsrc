@@ -188,6 +188,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "CrypticDriver",
+      "name": "CrypticDriver",
+      "avatar_url": "https://avatars.githubusercontent.com/u/107245892?v=4",
+      "profile": "https://github.com/CrypticDriver",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
