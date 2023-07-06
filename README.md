@@ -48,6 +48,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ofloxacin"><img src="https://avatars.githubusercontent.com/u/9795941?v=4?s=100" width="100px;" alt="ofloxacin"/><br /><sub><b>ofloxacin</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=ofloxacin" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/SyedImam1998"><img src="https://avatars.githubusercontent.com/u/52135949?v=4?s=100" width="100px;" alt="Syed Imam"/><br /><sub><b>Syed Imam</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=SyedImam1998" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/B1boid"><img src="https://avatars.githubusercontent.com/u/47173672?v=4?s=100" width="100px;" alt="B1boid"/><br /><sub><b>B1boid</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=B1boid" title="Documentation">📖</a></td>
     </tr>
   </tbody>
   <tfoot>
