@@ -47,23 +47,13 @@
       ]
     },
     {
-      "login": "acoglio",
-      "name": "Alessandro Coglio",
-      "avatar_url": "https://avatars.githubusercontent.com/u/2409151?v=4",
-      "profile": "http://www.kestrel.edu/~coglio",
-      "contributions": [
-        "doc",
-        "research",
-        "review"
-      ]
-    },
-    {
       "login": "aharshbe",
       "name": "a h",
       "avatar_url": "https://avatars.githubusercontent.com/u/17191728?v=4",
       "profile": "https://github.com/aharshbe",
       "contributions": [
         "doc",
+        "maintenance",
         "projectManagement",
         "review"
       ]
@@ -76,6 +66,31 @@
       "contributions": [
         "code",
         "doc",
+        "maintenance",
+        "review"
+      ]
+    },
+    {
+      "login": "christianwooddell",
+      "name": "Christian Wooddell",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69871937?v=4",
+      "profile": "https://github.com/christianwooddell",
+      "contributions": [
+        "code",
+        "doc",
+        "maintenance",
+        "review"
+      ]
+    },
+    {
+      "login": "acoglio",
+      "name": "Alessandro Coglio",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2409151?v=4",
+      "profile": "http://www.kestrel.edu/~coglio",
+      "contributions": [
+        "doc",
+        "maintenance",
+        "research",
         "review"
       ]
     },
@@ -86,6 +101,7 @@
       "profile": "http://www.kestrel.edu/home/people/mccarthy/",
       "contributions": [
         "doc",
+        "maintenance",
         "research",
         "review"
       ]
@@ -127,12 +143,12 @@
       ]
     },
     {
-      "login": "christianwooddell",
-      "name": "Christian Wooddell",
-      "avatar_url": "https://avatars.githubusercontent.com/u/69871937?v=4",
-      "profile": "https://github.com/christianwooddell",
+      "login": "mdelle1",
+      "name": "mdelle1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108158289?v=4",
+      "profile": "https://github.com/mdelle1",
       "contributions": [
-        "code"
+        "doc"
       ]
     }
   ],
