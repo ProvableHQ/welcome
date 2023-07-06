@@ -63,7 +63,18 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/17191728?v=4",
       "profile": "https://github.com/aharshbe",
       "contributions": [
-        "doc"
+        "doc",
+        "projectManagement",
+        "review"
+      ]
+    },
+    {
+      "login": "moAlobaidi",
+      "name": "Mohammed Alobaidi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37510951?v=4",
+      "profile": "https://github.com/moAlobaidi",
+      "contributions": [
+        "code"
       ]
     }
   ],
