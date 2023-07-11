@@ -3,16 +3,20 @@
     <a href="https://aleo.org"> <img alt="Website" src="https://img.shields.io/badge/Aleo.org-online-blue"></a>
     <a href="https://discord.gg/5v2ynrw2ds"><img src="https://img.shields.io/discord/700454073459015690?logo=discord"/></a>
     <a href="https://twitter.com/AleoHQ"><img src="https://img.shields.io/twitter/follow/AleoHQ?style=social"/></a>
-    <a href="https://allcontributors.org/"><img src="https://img.shields.io/github/all-contributors/AleoHQ/welcome?color=ee8449&style=flat-square"/></a>
+    <a href="https://GitHub.com/AleoHQ/welcome"><img src="https://img.shields.io/badge/contributors-29-ee8449"/></a>
 </p>
 
 ## 🎉 Welcome to Aleo.
 
 This repository serves as a guide for getting started with building on Aleo. Here is a quick summary of the key components:
 
-- [🔭 Aleo Explorer](https://aleo.network) - Validate and broadcast on Aleo Testnet III
 - [📖 Aleo Developer Docs](https://developer.aleo.org) - Developer documentation for Aleo and the Leo programming language.
+- [📡 SnarkOS](http://snarkos.org/) - A decentralized operating system for private applications.
+- [⚙️ SnarkVM](https://snarkvm.org/) - A virtual machine for zero-knowledge proofs.
+- [🦁 Leo](https://leo-lang.org/) - A programming language for zero-knowledge proofs.
 - [🛝 Leo Playground](http://play.leo-lang.org) - A browser interface to the Leo compiler for rapid ZK development and testing.
+- [🧰 Aleo SDK](https://aleo.tools/) - A Software Development Kit (SDK) for Zero-Knowledge Transactions.
+- [🔭 Aleo Explorer](https://aleo.network) - Validate and broadcast on Aleo Testnet III
 
 For help setting up, join us on [Discord](https://aleo.org/discord) to ask questions and help others answer their questions.
 
