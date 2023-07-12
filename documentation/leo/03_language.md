@@ -245,19 +245,6 @@ record token {
 }
 ```
 
-### Mapping
-
-A mapping is declared as `mapping {name}: {key-type} => {value-type}`.
-Mappings contain key-value pairs.
-Mappings are stored on chain.
-
-```leo showLineNumbers
-// On-chain storage of an `account` mapping,
-// with `address` as the type of keys,
-// and `u64` as the type of values.
-mapping account: address => u64;
-```
-
 ### Transition Function
 
 Transition functions in Leo are declared as `transition {name}() {}`.
@@ -345,40 +332,6 @@ The rules for functions (in the traditional sense) are as follows:
 - inlines can only call inlines.
 - Direct/indirect recursive calls are not allowed
 
-#### Increment and Decrement
-
-`increment()` and `decrement()` functions are deprecated as of Leo v1.7.0.
-Please use the `Mapping::set()` function instead.
-
-```leo showLineNumbers
-program transfer.aleo {
-    // On-chain storage of an `account` map,
-    // with `address` as the key,
-    // and `u64` as the value.
-    mapping account: address => u64;
-
-    transition transfer_public(...) {...}
-
-    finalize transfer_public(
-        public sender: address,
-        public receiver: address,
-        public amount: u64
-    ) {
-        // Decrements `account[sender]` by `amount`.
-        // If `account[sender]` does not exist, it will be created.
-        // If `account[sender] - amount` underflows, `transfer_public` is reverted.
-        let sender_amount: u64 = Mapping::get_or_use(account, sender, 0u64);
-        Mapping::set(account, sender, sender_amount - amount);
-
-        // Increments `account[receiver]` by `amount`.
-        // If `account[receiver]` does not exist, it will be created.
-        // If `account[receiver] + amount` overflows, `transfer_public` is reverted.
-        let receiver_amount: u64 = Mapping::get_or_use(account, receiver, 0u64);
-        Mapping::set(account, receiver, receiver_amount + amount);
-    }
-}
-```
-
 ### Finalize Function
 
 A finalize function is declared as `finalize {name}:`.
@@ -424,9 +377,25 @@ program transfer.aleo {
 }
 ```
 
-### Mapping and finalize
 
-The syntax around mapping and finalize has been updated to support `get`, `get_or_use`, `set` functions.
+
+### Mapping
+
+A mapping is declared as `mapping {name}: {key-type} => {value-type}`.
+Mappings contain key-value pairs.
+Mappings are stored on chain.
+
+```leo showLineNumbers
+// On-chain storage of an `account` mapping,
+// with `address` as the type of keys,
+// and `u64` as the type of values.
+mapping account: address => u64;
+```
+
+#### Mapping Operations
+
+The mapping struct allows the programmer to apply updates to a program mapping data structure by calling one of the
+following functions. **Mapping operations are only allowed in the finalize function of a transition.**
 
 ```leo showLineNumbers
 program test.aleo {
@@ -446,11 +415,6 @@ program test.aleo {
 }
 ```
 
-#### Mapping
-
-The mapping struct allows the programmer to apply updates to a program mapping data structure by calling one of the
-following functions.
-
 #### get
 
 A get command, e.g. `current_value = Mapping::get(counter, addr);`
@@ -468,6 +432,16 @@ If the key is not present, `0u64` is stored in `counter` and stored in `current_
 
 A set command, e.g. `Mapping::set(counter, addr, current_value + 1u64);`
 Sets the `addr` entry as `current_value + 1u64` in `counter`.
+
+#### contains
+
+A contains command, e.g. `let contains: bool = Mapping::contains(counter, addr);`
+Returns `true` if `addr` is present in `counter`, `false` otherwise.
+
+#### remove
+
+A remove command, e.g. `Mapping::remove(counter, addr);`
+Removes the entry at `addr` in `counter`.
 
 ## For Loops
 
@@ -592,3 +566,111 @@ let result = (a + 1u8) * 2u8;
 ```
 
 `(a + 1u8)` will be evaluated before multiplying by two `* 2u8`.
+
+## Commands
+
+Leo supports several commands that can be used to reference information about the Aleo blockchain and the current transaction.
+
+### self.caller
+
+Returns the address of the account that is calling the program function.
+
+```leo showLineNumbers
+program test.aleo {
+    transition matches(addr: address) -> bool {
+        return self.caller == addr;
+    }
+}
+```
+
+### block.height
+Returns the height of the current block.  
+**`block.height` is only valid in a `finalize` context.**
+
+```leo showLineNumbers
+program test.aleo {
+    transition matches(height: u32) {
+        return then finalize(height);
+    } finalize matches(height: u32) {
+        assert_eq(height, block.height);
+    }
+}
+```
+
+## Core Functions
+
+Core functions are functions that are built into the Leo language.
+They are used to perform cryptographic operations such as hashing, commitment, and random number generation.
+
+### Hash
+
+Leo supports the following hashing algorithms: `BHP256`, `BHP512`, `BHP768`, `BHP1024`, `Pedersen64`, `Pedersen128`, `Poseidon2`, `Poseidon4`, `Poseidon8`  
+The output type of a commitment function is specified in the function name. e.g. `hash_to_group` will return a `group` type.
+Hash functions take any type as an argument.
+
+```leo showLineNumbers
+let a: scalar = BHP256::hash_to_scalar(1u8);
+let b: address = Pedersen64::hash_to_address(1u128);
+let c: group = Poseidon2::hash_to_group(1field);
+```
+[See all hash functions](./04_operators.md#table-of-cryptographic-operators)
+
+### Commit
+
+Leo supports the following commitment algorithms: `BHP256`, `BHP512`, `BHP768`, `BHP1024`, `Pedersen64`, `Pedersen128`  
+The output type of a commitment function is specified in the function name. e.g. `commit_to_group` will return a `group` type.  
+The first argument can be any type. The second argument must be a `field` type and is used as a blinding factor.
+
+```leo showLineNumbers
+let a: group = BHP256::commit_to_group(1u8, 2field);
+let b: address = Pedersen64::commit_to_address(1u128, 2field);
+```
+
+[See all commitment functions](./04_operators.md#table-of-cryptographic-operators)
+
+### Random
+
+Leo supports the `ChaCha` random number generation algorithm.  
+The output type of a random function is specified in the function name. e.g. `rand_group` will return a `group` type.  
+**Random functions are only valid in a `finalize` context.**
+
+```leo showLineNumbers
+let a: group = ChaCha::rand_group();
+let b: u32 = ChaCha::rand_u32();
+```
+
+## Deprecated Syntax
+
+#### Increment and Decrement
+
+`increment()` and `decrement()` functions are deprecated as of Leo v1.7.0.
+Please use the [`Mapping::set()`](#set) function instead.
+
+```leo showLineNumbers
+program transfer.aleo {
+    // On-chain storage of an `account` map,
+    // with `address` as the key,
+    // and `u64` as the value.
+    mapping account: address => u64;
+
+    transition transfer_public(...) {...}
+
+    finalize transfer_public(
+        public sender: address,
+        public receiver: address,
+        public amount: u64
+    ) {
+        // Decrements `account[sender]` by `amount`.
+        // If `account[sender]` does not exist, it will be created.
+        // If `account[sender] - amount` underflows, `transfer_public` is reverted.
+        let sender_amount: u64 = Mapping::get_or_use(account, sender, 0u64);
+        Mapping::set(account, sender, sender_amount - amount);
+
+        // Increments `account[receiver]` by `amount`.
+        // If `account[receiver]` does not exist, it will be created.
+        // If `account[receiver] + amount` overflows, `transfer_public` is reverted.
+        let receiver_amount: u64 = Mapping::get_or_use(account, receiver, 0u64);
+        Mapping::set(account, receiver, receiver_amount + amount);
+    }
+}
+```
