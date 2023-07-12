@@ -6,17 +6,6 @@ sidebar_label: Development Client
 <a name="DevelopmentClient"></a>
 
 ## Overview
-<p>Aleo Development Client for usage with an Aleo Development Server. This client is meant
-to provide a typescript &amp; javascript api for deploying and executing programs on the
-Aleo Network using an Aleo Development Server. An Aleo Development Server is a rust-based
-server which runs all the proving &amp; verification operations needed to deploy and execute
-programs and then posts program deployments and executions to the Aleo Network. This client
-will send RESTful requests to that server and return the resulting transaction_id.</p>
-<p>It requires an Aleo Development Server to be running locally. If one is not running, this
-client will not work.</p>
-<p>Information on how to run an Aleo Development Server can be found here:
-https://github.com/AleoHQ/sdk/rust/develop/README.md</p>
-
 **Kind**: global class  
 
 * [DevelopmentClient](#DevelopmentClient)
