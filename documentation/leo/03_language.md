@@ -395,7 +395,11 @@ mapping account: address => u64;
 #### Mapping Operations
 
 The mapping struct allows the programmer to apply updates to a program mapping data structure by calling one of the
-following functions. **Mapping operations are only allowed in the finalize function of a transition.**
+following functions. 
+
+:::info
+Mapping operations are only allowed in a [finalize function](#finalize-function).
+:::
 
 ```leo showLineNumbers
 program test.aleo {
@@ -584,8 +588,11 @@ program test.aleo {
 ```
 
 ### block.height
-Returns the height of the current block.  
-**`block.height` is only valid in a `finalize` context.**
+Returns the height of the current block.
+
+:::info
+`block.height` is only allowed in a [finalize function](#finalize-function).
+:::
 
 ```leo showLineNumbers
 program test.aleo {
@@ -601,6 +608,20 @@ program test.aleo {
 
 Core functions are functions that are built into the Leo language.
 They are used to perform cryptographic operations such as hashing, commitment, and random number generation.
+
+### Assert and AssertEq
+
+`assert` and `assert_eq` are used to verify that a condition is true.
+If the condition is false, the program will fail.
+
+```leo showLineNumbers
+program test.aleo {
+    transition matches() {
+        assert(true);
+        assert_eq(1u8, 1u8);
+    }
+}
+```
 
 ### Hash
 
@@ -632,12 +653,17 @@ let b: address = Pedersen64::commit_to_address(1u128, 2field);
 
 Leo supports the `ChaCha` random number generation algorithm.  
 The output type of a random function is specified in the function name. e.g. `rand_group` will return a `group` type.  
-**Random functions are only valid in a `finalize` context.**
+
+:::info
+Random functions are only allowed in a [finalize function](#finalize-function).
+:::
 
 ```leo showLineNumbers
 let a: group = ChaCha::rand_group();
 let b: u32 = ChaCha::rand_u32();
 ```
+
+[See all random functions](./04_operators.md#table-of-cryptographic-operators)
 
 ## Deprecated Syntax
 
