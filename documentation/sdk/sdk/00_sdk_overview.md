@@ -1,5 +1,5 @@
 ---
-id: sdk
+id: overview
 sidebar_label: Overview
 ---
 
@@ -23,13 +23,9 @@ Happy hacking!
 2. To regenerate the documentation, run `npx jsdoc --configure jsdoc.json --verbose`
 
 ## Aleo Tools
-<!-- markdown-link-check-disable -->
 
-[Aleo SDK account generator](https://aleo.tools/)
+[Aleo SDK account generator](https://aleohq.github.io/aleo/)
 
 [Aleo Home](https://www.aleo.org/)
-
-<!-- markdown-link-check-enable -->
-
 
 You can visit the [SnarkVM repo](https://github.com/AleoHQ/snarkVM) and [SnarkOS repo](https://github.com/AleoHQ/snarkOS) to go deep into the code of aleo infrastructure
