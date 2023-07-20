@@ -8,7 +8,7 @@ sidebar_label: Hello Aleo
 To create a new project, we'll use the `new` command. Our project:
 
 ``` bash
-aleo new foo
+snarkvm new foo
 ```
 
 This will create **foo** directory and the files with the basic structure of the project:
@@ -30,22 +30,59 @@ function hello:
     output r2 as u32.private;
 ```
 
-To compile the project, run in the project directory:
+You can run a program with the `snarkvm run` command, followed by the function name you want to run and its input parameters:
 
 ``` bash
-aleo build
+snarkvm run hello 2u32 3u32
 ```
 
 You will see output like this:
 
 ```bash
-⏳ Compiling 'foo.aleo'...
  • Loaded universal setup (in 1478 ms)
- • Built 'hello' (in 3250 ms)
-✅ Built 'foo.aleo' (in "~/foo")
+
+⛓  Constraints
+
+ •  'foo.aleo/hello' - 35 constraints (called 1 time)
+
+➡️  Output
+
+ • 5u32
+
+✅ Finished 'foo.aleo/hello' (in "/Users/collin/code/snarkVM/foo")
 ```
 
-First, a "universal setup" is loaded into your environment. You can read more about this in the [Marlin paper](https://eprint.iacr.org/2019/1047.pdf).
+As you can see, the output has the `5u32` value, representing the sum of the inputs.
+
+## 2. Executing a program
+
+You can execute a program with the `snarkvm execute` command, followed by the function name you want to execute and its input parameters:
+
+``` bash
+snarkvm execute hello 2u32 3u32
+```
+
+When the execution is finished, you should see the following output:
+
+```bash
+ • Loaded universal setup (in 1478 ms)
+
+⛓  Constraints
+
+ •  'foo.aleo/hello' - 35 constraints (called 1 time)
+
+➡️  Output
+
+ • 5u32
+ 
+  {"type":"execute","id":"at1 ... (transaction object truncated for brevity)
+
+✅ Executed 'foo.aleo/hello' (in "/Users/collin/code/snarkVM/foo")
+```
+
+As you can see, the output has the `5u32` value, representing the sum of the inputs.
+
+A "universal setup" is loaded into your environment. You can read more about this in the [Marlin paper](https://eprint.iacr.org/2019/1047.pdf).
 
 Once the universal setup is ready, every function in your `main.aleo` file is built, generating this in the output folder:
 
@@ -54,27 +91,6 @@ Once the universal setup is ready, every function in your `main.aleo` file is bu
 - **main.avm** the bytecode of your aleo program to be run by the VM.
 
 As you can already guess, we have only one `.avm` file for the whole program, but a prover and verifier for every function.
-
-## 2. Running a program
-
-You can run a program with the `aleo run` command, followed by the function name you want to execute and its input parameters:
-
-``` bash
-aleo run hello 2u32 3u32
-```
-
-When the execution is finished, you should see the following output:
-
-``` bash
-🚀 Executing 'foo.aleo/hello'...
- • Calling 'foo.aleo/hello'...
- • Executed 'hello' (in 1170 ms)
-➡️  Output
- • 5u32
-✅ Executed 'foo.aleo/hello' (in "[...]/foo")
-```
-
-As you can see, the output has the `5u32` value, representing the sum of the inputs.
 
 ## 3. Overview of a program
 
@@ -156,7 +172,6 @@ u32
 u64
 u128
 scalar
-string
 ```
 
 Users can define custom types using the `struct` or `record` keywords. We will explore these in the next few sections.
@@ -207,9 +222,6 @@ aleo clean && aleo run sum_one_to_array3 "{a0: 0u32, a1: 1u32, a2: 2u32}"
 And we get the new `array3` element as output:
 
 ```bash
-🚀 Executing 'foo.aleo/sum_one_to_array3'...
- • Calling 'foo.aleo/sum_one_to_array3'...
- • Executed 'sum_one_to_array3' (in 1331 ms)
 ➡️  Output
  • {
   a0: 1u32,
@@ -235,18 +247,12 @@ Records are important because they represent the basic Aleo structure to handle 
 
 When running an Aleo function, only registers that belong to the application address can be passed as input registers. Otherwise, an error is raised and the application doesn't run.
 
-You can find your development application address inside the `program.json` file:
+You can find your development application address inside the `.env` file:
 
 ```json
 {
-    "program": "foo.aleo",
-    "version": "0.0.0",
-    "description": "",
-    "development": {
-        "private_key": "APrivateKey1zkpFsQNXJwdvjKs9bRsM91KcwJW1gW4CDtF3FJbgVBAvPds",
-        "address": "aleo1x5nz5u4j50w482t5xtqc3jdwly9s8saaxlgjz0wvmuzmxv2l5q9qmypx09"
-    },
-    "license": "MIT"
+    NETWORK=testnet3
+    PRIVATE_KEY=APrivateKey1zkpFsQNXJwdvjKs9bRsM91KcwJW1gW4CDtF3FJbgVBAvPds
 }
 ```
 
@@ -302,7 +308,7 @@ To run this function, the first parameter is the input record of the program. Th
 
 Where:
 
-- owner: the public address of the program, as found in the `development.address` of the `build/program.json` file.
+- owner: the public address of the program, as found in the `PRIVATE_KEY` of the `.env` file.
 - microcredits: the amount of credits that the record owns.
 - other parameters: depending on the program itself (in this example, we used the parameter _amount_ with the value 50).
 

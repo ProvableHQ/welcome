@@ -1,44 +1,32 @@
 ---
 id: commands
-title: Aleo Command Line Struct
+title: The SnarkVM Command Line Interface
 sidebar_label: Commands
 ---
 
 # List of Commands
 :::tip
-You can print the list of commands by running `aleo --help`
+You can print the list of commands by running `snarkvm --help`
 :::
 
-1. [aleo account](#1-aleo-account)
-2. [aleo new](#2-aleo-new)
-3. [aleo build](#3-aleo-build)
-4. [aleo run](#4-aleo-run)
-5. [aleo clean](#5-aleo-clean)
-6. [aleo update](#6-aleo-update)
+* [snarkvm new](#aleo-new)
+* [snarkvm build](#aleo-build)
+* [snarkvm run](#aleo-run)
+* [snarkvm execute](#aleo-execute)
+* [snarkvm clean](#aleo-clean)
+* [snarkvm update](#aleo-update)
 
 [//]: # (5. [aleo node]&#40;#5-aleo-node&#41;)
 [//]: # (5. [aleo deploy]&#40;#6-aleo-deploy&#41;)
 
-## 1. `aleo account`
-
-To create a new account, run:
-```bash
-aleo account new
-```
-
-To create a new account from seeded randomness, run:
-```bash
-aleo account new -s {$SEED}
-```
-
 The Aleo private key, view key, and address will be printed to console.
 See [`concepts/accounts`](../concepts/00_accounts.md) for more information.
 
-## 2. `aleo new`
+## `snarkvm new`
 
 To create a new package, run:
 ```bash
-aleo new {$NAME}
+snarkvm new {$NAME}
 ```
 
 Valid package names are snake_case: lowercase letters and numbers separated by underscore.
@@ -52,96 +40,80 @@ package-name/
 └── main.leo # Your program file
 ```
 
-## 3. `aleo build`
-
+## `snarkvm build`
+:::info
+This command is deprecated as of SnarkVM `v0.14.5`. It will be removed in a future release.
+:::
 To compile your program and verify that it builds properly, run:
 ```bash
-aleo build
+snarkvm build
 ```
 
 To compile your program in offline mode run:
 ```bash
-aleo build --offline
+snarkvm build --offline
 ```
 
-To compile your program to a specified endpoint run:
+## `snarkvm run`
+
+To run your Aleo program function run:
 ```bash
-aleo build --endpoint {$ENDPOINT}
+snarkvm run {$FUNCTION} {$INPUTS}
+
+// Example
+snarkvm run hello 2u32 3u32
 ```
 
-## 4. `aleo run`
+To run your Aleo program function in offline mode run:
+```bash
+snarkvm run {$FUNCTION} {$INPUTS} --offline
+```
+
+To run your Aleo program function to a specified endpoint run:
+```bash
+snarkvm run {$FUNCTION} {$INPUTS} --endpoint {$ENDPOINT}
+```
+
+## `snarkvm execute`
 
 To execute your Aleo program function run:
 ```bash
-aleo run {$FUNCTION} {$INPUTS}
+snarkvm execute {$FUNCTION} {$INPUTS}
 
 // Example
-aleo run hello 2u32 3u32
+snarkvm run hello 2u32 3u32
 ```
 
 To execute your Aleo program function in offline mode run:
 ```bash
-aleo run {$FUNCTION} {$INPUTS} --offline
+snarkvm execute {$FUNCTION} {$INPUTS} --offline
 ```
 
 To execute your Aleo program function to a specified endpoint run:
 ```bash
-aleo run {$FUNCTION} {$INPUTS} --endpoint {$ENDPOINT}
+snarkvm execute {$FUNCTION} {$INPUTS} --endpoint {$ENDPOINT}
 ```
 
-[//]: # ()
-[//]: # (## 5. `aleo node`)
-
-[//]: # ()
-[//]: # (To start a local development node and deploy the local program at genesis run:)
-
-[//]: # (```bash)
-
-[//]: # (aleo node start)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (To start a local development node without deploying the local program at genesis run:)
-
-[//]: # (```bash)
-
-[//]: # (aleo node start --nodeploy)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (## 6. `aleo deploy`)
-
-[//]: # ()
-[//]: # (To deploy a program to Aleo Testnet3 run:)
-
-[//]: # (```bash)
-
-[//]: # (aleo deploy)
-
-[//]: # (```)
-
-## 5. `aleo clean`
+## `snarkvm clean`
 
 To clean the Aleo package build directory run:
 ```bash
-aleo clean
+snarkvm clean
 ```
 
-## 6. `aleo update`
+## `snarkvm update`
 
-To update the Aleo SDK to the latest version run:
+To update SnarkVM to the latest version run:
 ```
-aleo update
+snarkvm update
 ```
 
 To list the available versions of Aleo run:
 ```
-aleo update --list
+snarkvm update --list
 ```
 
-To update the Aleo SDK and suppress outputs to terminal run:
+To update SnarkVM and suppress outputs to terminal run:
 ```
-aleo update --quiet
+snarkvm update --quiet
 ```
