@@ -22,22 +22,22 @@ cargo --version
 
 ### 2. Build Source Code
 
-You can install the Aleo SDK by building from the source code as follows:
+You can install SnarkVM by building from the source code as follows:
 
 ```bash
 # Download the source code
-git clone https://github.com/AleoHQ/aleo
-cd aleo
+git clone https://github.com/AleoHQ/snarkVM
+cd snarkvm
 
 # Build in release mode
 $ cargo install --path .
 ```
 
-This will generate the executable `~/.cargo/bin/aleo`.
+This will generate the executable `~/.cargo/bin/snarkvm`.
 
-Now to use Aleo, in your terminal, run:
+Now to use the SnarkVM CLI, in your terminal, run:
 ```bash
-aleo
+snarkvm
 ```
 
 :::info
