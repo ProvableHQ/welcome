@@ -85,8 +85,7 @@ This will populate the directory `build/` (creating it if it doesn't exist) with
 
 ## `leo run`
 :::tip
-This command does not synthesize the program circuit or generate proving and verifying keys.  
-Use this command to run your program before executing it.
+Use this command to run your program before [**executing**](#leo-execute) it.
 :::
 To run a Leo transition function using inputs from the program input `.in` file.
 ```bash
@@ -98,6 +97,7 @@ To run a Leo transition function with inputs from the command line.
 ```bash
 leo run {$TRANSITION} {$INPUTS}
 ```
+This command does not synthesize the program circuit or generate proving and verifying keys.
 
 
 ```bash title="console output:"
@@ -114,11 +114,10 @@ leo run {$TRANSITION} {$INPUTS}
 
 ## `leo execute`
 :::tip
-This command synthesizes the program circuit and generates proving and verifying keys.  
 Use this command to execute your program and generate a transaction object.
 :::
 
-To execute a Leo transition function using inputs from the program input `.in` file.
+To execute a Leo transition function using inputs from the program input `.in` file.  
 ```bash
 leo execute {$TRANSITION}
 ```
@@ -128,6 +127,7 @@ To execute a Leo transition function with inputs from the command line.
 ```bash
 leo execute {$TRANSITION} {$INPUTS}
 ```
+This command synthesizes the program circuit and generates proving and verifying keys.
 
 
 ```bash title="console output:"
@@ -171,6 +171,6 @@ Checking current version... v1.8.3
 
 Checking latest released version... v1.8.3
 
-  Updating Leo is already on the latest version 1.9.0
+  Updating Leo is on the latest version 1.9.0
 
 ```
