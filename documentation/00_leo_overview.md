@@ -27,6 +27,8 @@ To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo 
 
 To view the full list of supported operators in Leo, see [**Operators**](./leo/04_operators.md).
 
+For a quick reference of Leo syntax, see the [**Leo Cheat Sheet**](./leo/09_cheatsheet.md).
+
 ## Formal Language Documentation
 
 A formal ABNF grammar specification for the syntax of Leo can be viewed [here](https://github.com/AleoHQ/grammars/blob/master/leo.abnf).
@@ -36,9 +38,11 @@ A formal ABNF grammar specification for the syntax of Leo can be viewed [here](h
 The Leo CLI provides a suite of commands to make programming in Leo easy.
 
 - [**leo new**](./leo/05_commands.md#leo-new)
-- [**leo build**](./leo/05_commands.md#leo-build)
+- [**leo build (deprecated)**](./leo/05_commands.md#leo-build)
 - [**leo run**](./leo/05_commands.md#leo-run)
+- [**leo execute**](./leo/05_commands.md#leo-execute)
 - [**leo clean**](./leo/05_commands.md#leo-clean)
+- [**leo update**](./leo/05_commands.md#leo-update)
 
 [//]: # (- [**leo deploy**]&#40;./leo/05_commands.md#leo-deploy&#41;)
 [//]: # (- [**leo node**]&#40;./leo/05_commands.md#leo-node&#41;)
