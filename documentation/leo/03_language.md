@@ -107,7 +107,7 @@ let receiver: address = aleo1ezamst4pjgj9zfxqq0fwfj8a4cjuqndmasgata3hggzqygggnyf
 ## Layout of a Leo Program
 
 A Leo program contains declarations of a [Program Scope](#program-scope), [Imports](#import)
-, [Transition Functionns](#transition-function), [Helper Functions](#helper-function), [Structs](#struct)
+, [Transition Functions](#transition-function), [Helper Functions](#helper-function), [Structs](#struct)
 , [Records](#record),
 [Mappings](#mapping), and [Finalize Functions](#finalize).
 Declarations are locally accessible within a program file.
