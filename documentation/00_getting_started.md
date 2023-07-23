@@ -50,7 +50,7 @@ Learning Leo is the fastest way to develop private applications on Aleo.
 
 ## Talks and Videos
 Talks and videos from the Aleo community.
-* Coinbase BUIDL - [**Learning LEO | Coding Private Application wtih ZK Cryptography**](https://youtu.be/LJXjtthDl6I)
+* Coinbase BUIDL - [**Learning LEO | Coding Private Application with ZK Cryptography**](https://youtu.be/LJXjtthDl6I)
 * DEVCON - [**Aleo Developer Workshop: Leo Coding & Examples**](https://youtu.be/ABPCr2TwrgE)
 * DEVCON - [**What are ZK Proofs Good For? Applications to Anonymous Identity, Sybil Prevention and Moderation**](https://youtu.be/d2n0Al0P2Jc)
 * DEVCON - [**Efficient Private Delegation of zkSNARK Provers**](https://youtu.be/mFzwp8gGn-E)
