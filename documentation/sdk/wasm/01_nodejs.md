@@ -1,7 +1,7 @@
 ---
 id: nodejs
 title: NodeJS + Browser (Single-Thread)
-sidebar_label: NodeJS + Browser (Single-Thread)
+sidebar_label: NodeJS + Browser
 ---
 
 
