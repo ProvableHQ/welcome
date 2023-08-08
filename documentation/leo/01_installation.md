@@ -14,32 +14,19 @@ Download the latest Leo release using a pre-built installer for your platform, a
     defaultValue="mac"
     values={[
         {label: 'MacOS', value: 'mac'},
-        {label: 'Windows', value: 'windows'},
-        {label: 'Ubuntu', value: 'ubuntu'},
+        {label: 'All other platforms', value: 'all_releases'}
     ]}>
     <TabItem value="mac">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.9.0/leo-v1.9.0-aarch64-apple-darwin.zip">
+        <a href="https://github.com/AleoHQ/leo/releases/latest/download/leo.zip">
             <b>Install Leo for MacOS M1</b>
         </a>
     </TabItem>
-    <TabItem value="mac">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.9.0/leo-v1.9.0-x86_64-apple-darwin.zip">
-            <b>Install Leo for MacOS Intel</b>
-        </a>
-    </TabItem>
-    <TabItem value="windows">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.9.0/leo-v1.9.0-x86_64-pc-windows-msvc.zip">
-            <b>Install Leo for Windows</b>
-        </a>
-    </TabItem>
-    <TabItem value="ubuntu">
-        <a href="https://github.com/AleoHQ/leo/releases/download/v1.9.0/leo-v1.9.0-x86_64-unknown-linux-gnu.zip">
-            <b>Install Leo for Ubuntu</b>
+    <TabItem value="all_releases">
+        <a href="https://github.com/AleoHQ/leo/releases">
+            <b>Browse all Leo releases here</b>
         </a>
     </TabItem>
 </Tabs>
-
-#### Browse all Leo releases [**here**](https://github.com/AleoHQ/leo/releases).
 
 -----
 
