@@ -21,7 +21,6 @@ Download the latest Leo release using a pre-built installer for your platform, a
             <b>Install Leo for MacOS M1</b>
         </a>
     </TabItem>
-    </TabItem>
     <TabItem value="all_releases">
         <a href="https://github.com/AleoHQ/leo/releases">
             <b>Browse all Leo releases here</b>
