@@ -17,7 +17,7 @@ Download the latest Leo release using a pre-built installer for your platform, a
         {label: 'All other platforms', value: 'all_releases'}
     ]}>
     <TabItem value="mac">
-        <a href="https://github.com/AleoHQ/leo/releases/download/latest/leo.zip">
+        <a href="https://github.com/AleoHQ/leo/releases/latest/download/leo.zip">
             <b>Install Leo for MacOS M1</b>
         </a>
     </TabItem>
