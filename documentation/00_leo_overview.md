@@ -37,12 +37,14 @@ A formal ABNF grammar specification for the syntax of Leo can be viewed [here](h
 
 The Leo CLI provides a suite of commands to make programming in Leo easy.
 
+- [**leo example**](./leo/05_commands.md#leo-example)
 - [**leo new**](./leo/05_commands.md#leo-new)
 - [**leo build (deprecated)**](./leo/05_commands.md#leo-build)
 - [**leo run**](./leo/05_commands.md#leo-run)
 - [**leo execute**](./leo/05_commands.md#leo-execute)
 - [**leo clean**](./leo/05_commands.md#leo-clean)
 - [**leo update**](./leo/05_commands.md#leo-update)
+- [**leo account**](./leo/05_commands.md#leo-account)
 
 [//]: # (- [**leo deploy**]&#40;./leo/05_commands.md#leo-deploy&#41;)
 [//]: # (- [**leo node**]&#40;./leo/05_commands.md#leo-node&#41;)
