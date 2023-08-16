@@ -22,16 +22,47 @@ The Leo CLI is a command line interface tool that comes equipped with the Leo co
 You can print the list of commands by running `leo --help`
 :::
 
+* [`example`](#leo-example) - Create a new Leo package from an example program.
 * [`new`](#leo-new) - Create a new Leo package in a new directory.
 * [`build`](#leo-build) - Compile the current package as a program.
 * [`run`](#leo-run) - Run a program with input variables.
 * [`execute`](#leo-execute) - Execute a program with input variables.
 * [`clean`](#leo-clean) - Clean the output directory.
 * [`update`](#leo-update) - Update to the latest version of Leo.
+* [`account`](#leo-account) - Create a new Aleo account.
 
 [//]: # (* [`deploy`]&#40;#leo-deploy&#41; - Deploy a program.)
 [//]: # (* [`node`]&#40;#leo-node&#41; - Start a local development server.)
 
+## `leo example`
+
+To list all available example programs, run:
+```bash
+leo example
+
+# Output:
+
+Create a new Leo example package in a new directory
+
+Usage: leo example [OPTIONS] <COMMAND>
+
+Commands:
+  lottery    A public lottery program
+  tictactoe  A standard tic-tac-toe game program
+  token      A transparent & shielded custom token program
+  help       Print this message or the help of the given subcommand(s)
+
+Options:
+  -d                 Print additional information for debugging
+  -q                 Suppress CLI output
+      --path <PATH>  Optional path to Leo program root folder
+  -h, --help         Print help
+```
+
+To create a new Leo package from an example program, run:
+```bash
+leo example {$NAME}
+```
 
 ## `leo new`
 
@@ -153,7 +184,7 @@ leo clean
   Leo cleaned the build directory (in "/build/")
 ```
 
-### `leo update`
+## `leo update`
 
 To download and install the latest Leo version run:
 
@@ -173,4 +204,51 @@ Checking latest released version... v1.8.3
 
   Updating Leo is on the latest version 1.9.0
 
+```
+
+## `leo account`
+
+To create a new Aleo account, run:
+
+```bash
+leo account new
+
+# Output:
+  Private Key  APrivateKey1zkp...
+     View Key  AViewKey1...
+      Address  aleo1...
+```
+
+To import an existing Aleo account, run:
+
+```bash
+leo account import {$PRIVATE_KEY}
+```
+
+To create a new account and save it to your .env file, run:
+
+```bash
+leo account new --write
+````
+
+To list all options
+
+```bash
+leo account --help
+
+# Output:
+Create a new Aleo account
+
+Usage: leo account [OPTIONS] <COMMAND>
+
+Commands:
+  new     Generates a new Aleo account
+  import  Derive an Aleo account from a private key
+  help    Print this message or the help of the given subcommand(s)
+
+Options:
+  -d                 Print additional information for debugging
+  -q                 Suppress CLI output
+      --path <PATH>  Optional path to Leo program root folder
+  -h, --help         Print help
 ```
