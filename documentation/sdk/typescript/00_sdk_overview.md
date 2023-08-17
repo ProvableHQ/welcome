@@ -132,7 +132,7 @@ was run correctly. Keeping program inputs and outputs private allows developers 
 Zero-Knowledge programs are written in one of two languages:
 1. [Leo](https://developer.aleo.org/leo/language): A high level, developer friendly language for developing
    zero knowledge programs.
-2. [Aleo Instructions](https://developer.aleo.org/aleo/instructions): A low level language that provides developers fine
+2. [Aleo Instructions](https://developer.aleo.org/aleo/): A low level language that provides developers fine
    grained control over the execution flow of zero knowledge programs. Leo programs are compiled into Aleo Instructions
    under the hood.
 
