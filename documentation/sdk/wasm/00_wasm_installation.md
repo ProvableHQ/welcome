@@ -1,12 +1,13 @@
 ---
-id: overview
-title: Aleo Wasm
-sidebar_label: Overview
+id: installation
+title: Wasm
+sidebar_label: Installation
 ---
 
 <!-- markdown-link-check-disable -->
-[![Crates.io](https://img.shields.io/crates/v/aleo-wasm.svg?color=neon)](https://crates.io/crates/aleo-wasm)
-[![Authors](https://img.shields.io/badge/authors-Aleo-orange.svg)](https://aleo.org)
+<a href="https://www.npmjs.com/package/@aleohq/wasm"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/%40aleohq%2Fwasm?label=NPM%20-%20Aleo%20Wasm&labelColor=green&color=blue" /></a>
+<a href="https://www.npmjs.com/package/@aleohq/nodejs"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/%40aleohq%2Fnodejs?label=NPM%20-%20Aleo%20Nodejs&labelColor=green&color=blue" /></a>
+<a href="https://crates.io/crates/aleo-wasm"> <img alt="Aleo-Wasm" src="https://img.shields.io/crates/v/aleo-wasm.svg?color=neon" /></a>
 
 [![github]](https://github.com/AleoHQ/sdk)&ensp;[![crates-io]](https://crates.io/crates/aleo-wasm)&ensp;[![docs-rs]](https://docs.rs/aleo-wasm/latest/aleo-wasm/)
 <!-- markdown-link-check-enable -->
