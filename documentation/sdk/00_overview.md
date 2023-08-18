@@ -19,9 +19,8 @@ All of this functionality is demonstrated on [Aleo.tools](https://aleo.tools).
 The Aleo SDK is divided into three Typescript/Javascript packages
 
 ## 1. [Aleo SDK](./typescript/00_sdk_overview.md) - Build Zero Knowledge Web Apps
-<!-- markdown-link-check-disable -->
+
 <a href="https://www.npmjs.com/package/@aleohq/sdk"> <img alt="Aleo SDK" src="https://img.shields.io/npm/l/%40aleohq%2Fsdk?label=NPM%20-%20Aleo%20SDK&labelColor=green&color=blue" /></a>
-<!-- markdown-link-check-enable -->
 
 
 The official Aleo SDK providing Javascript/Typescript tools for creating zero knowledge app.
@@ -35,9 +34,8 @@ first zero knowledge web app.
 
 
 ## 2. [Create-Aleo-App](./create-aleo-app/00_app_installation.md) - Zero Knowledge Web App Examples
-<!-- markdown-link-check-disable -->
+
 <a href="https://www.npmjs.com/package/create-aleo-app"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/create-aleo-app?label=NPM%20-%20Create-Aleo-App&labelColor=green&color=blue" /></a>
-<!-- markdown-link-check-enable -->
 
 Create-aleo-app provides zero-knowledge web app examples in common web frameworks such as React. Developers looking to
 start with working examples should start here.
@@ -53,11 +51,10 @@ npm create aleo-app@latest
 #### Source: [`sdk/create-aleo-app`](https://github.com/AleoHQ/sdk/tree/testnet3/create-aleo-app)
 
 ## 3. [Aleo-Wasm](./wasm/00_wasm_installation.md) - Zero Knowledge Algorithms in JavaScript + WebAssembly
-<!-- markdown-link-check-disable -->
+
 <a href="https://www.npmjs.com/package/@aleohq/wasm"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/%40aleohq%2Fwasm?label=NPM%20-%20Aleo%20Wasm&labelColor=green&color=blue" /></a>
 <a href="https://www.npmjs.com/package/@aleohq/nodejs"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/%40aleohq%2Fnodejs?label=NPM%20-%20Aleo%20Nodejs&labelColor=green&color=blue" /></a>
 <a href="https://crates.io/crates/aleo-wasm"> <img alt="Aleo-Wasm" src="https://img.shields.io/crates/v/aleo-wasm.svg?color=neon" /></a>
-<!-- markdown-link-check-enable -->
 
 Aleo Wasm is a Rust crate which compiles Aleo code responsible for creating and executing zero knowledge programs into
 WebAssembly.
