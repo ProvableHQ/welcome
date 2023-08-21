@@ -1,5 +1,5 @@
 ---
-id: overview
+id: sdk
 title: Aleo SDK
 sidebar_label: Overview
 ---
@@ -18,7 +18,7 @@ All of this functionality is demonstrated on [Aleo.tools](https://aleo.tools).
 
 The Aleo SDK is divided into three Typescript/Javascript packages
 
-## 1. [Aleo SDK](./typescript/00_sdk_overview.md) - Build Zero Knowledge Web Apps
+## 1. [Aleo SDK](./sdk/typescript/00_sdk_overview.md) - Build Zero Knowledge Web Apps
 
 <a href="https://www.npmjs.com/package/@aleohq/sdk"> <img alt="Aleo SDK" src="https://img.shields.io/npm/l/%40aleohq%2Fsdk?label=NPM%20-%20Aleo%20SDK&labelColor=green&color=blue" /></a>
 
@@ -27,13 +27,13 @@ The official Aleo SDK providing Javascript/Typescript tools for creating zero kn
 
 ### ⚡ Build your own app
 
-Start here with the [documentation](./typescript/00_sdk_overview.md) and follow the instructions to install the [Aleo SDK](https://github.com/AleoHQ/sdk/tree/testnet3/sdk#readme) to get started building your
+Start here with the [documentation](./sdk/typescript/00_sdk_overview.md) and follow the instructions to install the [Aleo SDK](https://github.com/AleoHQ/sdk/tree/testnet3/sdk#readme) to get started building your
 first zero knowledge web app.
 
 #### Source: [`sdk/sdk`](https://github.com/AleoHQ/sdk/tree/testnet3/sdk)
 
 
-## 2. [Create-Aleo-App](./create-aleo-app/00_app_installation.md) - Zero Knowledge Web App Examples
+## 2. [Create-Aleo-App](./sdk/create-aleo-app/00_app_installation.md) - Zero Knowledge Web App Examples
 
 <a href="https://www.npmjs.com/package/create-aleo-app"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/create-aleo-app?label=NPM%20-%20Create-Aleo-App&labelColor=green&color=blue" /></a>
 
@@ -50,7 +50,7 @@ npm create aleo-app@latest
 
 #### Source: [`sdk/create-aleo-app`](https://github.com/AleoHQ/sdk/tree/testnet3/create-aleo-app)
 
-## 3. [Aleo-Wasm](./wasm/00_wasm_installation.md) - Zero Knowledge Algorithms in JavaScript + WebAssembly
+## 3. [Aleo-Wasm](./sdk/wasm/00_wasm_installation.md) - Zero Knowledge Algorithms in JavaScript + WebAssembly
 
 <a href="https://www.npmjs.com/package/@aleohq/wasm"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/%40aleohq%2Fwasm?label=NPM%20-%20Aleo%20Wasm&labelColor=green&color=blue" /></a>
 <a href="https://www.npmjs.com/package/@aleohq/nodejs"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/%40aleohq%2Fnodejs?label=NPM%20-%20Aleo%20Nodejs&labelColor=green&color=blue" /></a>
@@ -61,7 +61,7 @@ WebAssembly.
 
 When compiled with `wasm-pack` JavaScript bindings are generated for the WebAssembly allowing Aleo zero
 knowledge programs to be used in the browser ande NodeJS. This package is available on NPM (linked above). The 
-[documentation](./wasm/00_wasm_installation.md) provides instructions for compiling this [crate](https://github.com/AleoHQ/sdk/tree/testnet3/wasm) and using it in web projects for those interested in building from
+[documentation](./sdk/wasm/00_wasm_installation.md) provides instructions for compiling this [crate](https://github.com/AleoHQ/sdk/tree/testnet3/wasm) and using it in web projects for those interested in building from
 source.
 
 ❗ Currently program execution is only available in web Browsers. However, account, program and data management within
