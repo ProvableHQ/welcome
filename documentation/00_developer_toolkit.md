@@ -176,4 +176,6 @@ Check out the following resources:
 - This "New Developer Toolkit" is a simple set of instructions you can copy-paste into your terminal, line-by-line, without any required dependencies other than the latest MacOS. After completing this guide, you'll have a working Leo application, be able to run, compile, and generate Leo examples, and have an example of Leo code on your GitHub profile that you can share with friends, family, or future employers.
 
 ### What the "New Developer Toolkit" *is not*
+<!-- markdown-link-check-disable -->
 The "The New Developer Toolkit" is not exhaustive in that it does not go over the basics of Leo syntax, its folder structure, or any aspects of zero-knowledge. For that, check out the ["Continue your Leo journey"](./new_developer_toolkit.md#continue-your-leo-journey) section.
+<!-- markdown-link-check-enable -->
