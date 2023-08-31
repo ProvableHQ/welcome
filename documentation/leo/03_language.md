@@ -58,7 +58,7 @@ let b: u8 = 2; // implicit type -- not supported
 ### Field Elements
 
 Leo supports the `field` type for elements of the base field of the elliptic curve.
-These are unsigned integers less than the modulus of the base field.  Showing the
+These are unsigned integers less than the modulus of the base field.  The following are the
 smallest and largest field elements.
 
 ```leo
