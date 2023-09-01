@@ -14,7 +14,7 @@ There is no `undefined` or `null` value in Aleo instructions. When assigning a n
 Expressions in Aleo instructions are always **passed by value**, which means their values are always copied when they are used as function inputs or in right sides of assignments.
 
 ### Register based
-There are no variable names in Aleo instructions.
+There are no variable names in Aleo instructions. 
 All variables are stored in registers denoted `rX` where `X` is a non-negative whole number starting from 0 `r0, r1, r2, etc.`.
 
 ## Data Types and Values
@@ -111,7 +111,7 @@ program _foo.aleo;  // invalid
 
 ### Import
 
-An import is declared as `import {ProgramID};`.
+An import is declared as `import {ProgramID};`.  
 Imports fetch other declarations by their program ID and bring them into the current file scope.
 You can import dependencies that are downloaded to the `imports` directory.
 
@@ -123,7 +123,7 @@ program hello.aleo;
 
 ### Function
 
-A function is declared as `function {name}:`.
+A function is declared as `function {name}:`.  
 Functions contain instructions that can compute values.
 Functions must be in a program's current scope to be called.
 
@@ -137,18 +137,18 @@ function foo:
 
 #### Function Inputs
 
-A function input is declared as `input {register} as {type}.{visibility};`.
+A function input is declared as `input {register} as {type}.{visibility};`.  
 Function inputs must be declared just after the function name declaration.
 
 ```aleo showLineNumbers
 // The function `foo` takes a single input `r0` with type `field` and visibility `public`.
 function foo:
-    input r0 as field.public;
+    input r0 as field.public; 
 ```
 
 #### Function Outputs
 
-A function output is declared as `output {register} as {type}.{visibility};`.
+A function output is declared as `output {register} as {type}.{visibility};`.  
 Function outputs must be declared at the end of the function definition.
 
 ```aleo showLineNumbers
@@ -158,13 +158,13 @@ Function outputs must be declared at the end of the function definition.
 
 #### Call a Function
 In the Aleo protocol, calling a function creates a transition that can consume and produce records on-chain.
-Use the `aleo run` CLI command to pass inputs to a function and execute the program.
+Use the `aleo run` CLI command to pass inputs to a function and execute the program.  
 In Testnet3, program functions cannot call other internal program functions.
 If you would like to develop "helper functions" that are called internally within a program, try writing a `closure`.
 
 #### Call an Imported Function
 Aleo programs can externally call other Aleo programs using the `call {program}/{function} {register} into {register}` instruction.
-```aleo
+```aleo 
 import foo.aleo;
 
 program bar.aleo;
@@ -177,7 +177,7 @@ function call_external:
 
 ### Closure
 
-A closure is declared as `closure {name}:`.
+A closure is declared as `closure {name}:`.  
 Closures contain instructions that can compute values.
 Closures are helper functions that cannot be executed directly. Closures may be called by other functions.
 
@@ -191,7 +191,7 @@ closure foo:
 
 #### Call a Closure
 Aleo programs can internally call other Aleo closures using the `call {name} {register} into {register}` instruction.
-```aleo
+```aleo 
 program bar.aleo;
 
 function call_internal:
@@ -203,7 +203,7 @@ function call_internal:
 
 ### Struct
 
-A struct is a data type declared as `struct {name}:`.
+A struct is a data type declared as `struct {name}:`.  
 Structs contain component declarations `{name} as {type}`.
 
 ```aleo showLineNumbers
@@ -225,9 +225,9 @@ function new_array3:
 
 ### Record
 
-A [record](../concepts/02_records.md) type is declared as `record {name}:`.
-Records contain component declarations `{name} as {type}.{visibility};`.
-Record data structures must contain the `owner` declaration as shown below.
+A [record](../concepts/02_records.md) type is declared as `record {name}:`.  
+Records contain component declarations `{name} as {type}.{visibility};`.  
+Record data structures must contain the `owner` declaration as shown below.  
 When passing a record as input to a program function the `_nonce as group.{visibility}` declaration is also required.
 
 ```aleo showLineNumbers
@@ -252,7 +252,7 @@ function new_token:
 
 ### Mapping
 
-A mapping is declared as `mapping {name}:`.
+A mapping is declared as `mapping {name}:`.  
 Mappings contain key-value pairs.
 Mappings must be defined within a program scope.
 Mappings are stored publicly on-chain. It is not possible to store data privately in a mapping.
@@ -287,14 +287,14 @@ finalize transfer_public:
     input r1 as address.public;
     // Input the amount.
     input r2 as u64.public;
-
+    
     // Decrements `account[r0]` by `r2`.
     // If `account[r0]` does not exist, 0u64 is used.
     // If `account[r0] - r2` underflows, `transfer_public` is reverted.
     get.or_use account[r0] 0u64 into r3;
     sub r3 r2 into r4;
     set r4 into account[r0];
-
+    
     // Increments `account[r1]` by `r2`.
     // If `account[r1]` does not exist, 0u64 is used.
     // If `account[r1] + r2` overflows, `transfer_public` is reverted.
@@ -317,13 +317,13 @@ A remove command that removes a key-value pair from a mapping, e.g. `remove acco
 
 ### Finalize
 
-A finalize is declared as `finalize {name}:`.
+A finalize is declared as `finalize {name}:`.  
 A finalize must immediately follow a [function](#function), and must have the same name;
 it is associated with the function and is executed on chain,
 after the zero-knowledge proof of the execution of the associated function is verified;
-a finalize *finalizes* a function on chain.
-Upon success of the finalize function, the program logic is executed.
-Upon failure of the finalize function, the program logic is reverted.
+a finalize *finalizes* a function on chain.  
+Upon success of the finalize function, the program logic is executed.  
+Upon failure of the finalize function, the program logic is reverted.  
 
 ```aleo showLineNumbers
 // The `transfer_public_to_private` function turns a specified amount
@@ -336,13 +336,13 @@ function transfer_public_to_private:
     input r0 as address.public;
     // Input the amount.
     input r1 as u64.public;
-
+    
     // Construct a record for the receiver.
     cast r0 r1 into r2 as credits.record;
-
+    
     // Output the record of the receiver.
     output r2 as credits.record;
-
+    
     // Decrement the balance of the sender publicly.
     finalize self.caller r1;
 
@@ -351,15 +351,15 @@ finalize transfer_public_to_private:
     input r0 as address.public;
     // Input the amount.
     input r1 as u64.public;
-
+    
     // Retrieve the balance of the sender.
     // If `account[r0]` does not exist, 0u64 is used.
     get.or_use account[r0] 0u64 into r2;
-
+    
     // Decrements `account[r0]` by `r1`.
     // If `r2 - r1` underflows, `trasfer_public_to_private` is reverted.
     sub r2 r1 into r3;
-
+    
     // Updates the balance of the sender.
     set r3 into account[r0];
 ```
@@ -369,7 +369,7 @@ finalize transfer_public_to_private:
 The following commands are supported in Aleo Instructions to provide additional program functionality.
 
 #### self.caller
-The `self.caller` command returns the address of the caller of the program.
+The `self.caller` command returns the address of the caller of the program.  
 This can be useful for managing access control to a program.
 In the above example, the `transfer_public_to_private` function decrements the balance of the sender publicly using `self.caller`.
 
@@ -384,9 +384,9 @@ assert.eq block.height 100u64;
 
 #### rand.chacha
 
-The `rand.chacha` command returns a random number generated by the [ChaCha20 algorithm](http://cr.yp.to/chacha.html).
-This command supports sampling a random `address`, `boolean`, `field`, `group`, `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`, and `scalar`.
-Up to two additional seeds can be provided to the `rand.chacha` command.
+The `rand.chacha` command returns a random number generated by the [ChaCha20 algorithm](http://cr.yp.to/chacha.html).  
+This command supports sampling a random `address`, `boolean`, `field`, `group`, `i8`, `i16`, `i32`, `i64`, `i128`, `u8`, `u16`, `u32`, `u64`, `u128`, and `scalar`.  
+Up to two additional seeds can be provided to the `rand.chacha` command.  
 Currently, only ChaCha20 is supported, however, in the future, other random number generators may be supported.
 
 ```aleo
@@ -426,7 +426,7 @@ Checkout the [Aleo Instructions opcodes](./04_opcodes.md) for a full list of sup
 
 #### Commit
 
-Aleo Instructions supports the following syntax for committing to standard types.
+Aleo Instructions supports the following syntax for committing to standard types.  
 Note that the `commit` command requires any type as the first argument, and a `scalar` as the second argument.
 ```aleo
 commit.bhp256 r0 r1 into r2 as address;
@@ -441,8 +441,8 @@ commit.ped128 ...;
 Checkout the [Aleo Instructions opcodes](./04_opcodes.md) for a full list of supported commitment algorithms.
 
 #### position, branch.eq, branch.neq
-The `position` command, e.g. `position exit`, indicates a point to branch execution to.
-The `branch.eq` command, e.g. `branch.eq r0 r1 to exit`, which branches execution to the position indicated by `exit` if `r0` and `r1` are equal.
+The `position` command, e.g. `position exit`, indicates a point to branch execution to.  
+The `branch.eq` command, e.g. `branch.eq r0 r1 to exit`, which branches execution to the position indicated by `exit` if `r0` and `r1` are equal.  
 The `branch.neq` command, e.g. `branch.neq r0 r1 to exit`, which branches execution to the position indicated by `exit` if `r0` and `r1` are not equal.
 
 ** Example **

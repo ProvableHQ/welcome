@@ -46,7 +46,7 @@ Higher bit length integers generate more constraints in the circuit, which can s
 
 #### A Note on Leo Integers
 
-Leo will not default to an integer type. The definition of a integer **must** include an explicit type.
+Leo will not default to an integer type. The definition of a integer **must** include an explicit type.  
 **Type casting is supported as of Leo v1.8.2**
 
 ```leo
@@ -396,7 +396,7 @@ mapping account: address => u64;
 #### Mapping Operations
 
 The mapping struct allows the programmer to apply updates to a program mapping data structure by calling one of the
-following functions.
+following functions. 
 
 :::info
 Mapping operations are only allowed in a [finalize function](#finalize-function).
@@ -428,8 +428,8 @@ If the value at `addr` does not exist, then the program will fail to execute.
 
 #### get_or_use
 
-A get command that uses the provided default in case of failure,
-e.g. `let current_value: u64 = Mapping::get_or_use(counter, addr, 0u64);`
+A get command that uses the provided default in case of failure,  
+e.g. `let current_value: u64 = Mapping::get_or_use(counter, addr, 0u64);`  
 Gets the value stored at `addr` in `counter` and stores the result in `current_value`.
 If the key is not present, `0u64` is stored in `counter` and stored in `current_value`.
 
@@ -626,7 +626,7 @@ program test.aleo {
 
 ### Hash
 
-Leo supports the following hashing algorithms: `BHP256`, `BHP512`, `BHP768`, `BHP1024`, `Pedersen64`, `Pedersen128`, `Poseidon2`, `Poseidon4`, `Poseidon8`
+Leo supports the following hashing algorithms: `BHP256`, `BHP512`, `BHP768`, `BHP1024`, `Pedersen64`, `Pedersen128`, `Poseidon2`, `Poseidon4`, `Poseidon8`  
 The output type of a commitment function is specified in the function name. e.g. `hash_to_group` will return a `group` type.
 Hash functions take any type as an argument.
 
@@ -639,8 +639,8 @@ let c: group = Poseidon2::hash_to_group(1field);
 
 ### Commit
 
-Leo supports the following commitment algorithms: `BHP256`, `BHP512`, `BHP768`, `BHP1024`, `Pedersen64`, `Pedersen128`
-The output type of a commitment function is specified in the function name. e.g. `commit_to_group` will return a `group` type.
+Leo supports the following commitment algorithms: `BHP256`, `BHP512`, `BHP768`, `BHP1024`, `Pedersen64`, `Pedersen128`  
+The output type of a commitment function is specified in the function name. e.g. `commit_to_group` will return a `group` type.  
 The first argument can be any type. The second argument must be a `field` type and is used as a blinding factor.
 
 ```leo showLineNumbers
@@ -652,8 +652,8 @@ let b: address = Pedersen64::commit_to_address(1u128, 2field);
 
 ### Random
 
-Leo supports the `ChaCha` random number generation algorithm.
-The output type of a random function is specified in the function name. e.g. `rand_group` will return a `group` type.
+Leo supports the `ChaCha` random number generation algorithm.  
+The output type of a random function is specified in the function name. e.g. `rand_group` will return a `group` type.  
 
 :::info
 Random functions are only allowed in a [finalize function](#finalize-function).
