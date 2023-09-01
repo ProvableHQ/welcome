@@ -104,7 +104,7 @@ let receiver: address = aleo1ezamst4pjgj9zfxqq0fwfj8a4cjuqndmasgata3hggzqygggnyf
 
 Aleo uses a Schnorr signatures scheme to sign messages with an Aleo private key.
 Signatures in Leo have their own type `signature` and can be declared as literals `sign069ju4e8s66unu25celqycvsv3k9chdyz4n4sy62tx6wxj0u25vqp58hgu9hwyqc63qzxvjwesf2wz0krcvvw9kd9x0rsk4lwqn2acqhp9v0pdkhx6gvkanuuwratqmxa3du7l43c05253hhed9eg6ppzzfnjt06fpzp6msekdjxd36smjltndmxjndvv9x2uecsgngcwsc2qkns4afd`.  
-Signatures can be verified in Leo using the [`sign.verify`](./04_operators.md#signatureverify) instruction.
+Signatures can be verified in Leo using the [`signature::verify` or `s.verify`](./04_operators.md#signatureverify) operators.
 
 ```leo
 program test.aleo {
