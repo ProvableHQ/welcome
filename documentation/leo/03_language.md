@@ -100,6 +100,34 @@ These semantics will be accompanied by a standard library in a future sprint.
 let receiver: address = aleo1ezamst4pjgj9zfxqq0fwfj8a4cjuqndmasgata3hggzqygggnyfq6kmyd4;
 ```
 
+### Signatures
+
+Aleo uses a Schnorr signatures scheme to sign messages with an Aleo private key.
+Signatures in Leo have their own type `signature` and can be declared as literals `sign069ju4e8s66unu25celqycvsv3k9chdyz4n4sy62tx6wxj0u25vqp58hgu9hwyqc63qzxvjwesf2wz0krcvvw9kd9x0rsk4lwqn2acqhp9v0pdkhx6gvkanuuwratqmxa3du7l43c05253hhed9eg6ppzzfnjt06fpzp6msekdjxd36smjltndmxjndvv9x2uecsgngcwsc2qkns4afd`.  
+Signatures can be verified in Leo using the [`signature::verify` or `s.verify`](./04_operators.md#signatureverify) operators.
+
+```leo
+program test.aleo {
+
+    struct foo {
+        a: u8,
+        b: scalar
+    }
+
+    transition verify_field(s: signature, a: address, v: field) {
+        let first: bool = signature::verify(s, a, v);
+        let second: bool = s.verify(a, v);
+        assert_eq(first, second);
+    }
+
+    transition verify_foo(s: signature, a: address, v: foo) {
+        let first: bool = signature::verify(s, a, v);
+        let second: bool = s.verify(a, v);
+        assert_eq(first, second);
+    }
+}
+```
+
 ## Layout of a Leo Program
 
 A Leo program contains declarations of a [Program Scope](#program-scope), [Imports](#import)

@@ -71,6 +71,7 @@ The Leo operators compile down to [Aleo instructions opcodes](../aleo/04_opcodes
 | [Poseidon2::hash_to_destination](#poseidon2hash_to_destination)         | Poseidon hash with input rate 2   |
 | [Poseidon4::hash_to_destination](#poseidon4hash_to_destination)         | Poseidon hash with input rate 4   |
 | [Poseidon8::hash_to_destination](#poseidon8hash_to_destination)         | Poseidon hash with input rate 8   |
+| [signature::verify](#signatureverify)                                   | Verify a signature                |
 
 ## Specification
 
@@ -990,6 +991,29 @@ Computes the truncated remainder of `first` divided by `second`, wrapping around
 | `U32`  | `U32`  | `U32`       |
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
+
+[Back to Top](#table-of-standard-operators)
+***
+
+### `signature::verify`
+
+```leo
+transition verify_field(s: signature, a: address, v: field) {
+    let first: bool = signature::verify(s, a, v);
+    let second: bool = s.verify(a, v);
+    assert_eq(first, second);
+}
+```
+
+#### Description
+
+Verifies that the signature `first` was signed by the address `second` with respect to the field `third`, storing the outcome in `destination`.
+
+#### Supported Types
+
+| First       | Second    | Third     | Destination |
+|-------------|-----------|-----------|-------------|
+| `Signature` | `Address` | `Message` | `Boolean`   |
 
 [Back to Top](#table-of-standard-operators)
 ***
