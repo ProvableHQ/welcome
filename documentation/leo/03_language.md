@@ -40,6 +40,12 @@ and unsigned integer types `u8`, `u16`, `u32`, `u64`, `u128`.
 let b: u8 = 1u8;
 ```
 
+Underscores `_` can be used to separate digits in integer literals.
+
+```leo
+let b: u8 = 1_000_000u64;
+```
+
 :::info
 Higher bit length integers generate more constraints in the circuit, which can slow down computation time.
 :::
