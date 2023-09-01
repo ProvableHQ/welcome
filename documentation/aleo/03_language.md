@@ -79,7 +79,7 @@ function main:
 
 ### Signatures
 
-Aleo uses a Schnorr signatures scheme to sign messages with the address private key.
+Aleo uses a Schnorr signatures scheme to sign messages with an Aleo private key.
 Signatures can be verified in Aleo instructions using the [`sign.verify`](./04_opcodes.md#signverify) instruction.
 
 ```aleo
