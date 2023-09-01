@@ -74,6 +74,7 @@ The following lists show the standard and cryptographic opcodes supported by Ale
 | [hash.psd2](#hashpsd2)                             | Poseidon hash with input rate 2   |
 | [hash.psd4](#hashpsd4)                             | Poseidon hash with input rate 4   |
 | [hash.psd8](#hashpsd8)                             | Poseidon hash with input rate 8   |
+| [sign.verify](#signverify)                         | Verify a Schnorr signature        |
 
 ## Specification
 
@@ -1468,6 +1469,28 @@ Computes the truncated remainder of `first` divided by `second`, wrapping around
 | `U32`  | `U32`  | `U32`       |
 | `U64`  | `U64`  | `U64`       |
 | `U128` | `U128` | `U128`      |
+
+***
+
+### `sign.verify`
+
+[Back to Top](#table-of-standard-opcodes)
+
+#### Description
+
+Verifies the signature `first` against the address public key `second` and the message `third`, storing the outcome in `destination`.
+
+#### Example Usage
+
+```aleo
+sign.verify r0 r1 r2 into r3;
+```
+
+#### Supported Types
+
+| First       | Second    | Third     | Destination |
+|-------------|-----------|-----------|-------------|
+| `Signature` | `Address` | `Message` | `Boolean`   |
 
 ***
 
