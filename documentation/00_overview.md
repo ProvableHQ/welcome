@@ -95,7 +95,5 @@ An index of all pages available in this documentation.
 - [Overview](./advanced/the_aleo_curves/00_overview.md)
 - [Edwards BLS12](./advanced/the_aleo_curves/01_edwards_bls12.md)
 - [BLS12-377](./advanced/the_aleo_curves/02_bls12-377.md)
-- [Edwards BW6](./advanced/the_aleo_curves/03_edwards_bw6.md)
-- [BW6-761](./advanced/the_aleo_curves/04_bw6-761.md)
 
 <!-- markdown-link-check-enable -->
