@@ -370,23 +370,23 @@ Enables casting between different literals and can be used to construct structs 
 
 #### Supported Types
 
-| First     | Second                                 |
-|-----------|----------------------------------------|
-| `Address` | `Address`                              |
-| `Boolean` | `Boolean`                              |
-| `Field`   | `Field`                                |
-| `Group`   | `Group`, `Group.x`, `Group.y`, `Field` |
-| `I8`      | `I8`                                   |
-| `I16`     | `I16`                                  |
-| `I32`     | `I32`                                  |
-| `I64`     | `I64`                                  |
-| `I128`    | `I128`                                 |
-| `U8`      | `U8`                                   |
-| `U16`     | `U16`                                  |
-| `U32`     | `U32`                                  |
-| `U64`     | `U64`                                  |
-| `U128`    | `U128`                                 |
-| `Scalar`  | `Scalar`                               |
+| First     | Second           |
+|-----------|------------------|
+| `Address` | `Address`        |
+| `Boolean` | `Boolean`        |
+| `Field`   | `Field`          |
+| `Group`   | `Group`, `Field` |
+| `I8`      | `I8`             |
+| `I16`     | `I16`            |
+| `I32`     | `I32`            |
+| `I64`     | `I64`            |
+| `I128`    | `I128`           |
+| `U8`      | `U8`             |
+| `U16`     | `U16`            |
+| `U32`     | `U32`            |
+| `U64`     | `U64`            |
+| `U128`    | `U128`           |
+| `Scalar`  | `Scalar`         |
 
 ***
 
