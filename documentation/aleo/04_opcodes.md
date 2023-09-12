@@ -350,34 +350,43 @@ The `branch.neq` command, e.g. `branch.neq <first> <second> to <destination>`, w
 [Back to Top](#table-of-standard-opcodes)
 
 ```aleo
-input r0 as field.private;
-cast r0 into r1 as group;
-cast r0 into r2 as u8;
+struct foo:
+    a as address;
+    b as boolean;
+
+function hello:
+    input r0 as address.private;
+    input r1 as boolean.private;
+    input r2 as group.private;
+    cast r0 r1 into r3 as foo;
+    cast r2 into r4 as group.x;
+    cast r2 into r5 as group.y;
+    cast r2 into r6 as field;
 ```
 
 #### Description
 
-Enables casting between different literals.
+Enables casting between different literals and can be used to construct structs and records.
 
 #### Supported Types
 
-| First     | Second    |
-|-----------|-----------|
-| `Address` | `Address` |
-| `Boolean` | `Boolean` |
-| `Field`   | `Field`   |
-| `Group`   | `Group`   |
-| `I8`      | `I8`      |
-| `I16`     | `I16`     |
-| `I32`     | `I32`     |
-| `I64`     | `I64`     |
-| `I128`    | `I128`    |
-| `U8`      | `U8`      |
-| `U16`     | `U16`     |
-| `U32`     | `U32`     |
-| `U64`     | `U64`     |
-| `U128`    | `U128`    |
-| `Scalar`  | `Scalar`  |
+| First     | Second                                 |
+|-----------|----------------------------------------|
+| `Address` | `Address`                              |
+| `Boolean` | `Boolean`                              |
+| `Field`   | `Field`                                |
+| `Group`   | `Group`, `Group.x`, `Group.y`, `Field` |
+| `I8`      | `I8`                                   |
+| `I16`     | `I16`                                  |
+| `I32`     | `I32`                                  |
+| `I64`     | `I64`                                  |
+| `I128`    | `I128`                                 |
+| `U8`      | `U8`                                   |
+| `U16`     | `U16`                                  |
+| `U32`     | `U32`                                  |
+| `U64`     | `U64`                                  |
+| `U128`    | `U128`                                 |
+| `Scalar`  | `Scalar`                               |
 
 ***
 
