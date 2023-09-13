@@ -361,6 +361,8 @@ The `branch.neq` command, e.g. `branch.neq <first> <second> to <destination>`, w
 input r0 as field.private;
 cast r0 into r1 as group;
 cast r0 into r2 as u8;
+cast r3 r4 r5 r6 into r7 as [boolean; 4u32];
+cast r7 into r8 as [[boolean; 4u32]; 1u32];
 ```
 
 #### Description
@@ -372,6 +374,7 @@ Enables casting between different literals.
 | First     | Second    |
 |-----------|-----------|
 | `Address` | `Address` |
+| `Array`   | `Array`   |
 | `Boolean` | `Boolean` |
 | `Field`   | `Field`   |
 | `Group`   | `Group`   |
