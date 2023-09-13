@@ -214,25 +214,26 @@ Checks whether `first` and `second` are equal, halting if they are not equal.
 
 #### Supported Types
 
-| First     | Second    |
-|-----------|-----------|
-| `Address` | `Address` |
-| `Boolean` | `Boolean` |
-| `Field`   | `Field`   |
-| `Group`   | `Group`   |
-| `I8`      | `I8`      |
-| `I16`     | `I16`     |
-| `I32`     | `I32`     |
-| `I64`     | `I64`     |
-| `I128`    | `I128`    |
-| `U8`      | `U8`      |
-| `U16`     | `U16`     |
-| `U32`     | `U32`     |
-| `U64`     | `U64`     |
-| `U128`    | `U128`    |
-| `Scalar`  | `Scalar`  |
-| `Struct`  | `Struct`  |
-| `Record`  | `Record`  |
+| First       | Second      |
+|-------------|-------------|
+| `Address`   | `Address`   |
+| `Boolean`   | `Boolean`   |
+| `Field`     | `Field`     |
+| `Group`     | `Group`     |
+| `I8`        | `I8`        |
+| `I16`       | `I16`       |
+| `I32`       | `I32`       |
+| `I64`       | `I64`       |
+| `I128`      | `I128`      |
+| `U8`        | `U8`        |
+| `U16`       | `U16`       |
+| `U32`       | `U32`       |
+| `U64`       | `U64`       |
+| `U128`      | `U128`      |
+| `Scalar`    | `Scalar`    |
+| `Signature` | `Signature` |
+| `Struct`    | `Struct`    |
+| `Record`    | `Record`    |
 
 ***
 
@@ -246,25 +247,26 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 
 #### Supported Types
 
-| First     | Second    |
-|-----------|-----------|
-| `Address` | `Address` |
-| `Boolean` | `Boolean` |
-| `Field`   | `Field`   |
-| `Group`   | `Group`   |
-| `I8`      | `I8`      |
-| `I16`     | `I16`     |
-| `I32`     | `I32`     |
-| `I64`     | `I64`     |
-| `I128`    | `I128`    |
-| `U8`      | `U8`      |
-| `U16`     | `U16`     |
-| `U32`     | `U32`     |
-| `U64`     | `U64`     |
-| `U128`    | `U128`    |
-| `Scalar`  | `Scalar`  |
-| `Struct`  | `Struct`  |
-| `Record`  | `Record`  |
+| First       | Second      |
+|-------------|-------------|
+| `Address`   | `Address`   |
+| `Boolean`   | `Boolean`   |
+| `Field`     | `Field`     |
+| `Group`     | `Group`     |
+| `I8`        | `I8`        |
+| `I16`       | `I16`       |
+| `I32`       | `I32`       |
+| `I64`       | `I64`       |
+| `I128`      | `I128`      |
+| `U8`        | `U8`        |
+| `U16`       | `U16`       |
+| `U32`       | `U32`       |
+| `U64`       | `U64`       |
+| `U128`      | `U128`      |
+| `Scalar`    | `Scalar`    |
+| `Signature` | `Signature` |
+| `Struct`    | `Struct`    |
+| `Record`    | `Record`    |
 
 ***
 
@@ -1032,25 +1034,26 @@ Compares `first` and `second`, storing the result in `destination`.
 
 #### Supported Types
 
-| First     | Second    | Destination |
-|-----------|-----------|-------------|
-| `Address` | `Address` | `Boolean`   |
-| `Boolean` | `Boolean` | `Boolean`   |
-| `Field`   | `Field`   | `Boolean`   |
-| `Group`   | `Group`   | `Boolean`   |
-| `I8`      | `I8`      | `Boolean`   |
-| `I16`     | `I16`     | `Boolean`   |
-| `I32`     | `I32`     | `Boolean`   |
-| `I64`     | `I64`     | `Boolean`   |
-| `I128`    | `I128`    | `Boolean`   |
-| `U8`      | `U8`      | `Boolean`   |
-| `U16`     | `U16`     | `Boolean`   |
-| `U32`     | `U32`     | `Boolean`   |
-| `U64`     | `U64`     | `Boolean`   |
-| `U128`    | `U128`    | `Boolean`   |
-| `Scalar`  | `Scalar`  | `Boolean`   |
-| `Struct`  | `Struct`  | `Boolean`   |
-| `Record`  | `Record`  | `Boolean`   |
+| First       | Second      | Destination |
+|-------------|-------------|-------------|
+| `Address`   | `Address`   | `Boolean`   |
+| `Boolean`   | `Boolean`   | `Boolean`   |
+| `Field`     | `Field`     | `Boolean`   |
+| `Group`     | `Group`     | `Boolean`   |
+| `I8`        | `I8`        | `Boolean`   |
+| `I16`       | `I16`       | `Boolean`   |
+| `I32`       | `I32`       | `Boolean`   |
+| `I64`       | `I64`       | `Boolean`   |
+| `I128`      | `I128`      | `Boolean`   |
+| `U8`        | `U8`        | `Boolean`   |
+| `U16`       | `U16`       | `Boolean`   |
+| `U32`       | `U32`       | `Boolean`   |
+| `U64`       | `U64`       | `Boolean`   |
+| `U128`      | `U128`      | `Boolean`   |
+| `Scalar`    | `Scalar`    | `Boolean`   |
+| `Signature` | `Signature` | `Boolean`   |
+| `Struct`    | `Struct`    | `Boolean`   |
+| `Record`    | `Record`    | `Boolean`   |
 
 ***
 
@@ -1064,25 +1067,26 @@ Returns true if `first` is not equal to `second`, storing the result in `destina
 
 #### Supported Types
 
-| First     | Second    | Destination |
-|-----------|-----------|-------------|
-| `Address` | `Address` | `Boolean`   |
-| `Boolean` | `Boolean` | `Boolean`   |
-| `Field`   | `Field`   | `Boolean`   |
-| `Group`   | `Group`   | `Boolean`   |
-| `I8`      | `I8`      | `Boolean`   |
-| `I16`     | `I16`     | `Boolean`   |
-| `I32`     | `I32`     | `Boolean`   |
-| `I64`     | `I64`     | `Boolean`   |
-| `I128`    | `I128`    | `Boolean`   |
-| `U8`      | `U8`      | `Boolean`   |
-| `U16`     | `U16`     | `Boolean`   |
-| `U32`     | `U32`     | `Boolean`   |
-| `U64`     | `U64`     | `Boolean`   |
-| `U128`    | `U128`    | `Boolean`   |
-| `Scalar`  | `Scalar`  | `Boolean`   |
-| `Struct`  | `Struct`  | `Boolean`   |
-| `Record`  | `Record`  | `Boolean`   |
+| First       | Second      | Destination |
+|-------------|-------------|-------------|
+| `Address`   | `Address`   | `Boolean`   |
+| `Boolean`   | `Boolean`   | `Boolean`   |
+| `Field`     | `Field`     | `Boolean`   |
+| `Group`     | `Group`     | `Boolean`   |
+| `I8`        | `I8`        | `Boolean`   |
+| `I16`       | `I16`       | `Boolean`   |
+| `I32`       | `I32`       | `Boolean`   |
+| `I64`       | `I64`       | `Boolean`   |
+| `I128`      | `I128`      | `Boolean`   |
+| `U8`        | `U8`        | `Boolean`   |
+| `U16`       | `U16`       | `Boolean`   |
+| `U32`       | `U32`       | `Boolean`   |
+| `U64`       | `U64`       | `Boolean`   |
+| `U128`      | `U128`      | `Boolean`   |
+| `Scalar`    | `Scalar`    | `Boolean`   |
+| `Signature` | `Signature` | `Boolean`   |
+| `Struct`    | `Struct`    | `Boolean`   |
+| `Record`    | `Record`    | `Boolean`   |
 
 ***
 
@@ -1699,22 +1703,23 @@ Example: `ternary r0 r1 r2 into r3`, where `r0` is the condition, `r1` is first,
 
 #### Supported Types
 
-| Condition | First     | Second    | Destination |
-|-----------|-----------|-----------|-------------|
-| `Boolean` | `Boolean` | `Boolean` | `Boolean`   |
-| `Boolean` | `Field`   | `Field`   | `Field`     |
-| `Boolean` | `Group`   | `Group`   | `Group`     |
-| `Boolean` | `I8`      | `I8`      | `I8`        |
-| `Boolean` | `I16`     | `I16`     | `I16`       |
-| `Boolean` | `I32`     | `I32`     | `I32`       |
-| `Boolean` | `I64`     | `I64`     | `I64`       |
-| `Boolean` | `I128`    | `I128`    | `I128`      |
-| `Boolean` | `U8`      | `U8`      | `U8`        |
-| `Boolean` | `U16`     | `U16`     | `U16`       |
-| `Boolean` | `U32`     | `U32`     | `U32`       |
-| `Boolean` | `U64`     | `U64`     | `U64`       |
-| `Boolean` | `U128`    | `U128`    | `U128`      |
-| `Boolean` | `Scalar`  | `Scalar`  | `Scalar`    |
+| Condition | First       | Second      | Destination |
+|-----------|-------------|-------------|-------------|
+| `Boolean` | `Boolean`   | `Boolean`   | `Boolean`   |
+| `Boolean` | `Field`     | `Field`     | `Field`     |
+| `Boolean` | `Group`     | `Group`     | `Group`     |
+| `Boolean` | `I8`        | `I8`        | `I8`        |
+| `Boolean` | `I16`       | `I16`       | `I16`       |
+| `Boolean` | `I32`       | `I32`       | `I32`       |
+| `Boolean` | `I64`       | `I64`       | `I64`       |
+| `Boolean` | `I128`      | `I128`      | `I128`      |
+| `Boolean` | `U8`        | `U8`        | `U8`        |
+| `Boolean` | `U16`       | `U16`       | `U16`       |
+| `Boolean` | `U32`       | `U32`       | `U32`       |
+| `Boolean` | `U64`       | `U64`       | `U64`       |
+| `Boolean` | `U128`      | `U128`      | `U128`      |
+| `Boolean` | `Scalar`    | `Scalar`    | `Scalar`    |
+| `Boolean` | `Signature` | `Signature` | `Signature` |
 
 ***
 
