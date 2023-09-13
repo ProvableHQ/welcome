@@ -57,24 +57,30 @@ The following lists show the standard and cryptographic opcodes supported by Ale
 | [xor](#xor)                  | XOR operation                                         |
 
 ## Table of Cryptographic Opcodes
-| Name                                               | Description                       |
-|----------------------------------------------------|:----------------------------------|
-| [commit.bhp256](#commitbhp256)                     | 256-bit input BHP commitment      |
-| [commit.bhp512](#commitbhp512)                     | 512-bit input BHP commitment      |
-| [commit.bhp768](#commitbhp768)                     | 768-bit input BHP commitment      |
-| [commit.bhp1024](#commitbhp1024)                   | 1024-bit input BHP commitment     |
-| [commit.ped64](#commitped64)                       | 64-bit input Pedersen commitment  |
-| [commit.ped128](#commitped128)                     | 128-bit input Pedersen commitment |
-| [hash.bhp256](#hashbhp256)                         | 256-bit input BHP hash            |
-| [hash.bhp512](#hashbhp512)                         | 512-bit input BHP hash            |
-| [hash.bhp768](#hashbhp768)                         | 768-bit input BHP hash            |
-| [hash.bhp1024](#hashbhp1024)                       | 1024-bit input BHP hash           |
-| [hash.ped64](#hashped64)                           | 64-bit input Pedersen hash        |
-| [hash.ped128](#hashped128)                         | 128-bit input Pedersen hash       |
-| [hash.psd2](#hashpsd2)                             | Poseidon hash with input rate 2   |
-| [hash.psd4](#hashpsd4)                             | Poseidon hash with input rate 4   |
-| [hash.psd8](#hashpsd8)                             | Poseidon hash with input rate 8   |
-| [sign.verify](#signverify)                         | Verify a Schnorr signature        |
+| Name                             | Description                       |
+|----------------------------------|:----------------------------------|
+| [commit.bhp256](#commitbhp256)   | 256-bit input BHP commitment      |
+| [commit.bhp512](#commitbhp512)   | 512-bit input BHP commitment      |
+| [commit.bhp768](#commitbhp768)   | 768-bit input BHP commitment      |
+| [commit.bhp1024](#commitbhp1024) | 1024-bit input BHP commitment     |
+| [commit.ped64](#commitped64)     | 64-bit input Pedersen commitment  |
+| [commit.ped128](#commitped128)   | 128-bit input Pedersen commitment |
+| [hash.bhp256](#hashbhp256)       | 256-bit input BHP hash            |
+| [hash.bhp512](#hashbhp512)       | 512-bit input BHP hash            |
+| [hash.bhp768](#hashbhp768)       | 768-bit input BHP hash            |
+| [hash.bhp1024](#hashbhp1024)     | 1024-bit input BHP hash           |
+| [hash.keccak256](#hashkeccak256) | 256-bit input Keccak hash         |
+| [hash.keccak384](#hashkeccak384) | 384-bit input Keccak hash         |
+| [hash.keccak512](#hashkeccak512) | 512-bit input Keccak hash         |
+| [hash.ped64](#hashped64)         | 64-bit input Pedersen hash        |
+| [hash.ped128](#hashped128)       | 128-bit input Pedersen hash       |
+| [hash.psd2](#hashpsd2)           | Poseidon hash with input rate 2   |
+| [hash.psd4](#hashpsd4)           | Poseidon hash with input rate 4   |
+| [hash.psd8](#hashpsd8)           | Poseidon hash with input rate 8   |
+| [hash.sha3_256](#hashsha3_256)   | 256-bit input SHA3 hash           |
+| [hash.sha3_384](#hashsha3_384)   | 384-bit input SHA3 hash           |
+| [hash.sha3_512](#hashsha3_512)   | 512-bit input SHA3 hash           |
+| [sign.verify](#signverify)       | Verify a Schnorr signature        |
 
 ## Specification
 
@@ -863,6 +869,99 @@ The instruction will halt if the given input is smaller than 171 bits.
 
 ***
 
+### `hash.keccak256`
+
+[Back to Top](#table-of-standard-opcodes)
+
+#### Description
+
+Performs a Keccak hash on `first`, storing a 256-bit digest in `destination`. The produced hash will always be an arithmetic (`U8`, `U16`, `U32`, `U64`, `U128`, `I8`, `I16`, `I32`,`I64`,`I128`, `Field`, `Group`, or `Scalar`) or `Address` value, as specified via `as` at the end of the instruction.
+
+#### Supported Types
+
+| First     | Destination                                                                                               |
+|-----------|:----------------------------------------------------------------------------------------------------------|
+| `Address` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Boolean` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Field`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Group`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Scalar`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Struct`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+
+***
+
+### `hash.keccak384`
+
+[Back to Top](#table-of-standard-opcodes)
+
+#### Description
+
+Performs a Keccak hash on `first`, storing a 384-bit digest in `destination`. The produced hash will always be an arithmetic (`U8`, `U16`, `U32`, `U64`, `U128`, `I8`, `I16`, `I32`,`I64`,`I128`, `Field`, `Group`, or `Scalar`) or `Address` value, as specified via `as` at the end of the instruction.
+
+#### Supported Types
+
+| First     | Destination                                                                                               |
+|-----------|:----------------------------------------------------------------------------------------------------------|
+| `Address` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Boolean` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Field`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Group`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Scalar`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Struct`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+
+***
+
+### `hash.keccak512`
+
+[Back to Top](#table-of-standard-opcodes)
+
+#### Description
+
+Performs a Keccak hash on `first`, storing a 512-bit digest in `destination`. The produced hash will always be an arithmetic (`U8`, `U16`, `U32`, `U64`, `U128`, `I8`, `I16`, `I32`,`I64`,`I128`, `Field`, `Group`, or `Scalar`) or `Address` value, as specified via `as` at the end of the instruction.
+
+#### Supported Types
+
+| First     | Destination                                                                                               |
+|-----------|:----------------------------------------------------------------------------------------------------------|
+| `Address` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Boolean` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Field`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Group`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Scalar`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Struct`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+
+***
+
 ### `hash.ped64`
 
 [Back to Top](#table-of-standard-opcodes)
@@ -984,6 +1083,98 @@ Calculates a Poseidon hash with an input rate of 4, from an input in `first`, st
 #### Description
 
 Calculates a Poseidon hash with an input rate of 8, from an input in `first`, storing the hash in `destination`. The produced hash will always be an arithmetic (`U8`, `U16`, `U32`, `U64`, `U128`, `I8`, `I16`, `I32`,`I64`,`I128`, `Field`, `Group`, or `Scalar`) or `Address` value, as specified via `as` at the end of the instruction.
+
+#### Supported Types
+
+| First     | Destination                                                                                               |
+|-----------|:----------------------------------------------------------------------------------------------------------|
+| `Address` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Boolean` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Field`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Group`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Scalar`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Struct`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+
+***
+
+### `hash.sha3_256`
+
+[Back to Top](#table-of-standard-opcodes)
+
+#### Description
+
+Calculates a SHA3-256 hash, from an input in `first`, storing the 256-bit digest in `destination`. The produced hash will always be an arithmetic (`U8`, `U16`, `U32`, `U64`, `U128`, `I8`, `I16`, `I32`,`I64`,`I128`, `Field`, `Group`, or `Scalar`) or `Address` value, as specified via `as` at the end of the instruction.
+
+#### Supported Types
+
+| First     | Destination                                                                                               |
+|-----------|:----------------------------------------------------------------------------------------------------------|
+| `Address` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Boolean` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Field`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Group`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Scalar`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Struct`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+
+***
+
+### `hash.sha3_384`
+
+[Back to Top](#table-of-standard-opcodes)
+
+#### Description
+
+Calculates a SHA3-384 hash, from an input in `first`, storing the 384-bit digest in `destination`. The produced hash will always be an arithmetic (`U8`, `U16`, `U32`, `U64`, `U128`, `I8`, `I16`, `I32`,`I64`,`I128`, `Field`, `Group`, or `Scalar`) or `Address` value, as specified via `as` at the end of the instruction.
+
+#### Supported Types
+| First     | Destination                                                                                               |
+|-----------|:----------------------------------------------------------------------------------------------------------|
+| `Address` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Boolean` | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Field`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Group`   | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `I128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U8`      | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U16`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U32`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U64`     | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `U128`    | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Scalar`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+| `Struct`  | `Address`, `Field`, `Group`, `Scalar`, `I8`, `I16`, `I32`,`I64`,`I128`, `U8`, `U16`, `U32`, `U64`, `U128` |
+
+***
+
+### `hash.sha3_512`
+
+[Back to Top](#table-of-standard-opcodes)
+
+#### Description
+
+Calculates a SHA3-512 hash, from an input in `first`, storing the 512-bit digest in `destination`. The produced hash will always be an arithmetic (`U8`, `U16`, `U32`, `U64`, `U128`, `I8`, `I16`, `I32`,`I64`,`I128`, `Field`, `Group`, or `Scalar`) or `Address` value, as specified via `as` at the end of the instruction.
 
 #### Supported Types
 
