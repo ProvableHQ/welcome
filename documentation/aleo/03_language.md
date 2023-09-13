@@ -232,6 +232,60 @@ function new_array3:
     output r3;
 ```
 
+### Array
+
+An array is a data type declared as `[{value}, {value}]`.
+
+```aleo
+[true, false, true]
+```
+
+Arrays contain a list of values of the same type `[{type}; {length}]`.
+
+```aleo
+[boolean; 3u32]
+```
+
+Arrays can be initialized using the `cast` opcode.
+
+```aleo showLineNumbers
+function new_array:
+    input r0 as boolean.private;
+    input r1 as boolean.private;
+    input r2 as boolean.private;
+    cast r0 r1 r2 into r3 as [boolean; 3u32];
+    output r3;
+```
+
+Arrays can be indexed using `{name}[{index}]`.
+
+```aleo showLineNumbers
+function get_array_element:
+    input r0 as [boolean; 4u32].public;
+    input r1 as u32.public;
+    r0[r1] into r2;
+    output r2;
+```
+
+
+Arrays can be nested.
+
+```aleo 
+[[true, false, true, false], [false, true, false, true]]
+```
+
+```aleo showLineNumbers
+function get_nested_array_element:
+    input r0 as [[boolean; 4u32]; 2u32].public;
+    r0[0u32][1u32] into r1;
+    output r1;
+```
+
+:::info
+Aleo instructions currently only support fixed-length static arrays.
+:::
+
+
 ### Record
 
 A [record](../concepts/02_records.md) type is declared as `record {name}:`.  
