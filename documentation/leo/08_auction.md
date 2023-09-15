@@ -43,9 +43,9 @@ Clone the source code for the auction example from [Github](https://github.com/A
 ## How to Run
 
 ### <a id="accounts"></a> Generating Accounts
-The `program.json` file contains a private key and address.
-This is the account that will be used to sign transactions and is checked for record ownership.
-When executing programs as different parties, be sure to set the `private_key` and `address` fields in `program.json` to the appropriate values.
+The `.env` file contains a private key.
+This is the private key that will be used to sign transactions and is checked for record ownership.
+When executing programs as different parties, be sure to set the `PRIVATE_KEY` field in `.env` to the appropriate value.
 See `./run.sh` for an example of how to run the program as different parties.
 
 Go to [**aleo.tools**](https://aleo.tools) to generate new accounts.
@@ -86,19 +86,11 @@ Auctioneer:
       Address  aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh
 ```
 
-Swap in the private key and address of the first bidder to program.json.
+Swap in the private key of the first bidder to `.env`.
 
-```jsonld
-{
-    "program": "auction.aleo",
-    "version": "0.0.0",
-    "description": "A sealed bid auction",
-    "development": {
-        "private_key": "APrivateKey1zkpG9Af9z5Ha4ejVyMCqVFXRKknSm8L1ELEwcc4htk9YhVK",
-        "address": "aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke"
-    },
-    "license": "MIT"
-}
+```bash
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkpG9Af9z5Ha4ejVyMCqVFXRKknSm8L1ELEwcc4htk9YhVK
 ```
 
 
@@ -108,19 +100,15 @@ Have the first bidder place a bid of 10.
 
 ```javascript=19
     // Returns a new bid.
-    // - `bidder` : The address of the account that placed the bid.
     // - `amount` : The amount of the bid.
-    // Requires that `bidder` matches the function caller.
     // The owner of the record is set to the entity responsible for running the auction (auction runner).
     // The address of the auction runner is aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.
     transition place_bid(bidder: address, amount: u64) -> Bid {
-        // Ensure the caller is the auction bidder.
-        console.assert_eq(self.caller, bidder);
         // Return a new 'Bid' record for the auction bidder.
         return Bid {
             owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh,
             microcredits: 0u64,
-            bidder: bidder,
+            bidder: self.caller,
             amount: amount,
             is_winner: false,
         };
@@ -130,7 +118,7 @@ Have the first bidder place a bid of 10.
 Call the `place_bid` program function with bidder 1 and `10u64` arguments.
 
 ```bash
-leo run place_bid aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke 10u64
+leo run place_bid 10u64
 ```
 
 ## <a id="step2"></a> Step 2: The Second Bid
@@ -138,12 +126,12 @@ leo run place_bid aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2k
 Have the second bidder place a bid of 90.
 
 
-Swap in the private key and address of the second bidder to program.json.
+Swap in the private key of the second bidder to `.env`.
 
 Call the `place_bid` program function with bidder 2 and `90u64` arguments.
 
 ```bash
-leo run place_bid aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4 90u64
+leo run place_bid 90u64
 ```
 
 ## <a id="step3"></a> Step 3: Select the Winner
@@ -169,7 +157,7 @@ Have the auctioneer select the winning bid.
     }
 ```
 
-Swap in the private key and address of the auctioneer to program.json.
+Swap in the private key of the auctioneer to `.env`.
 
 Provide the two `Bid` records as input to the `resolve` transition function.
 
