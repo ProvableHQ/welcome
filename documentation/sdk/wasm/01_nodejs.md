@@ -381,7 +381,7 @@ to generate a webform to capture user inputs for an execution of a function.
 <a name="Program+getMappings"></a>
 
 ### program.getMappings() ⇒ <code>Array</code> \| <code>Array.&lt;any&gt;</code>
-Get a the list of a program's mappings and the names/types of their keys and values.
+Get a list of a program's mappings and the names/types of their keys and values.
 
 **Kind**: instance method of [<code>Program</code>](#Program)
 **Returns**: <code>Array</code> - - An array of objects representing the mappings in the program<code>Array.&lt;any&gt;</code>
@@ -575,7 +575,7 @@ Returns the amount of microcredits in the record
 <a name="RecordPlaintext+serialNumberString"></a>
 
 ### recordPlaintext.serialNumberString(private_key, program_id, record_name) ⇒ <code>string</code>
-Attempt to get the serial number of a record to determine whether or not is has been spent
+Attempt to get the serial number of a record to determine whether or not it has been spent
 
 **Kind**: instance method of [<code>RecordPlaintext</code>](#RecordPlaintext)
 
