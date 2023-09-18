@@ -60,7 +60,7 @@ Aleo Wasm is a Rust crate which compiles Aleo code responsible for creating and 
 WebAssembly.
 
 When compiled with `wasm-pack` JavaScript bindings are generated for the WebAssembly allowing Aleo zero
-knowledge programs to be used in the browser ande NodeJS. This package is available on NPM (linked above). The 
+knowledge programs to be used in the browser and NodeJS. This package is available on NPM (linked above). The 
 [documentation](./sdk/wasm/00_wasm_installation.md) provides instructions for compiling this [crate](https://github.com/AleoHQ/sdk/tree/testnet3/wasm) and using it in web projects for those interested in building from
 source.
 
