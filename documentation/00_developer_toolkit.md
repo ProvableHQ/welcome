@@ -8,9 +8,9 @@ This toolkit works best with a MacOS machine from 2021 or newer. You can check y
 
 ## Leo
 ### Download and install Leo
-You can find the latest version of Leo [here](https://github.com/AleoHQ/leo/releases/latest/download/leo.pkg). After downloading it, double-click the package (`leo.pkg`) to open it. Then install Leo by following the installer prompts.
-
-###### 💡Note: You can download other versions of Leo [here](https://github.com/AleoHQ/leo/releases). Supported variations include older MacOS, Windows, and Linux. If you download an alternative version, you'll need to unzip the binary and move it to your `/usr/local/bin` folder (or an equivalent), which you can do with the following command: `sudo mv ./leo /usr/local/bin`
+- You can find the latest version of Leo [here](https://github.com/AleoHQ/leo/releases/latest).
+- After downloading the version that works for your machine, double-click the zip file to open it.
+- Then install Leo by moving it to `/usr/local/bin` on your machine, which you can do by dragging it to that location or via terminal (`sudo mv leo /usr/local/bin`); in both cases, you will need to enter your computer password.
 
 ### The `leo help` command
 
