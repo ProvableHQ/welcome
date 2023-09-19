@@ -81,7 +81,7 @@ wasm-pack build --release --target nodejs -- --features "serial" --no-default-fe
 This module is very similar to the NodeJS module, however it is built to make use browser-based JavaScript environments 
 and can be used for program execution and deployment. 
 
-If used for program execution or deployment, it suggested to do so on a web-worker as these operations are long-running
+If used for program execution or deployment, it is suggested to do so on a web-worker as these operations are long-running
 and will cause a browser window to hang if run in the main thread.
 
 #### Build Instructions
