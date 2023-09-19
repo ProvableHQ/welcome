@@ -64,7 +64,7 @@ let b: u8 = 2; // implicit type -- not supported
 ### Field Elements
 
 Leo supports the `field` type for elements of the base field of the elliptic curve.
-These are unsigned integers less than the modulus of the base field.  The following are the
+These are unsigned integers less than the modulus of the base field. The following are the
 smallest and largest field elements.
 
 ```leo
@@ -94,7 +94,7 @@ let g: group = group::GEN; // the group generator
 ### Scalar Elements
 
 Leo supports the `scalar` type for elements of the scalar field defined by the elliptic curve subgroup.
-These are unsigned integers less than the modulus of the scalar field.  Showing the smallest and largest
+These are unsigned integers less than the modulus of the scalar field. Showing the smallest and largest
 scalars.
 
 ```leo
@@ -412,8 +412,6 @@ program transfer.aleo {
 }
 ```
 
-
-
 ### Mapping
 
 A mapping is declared as `mapping {name}: {key-type} => {value-type}`.
@@ -430,7 +428,7 @@ mapping account: address => u64;
 #### Mapping Operations
 
 The mapping struct allows the programmer to apply updates to a program mapping data structure by calling one of the
-following functions. 
+following functions.
 
 :::info
 Mapping operations are only allowed in a [finalize function](#finalize-function).
@@ -524,31 +522,31 @@ a = a.add(1u8);
 
 ### Arithmetic Operators
 
-|          Operation           |      Operands       |                                   Supported Types                                    |
-| :--------------------------: | :-----------------: | :----------------------------------------------------------------------------------: |
-|           addition           |  `+` `+=` `.add()`  | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
-|      wrapping addition       |  `.add_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|       negation(unary)        |    `-` `.neg()`     |                    `field` `group` `i8` `i16` `i32` `i64` `i128`                     |
-|     subtraction(binary)      |  `-` `-=` `.sub()`  |     `field` `group` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`      |
-| wrapping subtraction(binary) |  `.sub_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|        multiplication        |  `*` `*=` `.mul()`  | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
-|   wrapping multiplication    |  `.mul_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|           division           |  `/` `/=` `.div()`  |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
-|      wrapping division       |  `.div_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|          remainder           |  `%` `%=` `.rem()`  |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|      wrapping remainder      |  `.rem_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|        exponentiation        | `**` `**=` `.pow()` |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
-|   wrapping exponentiation    |  `.pow_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|          left shift          | `<<` `<<=` `.shl()` |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|     wrapping left shift      |  `.shl_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|         right shift          | `>>` `>>=` `.shr()` |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|     wrapping right shift     |  `.shr_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
-|        absolute value        |      `.abs()`       |                            `i8` `i16` `i32` `i64` `i128`                             |
-|   wrapping absolute value    |  `.abs_wrapped()`   |                            `i8` `i16` `i32` `i64` `i128`                             |
-|           doubling           |     `.double()`     |                                   `field` `group`                                    |
-|           squaring           |     `.square()`     |                                       `field`                                        |
-|         square root          |  `.square_root()`   |                                       `field`                                        |
-|           inverse            |  `.square_root()`   |                                       `field`                                        |
+|                                  Operation                                   |      Operands       |                                   Supported Types                                    |
+| :--------------------------------------------------------------------------: | :-----------------: | :----------------------------------------------------------------------------------: |
+|                                   addition                                   |  `+` `+=` `.add()`  | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|                              wrapping addition                               |  `.add_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|                               negation(unary)                                |    `-` `.neg()`     |                    `field` `group` `i8` `i16` `i32` `i64` `i128`                     |
+|                             subtraction(binary)                              |  `-` `-=` `.sub()`  |     `field` `group` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`      |
+|                         wrapping subtraction(binary)                         |  `.sub_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|                                multiplication                                |  `*` `*=` `.mul()`  | `field` `group` `scalar` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128` |
+|                           wrapping multiplication                            |  `.mul_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|                                   division                                   |  `/` `/=` `.div()`  |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
+|                              wrapping division                               |  `.div_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|                                  remainder                                   |  `%` `%=` `.rem()`  |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|                              wrapping remainder                              |  `.rem_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|                                exponentiation                                | `**` `**=` `.pow()` |         `field` `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`          |
+|                           wrapping exponentiation                            |  `.pow_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|          [left shift](https://developer.aleo.org/leo/operators#shl)          | `<<` `<<=` `.shl()` |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+| [wrapping left shift](https://developer.aleo.org/leo/operators#shl_wrapped)  |  `.shl_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|         [right shift](https://developer.aleo.org/leo/operators#shr)          | `>>` `>>=` `.shr()` |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+| [wrapping right shift](https://developer.aleo.org/leo/operators#shr_wrapped) |  `.shr_wrapped()`   |             `i8` `i16` `i32` `i64` `i128` `u8` `u16` `u32` `u64` `u128`              |
+|                                absolute value                                |      `.abs()`       |                            `i8` `i16` `i32` `i64` `i128`                             |
+|                           wrapping absolute value                            |  `.abs_wrapped()`   |                            `i8` `i16` `i32` `i64` `i128`                             |
+|                                   doubling                                   |     `.double()`     |                                   `field` `group`                                    |
+|                                   squaring                                   |     `.square()`     |                                       `field`                                        |
+|                                 square root                                  |  `.square_root()`   |                                       `field`                                        |
+|                                   inverse                                    |  `.square_root()`   |                                       `field`                                        |
 
 ### Logical Operators
 
@@ -623,6 +621,7 @@ program test.aleo {
 ```
 
 ### block.height
+
 Returns the height of the current block.
 
 :::info
@@ -669,6 +668,7 @@ let a: scalar = BHP256::hash_to_scalar(1u8);
 let b: address = Pedersen64::hash_to_address(1u128);
 let c: group = Poseidon2::hash_to_group(1field);
 ```
+
 [See all hash functions](./04_operators.md#table-of-cryptographic-operators)
 
 ### Commit
@@ -687,7 +687,7 @@ let b: address = Pedersen64::commit_to_address(1u128, 2field);
 ### Random
 
 Leo supports the `ChaCha` random number generation algorithm.  
-The output type of a random function is specified in the function name. e.g. `rand_group` will return a `group` type.  
+The output type of a random function is specified in the function name. e.g. `rand_group` will return a `group` type.
 
 :::info
 Random functions are only allowed in a [finalize function](#finalize-function).
