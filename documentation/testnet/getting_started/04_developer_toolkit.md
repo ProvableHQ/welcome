@@ -177,5 +177,5 @@ Check out the following resources:
 
 ### What the "New Developer Toolkit" *is not*
 <!-- markdown-link-check-disable -->
-The "The New Developer Toolkit" is not exhaustive in that it does not go over the basics of Leo syntax, its folder structure, or any aspects of zero-knowledge. For that, check out the ["Continue your Leo journey"](./new_developer_toolkit.md#continue-your-leo-journey) section.
+The "The New Developer Toolkit" is not exhaustive in that it does not go over the basics of Leo syntax, folder structure, or any aspects of zero-knowledge. For that, check out the "Continue your Leo journey" section above.
 <!-- markdown-link-check-enable -->
