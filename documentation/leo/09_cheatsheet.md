@@ -38,7 +38,6 @@ We can cast between all of these types.
 ```leo
 record token {
     owner: address,
-    microcredits: u64,
     amount: u64,
 }
 ```

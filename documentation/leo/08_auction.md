@@ -119,7 +119,6 @@ Have the first bidder place a bid of 10.
         // Return a new 'Bid' record for the auction bidder.
         return Bid {
             owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh,
-            microcredits: 0u64,
             bidder: bidder,
             amount: amount,
             is_winner: false,
@@ -176,14 +175,12 @@ Provide the two `Bid` records as input to the `resolve` transition function.
 ```bash 
 leo run resolve "{
         owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.private,
-        microcredits: 0u64.private,
         bidder: aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke.private,
         amount: 10u64.private,
         is_winner: false.private,
         _nonce: 4668394794828730542675887906815309351994017139223602571716627453741502624516group.public
     }" "{
         owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.private,
-        microcredits: 0u64.private,
         bidder: aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4.private,
         amount: 90u64.private,
         is_winner: false.private,
@@ -206,7 +203,6 @@ Have the auctioneer finish the auction.
         // Return 'is_winner' as 'true' in the winning 'Bid'.
         return Bid {
             owner: bid.bidder,
-            microcredits: bid.microcredits,
             bidder: bid.bidder,
             amount: bid.amount,
             is_winner: true,
@@ -219,7 +215,6 @@ Call the `finish` transition function with the winning `Bid` record.
 ```bash 
 leo run finish "{
         owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.private,
-        microcredits: 0u64.private,
         bidder: aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4.private,
         amount: 90u64.private,
         is_winner: false.private,

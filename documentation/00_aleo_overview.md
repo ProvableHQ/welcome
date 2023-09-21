@@ -1,6 +1,6 @@
 ---
 id: aleo
-title: Aleo Instructions and SnarkVM
+title: Aleo instructions and snarkVM
 sidebar_label: Overview
 ---
 Welcome to the Aleo instructions guide. Aleo instructions is the intermediate representation of Aleo programs.
@@ -12,15 +12,15 @@ Aleo programs are files with a `.aleo` extension.
 Aleo programs contain Aleo instructions - an assembly-like programming language.
 Aleo instructions are compiled into AVM opcodes that can be executed by the Aleo Virtual Machine.
 
-Install SnarkVM to compile and execute Aleo instructions.
+Install snarkVM to compile and execute Aleo instructions.
 
 :::info
-SnarkVM is currently in active development. Please monitor the repository on [**GitHub**](https://github.com/AleoHQ/snarkVM) for possibly breaking changes.
+snarkVM is currently in active development. Please monitor the repository on [**GitHub**](https://github.com/AleoHQ/snarkVM) for possibly breaking changes.
 :::
 
-## Installing SnarkVM
+## Installing snarkVM
 
-Proceed to [**Installation**](./aleo/01_installation.md) for information on how to install SnarkVM.
+Proceed to [**Installation**](./aleo/01_installation.md) for information on how to install snarkVM.
 
 ## Hello Aleo Instructions
 
@@ -40,7 +40,7 @@ Study the formal [ABNF grammar specification](https://github.com/AleoHQ/grammars
 
 ## Command Line Interface Documentation
 
-The SnarkVM CLI provides a suite of commands to make programming in Aleo instructions easy.
+The snarkVM CLI provides a suite of commands to make programming in Aleo instructions easy.
 
 * [snarkvm new](./aleo/05_commands.md#snarkvm-new)
 * [snarkvm build (deprecated)](./aleo/05_commands.md#snarkvm-build)

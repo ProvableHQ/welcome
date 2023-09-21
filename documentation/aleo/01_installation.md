@@ -22,7 +22,7 @@ cargo --version
 
 ### 2. Build Source Code
 
-You can install SnarkVM by building from the source code as follows:
+You can install snarkVM by building from the source code as follows:
 
 ```bash
 # Download the source code
@@ -35,7 +35,7 @@ $ cargo install --path .
 
 This will generate the executable `~/.cargo/bin/snarkvm`.
 
-Now to use the SnarkVM CLI, in your terminal, run:
+Now to use the snarkVM CLI, in your terminal, run:
 ```bash
 snarkvm
 ```
