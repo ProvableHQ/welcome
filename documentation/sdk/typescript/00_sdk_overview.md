@@ -166,7 +166,7 @@ function hello:
 The SDK provides the ability to execute Aleo Instructions programs %100 client-side within the browser.
 
 The `ProgramManager` object encapsulates the functionality for executing programs and making zero knowledge proofs about
-them. Under the hood it uses cryptographic code compiled from [SnarkVM](https://developer.aleo.org/aleo) into WebAssembly.
+them. Under the hood it uses cryptographic code compiled from [snarkVM](https://developer.aleo.org/aleo) into WebAssembly.
 JavaScript bindings to this WebAssembly code allows execution of programs in zero knowledge fully within the browser
 without requiring any external communication with the internet. Users interested in lower level details on how this is
 achieved can visit the [aleo-wasm](https://github.com/AleoHQ/sdk/tree/testnet3/wasm) crate.
@@ -203,7 +203,7 @@ graph LR
 ❗WebAssembly must be initialized before any SDK functions can be called.
 
 Aleo programs are made zero knowledge through the usage of `ZkSnarks`. The Rust code behind Aleo programs and the ZkSnarks
-that make them zero knowledge are hosted in the [SnarkVM Repostiory](https://github.com/AleoHQ/SnarkVM). The Aleo SDK
+that make them zero knowledge are hosted in the [snarkVM Repostiory](https://github.com/AleoHQ/SnarkVM). The Aleo SDK
 compiles this code to WebAssembly and creates JavaScript bindings, enabling Aleo programs to run directly in the browser.
 
 Before any logic within the SDK is run within the browser however, the WebAssembly module the SDK contains must be

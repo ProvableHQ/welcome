@@ -1,6 +1,6 @@
 ---
 id: commands
-title: The SnarkVM Command Line Interface
+title: The snarkVM Command Line Interface
 sidebar_label: Commands
 ---
 
@@ -42,7 +42,7 @@ package-name/
 
 ## `snarkvm build`
 :::info
-This command is deprecated as of SnarkVM `v0.14.5`. It will be removed in a future release.
+This command is deprecated as of snarkVM `v0.14.5`. It will be removed in a future release.
 :::
 To compile your program and verify that it builds properly, run:
 ```bash
@@ -103,7 +103,7 @@ snarkvm clean
 
 ## `snarkvm update`
 
-To update SnarkVM to the latest version run:
+To update snarkVM to the latest version run:
 ```
 snarkvm update
 ```
@@ -113,7 +113,7 @@ To list the available versions of Aleo run:
 snarkvm update --list
 ```
 
-To update SnarkVM and suppress outputs to terminal run:
+To update snarkVM and suppress outputs to terminal run:
 ```
 snarkvm update --quiet
 ```
