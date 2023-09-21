@@ -23,8 +23,6 @@ program token.aleo;
 record token:
     // The token owner.
     owner as address.private;
-    // The Aleo balance (in microcredits).
-    microcredits as u64.private;
     // The token balance.
     amount as u64.private;
 
@@ -33,7 +31,7 @@ record token:
 function mint:
     input r0 as address.private;
     input r1 as u64.private;
-    cast r0 0u64 r1 into r2 as token.record;
+    cast r0 r1 into r2 as token.record;
     output r2 as token.record;
 
 // The `transfer` function sends the specified number of tokens
@@ -53,10 +51,10 @@ function transfer:
     sub r0.amount r2 into r3;
 
     // Produces a token record for the specified receiver.
-    cast r1 0u64 r2 into r4 as token.record;
+    cast r1 r2 into r4 as token.record;
 
     // Produces a token record with the change amount for the sender.
-    cast r0.owner r0.microcredits r3 into r5 as token.record;
+    cast r0.owner r3 into r5 as token.record;
 
     // Output the receiver's record.
     output r4 as token.record;

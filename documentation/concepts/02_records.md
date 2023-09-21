@@ -17,7 +17,6 @@ An Aleo record is serialized in the following format:
 |   Parameter    |          Type          |                              Description                              |
 |:--------------:|:----------------------:|:---------------------------------------------------------------------:|
 |     `apk`      |        address         |       The address public key of the owner of the program record       |
-| `microcredits` |          u64           |       The Aleo balance (in microcredits) of the program record        |
 |     `data`     | Map<Identifier, Entry> | A data payload containing arbitrary application-dependent information |
 |    `nonce`     |         group          |             The serial number nonce of the program record             |
 |  `visibility`  |          enum          |  The record's visibility, which can either be `public` or `private`   |
@@ -34,8 +33,6 @@ and specifies the party who is authorized to spend the record.
 ```
 4130
 ```
-
-The **record microcredits** specifies the amount of Aleo credits stored in the record.
 
 ### Data
 

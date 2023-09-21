@@ -161,7 +161,6 @@ program hello.aleo {
 
     record token {
         owner: address,
-        microcredits: u64,
         amount: u64,
     }
 
@@ -176,7 +175,6 @@ program hello.aleo {
     ) -> token {
         return token {
             owner: receiver,
-            microcredits: 0u64,
             amount,
         } then finalize(receiver, amount);
     }
@@ -265,7 +263,7 @@ Records contain component declarations `{visibility} {name}: {type},`.
 A visibility can be either `constant`, `public`, or `private`.
 Users may also omit the visibility, in which case, Leo will default to `private`.
 
-Record data structures must contain the `owner` and `microcredits` components as shown below.
+Record data structures must contain the `owner` component as shown below.
 When passing a record as input to a program function, the `_nonce: group` component is also required
 (but it does not need to be declared in the Leo program).
 
@@ -273,8 +271,6 @@ When passing a record as input to a program function, the `_nonce: group` compon
 record token {
     // The token owner.
     owner: address,
-    // The Aleo balance (in microcredits).
-    microcredits: u64,
     // The token amount.
     amount: u64,
 }
@@ -391,7 +387,6 @@ program transfer.aleo {
         // Produce a token record for the token receiver.
         let new: token = token {
             owner: receiver,
-            microcredits: 0u64,
             amount,
         };
 

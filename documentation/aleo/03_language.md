@@ -297,8 +297,6 @@ When passing a record as input to a program function the `_nonce as group.{visib
 record token:
     // The token owner.
     owner as address.private;
-    // The Aleo balance (in microcredits).
-    microcredits as u64.private;
     // The token amount.
     amount as u64.private;
 ```
