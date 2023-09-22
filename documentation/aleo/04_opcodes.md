@@ -329,7 +329,7 @@ The `branch.eq` command, e.g. `branch.eq <first> <second> to <destination>`, whi
 
 #### Description
 
-The `branch.neq` command, e.g. `branch.neq <first> <second> to <destination>`, which branches execution to the [position](#position) indicated by `destination` if `first` and `second` are not equal.
+The command `branch.neq <first> <second> to <destination>` branches execution to the [position](#position) indicated by `destination` if `first` and `second` are not equal.  This command is restricted to the finalize scope, and the destination must follow the command.  Backward branches are not currently supported.
 
 
 | First     | Second    | Destination |
