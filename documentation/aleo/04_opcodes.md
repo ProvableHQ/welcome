@@ -299,7 +299,7 @@ assert.eq block.height 1337;
 
 #### Description
 
-The `branch.eq` command, e.g. `branch.eq <first> <second> to <destination>`, which branches execution to the [position](#position) indicated by `destination` if `first` and `second` are equal.
+The command `branch.eq <first> <second> to <destination>` branches execution to the [position](#position) indicated by `destination` if `first` and `second` are equal.  This command is restricted to the finalize scope, and the destination must follow the command.  Backward branches are not currently supported.
 
 | First     | Second    | Destination |
 |-----------|-----------|-------------|
