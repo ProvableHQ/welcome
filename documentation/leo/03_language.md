@@ -654,7 +654,7 @@ program test.aleo {
 
 ### Hash
 
-Leo supports the following hashing algorithms: `BHP256`, `BHP512`, `BHP768`, `BHP1024`, `Pedersen64`, `Pedersen128`, `Poseidon2`, `Poseidon4`, `Poseidon8`  
+Leo supports the following hashing algorithms: `BHP256`, `BHP512`, `BHP768`, `BHP1024`, `Pedersen64`, `Pedersen128`, `Poseidon2`, `Poseidon4`, `Poseidon8`, `Keccak256`, `Keccak384`, `Keccak512`, `SHA3_256`, `SHA3_384`, `SHA3_512`.  
 The output type of a commitment function is specified in the function name. e.g. `hash_to_group` will return a `group` type.
 Hash functions take any type as an argument.
 
