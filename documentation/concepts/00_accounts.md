@@ -72,6 +72,36 @@ The account address is encoded with an [address prefix](#account-prefixes) that 
 
 ## Advanced Topics
 
+The descriptions of algorithms below make use of the following definitions of mathematical objects:
+
+### Prime Finite Fields
+
+For a prime `r`, a finite field <code>F<sub>r</sub></code> is defined as the set of integers `{0, 1, ..., r - 1}` with addition and multiplication modulo `r`.
+In this document, we will use two prime finite fields:
+* <code>F<sub>r</sub></code>, of prime order `p = 2111115437357092606062206234695386632838870926408408195193685246394721360383`
+* <code>F<sub>base</sub></code>, of prime order `q = 8444461749428370424248824938781546531375899335154063827935233455917409239041`
+
+### Prime Order Elliptic Curve Groups
+
+In this document, we will consider the order-`p` subgroup of points on an elliptic curve defined over the base field
+<code>F<sub>base</sub></code>. Elements of this subgroup consist of a coordinate pair `(x, y)`. The group has two
+associated operations: point addition, and point doubling. The group also has a distinguished point, the **generator** `G`,
+which is a fixed point of the group.
+
+### HashToField
+
+For a finite field `F`, HashToField is a cryptographic hash function that takes as input either a sequence of bytes or 
+a sequence of field elements and outputs a field element. The output is uniformly distributed over the field `F`.
+
+### HashToScalar
+
+An instantiation of HashToField that output elements in the scalar field <code>F<sub>scalar</sub></code>.
+[source code](https://github.com/AleoHQ/snarkVM/blob/testnet3/console/algorithms/src/poseidon/hash_to_scalar.rs#L24)
+
+### EncodeToF
+
+EncodeToF(x) is a function that encode the bitstring `x` into an element of the finite field.
+
 ### Account Prefixes
 
 |                         |  Type  | Human-Readable Prefix |                    Prefix Bytes                    |
@@ -104,48 +134,22 @@ Given global instantiated Aleo parameters and subroutines.
 1. Sample a 32 byte `seed` from random
 
 2. Construct private key components
-    - `sk_sig` = BLAKE2s(`seed` | 0)
-    - `sk_prf` = BLAKE2s(`seed` | 1)
-    - `r_pk` = BLAKE2s(`seed` | `counter`)
+    - `sk_sig` = HashToScalar(EncodeToF(<code>F<sub>base</sub></code>, "AleoAccountSignatureSecretKey0") | `seed`))
+    - `r_sig` = HashToScalar(EncodeToF(<code>F<sub>base</sub></code>, "AleoAccountSignatureRandomizer0.0") | `seed`))
 
     where | denotes concatenation,
-    and where `BLAKE2s` denotes unkeyed BLAKE2s-256, as defined in [RFC 7693](https://www.rfc-editor.org/rfc/rfc7693).
+    and where `HashToScalar` denotes the [Poseidon hash function](https://eprint.iacr.org/2019/458.pdf).
 
-3.`private_key` = (`seed`, `sk_sig`, `sk_prf`, `r_pk`)
+3.`private_key` = (`seed`, (`sk_sig`, `r_sig`))
 
-The 0 and 1 used to calculate `sk_sig` and `sk_prf` are each encoded as an unsigned
-16-bit integer and turned into two bytes in little endian order before being
-concatenated to the right of the seed, then the resulting byte sequence is passed to BLAKE2s.
-The `counter` used to calculate `r_pk` is an unsigned 16-bit integer
-that is turned into two bytes in little endian order
-before being concatenated to the right of the seed, then the resulting byte sequence is passed to BLAKE2s;
-the counter is iterated on, starting from 2, until a valid `view_key` (see below) can be derived from the private key.
-
-Learn more about BLAKE2s [here](https://www.rfc-editor.org/rfc/rfc7693).
+[source code](https://github.com/AleoHQ/snarkVM/blob/testnet3/console/account/src/private_key/try_from.rs)
 
 #### Generate a View Key
+1. `(sk_sig, r_sig)` = `private_key`
+2. `view_key` = `sk_sig` + `r_sig` + HashToScalar(`sk_sig` * `G` | `r_sig` * `G`)
 
-1. Construct `pk_sig` = AccountSignature.GeneratePublicKey(<code>pp<sub>account_sig</sub></code>, `sk_sig`)
-
-2. `view_key` = AccountCommitment.Commit(<code>pp<sub>account_cm</sub></code>, (`pk_sig`, `sk_prf`), `r_pk`)
+where `G` is the generator of the base field.
 
 #### Generate an Address
 
-1. `address` = AccountEncryption.GeneratePublicKey(<code>pp<sub>account_enc</sub></code>, `view_key`)
-
-### Account Diagram
-
-```mermaid
-graph TD
-	A["Seed (32 Bytes)"]
-    A --> |"BLAKE2s(Seed, 0)" | B(sk_sig)
-    A --> |"BLAKE2s(Seed, 1)" | C(sk_prf)
-    A --> |"BLAKE2s(Seed, counter)" | D(r_pk)
-
-    B --> E(Account Private Key)
-    C --> E(Account Private Key)
-    D --> E(Account Private Key)
-
-    E --> F(Account View Key)
-    F --> G(Account Address)
-```
+1. `address` = `view_key` * `G`
