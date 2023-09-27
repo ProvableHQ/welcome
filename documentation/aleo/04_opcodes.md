@@ -285,6 +285,8 @@ Checks whether `first` and `second` are not equal, halting if they are equal.
 Returns the height of the block within the finalize scope.
 Currently, block height is the only supported property.
 
+#### Example Usage
+
 ```aleo
 assert.eq block.height 1337;
 ```
@@ -297,8 +299,7 @@ assert.eq block.height 1337;
 
 #### Description
 
-The `branch.eq` command, e.g. `branch.eq <first> <second> to <destination>`, which branches execution to the [position](#position) indicated by `destination` if `first` and `second` are equal.
-
+The command `branch.eq <first> <second> to <destination>` branches execution to the [position](#position) indicated by `destination` if `first` and `second` are equal.  This command is restricted to the finalize scope, and the destination must follow the command.  Backward branches are not currently supported.
 
 | First     | Second    | Destination |
 |-----------|-----------|-------------|
@@ -328,7 +329,7 @@ The `branch.eq` command, e.g. `branch.eq <first> <second> to <destination>`, whi
 
 #### Description
 
-The `branch.neq` command, e.g. `branch.neq <first> <second> to <destination>`, which branches execution to the [position](#position) indicated by `destination` if `first` and `second` are equal.
+The command `branch.neq <first> <second> to <destination>` branches execution to the [position](#position) indicated by `destination` if `first` and `second` are not equal.  This command is restricted to the finalize scope, and the destination must follow the command.  Backward branches are not currently supported.
 
 
 | First     | Second    | Destination |
@@ -357,6 +358,12 @@ The `branch.neq` command, e.g. `branch.neq <first> <second> to <destination>`, w
 
 [Back to Top](#table-of-standard-opcodes)
 
+#### Description
+
+Enables casting between different literals.
+
+#### Example Usage
+
 ```aleo
 input r0 as field.private;
 cast r0 into r1 as group;
@@ -364,10 +371,6 @@ cast r0 into r2 as u8;
 cast r3 r4 r5 r6 into r7 as [boolean; 4u32];
 cast r7 into r8 as [[boolean; 4u32]; 1u32];
 ```
-
-#### Description
-
-Enables casting between different literals.
 
 #### Supported Types
 
@@ -396,16 +399,18 @@ Enables casting between different literals.
 
 [Back to Top](#table-of-standard-opcodes)
 
+#### Description
+
+Perform casting with lossy truncation.
+
+#### Example Usage
+
 ```aleo
 input r0 as field.private;
 cast r0 into r1 as group;
 cast r0 into r2 as u8;
 cast.lossy r0 into r3 as u8; // The bottom 8 bits of the r0 are extracted into a u8 and placed into r3
 ```
-
-#### Description
-
-Perform casting with lossy truncation.
 
 #### Supported Types
 
@@ -622,7 +627,6 @@ Divides `first` by `second`, storing the outcome in `destination`. Halts on divi
 
 For integer types, this operation performs truncated division. Furthermore, a constraint is added to check for underflow. This underflow happens when dividing the minimum value of a signed integer type by `-1`. For example, `div -128i8 -1i8` would result in underflow, since `128` cannot be represented as an `i8`.
 
-
 For cases where wrapping semantics are needed for integer types, see the [div.w](#div.w) instruction.
 
 #### Supported Types
@@ -675,7 +679,6 @@ Divides `first` by `second`, wrapping around at the boundary of the type, and st
 #### Description
 
 Doubles the input, storing the outcome in `destination`.
-
 
 #### Supported Types
 
@@ -1309,7 +1312,6 @@ Checks if `first` is less than `second`, storing the outcome in `destination`.
 | `U128`   | `U128`   | `Boolean`   |
 | `Scalar` | `Scalar` | `Boolean`   |
 
-
 ***
 
 ### `lte`
@@ -1594,9 +1596,10 @@ Raises `first` to the power of `second`, wrapping around at the boundary of the 
 
 ### `rand.chacha`
 
-#### Description 
+#### Description
 
 The `rand.chacha` opcode is used to generate random values within the `finalize` scope. It supports a wide range of types for the random value.
+
 #### Example Usage
 
 ```aleo
