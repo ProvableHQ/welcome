@@ -1,5 +1,5 @@
 ---
-id: react leo tutorial
+id: tutorial
 title: Create Aleo App - React Leo Tutorial
 sidebar_label: React + Leo Tutorial
 ---
@@ -30,7 +30,9 @@ The `helloworld` folder is your Leo program. This is where you’ll use Leo, our
 
 ## 3. Execute `helloworld.aleo`
 
+<!-- markdown-link-check-disable -->
 Navigate to http://localhost:5173 and open up the developer console.
+<!-- markdown-link-check-enable -->
 
 Hit “execute helloworld.aleo”. 
 
@@ -98,8 +100,9 @@ Take your transaction ID from the Discord URL earlier:
 ```bash
 at12u62xwfew2rq32xee8nwhtlxghfjz7mm3528yj240nuezue625fqy4lhlp
 ``` 
-
+<!-- markdown-link-check-disable -->
 Go to “Get Transaction” at [aleo.tools/rest](https://aleo.tools/rest) and insert your transaction ID to look at the JSON object. You can similarly use https://vm.aleo.org/api/testnet3/transaction/[insert-your-transaction-id] to get the same output in your browser. 
+<!-- markdown-link-check-enable-->
 
 ![get-transaction](./images/get-transaction.png)
 
