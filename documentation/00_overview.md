@@ -41,6 +41,7 @@ An index of all pages available in this documentation.
 - [Transaction Fees](./concepts/03A_transaction_fees.md)
 - [Transitions](./concepts/04_transitions.md)
 - [Blocks](./concepts/05_blocks.md)
+- [Finalize](./concepts/05A_finalize.md)
 
 
 ### Chapter 4: Aleo Instructions
