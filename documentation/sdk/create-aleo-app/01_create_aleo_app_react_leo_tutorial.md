@@ -19,6 +19,7 @@ Navigate to the project you just installed.
 cd my-aleo-app
 npm run dev
 ```
+<!-- markdown-link-check-disable -->
 
 This starts a local instance of your React application at http://localhost:5173.
 
@@ -30,8 +31,8 @@ The `helloworld` folder is your Leo program. This is where you’ll use Leo, our
 
 ## 3. Execute `helloworld.aleo`
 
-<!-- markdown-link-check-disable -->
 Navigate to http://localhost:5173 and open up the developer console.
+
 <!-- markdown-link-check-enable -->
 
 Hit “execute helloworld.aleo”. 
