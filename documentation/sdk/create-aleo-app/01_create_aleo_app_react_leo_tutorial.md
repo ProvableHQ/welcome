@@ -18,15 +18,16 @@ Navigate to the project you just installed.
 ```bash
 cd aleo-project
 npm install
+npm run install-leo
 npm run dev
 ```
 <!-- markdown-link-check-disable -->
 
-This starts a local instance of your React application at http://localhost:5173.
+This installs all the required modules and also Leo, our statically-typed programming language built for writing private applications. Lastly, we've initialized a local instance of your React application at http://localhost:5173.
 
 `src/App.jsx` contains the main body of your React application.
 
-The `helloworld` folder is your Leo program. This is where you’ll use Leo, our statically-typed programming language built for writing private applications.
+The `helloworld` folder is your Leo program. This is where you’ll use Leo.
 
 `src/workers/worker.js` is the WebAssembly (WASM) module that we'll be initializing for deployment and execution of Leo programs.
 
@@ -50,11 +51,11 @@ Let’s deploy the `helloworld` program. Deployment requires an account with Ale
 
 ### Account Generation
 
-You can generate an account on the React application itself, or head over to [aleo.tools/account](https://aleo.tools/account) and hit “generate”. 
+```bash
+leo account new 
+```
 
 Write down your private key, view key, and public address in a safe place. Treat your private and view keys as keys you should never share with anyone else. 
-
-![generate-account](./images/generate-account.png)
 
 ### Faucet
 
@@ -78,16 +79,48 @@ Transfer successful! for message ID: 1156693507768078496
 https://apiv2.aleo.network/testnet3/transaction/at12u62xwfew2rq32xee8nwhtlxghfjz7mm3528yj240nuezue625fqy4lhlp
 ```
 
-### The `helloworld` Program
+### Leo & `helloworld`
 
-Since `helloworld` has already been deployed before, let’s change the name of your helloworld program by adding a suffix. You’ll want to change the code `helloworld.aleo` to `helloworld_[randomsuffix].aleo` in four files:
+If we try to deploy right now, deployment will fail because `helloworld` has already been deployed before. It's as simple as changing the program name, but let's use Leo to create and build an entirely new program.
 
-1. `helloworld/src/main.leo` 
-2. `helloworld/src/program.json` 
-3. `helloworld/build/main.leo`
-4. `helloworld/build/program.json`
+```bash
+leo new helloworld_[randomsuffix]
+cd helloworld_[randomsuffix]
+```
 
-You won’t have to do this when actually developing a Leo program - source files compile to the build in the Leo language, but for now, let’s just change the names to move forward.
+After you've generated your new `helloworld` project, you can delete the original `helloworld` folder.
+
+You'll notice the React App now errors out. Navigate to the home directory of your React application and open `App.jsx`. Change the folder name on line 5 from `helloworld` to the name of your new Leo project to get rid of the error:
+
+```bash
+import helloworld_program from "../helloworld_[randomsuffix]/build/main.aleo?raw";
+```
+
+Let's dig in a little more. Navigate back to your Leo project and Add your private key to the `.env` in your new Aleo project. Replace the example private key with the one you saved above.
+
+```bash
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkp2FCZZ7ucNVx5hoofizpq18mvCZNKTpqKMTt1wTahmxSf
+```
+
+Once you've done this, within the root of your new Leo project, you can locally execute your Leo program while developing it:
+
+```bash
+leo run  ## compiles leo to aleo instructions and executes program functions with input variables
+
+leo execute  ## compiles leo to aleo instructions, executes a program with input variables, synthesizes the program circuit, and generates proving and verifying keys
+
+leo help  ## you know what this does
+```
+
+You can try it yourself and observe the outputs in the terminal.
+
+```bash
+leo run main
+leo execute main
+```
+
+Let's get back to deploying!
 
 When you deploy a program, the record that you requested from the faucet is the one that will be used in order to pay for deployment. Looking in `App.jsx`, the web worker is called in order to start the deployment. Following that to `src/workers/worker.js` we see that the WASM is initalized, which allows for computation to run efficiently in the browser, and that the program manager contains methods for authoring, deploying, and interacting with Aleo programs. 
 
