@@ -25,14 +25,14 @@ You can also directly specify the project name and the template you want to use 
 
 ```bash
 # npm 6.x
-npm create aleo-app@latest my-aleo-app --template react
+npm create aleo-app@latest aleo-project --template react
 
 # npm 7+, extra double-dash is needed:
-npm create aleo-app@latest my-aleo-app -- --template react
+npm create aleo-app@latest aleo-project -- --template react
 ```
 
 Currently supported template presets include:
-
+- `vanilla` (javascript)
 - `react`
 
 You can use `.` for the project name to scaffold in the current directory.
