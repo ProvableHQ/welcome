@@ -9,14 +9,15 @@ sidebar_label: React + Leo Tutorial
 
 ## 1. Installation
 
-Please see [the installation page](00_app_installation.md) to setup the React Leo template.
+Please see [the installation page](00_app_installation.md) to setup the React + Javascript + Leo template.
 
 ## 2. Navigation
 
 Navigate to the project you just installed. 
 
 ```bash
-cd my-aleo-app
+cd aleo-project
+npm install
 npm run dev
 ```
 <!-- markdown-link-check-disable -->
@@ -31,7 +32,7 @@ The `helloworld` folder is your Leo program. This is where you’ll use Leo, our
 
 ## 3. Execute `helloworld.aleo`
 
-Navigate to http://localhost:5173 and open up the developer console.
+Navigate to http://localhost:5173 and open up the developer console in your browser
 
 <!-- markdown-link-check-enable -->
 
