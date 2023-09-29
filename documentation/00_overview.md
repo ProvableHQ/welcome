@@ -22,6 +22,8 @@ An index of all pages available in this documentation.
 - [Leo Command Line Interface](./leo/05_commands.md)
 - [Leo Code Editor Plugins](./leo/06_tooling.md)
 - [Leo Examples, Guides, and Developer Resources](./leo/07_resources.md)
+- [Leo Cheatsheet](./leo/09_cheatsheet.md)
+- [Finalize](./leo/10_finalize.md)
 
 ### Chapter 2: Leo by Example
 
@@ -41,7 +43,6 @@ An index of all pages available in this documentation.
 - [Transaction Fees](./concepts/03A_transaction_fees.md)
 - [Transitions](./concepts/04_transitions.md)
 - [Blocks](./concepts/05_blocks.md)
-- [Finalize](./concepts/05A_finalize.md)
 
 
 ### Chapter 4: Aleo Instructions

@@ -50,3 +50,5 @@ program transfer.aleo {
 ```
 
 If there's no need to create or alter the public on-chain state, finalize functions are not required.
+
+[Link back to Leo language guide](./03_language.md#finalize-function)

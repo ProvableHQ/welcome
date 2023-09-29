@@ -373,6 +373,10 @@ a finalize function _finalizes_ a transition function on chain.
 Upon success of the finalize function, the program logic is executed.
 Upon failure of the finalize function, the program logic is reverted.
 
+More information on finalize functions can be found [here](./10_finalize.md).
+
+```leo showLineNumbers
+
 ```leo showLineNumbers
 program transfer.aleo {
     // The function `transfer_public_to_private` turns a specified token amount
