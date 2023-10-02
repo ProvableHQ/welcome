@@ -176,12 +176,12 @@ Success, you’ve deployed an Aleo program and can how create a decentralized, p
 
 1. We packaged a React template for you with Leo.
 
-2. [Leo](https://developer.aleo.org/leo/) is our statically-typed programming language built for writing private applications.
+2. You also installed [Leo](https://developer.aleo.org/leo/), our statically-typed programming language built for writing private applications. Using Leo, you can write, build, compile, and execute Leo programs locally.
 
-3. We provided the Leo program `helloworld` already pre-compiled into Aleo instructions and then executed locally using WASM + web workers which was an abstraction on snarkVM’s capabilities. [snarkVM](https://developer.aleo.org/aleo/) is the data execution layer. It is used to compile Leo programs and execute them locally off-chain. All Leo programs eventually become Aleo instructions via Aleo’s compiler during the execution phase of snarkVM. 
+3. We provided the `helloworld` Leo program already pre-compiled into Aleo instructions and then executed it locally using WASM + web workers, which was an abstraction on snarkVM’s capabilities. [snarkVM](https://developer.aleo.org/aleo/) is the data execution layer. It is used to compile Leo programs and execute them locally off-chain. All Leo programs eventually become Aleo instructions via Aleo’s compiler during the execution phase of snarkVM. 
 
 4. Similarly, we deployed the `helloworld` program, again using the WASM + web workers abstraction layer but you can also deploy programs on-chain using [snarkOS](https://developer.aleo.org/testnet/getting_started/deploy_execute/#deploy), the data availability layer or blockchain / distributed ledger.
 
 5. During the tutorial you navigated to [aleo.tools](https://aleo.tools), which is the graphical interface to our SDK, which serves as an abstraction layer of snarkOS and snarkVM. You’ll find you can perform similar actions (compiling, executing, deploying) on aleo.tools. 
 
-6. The entire React template along with the WASM and web workers can also be considered an abstraction layer of snarkOS and snarkVM.
+6. The entire React template along with the WASM and web workers can also be considered an abstraction layer of snarkOS and snarkVM. This makes it easier than ever to spin up a dApp using React & Leo.
