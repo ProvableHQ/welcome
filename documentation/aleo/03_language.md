@@ -405,7 +405,7 @@ function transfer_public_to_private:
     output r2 as credits.record;
     
     // Decrement the balance of the sender publicly.
-    finalize self.caller r1;
+    finalize self.signer r1;
 
 finalize transfer_public_to_private:
     // Input the sender.
@@ -429,10 +429,72 @@ finalize transfer_public_to_private:
 
 The following commands are supported in Aleo Instructions to provide additional program functionality.
 
-#### self.caller
-The `self.caller` command returns the address of the caller of the program.  
+#### self.signer
+
+The `self.signer` command returns the user address that orginated the transition.
 This can be useful for managing access control to a program.
-In the above example, the `transfer_public_to_private` function decrements the balance of the sender publicly using `self.caller`.
+In the above example, the `transfer_public_to_private` function decrements the balance of the sender publicly using `self.signer`.
+
+#### self.caller
+
+The `self.caller` command returns the address of the immediate caller of the program.
+This can be useful in determining the origin of a program call.
+
+#### Usage of `self.signer` and `self.caller`
+
+Consider the following program as a motivating example for the usage of `self.signer` and `self.caller`
+
+```
+import import.aleo;
+
+program parent.aleo;
+
+record who_called_parent:
+    owner as address.private;
+    gates as u64.private;
+    // self.signer, should be original invoker of the program calling this one
+    caller as address.private;
+    // self.caller, should be the direct program address calling this one
+    parent as address.private;
+
+function example:
+    // invoked by original caller, parent and caller should be the same
+    cast self.signer 0u64 self.signer self.caller into r0 as who_called_parent.record;
+
+    // external_call's parent should be this program, but caller should match the original caller
+    call import.aleo/external_call into r1;
+
+    // invoked by original caller, parent and caller should be the same
+    cast self.signer 0u64 self.signer self.caller into r2 as who_called_parent.record;
+
+    // external_call's parent should be this program, but caller should match the original caller
+    call import.aleo/external_call into r3;
+
+    output r0 as who_called_parent.record;
+    output r1 as import.aleo/who_called_import.record;
+    output r2 as who_called_parent.record;
+    output r3 as import.aleo/who_called_import.record;
+
+```
+
+The program below, `import.aleo` is used in the above example to motivate the usage of `self.caller` and `self.signer`.
+
+```
+program import.aleo;
+
+record who_called_import:
+    owner as address.private;
+    gates as u64.private;
+    // self.signer, should be original invoker of the program calling this one
+    caller as address.private;
+    // self.caller, should be the direct program address calling this one
+    parent as address.private;
+
+function external_call:
+    cast self.signer 0u64 self.signer self.caller into r0 as who_called_import.record;
+
+    output r0 as who_called_import.record;
+```
 
 #### block.height
 The `block.height` command returns the height of the block in which the program is executed (latest block height + 1).

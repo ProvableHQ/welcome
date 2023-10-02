@@ -122,6 +122,7 @@ operand = literal
         / register-access
         / program-id
         / "self.caller"
+        / "self.signer"
         / "block.height"
 literal = arithmetic-literal
         / address-literal
