@@ -172,6 +172,40 @@ Now you can hit the deploy button!
 
 Success, you’ve deployed an Aleo program and can how create a decentralized, private application!
 
+## Claim your Leo Contributor Badge!
+Making it through this tutorial was no easy task, so because you've done it, we'd love to honor you with a Leo contributor badge on Github!
+
+### Pushing your Leo Application to Github
+
+1. Let's get to your project's directory, initialize, and commit your application.
+
+```bash
+cd aleo-project
+git init -b main
+git add .
+git commit -m "first commit, new aleo app"
+```
+
+2. Create a new repository on your [github.com](https://github.com/new) account by hitting "new repository" in the top right. Set the repo to public, and don't worry about adding a README, license, or .gitignore files. You can add these files after your project has been pushed to GitHub. 
+
+3. At the top of the page your new repository, click to copy the remote repository URL and go back to your terminal to link your local project to this repository.
+
+![ ](https://docs.github.com/assets/cb-48149/mw-1440/images/help/repository/copy-remote-repository-url-quick-setup.webp)
+
+```bash
+git remote add origin <REMOTE_URL>
+git remote -v
+git push -u origin main
+```
+
+### Claim your Leo badge
+1. Go to the Leo repo issues tab [here](https://github.com/AleoHQ/leo/issues/new/choose)
+2. Go to 🥇 "Badge" and click "Get Started".
+3. Follow the brief instructions and submit.
+4. Once your issue is approved, we will add you to the [contributors section](https://github.com/AleoHQ/leo#%EF%B8%8F-contributors) of the Leo README.md file.
+
+Congratulations on becoming a Leo contributor! 🎉
+
 ## Recap & Additional Resources
 
 1. We packaged a React template for you with Leo.
@@ -185,3 +219,4 @@ Success, you’ve deployed an Aleo program and can how create a decentralized, p
 5. During the tutorial you navigated to [aleo.tools](https://aleo.tools), which is the graphical interface to our SDK, which serves as an abstraction layer of snarkOS and snarkVM. You’ll find you can perform similar actions (compiling, executing, deploying) on aleo.tools. 
 
 6. The entire React template along with the WASM and web workers can also be considered an abstraction layer of snarkOS and snarkVM. This makes it easier than ever to spin up a dApp using React & Leo.
+
