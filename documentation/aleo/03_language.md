@@ -438,7 +438,6 @@ In the above example, the `transfer_public_to_private` function decrements the b
 #### self.caller
 
 The `self.caller` command returns the address of the immediate caller of the program.
-This can be useful in determining the origin of a program call.
 
 #### Usage of `self.signer` and `self.caller`
 
