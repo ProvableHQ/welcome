@@ -465,8 +465,7 @@ record who_called_parent:
     // the address of the parent.
     parent as address.private;
 
-// store the addresses of self.signer and self.parent and return them as records.
-// shows how self.signer and self.caller change in the context of an external call.
+// the function 'example' takes no inputs and returns two who_called_parent records and two who_called_import records.
 function example:
     // invoked by original caller, parent and caller should be the same
     cast self.signer self.signer self.caller into r0 as who_called_parent.record;
@@ -500,7 +499,7 @@ record who_called_import:
     // the address of the parent.
     parent as address.private;
 
-// store the addresses of self.signer and self.parent and returns them as a record.
+// the function `external_call` takes no input and returns a who_called_import record.
 function external_call:
     cast self.signer self.signer self.caller into r0 as who_called_import.record;
 
