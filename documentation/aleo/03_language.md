@@ -5,21 +5,26 @@ sidebar_label: Language
 ---
 
 ### Statically Typed
+
 Aleo instructions is a **statically typed language**, which means we must know the type of each variable before executing a circuit.
 
 ### Explicit Types Required
+
 There is no `undefined` or `null` value in Aleo instructions. When assigning a new variable, **the type of the value must be explicitly stated**.
 
 ### Pass by Value
+
 Expressions in Aleo instructions are always **passed by value**, which means their values are always copied when they are used as function inputs or in right sides of assignments.
 
 ### Register based
-There are no variable names in Aleo instructions. 
+
+There are no variable names in Aleo instructions.
 All variables are stored in registers denoted `rX` where `X` is a non-negative whole number starting from 0 `r0, r1, r2, etc.`.
 
 ## Data Types and Values
 
 ### Booleans
+
 Aleo instructions supports the traditional `true` or `false` boolean values. The explicit `boolean` type for booleans in statements is required.
 
 ```aleo
@@ -28,6 +33,7 @@ function main:
 ```
 
 ### Integers
+
 Aleo instructions supports signed integer types `i8`, `i16`, `i32`, `i64`, `i128`
 and unsigned integer types `u8`, `u16`, `u32`, `u64`, `u128`.
 
@@ -152,7 +158,7 @@ Function inputs must be declared just after the function name declaration.
 ```aleo showLineNumbers
 // The function `foo` takes a single input `r0` with type `field` and visibility `public`.
 function foo:
-    input r0 as field.public; 
+    input r0 as field.public;
 ```
 
 #### Function Outputs
@@ -166,14 +172,17 @@ Function outputs must be declared at the end of the function definition.
 ```
 
 #### Call a Function
+
 In the Aleo protocol, calling a function creates a transition that can consume and produce records on-chain.
 Use the `aleo run` CLI command to pass inputs to a function and execute the program.  
 In Testnet3, program functions cannot call other internal program functions.
 If you would like to develop "helper functions" that are called internally within a program, try writing a `closure`.
 
 #### Call an Imported Function
+
 Aleo programs can externally call other Aleo programs using the `call {program}/{function} {register} into {register}` instruction.
-```aleo 
+
+```aleo
 import foo.aleo;
 
 program bar.aleo;
@@ -199,8 +208,10 @@ closure foo:
 ```
 
 #### Call a Closure
+
 Aleo programs can internally call other Aleo closures using the `call {name} {register} into {register}` instruction.
-```aleo 
+
+```aleo
 program bar.aleo;
 
 function call_internal:
@@ -208,7 +219,6 @@ function call_internal:
     call foo r0 into r1; // Internally call closure `foo` with argument `r0` and store the result in `r1`.
     output r1;
 ```
-
 
 ### Struct
 
@@ -223,6 +233,7 @@ struct array3:
 ```
 
 To instantiate a `struct` in a program use the `cast` instruction.
+
 ```aleo showLineNumbers
 function new_array3:
     input r0 as u32.private;
@@ -267,10 +278,9 @@ function get_array_element:
     output r2;
 ```
 
-
 Arrays can be nested.
 
-```aleo 
+```aleo
 [[true, false, true, false], [false, true, false, true]]
 ```
 
@@ -284,7 +294,6 @@ function get_nested_array_element:
 :::info
 Aleo instructions currently only support fixed-length static arrays.
 :::
-
 
 ### Record
 
@@ -302,6 +311,7 @@ record token:
 ```
 
 To instantiate a `record` in a program use the `cast` instruction.
+
 ```aleo showLineNumbers
 function new_token:
     input r0 as address.private;
@@ -348,14 +358,14 @@ finalize transfer_public:
     input r1 as address.public;
     // Input the amount.
     input r2 as u64.public;
-    
+
     // Decrements `account[r0]` by `r2`.
     // If `account[r0]` does not exist, 0u64 is used.
     // If `account[r0] - r2` underflows, `transfer_public` is reverted.
     get.or_use account[r0] 0u64 into r3;
     sub r3 r2 into r4;
     set r4 into account[r0];
-    
+
     // Increments `account[r1]` by `r2`.
     // If `account[r1]` does not exist, 0u64 is used.
     // If `account[r1] + r2` overflows, `transfer_public` is reverted.
@@ -372,19 +382,17 @@ A set command that sets a value in a mapping, e.g. `set r0 into accounts[r0];`.
 
 A remove command that removes a key-value pair from a mapping, e.g. `remove accounts[r0];`.
 
-
-
-```aleo showLineNumbers
+````aleo showLineNumbers
 
 ### Finalize
 
-A finalize is declared as `finalize {name}:`.  
+A finalize is declared as `finalize {name}:`.
 A finalize must immediately follow a [function](#function), and must have the same name;
 it is associated with the function and is executed on chain,
 after the zero-knowledge proof of the execution of the associated function is verified;
-a finalize *finalizes* a function on chain.  
-Upon success of the finalize function, the program logic is executed.  
-Upon failure of the finalize function, the program logic is reverted.  
+a finalize *finalizes* a function on chain.
+Upon success of the finalize function, the program logic is executed.
+Upon failure of the finalize function, the program logic is reverted.
 
 ```aleo showLineNumbers
 // The `transfer_public_to_private` function turns a specified amount
@@ -397,13 +405,13 @@ function transfer_public_to_private:
     input r0 as address.public;
     // Input the amount.
     input r1 as u64.public;
-    
+
     // Construct a record for the receiver.
     cast r0 r1 into r2 as credits.record;
-    
+
     // Output the record of the receiver.
     output r2 as credits.record;
-    
+
     // Decrement the balance of the sender publicly.
     finalize self.signer r1;
 
@@ -412,18 +420,18 @@ finalize transfer_public_to_private:
     input r0 as address.public;
     // Input the amount.
     input r1 as u64.public;
-    
+
     // Retrieve the balance of the sender.
     // If `account[r0]` does not exist, 0u64 is used.
     get.or_use account[r0] 0u64 into r2;
-    
+
     // Decrements `account[r0]` by `r1`.
     // If `r2 - r1` underflows, `trasfer_public_to_private` is reverted.
     sub r2 r1 into r3;
-    
+
     // Updates the balance of the sender.
     set r3 into account[r0];
-```
+````
 
 ### Commands
 
@@ -441,30 +449,33 @@ The `self.caller` command returns the address of the immediate caller of the pro
 
 #### Usage of `self.signer` and `self.caller`
 
-Consider the following program as a motivating example for the usage of `self.signer` and `self.caller`
+Consider the following program as a motivating example for the usage of `self.signer` and `self.caller`.
 
-```
+```aleo showLineNumbers
+// This program has multiple examples of both internal and external function calls that show how self.signer and self.caller change throughout the execution of a program.
 import import.aleo;
 
 program parent.aleo;
 
 record who_called_parent:
+    // the address of the owner.
     owner as address.private;
-    gates as u64.private;
-    // self.signer, should be original invoker of the program calling this one
+    // the address of the caller.
     caller as address.private;
-    // self.caller, should be the direct program address calling this one
+    // the address of the parent.
     parent as address.private;
 
+// store the addresses of self.signer and self.parent and return them as records.
+// shows how self.signer and self.caller change in the context of an external call.
 function example:
     // invoked by original caller, parent and caller should be the same
-    cast self.signer 0u64 self.signer self.caller into r0 as who_called_parent.record;
+    cast self.signer self.signer self.caller into r0 as who_called_parent.record;
 
     // external_call's parent should be this program, but caller should match the original caller
     call import.aleo/external_call into r1;
 
     // invoked by original caller, parent and caller should be the same
-    cast self.signer 0u64 self.signer self.caller into r2 as who_called_parent.record;
+    cast self.signer self.signer self.caller into r2 as who_called_parent.record;
 
     // external_call's parent should be this program, but caller should match the original caller
     call import.aleo/external_call into r3;
@@ -473,29 +484,82 @@ function example:
     output r1 as import.aleo/who_called_import.record;
     output r2 as who_called_parent.record;
     output r3 as import.aleo/who_called_import.record;
-
 ```
 
-The program below, `import.aleo` is used in the above example to motivate the usage of `self.caller` and `self.signer`.
+The program below, `import.aleo` is used in the above example to show the difference between `self.caller` and `self.signer`.
 
-```
+```aleo showLineNumbers
+// This program is used to show the difference between self.caller and self.signer in the context of an external function call.
 program import.aleo;
 
 record who_called_import:
+    // the address of the owner.
     owner as address.private;
-    gates as u64.private;
-    // self.signer, should be original invoker of the program calling this one
+    // the address of the caller.
     caller as address.private;
-    // self.caller, should be the direct program address calling this one
+    // the address of the parent.
     parent as address.private;
 
+// store the addresses of self.signer and self.parent and returns them as a record.
 function external_call:
-    cast self.signer 0u64 self.signer self.caller into r0 as who_called_import.record;
+    cast self.signer self.signer self.caller into r0 as who_called_import.record;
 
     output r0 as who_called_import.record;
 ```
 
+You can setup this example yourself by running the following commands
+
+1. `snarkvm new parent && cd parent`
+2. `mkdir imports && touch ./imports/import.aleo`
+3. copy paste the code for `program parent.aleo` into `main.aleo`
+4. copy paste the code for `program import.aleo` into `imports/import.aleo`
+5. Create a `.env` file with the following contents
+
+```
+    NETWORK=testnet3
+    PRIVATE_KEY=<your_private_key>
+```
+
+6. `snarkvm run example`
+
+Let's take a look at the output of running this example
+
+```
+Outputs
+// program invoked by the original caller, parent and caller are the same.
+ • {
+  owner: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
+  caller: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
+  parent: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
+  _nonce: 3292834905509658414705063591658698790074258532339617643209693594573616825675group.public
+}
+// parent of the external call is the parent.aleo program, but the caller is the original caller.
+ • {
+  owner: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
+  caller: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
+  parent: aleo18ruz9g9e0h5elul8a6j6c7fq68tey2u0jj4nwwza60xdgz5pgsysphw7zg.private,
+  _nonce: 2570681480682446926133903465816777959827518557138457172654079618333894328603group.public
+}
+// parent.aleo invoked by the original caller, parent and the caller are the same.
+ • {
+  owner: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
+  caller: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
+  parent: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
+  _nonce: 5469227862257188875922748845546953697006530109767537237216584541887238250482group.public
+}
+// parent of the external call is the parent.aleo program, but the caller is the original caller.
+ • {
+  owner: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
+  caller: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
+  parent: aleo18ruz9g9e0h5elul8a6j6c7fq68tey2u0jj4nwwza60xdgz5pgsysphw7zg.private,
+  _nonce: 3183816282143209343079972367337044810712508972565886175704740732795753920614group.public
+}
+```
+
+In the context of the parent.aleo program, `self.signer` and `self.caller` are identical. In the context of the import.aleo program, `self.signer` still refers to the original caller of parent.aleo, but `self.caller` refers to parent.aleo.
+
 #### block.height
+
 The `block.height` command returns the height of the block in which the program is executed (latest block height + 1).
 This can be useful for managing time-based access control to a program.
 The `block.height` command must be called within a finalize block.
@@ -520,6 +584,7 @@ rand.chacha r0 r1 into r2 as field;
 #### Hash
 
 Aleo Instructions supports the following syntax for hashing to standard types.
+
 ```aleo
 hash.bhp256 r0 into r1 as address;
 hash.bhp256 r0 into r1 as field;
@@ -544,12 +609,14 @@ hash.psd2 ...;
 hash.psd4 ...;
 hash.psd8 ...;
 ```
+
 Checkout the [Aleo Instructions opcodes](./04_opcodes.md) for a full list of supported hashing algorithms.
 
 #### Commit
 
 Aleo Instructions supports the following syntax for committing to standard types.  
 Note that the `commit` command requires any type as the first argument, and a `scalar` as the second argument.
+
 ```aleo
 commit.bhp256 r0 r1 into r2 as address;
 commit.bhp256 r0 r1 into r2 as field;
@@ -560,15 +627,18 @@ commit.bhp1024 ...;
 commit.ped64 ...;
 commit.ped128 ...;
 ```
+
 Checkout the [Aleo Instructions opcodes](./04_opcodes.md) for a full list of supported commitment algorithms.
 
 #### position, branch.eq, branch.neq
+
 The `position` command, e.g. `position exit`, indicates a point to branch execution to.  
 The `branch.eq` command, e.g. `branch.eq r0 r1 to exit`, which branches execution to the position indicated by `exit` if `r0` and `r1` are equal.  
 The `branch.neq` command, e.g. `branch.neq r0 r1 to exit`, which branches execution to the position indicated by `exit` if `r0` and `r1` are not equal.
 
 ** Example **
 The finalize block exits successfully if the input is 0u8 and fails otherwise.
+
 ```aleo
 program test_branch.aleo;
 
