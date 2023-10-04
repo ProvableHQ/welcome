@@ -5,21 +5,26 @@ sidebar_label: Language
 ---
 
 ### Statically Typed
+
 Aleo instructions is a **statically typed language**, which means we must know the type of each variable before executing a circuit.
 
 ### Explicit Types Required
+
 There is no `undefined` or `null` value in Aleo instructions. When assigning a new variable, **the type of the value must be explicitly stated**.
 
 ### Pass by Value
+
 Expressions in Aleo instructions are always **passed by value**, which means their values are always copied when they are used as function inputs or in right sides of assignments.
 
 ### Register based
-There are no variable names in Aleo instructions. 
+
+There are no variable names in Aleo instructions.
 All variables are stored in registers denoted `rX` where `X` is a non-negative whole number starting from 0 `r0, r1, r2, etc.`.
 
 ## Data Types and Values
 
 ### Booleans
+
 Aleo instructions supports the traditional `true` or `false` boolean values. The explicit `boolean` type for booleans in statements is required.
 
 ```aleo
@@ -28,6 +33,7 @@ function main:
 ```
 
 ### Integers
+
 Aleo instructions supports signed integer types `i8`, `i16`, `i32`, `i64`, `i128`
 and unsigned integer types `u8`, `u16`, `u32`, `u64`, `u128`.
 
@@ -152,7 +158,7 @@ Function inputs must be declared just after the function name declaration.
 ```aleo showLineNumbers
 // The function `foo` takes a single input `r0` with type `field` and visibility `public`.
 function foo:
-    input r0 as field.public; 
+    input r0 as field.public;
 ```
 
 #### Function Outputs
@@ -166,14 +172,17 @@ Function outputs must be declared at the end of the function definition.
 ```
 
 #### Call a Function
+
 In the Aleo protocol, calling a function creates a transition that can consume and produce records on-chain.
 Use the `aleo run` CLI command to pass inputs to a function and execute the program.  
 In Testnet3, program functions cannot call other internal program functions.
 If you would like to develop "helper functions" that are called internally within a program, try writing a `closure`.
 
 #### Call an Imported Function
+
 Aleo programs can externally call other Aleo programs using the `call {program}/{function} {register} into {register}` instruction.
-```aleo 
+
+```aleo
 import foo.aleo;
 
 program bar.aleo;
@@ -199,8 +208,10 @@ closure foo:
 ```
 
 #### Call a Closure
+
 Aleo programs can internally call other Aleo closures using the `call {name} {register} into {register}` instruction.
-```aleo 
+
+```aleo
 program bar.aleo;
 
 function call_internal:
@@ -208,7 +219,6 @@ function call_internal:
     call foo r0 into r1; // Internally call closure `foo` with argument `r0` and store the result in `r1`.
     output r1;
 ```
-
 
 ### Struct
 
@@ -223,6 +233,7 @@ struct array3:
 ```
 
 To instantiate a `struct` in a program use the `cast` instruction.
+
 ```aleo showLineNumbers
 function new_array3:
     input r0 as u32.private;
@@ -267,10 +278,9 @@ function get_array_element:
     output r2;
 ```
 
-
 Arrays can be nested.
 
-```aleo 
+```aleo
 [[true, false, true, false], [false, true, false, true]]
 ```
 
@@ -284,7 +294,6 @@ function get_nested_array_element:
 :::info
 Aleo instructions currently only support fixed-length static arrays.
 :::
-
 
 ### Record
 
@@ -302,6 +311,7 @@ record token:
 ```
 
 To instantiate a `record` in a program use the `cast` instruction.
+
 ```aleo showLineNumbers
 function new_token:
     input r0 as address.private;
@@ -348,14 +358,14 @@ finalize transfer_public:
     input r1 as address.public;
     // Input the amount.
     input r2 as u64.public;
-    
+
     // Decrements `account[r0]` by `r2`.
     // If `account[r0]` does not exist, 0u64 is used.
     // If `account[r0] - r2` underflows, `transfer_public` is reverted.
     get.or_use account[r0] 0u64 into r3;
     sub r3 r2 into r4;
     set r4 into account[r0];
-    
+
     // Increments `account[r1]` by `r2`.
     // If `account[r1]` does not exist, 0u64 is used.
     // If `account[r1] + r2` overflows, `transfer_public` is reverted.
@@ -372,9 +382,6 @@ A set command that sets a value in a mapping, e.g. `set r0 into accounts[r0];`.
 
 A remove command that removes a key-value pair from a mapping, e.g. `remove accounts[r0];`.
 
-
-
-```aleo showLineNumbers
 
 ### Finalize
 
@@ -397,44 +404,41 @@ function transfer_public_to_private:
     input r0 as address.public;
     // Input the amount.
     input r1 as u64.public;
-    
+
     // Construct a record for the receiver.
     cast r0 r1 into r2 as credits.record;
-    
+
     // Output the record of the receiver.
     output r2 as credits.record;
-    
+
     // Decrement the balance of the sender publicly.
-    finalize self.caller r1;
+    finalize self.signer r1;
 
 finalize transfer_public_to_private:
     // Input the sender.
     input r0 as address.public;
     // Input the amount.
     input r1 as u64.public;
-    
+
     // Retrieve the balance of the sender.
     // If `account[r0]` does not exist, 0u64 is used.
     get.or_use account[r0] 0u64 into r2;
-    
+
     // Decrements `account[r0]` by `r1`.
     // If `r2 - r1` underflows, `trasfer_public_to_private` is reverted.
     sub r2 r1 into r3;
-    
+
     // Updates the balance of the sender.
     set r3 into account[r0];
 ```
 
-### Commands
+### Finalize Commands
 
 The following commands are supported in Aleo Instructions to provide additional program functionality.
 
-#### self.caller
-The `self.caller` command returns the address of the caller of the program.  
-This can be useful for managing access control to a program.
-In the above example, the `transfer_public_to_private` function decrements the balance of the sender publicly using `self.caller`.
 
 #### block.height
+
 The `block.height` command returns the height of the block in which the program is executed (latest block height + 1).
 This can be useful for managing time-based access control to a program.
 The `block.height` command must be called within a finalize block.
@@ -459,6 +463,7 @@ rand.chacha r0 r1 into r2 as field;
 #### Hash
 
 Aleo Instructions supports the following syntax for hashing to standard types.
+
 ```aleo
 hash.bhp256 r0 into r1 as address;
 hash.bhp256 r0 into r1 as field;
@@ -483,12 +488,14 @@ hash.psd2 ...;
 hash.psd4 ...;
 hash.psd8 ...;
 ```
+
 Checkout the [Aleo Instructions opcodes](./04_opcodes.md) for a full list of supported hashing algorithms.
 
 #### Commit
 
 Aleo Instructions supports the following syntax for committing to standard types.  
 Note that the `commit` command requires any type as the first argument, and a `scalar` as the second argument.
+
 ```aleo
 commit.bhp256 r0 r1 into r2 as address;
 commit.bhp256 r0 r1 into r2 as field;
@@ -499,15 +506,18 @@ commit.bhp1024 ...;
 commit.ped64 ...;
 commit.ped128 ...;
 ```
+
 Checkout the [Aleo Instructions opcodes](./04_opcodes.md) for a full list of supported commitment algorithms.
 
 #### position, branch.eq, branch.neq
+
 The `position` command, e.g. `position exit`, indicates a point to branch execution to.  
 The `branch.eq` command, e.g. `branch.eq r0 r1 to exit`, which branches execution to the position indicated by `exit` if `r0` and `r1` are equal.  
 The `branch.neq` command, e.g. `branch.neq r0 r1 to exit`, which branches execution to the position indicated by `exit` if `r0` and `r1` are not equal.
 
 ** Example **
 The finalize block exits successfully if the input is 0u8 and fails otherwise.
+
 ```aleo
 program test_branch.aleo;
 
@@ -520,4 +530,135 @@ finalize run_test:
     branch.eq r0 0u8 to exit;
     assert.eq true false;
     position exit;
+```
+
+
+#### self.signer
+
+The `self.signer` command returns the user address that orginated the transition.
+This can be useful for managing access control to a program.
+In the above [example](#finalize), the `transfer_public_to_private` function decrements the balance of the sender publicly using `self.signer`.
+
+#### self.caller
+
+The `self.caller` command returns the address of the immediate caller of the program.
+
+### Program Interoperability
+
+The examples in this section will use the following environment.
+
+```bash title=".env"
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkpE37QxQynZuEGg3XxYrTuvhzWbkVaN5NgzCdEGzS43Ms5 # user private key
+ADDRESS=aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm # user address
+```
+
+
+#### Child and Parent Program
+
+The following example demonstrates how a program `parent.aleo` can call another program `child.aleo`.  
+
+
+```aleo showLineNumbers title="./imports/child.aleo"
+program child.aleo;
+
+function foo:
+    output self.caller as address.public;
+    output self.signer as address.public;
+```
+```aleo showLineNumbers title="./parent.aleo"
+import child.aleo;
+
+program parent.aleo;
+
+// Make an external program call from `parent.aleo` to `function foo` in `child.aleo`.
+function foo:
+    call child.aleo/foo into r0 r1;
+    output r0 as address.public;
+    output r1 as address.public;
+    output self.caller as address.public;
+    output self.signer as address.public;
+```
+
+```bash
+$ snarkvm execute foo
+
+⛓  Constraints
+
+ •  'test.aleo/foo' - 2,025 constraints (called 1 time)
+ •  'child.aleo/foo' - 0 constraints (called 1 time)
+
+➡️  Outputs
+
+ # The address of the caller of `child.aleo/foo` => `program.aleo`
+ • aleo18tpu6k9g6yvp7uudmee954vgsvffcegzez4y8v8pru0m6k6zdsqqw6mx3t 
+ 
+ # The address that originated the sequence of calls leading up to `child.aleo/foo` => user address
+ • aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm
+ 
+ # The address of the caller of `program.aleo/foo` => user address
+ • aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm
+ 
+ # The address that originated the sequence of calls leading up to `program.aleo/foo` => user address
+ • aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm
+```
+
+#### User Callable Program
+
+By `asserting assert.eq self.caller self.signer;` on line 4, a developer can restrict their function such that it can only be called by users.
+```aleo showLineNumbers title="./imports/child.aleo"
+program child.aleo;
+
+function foo:
+    assert.eq self.caller self.signer; // This check should fail if called by another program.
+    output self.caller as address.public;
+    output self.signer as address.public;
+```
+```aleo showLineNumbers title="./parent.aleo"
+import child.aleo;
+
+program parent.aleo;
+
+// Make an external program call from `parent.aleo` to `function foo` in `child.aleo`.
+function foo:
+    call child.aleo/foo into r0 r1;
+    output r0 as address.public;
+    output r1 as address.public;
+    output self.caller as address.public;
+    output self.signer as address.public;
+
+```
+```bash
+$ snarkvm execute foo
+
+⚠️  Failed to evaluate instruction (call child.aleo/foo into r0 r1;):
+Failed to evaluate instruction (assert.eq self.caller self.signer ;):
+'assert.eq' failed: 
+'aleo18tpu6k9g6yvp7uudmee954vgsvffcegzez4y8v8pru0m6k6zdsqqw6mx3t' 
+is not equal to 
+'aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm' 
+(should be equal)
+```
+
+#### Program Callable Program
+
+By asserting `assert.neq self.caller self.signer;` on line 4, a developer can restrict their function such that it can only be called by other programs.
+```aleo showLineNumbers title="restrict.aleo"
+program restrict.aleo;
+
+function foo:
+    assert.neq self.caller self.signer; 
+    output self.caller as address.public;
+    output self.signer as address.public;
+```
+
+```bash
+$ snarkvm execute foo
+
+⚠️  Failed to evaluate instruction (assert.neq self.caller self.signer ;):
+'assert.neq' failed: 
+'aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm'
+is equal to 
+'aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm'
+(should not be equal)
 ```

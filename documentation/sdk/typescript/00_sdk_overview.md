@@ -1127,7 +1127,7 @@ mapping (and thus a user's balance) when called.
 function transfer_public:
     input r0 as address.public;
     input r1 as u64.public;
-    finalize self.caller r0 r1;
+    finalize self.signer r0 r1;
 
 // The finalize block run by nodes on the Aleo network which update a user's public balance
 finalize transfer_public:

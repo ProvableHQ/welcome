@@ -605,6 +605,10 @@ Leo supports several commands that can be used to reference information about th
 
 ### self.caller
 
+:::note
+`self.caller` is currently implemented as `self.signer` within Aleo instructions. This will be fixed in a upcoming release.
+:::
+
 Returns the address of the account that is calling the program function.
 
 ```leo showLineNumbers
