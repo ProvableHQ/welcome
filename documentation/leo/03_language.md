@@ -365,13 +365,16 @@ The rules for functions (in the traditional sense) are as follows:
 
 ### Finalize Function
 
-A finalize function is declared as `finalize {name}:`.
-A finalize function must immediately follow a [transition function](#transition-function), and must have the same name;
+A finalize function is declared as `finalize {name}:` and is used to run computations on chain. One of its primary purposes is to initiate or change public on chain state within mappings. A finalize function must immediately follow a [transition function](#transition-function), and must have the same name;
 it is associated with the transition function and is executed on chain,
 after the zero-knowledge proof of the execution of the associated transition is verified;
 a finalize function _finalizes_ a transition function on chain.
 Upon success of the finalize function, the program logic is executed.
 Upon failure of the finalize function, the program logic is reverted.
+
+Consequently, nodes on the Aleo network execute the code of the finalize function. Only code within finalize blocks, run by nodes on the Aleo Network, updates program mappings. Only a program can write into its own mapping, but all nodes on the Aleo network can read the public state.
+
+An example of on-chain state mutation is the transfer_public_to_private transition in the finalize example, which updates the public account mapping (and thus a user's balance) when called.
 
 ```leo showLineNumbers
 program transfer.aleo {
@@ -406,6 +409,8 @@ program transfer.aleo {
     }
 }
 ```
+
+If there is no need to create or alter the public on-chain state, finalize functions are not required.
 
 ### Mapping
 
