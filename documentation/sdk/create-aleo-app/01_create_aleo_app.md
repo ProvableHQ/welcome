@@ -59,7 +59,13 @@ Write down your private key, view key, and public address in a safe place. Treat
 
 ### Faucet
 
-Once you have your account, use our faucet to get some Aleo credits! If you haven’t already, join our [Discord server](https://discord.gg/aleohq) and use the `#faucet` channel. You can send only one request every 20 minutes and can only request 50 credits per hour. Once you send a faucet request, Discord will start a thread under the faucet channel with your request.
+Once you have your account, use our faucet to get some Aleo credits! We have a faucet by text and one via Discord.
+
+Head to our [faucet page](https://faucet.aleo.org/) and follow the instructions there. 
+
+After the credits have been disbursed to your address, note your transaction ID down.
+
+You can also join our [Discord server](https://discord.gg/aleohq) and use the `#faucet` channel if texting isn't working. You can send only one request every 20 minutes and can only request 50 credits per hour. Once you send a faucet request, Discord will start a thread under the faucet channel with your request.
 
 Format:
 
