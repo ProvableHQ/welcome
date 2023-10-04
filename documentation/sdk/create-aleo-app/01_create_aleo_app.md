@@ -1,7 +1,7 @@
 ---
 id: tutorial
-title: Create Aleo App - React Leo Tutorial
-sidebar_label: React + Leo Tutorial
+title: Create Aleo App - React + JS + Leo Tutorial
+sidebar_label: React + JS + Leo Tutorial
 ---
 
 <a href="https://www.npmjs.com/package/create-aleo-app"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/create-aleo-app?label=NPM%20-%20Create-Aleo-App&labelColor=green&color=blue" /></a>
