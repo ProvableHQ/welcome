@@ -59,7 +59,7 @@ Write down your private key, view key, and public address in a safe place. Treat
 
 ### Faucet
 
-Once you have your account, use our faucet to get some Aleo credits! If you haven’t joined yet, go [Discord channel](https://discord.com/invite/SMXsDEQ) and join the `#faucet` channel. You can send only one request every 20 minutes and can only request 50 credits per hour. Once you send a faucet request, Discord will start a thread under the faucet channel with your request.
+Once you have your account, use our faucet to get some Aleo credits! If you haven’t already, join our [Discord server](https://discord.gg/aleohq) and use the `#faucet` channel. You can send only one request every 20 minutes and can only request 50 credits per hour. Once you send a faucet request, Discord will start a thread under the faucet channel with your request.
 
 Format:
 
@@ -218,5 +218,5 @@ Congratulations on becoming a Leo contributor! 🎉
 
 5. During the tutorial you navigated to [aleo.tools](https://aleo.tools), which is the graphical interface to our SDK, which serves as an abstraction layer of snarkOS and snarkVM. You’ll find you can perform similar actions (compiling, executing, deploying) on aleo.tools. 
 
-6. The entire React template along with the WASM and web workers can also be considered an abstraction layer of snarkOS and snarkVM. This makes it easier than ever to spin up a dApp using React & Leo.
 
+6. The entire React template along with the WASM and web workers can also be considered an abstraction layer of snarkOS and snarkVM.
