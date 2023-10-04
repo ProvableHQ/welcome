@@ -10,8 +10,9 @@ to compile, execute, and finalize its state autonomously.
 
 :::tip
 # What's new on Aleo?  
-### Program execution and deployment on Testnet3! 
-### Try the [**Testnet3 demo**](./testnet/getting_started/03_deploy_and_execute_demo.md).
+### [**⚛️ Create Aleo App**](./sdk/create-aleo-app/01_create_aleo_app.md) - A full stack application written in Typescript using Leo and React.
+### [**🧰 Leo Developer Toolkit**](./testnet/getting_started/04_developer_toolkit.md) - A zero to one tutorial for the Leo programming language.
+#### 🛡️ Claim your contributor badge on [GitHub](https://github.com/aleohq/leo#%EF%B8%8F-contributors) upon completion!
 :::
 
 ---
