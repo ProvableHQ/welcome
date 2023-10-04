@@ -382,17 +382,16 @@ A set command that sets a value in a mapping, e.g. `set r0 into accounts[r0];`.
 
 A remove command that removes a key-value pair from a mapping, e.g. `remove accounts[r0];`.
 
-````aleo showLineNumbers
 
 ### Finalize
 
-A finalize is declared as `finalize {name}:`.
+A finalize is declared as `finalize {name}:`.  
 A finalize must immediately follow a [function](#function), and must have the same name;
 it is associated with the function and is executed on chain,
 after the zero-knowledge proof of the execution of the associated function is verified;
-a finalize *finalizes* a function on chain.
-Upon success of the finalize function, the program logic is executed.
-Upon failure of the finalize function, the program logic is reverted.
+a finalize *finalizes* a function on chain.  
+Upon success of the finalize function, the program logic is executed.  
+Upon failure of the finalize function, the program logic is reverted.  
 
 ```aleo showLineNumbers
 // The `transfer_public_to_private` function turns a specified amount
@@ -431,131 +430,12 @@ finalize transfer_public_to_private:
 
     // Updates the balance of the sender.
     set r3 into account[r0];
-````
+```
 
-### Commands
+### Finalize Commands
 
 The following commands are supported in Aleo Instructions to provide additional program functionality.
 
-#### self.signer
-
-The `self.signer` command returns the user address that orginated the transition.
-This can be useful for managing access control to a program.
-In the above example, the `transfer_public_to_private` function decrements the balance of the sender publicly using `self.signer`.
-
-#### self.caller
-
-The `self.caller` command returns the address of the immediate caller of the program.
-
-#### Usage of `self.signer` and `self.caller`
-
-Consider the following program as a motivating example for the usage of `self.signer` and `self.caller`.
-
-```aleo showLineNumbers
-// This program has multiple examples of both internal and external function calls that show how self.signer and self.caller change throughout the execution of a program.
-import import.aleo;
-
-program parent.aleo;
-
-record who_called_parent:
-    // the address of the owner.
-    owner as address.private;
-    // the address of the caller.
-    caller as address.private;
-    // the address of the parent.
-    parent as address.private;
-
-// the function 'example' takes no inputs and returns two who_called_parent records and two who_called_import records.
-function example:
-    // invoked by original caller, parent and caller should be the same
-    cast self.signer self.signer self.caller into r0 as who_called_parent.record;
-
-    // external_call's parent should be this program, but caller should match the original caller
-    call import.aleo/external_call into r1;
-
-    // invoked by original caller, parent and caller should be the same
-    cast self.signer self.signer self.caller into r2 as who_called_parent.record;
-
-    // external_call's parent should be this program, but caller should match the original caller
-    call import.aleo/external_call into r3;
-
-    output r0 as who_called_parent.record;
-    output r1 as import.aleo/who_called_import.record;
-    output r2 as who_called_parent.record;
-    output r3 as import.aleo/who_called_import.record;
-```
-
-The program below, `import.aleo` is used in the above example to show the difference between `self.caller` and `self.signer`.
-
-```aleo showLineNumbers
-// This program is used to show the difference between self.caller and self.signer in the context of an external function call.
-program import.aleo;
-
-record who_called_import:
-    // the address of the owner.
-    owner as address.private;
-    // the address of the caller.
-    caller as address.private;
-    // the address of the parent.
-    parent as address.private;
-
-// the function `external_call` takes no input and returns a who_called_import record.
-function external_call:
-    cast self.signer self.signer self.caller into r0 as who_called_import.record;
-
-    output r0 as who_called_import.record;
-```
-
-You can setup this example yourself by running the following commands
-
-1. `snarkvm new parent && cd parent`
-2. `mkdir imports && touch ./imports/import.aleo`
-3. copy paste the code for `program parent.aleo` into `main.aleo`
-4. copy paste the code for `program import.aleo` into `imports/import.aleo`
-5. Create a `.env` file with the following contents
-
-```
-    NETWORK=testnet3
-    PRIVATE_KEY=<your_private_key>
-```
-
-6. `snarkvm run example`
-
-Let's take a look at the output of running this example
-
-```
-Outputs
-// program invoked by the original caller, parent and caller are the same.
- • {
-  owner: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
-  caller: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
-  parent: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
-  _nonce: 3292834905509658414705063591658698790074258532339617643209693594573616825675group.public
-}
-// parent of the external call is the parent.aleo program, but the caller is the original caller.
- • {
-  owner: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
-  caller: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
-  parent: aleo18ruz9g9e0h5elul8a6j6c7fq68tey2u0jj4nwwza60xdgz5pgsysphw7zg.private,
-  _nonce: 2570681480682446926133903465816777959827518557138457172654079618333894328603group.public
-}
-// parent.aleo invoked by the original caller, parent and the caller are the same.
- • {
-  owner: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
-  caller: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
-  parent: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
-  _nonce: 5469227862257188875922748845546953697006530109767537237216584541887238250482group.public
-}
-// parent of the external call is the parent.aleo program, but the caller is the original caller.
- • {
-  owner: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
-  caller: aleo1rd3atwv6vsxq42txz5sq5eygdn8ngq6pwq69mmr6qx9zr0vlyqzspg77vt.private,
-  parent: aleo18ruz9g9e0h5elul8a6j6c7fq68tey2u0jj4nwwza60xdgz5pgsysphw7zg.private,
-  _nonce: 3183816282143209343079972367337044810712508972565886175704740732795753920614group.public
-}
-```
-
-In the context of the parent.aleo program, `self.signer` and `self.caller` are identical. In the context of the import.aleo program, `self.signer` still refers to the original caller of parent.aleo, but `self.caller` refers to parent.aleo.
 
 #### block.height
 
@@ -650,4 +530,135 @@ finalize run_test:
     branch.eq r0 0u8 to exit;
     assert.eq true false;
     position exit;
+```
+
+
+#### self.signer
+
+The `self.signer` command returns the user address that orginated the transition.
+This can be useful for managing access control to a program.
+In the above [example](#finalize), the `transfer_public_to_private` function decrements the balance of the sender publicly using `self.signer`.
+
+#### self.caller
+
+The `self.caller` command returns the address of the immediate caller of the program.
+
+### Program Interoperability
+
+The examples in this section will use the following environment.
+
+```bash title=".env"
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkpE37QxQynZuEGg3XxYrTuvhzWbkVaN5NgzCdEGzS43Ms5 # user private key
+ADDRESS=aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm # user address
+```
+
+
+#### Child and Parent Program
+
+The following example demonstrates how a program `parent.aleo` can call another program `child.aleo`.  
+
+
+```aleo showLineNumbers title="./imports/child.aleo"
+program child.aleo;
+
+function foo:
+    output self.caller as address.public;
+    output self.signer as address.public;
+```
+```aleo showLineNumbers title="./parent.aleo"
+import child.aleo;
+
+program parent.aleo;
+
+// Make an external program call from `parent.aleo` to `function foo` in `child.aleo`.
+function foo:
+    call child.aleo/foo into r0 r1;
+    output r0 as address.public;
+    output r1 as address.public;
+    output self.caller as address.public;
+    output self.signer as address.public;
+```
+
+```bash
+$ snarkvm execute foo
+
+⛓  Constraints
+
+ •  'test.aleo/foo' - 2,025 constraints (called 1 time)
+ •  'child.aleo/foo' - 0 constraints (called 1 time)
+
+➡️  Outputs
+
+ # The address of the caller of `child.aleo/foo` => `program.aleo`
+ • aleo18tpu6k9g6yvp7uudmee954vgsvffcegzez4y8v8pru0m6k6zdsqqw6mx3t 
+ 
+ # The address that originated the sequence of calls leading up to `child.aleo/foo` => user address
+ • aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm
+ 
+ # The address of the caller of `program.aleo/foo` => user address
+ • aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm
+ 
+ # The address that originated the sequence of calls leading up to `program.aleo/foo` => user address
+ • aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm
+```
+
+#### User Callable Program
+
+By `asserting assert.eq self.caller self.signer;` on line 4, a developer can restrict their function such that it can only be called by users.
+```aleo showLineNumbers title="./imports/child.aleo"
+program child.aleo;
+
+function foo:
+    assert.eq self.caller self.signer; // This check should fail if called by another program.
+    output self.caller as address.public;
+    output self.signer as address.public;
+```
+```aleo showLineNumbers title="./parent.aleo"
+import child.aleo;
+
+program parent.aleo;
+
+// Make an external program call from `parent.aleo` to `function foo` in `child.aleo`.
+function foo:
+    call child.aleo/foo into r0 r1;
+    output r0 as address.public;
+    output r1 as address.public;
+    output self.caller as address.public;
+    output self.signer as address.public;
+
+```
+```bash
+$ snarkvm execute foo
+
+⚠️  Failed to evaluate instruction (call child.aleo/foo into r0 r1;):
+Failed to evaluate instruction (assert.eq self.caller self.signer ;):
+'assert.eq' failed: 
+'aleo18tpu6k9g6yvp7uudmee954vgsvffcegzez4y8v8pru0m6k6zdsqqw6mx3t' 
+is not equal to 
+'aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm' 
+(should be equal)
+```
+
+#### Program Callable Program
+
+By asserting `assert.neq self.caller self.signer;` on line 4, a developer can restrict their function such that it can only be called by other programs.
+```aleo showLineNumbers title="restrict.aleo"
+program restrict.aleo;
+
+function foo:
+    assert.neq self.caller self.signer; 
+    output self.caller as address.public;
+    output self.signer as address.public;
+```
+
+```bash
+$ snarkvm execute foo
+
+⚠️  Failed to evaluate instruction (assert.neq self.caller self.signer ;):
+'assert.neq' failed: 
+'aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm'
+is equal to 
+'aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm'
+(should not be equal)
 ```
