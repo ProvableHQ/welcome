@@ -365,7 +365,7 @@ The rules for functions (in the traditional sense) are as follows:
 
 ### Finalize Function
 
-A finalize function is declared as `finalize {name}:` and is used to run computations on chain. One of its primary purposes is to initiate or change public on chain state within mappings. A finalize function must immediately follow a transition function, and must have the same name;
+A finalize function is declared as `finalize {name}:` and is used to run computations on chain. One of its primary purposes is to initiate or change public on chain state within mappings. A finalize function must immediately follow a [transition function](#transition-function), and must have the same name;
 it is associated with the transition function and is executed on chain,
 after the zero-knowledge proof of the execution of the associated transition is verified;
 a finalize function _finalizes_ a transition function on chain.
