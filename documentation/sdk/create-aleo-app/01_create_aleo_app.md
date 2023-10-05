@@ -62,6 +62,7 @@ Write down your private key, view key, and public address in a safe place. Treat
 Once you have your account, use our faucet to get some Aleo credits! We have a faucet by text and one via Discord.
 <!-- markdown-link-check-disable -->
 Head to our [faucet page](https://faucet.aleo.org/) and follow the instructions there. 
+<!-- markdown-link-check-enable -->
 
 After the credits have been disbursed to your address, note your transaction ID down.
 
