@@ -23,7 +23,7 @@ The Aleo SDK is divided into three Typescript/Javascript packages
 <a href="https://www.npmjs.com/package/@aleohq/sdk"> <img alt="Aleo SDK" src="https://img.shields.io/npm/l/%40aleohq%2Fsdk?label=NPM%20-%20Aleo%20SDK&labelColor=green&color=blue" /></a>
 
 
-The official Aleo SDK providing Javascript/Typescript tools for creating zero knowledge app.
+The official Aleo SDK providing Javascript/Typescript tools for creating zero knowledge apps.
 
 ### ⚡ Build your own app
 
@@ -68,6 +68,17 @@ source.
 NodeJS is functional.
 
 Source: [`sdk/wasm`](https://github.com/AleoHQ/sdk/tree/testnet3/wasm)
+
+## 4. [Aleo Python SDK]() - Zero Knowledge Algorithms in Python and Zero Knowledge Machine Learning
+
+The official Aleo Python SDK providing tools for creating zero knowledge apps. It consists of two separate libraries:
+
+* The **aleo** library, which uses foreign function interfaces to bring snarkVM functionalities to Python.
+* The **zkml** library, which transpiles scikit-learn machine learning models into Leo programs for inference.
+
+Both libraries are in an early development stage. They can be installed through `pip install aleo` respectively `pip install zkml`.
+
+Source: [`python-sdk`](https://github.com/AleoHQ/python-sdk)
 
 ## 📚 Documentation
 
