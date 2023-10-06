@@ -22,7 +22,7 @@ Supported functionalities currently include:
 ## Usage
 The `aleo` Python library is available on [PyPI](https://pypi.org/project/aleo/) for installation.
 
-#### Installation
+### Installation
 Ensure you have Python 3.11 or newer installed. If your operating system is supported, you can install the library from pip:
 
 ```bash
@@ -48,7 +48,7 @@ print(private_key.to_string())
 ```
 
 <!-- markdown-link-check-disable -->
-#### Build Instructions
+### Build Instructions
 To build it, first clone the [GitHub repository](https://github.com/AleoHQ/python-sdk/tree/master/sdk). Then, run the following command:
 ```bash
 bash build.sh
@@ -59,4 +59,4 @@ After successful building, you will find a new `.whl` file in the `target/wheels
 
 ## Building Python Apps
 
-Further documentation and tutorials as to how to use the `aleo` Python library.
+Further documentation and tutorials as to how to use the `aleo` Python library will follow soon.
