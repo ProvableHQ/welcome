@@ -19,7 +19,6 @@ This project uses `PyO3` and `Maturin` to provide a Python library named `aleo` 
 Supported functionalities currently include:
 * Private key generation
 
-<!-- markdown-link-check-disable -->
 ## Usage
 The `aleo` Python library is available on [PyPI](https://pypi.org/project/aleo/) for installation.
 
@@ -30,7 +29,9 @@ Ensure you have Python 3.11 or newer installed. If your operating system is supp
 pip3 install aleo
 ```
 
+<!-- markdown-link-check-disable -->
 Alternatively, you can also install from a `.whl` file, either from the [GitHub repository](https://github.com/AleoHQ/python-sdk/tree/master/sdk/target/wheels), or by building it yourself. For the installation, use a command like this:
+<!-- markdown-link-check-enable -->
 
 ```bash
 pip3 install aleo-0.0.3-cp311-cp311-macosx_11_0_arm64.whl
@@ -38,7 +39,7 @@ pip3 install aleo-0.0.3-cp311-cp311-macosx_11_0_arm64.whl
 
 Note: On some systems, you may need to use `pip` instead of `pip3`.
 
-### Actual usage
+### Example use
 You can import the library, generate a private key object, and print it as a string as in the following example:
 ```Python
 import aleo
@@ -46,11 +47,13 @@ private_key = aleo.PrivateKey()
 print(private_key.to_string())
 ```
 
+<!-- markdown-link-check-disable -->
 #### Build Instructions
 To build it, first clone the [GitHub repository](https://github.com/AleoHQ/python-sdk/tree/master/sdk). Then, run the following command:
 ```bash
 bash build.sh
 ```
+<!-- markdown-link-check-enable -->
 
 After successful building, you will find a new `.whl` file in the `target/wheels` directory that you can install using the command from above.
 

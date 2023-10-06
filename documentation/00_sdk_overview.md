@@ -76,9 +76,12 @@ The official Aleo Python SDK providing tools for creating zero knowledge apps. I
 * The **aleo** library, which uses foreign function interfaces to bring snarkVM functionalities to Python.
 * The **zkml** library, which transpiles scikit-learn machine learning models into Leo programs for inference.
 
-Both libraries are in an early development stage. They can be installed through `pip install aleo` respectively `pip install zkml`.
+Both libraries are in an early development stage. They can be installed through `pip install aleo` respectively `pip install zkml`. The 
+[documentation on the aleo library](./sdk/python/00_aleo_sdk.md) and the [documentation on the zkml library](./sdk/python/01_zkml_transpiler.md) provide more information on installation and usage.
 
+<!-- markdown-link-check-disable -->
 Source: [`python-sdk`](https://github.com/AleoHQ/python-sdk)
+<!-- markdown-link-check-enable -->
 
 ## 📚 Documentation
 
