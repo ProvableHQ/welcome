@@ -61,7 +61,7 @@ WebAssembly.
 
 When compiled with `wasm-pack` JavaScript bindings are generated for the WebAssembly allowing Aleo zero
 knowledge programs to be used in the browser and NodeJS. This package is available on NPM (linked above). The 
-provides instructions for compiling this [crate](https://github.com/AleoHQ/sdk/tree/testnet3/wasm) and using it in web projects for those interested in building from
+[documentation](./sdk/wasm/00_wasm_installation.md) provides instructions for compiling this [crate](https://github.com/AleoHQ/sdk/tree/testnet3/wasm) and using it in web projects for those interested in building from
 source.
 
 ❗ Currently program execution is only available in web Browsers. However, account, program and data management within
