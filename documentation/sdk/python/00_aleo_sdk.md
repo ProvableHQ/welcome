@@ -14,7 +14,7 @@ sidebar_label: Aleo SDK
 
 Aleo Python bindings for building zero-knowledge applications.
 
-This project uses `PyO3` and `Maturin` to provide a Python library named `aleo` that binds to snarkVM `Rust` functionalities. The resulting `aleo` library can be easily installed and used within Python. The project is at an early stage. At the moment, only Mac OS 11 or newer on Apple Silicon is supported - support for other operating systems will follow. If you are using another operating system, you may be able to build the library yourself following the instructions below.
+This project uses `PyO3` and `Maturin` to provide a Python library named `aleo` that binds to `snarkVM` Rust functionalities. The resulting `aleo` library can be easily installed and used within Python. The project is at an early stage. At the moment, only Mac OS 11 or newer on Apple Silicon is supported - support for other operating systems will follow. If you are using another operating system, you may be able to build the library yourself following the instructions below.
 
 Supported functionalities currently include:
 * Private key generation
