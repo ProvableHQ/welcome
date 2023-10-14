@@ -144,7 +144,7 @@ program test.aleo {
 A Leo program contains declarations of a [Program Scope](#program-scope), [Imports](#import)
 , [Transition Functions](#transition-function), [Helper Functions](#helper-function), [Structs](#struct)
 , [Records](#record),
-[Mappings](#mapping), and [Finalize Functions](#finalize).
+[Mappings](#mapping), and [Finalize Functions](#finalize-function).
 Declarations are locally accessible within a program file.
 If you need a declaration from another Leo file, you must import it.
 
