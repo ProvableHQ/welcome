@@ -18,6 +18,7 @@ and running experimental features for inclusion on mainnet.
 The Aleo Testnet3 API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer).
 
 To connect to the network, make a request to an Aleo Testnet III bootnode.
+<!-- markdown-link-check-disable -->
 
 | URL              |
 |------------------|
