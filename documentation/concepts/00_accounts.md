@@ -74,11 +74,11 @@ The account address is encoded with an [address prefix](#account-prefixes) that 
 
 The descriptions of algorithms below make use of the following definitions of mathematical objects:
 
-### Prime Finite Fields
+### Prime Fields
 
-For a prime `r`, a finite field <code>F<sub>r</sub></code> is defined as the set of integers `{0, 1, ..., r - 1}` with addition and multiplication modulo `r`.
-In this document, we will use two prime finite fields:
-* <code>F<sub>r</sub></code>, of prime order `p = 2111115437357092606062206234695386632838870926408408195193685246394721360383`
+For a prime `r`, the prime field of order `r` is defined as the set of integers `{0, 1, ..., r - 1}` with addition and multiplication modulo `r`.
+In this document, we will use two prime fields:
+* <code>F<sub>scalar</sub></code>, of prime order `p = 2111115437357092606062206234695386632838870926408408195193685246394721360383`
 * <code>F<sub>base</sub></code>, of prime order `q = 8444461749428370424248824938781546531375899335154063827935233455917409239041`
 
 ### Prime Order Elliptic Curve Groups
