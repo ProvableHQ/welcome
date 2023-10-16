@@ -39,6 +39,7 @@ http://0.0.0.0:3033/testnet3/latest/height
 ```
 
 Now, refer to the [API reference](#api) for a list of available endpoints. 
+<!-- markdown-link-check-enable -->
 
 ## snarkOS
 
