@@ -1,7 +1,7 @@
 ---
 id: tutorial
-title: Create Aleo App - React Leo Tutorial
-sidebar_label: React + Leo Tutorial
+title: Create Aleo App - React + JS + Leo Tutorial
+sidebar_label: React + JS + Leo Tutorial
 ---
 
 <a href="https://www.npmjs.com/package/create-aleo-app"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/create-aleo-app?label=NPM%20-%20Create-Aleo-App&labelColor=green&color=blue" /></a>
@@ -59,7 +59,14 @@ Write down your private key, view key, and public address in a safe place. Treat
 
 ### Faucet
 
-Once you have your account, use our faucet to get some Aleo credits! If you haven’t already, join our [Discord server](https://discord.gg/aleohq) and use the `#faucet` channel. You can send only one request every 20 minutes and can only request 50 credits per hour. Once you send a faucet request, Discord will start a thread under the faucet channel with your request.
+Once you have your account, use our faucet to get some Aleo credits! We have a faucet by text and one via Discord.
+<!-- markdown-link-check-disable -->
+Head to our [faucet page](https://faucet.aleo.org/) and follow the instructions there. 
+<!-- markdown-link-check-enable -->
+
+After the credits have been disbursed to your address, note your transaction ID down.
+
+You can also join our [Discord server](https://discord.gg/aleohq) and use the `#faucet` channel if texting isn't working. You can send only one request every 20 minutes and can only request 50 credits per hour. Once you send a faucet request, Discord will start a thread under the faucet channel with your request.
 
 Format:
 

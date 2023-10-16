@@ -18,11 +18,28 @@ and running experimental features for inclusion on mainnet.
 The Aleo Testnet3 API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer).
 
 To connect to the network, make a request to an Aleo Testnet III bootnode.
+<!-- markdown-link-check-disable -->
 
+| URL              |
+|------------------|
+| [api.explorer.aleo.org/v1/testnet3](api.explorer.aleo.org/v1/testnet3/) |
 
-| Status |  Region  | URL              |
-|:------:|:--------:|------------------|
-|  Live  | Americas | vm.aleo.org/api/ |
+For example, you can [retrieve the current block height](https://api.explorer.aleo.org/v1/testnet3/latest/height). 
+
+With a local instance of `snarkos`, you can launch a client node with:
+
+```
+snarkos start --client --nodisplay
+```
+
+By default, this will make the node API available at `0.0.0.0:3033`:
+
+```
+http://0.0.0.0:3033/testnet3/latest/height
+```
+
+Now, refer to the [API reference](#api) for a list of available endpoints. 
+<!-- markdown-link-check-enable -->
 
 ## snarkOS
 

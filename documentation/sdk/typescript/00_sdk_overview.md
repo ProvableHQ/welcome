@@ -659,7 +659,7 @@ export default App;
 </details>
 
 
-A full example of this implementation can be found [here](https://github.com/AleoHQ/sdk/blob/testnet3/create-aleo-app/template-react/src/App.jsx)
+A full example of this implementation can be found [here](https://github.com/AleoHQ/sdk/blob/testnet3/create-aleo-app/template-react-leo/src/App.jsx)
 
 ## 3. Aleo Credit Transfers
 
