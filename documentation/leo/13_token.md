@@ -9,7 +9,10 @@ A transparent & shielded custom token in Leo.
 
 ## How to Run
 
-The example should work out of the box. We recommend running the entire script, and then creating your own accounts to replicate the functionality. Run the entire script:
+Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
+
+This token program can be run using the following bash script. Locally, it will execute Leo program functions to mint and transfer tokens publicly and privately.
+
 
 ```bash
 cd token
@@ -20,12 +23,12 @@ The `.env` file contains a private key and address. This is the account that wil
 
 ## Walkthrough
 
-* [Public Mint](#step0)
-* [Private Mint](#step1)
-* [Public Transfer](#step2)
-* [Private Transfer](#step3)
-* [Public to Private Transfer](#step4)
-* [Private to Public Transfer](#step5)
+* [Step 0: Public Mint](#step0)
+* [Step 1: Private Mint](#step1)
+* [Step 2: Public Transfer](#step2)
+* [Step 3: Private Transfer](#step3)
+* [Step 4: Public to Private Transfer](#step4)
+* [Step 5: Private to Public Transfer](#step5)
 
 We'll be conducting a transfer between two parties.
 
@@ -84,8 +87,6 @@ leo run transfer_public aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqy
 
 Again, we see the arguments used for the finzalize function of `transfer_public` - Alice's address, Bob's address, and the amount to transfer. The public mapping will be queryable on-chain.
 
-![](./images/workshop-aleo-credits-pubtrans.png)
-
 ## <a id="step3"></a> Private Transfer
 
 Let's privately transfer 20 tokens from Bob to Alice. Switch to Bob's private key and call the private transfer transition.
@@ -105,8 +106,6 @@ leo run transfer_private "{
 
 The output of `transfer_private` is a record owned by Bob less the 20 tokens he privately transferred to Alice, and a record owned by Alice with the 20 tokens Bob transferred to Alice.
 
-![](./images/workshop-aleo-credits-privtrans.png)
-
 ## <a id="step4"></a> Public to Private Transfer
 
 Let's convert 30 of Alice's public tokens into 30 private tokens for Bob. Switch the private key back to Alice.
@@ -121,8 +120,6 @@ leo run transfer_public_to_private aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4
 ```
 
 When calling `transfer_public_to_private`, we see the finalize function with the arguments to modify Alice's public token mapping (address, amount), and a private record created that's owned by Bob and contains 110 tokens.
-
-![](./images/workshop-aleo-credits-pubprivtrans.png)
 
 ## <a id="step5"></a> Private to Public Transfer
 
@@ -142,5 +139,3 @@ leo run transfer_private_to_public "{
 ```
 
 When we call `transfer_private_to_public`, we take Bob's private record that contains 110 tokens, and outputs a record owned by Bob with 70 tokens, and calls the finalize function under `transfer_private_to_public` with Alice's address and 40 tokens as arguments. This changes the public mapping under Alice's address to contain 100 public tokens. Again, public mappings are queryable on-chain.
-
-![](./images/workshop-aleo-credits-privpubtrans.png)
