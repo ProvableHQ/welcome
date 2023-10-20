@@ -140,10 +140,11 @@ This section refers to the guide created by GitHub [here](https://docs.github.co
 
 ### Claim your badge
 1. Go to the Leo repo [here](https://github.com/AleoHQ/leo/issues)
-2. Click "New Issue" in the top right corner
-3. Click "Get started" in the Documentation row.
-4. Title your issue: "Add <your_github_username> to contributors"
-5. Enter the following as your issue description:
+2. Give the repo a :star: 
+3. Click "New Issue" in the top right corner
+4. Click "Get started" in the Leo Contributor Badge row
+5. Title your issue: "Add <your_github_username> to contributors"
+6. Enter the following as your issue description:
 ```markdown
 Hi Aleo team! I'm claiming my contributor badge for completing the New Developer Toolkit tutorial.
 
