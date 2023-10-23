@@ -13,7 +13,16 @@ Aleo Testnet III is a trusted testnet - subsequent testnets will undergo a trust
 Testnet III is used by the core team for designing and evaluating new programs, planning and staging network upgrades,
 and running experimental features for inclusion on mainnet.
 
-## The Network
+## snarkOS
+
+`snarkOS` is a decentralized operating system for anonymous web applications. It forms the backbone of Aleo and 
+enables developers to checkpoint and finalize application state in a publicly-verifiable manner.
+
+### Source Code
+
+`snarkOS` is open-source and publicly-hosted on [GitHub](https://github.com/AleoHQ/snarkOS).
+
+## Query The Network
 
 The Aleo Testnet3 API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer).
 
@@ -41,14 +50,21 @@ http://0.0.0.0:3033/testnet3/latest/height
 Now, refer to the [API reference](#api) for a list of available endpoints. 
 <!-- markdown-link-check-enable -->
 
-## snarkOS
+## Docker
 
-`snarkOS` is a decentralized operating system for anonymous web applications. It forms the backbone of Aleo and 
-enables developers to checkpoint and finalize application state in a publicly-verifiable manner.
+If you have Docker installed you can quickly launch a client within a docker container:
 
-### Source Code
+```
+docker run -it --name snarkos --hostname snarkosc -p 4133:4133 -p 3033:3033 --mount type=bind,source="$(pwd)",target=/aleo/data aleohq/snarkos:latest /aleo/bin/snarkos start --client --nodisplay
+```
 
-`snarkOS` is open-source and publicly-hosted on [GitHub](https://github.com/AleoHQ/snarkOS).
+This initializes a container called `snarkos` and maps the container port `3033` to `3033` on your system. Once the client is initialized, you can access the API as usual (`http://0.0.0.0:3033/testnet3/latest/height`).
+
+You can close the container with `ctrl` + `c` and restart it with:
+
+```
+docker start -a snarkos
+```
 
 ## API
 - [Latest Height](../public_endpoints/00_latest_height.md)
