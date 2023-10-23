@@ -100,7 +100,12 @@ An instantiation of HashToField that output elements in the scalar field <code>F
 
 ### EncodeToF
 
-EncodeToF(x) is a function that encode the bitstring `x` into an element of the finite field.
+EncodeToF(x) is a function that encodes the Unicode string `x` into an element of <code>F<sub>base</sub></code>.
+
+Details of the encoding:
+- `x` is converted to its UTF-8 sequence of bytes `b`.
+- `b` is turned into an unsigned integer `v` that represents the little endian value of `b`.
+- `v` is reduced modulo the prime that defines the field <code>F<sub>base</sub></code>.
 
 ### Account Prefixes
 
@@ -134,8 +139,8 @@ Given global instantiated Aleo parameters and subroutines.
 1. Sample a 32 byte `seed` from random
 
 2. Construct private key components
-    - `sk_sig` = HashToScalar(EncodeToF(<code>F<sub>base</sub></code>, "AleoAccountSignatureSecretKey0") | `seed`))
-    - `r_sig` = HashToScalar(EncodeToF(<code>F<sub>base</sub></code>, "AleoAccountSignatureRandomizer0.0") | `seed`))
+    - `sk_sig` = HashToScalar(EncodeToF("AleoAccountSignatureSecretKey0") | `seed`))
+    - `r_sig` = HashToScalar(EncodeToF("AleoAccountSignatureRandomizer0.0") | `seed`))
 
     where | denotes concatenation,
     and where `HashToScalar` denotes the [Poseidon hash function](https://eprint.iacr.org/2019/458.pdf).
