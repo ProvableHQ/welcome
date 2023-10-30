@@ -278,9 +278,9 @@ record token {
 
 ### Array
 
-Leo supports static arrays. The Array data type is declared as `[type; length]`. Arrays cannot be empty nor modified.
+Leo supports static arrays. Arrays are declared as `[type; length]`. Arrays cannot be empty nor modified.
 
-Arrays can only support constant accesses (the index must be a constant value). The accessor value must be a constant integer.
+Arrays only support constant accesses (the index must be a constant value). The accessor value must be a constant integer.
 
 Arrays can contain primitive data types, structs, or arrays. Structs and Records can also contain Arrays.
 
