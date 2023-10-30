@@ -31,7 +31,7 @@ To connect to the network, make a request to an Aleo Testnet III bootnode.
 
 | URL              |
 |------------------|
-| [api.explorer.aleo.org/v1/testnet3](api.explorer.aleo.org/v1/testnet3/) |
+| [https://api.explorer.aleo.org/v1/testnet3](https://api.explorer.aleo.org/v1/testnet3/) |
 
 For example, you can [retrieve the current block height](https://api.explorer.aleo.org/v1/testnet3/latest/height). 
 
