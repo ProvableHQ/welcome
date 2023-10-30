@@ -276,6 +276,57 @@ record token {
 }
 ```
 
+### Array
+
+Leo supports static arrays. The Array data type is declared as `[type; length]`. Arrays cannot be empty nor modified.
+
+Arrays can only support constant accesses (the index must be a constant value). The accessor value must be a constant integer.
+
+Arrays can contain primitive data types, structs, or arrays. Structs and Records can also contain Arrays.
+
+Arrays can be iterated over using a for loop.
+
+```leo
+// Initalize a boolean array of length 4
+let arr: [bool; 4] = [true, false, true, false];
+
+// Nested Array
+let nested: [[bool; 2]; 2] = [[true, false], [true, false]];
+
+// Array of Records
+struct bar {
+    data: u8,
+}
+
+// Access the field of a Record within an Array
+transition foo(a: [bar; 8]) -> u8 {
+    return a[0u8].data;
+}
+
+// Struct that contains an Array
+struct bat {
+    data: [u8; 8],
+}
+
+// Record that contains an Array
+record floo {
+    owner: address,
+    data: [u8; 8],
+}
+
+// Declare a Mapping that contains an Array value
+mapping data: address => [bool; 8];
+
+// Iterate over an Array using a for loop and sum the values within
+transition sum_with_loop(a: [u64; 4]) -> u64 {
+    let sum: u64 = 0u64;
+    for i: u8 in 0u8..4u8 {
+        sum += a[i];
+    }
+    return sum;
+}
+```
+
 ### Transition Function
 
 Transition functions in Leo are declared as `transition {name}() {}`.

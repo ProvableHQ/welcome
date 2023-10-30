@@ -50,7 +50,12 @@ struct message {
 }
 ```
 
-## 6. Transitions
+## 6. Arrays
+```leo
+let arr: [bool; 2] = [true, false];
+```
+
+## 7. Transitions
 ```leo
 transition mint_public(
     public receiver: address,
@@ -58,14 +63,14 @@ transition mint_public(
 ) -> token { /* Your code here */ }
 ```
 
-## 7. Functions
+## 8. Functions
 ```leo
 function compute(a: u64, b: u64) -> u64 {
     return a + b;
 }
 ```
 
-## 8. Inline Functions
+## 9. Inline Functions
 ```leo
 inline foo(
     a: field,
@@ -84,7 +89,7 @@ inlines can only call inlines.
 Direct/indirect recursive calls are not allowed
 
 
-## 9. For Loops
+## 10. For Loops
 ```leo
 let count: u32 = 0u32;
 
@@ -93,7 +98,7 @@ for i: u32 in 0u32..5u32 {
 }
 ```
 
-## 10. Mappings
+## 11. Mappings
 ```leo
 mapping balances: address => u64;
 
@@ -104,7 +109,7 @@ let set_bal: () = Mapping::set(balances, receiver, 100u64);
 let remove_bal: () = Mapping::remove(balances, receiver);
 ```
 
-## 11. Commands
+## 12. Commands
 ```leo
 transition matches(height: u32) { 
     return then finalize(height); 
@@ -129,7 +134,7 @@ assert_neq(a, b); // assert a and b are not equal
 ```
 
 
-## 12. Operators
+## 13. Operators
 ```leo
 let sum: u64 = a + b; // arithmetic addition
 let diff: u64 = a - b; // arithmetic subtraction
