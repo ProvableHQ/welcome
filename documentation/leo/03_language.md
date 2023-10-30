@@ -293,12 +293,14 @@ let arr: [bool; 4] = [true, false, true, false];
 // Nested Array
 let nested: [[bool; 2]; 2] = [[true, false], [true, false]];
 
-// Array of Records
+// Array of Structs
 struct bar {
     data: u8,
 }
 
-// Access the field of a Record within an Array
+let arr_of_structs: [bar; 2] = [bar { data: 1u8 }, bar { data: 2u8 }];
+
+// Access the field of a Struct within an Array
 transition foo(a: [bar; 8]) -> u8 {
     return a[0u8].data;
 }
