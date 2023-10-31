@@ -282,7 +282,7 @@ Leo supports static arrays. Arrays are declared as `[type; length]`. Arrays cann
 
 Arrays only support constant accesses (the index must be a constant value). The accessor value must be a constant integer.
 
-Arrays can contain primitive data types, structs, or arrays. Structs and Records can also contain Arrays.
+Arrays can contain primitive data types, structs, or arrays. Structs and records can also contain arrays.
 
 Arrays can be iterated over using a for loop.
 
@@ -300,26 +300,26 @@ struct bar {
 
 let arr_of_structs: [bar; 2] = [bar { data: 1u8 }, bar { data: 2u8 }];
 
-// Access the field of a Struct within an Array
+// Access the field of a struct within an array
 transition foo(a: [bar; 8]) -> u8 {
     return a[0u8].data;
 }
 
-// Struct that contains an Array
+// Struct that contains an array
 struct bat {
     data: [u8; 8],
 }
 
-// Record that contains an Array
+// Record that contains an array
 record floo {
     owner: address,
     data: [u8; 8],
 }
 
-// Declare a Mapping that contains an Array value
+// Declare a mapping that contains an array value
 mapping data: address => [bool; 8];
 
-// Iterate over an Array using a for loop and sum the values within
+// Iterate over an array using a for loop and sum the values within
 transition sum_with_loop(a: [u64; 4]) -> u64 {
     let sum: u64 = 0u64;
     for i: u8 in 0u8..4u8 {
