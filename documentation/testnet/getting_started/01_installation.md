@@ -106,7 +106,7 @@ FLAGS:
     -q, --quiet          Do not show any logging in the console
 
 OPTIONS:
-        --connect <ip>                           Specify a node ip address to connect to on startup
+        --connect <address>                      Specify a node ip address to connect to on startup (in the format <IP ADDRESS>:<PORT>)
     -i, --ip <ip>                                Specify the ip of your node
         --max-peers <max-peers>                  Specify the maximum number of peers the node can connect to
         --mempool-interval <mempool-interval>    Specify the frequency in seconds the node should fetch a sync node's mempool
@@ -129,7 +129,7 @@ snarkos --rpc-username <Username> --rpc-password <Password>
 
 ##### Manually connect to a peer on the network
 ```
-snarkos --connect "<IP ADDRESS>"
+snarkos --connect "<IP ADDRESS>:<PORT>"
 ```
 
 ### 3.3 Configuration File
