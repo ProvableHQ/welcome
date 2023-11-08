@@ -141,7 +141,7 @@ program test.aleo {
 
 ## Layout of a Leo Program
 
-A Leo program contains declarations of a [Program Scope](#program-scope), [Imports](#import)
+A Leo program contains declarations of a [Program Scope](#program-scope), [Constants](#constant), [Imports](#import)
 , [Transition Functions](#transition-function), [Helper Functions](#helper-function), [Structs](#struct)
 , [Records](#record),
 [Mappings](#mapping), and [Finalize Functions](#finalize-function).
@@ -195,6 +195,7 @@ program hello.aleo {
 
 The following must be declared inside the program scope in a Leo file:
 
+- constants
 - mappings
 - record types
 - struct types
@@ -221,6 +222,23 @@ program baR.aleo;   // invalid
 program 0foo.aleo;  // invalid
 program 0_foo.aleo; // invalid
 program _foo.aleo;  // invalid
+```
+
+### Constant
+
+A constant is declared as `const {name}: {type} = {expression};`.  
+Constants are immutable and must be assigned a value when declared.  
+Constants can be declared in the global program scope or in a local function scope.  
+
+```leo
+program foo.aleo {
+    const FOO: u8 = 1u8;
+    
+    function bar() -> u8 {
+        const BAR: u8 = 2u8;
+        return FOO + BAR;
+    }
+}
 ```
 
 ### Import
