@@ -382,16 +382,10 @@ A set command that sets a value in a mapping, e.g. `set r0 into accounts[r0];`.
 
 A remove command that removes a key-value pair from a mapping, e.g. `remove accounts[r0];`.
 
-
 ### Finalize
 
 A finalize is declared as `finalize {name}:`.  
 A finalize must immediately follow a [function](#function), and must have the same name;
-it is associated with the function and is executed on chain,
-after the zero-knowledge proof of the execution of the associated function is verified;
-a finalize *finalizes* a function on chain.  
-Upon success of the finalize function, the program logic is executed.  
-Upon failure of the finalize function, the program logic is reverted.  
 
 ```aleo showLineNumbers
 // The `transfer_public_to_private` function turns a specified amount
@@ -408,12 +402,15 @@ function transfer_public_to_private:
     // Construct a record for the receiver.
     cast r0 r1 into r2 as credits.record;
 
+    // Decrement the balance of the sender publicly.
+    async transfer_public_to_private self.caller r1 into r3;
+    
     // Output the record of the receiver.
     output r2 as credits.record;
-
-    // Decrement the balance of the sender publicly.
-    finalize self.signer r1;
-
+    
+    // Output the future of the decrement operation.
+    output r3 as token.aleo/transfer_public_to_private.future;
+    
 finalize transfer_public_to_private:
     // Input the sender.
     input r0 as address.public;
@@ -431,6 +428,117 @@ finalize transfer_public_to_private:
     // Updates the balance of the sender.
     set r3 into account[r0];
 ```
+
+:::note
+Previously, a `finalize` function was executed on chain after the zero-knowledge proof of the execution of the associated function is verified;
+Upon success of the finalize function, the program logic was executed.  
+Upon failure of the finalize function, the program logic was reverted.  
+:::
+
+### Futures
+
+A future is equivalent to the call graph of the on-chain execution and is explicitly used when finalizing an execution.
+Instead of constructing the call graph implicitly from the code, the transition/circuit explicitly outputs a future,
+specifying which code blocks to run on-chain and how to run them.
+
+#### future type
+A user can declare a future type by specifying a `Locator` followed by the tag `.future`.
+For example, `credits.aleo/mint_public.future`.
+A `function` can only output a future and a finalize block can only take a future in as input.
+A `closure` cannot output a future or take a future in as input.
+
+#### async call
+A user can make an asynchronous call to the finalize block via the `async` keyword.
+For example, `async mint_public r0 r1 into r2;`.
+Note that the associated function must be specified.
+This operation produces a `Future` as output.
+`async` takes the place of the `finalize` command, which was allowed in the body of a function after the output statements.
+
+#### await command
+A user can evaluate a future inside of a finalize block using the `await` command. 
+For example, `await r0;`.
+An `await` command can only be used in a finalize block.
+The operand must be a register containing a Future.
+
+#### Indexing a future.
+A register containing a future can be indexed using the existing index syntax.
+For example, `r0[0u32]`.
+This would get the input of the future at that specific index.
+Accesses can be nested to match the nested structure of a future.
+
+#### Future example
+```aleo showLineNumbers
+program basic_math.aleo;
+
+mapping uses:
+    key user as address.public;
+    value count as i64.public;
+
+function add_and_count:
+    input r0 as i64.private;
+    input r1 as i64.private;
+    add r0 r1 into r2;
+    async add_and_count self.caller into r3;
+    output r2 as i64.private;
+    output r3 as basic_math.aleo/add_and_count.future;
+
+finalize add_and_count:
+    input r0 as address.public;
+    get.or_use uses[r0] 0i64 into r1;
+    add r1 1i64 into r2;
+    set r2 into uses[r0];
+
+function sub_and_count:
+    input r0 as i64.private;
+    input r1 as i64.private;
+    sub r0 r1 into r2;
+    async sub_and_count self.caller into r3;
+    output r2 as i64.private;
+    output r3 as basic_math.aleo/sub_and_count.future;
+
+finalize sub_and_count:
+    input r0 as address.public;
+    get.or_use uses[r0] 0i64 into r1;
+    add r1 1i64 into r2;
+    set r2 into uses[r0];
+
+/////////////////////////////////////////////////
+
+import basic_math.aleo;
+
+program count_usages.aleo;
+
+function add_and_subtract:
+    input r0 as i64.private;
+    input r1 as i64.private;
+    call basic_math.aleo/add_and_count r0 r1 into r2 r3;
+    call basic_math.aleo/sub_and_count r2 r1 into r4 r5;
+    assert.eq r0 r4;
+    assert.eq r3[0u32] r5[0u32];
+    async add_and_subtract r3 r5 into r6;
+    output r0 as i64.private;
+    output r6 as count_usages.aleo/add_and_subtract.future;
+
+finalize add_and_subtract:
+    input r0 as basic_math.aleo/add_and_count.future;
+    input r1 as basic_math.aleo/sub_and_count.future;
+    await r0;
+    assert.eq r0[0u32] r1[0u32];
+    await r1;
+```
+
+There are a number of rules associated with using these components.
+
+1. If a function has a finalize block, it must have exactly one async instruction.
+2. If a function has a finalize block, it's last output must be a future.
+3. If a function does not have a finalize block, it cannot have an async instruction`.
+4. All futures created by calls need to be input to the async instruction in the order they were produced.
+5. An async call must reference the same function.
+6. All calls must be made before invoking async.
+7. The input futures types in a finalize block must match the order in which they were created in the function.
+8. All futures in a finalize must be await-ed and in the order in which they were specified.
+9. Instructions can be interleaved between invocations of call, async, and await.
+
 
 ### Finalize Commands
 
