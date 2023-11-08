@@ -278,7 +278,7 @@ record token {
 
 ### Array
 
-Leo supports static arrays. Arrays are declared as `[type; length]`. Arrays cannot be empty nor modified.
+Leo supports static arrays. Arrays are declared as `[type; length]` and can be nested. Arrays cannot be empty nor modified.
 
 Arrays only support constant accesses (the index must be a constant value). The accessor value must be a constant integer.
 
@@ -326,6 +326,24 @@ transition sum_with_loop(a: [u64; 4]) -> u64 {
         sum += a[i];
     }
     return sum;
+}
+```
+
+### Tuple
+
+Leo supports tuples. Tuples are declared as `(type1, type2, ...)` and can be nested. Tuples cannot be empty nor modified.
+
+Tuples only support constant access with a dot `.` and a constant integer.
+
+Tuples can contain primitive data types, structs, or arrays. Structs and records can also contain tuples.
+
+```leo
+program test.aleo {
+    transition baz(foo: u8, bar: u8) -> u8 {
+        let a: (u8, u8) = (foo, bar);
+        let result: u8 = a.0 + a.1;
+        return result;
+    }
 }
 ```
 
