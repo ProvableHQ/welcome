@@ -643,7 +643,7 @@ finalize run_test:
 
 #### self.signer
 
-The `self.signer` command returns the user address that orginated the transition.
+The `self.signer` command returns the user address that originated the transition.
 This can be useful for managing access control to a program.
 In the above [example](#finalize), the `transfer_public_to_private` function decrements the balance of the sender publicly using `self.signer`.
 
