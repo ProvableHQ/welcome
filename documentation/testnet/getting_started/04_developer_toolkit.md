@@ -65,7 +65,7 @@ Open a new terminal window and type `leo --help` to confirm that Leo is installe
 
 `leo example $NAME`
 
-- Continue in your exsiting terminal window and type `leo example`. You should see the following output:
+- Continue in your existing terminal window and type `leo example`. You should see the following output:
 
   ```
   Create a new Leo example package in a new directory

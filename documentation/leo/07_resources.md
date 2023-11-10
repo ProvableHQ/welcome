@@ -213,7 +213,7 @@ To build Leo from source you will need the following tools:
 - Cargo
     - Rusty Hook install via `cargo install rusty-hook`.
 - Clippy
-    - Via rustup, if you didn't do the default rustup install `rustup componenet add clippy`.
+    - Via rustup, if you didn't do the default rustup install `rustup component add clippy`.
 
 ### Formatting
 

@@ -1321,7 +1321,7 @@ let g: group = group::GEN; // the group generator
 Returns the generator of the algebraic group that the `group` type consists of.
 
 The compilation of Leo is based on an elliptic curve, whose points form a group,
-and on a specified point on that curve, which generarates a subgroup, whose elements form the type `group`.
+and on a specified point on that curve, which generates a subgroup, whose elements form the type `group`.
 
 This is a constant, not a function. Thus, it takes no inputs, and just returns an output.
 
