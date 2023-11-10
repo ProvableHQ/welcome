@@ -203,7 +203,7 @@ graph LR
 ❗WebAssembly must be initialized before any SDK functions can be called.
 
 Aleo programs are made zero knowledge through the usage of `ZkSnarks`. The Rust code behind Aleo programs and the ZkSnarks
-that make them zero knowledge are hosted in the [snarkVM Repostiory](https://github.com/AleoHQ/SnarkVM). The Aleo SDK
+that make them zero knowledge are hosted in the [snarkVM Repository](https://github.com/AleoHQ/SnarkVM). The Aleo SDK
 compiles this code to WebAssembly and creates JavaScript bindings, enabling Aleo programs to run directly in the browser.
 
 Before any logic within the SDK is run within the browser however, the WebAssembly module the SDK contains must be
