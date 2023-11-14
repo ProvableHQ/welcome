@@ -7,7 +7,7 @@ sidebar_label: Overview
 
 The [Aleo SDK](https://github.com/AleoHQ/sdk) provides tools for building zero knowledge applications. It consists of
 several TypeScript & JavaScript libraries which provide the following functionality:
-1. [Aleo account  management](https://aleo.tools/account)
+1. [Aleo account management](https://aleo.tools/account)
 2. [Web-based program execution and deployment](https://aleo.tools/develop)
 3. [Aleo credit transfers](https://aleo.tools/transfer)
 4. [Management of program state and data](https://aleo.tools/record)
