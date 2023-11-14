@@ -639,18 +639,18 @@ See the "c_bitcount" closure to follow along with the code. 50 years ago, MIT AI
 Let a,b,c,d be either 0 or 1. Given a polynomial 8a + 4b + 2c + d, how do we find the summation of a + b + c + d? If we subtract subsets of this polynomial, we'll be left with the summation. 
 
 Step 1:  8a + 4b + 2c + d  
-Step 2: -4a - 2b -  c  
-Step 3: -2a -  b  
+Step 2: -4a - 2b - c  
+Step 3: -2a - b  
 Step 4: - a  
-Step 5: = a +  b +  c + d 
+Step 5: = a +  b + c + d 
 
 This polynomial is basically a bitwise representation of a number, so given a 4 bit number, e.g. 1011 or 13u64, we can follow these instructions to get the bit count. Step 2 is just subtracting the starting number but bit shifted to the right (equivalent to dividing by 2). Step 3 bit shifts the starting number to the right twice and is subtracted, and Step 4 bit shifts thrice and is subtracted. Put another way: Start with a 4-digit binary number A. A - (A >> 1) - (A >> 2) - (A >> 3) = B. 
 
-Step 1:  1101 = 13u64  
-Step 2: -0110 =  6u64  
-Step 3: -0011 =  3u64  
-Step 4: -0001 =  1u64  
-Step 5: =0011 =  3u64
+Step 1: 1101 = 13u64  
+Step 2: -0110 = 6u64  
+Step 3: -0011 = 3u64  
+Step 4: -0001 = 1u64  
+Step 5: =0011 = 3u64
 
 To make this process work for any bit-length number, where the sum of the bits is left in groups of 4 bits, we'll need to use some bit-masking, so that the sum of one group of 4 does not interfere with the next group of 4.
 With a larger starting number, like 1111 0001 0111 0110, we will need the following bit maskings:
