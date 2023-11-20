@@ -11,7 +11,7 @@ An index of all pages available in this documentation.
 
 - [Getting Started](./00_getting_started.md)
 - [Table of Contents](./00_overview.md)
-  
+
 ### Chapter 1: Leo
 
 - [Overview](./00_leo_overview.md)
