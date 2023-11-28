@@ -9,8 +9,8 @@ An index of all pages available in this documentation.
 <!-- markdown-link-check-disable -->
 ### Chapter 0: Table of Contents
 
-- [Getting Started](./00_overview.md)
-- [Table of Contents](./00_getting_started.md)
+- [Getting Started](./00_getting_started.md)
+- [Table of Contents](./00_overview.md)
 
 ### Chapter 1: Leo
 
