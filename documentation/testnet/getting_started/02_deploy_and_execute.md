@@ -214,7 +214,7 @@ To deploy and execute programs on Testnet3
 <!-- markdown-link-check-disable -->
 
 1. Replace [step 3](#3-scan-the-node-for-spendable-records) with the Aleo faucet to obtain spendable credits. You can request credits from [the faucet](https://faucet.aleo.org/)
-2. Replace the use of `http://localhost:3030` with `https://vm.aleo.org/api`
+2. Replace the use of `http://localhost:3030` with `https://api.explorer.aleo.org/v1`
 
 <!-- markdown-link-check-enable -->
 
