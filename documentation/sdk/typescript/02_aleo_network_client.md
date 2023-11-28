@@ -44,7 +44,7 @@ The methods provided in this class provide information on the Aleo Blockchain</p
 let local_connection = new AleoNetworkClient("http://localhost:3030");
 
 // Connection to a public beacon node
-let public_connection = new AleoNetworkClient("https://vm.aleo.org/api");
+let public_connection = new AleoNetworkClient("https://api.explorer.aleo.org/v1");
 ```
 <a name="AleoNetworkClient+setAccount"></a>
 

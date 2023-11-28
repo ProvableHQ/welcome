@@ -143,7 +143,7 @@ Take your transaction ID from the Discord URL earlier:
 at12u62xwfew2rq32xee8nwhtlxghfjz7mm3528yj240nuezue625fqy4lhlp
 ``` 
 <!-- markdown-link-check-disable -->
-Go to “Get Transaction” at [aleo.tools/rest](https://aleo.tools/rest) and insert your transaction ID to look at the JSON object. You can similarly use https://vm.aleo.org/api/testnet3/transaction/[insert-your-transaction-id] to get the same output in your browser. 
+Go to “Get Transaction” at [aleo.tools/rest](https://aleo.tools/rest) and insert your transaction ID to look at the JSON object. You can similarly use https://api.explorer.aleo.org/v1/testnet3/transaction/[insert-your-transaction-id] to get the same output in your browser. 
 <!-- markdown-link-check-enable-->
 
 ![get-transaction](./images/get-transaction.png)
