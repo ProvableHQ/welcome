@@ -6,14 +6,13 @@ sidebar_label: React + JS + Leo Tutorial
 
 <a href="https://www.npmjs.com/package/create-aleo-app"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/create-aleo-app?label=NPM%20-%20Create-Aleo-App&labelColor=green&color=blue" /></a>
 
-
 ## 1. Installation
 
 Please see [the installation page](00_app_installation.md) to setup the React + Javascript + Leo template.
 
 ## 2. Navigation
 
-Navigate to the project you just installed. 
+Navigate to the project you just installed.
 
 ```bash
 cd aleo-project
@@ -21,6 +20,7 @@ npm install
 npm run install-leo
 npm run dev
 ```
+
 <!-- markdown-link-check-disable -->
 
 This installs all the required modules and also Leo, our statically-typed programming language built for writing private applications. Lastly, we've initialized a local instance of your React application at http://localhost:5173.
@@ -37,7 +37,7 @@ Navigate to http://localhost:5173 and open up the developer console in your brow
 
 <!-- markdown-link-check-enable -->
 
-Hit “execute helloworld.aleo”. 
+Hit “execute helloworld.aleo”.
 
 Execution should happen locally and you should see an output pop up.
 
@@ -52,16 +52,19 @@ Let’s deploy the `helloworld` program. Deployment requires an account with Ale
 ### Account Generation
 
 ```bash
-leo account new 
+leo account new
 ```
 
-Write down your private key, view key, and public address in a safe place. Treat your private and view keys as keys you should never share with anyone else. 
+Write down your private key, view key, and public address in a safe place. Treat your private and view keys as keys you should never share with anyone else.
 
 ### Faucet
 
 Once you have your account, use our faucet to get some Aleo credits! We have a faucet by text and one via Discord.
+
 <!-- markdown-link-check-disable -->
-Head to our [faucet page](https://faucet.aleo.org/) and follow the instructions there. 
+
+Head to our [faucet page](https://faucet.aleo.org/) and follow the instructions there.
+
 <!-- markdown-link-check-enable -->
 
 After the credits have been disbursed to your address, note your transaction ID down.
@@ -75,6 +78,7 @@ Format:
 ```
 
 Example:
+
 ```bash
 /sendcredits aleo1k53lck74r93q70ftjvpkmnl5h9uwcna5wqyt80ggmz5w7lck8syskpxj46 20
 ```
@@ -129,9 +133,9 @@ leo execute main
 
 Let's get back to deploying!
 
-When you deploy a program, the record that you requested from the faucet is the one that will be used in order to pay for deployment. Looking in `App.jsx`, the web worker is called in order to start the deployment. Following that to `src/workers/worker.js` we see that the WASM is initalized, which allows for computation to run efficiently in the browser, and that the program manager contains methods for authoring, deploying, and interacting with Aleo programs. 
+When you deploy a program, the record that you requested from the faucet is the one that will be used in order to pay for deployment. Looking in `App.jsx`, the web worker is called in order to start the deployment. Following that to `src/workers/worker.js` we see that the WASM is initalized, which allows for computation to run efficiently in the browser, and that the program manager contains methods for authoring, deploying, and interacting with Aleo programs.
 
-Thing is, we can hit deploy right now, but it’ll take some time to scan for transactions on the blockchain, so let’s provide the *exact* record that we’ll be pulling the fee from. This significantly quickens the deployment process, and you’ll learn about decrypting records in the process.
+Thing is, we can hit deploy right now, but it’ll take some time to scan for transactions on the blockchain, so let’s provide the _exact_ record that we’ll be pulling the fee from. This significantly quickens the deployment process, and you’ll learn about decrypting records in the process.
 
 ### Decrypting Records
 
@@ -141,9 +145,12 @@ Take your transaction ID from the Discord URL earlier:
 
 ```bash
 at12u62xwfew2rq32xee8nwhtlxghfjz7mm3528yj240nuezue625fqy4lhlp
-``` 
+```
+
 <!-- markdown-link-check-disable -->
-Go to “Get Transaction” at [aleo.tools/rest](https://aleo.tools/rest) and insert your transaction ID to look at the JSON object. You can similarly use https://vm.aleo.org/api/testnet3/transaction/[insert-your-transaction-id] to get the same output in your browser. 
+
+Go to “Get Transaction” at [aleo.tools/rest](https://aleo.tools/rest) and insert your transaction ID to look at the JSON object. You can similarly use https://api.explorer.aleo.org/v1/testnet3/transaction/[insert-your-transaction-id] to get the same output in your browser.
+
 <!-- markdown-link-check-enable-->
 
 ![get-transaction](./images/get-transaction.png)
@@ -167,11 +174,12 @@ The final result in `worker.js` should look something like this:
 // const tx_id = await programManager.deploy(program, fee);
 
 // Optional: Pass in fee record manually to avoid long scan times
-const feeRecord = "{owner: aleo1qpjvun06n87jne3jwkml4jwdjqalw7n2qms03mcamenzczrj0uysp85fit.private, microcredits: 50000000u64.private, _nonce: 7736650979063383113375091219637426887776503149825722849440478642541635263210group.public}";
+const feeRecord =
+  "{owner: aleo1qpjvun06n87jne3jwkml4jwdjqalw7n2qms03mcamenzczrj0uysp85fit.private, microcredits: 50000000u64.private, _nonce: 7736650979063383113375091219637426887776503149825722849440478642541635263210group.public}";
 const tx_id = await programManager.deploy(program, fee, undefined, feeRecord);
 ```
 
-Now you can hit the deploy button! 
+Now you can hit the deploy button!
 
 ![deployment-console](./images/deployment-console.png)
 
@@ -180,6 +188,7 @@ Now you can hit the deploy button!
 Success, you’ve deployed an Aleo program and can how create a decentralized, private application!
 
 ## Claim your Leo Contributor Badge!
+
 Making it through this tutorial was no easy task, so because you've done it, we'd love to honor you with a Leo contributor badge on Github!
 
 ### Pushing your Leo Application to Github
@@ -193,7 +202,7 @@ git add .
 git commit -m "first commit, new aleo app"
 ```
 
-2. Create a new repository on your [github.com](https://github.com/new) account by hitting "new repository" in the top right. Set the repo to public, and don't worry about adding a README, license, or .gitignore files. You can add these files after your project has been pushed to GitHub. 
+2. Create a new repository on your [github.com](https://github.com/new) account by hitting "new repository" in the top right. Set the repo to public, and don't worry about adding a README, license, or .gitignore files. You can add these files after your project has been pushed to GitHub.
 
 3. At the top of the page your new repository, click to copy the remote repository URL and go back to your terminal to link your local project to this repository.
 
@@ -206,6 +215,7 @@ git push -u origin main
 ```
 
 ### Claim your Leo badge
+
 1. Go to the Leo repo issues tab [here](https://github.com/AleoHQ/leo/issues/new/choose)
 2. Go to 🥇 "Badge" and click "Get Started".
 3. Follow the brief instructions and submit.
@@ -219,11 +229,10 @@ Congratulations on becoming a Leo contributor! 🎉
 
 2. You also installed [Leo](https://developer.aleo.org/leo/), our statically-typed programming language built for writing private applications. Using Leo, you can write, build, compile, and execute Leo programs locally.
 
-3. We provided the `helloworld` Leo program already pre-compiled into Aleo instructions and then executed it locally using WASM + web workers, which was an abstraction on snarkVM’s capabilities. [snarkVM](https://developer.aleo.org/aleo/) is the data execution layer. It is used to compile Leo programs and execute them locally off-chain. All Leo programs eventually become Aleo instructions via Aleo’s compiler during the execution phase of snarkVM. 
+3. We provided the `helloworld` Leo program already pre-compiled into Aleo instructions and then executed it locally using WASM + web workers, which was an abstraction on snarkVM’s capabilities. [snarkVM](https://developer.aleo.org/aleo/) is the data execution layer. It is used to compile Leo programs and execute them locally off-chain. All Leo programs eventually become Aleo instructions via Aleo’s compiler during the execution phase of snarkVM.
 
 4. Similarly, we deployed the `helloworld` program, again using the WASM + web workers abstraction layer but you can also deploy programs on-chain using [snarkOS](https://developer.aleo.org/testnet/getting_started/deploy_execute/#deploy), the data availability layer or blockchain / distributed ledger.
 
-5. During the tutorial you navigated to [aleo.tools](https://aleo.tools), which is the graphical interface to our SDK, which serves as an abstraction layer of snarkOS and snarkVM. You’ll find you can perform similar actions (compiling, executing, deploying) on aleo.tools. 
-
+5. During the tutorial you navigated to [aleo.tools](https://aleo.tools), which is the graphical interface to our SDK, which serves as an abstraction layer of snarkOS and snarkVM. You’ll find you can perform similar actions (compiling, executing, deploying) on aleo.tools.
 
 6. The entire React template along with the WASM and web workers can also be considered an abstraction layer of snarkOS and snarkVM.

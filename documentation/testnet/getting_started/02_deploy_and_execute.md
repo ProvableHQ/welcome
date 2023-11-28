@@ -6,8 +6,7 @@ sidebar_label: Deploy and Execute Programs
 
 These changes support the first iteration of deploying and executing programs on the Aleo network.
 
-*Bugs, usability suggestions, and feedback in general would be greatly appreciated.*
-
+_Bugs, usability suggestions, and feedback in general would be greatly appreciated._
 
 ## Overview
 
@@ -15,7 +14,7 @@ Deployment and execution of programs is done via four new `developer` CLI comman
 
 These CLI commands currently live in snarkOS, but can also be migrated to the Aleo SDK.
 
-*Note: All the operations are done client-side and do not require sending private keys or view keys to third parties.*
+_Note: All the operations are done client-side and do not require sending private keys or view keys to third parties._
 
 ## Usage guide
 
@@ -49,7 +48,7 @@ Transfer credits to another account so it can't be spent by the beacon producing
 (The beacon is constantly spending records to generate new blocks, so there is a chance your record is spent before doing this step)
 
 ```
-snarkos developer execute credits.aleo transfer <INPUT_RECORD> <RECIPIENT_ADDRESS> "<AMOUNT_TO_TRANSFER>u64" --private-key <PRIVATE_KEY> --query "http://localhost:3030" --broadcast "http://localhost:3030/testnet3/transaction/broadcast" 
+snarkos developer execute credits.aleo transfer <INPUT_RECORD> <RECIPIENT_ADDRESS> "<AMOUNT_TO_TRANSFER>u64" --private-key <PRIVATE_KEY> --query "http://localhost:3030" --broadcast "http://localhost:3030/testnet3/transaction/broadcast"
 ```
 
 or
@@ -64,19 +63,17 @@ This step can be replaced with a faucet.
 
 Deploy a program with an unspent record.
 
-
 ```
 snarkos developer deploy fibonacci.aleo --private-key <PRIVATE_KEY> --query "http://localhost:3030" --path "../leo/examples/fibonacci/build/" --broadcast "http://localhost:3030/testnet3/transaction/broadcast" --fee 600000 --record <INPUT_RECORD>
 ```
 
-
 ### 6. Execute a function of a deployed program
 
 ```
-snarkos developer execute fibonacci.aleo fibonacci "1u8" --private-key <PRIVATE_KEY> --query "http://localhost:3030" --broadcast "http://localhost:3030/testnet3/transaction/broadcast" 
+snarkos developer execute fibonacci.aleo fibonacci "1u8" --private-key <PRIVATE_KEY> --query "http://localhost:3030" --broadcast "http://localhost:3030/testnet3/transaction/broadcast"
 ```
 
-*NOTE: Fees (in microcredits) must be greater than the transaction size in bytes. Fees can be excluded from execution transactions, but if one is specified, it must follow the above rule. *
+_NOTE: Fees (in microcredits) must be greater than the transaction size in bytes. Fees can be excluded from execution transactions, but if one is specified, it must follow the above rule. _
 
 ## Commands
 
@@ -87,11 +84,12 @@ Decrypt a record ciphertext using a view key.
 ##### Arguments:
 
 - `ciphertext`- The record ciphertext to decrypt
-    - shortcut: `-c`
+  - shortcut: `-c`
 - `view_key` - The view key used to decrypt the ciphertext
-    - shortcut: `-v`
+  - shortcut: `-v`
 
 ##### Example:
+
 ```
 snarkos developer decrypt  -v <VIEW_KEY> -c <RECORD_CIPHERTEXT>
 ```
@@ -104,20 +102,20 @@ Create an Aleo program deployment.
 
 - `program_id` - The ID of the program to deploy
 - `path` - The path to the package directory
-    - optional - defaults to the current directory
+  - optional - defaults to the current directory
 - `private_key` - The private key used to generate the deployment
-    - shortcut `-p`
+  - shortcut `-p`
 - `query` - The endpoint to query node state from
-    - shortcut - `-q`
+  - shortcut - `-q`
 - `fee` - The deployment fee in microcredits
-    - optional - defaults to 0
+  - optional - defaults to 0
 - `record` - The record to spend the fee from
 - `display` - Display the generated transaction
-    - optional - defaults to false
+  - optional - defaults to false
 - `broadcast` - Broadcast the transaction to a specified endpoint
-    - optional
+  - optional
 - `store` - Store the transaction to a specified file path.
-    - optional
+  - optional
 
 ##### Example:
 
@@ -135,24 +133,24 @@ Create an Aleo program execution.
 - `function` - The name of the function
 - `inputs` - The function inputs
 - `private_key` - The private key used to generate the deployment
-    - shortcut `-p`
+  - shortcut `-p`
 - `query` - The endpoint to query node state from
-    - shortcut - `-q`
+  - shortcut - `-q`
 - `fee` - The deployment fee in microcredits
-    - optional
+  - optional
 - `record` - The record to spend the fee from
-    - optional
+  - optional
 - `display` - Display the generated transaction
-    - optional - defaults to false
+  - optional - defaults to false
 - `broadcast` - Broadcast the transaction to a specified endpoint
-    - optional
+  - optional
 - `store` - Store the transaction to a specified file path.
-    - optional
+  - optional
 
 ##### Example:
 
 ```
-snarkos developer execute fibonacci.aleo fibonacci "1u8" --private-key <PRIVATE_KEY> --query "http://localhost:3030" --broadcast "http://localhost:3030/testnet3/transaction/broadcast" 
+snarkos developer execute fibonacci.aleo fibonacci "1u8" --private-key <PRIVATE_KEY> --query "http://localhost:3030" --broadcast "http://localhost:3030/testnet3/transaction/broadcast"
 ```
 
 ### Scan
@@ -164,7 +162,7 @@ Note: This is a naive scan and doesn't take spent records into account.
 ##### Argument:
 
 - `view_key` - The view key used to decrypt found records
-    - shortcut: `-v`
+  - shortcut: `-v`
 - `start` - The starting block height of the query
 - `end` - The end block height of the query
 - `endpoint` - Endpoint to fetch blocks from
@@ -186,19 +184,19 @@ Transfer credits with a `credits.aleo` program execution.
 - `recipient` - The recipient address
 - `amount` - The number of microcredits to transfer
 - `private_key` - The private key used to generate the deployment
-    - shortcut `-p`
+  - shortcut `-p`
 - `query` - The endpoint to query node state from
-    - shortcut - `-q`
+  - shortcut - `-q`
 - `fee` - The deployment fee in microcredits
-    - optional
+  - optional
 - `record` - The record to spend the fee from
-    - optional
+  - optional
 - `display` - Display the generated transaction
-    - optional - defaults to false
+  - optional - defaults to false
 - `broadcast` - Broadcast the transaction to a specified endpoint
-    - optional
+  - optional
 - `store` - Store the transaction to a specified file path.
-    - optional
+  - optional
 
 ##### Example:
 
@@ -207,23 +205,19 @@ snarkos developer transfer <AMOUNT_TO_TRANSFER> --input-record <INPUT_RECORD> --
 
 ```
 
-
 ## Usage on Testnet 3 (Phase 2)
 
 To deploy and execute programs on Testnet3
+
 <!-- markdown-link-check-disable -->
 
 1. Replace [step 3](#3-scan-the-node-for-spendable-records) with the Aleo faucet to obtain spendable credits. You can request credits from [the faucet](https://faucet.aleo.org/)
-2. Replace the use of `http://localhost:3030` with `https://vm.aleo.org/api`
+2. Replace the use of `http://localhost:3030` with `https://api.explorer.aleo.org/v1/`
 
 <!-- markdown-link-check-enable -->
-
 
 Deployment transactions have an additional requirement where the included fee must have at least `deployment_size_in_bytes` microcredits.
 
 Execution transactions do not currently have any fee requirements.
 
-*If you'd like to try out deploying an Aleo app, you can follow the demo in the next section, [Deploy and Execute Demo](./03_deploy_and_execute_demo.md).*
-
-
-
+_If you'd like to try out deploying an Aleo app, you can follow the demo in the next section, [Deploy and Execute Demo](./03_deploy_and_execute_demo.md)._
