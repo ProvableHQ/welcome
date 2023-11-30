@@ -235,7 +235,7 @@ const account = new Account();
 programManager.setAccount(account);
 
 /// Get the response and ensure that the program executed correctly
-const executionResponse = await programManager.executeOffline(program, "hello", ["5u32", "5u32"]);
+const executionResponse = await programManager.run(program, "hello", ["5u32", "5u32"]);
 const result = executionResponse.getOutputs();
 assert(result === ["10u32"]);
 ```
@@ -275,7 +275,13 @@ const programManager = new ProgramManager("https://api.explorer.aleo.org/v1", ke
 
 // Provide a key search parameter to find the correct key for the program if they are stored in a memory cache
 const keySearchParams = { "cacheKey": "hello_hello:hello" };
-const tx_id = await programManager.execute(programName, "hello_hello", 0.020, ["5u32", "5u32"], undefined, undefined, undefined, keySearchParams);
+const tx_id = await programManager.execute({
+  programName: programName,
+  functionName: "hello_hello",
+  fee: 0.020,
+  inputs: ["5u32", "5u32"],
+  keySearchParams: keySearchParams
+});
 const transaction = await programManager.networkClient.getTransaction(tx_id);
 ```
 
@@ -461,7 +467,7 @@ self.addEventListener("message", (ev) => {
            });
 
            // Execute the function locally
-           let response = await programManager.executeOffline(
+           let response = await programManager.run(
                    localProgram,
                    aleoFunction,
                    inputs,
