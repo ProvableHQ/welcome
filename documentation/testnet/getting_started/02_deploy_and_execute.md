@@ -112,6 +112,8 @@ Create an Aleo program deployment.
 - `fee` - The deployment fee in microcredits
     - optional - defaults to 0
 - `record` - The record to spend the fee from
+- `priority_fee` - The priority fee in microcredits, uses public balance if no record is specified
+    - optional
 - `display` - Display the generated transaction
     - optional - defaults to false
 - `broadcast` - Broadcast the transaction to a specified endpoint
@@ -141,6 +143,8 @@ Create an Aleo program execution.
 - `fee` - The deployment fee in microcredits
     - optional
 - `record` - The record to spend the fee from
+    - optional
+- `priority_fee` - The priority fee in microcredits, uses public balance if no record is specified
     - optional
 - `display` - Display the generated transaction
     - optional - defaults to false
