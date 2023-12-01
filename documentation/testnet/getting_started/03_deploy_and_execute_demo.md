@@ -99,7 +99,7 @@ PATHTOAPP=$(realpath -q $APPNAME)
 
 Before moving forward, verify that you have recieved the Aleo credits from the faucet, if you have not, you must wait for that step to complete. You can verify that your address has recieved credits by checking using an [Aleo Explorer](https://explorer.hamp.app/). Search for your address and confirm that it has a public credits balance. If you recieve a 404, then your address has not recieved any credits yet.
 
-<!-- markdown-link-check-disable -->
+<!-- markdown-link-check-enable -->
 
 ### 5. Deploy your test application
 
