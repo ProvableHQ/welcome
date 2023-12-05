@@ -18,21 +18,21 @@ Learn how to deploy and execute a basic "hello world!" program on Aleo's network
 
 Make sure you have both Leo and snarkOS installed on your machine.
 
-- To verify if you have Leo, open your terminal and type `leo`. If you don't see something like `zsh: command not found: leo`, you're good
+* To verify if you have Leo, open your terminal and type `leo`. If you don't see something like `zsh: command not found: leo`, you're good
 
-- To verify if you have snarkOS, do the same thing you did with Leo but replace `leo` with `snarkos`
+* To verify if you have snarkOS, do the same thing you did with Leo but replace `leo` with `snarkos`
 
 **Optional**: Install the [JSON Beautifier & Editor](https://chrome.google.com/webstore/detail/json-beautifier-editor/lpopeocbeepakdnipejhlpcmifheolpl) Chrome extension.
 
 **Note**:
 
-- You can find instructions to install Leo on your machine [here](https://github.com/AleoHQ/leo) and snarkOS [here](https://github.com/AleoHQ/snarkos)
-- Make sure to pull the latest versions of `snarkos` and `leo` from GitHub to your local machine
+* You can find instructions to install Leo on your machine [here](https://github.com/AleoHQ/leo) and snarkOS [here](https://github.com/AleoHQ/snarkos)
+* Make sure to pull the latest versions of `snarkos` and `leo` from GitHub to your local machine
 
 ### 2. Generate your test keys and wallet address
 
-- In your favorite browser, navigate to [https://aleo.tools/](https://aleo.tools/) and click the **Generate** button
-- Save your **Address**, **View Key**, and **Private Key** in a safe place, you'll need them later
+* In your favorite browser, navigate to [https://aleo.tools/](https://aleo.tools/) and click the **Generate** button
+* Save your **Address**, **View Key**, and **Private Key** in a safe place, you'll need them later
 
 ### 3a. Seeding your wallet with credits
 
@@ -48,7 +48,7 @@ Alternatively, if and only if you have a US phone number, you can text the SMS A
 
 **Note**:
 
-- It can take up to some time for the faucet to send your credits, to bide the time, concurrently move on to step 3b below.
+* It can take up to some time for the faucet to send your credits, to bide the time, concurrently move on to step 3b below.
 
 ### 3b. Create a Leo application
 
@@ -56,38 +56,38 @@ We'll need something to deploy, so let's create a simple test Leo application.
 
 Open your terminal and enter the following commands consecutively:
 
-- Create a directory to store your Leo application - feel free to use a different name for this directory or location
+* Create a directory to store your Leo application - feel free to use a different name for this directory or location
 
 ```
 cd $HOME/Desktop
 mkdir demo_deploy_Leo_app && cd demo_deploy_Leo_app
 ```
 
-- ⚠️ Assign $WALLETADDRESS to the wallet address you saved
+* ⚠️ Assign $WALLETADDRESS to the wallet address you saved
 
 ```
 WALLETADDRESS=""
 ```
 
-- Generate a unique application name using part of your wallet address
+* Generate a unique application name using part of your wallet address
 
 ```
 APPNAME=helloworld_"${WALLETADDRESS:4:6}"
 ```
 
-- Create a new test Leo application
+* Create a new test Leo application
 
 ```
 leo new "${APPNAME}"
 ```
 
-- Run your Leo application to make sure things are working
+* Run your Leo application to make sure things are working
 
 ```
 cd "${APPNAME}" && leo run && cd -
 ```
 
-- Save the path of your application - this is important later
+* Save the path of your application - this is important later
 
 ```
 PATHTOAPP=$(realpath -q $APPNAME)
@@ -107,19 +107,19 @@ Now that we have all the details required, we can deploy your first Leo applicat
 
 Open the same terminal instance as before and enter the following commands consecutively:
 
-- Navigate to the path of your app
+* Navigate to the path of your app
 
 ```
 cd $PATHTOAPP && cd ..
 ```
 
-- ⚠️ Assign $PRIVATEKEY to the private address you saved earlier
+* ⚠️ Assign $PRIVATEKEY to the private address you saved earlier
 
 ```
 PRIVATEKEY=""
 ```
 
-- Deploy your Leo application (if all your variables were assigned correctly, you should be able to copy/paste the following)
+* Deploy your Leo application (if all your variables were assigned correctly, you should be able to copy/paste the following)
 
 ```
 snarkos developer deploy "${APPNAME}.aleo" --private-key "${PRIVATEKEY}" --query "https://api.explorer.aleo.org/v1" --path "./${APPNAME}/build/" --broadcast "https://api.explorer.aleo.org/v1/testnet3/transaction/broadcast" --priority-fee 1000000
