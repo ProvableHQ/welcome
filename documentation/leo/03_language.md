@@ -305,7 +305,7 @@ Arrays can contain primitive data types, structs, or arrays. Structs and records
 Arrays can be iterated over using a for loop.
 
 ```leo
-// Initalize a boolean array of length 4
+// Initialize a boolean array of length 4
 let arr: [bool; 4] = [true, false, true, false];
 
 // Nested Array
