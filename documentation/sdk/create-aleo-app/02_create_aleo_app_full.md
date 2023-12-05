@@ -9,62 +9,48 @@ sidebar_label: React App + Devnet + Testing Infra
 
 ## 1. Installation
 
-- Please see [the installation page](00_app_installation.md) to setup the React + Javascript + Leo template.
-- Next, install [Aleo's transaction cannon](https://github.com/AleoHQ/tx-cannon), this will help you deploy and execute your programs.
-- Finally, install [snarkOS](https://github.com/AleoHQ/snarkOS), this will connect your application to a live devnet either locally or on AWS.
-- Also, make sure you have [tmux](https://formulae.brew.sh/formula/tmux) installed.
-
-After you've successfully installed these components, you're ready to go!
-
+- Install [Aleo's transaction cannon](https://github.com/AleoHQ/tx-cannon), which will help you deploy, execute, and stress test your Leo programs.
+- Install [snarkOS](https://github.com/AleoHQ/snarkOS), which will spin up a live devnet either locally or on AWS.
+- Install [tmux](https://formulae.brew.sh/formula/tmux), because the devnet dashboard uses this. 
+- Run these commands to set up your React App and install Leo, our statically-typed programming language built for writing private applications:
+ 
 ```bash
 npm create aleo-app@latest
-```
 
-## 2. Navigation
+Project name: aleo-project-<name>
+Select a framework: › React
+Select a variant: › JavaScript + Leo
 
-Navigate to the project you just installed using:
-
-```bash
 cd aleo-project
 npm install
 npm run install-leo
 npm run dev
 ```
-<!-- markdown-link-check-disable -->
 
-This installs all the required modules and also Leo, our statically-typed programming language built for writing private applications. Your React application can be found at http://localhost:5173.
+## 2. Navigation
+
+<!-- markdown-link-check-disable -->
+Your React application can be found at http://localhost:5173.
+<!-- markdown-link-check-enable -->
 
 `src/App.jsx` contains the main body of your React application.
 
-`src/workers/worker.js` is the WebAssembly (WASM) module that we'll be initializing for deployment and execution of Leo programs. You can deploy and execute programs through the React App or use the handy transaction cannon we've made as well.
+`src/workers/worker.js` is the WebAssembly (WASM) module that we'll be initializing for deployment and execution of Leo programs in-browser. You can deploy and execute programs through the browser or use the handy transaction cannon you've installed as well.
 
-The `helloworld` folder is your Leo program. This is where you’ll use Leo.
+The `helloworld` folder is your Leo program. This is where you’ll write and substitute your own Leo programs.
 
-## Start a local Aleo Devnet
-
-Let's get to your snarkOS directory and run the local devnet script. 
+## 3. Start a local Aleo Devnet
 
 ```bash
 cd snarkOS
 ./devnet.sh
-```
-You'll be confronted with some options, these are fine:
 
-```bash
 Enter the total number of validators (default: 4): 4
 Do you want to run 'cargo install --path .' to build the binary? (y/n, default: y): n
 Do you want to clear the existing ledger logs? (y/n, default: n): n
 ```
 
-Right as the node is started, you'll see information for node 0, copy this down! Here are some helpful `tmux` commands to ensure you don't miss that information.
-
-```bash
-ctrl+b+[  # enter scroll mode
-ctrl+b+w  # see all 4 validator nodes
-ctrl+b+:kill-session  # kills the session
-```
-
-The node information should look something like this:
+Right when the node starts, you'll see information for node 0, copy this down! 
 
 ```bash
 - 👋 Welcome to Aleo! We thank you for running a node and supporting privacy.
@@ -75,15 +61,24 @@ The node information should look something like this:
 - 🔑 Your one-time JWT token is <jwt-token>
 ```
 
-Check that your network is running by using http://localhost:3030/testnet3/latest/height in your browser. The height should move up.
+If you missed it because it scrolled too fast, use these `tmux` commands to scroll up:
 
-## 3. Execute `helloworld.aleo` locally
+```bash
+ctrl+b+[  # enter scroll mode to scroll up
+ctrl+b+w  # see all 4 validator nodes
+ctrl+b+:kill-session  # kills the session
+q  # exit ctrl+b mode
+```
 
-Navigate to http://localhost:5173 and open up the developer console in your browser.
+<!-- markdown-link-check-disable -->
+Check that your network is running by using http://localhost:3030/testnet3/latest/height in your browser. The height should increase as a sign that your network is alive.
 
+## 4. Execute `helloworld.aleo` locally
+
+Navigate back to your React App at http://localhost:5173 and open up the developer console in your browser. Hit the execute `helloworld.aleo` button.
 <!-- markdown-link-check-enable -->
 
-Execution of the `helloworld.aleo` program (in the helloworld folder) should happen locally and you should see an output pop up.
+What basically happens is the `helloworld.aleo` program (in the `helloworld`` folder) is compiled and executed using browser resources.
 
 ![execution-console](./images/execution-console.png)
 
@@ -91,13 +86,21 @@ Execution of the `helloworld.aleo` program (in the helloworld folder) should hap
 
 Remember, this is local execution. We haven't done anything with the devnet that we just spun up.
 
-## 4. Deploying your Program
+You can also execute it locally in your terminal within the root of your new Leo project. You can try it yourself and observe the outputs in the terminal.
 
-Let’s deploy the `helloworld` program. Deployment requires an account with Aleo credits.
+```bash
+cd aleo-project
+leo run main
+leo help
+```
 
-Luckily, the devnet you started with the private key you jotted down is seeded already with credits. However, if you want, you can go through and generate a new account and use our faucets as well, below. 
+The difference between these two executions is one is using in-browser resources, while the other is utilizing local computation resources, but both are just compiling and executing the `helloworld` program in the folder
 
-Or, skip to [deployment](#Leo-&-`helloworld`).
+## 5. Deploying your Program on Devnet
+
+Let’s deploy the `helloworld` program on your local devnet. 
+
+Deployment requires an account with Aleo credits. Luckily, the devnet you spun up with the private key you jotted down is already seeded with credits. If for some reason that doesn't work, you can generate a new account and use our faucets to get a seeded account. For now, you can skip the [Account Generation](#account-generation) & [Faucet](#faucet) sections below, and go straight to [Deployment Methods](#deployment-methods).
 
 ### Account Generation
 
@@ -136,93 +139,93 @@ Transfer successful! for message ID: 1156693507768078496
 https://apiv2.aleo.network/testnet3/transaction/at12u62xwfew2rq32xee8nwhtlxghfjz7mm3528yj240nuezue625fqy4lhlp
 ```
 
-### Leo & `helloworld`
+### Deployment Methods
 
-We have a clean devnet running at http://localhost:3030. What we want to do now is to deploy our helloworld program to that network.
-
-We can deploy it straight through our React app or we can do it through the transaction cannon. Both methods utilize the SDK.
-
-START START HERE
-
-```bash
-import helloworld_program from "../helloworld_[randomsuffix]/build/main.aleo?raw";
-```
-
-Let's dig in a little more. Navigate back to your Leo project and Add your private key to the `.env` in your new Aleo project. Replace the example private key with the one you saved above.
-
-```bash
-NETWORK=testnet3
-PRIVATE_KEY=APrivateKey1zkp2FCZZ7ucNVx5hoofizpq18mvCZNKTpqKMTt1wTahmxSf
-```
-
-Once you've done this, within the root of your new Leo project, you can locally execute your Leo program while developing it:
-
-```bash
-leo run  ## compiles leo to aleo instructions and executes program functions with input variables
-
-leo execute  ## compiles leo to aleo instructions, executes a program with input variables, synthesizes the program circuit, and generates proving and verifying keys
-
-leo help  ## you know what this does
-```
-
-You can try it yourself and observe the outputs in the terminal.
-
-```bash
-leo run main
-leo execute main
-```
-
-Let's get back to deploying!
-
-When you deploy a program, the record that you requested from the faucet is the one that will be used in order to pay for deployment. Looking in `App.jsx`, the web worker is called in order to start the deployment. Following that to `src/workers/worker.js` we see that the WASM is initalized, which allows for computation to run efficiently in the browser, and that the program manager contains methods for authoring, deploying, and interacting with Aleo programs. 
-
-Thing is, we can hit deploy right now, but it’ll take some time to scan for transactions on the blockchain, so let’s provide the *exact* record that we’ll be pulling the fee from. This significantly quickens the deployment process, and you’ll learn about decrypting records in the process.
-
-### Decrypting Records
-
-When you requested credits from the faucet, you are now an owner of a private by default record with credits. Let’s find that record within the transaction.
-
-Take your transaction ID from the Discord URL earlier:
-
-```bash
-at12u62xwfew2rq32xee8nwhtlxghfjz7mm3528yj240nuezue625fqy4lhlp
-``` 
 <!-- markdown-link-check-disable -->
-Go to “Get Transaction” at [aleo.tools/rest](https://aleo.tools/rest) and insert your transaction ID to look at the JSON object. You can similarly use https://api.explorer.aleo.org/v1/testnet3/transaction/[insert-your-transaction-id] to get the same output in your browser. 
-<!-- markdown-link-check-enable-->
+Remember you a clean devnet running at http://localhost:3030. What we want to do now is to deploy our helloworld program to that network.
 
-![get-transaction](./images/get-transaction.png)
+Again, make sure it's running: http://localhost:3030/testnet3/latest/height
+<!-- markdown-link-check-enable -->
 
-Look at `object.execution.transitions[0].outputs[0].value` and copy the ciphertext stored there. It should look something like this:
+### React App WASM Deployment
 
-```bash
-record1qyqspk3emhy5wzu4zg59ynhwtcpwg6ez6k4cl9d690hhqcd36pqh3vcpqyxx66trwfhkxun9v35hguerqqpqzqrtc3d8s5qrlufglkk3gkvgj3w2xdul2kl0pxhvt7f85qfxm0dcpt4g5gf6u356sgte9cyzqhj940l6qsdk5uf7u2xcwfv4zrvmeqdpzjrt848
+Open `App.jsx` in your `aleo-project` folder. Looking in `App.jsx`, the web worker is called in order to start the deployment. 
+
+```js
+  async function deploy() {
+    setDeploying(true);
+    try {
+        const result = await aleoWorker.deployProgram(helloworld_program);
+        console.log("Transaction:")
+        console.log("https://explorer.hamp.app/transaction?id=" + result)
+        alert("Transaction ID: " + result);
+    } catch (e) {
+        console.log(e)
+        alert("Error with deployment, please check console for details");
+    }
+    setDeploying(false);
+}
 ```
 
-Navigate to [aleo.tools/record](https://aleo.tools/record) and insert the record value along with your view key that you saved earlier. You are the owner of the record, and therefore, you have the view key in order to decrypt it to show the plaintext.
+Following that to `src/workers/worker.js` we see that the WASM is used, which allows for efficient browser computation, and that the program manager contains methods for authoring, deploying, and interacting with Aleo programs.
 
-![decrypt-record](./images/decrypt-record.png)
+```js
+async function deployProgram(program) {
+  const keyProvider = new AleoKeyProvider();
+  keyProvider.useCache(true);
 
-Once decrypted, copy the plaintext record and paste it into line 67 of `src/workers/worker.js`. We can comment out line 64 since we don’t want the scanning function active, and instead, we want the optional manual option.
+  // Create a record provider that will be used to find records and transaction data for Aleo programs
+  const networkClient = new AleoNetworkClient("https://vm.aleo.org/api");
 
-The final result in `worker.js` should look something like this:
+  // Use existing account with funds
+  const account = new Account({
+    privateKey: "user1PrivateKey",
+  });
 
-```javascript
-// // Deploy the program to the Aleo network
-// const tx_id = await programManager.deploy(program, fee);
+  const recordProvider = new NetworkRecordProvider(account, networkClient);
 
-// Optional: Pass in fee record manually to avoid long scan times
-const feeRecord = "{owner: aleo1qpjvun06n87jne3jwkml4jwdjqalw7n2qms03mcamenzczrj0uysp85fit.private, microcredits: 50000000u64.private, _nonce: 7736650979063383113375091219637426887776503149825722849440478642541635263210group.public}";
-const tx_id = await programManager.deploy(program, fee, undefined, feeRecord);
+  // Initialize a program manager to talk to the Aleo network with the configured key and record providers
+  const programManager = new ProgramManager(
+    "https://vm.aleo.org/api",
+    keyProvider,
+    recordProvider,
+  );
 ```
 
-Now you can hit the deploy button! 
+To deploy to the network, you'll want to change all instances of `https://vm.aleo.org/api` to `http://localhost:3030` and plug in the node private key you jotted down in place of `user1PrivateKey`.
+
+Once you've done that, you can hit the deploy button!
 
 ![deployment-console](./images/deployment-console.png)
 
 ![deployment-success](./images/deployment-success.png)
 
-Success, you’ve deployed an Aleo program and can how create a decentralized, private application!
+Check that your deployment was successful on your network using: http://localhost:3030/testnet3/transaction/your-txn-id.
+
+![](./images/deploy-txn.png) # NEED DEPLOYMENT TXN
+
+### Transaction Cannon Deployment
+
+Using the transaction cannon to deploy programs to devnet is even easier. Create a new Leo program with a different name and use the `tx-cannon` command:
+
+```bash
+leo new helloworld-deux
+
+tx-cannon deploy helloworld-deux/build/hellowords.aleo -k <private-key> --fee 3 -e http://localhost:3030
+```
+
+Again, you can check that your deployment was successful on your network using: http://localhost:3030/testnet3/transaction/your-txn-id.
+
+## Execution On-Chain using Transaction Cannon 
+
+
+
+
+
+
+
+
+
 
 ## Claim your Leo Contributor Badge!
 Making it through this tutorial was no easy task, so because you've done it, we'd love to honor you with a Leo contributor badge on Github!
