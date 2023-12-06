@@ -202,7 +202,7 @@ Once you've done that, you can hit the deploy button!
 
 Check that your deployment was successful on your network using: http://localhost:3030/testnet3/transaction/your-txn-id.
 
-![](./images/deploy-txn.png) # NEED DEPLOYMENT TXN IMAGE
+![](./images/deployment-txn.png)
 
 ### Transaction Cannon Deployment
 
