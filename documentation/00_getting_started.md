@@ -12,7 +12,6 @@ to compile, execute, and finalize its state autonomously.
 # What's new on Aleo?  
 ### [**⚛️ Create Aleo App**](./sdk/create-aleo-app/01_create_aleo_app.md) - A full stack application written in Typescript using Leo and React.
 ### [**🧰 Leo Developer Toolkit**](./testnet/getting_started/04_developer_toolkit.md) - A zero to one tutorial for the Leo programming language.
-#### 🛡️ Claim your contributor badge on [GitHub](https://github.com/aleohq/leo#%EF%B8%8F-contributors) upon completion!
 :::
 
 ---

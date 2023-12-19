@@ -95,9 +95,6 @@ Open a new terminal window and type `leo --help` to confirm that Leo is installe
 - To run your new Leo example, refer to the included `README.md` file, which you can find in the root of your newly created project's folder.
     - An example `leo run` command for the `tictactoe` application is `leo run new` which creates a new game board.
 
-## Claim your Leo contributor badge
-To claim your Leo contributor badge on GitHub, you will need to push up your Leo app to GitHub.
-
 ### Push your Leo app to GitHub
 This section refers to the guide created by GitHub [here](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github). You can find additional information there as well as alternatives means to add your Leo project to GitHub such as the [GitHub CLI](https://cli.github.com/), [GitHub Desktop](https://desktop.github.com/), or uploading your project folder to an existing repository directly.
 
@@ -137,25 +134,6 @@ This section refers to the guide created by GitHub [here](https://docs.github.co
    `git push -u origin main`
 
 ###### 💡Note: You can check which remote you are using with `git remote -v`. You can learn more about `git remote` [here](https://github.com/git-guides/git-remote#what-does-git-remote-do).
-
-### Claim your badge
-1. Go to the Leo repo [here](https://github.com/AleoHQ/leo/issues)
-2. Give the repo a :star: 
-3. Click "New Issue" in the top right corner
-4. Click "Get started" in the Leo Contributor Badge row
-5. Title your issue: "Add <your_github_username> to contributors"
-6. Enter the following as your issue description:
-```markdown
-Hi Aleo team! I'm claiming my contributor badge for completing the New Developer Toolkit tutorial.
-
-Tutorial Repo: <GITHUB_REPO_URL>
-Requested badge: <BADGE_TYPE>
-```
-###### 💡Note: If you created a unique Leo application other than one of the three generated via `leo example` e.g., token, lottery, tictactoe, then enter **"Content"** as your badge type, otherwise enter **"Tutorial"**.
-6. Click "Submit new issue"
-7. Once your issue is approved, we will add you to the [Contributors section](https://github.com/AleoHQ/leo#%EF%B8%8F-contributors) of the Leo README.md file.
-
-Congratulations on becoming a Leo contributor! 🎉
 
 ## Continue your Leo journey
 
