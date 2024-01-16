@@ -1,7 +1,7 @@
 <p align="center">
     <img width="1412" src="./.resources/banner.png">
     <a href="https://aleo.org"> <img alt="Website" src="https://img.shields.io/badge/Aleo.org-online-blue"></a>
-    <a href="https://discord.gg/5v2ynrw2ds"><img src="https://img.shields.io/discord/700454073459015690?logo=discord"/></a>
+    <a href="https://discord.com/invite/aleo"><img src="https://img.shields.io/discord/700454073459015690?logo=discord"/></a>
     <a href="https://twitter.com/AleoHQ"><img src="https://img.shields.io/twitter/follow/AleoHQ?style=social"/></a>
     <a href="https://GitHub.com/AleoHQ/welcome"><img src="https://img.shields.io/badge/contributors-29-ee8449"/></a>
 </p>
