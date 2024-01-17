@@ -19,7 +19,7 @@ https://github.com/howardwu/awesome-aleo
 
 💬 Share what you are building in the #aleo-language channel 💬
 
-https://discord.com/invite/aleo
+https://discord.gg/aleo
 
 
 ### Looking for [More Aleo Resources?](../00_getting_started.md)
