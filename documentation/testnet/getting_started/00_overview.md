@@ -65,6 +65,56 @@ You can close the container with `ctrl` + `c` and restart it with:
 ```
 docker start -a snarkos
 ```
+## Docker For Alpine Linux
+
+Alpine Linux is a popular OS that is specially optimized for running Docker. 
+
+Activate Docker in Alpine Linux:
+
+```
+apk add docker
+```
+
+Add yourself to the docker group. Replace "username" with your username:
+
+```
+addgroup username docker
+
+```
+
+Ensure that the Docker daemon starts at boot:
+
+```
+rc-update add docker boot
+```
+
+Alternatively, you can manually start the docker service:
+
+```
+run service docker start
+```
+
+Confirm docker service is running:
+
+```
+service docker status
+```
+
+Pull Aleo Container:
+
+```
+docker run -it --name snarkos --hostname snarkosc -p 4133:4133 -p 3033:3033 --mount type=bind,source="$(pwd)",target=/aleo/data aleohq/snarkos:latest /aleo/bin/snarkos start --client --nodisplay
+```
+
+This initializes a container called `snarkos` and maps the container port `3033` to `3033` on your system. Once the client is initialized, you can access the API as usual (`http://0.0.0.0:3033/testnet3/latest/height`).
+
+You can close the container with `ctrl` + `c` and restart it with:
+
+```
+docker start -a snarkos
+```
+
+
 
 ## API
 - [Latest Height](../public_endpoints/00_latest_height.md)
