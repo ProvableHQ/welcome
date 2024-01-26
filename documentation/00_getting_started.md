@@ -59,9 +59,9 @@ Talks and videos from the Aleo community.
 * ETHCC - [**The Hitchhiker's Guide to ZK: An Aleo Developer Workshop**](https://youtu.be/fjfj5kFcQe4)
 * CoinGecko - [**Importance of Zero-knowledge Proofs w/ Alex Pruden**](https://youtu.be/NvYddvVBjXY)
 * Thinking Crypto - [**Alex Pruden Interview - Aleo's Privacy Solutions - Zero Knowledge Proofs - a16z - Bitcoin & Crypto**](https://youtu.be/1y4jvyy8Nsk)
-* The Interop - [**Zero-Knowledge Smart Contracts with Alex Pruden of Aleo**](https://youtu.be/6BwefrwgN3w)
+* The Interop - [**Zero-Knowledge Smart Contracts with Alex Pruden of Aleo**](https://youtu.be/qaQcqVHkH8k)
 * Axelar - [**Tech Talks with Aleo**](https://youtu.be/P7G2DKWZbVM)
-
+* Zero Knowledge - [**The Evolution of Aleo with Howard Wu & Alex Pruden**](https://youtu.be/P7G2DKWZbVM)
 
 ## More Aleo Resources
 If you're interested in learning more about Aleo:
