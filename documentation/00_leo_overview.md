@@ -62,3 +62,8 @@ See the [**Contributing Guide**](./leo/07_resources.md#contributing) for more in
 
 ## Examples
 - [Private Auction](./leo/08_auction.md)
+- [Basic Bank](https://github.com/AleoHQ/workshop/tree/master/basic_bank)
+- [Vote](https://github.com/AleoHQ/workshop/tree/master/vote)
+- [Token](https://github.com/AleoHQ/workshop/tree/master/token)
+- [TicTacToe](https://github.com/AleoHQ/workshop/tree/master/tictactoe)
+- [Battleship](https://github.com/AleoHQ/workshop/tree/master/battleship)
