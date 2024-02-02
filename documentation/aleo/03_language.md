@@ -422,7 +422,7 @@ finalize transfer_public_to_private:
     get.or_use account[r0] 0u64 into r2;
 
     // Decrements `account[r0]` by `r1`.
-    // If `r2 - r1` underflows, `trasfer_public_to_private` is reverted.
+    // If `r2 - r1` underflows, `transfer_public_to_private` is reverted.
     sub r2 r1 into r3;
 
     // Updates the balance of the sender.
