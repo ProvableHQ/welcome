@@ -258,9 +258,9 @@ Options:
 
 ### `leo account sign`
 
-The `leo account sign` command enables developers and users to create cryptographic signatures using an Aleo private key. These signatures can be verified within leo using the [`signature::verify`](../leo/04_operators.md#signatureverify) or with the `leo account verify` command.
+The `leo account sign` command enables developers and users to create cryptographic signatures using an Aleo private key. These signatures can be verified within leo using the [`signature::verify`](../leo/04_operators.md#signatureverify) function or with the `leo account verify` command.
 
-To generate a signature for leo and aleo values, run the following:
+To generate a signature for Leo and Aleo values, run the following:
 
 ```bash
 # replace `5field` with any aleo value
