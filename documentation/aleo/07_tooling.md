@@ -9,8 +9,7 @@ If you have installed a Leo syntax [plugin](../leo/06_tooling.md)
 then you should already be able to see syntax highlighting for `.aleo` Aleo instructions.
 :::
 
-Aleo maintains several syntax highlighting implementations across different platforms.  
-If you do not see your favorite editor on this list, please reach out on [GitHub](https://github.com/AleoHQ/welcome/issues/new).
+Aleo maintains several syntax highlighting implementations across different platforms. If you do not see your favorite editor on this list, please reach out on [GitHub](https://github.com/AleoHQ/welcome/issues/new).
 
 1. [Sublime Text](#sublime-text).
 2. [Visual Studio Code](#vscode).
@@ -32,7 +31,8 @@ Aleo instructions support for Sublime's LSP plugin is provided through a languag
 Follow these steps to toggle the `Aleo instructions` syntax highlighter.
 
 1. Open `Sublime Text`.
-2. From Preferences > Select Color Scheme... > LSP-leo
+2. From Settings > Select Color Scheme... > LSP-leo
+3. This will also allow you to see syntax highlighting for Aleo instructions. 
 
 ## VSCode
 
@@ -42,12 +42,13 @@ Download the editor here: https://code.visualstudio.com/download.
 ### Install
 
 1. Install [Leo for VSCode](https://marketplace.visualstudio.com/items?itemName=aleohq.leo-extension) from VSCode marketplace.   
-2. The correct extension ID is `aleohq.leo-extension`.
+2. The correct extension ID is `aleohq.leo-extension`, and the description should state "the official VSCode extension for Leo".
 
 ### Usage
 
 1. Open `VSCode`.
 2. Go to Settings > Extensions or use the left side panel Extensions button to enable the Leo plugin.
+3. This will also allow you to see syntax highlighting for Aleo instructions. 
 
 ## IntelliJ
 
@@ -57,4 +58,5 @@ Download the editor here: https://www.jetbrains.com/idea/download/.
 ### Install
 
 1. Download the [Aleo Developer Plugin](https://plugins.jetbrains.com/plugin/19890-aleo-developer) from JetBrains marketplace.
-2. Click on Plugins on the left side panel > gear icon > Install Plugin from Disk > Select the downloaded zip file
+2. Click on the gear icon in the upper right > Plugins > gear icon up top > Install Plugin from Disk > Select the downloaded zip file
+3. This will also allow you to see syntax highlighting for Aleo instructions. 
