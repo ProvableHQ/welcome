@@ -1,3 +1,8 @@
+---
+id: basic bank
+title: A Basic Bank using Leo
+---
+
 ## Summary
 
 This program implements a bank that issues tokens to users and allows users to deposit tokens to accrue simple interest on their deposits.

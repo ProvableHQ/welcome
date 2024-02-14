@@ -1,6 +1,6 @@
 ---
 id: token
-title: A transparent & shielded custom token in Leo.
+title: A Custom Token in Leo
 ---
 
 ## Summary
