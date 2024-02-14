@@ -12,10 +12,12 @@ You may choose to download any of the examples or programs you've written on you
 
 ## 1. Tools for Deployment
 
+<!-- markdown-link-check-disable -->
 - Install [Leo](https://developer.aleo.org/leo/installation)
 - Install [Aleo's transaction cannon](https://github.com/AleoHQ/tx-cannon), which will help you deploy, execute, and stress test your Leo programs.
 - Install [snarkOS](https://github.com/AleoHQ/snarkOS), which will help spin up a live devnet either locally or on AWS.
 - Install [tmux](https://formulae.brew.sh/formula/tmux), because the devnet dashboard uses it. 
+<!-- markdown-link-check-enable -->
 
 ## 2. Start a local Aleo Devnet
 
@@ -72,6 +74,7 @@ The height number should be moving up.
 
 ### Transaction Cannon Deployment
 
+<!-- markdown-link-check-disable -->
 Use the transaction cannon to deploy your program.
 
 ```bash
@@ -80,6 +83,7 @@ tx-cannon deploy <project>/build/<project>.aleo -k <node-private-key-you-jotted-
 ```
 
 You can check that your deployment was successful on your network using: http://localhost:3030/testnet3/transaction/`<your-txn-id>`.
+<!-- markdown-link-check-enable -->
 
 ## 6. Execution On-Chain using the Transaction Cannon 
 
@@ -98,6 +102,7 @@ fee = 3
 
 The `.toml` file basically orders transactions to be executed. When we call the `tx-cannon execute` command, we ask it to look for the program we deployed on our local devnet and execute it using the provided inputs and the corresponding private key. 
 
+<!-- markdown-link-check-disable -->
 ```bash
 tx-cannon batch-execute --test helloworld.toml -e http://localhost:3030
 ```
@@ -105,6 +110,7 @@ tx-cannon batch-execute --test helloworld.toml -e http://localhost:3030
 Again, check that the program executed: http://localhost:3030/testnet3/transaction/`<your-txn-id>`.
 
 There's much more functionality to be explored in the [tx-cannon repository](https://github.com/AleoHQ/tx-cannon). You can batch deploy, execute, and transfer, so take advantage of this tool to run development tests on your application!
+<!-- markdown-link-check-enable-->
 
 Congratulations, you took a project off Playground and successfully deployed it to an Aleo devnet!
 
@@ -147,7 +153,9 @@ Congratulations on becoming a Leo contributor! 🎉
 
 1. You downloaded a project off of [Leo Playground](https://play.leo-lang.org/).
 
+<!-- markdown-link-check-disable -->
 2. You installed [Leo](https://developer.aleo.org/leo/), our statically-typed programming language built for writing private applications, our [transaction cannon](https://github.com/AleoHQ/tx-cannon) for easy deployment and execution, and [snarkOS](https://github.com/AleoHQ/snarkOS), the data availability layer.
+<!-- markdown-link-check-enable -->
 
 3. You started a local devnet using the snarkOS repository.
 
