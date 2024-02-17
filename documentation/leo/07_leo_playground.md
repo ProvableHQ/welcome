@@ -110,6 +110,7 @@ tx-cannon batch-execute --test helloworld.toml -e http://localhost:3030
 Again, check that the program executed: http://localhost:3030/testnet3/transaction/`<your-txn-id>`.
 
 There's much more functionality to be explored in the [tx-cannon repository](https://github.com/AleoHQ/tx-cannon). You can batch deploy, execute, and transfer, so take advantage of this tool to run development tests on your application!
+
 <!-- markdown-link-check-disable -->
 
 Congratulations, you took a project off Playground and successfully deployed it to an Aleo devnet!
