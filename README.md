@@ -20,7 +20,7 @@ This repository serves as a guide for getting started with building on Aleo. Her
 
 For help setting up, join us on [Discord](https://aleo.org/discord) to ask questions and help others answer their questions.
 
-We will be updating this page with FAQs to make it easy for finding common issues and to fix them quickly.
+We will be update this page with FAQs to make it easy for finding common issues and to fix them quickly.
 
 ## ❤️ Contributors
 
