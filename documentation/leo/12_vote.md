@@ -1,6 +1,6 @@
 ---
 id: vote
-title: A general vote program.
+title: A Voting Program using Leo
 ---
 
 ## Summary

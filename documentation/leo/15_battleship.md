@@ -1,6 +1,6 @@
 ---
 id: battleship
-title: A battleship game in Leo
+title: A Game of Battleship in Leo
 ---
 
 ## Contents

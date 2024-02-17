@@ -1,6 +1,6 @@
 ---
 id: auction
-title: A Private Auction on Aleo
+title: A Private Auction using Leo
 ---
 
 ## Summary

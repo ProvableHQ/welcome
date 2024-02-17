@@ -1,6 +1,6 @@
 ---
 id: tictactoe
-title: A standard game of Tic-Tac-Toe in Leo.
+title: A Game of Tic-Tac-Toe in Leo
 ---
 
 ## Summary
