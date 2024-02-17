@@ -4,8 +4,7 @@ title: Tooling for Leo
 sidebar_label: Tooling
 ---
 
-Aleo maintains syntax highlighting implementations across different platforms.   
-If you do not see your favorite editor on this list, please reach out on [GitHub](https://github.com/AleoHQ/welcome/issues/new).
+Aleo maintains syntax highlighting implementations across different platforms. If you do not see your favorite editor on this list, please reach out on [GitHub](https://github.com/AleoHQ/welcome/issues/new).
 
 1. [Sublime Text](#sublime-text)
 2. [Visual Studio Code](#vs-code)
@@ -15,10 +14,11 @@ If you do not see your favorite editor on this list, please reach out on [GitHub
 
 [//]: # (![]&#40;./images/sublime.png&#41;  )
 Download the editor here: https://www.sublimetext.com/download.
-Leo support for Sublime's LSP plugin is provided through a language server.
+Aleo instructions support for Sublime's LSP plugin is provided through a language-server.
+
 ### Install
 
-1. Install [LSP](https://packagecontrol.io/packages/LSP) and [LSP-Leo](https://packagecontrol.io/packages/LSP-leo) from Package Control.
+1. Install [LSP](https://packagecontrol.io/packages/LSP) and [LSP-leo](https://packagecontrol.io/packages/LSP-leo) from Package Control.
 2. Restart Sublime.
 
 ### Usage
@@ -26,7 +26,7 @@ Leo support for Sublime's LSP plugin is provided through a language server.
 Follow these steps to toggle the `Leo` syntax highlighting, hover, and tokens.
 
 1. Open `Sublime Text`.
-2. From Preferences > Select Color Scheme... > LSP-aleo-developer
+2. From Settings > Select Color Scheme... > LSP-leo
 
 ## VS Code
 
@@ -35,13 +35,13 @@ Download the editor here: https://code.visualstudio.com/download.
 
 ### Install
 
-Install [Leo for VS Code](https://marketplace.visualstudio.com/items?itemName=aleohq.leo-extension) from the VS Code marketplace.   
-The correct extension ID is `aleohq.leo-extension`.
+1. Install [Leo for VSCode](https://marketplace.visualstudio.com/items?itemName=aleohq.leo-extension) from VSCode marketplace.   
+2. The correct extension ID is `aleohq.leo-extension`, and the description should state "the official VSCode extension for Leo".
 
 ### Usage
 
-1. Open `VS Code`.
-2. From Preferences > Color Theme... > Aleo Theme
+1. Open `VSCode`.
+2. Go to Settings > Extensions or use the left side panel Extensions button to enable the Leo plugin.
 
 ## Intellij
 
@@ -50,4 +50,5 @@ Download the editor here: https://www.jetbrains.com/idea/download/.
 
 ### Install
 
-Install the [Leo for Intellij](https://plugins.jetbrains.com/plugin/19979-leo) from the JetBrains marketplace.   
+1. Download the [Aleo Developer Plugin](https://plugins.jetbrains.com/plugin/19890-aleo-developer) from JetBrains marketplace.
+2. Click on the gear icon in the upper right > Plugins > gear icon up top > Install Plugin from Disk > Select the downloaded zip file 
