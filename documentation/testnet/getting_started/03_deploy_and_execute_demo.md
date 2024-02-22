@@ -10,7 +10,7 @@ Bugs, usability suggestions, and feedback in general would be greatly appreciate
 
 ## Overview
 
-Learn how to deploy and execute a basic "hello world!" program on Aleo's network using Leo and snarkOS. 
+Learn how to deploy and execute a basic "hello world!" program on Aleo's network using Leo and snarkOS.
 
 ## Usage guide
 
@@ -35,16 +35,20 @@ Make sure you have both Leo and snarkOS installed on your machine.
 * Save your **Address**, **View Key**, and **Private Key** in a safe place, you'll need them later
 
 ### 3a. Seeding your wallet with credits
+
 <!-- markdown-link-check-disable -->
 
-To seed your wallet, you'll need to request credits from Aleo's faucet at [faucet.aleo.org](https://faucet.aleo.org/) ⛲️. 
+To seed your wallet, you have two options, the preferred method is to use the Aleo Discord faucet ⛲️.
+
+[Join the Discord](https://discord.gg/aleohq) and navigate to the `#faucet` channel. Follow the instructions provided in the pinned message to request credits.
+
+Alternatively, if and only if you have a US phone number, you can text the SMS Aleo faucet ⛲️ at [faucet.aleo.org](https://faucet.aleo.org/) ⛲️.
 
 <!-- markdown-link-check-enable -->
 
-**Note**: 
+**Note**:
 
-* It can take up to 5-minutes for the faucet to send your credits, to bide the time, concurrently move on to step 3b below.
-* ⚠️ International requests are not supported by the faucet at the moment (a solution is coming soon). In the meantime, if you need credits and are testing internationally, reach out to the Aleo team on Discord or Twitter for support.
+* It can take up to some time for the faucet to send your credits, to bide the time, concurrently move on to step 3b below.
 
 ### 3b. Create a Leo application
 
@@ -89,30 +93,15 @@ cd "${APPNAME}" && leo run && cd -
 PATHTOAPP=$(realpath -q $APPNAME)
 ```
 
-### 4. Confirm the Aleo faucet ⛲️ has sent your wallet credits and obtain your ciphertext record value
-
-By this point, the Aleo faucet should have sent your wallet credits. Next, you'll need to verify your credit balance by decrypting the ciphertext record for the execute transfer that was sent to you. 
-
-If you requested credits by texting with your phone number, you should also receive a confirmation with a URL that has a prefix of `vm.aleo.org/api/testnet3/transaction...` 
+### 4. Confirm the Aleo faucet ⛲️ has sent your wallet credits
 
 <!-- markdown-link-check-disable -->
 
-Alternatively, you can find your execute transaction confirmation by going to [the faucet](https://faucet.aleo.org/) and searching the table provided (supported on desktop only currently) for your address. Once a result is returned, click on the `Transaction ID` field. If you do not see a result in the table, your credits have not yet been sent.
+Before moving forward, verify that you have recieved the Aleo credits from the faucet, if you have not, you must wait for that step to complete. You can verify that your address has recieved credits by checking using an [Aleo Explorer](https://explorer.hamp.app/). Search for your address and confirm that it has a public credits balance. If you recieve a 404, then your address has not recieved any credits yet.
 
 <!-- markdown-link-check-enable -->
 
-* You should be presented with a JSON object in a new browser window. If you haven't already, we highly recommend you install the [JSON Beautifier & Editor](https://chrome.google.com/webstore/detail/json-beautifier-editor/lpopeocbeepakdnipejhlpcmifheolpl) Chrome extension.
-* Navigate to `object.execution.transitions[0].outputs[0].value` and copy the ciphertext stored there
-
-### 5. Obtain your records plaintext
-
-* Navigate to [https://aleo.tools/](https://aleo.tools/) and click the **Record** tab in the nav bar at the top of the page
-* Place the record ciphertext you copied in the previous step in the `Record (Ciphertext)` field
-* Place your view key in the `View Key` field
-* Copy the plaintext record provided. If you do not see it, it's likely you copied the wrong ciphertext record in step 4. Consider revisiting or reach out to `hello@aleo.org`.
-* Save your plaintext record in the same place as you did your address, view key, and private key. You will need it later.
-
-### 6. Deploy your test application
+### 5. Deploy your test application
 
 Now that we have all the details required, we can deploy your first Leo application.
 
@@ -130,42 +119,24 @@ cd $PATHTOAPP && cd ..
 PRIVATEKEY=""
 ```
 
-* ⚠️ Assign $RECORD to the plaintext record you saved earlier
+* Deploy your Leo application (if all your variables were assigned correctly, you should be able to copy/paste the following)
 
 ```
-RECORD=""
-```
-
-* Deploy your Leo application (if all your variables were assigned correctly, you should be able to copy/paste the following
-
-```
-snarkos developer deploy "${APPNAME}.aleo" --private-key "${PRIVATEKEY}" --query "https://api.explorer.aleo.org/v1" --path "./${APPNAME}/build/" --broadcast "https://api.explorer.aleo.org/v1/testnet3/transaction/broadcast" --fee 1000000 --record "${RECORD}"
+snarkos developer deploy "${APPNAME}.aleo" --private-key "${PRIVATEKEY}" --query "https://api.explorer.aleo.org/v1" --path "./${APPNAME}/build/" --broadcast "https://api.explorer.aleo.org/v1/testnet3/transaction/broadcast" --priority-fee 1000000
 ```
 
 You should have seen a confirmation that your Aleo application was deployed in the form of a transaction ID that looks like the following `at1rkkpqu5k4rt86zzccczw6cxeyvrl7hxydvvv7dhl7zr7p9w40c8s70kwm8`. Make sure to copy this string as you'll need it for the last step.
 
-### 7. Execute your test application
-<!-- markdown-link-check-disable -->
+### 6. Execute your test application
 
 Finally, it is time to execute the application you just deployed!
 
-* You'll need to update the `--record` flag with the latest transaction linked to your wallet balance. In this case, you can obtain that by going to the following URL: https://api.explorer.aleo.org/v1/testnet3/transaction/$DEPLOY_TX_ID but replace $DEPLOY_TX_ID with the transaction ID provided to you once your application was deployed (or from the most recent transaction linked to your wallet address). An example URL looks like so: https://api.explorer.aleo.org/v1/testnet3/transaction/at1rkkpqu5k4rt86zzccczw6cxeyvrl7hxydvvv7dhl7zr7p9w40c8s70kwm8
-* In the JSON object provided at https://api.explorer.aleo.org/v1/testnet3/transaction/$DEPLOY_TX_ID, navigate to: `object.fee.transition.outputs[0].value` and copy the record ciphertext value.
-* Head to [aleo.tools](https://aleo.tools/) and navigate to the **Record** tab and paste the record ciphertext you just copied as well as your wallet's view key
-* Similar to the steps we followed for a deploy transaction, update your `RECORD` variable with the record plaintext you just decrypted by doing the following:
+First, verify the program has succesfully deployed by checking an Aleo Explorer and searching the transaction ID you copied in the previous step. If the transaction is not found, then the program has not been deployed yet. If the transaction is found, then the program has been deployed and you can move on to the next step.
 
-<!-- markdown-link-check-enable -->
-
-⚠️ Assign $RECORD to the plaintext record you saved earlier
+Paste the following command in your terminal
 
 ```
-RECORD=""
-```
-
-Then just paste the following command in your terminal
-
-```
-snarkos developer execute "${APPNAME}.aleo" "main" "1u32" "2u32" --private-key "${PRIVATEKEY}" --query "https://api.explorer.aleo.org/v1" --broadcast "https://api.explorer.aleo.org/v1/testnet3/transaction/broadcast" --fee 1000000 --record "${RECORD}"
+snarkos developer execute "${APPNAME}.aleo" "main" "1u32" "2u32" --private-key "${PRIVATEKEY}" --query "https://api.explorer.aleo.org/v1" --broadcast "https://api.explorer.aleo.org/v1/testnet3/transaction/broadcast" --priority-fee 1000000
 ```
 
 Awesome! You have successfully deployed and executed a Leo application to Testnet III, how exciting 🎉
