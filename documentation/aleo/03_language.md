@@ -333,9 +333,9 @@ Mappings are stored publicly on-chain. It is not possible to store data privatel
 // and `amount` as the value.
 mapping account:
     // The token owner.
-    key owner as address.public;
+    key as address.public;
     // The token amount.
-    value amount as u64.public;
+    value as u64.public;
 ```
 
 #### Contains
