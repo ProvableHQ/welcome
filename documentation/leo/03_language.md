@@ -157,7 +157,7 @@ A program scope in the sense of Leo is a collection of code (its functions) and 
 import foo.leo;
 
 program hello.aleo {
-    mapping balances: address => u64;
+    mapping account: address => u64;
 
     record token {
         owner: address,
