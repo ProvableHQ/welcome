@@ -70,6 +70,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/actions"><img src="https://avatars.githubusercontent.com/u/65916846?v=4?s=100" width="100px;" alt="actions-user"/><br /><sub><b>actions-user</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=actions-user" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/aleosys"><img src="https://avatars.githubusercontent.com/u/60269885?v=4?s=100" width="100px;" alt="aleosys"/><br /><sub><b>aleosys</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=aleosys" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jackllh"><img src="https://avatars.githubusercontent.com/u/60269999?v=4?s=100" width="100px;" alt="aleosys"/><br /><sub><b>jack</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=jackllh" title="Documentation">📖</a></td>
     </tr>
   </tbody>
   <tfoot>
