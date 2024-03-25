@@ -80,7 +80,7 @@ If you're interested in learning more about Aleo:
 
 🎮 | Leo Playground ~ **https://play.leo-lang.org/**
 
-🔎 | Aleo Block Explorer ~ **https://www.aleo.network/**
+🔎 | Aleo Block Explorer ~ **https://explorer.aleo.org/**
 
 ✍️ | Community Blog ~ **https://medium.com/@AleoHQ**
 
