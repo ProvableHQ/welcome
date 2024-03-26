@@ -6,14 +6,13 @@ sidebar_label: React + JS + Leo Tutorial
 
 <a href="https://www.npmjs.com/package/create-aleo-app"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/create-aleo-app?label=NPM%20-%20Create-Aleo-App&labelColor=green&color=blue" /></a>
 
-
 ## 1. Installation
 
 Please see [the installation page](00_app_installation.md) to setup the React + Javascript + Leo template.
 
 ## 2. Navigation
 
-Navigate to the project you just installed. 
+Navigate to the project you just installed.
 
 ```bash
 cd aleo-project
@@ -23,7 +22,7 @@ npm run dev
 ```
 <!-- markdown-link-check-disable -->
 
-This installs all the required modules and also Leo, our statically-typed programming language built for writing private applications. Lastly, we've initialized a local instance of your React application at http://localhost:5173.
+This installs all the required modules and also Leo, our statically-typed programming language built for writing private applications. Lastly, we've initialized a local instance of your React application at <http://localhost:5173>.
 
 `src/App.jsx` contains the main body of your React application.
 
@@ -33,11 +32,11 @@ The `helloworld` folder is your Leo program. This is where you’ll use Leo.
 
 ## 3. Execute `helloworld.aleo`
 
-Navigate to http://localhost:5173 and open up the developer console in your browser
+Navigate to <http://localhost:5173> and open up the developer console in your browser
 
 <!-- markdown-link-check-enable -->
 
-Hit “execute helloworld.aleo”. 
+Hit “execute helloworld.aleo”.
 
 Execution should happen locally and you should see an output pop up.
 
@@ -55,13 +54,13 @@ Let’s deploy the `helloworld` program. Deployment requires an account with Ale
 leo account new 
 ```
 
-Write down your private key, view key, and public address in a safe place. Treat your private and view keys as keys you should never share with anyone else. 
+Write down your private key, view key, and public address in a safe place. Treat your private and view keys as keys you should never share with anyone else.
 
 ### Faucet
 
 Once you have your account, use our faucet to get some Aleo credits! We have a faucet by text and one via Discord.
 <!-- markdown-link-check-disable -->
-Head to our [faucet page](https://faucet.aleo.org/) and follow the instructions there. 
+Head to our [faucet page](https://faucet.aleo.org/) and follow the instructions there.
 <!-- markdown-link-check-enable -->
 
 After the credits have been disbursed to your address, note your transaction ID down.
@@ -75,6 +74,7 @@ Format:
 ```
 
 Example:
+
 ```bash
 /sendcredits aleo1k53lck74r93q70ftjvpkmnl5h9uwcna5wqyt80ggmz5w7lck8syskpxj46 20
 ```
@@ -123,13 +123,20 @@ leo help  ## you know what this does
 You can try it yourself and observe the outputs in the terminal.
 
 ```bash
-leo run main
-leo execute main
+leo run main <input1> <input2>
+leo execute main <input1> <input2>
+```
+
+Here's a sample input to pass to the main function
+
+```bash
+leo run main 1u32 3u32
+leo execute main 1u32 3u32
 ```
 
 Let's get back to deploying!
 
-When you deploy a program, the record that you requested from the faucet is the one that will be used in order to pay for deployment. Looking in `App.jsx`, the web worker is called in order to start the deployment. Following that to `src/workers/worker.js` we see that the WASM is initalized, which allows for computation to run efficiently in the browser, and that the program manager contains methods for authoring, deploying, and interacting with Aleo programs. 
+When you deploy a program, the record that you requested from the faucet is the one that will be used in order to pay for deployment. Looking in `App.jsx`, the web worker is called in order to start the deployment. Following that to `src/workers/worker.js` we see that the WASM is initalized, which allows for computation to run efficiently in the browser, and that the program manager contains methods for authoring, deploying, and interacting with Aleo programs.
 
 Thing is, we can hit deploy right now, but it’ll take some time to scan for transactions on the blockchain, so let’s provide the *exact* record that we’ll be pulling the fee from. This significantly quickens the deployment process, and you’ll learn about decrypting records in the process.
 
@@ -141,9 +148,9 @@ Take your transaction ID from the Discord URL earlier:
 
 ```bash
 at12u62xwfew2rq32xee8nwhtlxghfjz7mm3528yj240nuezue625fqy4lhlp
-``` 
+```
 <!-- markdown-link-check-disable -->
-Go to “Get Transaction” at [aleo.tools/rest](https://aleo.tools/rest) and insert your transaction ID to look at the JSON object. You can similarly use https://api.explorer.aleo.org/v1/testnet3/transaction/[insert-your-transaction-id] to get the same output in your browser. 
+Go to “Get Transaction” at [aleo.tools/rest](https://aleo.tools/rest) and insert your transaction ID to look at the JSON object. You can similarly use <https://api.explorer.aleo.org/v1/testnet3/transaction/[insert-your-transaction-id>] to get the same output in your browser.
 <!-- markdown-link-check-enable-->
 
 ![get-transaction](./images/get-transaction.png)
@@ -171,13 +178,47 @@ const feeRecord = "{owner: aleo1qpjvun06n87jne3jwkml4jwdjqalw7n2qms03mcamenzczrj
 const tx_id = await programManager.deploy(program, fee, undefined, feeRecord);
 ```
 
-Now you can hit the deploy button! 
+Now you can hit the deploy button!
 
 ![deployment-console](./images/deployment-console.png)
 
 ![deployment-success](./images/deployment-success.png)
 
-Success, you’ve deployed an Aleo program and can how create a decentralized, private application!
+### Without Decrypting Records
+
+Here's another way to go about deploying your aleo program if you do not have the transaction Id from discord, or if the decrypt record section above did not work for you.
+
+Check if the current code in `worker.js` look something like this (assuming you have followed the documentation till this point).
+
+```javascript
+// Deploy the program to the Aleo network
+const tx_id = await programManager.deploy(program, fee);
+
+// Optional: Pass in fee record manually to avoid long scan times
+// const feeRecord = "{  owner: aleo1xxx...xxx.private,  microcredits: 2000000u64.private,  _nonce: 123...789group.public}";
+// const tx_id = await programManager.deploy(program, fee, undefined, feeRecord);
+```
+
+Next, we need to get the privateKey from the .env file that you created above. Do this next:
+
+```javascript
+// Use existing account with funds
+const account = new Account({
+    privateKey: import.meta.env.PRIVATE_KEY,
+});
+```
+
+**Note the way the private key was imported using: `import.meta.env.PRIVATE_KEY`**
+
+Once the private key has been passed. You can proceed to deploy using the deploy button on the webpage.
+
+**Note: The transaction will take a while. So allow the deployment take it's time.**
+
+After a while, an alert will popup in your browser with the same result as though you have followed the decrypt record section above.
+
+![deployment-success](./images/deployment-success.png)
+
+And viola, you’ve deployed an Aleo program and can how create a decentralized, private application!
 
 ### Pushing your Leo Application to Github
 
@@ -190,9 +231,9 @@ git add .
 git commit -m "first commit, new aleo app"
 ```
 
-2. Create a new repository on your [github.com](https://github.com/new) account by hitting "new repository" in the top right. Set the repo to public, and don't worry about adding a README, license, or .gitignore files. You can add these files after your project has been pushed to GitHub. 
+2. Create a new repository on your [github.com](https://github.com/new) account by hitting "new repository" in the top right. Set the repo to public, and don't worry about adding a README, license, or .gitignore files. You can add these files after your project has been pushed to GitHub.
 
-3. At the top of the page your new repository, click to copy the remote repository URL and go back to your terminal to link your local project to this repository.
+3. At the top of the page of your new repository, click to copy the remote repository URL and go back to your terminal to link your local project to this repository.
 
 ![ ](https://docs.github.com/assets/cb-48149/mw-1440/images/help/repository/copy-remote-repository-url-quick-setup.webp)
 
@@ -208,11 +249,10 @@ git push -u origin main
 
 2. You also installed [Leo](https://developer.aleo.org/leo/), our statically-typed programming language built for writing private applications. Using Leo, you can write, build, compile, and execute Leo programs locally.
 
-3. We provided the `helloworld` Leo program already pre-compiled into Aleo instructions and then executed it locally using WASM + web workers, which was an abstraction on snarkVM’s capabilities. [snarkVM](https://developer.aleo.org/aleo/) is the data execution layer. It is used to compile Leo programs and execute them locally off-chain. All Leo programs eventually become Aleo instructions via Aleo’s compiler during the execution phase of snarkVM. 
+3. We provided the `helloworld` Leo program already pre-compiled into Aleo instructions and then executed it locally using WASM + web workers, which was an abstraction on snarkVM’s capabilities. [snarkVM](https://developer.aleo.org/aleo/) is the data execution layer. It is used to compile Leo programs and execute them locally off-chain. All Leo programs eventually become Aleo instructions via Aleo’s compiler during the execution phase of snarkVM.
 
 4. Similarly, we deployed the `helloworld` program, again using the WASM + web workers abstraction layer but you can also deploy programs on-chain using [snarkOS](https://developer.aleo.org/testnet/getting_started/deploy_execute/#deploy), the data availability layer or blockchain / distributed ledger.
 
-5. During the tutorial you navigated to [aleo.tools](https://aleo.tools), which is the graphical interface to our SDK, which serves as an abstraction layer of snarkOS and snarkVM. You’ll find you can perform similar actions (compiling, executing, deploying) on aleo.tools. 
-
+5. During the tutorial you navigated to [aleo.tools](https://aleo.tools), which is the graphical interface to our SDK, which serves as an abstraction layer of snarkOS and snarkVM. You’ll find you can perform similar actions (compiling, executing, deploying) on aleo.tools.
 
 6. The entire React template along with the WASM and web workers can also be considered an abstraction layer of snarkOS and snarkVM.
