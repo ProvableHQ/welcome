@@ -22,11 +22,11 @@ An index of all pages available in this documentation.
 - [Leo Command Line Interface](./leo/05_commands.md)
 - [Leo Code Editor Plugins](./leo/06_tooling.md)
 - [Leo Examples, Guides, and Developer Resources](./leo/07_resources.md)
-- [Leo Cheatsheet](./leo/09_cheatsheet.md)
+- [Leo Cheatsheet](./leo/08_cheatsheet.md)
 
 ### Chapter 2: Leo by Example
 
-- [Auction](./leo/08_auction.md)
+- [Auction](./leo/09_auction.md)
 - [Basic Bank](https://github.com/AleoHQ/workshop/tree/master/basic_bank)
 - [Vote](https://github.com/AleoHQ/workshop/tree/master/vote)
 - [Token](https://github.com/AleoHQ/workshop/tree/master/token)

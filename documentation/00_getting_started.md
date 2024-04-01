@@ -84,4 +84,4 @@ If you're interested in learning more about Aleo:
 
 ✍️ | Community Blog ~ **https://medium.com/@AleoHQ**
 
-### Looking for [**Developer Resources?**](./leo/08_resources.md)
+### Looking for [**Developer Resources?**](./leo/07_resources.md)

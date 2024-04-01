@@ -27,7 +27,7 @@ To learn the core concepts and syntax of Leo, start with the [**Layout of a Leo 
 
 To view the full list of supported operators in Leo, see [**Operators**](./leo/04_operators.md).
 
-For a quick reference of Leo syntax, see the [**Leo Cheat Sheet**](./leo/09_cheatsheet.md).
+For a quick reference of Leo syntax, see the [**Leo Cheat Sheet**](./leo/08_cheatsheet.md).
 
 ## Formal Language Documentation
 
@@ -52,13 +52,13 @@ The Leo CLI provides a suite of commands to make programming in Leo easy.
 ## Additional Material
 Install Leo for your favorite code [**editor**](./leo/06_tooling.md).
 
-For additional developer resources such as examples and community projects, see [**Developer Resources**](./leo/08_resources.md).
+For additional developer resources such as examples and community projects, see [**Developer Resources**](./leo/07_resources.md).
 
-Is your Leo code formatted correctly? Check out the [**Style Guide**](./leo/08_resources.md#style-guide) and [**Common Patterns**](./leo/08_resources.md#common-patterns) for the official guidelines.
+Is your Leo code formatted correctly? Check out the [**Style Guide**](./leo/07_resources.md#style-guide) and [**Common Patterns**](./leo/07_resources.md#common-patterns) for the official guidelines.
 
 Found a bug? Have an idea for a feature? File an issue on the [**Leo GitHub**](https://github.com/AleoHQ/leo/issues/new/choose).
 
-See the [**Contributing Guide**](./leo/08_resources.md#contributing) for more information.
+See the [**Contributing Guide**](./leo/07_resources.md#contributing) for more information.
 
 ## Examples
-- [Private Auction](./leo/10_auction.md)
+- [Private Auction](./leo/09_auction.md)
