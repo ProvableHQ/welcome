@@ -32,7 +32,7 @@ Let's run the project.
 The `leo run` command will compile and run the program.
 In your terminal, run:
 ```bash
-leo run main
+leo run main 1 2
 ```
 
 ```bash title="console output:"
