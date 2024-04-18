@@ -213,10 +213,10 @@ Now, let's run it. In this case, the only new thing you need to know is that str
 "{a0: 1u32, a1: 2u32, a2: 3u32}"
 ```
 
-Now we can execute the `aleo run` command. We will clean the project to pick up the new code:
+Now we can execute the `snarkvm run` command. We will clean the project to pick up the new code:
 
 ```bash
-aleo clean && aleo run sum_one_to_array3 "{a0: 0u32, a1: 1u32, a2: 2u32}"
+snarkvm clean && snarkvm run sum_one_to_array3 "{a0: 0u32, a1: 1u32, a2: 2u32}"
 ```
 
 And we get the new `array3` element as output:
@@ -267,9 +267,16 @@ Consider this program:
 ```aleo showLineNumbers
 // The 'foo.aleo' program.
 program foo.aleo;
+
 record token:
     owner as address.private;
     amount as u64.private;
+
+function mint:
+    input r0 as u64.private;
+    cast self.signer r0 into r1 as token.record;
+    output r1 as token.record;
+
 function transfer_amount:
     //  sender token record
     input r0 as token.record;
@@ -311,18 +318,21 @@ Where:
 Let's run the `transfer_amount` function (if you are following along, remember to use the address found in the program.json for the owner field):
 
 ``` bash
-aleo clean && aleo run transfer_amount "{
+snarkvm clean && snarkvm run transfer_amount "{
 owner: aleo1x5nz5u4j50w482t5xtqc3jdwly9s8saaxlgjz0wvmuzmxv2l5q9qmypx09.private,
-amount: 50u64.private
+amount: 50u64.private,
+_nonce: 0group.public
 }" aleo1h3gu7fky36y8r7v2x9phc434fgf20g8qd7c7u45v269jfw6vmugqjegcvp 10u64
 ```
 
 We get the following output records:
 
 ```bash
-🚀 Executing 'foo.aleo/transfer_amount'...
- • Calling 'foo.aleo/transfer_amount'...
- • Executed 'transfer_amount' (in 3520 ms)
+
+⛓  Constraints
+
+ •  'foo.aleo/transfer_amount' - 4,172 constraints (called 1 time)
+ 
 ➡️  Outputs
  • {
   owner: aleo1x5nz5u4j50w482t5xtqc3jdwly9s8saaxlgjz0wvmuzmxv2l5q9qmypx09.private,
@@ -334,7 +344,7 @@ We get the following output records:
   amount: 10u64.private
   _nonce: 2323253577170856894742339369235137467208538700597121244293392765726742543235group.public
 }
-✅ Executed 'foo.aleo/transfer_amount' (in "[...]/foo")
+✅ Finished 'foo.aleo/transfer_amount' (in "[...]/foo")
 ```
 
 And that's it. You have transferred your first owner-defined tokens in Aleo!
