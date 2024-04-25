@@ -8,23 +8,26 @@ title: A Basic Bank using Leo
 This program implements a bank that issues tokens to users and allows users to deposit tokens to accrue simple interest on their deposits.
 
 ### User Flow
+
 1. The bank issues users tokens via the `issue` function.
 2. A user deposits tokens via the `deposit` function.
 3. Upon a user's request to withdraw, the bank calculates the appropriate amount of compound interest and pays the user the principal and interest via the `withdraw` function.
 
-Note that the program can be easily extended to include addition features such as a `transfer` function, which would allow users to transfer tokens to other users.
+Note that the program can be easily extended to include additional features such as a `transfer` function, which would allow users to transfer tokens to other users.
 
 ## Bugs
 
-You may have already guessed that this program has a few bugs. We list some of them below: 
+You may have already guessed that this program has a few bugs. We list some of them below:
+
 - `withdraw` can only be invoked by the bank. A malicious bank could lock users' tokens by not invoking `withdraw`.
-- `withdraw` fails if the sum of the interest and principal is greater than the user's balance. 
-- User's can increase their principal by depositing tokens multiple times, including immediately before withdrawl.
+- `withdraw` fails if the sum of the interest and principal is greater than the user's balance.
+- Users can increase their principal by depositing tokens multiple times, including immediately before withdrawl.
 - Integer division rounds down; if the calculated interest is too small, then it will be rounded down to zero.
 
 Can you find any others?
 
 ## Language Features and Concepts
+
 - `record` declarations
 - `assert_eq`
 - core functions, e.g. `BHP256::hash`
@@ -48,10 +51,10 @@ The `.env` file contains a private key and address. This is the account that wil
 
 ## Walkthrough
 
-* [Step 0: Issue Tokens](#issue)
-* [Step 1: Deposit Tokens](#deposit)
-* [Step 2: Wait](#wait)
-* [Step 3: Withdraw Tokens](#withdraw)
+- [Step 0: Issue Tokens](#issue)
+- [Step 1: Deposit Tokens](#deposit)
+- [Step 2: Wait](#wait)
+- [Step 3: Withdraw Tokens](#withdraw)
 
 ## <a id="issue"></a> Issue Tokens
 
@@ -101,7 +104,7 @@ You'll see that the output contains a new private record belonging to the user w
 
 With the 50 token deposit, let's say 15 periods of time pass with compounding interest at a rate of 12.34% on the principal amount.
 
-You can run the calculation yourself, it comes out to 266 tokens accrued using those numbers. 
+You can run the calculation yourself, it comes out to 266 tokens accrued using those numbers.
 
 ## <a id="withdraw"></a> Withdraw Tokens
 
