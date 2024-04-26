@@ -81,8 +81,6 @@ package/
 ├── program.json # Your program manifest
 ├── README.md # Your program description
 ├── build/
-├── inputs/
-│ ├── hello.in # Your program inputs
 └── src/
   └── main.leo # Your program file
 ```
@@ -118,10 +116,6 @@ This will populate the directory `build/` (creating it if it doesn't exist) with
 :::tip
 Use this command to run your program before [**executing**](#leo-execute) it.
 :::
-To run a Leo transition function using inputs from the program input `.in` file.
-```bash
-leo run {$TRANSITION}
-```
 
 To run a Leo transition function with inputs from the command line.
 `{$INPUTS}` should be a list of inputs to the program separated by spaces.
@@ -147,11 +141,6 @@ This command does not synthesize the program circuit or generate proving and ver
 :::tip
 Use this command to execute your program and generate a transaction object.
 :::
-
-To execute a Leo transition function using inputs from the program input `.in` file.  
-```bash
-leo execute {$TRANSITION}
-```
 
 To execute a Leo transition function with inputs from the command line.
 `{$INPUTS}` should be a list of inputs to the program separated by spaces.
