@@ -149,7 +149,6 @@ leo execute {$TRANSITION} {$INPUTS}
 ```
 This command synthesizes the program circuit and generates proving and verifying keys.
 
-
 ```bash title="console output:"
  Leo ✅ Compiled 'main.leo' into Aleo instructions
 
@@ -162,6 +161,11 @@ This command synthesizes the program circuit and generates proving and verifying
  {"type":"execute","id":"at1 ... (transaction object truncated for brevity)
  
  Leo ✅ Executed 'hello.aleo/main' (in "/hello/build")
+```
+
+To execute a Leo transition function on-chain. Note that the program must already have been successfully deployed.
+```bash
+leo execute --endpoint "{$ENDPOINT}" --private-key "{$PRIVATE_KEY}" --broadcast --external {$PROGRAM} {$FUNCTION} {$INPUTS} 
 ```
 
 ## `leo add`
