@@ -19,8 +19,6 @@ hello/
 ├── program.json # Your program manifest
 ├── README.md # Your program description
 ├── build/
-├── inputs/
-│ ├── hello.in # Your program inputs
 └── src/
   └── main.leo # Your program file
 ```
@@ -32,7 +30,7 @@ Let's run the project.
 The `leo run` command will compile and run the program.
 In your terminal, run:
 ```bash
-leo run main
+leo run main 1u32 2u32
 ```
 
 ```bash title="console output:"
@@ -52,7 +50,7 @@ Congratulations! You've just run your first Leo program.
 Let's go through the file syntax of the program we just executed.
 
 
-**program.json** is the Leo manifest file that configures our package.
+**program.json** is the Leo manifest file that configures our package. More complex projects containing multiple programs will have a more detailed manifest file that outline the dependency structure. 
 ```json title="program.json"
 {
     "program": "hello.aleo",
@@ -115,41 +113,17 @@ Leo will check that `c`'s type matches the function return type `u32`.
 return c;
 ```
 
-## Wiring program inputs
-Leo's compiler will build a **circuit** out of the **main.leo** program. Open up **inputs/hello.in**.
-Files ending in **.in** provide inputs to the program. You can also specify program arguments via the [command line](05_commands.md#leo-run).
-```leo title="inputs/hello.in"
-// The program input for hello/src/main.leo
-[main]
-public a: u32 = 1u32;
-b: u32 = 2u32;
-```
-
-An input file begins with a section enclosed in square brackets `[ ]`.
-The `main` inside the square brackets indicates that we are defining the inputs to the transition function `main`.
-You can only define inputs to [transition functions](03_language.md#transition-function).
-
-```leo
-[main]
-```
+## Running the program 
+Leo's compiler will build a **circuit** out of the **main.leo** program. 
 
 An input assignment shares syntax with an explicit variable assignment in normal `.leo` files.
-Here we assign the value `1` of type `u32` to the `public` input named `a`.
-We also assign the value `2` of type `u32` to the (private, by default) input named `b`.
+In this Leo CLI command we assign the value `1` of type `u32` to the `public` input of function `main` named `a`.
+We also assign the value `2` of type `u32` to the (private, by default) input of `main` named `b`.
 Leo's compiler will fetch these values and provide them as inputs to the circuit at proving time.
 
-```leo
-public a: u32 = 1u32;
-b: u32 = 2u32;
-```
-
-Now let us use the Leo CLI and see what other commands we can run on our program.
-
-
-Previously we ran the program with `leo run`.
 This command builds and runs the program natively.
 ```bash
-leo run
+leo run main 1u32 1u32 
 ```
 
 ## Step by step
@@ -178,7 +152,7 @@ leo update
 
 The `leo execute` command executes the Leo program and outputs a transaction object
 ```bash
-leo execute main
+leo execute main 1u32 2u32
 ```
 
 ```bash title="console output:"
