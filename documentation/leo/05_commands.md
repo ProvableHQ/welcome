@@ -163,7 +163,7 @@ This command synthesizes the program circuit and generates proving and verifying
  Leo ✅ Executed 'hello.aleo/main' (in "/hello/build")
 ```
 
-To execute a Leo transition function on-chain. Note that the program must already have been successfully deployed.
+To execute a Leo transition function locally, generating a zero-knowledge proof, and verifying the zero-knowledge proof on-chain. Note that the program must already have been successfully deployed.
 ```bash
 leo execute --endpoint "{$ENDPOINT}" --private-key "{$PRIVATE_KEY}" --broadcast --external {$PROGRAM} {$FUNCTION} {$INPUTS} 
 ```
