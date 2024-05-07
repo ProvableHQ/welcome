@@ -163,6 +163,25 @@ This command synthesizes the program circuit and generates proving and verifying
  
  Leo ✅ Executed 'hello.aleo/main' (in "/hello/build")
 ```
+
+## `leo add`
+:::tip
+Use this command to add a dependency to your program. This is a precursor to being able to import a program inside the leo source code file. 
+:::
+
+To add an already deployed program as a project dependency.
+`{$PROGRAM}` should be the name of the program to add as a dependency.
+```bash
+leo add {$PROGRAM} // {$NETWORK} defaults to `testnet3`.
+leo add -n {$NETWORK} {$PROGRAM} // To pull from a custom network. 
+```
+
+To add a local Leo program as a project dependency.
+`{$PATH}` should be the relative path to the dependency project directory.
+```bash
+leo add -l {$PATH} {$PROGRAM} 
+```
+
 ## `leo clean`
 
 To clean the build directory, run:
