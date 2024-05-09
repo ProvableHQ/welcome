@@ -156,4 +156,4 @@ leo run finish "{
 }"
 ```
 
-Congratulations! You've run a private auction. We recommend going to [aleo.tools](https://aleo.tools) to generate new accounts and trying the same commands with those addresses.
+Congratulations! You've run a private auction. We recommend going to [provable.tools](https://provable.tools) to generate new accounts and trying the same commands with those addresses.

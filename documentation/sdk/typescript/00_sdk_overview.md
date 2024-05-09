@@ -21,11 +21,11 @@ Aleo provides the ability to run programs in zero knowledge. The Aleo SDK provid
 within the browser and all other levels of the web stack to build privacy preserving applications.
 
 The Aleo SDK provides the following functionality (Click to see examples):
-1. [Aleo account management](https://aleo.tools/account)
-2. [Web-based program execution and deployment](https://aleo.tools/develop)
-3. [Aleo credit transfers](https://aleo.tools/transfer)
-4. [Management of program state and data](https://aleo.tools/record)
-5. [Communication with the Aleo network](https://aleo.tools/rest)
+1. [Aleo account management](https://provable.tools/account)
+2. [Web-based program execution and deployment](https://provable.tools/develop)
+3. [Aleo credit transfers](https://provable.tools/transfer)
+4. [Management of program state and data](https://provable.tools/record)
+5. [Communication with the Aleo network](https://provable.tools/rest)
 
 ## Table of Contents
 
@@ -85,8 +85,8 @@ Developers can get started immediately with create-react-app by running:
 
 ### Aleo.tools
 
-Additionally, the SDK powers [aleo.tools](https://aleo.tools) - a React app that provides a graphical interface for most
-of the functionality provided by the SDK and can be used as a reference for usage of the SDK. Source code for aleo.tools
+Additionally, the SDK powers [provable.tools](https://provable.tools) - a React app that provides a graphical interface for most
+of the functionality provided by the SDK and can be used as a reference for usage of the SDK. Source code for provable.tools
 can be found [in the SDK repo here](https://github.com/AleoHQ/sdk/tree/testnet3/website)
 
 ## 1. Create an Aleo Account

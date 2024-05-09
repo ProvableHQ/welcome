@@ -140,7 +140,7 @@ This section refers to the guide created by GitHub [here](https://docs.github.co
 Check out the following resources:
 
 - [Our developer docs](https://developer.aleo.org/getting_started/)
-- See Aleo's SDK in action at [aleo.tools](https://aleo.tools)
+- See Aleo's SDK in action at [provable.tools](https://provable.tools)
 - Play around with Leo in the browser with [Leo Playground](https://play.leo-lang.org/)
 - Learn Leo syntax, functions, and best practices with the [Leo's language guide](https://developer.aleo.org/leo/language)
 - Deploy and Execute Leo applications on-chain with our [Deploy and Execute Demo](https://developer.aleo.org/testnet/getting_started/deploy_execute_demo)
