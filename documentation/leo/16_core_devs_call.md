@@ -2,7 +2,7 @@
 id: leocoredevs
 title: Leo Core Developers Call
 sidebar_label: Leo Core Devs
-
+---
 
 # Leo Core Developers Call
 
