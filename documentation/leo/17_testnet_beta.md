@@ -12,7 +12,7 @@ We are about to reach a huge milestone in Aleo's developement. Testnet Beta is a
 
 **IMPORTANT:**
 - **Leo v1.12.0 (to be released) will be the last Testnet3 compatible version.**
-- **Leo v.1.13.0 (to be released) will be the first Testnet Beta compatible version.**
+- **Leo v.2.0.0 (to be released) will be the first Testnet Beta compatible version.**
 
 For additional support, please feel free to:
 - File an issue [here](https://github.com/AleoHQ/leo/issues/new/choose).
@@ -20,7 +20,7 @@ For additional support, please feel free to:
 - Attend the Leo Core Devs Call / Engineering Office Hours.
 
 ## Breaking Changes
-We've included a check-list of features that are deprecated in Leo v1.13.0. If you rely on any of these, be sure to update your code!
+We've included a check-list of features that are deprecated in Leo v2.0.0. If you rely on any of these, be sure to update your code!
 
 - [ ] [Finalization](#Finalization)
 - [ ] [Assignment In Conditional On-chain Code](#Assignment-In-Conditional-On-chain-Code)
@@ -111,7 +111,7 @@ program bar.aleo {
 ### Assignment In Conditional On-chain Code
 Updates to `snarkVM` have introduced `branch` instructions, which allows users to conditionally execute code. For example, users can remove an entry in a mapping if and only if a condition is met. However, this imposes some fundamental restrictions on the certain code structures in Leo. See [this](#Compiling-Conditional-On-Chain-Code) section for a conceptual breakdown.
 
-Specifically, Leo v1.13.0 does not allow programs to re-assign to a variable declared in a scope outside of the existing one, solely in the on-chain portion of code.
+Specifically, Leo v2.0.0 does not allow programs to re-assign to a variable declared in a scope outside of the existing one, solely in the on-chain portion of code.
 
 For example, the following code will result in a compiler error:
 ```rust
@@ -225,7 +225,7 @@ As with the above restructions. these limits can only be increased via the gover
 
 ## New Features
 
-Here is a list of some of the new features that are available to you in Leo v1.13.0!
+Here is a list of some of the new features that are available to you in Leo v2.0.0!
 
 ### Reading External Mappings
 Leo now allows users to read all mappings defined in programs that have been imported. Just as with reading local mappings, this operation must take place in an async function.
