@@ -203,7 +203,7 @@ progam baz.aleo {
 ### Defining and Using Imported Structs
 
 ### Program Limits
-For `testnet4`, snarkVM imposes the following limits on Aleo programs:
+For Testnet Beta, snarkVM imposes the following limits on Aleo programs:
 - the maximum size of the program 100 KB, by the number of characters.
 - the maximum number of mappings is 31.
 - the maximum number of imports is 64.
