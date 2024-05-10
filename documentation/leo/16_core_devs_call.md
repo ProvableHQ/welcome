@@ -18,7 +18,7 @@ We welcome everyone to join!
 ### Where
 **Google Meet**
 - Video Call: https://meet.google.com/bbg-cida-whx
-- Or dial: ‪(US) +1 316-778-8036‬ PIN: ‪924 993 145‬#
+- Or dial: (US) +1 316-778-8036 PIN: 924 993 145#
 - More phone numbers: https://tel.meet/bbg-cida-whx?pin=5152640505345
 
 ### Agenda 
