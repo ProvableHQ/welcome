@@ -23,6 +23,7 @@ An index of all pages available in this documentation.
 - [Leo Code Editor Plugins](./leo/06_tooling.md)
 - [Leo Examples, Guides, and Developer Resources](./leo/07_resources.md)
 - [Leo Cheatsheet](./leo/09_cheatsheet.md)
+- [Leo Core Developers Call](./leo/16_core_devs_call.md)
 
 ### Chapter 2: Leo by Example
 
