@@ -22,13 +22,13 @@ For additional support, please feel free to:
 ## Breaking Changes
 We've included a check-list of features that are deprecated in Leo v2.0.0. If you rely on any of these, be sure to update your code!
 
-- [ ] [API Endpoints](#API-Endpoints)
-- [ ] [Finalization](#Finalization)
-- [ ] [Assignment In Conditional On-chain Code](#Assignment-In-Conditional-On-chain-Code)
-- [ ] [Input Files](#Input-Files)
-- [ ] [Naming Programs](#Naming-Programs)
-- [ ] [Defining and Using Imported Structs](#Defining-and-Using-Imported-Structs)
-- [ ] [Program Limits](#Program-Limits)
+- [ ] [API Endpoints](#api-endpoints)
+- [ ] [Finalization](#finalization)
+- [ ] [Assignment In Conditional On-chain Code](#assignment-in-conditional-on-chain-code)
+- [ ] [Input Files](#input-files)
+- [ ] [Naming Programs](#naming-programs)
+- [ ] [Defining and Using Imported Structs](#defining-and-using-imported-structs)
+- [ ] [Program Limits](#program-limits)
 
 
 *If you run into breaking changes that were not covered above or addressed insufficiently, we'd appreciate it if you file an issue [here](https://github.com/AleoHQ/leo/issues/new/choose). The Leo Team will reach out and help you migrate your applications appropriately.*
@@ -321,7 +321,7 @@ transition weird_sub(a: u8, b: u8) -> u8 {
 }
 ```
 This is compiled into the following Aleo instructions:
-```leo
+```aleo
 function weird_sub:
     input r0 as u8.private;
     input r1 as u8.private;
