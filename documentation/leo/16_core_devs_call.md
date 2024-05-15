@@ -36,6 +36,6 @@ We welcome everyone to join!
     - Responses will be allocated a slide for discussion and note taking.
   - Open Forum
 
-## Slides
+## Past Meetings
 The slides from each call will be available for review shortly after the meeting.
 
