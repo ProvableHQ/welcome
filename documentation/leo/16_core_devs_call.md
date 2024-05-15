@@ -16,10 +16,7 @@ We welcome everyone to join!
 **Every Tuesday 9-10AM PT, starting on 5/21/24**
 
 ### Where
-**Google Meet**
-- Video Call: https://meet.google.com/bbg-cida-whx
-- Or dial: (US) +1 316-778-8036 PIN: 924 993 145#
-- More phone numbers: https://tel.meet/bbg-cida-whx?pin=5152640505345
+**On the [Aleo Discord](https://discord.gg/aleo), in the `Leo Core Devs Calls` channel.**
 
 ### Agenda 
 - Team Updates:
@@ -39,6 +36,6 @@ We welcome everyone to join!
     - Responses will be allocated a slide for discussion and note taking.
   - Open Forum
 
-## Slides
+## Past Meetings
 The slides from each call will be available for review shortly after the meeting.
 

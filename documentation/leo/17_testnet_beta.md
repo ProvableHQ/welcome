@@ -11,8 +11,8 @@ We are about to reach a huge milestone in Aleo's developement. Testnet Beta is a
 
 
 **IMPORTANT:**
-- **Leo v1.12.0 (to be released) will be the last Testnet3 compatible version.**
-- **Leo v.2.0.0 (to be released) will be the first Testnet Beta compatible version.**
+- **Leo v1.12.0 will be the last Testnet3 compatible version.**
+- **Leo v.2.0.0 (to be released) will be the first Testnet Beta compatible version.** (In the meantime, you can build from source on the `testnet-beta` branch of the Leo repository.)
 
 For additional support, please feel free to:
 - File an issue [here](https://github.com/AleoHQ/leo/issues/new/choose).
@@ -22,18 +22,27 @@ For additional support, please feel free to:
 ## Breaking Changes
 We've included a check-list of features that are deprecated in Leo v2.0.0. If you rely on any of these, be sure to update your code!
 
-- [ ] [Finalization](#Finalization)
-- [ ] [Assignment In Conditional On-chain Code](#Assignment-In-Conditional-On-chain-Code)
-- [ ] [Input Files](#Input-Files)
-- [ ] [Naming Programs](#Naming-Programs)
-- [ ] [Defining and Using Imported Structs](#Defining-and-Using-Imported-Structs)
-- [ ] [Program Limits](#Program-Limits)
+- [ ] [API Endpoints](#api-endpoints)
+- [ ] [Finalization](#finalization)
+- [ ] [Assignment In Conditional On-chain Code](#assignment-in-conditional-on-chain-code)
+- [ ] [Input Files](#input-files)
+- [ ] [Naming Programs](#naming-programs)
+- [ ] [Defining and Using Imported Structs](#defining-and-using-imported-structs)
+- [ ] [Program Limits](#program-limits)
 
 
 *If you run into breaking changes that were not covered above or addressed insufficiently, we'd appreciate it if you file an issue [here](https://github.com/AleoHQ/leo/issues/new/choose). The Leo Team will reach out and help you migrate your applications appropriately.*
 
 ## Migrations
 For each of the breaking changes above, we've provided instructions on how to update your programs accordingly. Some of these will be one-line fixes and others will be more conceptually involved.
+
+### API Endpoints
+If you are using API endpoints, you will likely **need to update the URL** to point to the new Testnet Beta endpoint. 
+
+**The official endpoint is `http://api.explorer.aleo.org/v1/testnet`.**
+If you are using a custom endpoint, you will just need to update `testnet3` to `testnet` in the URL.
+
+The [Explorer](https://explorer.aleo.org/) is pointed to Testnet Beta.
 
 ### Finalization
 The `finalize` programming model for on-chain code has been replaced with a new `async/await` model. See [this](#An-Async-Programming-Model) section for a detailed breakdown.
@@ -43,7 +52,7 @@ The key difference between the two models is that instead of a `finalize` block,
 In the rest of this section, we provide two examples for converting `finalize`-style Leo programs to the `async/await` model. **Developers should be able to follow these as a formula for converting their programs.** That said we still encourage developers to learn the concepts in [this](#An-Async-Programming-Model) section.
 
 Consider the following code in the `finalize` model. Note that this code does **not** make any external calls.
-```rust
+```leo
 program foo.aleo {
     record credit { ... }
     transition bar(...) -> credit {
@@ -58,7 +67,7 @@ program foo.aleo {
 }
 ```
 This can be rewritten in the `async/await` model as:
-```rust
+```leo
 program foo.aleo {
     async transition bar(...) -> (credit, Future) {
         ...
@@ -73,7 +82,7 @@ program foo.aleo {
 ```
 
 Now let's consider the following code in the `finalize` model. Note that this code makes an external call to `foo.aleo` in `finalize` model, above.
-```rust
+```leo
 import foo.aleo;
 
 program bar.aleo {
@@ -89,7 +98,7 @@ program bar.aleo {
 }
 ```
 This can be rewritten in the `async/await` model as:
-```rust
+```leo
 import foo.aleo;
 
 program bar.aleo {
@@ -114,7 +123,7 @@ Updates to `snarkVM` have introduced `branch` instructions, which allows users t
 Specifically, Leo v2.0.0 does not allow programs to re-assign to a variable declared in a scope outside of the existing one, solely in the on-chain portion of code.
 
 For example, the following code will result in a compiler error:
-```rust
+```leo
 let x: u8 = 1u8;
 if (condition) {
     x = x + y;
@@ -125,7 +134,7 @@ data.set(0u8, x);
 ```
 
 Users have a number of options to get around this restriction. One option is to explicitly expand the conditional paths. For example:
-```rust
+```leo
 let x: u8 = 1u8;
 if (condition) {
     x = x + y;
@@ -137,7 +146,7 @@ if (condition) {
 ```
 
 Another option is to use ternary operators to correctly craft a code block equivalent to the original.
-```rust
+```leo
 let x: u8 = 1u8;
 let x_1: u8 = x + y;
 let x_2: u8 = x + z;
@@ -150,7 +159,7 @@ data.set(0u8, x);
 The Leo CLI used to accept inputs via files with a special syntax. **This has been deprecated in favor of a standard CLI format across `snarkOS`, `snarkVM`, and `leo`.**
 
 For example, if you had an input file:
-```rust
+```leo
 // Filename: hello.in
 // The program input for hello/src/main.leo
 
@@ -161,7 +170,7 @@ b: u32 = 2u32;
 you would run the `main` transition via `leo run main`. The Leo CLI would find the appropriate input file and run the `main` transition with inputs `1u32` and `2u32`
 
 Instead, you can run the `main` transition via `leo run main 1u32 2u32`. You can alternatively pass in the `--file` argument and provide an input file, containing the inputs in a space-separated form. For example, you can pass in a file `main.in`, whose contents are:
-```rust
+```leo
 1u32 2u32
 ```
 ### Naming Programs
@@ -176,7 +185,7 @@ If you haven't updated Leo in a while, you're probably used to using `.leo` in y
 - all external calls must be made with the `.aleo` prefix.
 
 For example, if you originally had following file:
-```rust
+```leo
 // Filename: main.leo
 
 import foo.leo;
@@ -189,7 +198,7 @@ progam baz.leo {
 ```
 
 The updated program should be:
-```rust
+```leo
 // Filename: main.leo
 
 import foo.aleo;
@@ -230,7 +239,7 @@ Here is a list of some of the new features that are available to you in Leo v2.0
 ### Reading External Mappings
 Leo now allows users to read all mappings defined in programs that have been imported. Just as with reading local mappings, this operation must take place in an async function.
 
-```rust
+```leo
 let val:u32 = Mapping::get(token.aleo/account, 0u32);
 let val_2:u32 = Mapping::get_or_use(token.aleo/account, 0u32, 0u32);
 ```
@@ -302,7 +311,7 @@ The rules in the `async/await` model are:
 
 ### Compiling Conditional On-Chain Code
 Consider the following Leo transition.
-```rust
+```leo
 transition weird_sub(a: u8, b: u8) -> u8 {
     if (a >= b) {
         return a.sub_wrapped(b);
@@ -312,7 +321,7 @@ transition weird_sub(a: u8, b: u8) -> u8 {
 }
 ```
 This is compiled into the following Aleo instructions:
-```rust
+```aleo
 function weird_sub:
     input r0 as u8.private;
     input r1 as u8.private;
