@@ -18,7 +18,7 @@ This repository serves as a guide for getting started with building on Aleo. Her
 - [🧰 Aleo SDK](https://provable.tools/) - A Software Development Kit (SDK) for Zero-Knowledge Transactions.
 - [🔭 Aleo Explorer](https://aleo.network) - Validate and broadcast on Aleo Testnet III
 
-For help setting up, join us on [Discord](https://aleo.org/discord) to ask questions and help others answer their questions.
+For help setting up, join us on [Discord](https://discord.com/invite/aleo) to ask questions and help others answer their questions.
 
 We will be updating this page with FAQs to make it easy for finding common issues and to fix them quickly.
 
