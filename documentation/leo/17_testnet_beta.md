@@ -52,7 +52,7 @@ The key difference between the two models is that instead of a `finalize` block,
 In the rest of this section, we provide two examples for converting `finalize`-style Leo programs to the `async/await` model. **Developers should be able to follow these as a formula for converting their programs.** That said we still encourage developers to learn the concepts in [this](#An-Async-Programming-Model) section.
 
 Consider the following code in the `finalize` model. Note that this code does **not** make any external calls.
-```leo
+```leo showLineNumbers
 program foo.aleo {
     record credit { ... }
     transition bar(...) -> credit {
@@ -67,7 +67,7 @@ program foo.aleo {
 }
 ```
 This can be rewritten in the `async/await` model as:
-```leo
+```leo showLineNumbers
 program foo.aleo {
     async transition bar(...) -> (credit, Future) {
         ...
@@ -82,7 +82,7 @@ program foo.aleo {
 ```
 
 Now let's consider the following code in the `finalize` model. Note that this code makes an external call to `foo.aleo` in `finalize` model, above.
-```leo
+```leo showLineNumbers
 import foo.aleo;
 
 program bar.aleo {
@@ -98,7 +98,7 @@ program bar.aleo {
 }
 ```
 This can be rewritten in the `async/await` model as:
-```leo
+```leo showLineNumbers
 import foo.aleo;
 
 program bar.aleo {
@@ -123,7 +123,7 @@ Updates to `snarkVM` have introduced `branch` instructions, which allows users t
 Specifically, Leo v2.0.0 does not allow programs to re-assign to a variable declared in a scope outside of the existing one, solely in the on-chain portion of code.
 
 For example, the following code will result in a compiler error:
-```leo
+```leo showLineNumbers
 let x: u8 = 1u8;
 if (condition) {
     x = x + y;
@@ -134,7 +134,7 @@ data.set(0u8, x);
 ```
 
 Users have a number of options to get around this restriction. One option is to explicitly expand the conditional paths. For example:
-```leo
+```leo showLineNumbers
 let x: u8 = 1u8;
 if (condition) {
     x = x + y;
@@ -146,7 +146,7 @@ if (condition) {
 ```
 
 Another option is to use ternary operators to correctly craft a code block equivalent to the original.
-```leo
+```leo showLineNumbers
 let x: u8 = 1u8;
 let x_1: u8 = x + y;
 let x_2: u8 = x + z;
@@ -159,7 +159,7 @@ data.set(0u8, x);
 The Leo CLI used to accept inputs via files with a special syntax. **This has been deprecated in favor of a standard CLI format across `snarkOS`, `snarkVM`, and `leo`.**
 
 For example, if you had an input file:
-```leo
+```leo showLineNumbers
 // Filename: hello.in
 // The program input for hello/src/main.leo
 
@@ -170,7 +170,7 @@ b: u32 = 2u32;
 you would run the `main` transition via `leo run main`. The Leo CLI would find the appropriate input file and run the `main` transition with inputs `1u32` and `2u32`
 
 Instead, you can run the `main` transition via `leo run main 1u32 2u32`. You can alternatively pass in the `--file` argument and provide an input file, containing the inputs in a space-separated form. For example, you can pass in a file `main.in`, whose contents are:
-```leo
+```leo showLineNumbers
 1u32 2u32
 ```
 ### Naming Programs
@@ -185,7 +185,7 @@ If you haven't updated Leo in a while, you're probably used to using `.leo` in y
 - all external calls must be made with the `.aleo` prefix.
 
 For example, if you originally had following file:
-```leo
+```leo showLineNumbers
 // Filename: main.leo
 
 import foo.leo;
@@ -198,7 +198,7 @@ progam baz.leo {
 ```
 
 The updated program should be:
-```leo
+```leo showLineNumbers
 // Filename: main.leo
 
 import foo.aleo;
@@ -239,7 +239,7 @@ Here is a list of some of the new features that are available to you in Leo v2.0
 ### Reading External Mappings
 Leo now allows users to read all mappings defined in programs that have been imported. Just as with reading local mappings, this operation must take place in an async function.
 
-```leo
+```leo showLineNumbers
 let val:u32 = Mapping::get(token.aleo/account, 0u32);
 let val_2:u32 = Mapping::get_or_use(token.aleo/account, 0u32, 0u32);
 ```
@@ -311,7 +311,7 @@ The rules in the `async/await` model are:
 
 ### Compiling Conditional On-Chain Code
 Consider the following Leo transition.
-```leo
+```leo showLineNumbers
 transition weird_sub(a: u8, b: u8) -> u8 {
     if (a >= b) {
         return a.sub_wrapped(b);
@@ -321,7 +321,7 @@ transition weird_sub(a: u8, b: u8) -> u8 {
 }
 ```
 This is compiled into the following Aleo instructions:
-```aleo
+```aleo showLineNumbers
 function weird_sub:
     input r0 as u8.private;
     input r1 as u8.private;

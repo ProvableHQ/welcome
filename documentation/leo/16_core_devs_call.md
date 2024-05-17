@@ -16,7 +16,10 @@ We welcome everyone to join!
 **Every Tuesday 9-10AM PT, starting on 5/21/24**
 
 ### Where
-**On the [Aleo Discord](https://discord.gg/aleo), in the `Leo Core Devs Calls` channel.**
+**Google Meet**
+- Video call link: https://meet.google.com/eup-twjf-zbv
+- Or dial: (US) +1 409-263-1346, PIN: 181 961#
+- More phone numbers: https://tel.meet/eup-twjf-zbv?pin=7908874492618
 
 ### Agenda 
 - Team Updates:
