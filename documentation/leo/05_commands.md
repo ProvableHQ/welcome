@@ -29,7 +29,7 @@ You can print the list of commands by running `leo --help`
 * [`execute`](#leo-execute) - Execute a program with input variables.
 * [`clean`](#leo-clean) - Clean the output directory.
 * [`update`](#leo-update) - Update to the latest version of Leo.
-* [`account`](#leo-account) - Create a new Aleo account.
+* [`account`](#leo-account) - Create a new Aleo account, sign and verify messages.
 
 [//]: # (* [`deploy`]&#40;#leo-deploy&#41; - Deploy a program.)
 [//]: # (* [`node`]&#40;#leo-node&#41; - Start a local development server.)
@@ -256,18 +256,81 @@ To list all options
 leo account --help
 
 # Output:
-Create a new Aleo account
+Create a new Aleo account, sign and verify messages
 
 Usage: leo account [OPTIONS] <COMMAND>
 
 Commands:
   new     Generates a new Aleo account
   import  Derive an Aleo account from a private key
+  sign    Sign a message using your Aleo private key
+  verify  Verify a message from an Aleo address
   help    Print this message or the help of the given subcommand(s)
 
 Options:
   -d                 Print additional information for debugging
   -q                 Suppress CLI output
       --path <PATH>  Optional path to Leo program root folder
+      --home <HOME>  Optional path to aleo program registry.
   -h, --help         Print help
 ```
+
+### `leo account sign`
+
+The `leo account sign` command enables developers and users to create cryptographic signatures using an Aleo private key. These signatures can be verified within leo using the [`signature::verify`](../leo/04_operators.md#signatureverify) function or with the `leo account verify` command.
+
+To generate a signature for Leo and Aleo values, run the following:
+
+```bash
+# replace `5field` with any aleo value
+leo account sign --private-key {$PRIVATE_KEY} -m 5field
+
+# Output:
+sign1...
+```
+
+To generate a signature for any plaintext, use the `--raw` flag:
+
+```bash
+# replace "Hello, Aleo" with any plaintext message
+leo account sign --private-key {$PRIVATE_KEY} -raw -m "Hello, Aleo"
+
+# Output:
+sign1...
+```
+
+There are a few alternatives to using the `--private-key` flag:
+
+- `--private-key-file <path/to/file>` - read a private key from a text file
+- no flags - read a private key from environment, or `.env`
+
+### `leo account verify`
+
+To complement with the [`leo account sign`](#leo-account-sign) command, the `leo account verify` command verifies the signatures of Aleo values and plaintext messages.
+
+To verify signed aleo values, run:
+
+```bash
+# replace `5field` with the message and `sign1signaturehere` with the signature
+leo account verify -a {$ADDRESS} -m 5field -s sign1signaturehere
+
+# Output:
+✅ The signature is valid
+
+# Error Output:
+Error [ECLI0377002]: cli error: ❌ The signature is invalid
+```
+
+To verify signatures of signed plaintext values, run:
+
+```bash
+# replace "Hello, Aleo" with the message and `sign1signaturehere` with the signature
+leo account verify -a {$ADDRESS} --raw -m "Hello, Aleo" -s sign1signaturehere
+
+# Output:
+✅ The signature is valid
+
+# Error Output:
+Error [ECLI0377002]: cli error: ❌ The signature is invalid
+```
+
