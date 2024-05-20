@@ -180,7 +180,7 @@ If you haven't updated Leo in a while, you're probably used to using `.leo` in y
 
 
 **The updated rules are:**
-- all programs must end with a `.leo` file extension.
+- all files containing Leo programs must end with a `.leo` file extension.
 - all imports must be defined with the `.aleo` prefix.
 - all program scopes must be declared with the `.aleo` prefix.
 - all external calls must be made with the `.aleo` prefix.

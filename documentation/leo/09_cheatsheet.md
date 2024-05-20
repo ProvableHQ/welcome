@@ -5,7 +5,7 @@ title: Leo Syntax Cheatsheet
 
 ## 1. File Import
 ```leo
-import foo.leo;
+import foo.aleo;
 ```
 
 ## 2. Programs

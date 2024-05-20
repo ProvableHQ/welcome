@@ -153,7 +153,7 @@ A program scope in the sense of Leo is a collection of code (its functions) and 
 [program ID](#program-id) on the Aleo blockchain.
 
 ```leo
-import foo.leo;
+import foo.aleo;
 
 program hello.aleo {
     mapping balances: address => u64;
@@ -243,18 +243,11 @@ program foo.aleo {
 ### Import
 
 You can import dependencies that are downloaded to the `imports` directory.
-An import is declared as `import {filename}.leo;`
-This will look for `imports/{filename}.leo` and bring all declarations into the current file scope.
-If there are duplicate names for declarations, Leo will fail to compile.
-Ordering is enforced for imports, which must be at the top of file.
-
-:::caution
-Leo imports are unstable and currently only provide minimal functionality.
-Their syntax is expected to change.
-:::
+An import is declared as `import {filename}.aleo;`
+The dependency resolver will pull the imported program from the network or the local filesystem.
 
 ```leo showLineNumbers
-import foo.leo; // Import all `foo.leo` declarations into the `hello.aleo` program.
+import foo.aleo; // Import all `foo.aleo` declarations into the `hello.aleo` program.
 
 program hello.aleo { }
 ```
