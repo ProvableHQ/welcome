@@ -31,7 +31,7 @@ Can you find any others?
 - record ownership
 - loops and bounded iteration
 - mappings
-- finalize
+- async/await
 
 ## How to Run
 
@@ -95,7 +95,7 @@ leo run deposit "{
 }"  50u64
 ```
 
-You'll see that the output contains a new private record belonging to the user with 50 credits, and a finalize `deposit` function taking the arguments (bank address, amount) that will update a public mapping with 50 credits. This information is queryable on-chain.
+You'll see that the output contains a new private record belonging to the user with 50 credits, and a `Future` indicating code to be run on-chain and its associated inputs. 
 
 ## <a id="wait"></a> Wait
 
@@ -116,4 +116,6 @@ PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 leo run withdraw aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 50u64 1234u64 15u64
 ```
 
-You'll see here the withdrawal function creates a new private record for the user containing all 266 withdrawn tokens, and then calls the finalize `withdraw` function with arguments (address, amount), which will update the public balance of the bank back to 0. The public mapping will be queryable on-chain.
+You'll see here the withdrawal function creates a new private record for the user containing all 266 withdrawn tokens, and then outputs a `Future` which will be run on-chain.
+
+```

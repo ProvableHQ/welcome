@@ -106,9 +106,10 @@ program bar.aleo {
         ...
         let (c, f): (foo.aleo/credit, Future) = foo.aleo/bar(...);
         ...
-        return c then finalize(f, ...);
+        return (c, finalize_bar(f, ...));
     }
-    finalize bar(f: Future, ...) {
+    
+    async function finalize_bar(f: Future, ...) {
         f.await();
         ...
     }

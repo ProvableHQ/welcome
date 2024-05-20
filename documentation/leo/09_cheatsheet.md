@@ -111,10 +111,10 @@ let remove_bal: () = Mapping::remove(balances, receiver);
 
 ## 12. Commands
 ```leo
-transition matches(height: u32) { 
-    return then finalize(height); 
+transition matches(height: u32) -> Future { 
+    return check_height_matches(height); 
 }
-finalize matches(height: u32) {
+async function check_height_matches(height: u32) {
     assert_eq(height, block.height); // block.height returns latest block height
 }
 
