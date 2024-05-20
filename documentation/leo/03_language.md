@@ -801,5 +801,5 @@ Please use the [`Mapping::set()`](#set) function instead.
 
 #### Finalize 
 
-Finalization and associated syntax are deprecated as of Leo v2.0.0.
+`finalize` and the associated programming model is deprecated as of Leo v2.0.0.
 Please use an [`async function`](#async-function) instead.
