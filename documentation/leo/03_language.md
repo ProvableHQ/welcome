@@ -142,9 +142,8 @@ program test.aleo {
 ## Layout of a Leo Program
 
 A Leo program contains declarations of a [Program Scope](#program-scope), [Constants](#constant), [Imports](#import)
-, [Transition Functions](#transition-function), [Helper Functions](#helper-function), [Structs](#struct)
-, [Records](#record),
-[Mappings](#mapping), and [Finalize Functions](#finalize-function).
+, [Transition Functions](#transition-function), [Async Functions](#async-function), [Helper Functions](#helper-function), [Structs](#struct)
+, [Records](#record), and [Mappings](#mapping).
 Declarations are locally accessible within a program file.
 If you need a declaration from another Leo file, you must import it.
 
@@ -154,7 +153,7 @@ A program scope in the sense of Leo is a collection of code (its functions) and 
 [program ID](#program-id) on the Aleo blockchain.
 
 ```leo
-import foo.leo;
+import foo.aleo;
 
 program hello.aleo {
     mapping balances: address => u64;
@@ -169,17 +168,17 @@ program hello.aleo {
         object: u64,
     }
 
-    transition mint_public(
+    async transition mint_public(
         public receiver: address,
         public amount: u64,
-    ) -> token {
-        return token {
+    ) -> (token, Future) {
+        return (token {
             owner: receiver,
             amount,
-        } then finalize(receiver, amount);
+        }, update_state(receiver, amount));
     }
 
-    finalize mint_public(
+    async function update_state(
         public receiver: address,
         public amount: u64,
     ) {
@@ -201,7 +200,7 @@ The following must be declared inside the program scope in a Leo file:
 - struct types
 - transition functions
 - helper functions
-- finalize functions
+- async functions
 
 The following must be declared outside the program scope in a Leo file:
 
@@ -244,18 +243,11 @@ program foo.aleo {
 ### Import
 
 You can import dependencies that are downloaded to the `imports` directory.
-An import is declared as `import {filename}.leo;`
-This will look for `imports/{filename}.leo` and bring all declarations into the current file scope.
-If there are duplicate names for declarations, Leo will fail to compile.
-Ordering is enforced for imports, which must be at the top of file.
-
-:::caution
-Leo imports are unstable and currently only provide minimal functionality.
-Their syntax is expected to change.
-:::
+An import is declared as `import {filename}.aleo;`
+The dependency resolver will pull the imported program from the network or the local filesystem.
 
 ```leo showLineNumbers
-import foo.leo; // Import all `foo.leo` declarations into the `hello.aleo` program.
+import foo.aleo; // Import all `foo.aleo` declarations into the `hello.aleo` program.
 
 program hello.aleo { }
 ```
@@ -452,18 +444,16 @@ The rules for functions (in the traditional sense) are as follows:
 - inlines can only call inlines.
 - Direct/indirect recursive calls are not allowed
 
-### Finalize Function
+### Async Function
 
-A finalize function is declared as `finalize {name}:` and is used to run computations on chain. One of its primary purposes is to initiate or change public on chain state within mappings. A finalize function must immediately follow a [transition function](#transition-function), and must have the same name;
-it is associated with the transition function and is executed on chain,
-after the zero-knowledge proof of the execution of the associated transition is verified;
-a finalize function _finalizes_ a transition function on chain.
-Upon success of the finalize function, the program logic is executed.
-Upon failure of the finalize function, the program logic is reverted.
+An async function is declared as `async function` and is used to define computation run on-chain. 
+It is asynchronous because the code gets executed at a later point in time. 
+One of its primary uses is to initiate or change public on chain state within mappings.
+An async function can only be called by an async [transition function](#transition-function) and is executed on chain, after the zero-knowledge proof of the execution of the associated transition is verified.
+Async functions are atomic; they either succeed or fail, and the state is reverted if they fail.
 
-Consequently, nodes on the Aleo network execute the code of the finalize function. Only code within finalize blocks, run by nodes on the Aleo Network, updates program mappings. Only a program can write into its own mapping, but all nodes on the Aleo network can read the public state.
 
-An example of on-chain state mutation is the transfer_public_to_private transition in the finalize example, which updates the public account mapping (and thus a user's balance) when called.
+An example of using an async function to perform on-chain state mutation is in the `transfer_public_to_private` transition below, which updates the public account mapping (and thus a user's balance) when called.
 
 ```leo showLineNumbers
 program transfer.aleo {
@@ -472,10 +462,10 @@ program transfer.aleo {
     //
     // This function preserves privacy for the receiver's record, however
     // it publicly reveals the caller and the specified token amount.
-    transition transfer_public_to_private(
+    async transition transfer_public_to_private(
         public receiver: address,
         public amount: u64
-    ) -> token {
+    ) -> (token, Future) {
         // Produce a token record for the token receiver.
         let new: token = token {
             owner: receiver,
@@ -483,10 +473,10 @@ program transfer.aleo {
         };
 
         // Return the receiver's record, then decrement the token amount of the caller publicly.
-        return new then finalize(self.caller, amount);
+        return (new, update_public_state(self.caller, amount));
     }
 
-    finalize transfer_public_to_private(
+    async function update_public_state(
         public sender: address,
         public amount: u64
     ) {
@@ -499,7 +489,7 @@ program transfer.aleo {
 }
 ```
 
-If there is no need to create or alter the public on-chain state, finalize functions are not required.
+If there is no need to create or alter the public on-chain state, async functions are not required.
 
 ### Mapping
 
@@ -520,18 +510,18 @@ The mapping struct allows the programmer to apply updates to a program mapping d
 following functions.
 
 :::info
-Mapping operations are only allowed in a [finalize function](#finalize-function).
+Mapping operations are only allowed in an [async function](#async-function).
 :::
 
 ```leo showLineNumbers
 program test.aleo {
     mapping counter: address => u64;
 
-    transition dubble() {
-        return then finalize(self.caller);
+    async transition dubble() -> Future {
+        return update_mappings(self.caller);
     }
 
-    finalize dubble(addr: address) {
+    async function update_mappings(addr: address) {
         let current_value: u64 = Mapping::get_or_use(counter, addr, 0u64);
         Mapping::set(counter, addr, current_value + 1u64);
         current_value = Mapping::get(counter, addr);
@@ -718,14 +708,16 @@ program test.aleo {
 Returns the height of the current block.
 
 :::info
-`block.height` is only allowed in a [finalize function](#finalize-function).
+`block.height` is only allowed in an [async function](#async-function).
 :::
 
 ```leo showLineNumbers
 program test.aleo {
-    transition matches(height: u32) {
-        return then finalize(height);
-    } finalize matches(height: u32) {
+    async transition matches(height: u32) -> Future {
+        return check_block_height(height);
+    } 
+    
+    async function check_block_height(height: u32) {
         assert_eq(height, block.height);
     }
 }
@@ -783,7 +775,7 @@ Leo supports the `ChaCha` random number generation algorithm.
 The output type of a random function is specified in the function name. e.g. `rand_group` will return a `group` type.
 
 :::info
-Random functions are only allowed in a [finalize function](#finalize-function).
+Random functions are only allowed in an [async function](#async-function).
 :::
 
 ```leo showLineNumbers
@@ -800,31 +792,7 @@ let b: u32 = ChaCha::rand_u32();
 `increment()` and `decrement()` functions are deprecated as of Leo v1.7.0.
 Please use the [`Mapping::set()`](#set) function instead.
 
-```leo showLineNumbers
-program transfer.aleo {
-    // On-chain storage of an `account` map,
-    // with `address` as the key,
-    // and `u64` as the value.
-    mapping account: address => u64;
+#### Finalize 
 
-    transition transfer_public(...) {...}
-
-    finalize transfer_public(
-        public sender: address,
-        public receiver: address,
-        public amount: u64
-    ) {
-        // Decrements `account[sender]` by `amount`.
-        // If `account[sender]` does not exist, it will be created.
-        // If `account[sender] - amount` underflows, `transfer_public` is reverted.
-        let sender_amount: u64 = Mapping::get_or_use(account, sender, 0u64);
-        Mapping::set(account, sender, sender_amount - amount);
-
-        // Increments `account[receiver]` by `amount`.
-        // If `account[receiver]` does not exist, it will be created.
-        // If `account[receiver] + amount` overflows, `transfer_public` is reverted.
-        let receiver_amount: u64 = Mapping::get_or_use(account, receiver, 0u64);
-        Mapping::set(account, receiver, receiver_amount + amount);
-    }
-}
-```
+`finalize` and the associated programming model is deprecated as of Leo v2.0.0.
+Please use an [`async function`](#async-function) instead.
