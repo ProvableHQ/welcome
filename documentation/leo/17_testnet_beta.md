@@ -69,6 +69,7 @@ program foo.aleo {
 This can be rewritten in the `async/await` model as:
 ```leo showLineNumbers
 program foo.aleo {
+    record credit { ... }
     async transition bar(...) -> (credit, Future) {
         ...
         let c: credit = ...;
@@ -85,14 +86,14 @@ Now let's consider the following code in the `finalize` model. Note that this co
 ```leo showLineNumbers
 import foo.aleo;
 
-program bar.aleo {
+program boo.aleo {
     transition baz(...) -> foo.aleo/credit {
         ...
         let c: foo.aleo/credit = foo.aleo/bar(...);
         ...
         return c then finalize(...);
     }
-    finalize bar(...) {
+    finalize baz(...) {
         ...
     }
 }
@@ -101,15 +102,15 @@ This can be rewritten in the `async/await` model as:
 ```leo showLineNumbers
 import foo.aleo;
 
-program bar.aleo {
+program boo.aleo {
     async transition baz(...) -> (foo.aleo/credit, Future) {
         ...
         let (c, f): (foo.aleo/credit, Future) = foo.aleo/bar(...);
         ...
-        return (c, finalize_bar(f, ...));
+        return (c, finalize_baz(f, ...));
     }
     
-    async function finalize_bar(f: Future, ...) {
+    async function finalize_baz(f: Future, ...) {
         f.await();
         ...
     }
