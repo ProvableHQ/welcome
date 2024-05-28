@@ -55,7 +55,7 @@ cargo --version
 
 You can build and install Leo from the source code as follows:
 
-```bash
+```
 # Download the source code
 git clone https://github.com/AleoHQ/leo
 cd leo

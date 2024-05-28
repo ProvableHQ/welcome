@@ -4,7 +4,7 @@ title: The Leo Programming Language
 sidebar_label: Overview
 ---
 
-Welcome to the Leo programming language. Leo is a functional, statically-typed programming language built
+Welcome to the Leo programming language. Leo is a statically-typed programming language built
 for writing private applications. Leo is a high-level programming language that compiles down to low-level Aleo Instructions.
 
 :::info

@@ -58,7 +58,7 @@ Leo will not default to an integer type. The definition of an integer **must** i
 ```leo
 let a: u8 = 2u8; // explicit type
 let b: u16 = a as u16; // type casting
-let b: u8 = 2; // implicit type -- not supported
+let c: u8 = 2; // implicit type -- not supported
 ```
 
 ### Field Elements
@@ -94,8 +94,7 @@ let g: group = group::GEN; // the group generator
 ### Scalar Elements
 
 Leo supports the `scalar` type for elements of the scalar field defined by the elliptic curve subgroup.
-These are unsigned integers less than the modulus of the scalar field. Showing the smallest and largest
-scalars.
+These are unsigned integers less than the modulus of the scalar field. The following are the smallest and largest scalars.
 
 ```leo
 let a: scalar = 0scalar;
@@ -113,9 +112,9 @@ let receiver: address = aleo1ezamst4pjgj9zfxqq0fwfj8a4cjuqndmasgata3hggzqygggnyf
 
 ### Signatures
 
-Aleo uses a Schnorr signatures scheme to sign messages with an Aleo private key.
-Signatures in Leo have their own type `signature` and can be declared as literals `sign069ju4e8s66unu25celqycvsv3k9chdyz4n4sy62tx6wxj0u25vqp58hgu9hwyqc63qzxvjwesf2wz0krcvvw9kd9x0rsk4lwqn2acqhp9v0pdkhx6gvkanuuwratqmxa3du7l43c05253hhed9eg6ppzzfnjt06fpzp6msekdjxd36smjltndmxjndvv9x2uecsgngcwsc2qkns4afd`.  
-Signatures can be verified in Leo using the [`signature::verify` or `s.verify`](./04_operators.md#signatureverify) operators.
+Aleo uses the Schnorr signature scheme to sign messages with an Aleo private key.
+Signatures are a native type in Leo, and can be declared with the keyword `signature`.
+Signatures can be verified in Leo using the [`signature::verify`](./04_operators.md#signatureverify) or [`s.verify`](./04_operators.md#signatureverify) operators.
 
 ```leo
 program test.aleo {
@@ -141,16 +140,17 @@ program test.aleo {
 
 ## Layout of a Leo Program
 
-A Leo program contains declarations of a [Program Scope](#program-scope), [Constants](#constant), [Imports](#import)
+A Leo program contains declarations of a [Program](#program), [Constants](#constant), [Imports](#import)
 , [Transition Functions](#transition-function), [Async Functions](#async-function), [Helper Functions](#helper-function), [Structs](#struct)
 , [Records](#record), and [Mappings](#mapping).
 Declarations are locally accessible within a program file.
 If you need a declaration from another Leo file, you must import it.
 
-### Program Scope
+### Program 
 
-A program scope in the sense of Leo is a collection of code (its functions) and data (its types) that resides at a
-[program ID](#program-id) on the Aleo blockchain.
+A program is a collection of code (its functions) and data (its types) that resides at a
+[program ID](#program-id) on the Aleo blockchain. A program is declared as `program {name}.{network} { ... }`.
+The body of the program is delimited by curly braces `{}`.
 
 ```leo
 import foo.aleo;
@@ -192,7 +192,7 @@ program hello.aleo {
 }
 ```
 
-The following must be declared inside the program scope in a Leo file:
+The following must be declared inside the scope of a program in a Leo file:
 
 - constants
 - mappings
@@ -202,14 +202,14 @@ The following must be declared inside the program scope in a Leo file:
 - helper functions
 - async functions
 
-The following must be declared outside the program scope in a Leo file:
+The following must be declared outside the scope of a program in a Leo file:
 
 - imports
 
 #### Program ID
 
 A program ID is declared as `{name}.{network}`.
-The first character of a `name` must be lowercase.
+The first character of a `name` must be a lowercase letter.
 `name` can contain lowercase letters, numbers, and underscores.
 Currently, `aleo` is the only supported `network` domain.
 
@@ -227,7 +227,7 @@ program _foo.aleo;  // invalid
 
 A constant is declared as `const {name}: {type} = {expression};`.  
 Constants are immutable and must be assigned a value when declared.  
-Constants can be declared in the global program scope or in a local function scope.  
+Constants can be declared in the global scope or in a local function scope.  
 
 ```leo
 program foo.aleo {

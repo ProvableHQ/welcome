@@ -34,18 +34,7 @@ An index of all pages available in this documentation.
 - [TicTacToe](https://github.com/AleoHQ/workshop/tree/master/tictactoe)
 - [Battleship](https://github.com/AleoHQ/workshop/tree/master/battleship)
 
-### Chapter 3: Concepts
-
-- [Accounts](./concepts/00_accounts.md)
-- [Programs](./concepts/01_programs.md)
-- [Records](./concepts/02_records.md)
-- [Transactions](./concepts/03_transactions.md)
-- [Transaction Fees](./concepts/03A_transaction_fees.md)
-- [Transitions](./concepts/04_transitions.md)
-- [Blocks](./concepts/05_blocks.md)
-
-
-### Chapter 4: Aleo Instructions
+### Chapter 3: Aleo Instructions
 
 - [Overview](./00_aleo_overview.md)
 - [Installation](./aleo/01_installation.md)
@@ -55,6 +44,16 @@ An index of all pages available in this documentation.
 - [Aleo Command Line Interface](./aleo/05_commands.md)
 - [Aleo Instructions Grammar](./aleo/06_grammar.md)
 - [Aleo Instructions Code Editor Plugins](./aleo/07_tooling.md)
+
+### Chapter 4: Concepts
+
+- [Accounts](./concepts/00_accounts.md)
+- [Programs](./concepts/01_programs.md)
+- [Records](./concepts/02_records.md)
+- [Transactions](./concepts/03_transactions.md)
+- [Transaction Fees](./concepts/03A_transaction_fees.md)
+- [Transitions](./concepts/04_transitions.md)
+- [Blocks](./concepts/05_blocks.md)
 
 ## Testnet III
 

@@ -129,7 +129,7 @@ This command does not synthesize the program circuit or generate proving and ver
  Leo ✅ Compiled 'main.leo' into Aleo instructions
 
 ⛓  Constraints
- • 'hello.aleo/main' - 35 constraints (called 1 time)
+ • 'hello.aleo/main' - 33 constraints (called 1 time)
 
 ➡️  Output
  • 3u32
@@ -154,7 +154,7 @@ This command synthesizes the program circuit and generates proving and verifying
  Leo ✅ Compiled 'main.leo' into Aleo instructions
 
 ⛓  Constraints
- • 'hello.aleo/main' - 35 constraints (called 1 time)
+ • 'hello.aleo/main' - 33 constraints (called 1 time)
 
 ➡️  Output
  • 3u32

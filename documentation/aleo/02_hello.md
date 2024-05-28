@@ -43,7 +43,7 @@ You will see output like this:
 
 ⛓  Constraints
 
- •  'foo.aleo/hello' - 35 constraints (called 1 time)
+ •  'foo.aleo/hello' - 33 constraints (called 1 time)
 
 ➡️  Output
 
@@ -69,7 +69,7 @@ When the execution is finished, you should see the following output:
 
 ⛓  Constraints
 
- •  'foo.aleo/hello' - 35 constraints (called 1 time)
+ •  'foo.aleo/hello' - 33 constraints (called 1 time)
 
 ➡️  Output
 
