@@ -15,31 +15,30 @@ This creates a directory with the following structure:
 
 ```bash
 hello/
-├── .env # Your program environment
-├── program.json # Your program manifest
-├── README.md # Your program description
-├── build/
-├── inputs/
-│ ├── hello.in # Your program inputs
+├── .gitignore # A default `.gitignore` file for Leo projects
+├── .env # The environment, containing the `NETWORK` and `PRIVATE_KEY` variables.
+├── program.json # The manifest for the Leo project
+├── README.md # The project description and documentation
+├── build/ # The build directory, containing compiled code 
 └── src/
-  └── main.leo # Your program file
+  └── main.leo # The Leo source code
 ```
 
 Let's run the project.
 
-## Zero Knowledge in one line
+## Zero Knowledge in One Line
 
 The `leo run` command will compile and run the program.
 In your terminal, run:
 ```bash
-leo run main
+leo run main 1u32 2u32
 ```
 
 ```bash title="console output:"
 Leo Compiled 'main.leo' into Aleo instructions
 
 ⛓  Constraints
- •  'hello.aleo/main' - 35 constraints (called 1 time)
+ •  'hello.aleo/main' - 33 constraints (called 1 time)
 
 ➡️  Output
  • 3u32
@@ -73,7 +72,7 @@ All files in the current package will be compiled with the specified Leo `versio
     "version": "0.0.0",
 ```
 
-## Syntax to circuits
+## Syntax to Circuits
 Open up **src/main.leo**.
 The **main.leo** file is the entry point of a Leo project. It often contains a function named `main`.
 Let's break down the structure of a Leo file.
@@ -90,7 +89,7 @@ program hello.aleo {
 `program hello.aleo {` defines the name of the [program](03_language.md#program-scope) inside the Leo file.
 The program ID must match the `program.json` manifest file.
 The keyword `transition` indicates a [transition](03_language.md#transition-function) function definition in Leo.
-Our **hello** `main` function takes an input `a` with type `u32` and `public` visibility, and an input `b` with type `u32` and `private` visibility (by default).
+The `main` transition takes an input `a` with type `u32` and `public` visibility, and an input `b` with type `u32` and `private` visibility (by default).
 The program returns one result with type `u32`.
 The transition function body is enclosed in curly braces `{ }`. It is a common convention in Leo to place the opening curly
 brace on the same line as the function definition, adding one space in between.
@@ -105,7 +104,7 @@ let c: u32 = a + b;
 ```
 
 :::info
-We designed Leo with the belief that developers are human and can make mistakes.
+Leo is designed to detect many errors at compile time, via statically checked strong types.
 Try changing the type of any variable and seeing what Leo recommends with helpful error messages.
 :::
 
@@ -115,42 +114,7 @@ Leo will check that `c`'s type matches the function return type `u32`.
 return c;
 ```
 
-## Wiring program inputs
-Leo's compiler will build a **circuit** out of the **main.leo** program. Open up **inputs/hello.in**.
-Files ending in **.in** provide inputs to the program. You can also specify program arguments via the [command line](05_commands.md#leo-run).
-```leo title="inputs/hello.in"
-// The program input for hello/src/main.leo
-[main]
-public a: u32 = 1u32;
-b: u32 = 2u32;
-```
-
-An input file begins with a section enclosed in square brackets `[ ]`.
-The `main` inside the square brackets indicates that we are defining the inputs to the transition function `main`.
-You can only define inputs to [transition functions](03_language.md#transition-function).
-
-```leo
-[main]
-```
-
-An input assignment shares syntax with an explicit variable assignment in normal `.leo` files.
-Here we assign the value `1` of type `u32` to the `public` input named `a`.
-We also assign the value `2` of type `u32` to the (private, by default) input named `b`.
-Leo's compiler will fetch these values and provide them as inputs to the circuit at proving time.
-
-```leo
-public a: u32 = 1u32;
-b: u32 = 2u32;
-```
-
 Now let us use the Leo CLI and see what other commands we can run on our program.
-
-
-Previously we ran the program with `leo run`.
-This command builds and runs the program natively.
-```bash
-leo run
-```
 
 ## Step by step
 
@@ -171,21 +135,21 @@ leo update
 ```
 
 ```bash title="console output:"
-  Leo ✅ Updated to version 1.9.0
+  Leo ✅ Updated to version 1.12.0
 ```
 
 ### 2. Execute
 
 The `leo execute` command executes the Leo program and outputs a transaction object
 ```bash
-leo execute main
+leo execute main 1u32 2u32
 ```
 
 ```bash title="console output:"
  Leo ✅ Compiled 'main.leo' into Aleo instructions
 
 ⛓  Constraints
- • 'hello.aleo/main' - 35 constraints (called 1 time)
+ • 'hello.aleo/main' - 33 constraints (called 1 time)
 
 ➡️  Output
  • 3u32

@@ -325,7 +325,7 @@ function new_token:
 
 A mapping is declared as `mapping {name}:`.  
 Mappings contain key-value pairs.
-Mappings must be defined within a program scope.
+Mappings must be defined within a program.
 Mappings are stored publicly on-chain. It is not possible to store data privately in a mapping.
 
 ```aleo showLineNumbers

@@ -123,8 +123,8 @@ leo help  ## you know what this does
 You can try it yourself and observe the outputs in the terminal.
 
 ```bash
-leo run main
-leo execute main
+leo run main 1u32 2u32
+leo execute main 1u32 2u32
 ```
 
 Let's get back to deploying!

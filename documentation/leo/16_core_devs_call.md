@@ -41,5 +41,6 @@ We welcome everyone to join!
 
 ## Past Meetings
 The slides from each call will be available for review shortly after the meeting.
+- [May 28, 2024](https://docs.google.com/presentation/d/1h3NaDqu6Lzu5an9qXie7xHcrcPWOZma3ytWS8tlFFrk/edit?usp=sharing)
 - [May 21, 2024](https://docs.google.com/presentation/d/1M1zNuA0Xc2Qzi3PjdnmUnaFUYDjizskFcQHPT0NY8J8/edit?usp=sharing)
 
