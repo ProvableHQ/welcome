@@ -19,7 +19,7 @@ The methods provided in this class provide information on the Aleo Blockchain</p
     * [.getBlockRange(start, end)](#AleoNetworkClient+getBlockRange)
     * [.getProgram(programId)](#AleoNetworkClient+getProgram)
     * [.getProgramMappingNames(programId)](#AleoNetworkClient+getProgramMappingNames)
-    * [.getMappingValue(programId, mappingName, key)](#AleoNetworkClient+getMappingValue)
+    * [.getProgramMappingValue(programId, mappingName, key)](#AleoNetworkClient+getProgramMappingValue)
     * [.getLatestBlock()](#AleoNetworkClient+getLatestBlock)
     * [.getLatestHash()](#AleoNetworkClient+getLatestHash)
     * [.getLatestHeight()](#AleoNetworkClient+getLatestHeight)
@@ -133,9 +133,9 @@ let program = connection.getProgram("foo.aleo");
 ```js
 let mappings = connection.getProgramMappingNames("credits.aleo");
 ```
-<a name="AleoNetworkClient+getMappingValue"></a>
+<a name="AleoNetworkClient+getProgramMappingValue"></a>
 
-### aleoNetworkClient.getMappingValue(programId, mappingName, key)
+### aleoNetworkClient.getProgramMappingValue(programId, mappingName, key)
 <p>Returns the value of a program's mapping for a specific key</p>
 
 **Kind**: instance method of [<code>AleoNetworkClient</code>](#AleoNetworkClient)  
@@ -149,7 +149,7 @@ let mappings = connection.getProgramMappingNames("credits.aleo");
 **Example**  
 ```js
 ## Get public balance of an account
-let mappingValue = connection.getMappingValue("credits.aleo", "account", "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px");
+let mappingValue = connection.getProgramMappingValue("credits.aleo", "account", "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px");
 ```
 <a name="AleoNetworkClient+getLatestBlock"></a>
 
