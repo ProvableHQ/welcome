@@ -9,12 +9,12 @@ sidebar_label: Commands
 You can print the list of commands by running `snarkvm --help`
 :::
 
-* [snarkvm new](#aleo-new)
-* [snarkvm build](#aleo-build)
-* [snarkvm run](#aleo-run)
-* [snarkvm execute](#aleo-execute)
-* [snarkvm clean](#aleo-clean)
-* [snarkvm update](#aleo-update)
+* [snarkvm new](#snarkvm-new)
+* [snarkvm build](#snarkvm-build)
+* [snarkvm run](#snarkvm-run)
+* [snarkvm execute](#snarkvm-execute)
+* [snarkvm clean](#snarkvm-clean)
+* [snarkvm update](#snarkvm-update)
 
 [//]: # (5. [aleo node]&#40;#5-aleo-node&#41;)
 [//]: # (5. [aleo deploy]&#40;#6-aleo-deploy&#41;)
