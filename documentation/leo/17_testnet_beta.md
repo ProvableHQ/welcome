@@ -39,7 +39,7 @@ For each of the breaking changes above, we've provided instructions on how to up
 ### API Endpoints
 If you are using API endpoints, you will likely **need to update the URL** to point to the new Testnet Beta endpoint. 
 
-**The official endpoint is `http://api.explorer.aleo.org/v1/testnet`.**
+**The official endpoint is `https://api.explorer.aleo.org/v1/testnet`.**
 If you are using a custom endpoint, you will just need to update `testnet3` to `testnet` in the URL.
 
 The [Explorer](https://explorer.aleo.org/) is pointed to Testnet Beta.
