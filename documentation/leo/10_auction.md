@@ -81,8 +81,9 @@ Swap in the private key and address of the first bidder to `.env`.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpG9Af9z5Ha4ejVyMCqVFXRKknSm8L1ELEwcc4htk9YhVK
+ENDPOINT=https://localhost:3030
 " > .env
 ```
 
@@ -100,8 +101,9 @@ Swap in the private key of the second bidder to `.env`.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpAFshdsj2EqQzXh5zHceDapFWVCwR6wMCJFfkLYRKupug
+ENDPOINT=https://localhost:3030
 " > .env
 ```
 
@@ -119,8 +121,9 @@ Swap in the private key of the auctioneer to `.env`.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp5wvamYgK3WCAdpBQxZqQX8XnuN2u11Y6QprZTriVwZVc
+ENDPOINT=https://localhost:3030
 " > .env
 ```
 
