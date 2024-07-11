@@ -217,7 +217,7 @@ await initializeWasm();
 
 /// Create a new Aleo account
 const account = new Account();
-````
+```
 
 An example of how to initialize WebAssembly in a React app is shown in [Section 2.8](#28-React-Example)
 
@@ -299,7 +299,6 @@ const executionResponse = await programManager.execute(
     );
 
 const transaction = await programManager.networkClient.getTransaction(executionResponse);
-
 ```
 
 A reader of the above example may notice the `RecordProvider` and `KeyProvider` classes that were not present in the local
@@ -401,7 +400,7 @@ export const useAleoWASM = () => {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
     return aleoInstance;
 };
-````
+```
 Once a hook for the WASM initialization is created, it can be used anywhere within the app.
 
 #### Program Execution
