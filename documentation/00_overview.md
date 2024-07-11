@@ -54,6 +54,7 @@ An index of all pages available in this documentation.
 - [Transaction Fees](./concepts/03A_transaction_fees.md)
 - [Transitions](./concepts/04_transitions.md)
 - [Blocks](./concepts/05_blocks.md)
+- [Public vs. Private State](./concepts/06_public_private.md)
 
 ## Testnet III
 
