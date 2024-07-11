@@ -73,7 +73,7 @@ There are two main state models used in blockchains - UTXO (unspent transaction 
 Aleo uses a variation of the UTXO model - the record model.
 
 <p align="center" width="100%">
-<img src="./images/account_vs_utxo.png" alt="Account vs UTXO"></img>
+<img src="images/account_vs_utxo.png" alt="Account vs UTXO"></img>
 </p>
 
 <p align="center" width="100%">
@@ -87,7 +87,7 @@ In the account model as used in Ethereum, the application state can be found by 
 As such, anyone would be able to view the activities of any account, simply with the knowledge of the address.
 
 <p align="center" width="100%">
-<img src="./images/ethereum_storage.png" alt="Ethereum Storage Diagram"></img>
+<img src="images/ethereum_storage.png" alt="Ethereum Storage Diagram"></img>
 </p>
 
 <p align="center" width="100%">
@@ -97,7 +97,7 @@ Source: <a href="https://ethereum.org/en/develope.rs/docs/accounts/"> ethereum.o
 
 
 <p align="center" width="100%">
-<img src="./images/ethereum_world_state.png" alt="Ethereum World State Diagram"></img>
+<img src="images/ethereum_world_state.png" alt="Ethereum World State Diagram"></img>
 </p>
 
 <p align="center" width="100%">
@@ -112,7 +112,7 @@ Source: <a href="https://www.lucassaldanha.com/ethereum-yellow-paper-walkthrough
 In the record model, the application state, along with its owner are encrypted and stored on the blockchain.
 
 <p align="center" width="300">
-<img src="./images/record.png" alt="Aleo Records Diagram"></img>
+<img src="images/record.png" alt="Aleo Records Diagram"></img>
 </p>
 
 <p align="center" width="100%">
@@ -123,7 +123,7 @@ Source: <a href="https://eprint.iacr.org/2018/962.pdf"> Zexe: Enabling Decentral
 
 
 <p align="center" width="100%">
-<img src="./images/aleo_ledger.png" alt="Aleo World State Diagram"></img>
+<img src="images/aleo_ledger.png" alt="Aleo World State Diagram"></img>
 </p>
 
 
@@ -138,7 +138,7 @@ Source: <a href="https://eprint.iacr.org/2018/962.pdf"> Zexe: Enabling Decentral
 In the record model, applications update their state by consuming records containing the old state, and producing new records that contain the updated state. Records that have been used will be marked as spent and cannot be used again.
 
 <p align="center" width="500">
-<img src="./images/utxo.png" alt="UTXO diagram"></img>
+<img src="images/utxo.png" alt="UTXO diagram"></img>
 </p>
 
 <p align="center" width="100%">
@@ -150,7 +150,7 @@ The consumption and production of records is typically done in a transition func
 
 
 <p align="center" width="100%">
-<img src="./images/transaction_in_aleo.png"  alt="Transaction in Aleo"></img>
+<img src="images/transaction_in_aleo.png"  alt="Transaction in Aleo"></img>
 </p>
 
 ### Why is the Record Model Useful?
