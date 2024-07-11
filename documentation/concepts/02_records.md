@@ -72,7 +72,6 @@ There are two main state models used in blockchains - UTXO (unspent transaction 
 
 Aleo uses a variation of the UTXO model - the record model.
 
-<details>
 <p align="center" width="100%">
 <img src="./images/account_vs_utxo.png" alt="Account vs UTXO"></img>
 </p>
@@ -81,14 +80,12 @@ Aleo uses a variation of the UTXO model - the record model.
 Source: <a href="https://www.galaxy.com/insights/research/mev-how-flashboys-became-flashbots/">galaxy.com</a>
 </p>
 <br></br>
-</details>
 
 ### Account Model
 In the account model as used in Ethereum, the application state can be found by referencing to a particular address.
 
 As such, anyone would be able to view the activities of any account, simply with the knowledge of the address.
 
-<details>
 <p align="center" width="100%">
 <img src="./images/ethereum_storage.png" alt="Ethereum Storage Diagram"></img>
 </p>
@@ -109,13 +106,11 @@ Source: <a href="https://www.lucassaldanha.com/ethereum-yellow-paper-walkthrough
 
 <br></br>
 
-</details>
 
 
 ### Record Model
 In the record model, the application state, along with its owner are encrypted and stored on the blockchain.
 
-<details>
 <p align="center" width="300">
 <img src="./images/record.png" alt="Aleo Records Diagram"></img>
 </p>
@@ -137,13 +132,11 @@ Source: <a href="https://eprint.iacr.org/2018/962.pdf"> Zexe: Enabling Decentral
 </p>
 <br></br>
 
-</details>
 
 
 ### Updating State
 In the record model, applications update their state by consuming records containing the old state, and producing new records that contain the updated state. Records that have been used will be marked as spent and cannot be used again.
 
-<details>
 <p align="center" width="500">
 <img src="./images/utxo.png" alt="UTXO diagram"></img>
 </p>
@@ -152,16 +145,13 @@ In the record model, applications update their state by consuming records contai
 Source: <a href="https://adapulse.io/the-extensive-guide-on-eutxo-utxo-and-the-accounts-based-model/"> adapulse.io</a>
 </p>
 <br></br>
-</details>
 
 The consumption and production of records is typically done in a transition function. A transaction in Aleo can contain up to 32 transitions, one of which is reserved for the transaction fee.
 
 
-<details>
 <p align="center" width="100%">
 <img src="./images/transaction_in_aleo.png"  alt="Transaction in Aleo"></img>
 </p>
-</details>
 
 ### Why is the Record Model Useful?
 
