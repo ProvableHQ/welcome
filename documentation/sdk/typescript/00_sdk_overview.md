@@ -623,7 +623,6 @@ function App() {
 
 export default App;
 ```
-
 </details>
 
 #### Integrating Aleo Programs Into Your App
