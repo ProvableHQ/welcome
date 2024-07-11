@@ -80,7 +80,7 @@ Aleo uses a variation of the UTXO model - the record model.
 <p align="center" width="100%">
 Source: <a href="https://www.galaxy.com/insights/research/mev-how-flashboys-became-flashbots/">galaxy.com</a>
 </p>
-<br>
+<br></br>
 </details>
 
 ### Account Model
@@ -96,7 +96,7 @@ As such, anyone would be able to view the activities of any account, simply with
 <p align="center" width="100%">
 Source: <a href="https://ethereum.org/en/develope.rs/docs/accounts/"> ethereum.org</a>
 </p>
-<br>
+<br></br>
 
 
 <p align="center" width="100%">
@@ -107,7 +107,7 @@ Source: <a href="https://ethereum.org/en/develope.rs/docs/accounts/"> ethereum.o
 Source: <a href="https://www.lucassaldanha.com/ethereum-yellow-paper-walkthrough-2/">Article by Lucas Saldanha</a>
 </p>
 
-<br>
+<br></br>
 
 </details>
 
@@ -124,7 +124,7 @@ In the record model, the application state, along with its owner are encrypted a
 Source: <a href="https://eprint.iacr.org/2018/962.pdf"> Zexe: Enabling Decentralized Private Computation</a>
 </p>
 
-<br>
+<br></br>
 
 
 <p align="center" width="100%">
@@ -135,7 +135,7 @@ Source: <a href="https://eprint.iacr.org/2018/962.pdf"> Zexe: Enabling Decentral
 <p align="center" width="100%">
 Source: <a href="https://eprint.iacr.org/2018/962.pdf"> Zexe: Enabling Decentralized Private Computation</a>
 </p>
-<br>
+<br></br>
 
 </details>
 
@@ -151,7 +151,7 @@ In the record model, applications update their state by consuming records contai
 <p align="center" width="100%">
 Source: <a href="https://adapulse.io/the-extensive-guide-on-eutxo-utxo-and-the-accounts-based-model/"> adapulse.io</a>
 </p>
-<br>
+<br></br>
 </details>
 
 The consumption and production of records is typically done in a transition function. A transaction in Aleo can contain up to 32 transitions, one of which is reserved for the transaction fee.
