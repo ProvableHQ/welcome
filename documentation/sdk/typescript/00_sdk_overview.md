@@ -33,7 +33,7 @@ The Aleo SDK provides the following functionality (Click to see examples):
 * [Usage](#Usage)
     * [Zero Knowledge Web App Examples](#Zero-Knowledge-Web-App-Examples)
         * [Create Aleo App](#create-aleo-app)
-        * [Aleo.tools](#aleotools)
+        * [provable.tools](#provabletools)
     * [Create An Aleo Account](#1-create-an-aleo-account)
     * [Execute Aleo Programs](#2-execute-aleo-programs)
         * [Aleo Programs](#21-aleo-programs)
@@ -83,7 +83,7 @@ templates in common web frameworks such as React that can be used as a starting 
 Developers can get started immediately with create-react-app by running:
 `npm create aleo-app@latest`
 
-### Aleo.tools
+### Provable Tools
 
 Additionally, the SDK powers [provable.tools](https://provable.tools) - a React app that provides a graphical interface for most
 of the functionality provided by the SDK and can be used as a reference for usage of the SDK. Source code for provable.tools
@@ -200,7 +200,7 @@ graph LR
 
 ### 2.3 WebAssembly Initialization
 
-❗WebAssembly must be initialized before any SDK functions can be called.
+❗WebAssembly must be initialized before calling any SDK functions. The current Aleo SDK manages the wasm initialization. Therefore, the workers must be defined properly.
 
 Aleo programs are made zero knowledge through the usage of `ZkSnarks`. The Rust code behind Aleo programs and the ZkSnarks
 that make them zero knowledge are hosted in the [snarkVM Repository](https://github.com/AleoHQ/SnarkVM). The Aleo SDK
@@ -219,7 +219,7 @@ await initializeWasm();
 const account = new Account();
 ````
 
-An example of how to initialize WebAssembly in a React app is shown in [Section 2.7](#27-React-Example)
+An example of how to initialize WebAssembly in a React app is shown in [Section 2.8](#28-React-Example)
 
 ### 2.4 Local Program Execution
 A simple example of running the hello world program within the web browser is shown below:
@@ -247,7 +247,7 @@ network that anyone can trustlessly verify.
 This process can be thought of being executed in three steps:
 1. A program is run locally
 2. A proof that the program was executed correctly and that the outputs follow from the inputs is generated
-3. A transcript of the proof is generated client-side containing encrypted proof data (see [Section 2.6](#4-managing-records-and-private-state))
+3. A transcript of the proof is generated client-side containing encrypted proof data (see [Section 4](#4-managing-program-data-and-private-state))
    and any public outputs or state the user of the program wishes to reveal
 4. The proof transcript is posted to the Aleo network and verified by the Aleo validator nodes in a trustless manner
 5. If the proof is valid, it is stored and anyone can later verify the proof and read the outputs the author of the
@@ -265,6 +265,10 @@ import { Account, AleoNetworkClient, NetworkRecordProvider, ProgramManager, KeyS
 const keyProvider = new AleoKeyProvider();
 keyProvider.useCache = true;
 
+// Define an account which will execute the transaction on-chain
+const account = new Account({ privateKey: private_key });
+const privateKeyObject = PrivateKey.from_string(private_key);
+
 // Create a record provider that will be used to find records and transaction data for Aleo programs
 const networkClient = new AleoNetworkClient("https://api.explorer.aleo.org/v1");
 const recordProvider = new NetworkRecordProvider(account, networkClient);
@@ -272,11 +276,30 @@ const recordProvider = new NetworkRecordProvider(account, networkClient);
 // Initialize a program manager to talk to the Aleo network with the configured key and record providers
 const programName = "hello_hello.aleo";
 const programManager = new ProgramManager("https://api.explorer.aleo.org/v1", keyProvider, recordProvider);
+programManager.setHost("https://api.explorer.aleo.org/v1")
+programManager.setAccount(account);
 
-// Provide a key search parameter to find the correct key for the program if they are stored in a memory cache
-const keySearchParams = { "cacheKey": "hello_hello:hello" };
-const tx_id = await programManager.execute(programName, "hello_hello", 0.020, ["5u32", "5u32"], undefined, undefined, undefined, keySearchParams);
-const transaction = await programManager.networkClient.getTransaction(tx_id);
+// For example: "cacheKey": "hello_hello:hello"
+const cacheKey = `${programId}:${aleoFunction}`;
+const keySearchParams = new AleoKeyProviderParams({ "cacheKey": cacheKey });
+
+// Execute the program function
+const executionResponse = await programManager.execute(
+        programId,
+        aleoFunction,
+        fee,
+        false,
+        inputs,
+        undefined,
+        keyParams,
+        undefined,
+        undefined,
+        undefined,
+        privateKeyObject
+    );
+
+const transaction = await programManager.networkClient.getTransaction(executionResponse);
+
 ```
 
 A reader of the above example may notice the `RecordProvider` and `KeyProvider` classes that were not present in the local
@@ -360,8 +383,7 @@ step by running:
 
 #### Wasm Initialization
 
-Before functionality from the SDK can be used, the WASM module must be initialized within the browser. A common way of
-achieving this within a React App is using a React UseEffect hook.
+The WASM module can be initialized within the browser. A common way of achieving this within a React App is using a React UseEffect hook.
 
 `aleo-wasm-hook.js`
 ```jsx
@@ -387,240 +409,169 @@ Once a hook for the WASM initialization is created, it can be used anywhere with
 Program execution is a computationally expensive process. For this reason, it is recommended to execute programs in
 webworkers.
 
+We will have 2 main components for workers:
+- worker.js
+- AleoWorker.js (Manager for worker file)
+
 <details>
 <summary>Example Web Worker Usage</summary>
 
 A worker file that performs the execution can be created as follows:
 `worker.js`
 ```jsx
-import * as aleo from "@aleohq/sdk";
+import {
+  Account,
+  ProgramManager,
+  PrivateKey,
+  initThreadPool,
+  AleoKeyProvider,
+  AleoNetworkClient,
+  NetworkRecordProvider,
+} from "@aleohq/sdk";
+import { expose, proxy } from "comlink";
 
-// Web Workers contain their own WASM instance, so we initialize it separately from the main thread
-await aleo.initializeWasm();
+await initThreadPool();
 
-// Eight threads are then initialized to execute the program in parallel using multithreading
-await aleo.initThreadPool(8);
+async function localProgramExecution(program, aleoFunction, inputs) {
+  const programManager = new ProgramManager();
 
-/// The program manager is initialized with a key provider and a record provider
-const defaultHost = "https://api.explorer.aleo.org/v1";
-const keyProvider = new aleo.AleoKeyProvider();
-const recordProvider = new aleo.NetworkRecordProvider(new Account(), "https://api.explorer.aleo.org/v1");
-const programManager = new aleo.ProgramManager(
-  defaultHost,
-  keyProvider,
-  recordProvider,
-);
+  // Create a temporary account for the execution of the program
+  const account = new Account();
+  programManager.setAccount(account);
 
-// The key provider is set to use an in-memory cache to store keys
-keyProvider.useCache(true);
+  const executionResponse = await programManager.run(
+    program,
+    aleoFunction,
+    inputs,
+    false,
+  );
+  return executionResponse.getOutputs();
+}
 
-self.postMessage({
-  type: "ALEO_WORKER_READY",
-});
+async function getPrivateKey() {
+  const key = new PrivateKey();
+  return proxy(key);
+}
 
-// The program is executed when specific events are dispatched and then communicates the result to the main thread 
-// when execution has finished
-let lastLocalProgram = null;
-self.addEventListener("message", (ev) => {
-  if (ev.data.type === "ALEO_EXECUTE_PROGRAM_LOCAL") {
-     const {localProgram, aleoFunction, inputs, privateKey} = ev.data;
+async function deployProgram(program) {
+  const keyProvider = new AleoKeyProvider();
+  keyProvider.useCache(true);
 
-     console.log("Web worker: Executing function locally...");
-     let startTime = performance.now();
+  // Create a record provider that will be used to find records and transaction data for Aleo programs
+  const networkClient = new AleoNetworkClient("https://api.explorer.aleo.org/v1");
 
-     (async function () {
-        try {
-           // Ensure the program is valid and that it contains the function specified
-           const program = programManager.createProgramFromSource(localProgram);
-           const program_id = program.id();
-           if (!program.hasFunction(aleoFunction)) {
-              throw `Program ${program_id} does not contain function ${aleoFunction}`;
-           }
-           const cacheKey = `${program_id}:${aleoFunction}`;
+  // Use existing account with funds
+  const account = new Account({
+    privateKey: "user1PrivateKey",
+  });
 
-           // Get the program imports
-           const imports =
-                   programManager.networkClient.getProgramImports(localProgram);
+  const recordProvider = new NetworkRecordProvider(account, networkClient);
 
-           // Get the proving and verifying keys for the function
-           if (lastLocalProgram !== localProgram) {
-              const keys = programManager.executionEngine.synthesizeKeypair(
-                      localProgram,
-                      aleoFunction,
-              );
-              programManager.keyProvider.cacheKeys(cacheKey, [
-                 keys.provingKey(),
-                 keys.verifyingKey(),
-              ]);
-              lastLocalProgram = localProgram;
-           }
+  // Initialize a program manager to talk to the Aleo network with the configured key and record providers
+  const programManager = new ProgramManager(
+    "https://api.explorer.aleo.org/v1",
+    keyProvider,
+    recordProvider,
+  );
 
-           // Pass the cache key to the execute function
-           const keyParams = new aleo.AleoKeyProviderParams({
-              cacheKey: cacheKey,
-           });
+  programManager.setAccount(account);
 
-           // Execute the function locally
-           let response = await programManager.executeOffline(
-                   localProgram,
-                   aleoFunction,
-                   inputs,
-                   imports,
-                   keyParams,
-                   undefined,
-                   undefined,
-                   aleo.PrivateKey.from_string(privateKey),
-           );
+  // Define a fee to pay to deploy the program
+  const fee = 1.9; // 1.9 Aleo credits
 
-           // Return the outputs to the main thread
-           self.postMessage({
-              type: "OFFLINE_EXECUTION_COMPLETED",
-              outputs,
-           });
-        } catch (error) {
-           console.error(error);
-           self.postMessage({
-              type: "ERROR",
-              errorMessage: error.toString(),
-           });
-        }
-     })();
-  }
-});
+  // Deploy the program to the Aleo network
+  const tx_id = await programManager.deploy(program, fee);
+
+  return tx_id;
+}
+
+const workerMethods = { localProgramExecution, getPrivateKey, deployProgram };
+expose(workerMethods);
 ```
 
-The WebWorker can then be initialized in worker provider component which uses React effects
-
+`AleoWorker.js`
 ```jsx
-import { useEffect, useState } from "react";
-import WorkerContext from "./WorkerContext";
+import { wrap } from "comlink";
 
-const WorkerProvider = ({ children }) => {
-    const [worker, setWorker] = useState(null);
-    const [workerReady, setWorkerReady] = useState(false);
+let singletonWorker = null;
 
-    useEffect(() => {
-        let worker = new Worker(new URL("./worker.js", import.meta.url), {
+const AleoWorker = () => {
+    if (!singletonWorker) {
+        const worker = new Worker(new URL("worker", import.meta.url), {
             type: "module",
         });
-        setWorker(worker);
 
-        worker.onmessage = (event) => {
-            if (event.data.type === "ALEO_WORKER_READY") {
-                setWorkerReady(true);
-            }
+        worker.onerror = function(event) {
+            console.error("Error in worker: " + event?.message);
         };
 
-        return () => {
-            worker.terminate();
-        };
-    }, []);
-
-    if (!workerReady) {
-        return (
-            <>
-                <div className="spinner">
-                    <div className="dot1"></div>
-                </div>
-            </>
-        );
+        singletonWorker = wrap(worker);
     }
-
-    return (
-        <WorkerContext.Provider value={worker}>
-            {children}
-        </WorkerContext.Provider>
-    );
+    return singletonWorker;
 };
 
-export default WorkerProvider;
+export { AleoWorker };
 ```
-
 </details>
 
-Using both webworkers and a wasm initialization in a React hook, a single page app can be created that executes
-Aleo zero knowledge programs.
+Using both WebWorkers and SDK initialization in React, a single-page app can be created by importing `AleoWorker.js`, which executes Aleo zero-knowledge programs.
 
 <details>
 <summary>Example App.jsx Implementing Zero Knowledge Program Execution</summary>
-
+  
 ```jsx
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import aleoLogo from "./assets/aleo.png";
+import aleoLogo from "./assets/aleo.svg";
 import "./App.css";
-import { useAleoWASM } from "./aleo-wasm-hook";
+import helloworld_program from "../helloworld/build/main.aleo?raw";
+import { AleoWorker } from "./workers/AleoWorker";
 
+const aleoWorker = AleoWorker();
 function App() {
   const [count, setCount] = useState(0);
-  const aleo = useAleoWASM();
   const [account, setAccount] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [executing, setExecuting] = useState(false);
+  const [deploying, setDeploying] = useState(false);
 
-  const generateAccount = () => {
-    setAccount(new aleo.PrivateKey());
+  const generateAccount = async () => {
+    const key = await aleoWorker.getPrivateKey();
+    setAccount(await key.to_string());
   };
 
-  const [worker, setWorker] = useState(null);
-
-  useEffect(() => {
-    if (worker === null) {
-      const spawnedWorker = spawnWorker();
-      setWorker(spawnedWorker);
-      return () => {
-        spawnedWorker.terminate();
-      };
-    }
-  }, []);
-
-  function spawnWorker() {
-    return new Worker(new URL("workers/worker.js", import.meta.url), {
-      type: "module",
-    });
-  }
-
-  function postMessagePromise(worker, message) {
-    return new Promise((resolve, reject) => {
-      worker.onmessage = (event) => {
-        resolve(event.data);
-      };
-      worker.onerror = (error) => {
-        reject(error);
-      };
-      worker.postMessage(message);
-    });
-  }
-
   async function execute() {
-    const hello_hello_program =
-      "program hello_hello.aleo;\n" +
-      "\n" +
-      "function hello:\n" +
-      "    input r0 as u32.public;\n" +
-      "    input r1 as u32.private;\n" +
-      "    add r0 r1 into r2;\n" +
-      "    output r2 as u32.private;\n";
-
-    setLoading(true);
-    const result = await postMessagePromise(worker, {
-      type: "ALEO_EXECUTE_PROGRAM_LOCAL",
-      localProgram: hello_hello_program,
-      aleoFunction: "hello",
-      inputs: ["5u32", "5u32"],
-      privateKey: account.to_string(),
-    });
-    setLoading(false);
+    setExecuting(true);
+    const result = await aleoWorker.localProgramExecution(
+      helloworld_program,
+      "main",
+      ["5u32", "5u32"],
+    );
+    setExecuting(false);
 
     alert(JSON.stringify(result));
+  }
+
+  async function deploy() {
+    setDeploying(true);
+    try {
+      const result = await aleoWorker.deployProgram(helloworld_program);
+      console.log("Transaction:")
+      console.log("https://api.explorer.aleo.org/v1/transaction?id=" + result)
+      alert("Transaction ID: " + result);
+    } catch (e) {
+      console.log(e)
+      alert("Error with deployment, please check console for details");
+    }
+    setDeploying(false);
   }
 
   return (
     <>
       <div>
-        <a href="https://aleo.org" target="_blank">
+        <a href="https://aleo.org" target="_blank" rel="noopener noreferrer">
           <img src={aleoLogo} className="logo" alt="Aleo logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
+        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
@@ -632,19 +583,36 @@ function App() {
         <p>
           <button onClick={generateAccount}>
             {account
-              ? `Account is ${JSON.stringify(account.to_string())}`
+              ? `Account is ${JSON.stringify(account)}`
               : `Click to generate account`}
           </button>
         </p>
         <p>
-          <button disabled={!account || loading} onClick={execute}>
-            {loading
+          <button disabled={executing} onClick={execute}>
+            {executing
               ? `Executing...check console for details...`
-              : `Execute hello_hello.aleo`}
+              : `Execute helloworld.aleo`}
           </button>
         </p>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+
+      {/* Advanced Section */}
+      <div className="card">
+        <h2>Advanced Actions</h2>
+        <p>
+          Deployment on Aleo requires certain prerequisites like seeding your
+          wallet with credits and retrieving a fee record. Check README for more
+          details.
+        </p>
+        <p>
+          <button disabled={deploying} onClick={deploy}>
+            {deploying
+              ? `Deploying...check console for details...`
+              : `Deploy helloworld.aleo`}
+          </button>
         </p>
       </div>
       <p className="read-the-docs">
@@ -656,6 +624,42 @@ function App() {
 
 export default App;
 ```
+
+</details>
+
+#### Integrating Aleo Programs Into Your App
+
+If you are starting with a simple framework template rather than with Aleo templates, handling files with a .aleo extension in a web application requires specific configurations because these files are not natively recognized by most web development environments. The .aleo extension typically belongs to Aleo zero-knowledge programs, which are special scripts or codes used within the Aleo platform to ensure privacy and security through cryptographic proofs.
+
+To integrate these files into a web application, such as a React app, you need to define how they should be treated during the build process.
+
+**Configuration File**
+
+Adding configuration rules in your build system (like Vite, Webpack, or Next.js) is necessary to tell the build tool how to process these files. Using something like raw-loader in this configuration ensures that .aleo files are loaded as plain text. This step is essential because it converts the content of .aleo files into a usable format that your web application can execute or display.
+
+```
+module:{
+  rules:[
+          {
+        test: /\.aleo$/i,
+        use: 'raw-loader',
+      },
+  ]
+}
+```
+
+<details>
+<summary>Handling .aleo Types in TypeScript</summary>
+`config.d.ts`
+If you are using TypeScript, you need to inform the TypeScript compiler about the type of content these files contain by declaring a module for *.aleo files:
+```
+declare module '*.aleo' {
+   const content: string;
+   export default content;
+ }
+```
+Make sure that you included custom types in your `tsconfig` file.
+  
 </details>
 
 
