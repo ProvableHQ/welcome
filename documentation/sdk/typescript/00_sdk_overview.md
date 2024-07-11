@@ -517,7 +517,8 @@ Using both WebWorkers and SDK initialization in React, a single-page app can be 
 
 <details>
 <summary>Example App.jsx Implementing Zero Knowledge Program Execution</summary>
-  
+
+`App.jsx`
 ```jsx
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
