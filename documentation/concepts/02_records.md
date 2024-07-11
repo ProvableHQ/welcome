@@ -29,15 +29,13 @@ An example record:
 }
 ```
 
-<b>Owner</b>
-<br/>
+### Owner
 `aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q`
 
 The record owner is an account address, and specifies the party who is authorized to spend the record.
 
 
-<b>Data</b>
-<br/>
+### Data
 `100u64.private`
 
 The record can encode arbitrary application information. The "amount" key is the data payload that the record carries.
@@ -45,8 +43,7 @@ An entry which has a `visibility` of `private` is encrypted and stored on the le
 This enables users to securely and privately transfer record data and values between one another over the public network.
 Only the sender and receiver with their corresponding account view keys are able to decrypt the private entries.
 
-<b>Nonce</b>
-<br/>
+### Nonce
 `5861592911433819692697358191094794940442348980903696700646555355124091569429group`
 
 The serial number nonce is used to create a unique identifier for each record, and is computed via a PRF evaluation of the address secret key ask of the owner and the record's serial number.
@@ -75,7 +72,7 @@ There are two main state models used in blockchains - UTXO (unspent transaction 
 
 Aleo uses a variation of the UTXO model - the record model.
 
-
+<details>
 <p align="center" width="100%">
 <img src="./images/account_vs_utxo.png" alt="Account vs UTXO"/>
 </p>
@@ -83,13 +80,15 @@ Aleo uses a variation of the UTXO model - the record model.
 <p align="center" width="100%">
 Source: <a href="https://www.galaxy.com/insights/research/mev-how-flashboys-became-flashbots/">galaxy.com</a>
 </p>
-<br/>
+<br>
+</details>
 
 ### Account Model
 In the account model as used in Ethereum, the application state can be found by referencing to a particular address.
 
 As such, anyone would be able to view the activities of any account, simply with the knowledge of the address.
 
+<details>
 <p align="center" width="100%">
 <img src="./images/ethereum_storage.png" alt="Ethereum Storage Diagram"/>
 </p>
@@ -97,7 +96,7 @@ As such, anyone would be able to view the activities of any account, simply with
 <p align="center" width="100%">
 Source: <a href="https://ethereum.org/en/develope.rs/docs/accounts/"> ethereum.org</a>
 </p>
-<br/>
+<br>
 
 
 <p align="center" width="100%">
@@ -108,13 +107,15 @@ Source: <a href="https://ethereum.org/en/develope.rs/docs/accounts/"> ethereum.o
 Source: <a href="https://www.lucassaldanha.com/ethereum-yellow-paper-walkthrough-2/">Article by Lucas Saldanha</a>
 </p>
 
-<br/>
+<br>
+
+</details>
 
 
 ### Record Model
 In the record model, the application state, along with its owner are encrypted and stored on the blockchain.
 
-
+<details>
 <p align="center" width="300">
 <img src="./images/record.png" alt="Aleo Records Diagram"/>
 </p>
@@ -123,7 +124,7 @@ In the record model, the application state, along with its owner are encrypted a
 Source: <a href="https://eprint.iacr.org/2018/962.pdf"> Zexe: Enabling Decentralized Private Computation</a>
 </p>
 
-<br/>
+<br>
 
 
 <p align="center" width="100%">
@@ -134,13 +135,15 @@ Source: <a href="https://eprint.iacr.org/2018/962.pdf"> Zexe: Enabling Decentral
 <p align="center" width="100%">
 Source: <a href="https://eprint.iacr.org/2018/962.pdf"> Zexe: Enabling Decentralized Private Computation</a>
 </p>
-<br/>
+<br>
+
+</details>
 
 
 ### Updating State
 In the record model, applications update their state by consuming records containing the old state, and producing new records that contain the updated state. Records that have been used will be marked as spent and cannot be used again.
 
-
+<details>
 <p align="center" width="500">
 <img src="./images/utxo.png" alt="UTXO diagram">
 </p>
@@ -149,14 +152,16 @@ In the record model, applications update their state by consuming records contai
 Source: <a href="https://adapulse.io/the-extensive-guide-on-eutxo-utxo-and-the-accounts-based-model/"> adapulse.io</a>
 </p>
 <br>
+</details>
 
 The consumption and production of records is typically done in a transition function. A transaction in Aleo can contain up to 32 transitions, one of which is reserved for the transaction fee.
 
 
-
+<details>
 <p align="center" width="100%">
 <img src="./images/transaction_in_aleo.png"  alt="Transaction in Aleo"/>
 </p>
+</details>
 
 ### Why is the Record Model Useful?
 
