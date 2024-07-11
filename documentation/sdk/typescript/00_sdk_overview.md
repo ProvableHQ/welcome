@@ -649,9 +649,10 @@ module:{
 
 <details>
 <summary>Handling .aleo Types in TypeScript</summary>
-`config.d.ts`
 If you are using TypeScript, you need to inform the TypeScript compiler about the type of content these files contain by declaring a module for *.aleo files:
-```
+
+`config.d.ts`
+```typescript
 declare module '*.aleo' {
    const content: string;
    export default content;
