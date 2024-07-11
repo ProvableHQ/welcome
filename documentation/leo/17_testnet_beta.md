@@ -12,7 +12,7 @@ We are about to reach a huge milestone in Aleo's developement. Testnet Beta is a
 
 **IMPORTANT:**
 - **Leo v1.12.0 will be the last Testnet3 compatible version.**
-- **Leo v.2.0.0 (to be released) will be the first Testnet Beta compatible version.** (In the meantime, you can build from source on the `testnet-beta` branch of the Leo repository.)
+- **Leo v.2.0.0 is the first Testnet Beta compatible version.** (In the meantime, you can build from source on the `testnet-beta` branch of the Leo repository.)
 
 For additional support, please feel free to:
 - File an issue [here](https://github.com/AleoHQ/leo/issues/new/choose).

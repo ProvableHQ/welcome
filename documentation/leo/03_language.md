@@ -363,6 +363,7 @@ Transition functions in Leo are declared as `transition {name}() {}`.
 Transition functions can be called directly when running a Leo program (via `leo run`).
 Transition functions contain expressions and statements that can compute values.
 Transition functions must be in a program's current scope to be called.
+Transition functions that call [async functions](#async-function) to execute code on-chain must be declared as `async transition`.
 
 ```leo showLineNumbers
 program hello.aleo {
@@ -447,6 +448,7 @@ The rules for functions (in the traditional sense) are as follows:
 ### Async Function
 
 An async function is declared as `async function` and is used to define computation run on-chain. 
+A call to an async function returns a [`Future`](#future) object.
 It is asynchronous because the code gets executed at a later point in time. 
 One of its primary uses is to initiate or change public on chain state within mappings.
 An async function can only be called by an async [transition function](#transition-function) and is executed on chain, after the zero-knowledge proof of the execution of the associated transition is verified.

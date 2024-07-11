@@ -1,6 +1,4 @@
 ---
-Author: [Cedric](syyanyuhui@gmail.com)
-LastUpdate: 2024-05-06 
 ---
 
 ## Address Types in Aleo

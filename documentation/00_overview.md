@@ -54,6 +54,7 @@ An index of all pages available in this documentation.
 - [Transaction Fees](./concepts/03A_transaction_fees.md)
 - [Transitions](./concepts/04_transitions.md)
 - [Blocks](./concepts/05_blocks.md)
+- [Public vs. Private State](./concepts/06_public_private.md)
 
 ## Testnet III
 
@@ -91,7 +92,18 @@ An index of all pages available in this documentation.
 
 ## Advanced Topics
 
-### Chapter 7: The Aleo Curves
+### Chapter 7: Dive into the AVM
+
+- [Overview](./advanced/dive-into-avm/00_overview.md)
+- [Aleo Account Keys](./advanced/dive-into-avm/01_aleo_account_keys.md)
+- [Circuits and R1CS](./advanced/dive-into-avm/02_r1cs.md)
+- [Inclusion Proofs](./advanced/dive-into-avm/03_inclusion_proof.md)
+
+### Chapter 8: Introduction to zk-SNARKs
+
+- [Overview](./advanced/intro-to-zksnark/00_overview.md)
+
+### Chapter 9: The Aleo Curves
 
 - [Overview](./advanced/the_aleo_curves/00_overview.md)
 - [Edwards BLS12](./advanced/the_aleo_curves/01_edwards_bls12.md)

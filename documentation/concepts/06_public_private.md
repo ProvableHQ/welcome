@@ -1,6 +1,8 @@
-# Public vs. Private State
-
-![aleo logo](./images/aleo.jpeg)
+---
+id: public_private 
+title: Public vs. Private State
+sidebar_label: Public vs. Private State
+---
 
 ## Introduction
 The concept of Zero Knowledge proofs was first introduced in 1985 in the paper [The Knowledge Complexity of Interactive Proof Systems](https://epubs.siam.org/doi/10.1137/0218012?utm_source=the+new+stack&utm_medium=referral&utm_content=inline-mention&utm_campaign=tns+platform). However, it is only in recent years that the groundbreaking technology has been feasible to be applicable to blockchains. 
