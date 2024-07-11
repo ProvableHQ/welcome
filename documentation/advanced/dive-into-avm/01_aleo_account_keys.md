@@ -1,4 +1,8 @@
-# Aleo Account Key Generation
+---
+id: aleo_account_keys
+title: Aleo Account Keys
+sidebar_label: Aleo Account Keys
+---
 
 An Aleo account is similar to accounts on other blockchain platforms but designed with a focus on privacy, leveraging cryptographic techniques unique to the platform. Here's a detailed breakdown of the components of an Aleo account and the processes involved in generating addresses, public keys, and private keys:
 
