@@ -1,3 +1,0 @@
-# Public vs. Private State
-
-
