@@ -138,7 +138,7 @@ Source: <a href="https://eprint.iacr.org/2018/962.pdf"> Zexe: Enabling Decentral
 In the record model, applications update their state by consuming records containing the old state, and producing new records that contain the updated state. Records that have been used will be marked as spent and cannot be used again.
 
 <p align="center" width="500">
-<img src="images/utxo.png" alt="UTXO diagram"></img>
+<img src={require("./images/utxo.png").default} alt="UTXO diagram"></img>
 </p>
 
 <p align="center" width="100%">
@@ -150,7 +150,7 @@ The consumption and production of records is typically done in a transition func
 
 
 <p align="center" width="100%">
-<img src="images/transaction_in_aleo.png"  alt="Transaction in Aleo"></img>
+<img src={require("./images/transaction_in_aleo.png").default}  alt="Transaction in Aleo"></img>
 </p>
 
 ### Why is the Record Model Useful?
