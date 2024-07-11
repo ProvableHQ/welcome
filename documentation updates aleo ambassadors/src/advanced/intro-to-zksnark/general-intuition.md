@@ -1,14 +1,4 @@
 # Advanced
-<!-- 
-Ovia: General Intuition (Aleo Docs)
-OVia: Proof systems (example with a SNARK) (Aleo Docs)
-Ovia: Proof, Witness, Verifier
-Ovia: Trusted Setups, Structured Reference String
-Ovia: Interactive Random Oracles
-Ovia: Intermediate Representations
-R1CS (Aleo Docs) - Ramiro
-AIR - not used in aleo can skip just mention
--->
 In this section we cover the general intuition of a zk proof, we outline the steps in creating a zksnark, we define the actors in a zk proof mainly the prover and verifier. We also introduce the elements in a zkproof like the witness, intermediate representation, trusted setups, structured reference strings and random oracles. We also give the context of where the zksnark proof is used in Aleo.
 
 ## Introduction
