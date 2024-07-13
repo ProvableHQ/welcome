@@ -711,8 +711,8 @@ For integer types, a constraint is added to check for overflow/underflow. For ca
 | First    | Second   | Destination |
 |----------|----------|-------------|
 | `Field`  | `Field`  | `Field`     |
-| `Group`  | `Scalar` | `Group`     |
-| `Scalar` | `Group`  | `Group`     |
+| `Group`  | `Group`  | `Group`     |
+| `Scalar` | `Scalar` | `Scalar`    |
 | `I8`     | `I8`     | `I8`        |
 | `I16`    | `I16`    | `I16`       |
 | `I32`    | `I32`    | `I32`       |
