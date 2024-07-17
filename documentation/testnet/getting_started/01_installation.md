@@ -13,8 +13,8 @@ sidebar_label: Installation
   * [2.1 Requirements](#21-requirements)
   * [2.2 Installation](#22-installation)
 * [3. Run an Aleo Node](#3-run-an-aleo-node)
-  * [3a. Run an Aleo Client](#3a-run-an-aleo-client)
-  * [3b. Run an Aleo Prover](#3a-run-an-aleo-prover)
+  * [3.1 Run an Aleo Client](#3a-run-an-aleo-client)
+  * [3.2 Run an Aleo Prover](#3a-run-an-aleo-prover)
 * [4. FAQs](#4-faqs)
 * [5. Command Line Interface](#5-configuration-file)
 * [6. Development Guide](#6-development-guide)
@@ -89,7 +89,7 @@ Please ensure ports `4133/tcp` and `3033/tcp` are open on your router and OS fir
 
 ## 3. Run an Aleo Node
 
-## 3a. Run an Aleo Client
+## 3.1 Run an Aleo Client
 
 Start by following the instructions in the [Build Guide](#2-build-guide).
 
@@ -98,7 +98,7 @@ Next, to start a client node, from the `snarkOS` directory, run:
 ./run-client.sh
 ```
 
-## 3b. Run an Aleo Prover
+## 3.2 Run an Aleo Prover
 
 Start by following the instructions in the [Build Guide](#2-build-guide).
 
