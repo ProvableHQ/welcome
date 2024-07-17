@@ -34,7 +34,7 @@ Make sure you have both Leo and snarkOS installed on your machine.
 * In your favorite browser, navigate to [https://provable.tools/](https://provable.tools/) and click the **Generate** button
 * Save your **Address**, **View Key**, and **Private Key** in a safe place, you'll need them later
 
-### 3a. Seeding your wallet with credits
+### 3. Seeding your wallet with credits
 <!-- markdown-link-check-disable -->
 
 To seed your wallet, you'll need to request credits from Aleo's faucet at [faucet.aleo.org](https://faucet.aleo.org/) ⛲️. 
@@ -46,7 +46,7 @@ To seed your wallet, you'll need to request credits from Aleo's faucet at [fauce
 * It can take up to 5-minutes for the faucet to send your credits, to bide the time, concurrently move on to step 3b below.
 * ⚠️ International requests are not supported by the faucet at the moment (a solution is coming soon). In the meantime, if you need credits and are testing internationally, reach out to the Aleo team on Discord or Twitter for support.
 
-### 3b. Create a Leo application
+### 3a. Create a Leo application
 
 We'll need something to deploy, so let's create a simple test Leo application.
 
