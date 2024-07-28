@@ -142,7 +142,9 @@ as well as the recommended code solution.
 
 ### Conditional Branches
 
-Conditional `if else` statements in Leo are expensive. It is preferred to use ternary `? :` expressions.
+The Leo compiler rewrites if-else statements inside `transitions` into a sequence of ternary expressions.
+This is because the underlying circuit construction does not support branching.
+For precise control over the circuit size, it is recommended to use ternary expressions directly.
 
 ```leo title="Example:"
 if (condition) {
