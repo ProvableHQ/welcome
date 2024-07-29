@@ -601,7 +601,7 @@ Return statements are declared as `return {expression};`.
 
 ### For Loops
 
-For loops are declared as `for {variable: type} in {lower bound}..{upper bound}`. The loop bounds must be integer types and constant. Furthermore, the lower bound must be
+For loops are declared as `for {variable: type} in {lower bound}..{upper bound}`. The loop bounds must be integer constants of the same type. Furthermore, the lower bound must be
 less than the upper bound. Nested loops are supported.
 
 
