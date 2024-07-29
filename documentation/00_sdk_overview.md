@@ -7,11 +7,11 @@ sidebar_label: Overview
 
 The [Aleo SDK](https://github.com/ProvableHQ/sdk) provides tools for building zero knowledge applications. It consists of
 several TypeScript & JavaScript libraries which provide the following functionality:
-1. [Aleo account management](https://aleo.tools/account)
-2. [Web-based program execution and deployment](https://aleo.tools/develop)
-3. [Aleo credit transfers](https://aleo.tools/transfer)
-4. [Management of program state and data](https://aleo.tools/record)
-5. [Communication with the Aleo network](https://aleo.tools/rest)
+1. [Aleo account management](https://provable.tools/account)
+2. [Web-based program execution and deployment](https://provable.tools/develop)
+3. [Aleo credit transfers](https://provable.tools/transfer)
+4. [Management of program state and data](https://provable.tools/record)
+5. [Communication with the Aleo network](https://provable.tools/rest)
 
 All of this functionality is demonstrated on [provable.tools](https://www.provable.tools/).
 

@@ -85,7 +85,7 @@ tx-cannon deploy <project>/build/<project>.aleo -k <node-private-key-you-jotted-
 You can check that your deployment was successful on your network using: http://localhost:3030/testnet3/transaction/`<your-txn-id>`.
 <!-- markdown-link-check-enable -->
 
-## 6. Execution On-Chain using the Transaction Cannon 
+## 5. Execution On-Chain using the Transaction Cannon 
 
 Once your program has been deployed on devnet, it's easy to execute your program on-chain. Create a `.toml` file with these parameters. You can find various examples in the repository with different inputs. The example shown below is for `helloworld.aleo`.
 
@@ -115,7 +115,7 @@ There's much more functionality to be explored in the [tx-cannon repository](htt
 
 Congratulations, you took a project off Playground and successfully deployed it to an Aleo devnet!
 
-## 7. Claim your Leo Contributor Badge!
+## 6. Claim your Leo Contributor Badge!
 
 Making it through this tutorial was no easy task, so because you've done it, we'd love to honor you with a Leo contributor badge on Github!
 
@@ -150,7 +150,7 @@ git push -u origin main
 
 Congratulations on becoming a Leo contributor! 🎉
 
-## 8. Recap & Additional Resources
+## 7. Recap & Additional Resources
 
 1. You downloaded a project off of [Leo Playground](https://play.leo-lang.org/).
 

@@ -13,15 +13,19 @@ The methods provided in this class provide information on the Aleo Blockchain</p
 
 * [AleoNetworkClient](#AleoNetworkClient)
     * [new AleoNetworkClient(host)](#new_AleoNetworkClient_new)
+    * [.setAccount(host)](#AleoNetworkClient+setHost)
     * [.setAccount(account)](#AleoNetworkClient+setAccount)
     * [.getAccount()](#AleoNetworkClient+getAccount)
     * [.getBlock(height)](#AleoNetworkClient+getBlock)
     * [.getBlockRange(start, end)](#AleoNetworkClient+getBlockRange)
     * [.getProgram(programId)](#AleoNetworkClient+getProgram)
+    * [.getProgramObject(programId)](#AleoNetworkClient+getProgramObject)
+    * [.getProgramImports(programId)](#AleoNetworkClient+getProgramImports)
+    * [.getDeploymentTransactionIDForProgram(programId)](#AleoNetworkClient+getDeploymentTransactionIDForProgram)
+    * [.getDeploymentTransactionForProgram(programId)](#AleoNetworkClient+getDeploymentTransactionForProgram)
     * [.getProgramMappingNames(programId)](#AleoNetworkClient+getProgramMappingNames)
     * [.getMappingValue(programId, mappingName, key)](#AleoNetworkClient+getMappingValue)
     * [.getLatestBlock()](#AleoNetworkClient+getLatestBlock)
-    * [.getLatestHash()](#AleoNetworkClient+getLatestHash)
     * [.getLatestHeight()](#AleoNetworkClient+getLatestHeight)
     * [.getStateRoot()](#AleoNetworkClient+getStateRoot)
     * [.getTransaction(id)](#AleoNetworkClient+getTransaction)
@@ -45,6 +49,20 @@ let local_connection = new AleoNetworkClient("http://localhost:3030");
 
 // Connection to a public beacon node
 let public_connection = new AleoNetworkClient("https://api.explorer.aleo.org/v1");
+```
+<a name="AleoNetworkClient+setHost"></a>
+
+### aleoNetworkClient.setHost(host)
+<p>Set a new host for the networkClient</p>
+
+| Param | Type |
+| --- | --- |
+| host | <code>string</code> | 
+
+**Example**  
+```js
+// New connection to a public beacon node
+let public_connection = AleoNetworkClient.setHost("https://api.explorer.aleo.org/v1");
 ```
 <a name="AleoNetworkClient+setAccount"></a>
 
@@ -118,6 +136,71 @@ let blockRange = connection.getBlockRange(2050, 2100);
 ```js
 let program = connection.getProgram("foo.aleo");
 ```
+
+<a name="AleoNetworkClient+getProgramObject"></a>
+
+### aleoNetworkClient.getProgramObject(programId)
+<p>Returns a program object from a program ID or program source code</p>
+
+**Kind**: instance method of [<code>AleoNetworkClient</code>](#AleoNetworkClient)  
+
+| Param | Type |
+| --- | --- |
+| programId | <code>string</code> | 
+
+**Example**  
+```js
+let program = connection.getProgramObject("foo.aleo");
+```
+
+<a name="AleoNetworkClient+getProgramImports"></a>
+
+### aleoNetworkClient.getProgramImports(programId)
+<p>Returns an object containing the source code of a program and the source code of all programs it imports</p>
+
+**Kind**: instance method of [<code>AleoNetworkClient</code>](#AleoNetworkClient)  
+
+| Param | Type |
+| --- | --- |
+| programId | <code>string</code> | 
+
+**Example**  
+```js
+let program = connection.getProgramImports("foo.aleo");
+```
+
+<a name="AleoNetworkClient+getDeploymentTransactionIDForProgram"></a>
+
+### aleoNetworkClient.getDeploymentTransactionIDForProgram(programId)
+<p>Returns the deployment transaction id associated with the specified program</p>
+
+**Kind**: instance method of [<code>AleoNetworkClient</code>](#AleoNetworkClient)  
+
+| Param | Type |
+| --- | --- |
+| programId | <code>string</code> | 
+
+**Example**  
+```js
+let program = connection.getDeploymentTransactionIDForProgram("foo.aleo");
+```
+
+<a name="AleoNetworkClient+getDeploymentTransactionForProgram"></a>
+
+### aleoNetworkClient.getDeploymentTransactionForProgram(programId)
+<p>Returns the deployment transaction associated with a specified program</p>
+
+**Kind**: instance method of [<code>AleoNetworkClient</code>](#AleoNetworkClient)  
+
+| Param | Type |
+| --- | --- |
+| programId | <code>string</code> | 
+
+**Example**  
+```js
+let program = connection.getDeploymentTransactionForProgram("foo.aleo");
+```
+
 <a name="AleoNetworkClient+getProgramMappingNames"></a>
 
 ### aleoNetworkClient.getProgramMappingNames(programId)
@@ -133,6 +216,23 @@ let program = connection.getProgram("foo.aleo");
 ```js
 let mappings = connection.getProgramMappingNames("credits.aleo");
 ```
+
+<a name="AleoNetworkClient+getProgramImportNames"></a>
+
+### aleoNetworkClient.getProgramImportNames(programId)
+<p>Get a list of the program names that a program imports</p>
+
+**Kind**: instance method of [<code>AleoNetworkClient</code>](#AleoNetworkClient)  
+
+| Param | Type |
+| --- | --- |
+| programId | <code>string</code> | 
+
+**Example**  
+```js
+let mappings = connection.getProgramImportNames("foo.aleo");
+```
+
 <a name="AleoNetworkClient+getMappingValue"></a>
 
 ### aleoNetworkClient.getMappingValue(programId, mappingName, key)
@@ -161,16 +261,7 @@ let mappingValue = connection.getMappingValue("credits.aleo", "account", "aleo1r
 ```js
 let latestHeight = connection.getLatestBlock();
 ```
-<a name="AleoNetworkClient+getLatestHash"></a>
 
-### aleoNetworkClient.getLatestHash()
-<p>Returns the hash of the last published block</p>
-
-**Kind**: instance method of [<code>AleoNetworkClient</code>](#AleoNetworkClient)  
-**Example**  
-```js
-let latestHash = connection.getLatestHash();
-```
 <a name="AleoNetworkClient+getLatestHeight"></a>
 
 ### aleoNetworkClient.getLatestHeight()
@@ -180,6 +271,17 @@ let latestHash = connection.getLatestHash();
 **Example**  
 ```js
 let latestHeight = connection.getLatestHeight();
+```
+
+<a name="AleoNetworkClient+getLatestCommittee"></a>
+
+### aleoNetworkClient.getLatestCommittee()
+<p>Returns the latest committee</p>
+
+**Kind**: instance method of [<code>AleoNetworkClient</code>](#AleoNetworkClient)  
+**Example**  
+```js
+let latestCommittee = connection.getLatestCommittee();
 ```
 <a name="AleoNetworkClient+getStateRoot"></a>
 
@@ -206,6 +308,7 @@ let stateRoot = connection.getStateRoot();
 ```js
 let transaction = connection.getTransaction("at1handz9xjrqeynjrr0xay4pcsgtnczdksz3e584vfsgaz0dh0lyxq43a4wj");
 ```
+
 <a name="AleoNetworkClient+getTransactions"></a>
 
 ### aleoNetworkClient.getTransactions(height)

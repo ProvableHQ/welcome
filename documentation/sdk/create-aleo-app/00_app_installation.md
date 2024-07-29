@@ -19,14 +19,17 @@ With NPM:
 npm create aleo-app@latest
 ```
 
-Then follow the prompts!
+1. Enter the project name.
+2. This will prompt you to choose a preferred framework from the following options:
+    - `React`
+    - `Node.js`
+    - `Vanilla (JavaScript)`
 
-Currently supported template presets include:
-- `react` + `javascript`
-- `react` + `javascript` + `leo`
-- `node` + `javascript`
-- `vanilla (javascript)`
+3. If you choose `React` as your framework, the supported templates are:
+    - `JavaScript` + `Leo`
+    - `TypeScript` + `Leo`
+    - `TypeScript` + `Next.js`
 
 ## More Information
 
-Based off of create-vite: https://github.com/vitejs/vite/tree/main/packages/create-vite
+Based on create-vite: https://github.com/vitejs/vite/tree/main/packages/create-vite

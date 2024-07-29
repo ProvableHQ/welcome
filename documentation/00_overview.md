@@ -23,6 +23,7 @@ An index of all pages available in this documentation.
 - [Leo Code Editor Plugins](./leo/06_tooling.md)
 - [Leo Examples, Guides, and Developer Resources](./leo/07_resources.md)
 - [Leo Cheatsheet](./leo/09_cheatsheet.md)
+- [Leo Core Developers Call](./leo/16_core_devs_call.md)
 
 ### Chapter 2: Leo by Example
 
@@ -33,18 +34,7 @@ An index of all pages available in this documentation.
 - [TicTacToe](https://github.com/AleoHQ/workshop/tree/master/tictactoe)
 - [Battleship](https://github.com/AleoHQ/workshop/tree/master/battleship)
 
-### Chapter 3: Concepts
-
-- [Accounts](./concepts/00_accounts.md)
-- [Programs](./concepts/01_programs.md)
-- [Records](./concepts/02_records.md)
-- [Transactions](./concepts/03_transactions.md)
-- [Transaction Fees](./concepts/03A_transaction_fees.md)
-- [Transitions](./concepts/04_transitions.md)
-- [Blocks](./concepts/05_blocks.md)
-
-
-### Chapter 4: Aleo Instructions
+### Chapter 3: Aleo Instructions
 
 - [Overview](./00_aleo_overview.md)
 - [Installation](./aleo/01_installation.md)
@@ -54,6 +44,19 @@ An index of all pages available in this documentation.
 - [Aleo Command Line Interface](./aleo/05_commands.md)
 - [Aleo Instructions Grammar](./aleo/06_grammar.md)
 - [Aleo Instructions Code Editor Plugins](./aleo/07_tooling.md)
+
+### Chapter 4: Concepts
+
+- [Accounts](./concepts/00_accounts.md)
+- [Programs](./concepts/01_programs.md)
+- [Records](./concepts/02_records.md)
+- [Transactions](./concepts/03_transactions.md)
+- [Transaction Fees](./concepts/03A_transaction_fees.md)
+- [Transitions](./concepts/04_transitions.md)
+- [Blocks](./concepts/05_blocks.md)
+- [Public vs. Private State](./concepts/06_public_private.md)
+
+## Testnet
 
 ### Chapter 5: Getting Started
 
@@ -89,7 +92,18 @@ An index of all pages available in this documentation.
 
 ## Advanced Topics
 
-### Chapter 7: The Aleo Curves
+### Chapter 7: Dive into the AVM
+
+- [Overview](./advanced/dive-into-avm/00_overview.md)
+- [Aleo Account Keys](./advanced/dive-into-avm/01_aleo_account_keys.md)
+- [Circuits and R1CS](./advanced/dive-into-avm/02_r1cs.md)
+- [Inclusion Proofs](./advanced/dive-into-avm/03_inclusion_proof.md)
+
+### Chapter 8: Introduction to zk-SNARKs
+
+- [Overview](./advanced/intro-to-zksnark/00_overview.md)
+
+### Chapter 9: The Aleo Curves
 
 - [Overview](./advanced/the_aleo_curves/00_overview.md)
 - [Edwards BLS12](./advanced/the_aleo_curves/01_edwards_bls12.md)

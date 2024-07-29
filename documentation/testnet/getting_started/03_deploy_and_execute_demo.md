@@ -32,6 +32,7 @@ Make sure you have both Leo and snarkOS installed on your machine.
 ### 2. Generate your test keys and wallet address
 
 * In your favorite browser, navigate to [provable.tools](https://www.provable.tools/) and click the **Generate** button
+
 * Save your **Address**, **View Key**, and **Private Key** in a safe place, you'll need them later
 
 ### 3a. Seeding your wallet with credits
