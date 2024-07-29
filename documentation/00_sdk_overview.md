@@ -34,9 +34,9 @@ first zero knowledge web app.
 
 ## 2. [Create-leo-App](./sdk/create-aleo-app/00_app_installation.md) - Zero-Knowledge Web App Examples
 
-<a href="https://www.npmjs.com/package/create-aleo-app"> <img alt="Create Aleo App" src="https://img.shields.io/npm/l/create-aleo-app?label=NPM%20-%20Create-Aleo-App&labelColor=green&color=blue" /></a>
+<a href="https://www.npmjs.com/package/create-leo-app"> <img alt="Create Leo App" src="https://img.shields.io/npm/l/create-aleo-app?label=NPM%20-%20Create-Aleo-App&labelColor=green&color=blue" /></a>
 
-Create-aleo-app provides zero-knowledge web app examples in common web frameworks such as React. Developers looking to
+Create-leo-app provides zero-knowledge web app examples in common web frameworks such as React. Developers looking to
 start with working examples should start here.
 
 ### ⚡ Build your own app
@@ -44,7 +44,7 @@ start with working examples should start here.
 
 You can start with a template by running
 ```bash
-npm create aleo-app@latest
+npm create leo-app@latest
 ```
 
 #### Source: [`sdk/create-leo-app`](https://github.com/ProvableHQ/sdk/tree/testnet3/create-leo-app)

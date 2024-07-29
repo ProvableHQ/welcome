@@ -169,4 +169,4 @@ Then just paste the following command in your terminal
 snarkos developer execute "${APPNAME}.aleo" "main" "1u32" "2u32" --private-key "${PRIVATEKEY}" --query "https://api.explorer.aleo.org/v1" --broadcast "https://api.explorer.aleo.org/v1/testnet/transaction/broadcast" --fee 1000000 --record "${RECORD}"
 ```
 
-Awesome! You have successfully deployed and executed a Leo application to Testnet III, how exciting 🎉
+Awesome! You have successfully deployed and executed a Leo application to Testnet, how exciting 🎉
