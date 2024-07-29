@@ -15,7 +15,6 @@ several TypeScript & JavaScript libraries which provide the following functional
 
 All of this functionality is demonstrated on [provable.tools](https://www.provable.tools/).
 
-
 The Aleo SDK is divided into three Typescript/Javascript packages
 
 ## 1. [Aleo SDK](./sdk/typescript/00_sdk_overview.md) - Build Zero Knowledge Web Apps
