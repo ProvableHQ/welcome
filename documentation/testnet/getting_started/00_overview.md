@@ -81,7 +81,7 @@ docker start -a snarkos
 - [Get Mapping Names](../public_endpoints/11_get_mapping_names.md)
 - [Get Mapping Value](../public_endpoints/12_get_mapping_value.md)
 - [Get State Path for Commitment](../public_endpoints/13_get_state_path_for_commitment.md)
-- [Get Beacons](../public_endpoints/14_get_committee)
+- [Get Committee](../public_endpoints/14_get_committee.md)
 - [Get Peers Count](../public_endpoints/15_get_peers_count.md)
 - [Get Peers All](../public_endpoints/16_get_peers_all.md)
 - [Get Peers All Metrics](../public_endpoints/17_get_peers_all_metrics.md)
