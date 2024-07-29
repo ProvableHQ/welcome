@@ -138,7 +138,7 @@ leo update
   Leo ✅ Updated to version 1.12.0
 ```
 
-### 2. Execute
+### 3. Execute
 
 The `leo execute` command executes the Leo program and outputs a transaction object
 ```bash
