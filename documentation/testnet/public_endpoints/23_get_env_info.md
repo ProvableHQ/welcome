@@ -5,7 +5,7 @@ sidebar_label: Get Environment Info
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/node/env
+GET /testnet/node/env
 ```
 
 Returns the environment info of the node.

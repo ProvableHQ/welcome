@@ -5,7 +5,7 @@ sidebar_label: Get Mapping Value
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/program/{programID}/mapping/{mappingName}/{mappingKey}
+GET /testnet/program/{programID}/mapping/{mappingName}/{mappingKey}
 ```
 
 Returns the value in a key-value mapping corresponding to the supplied mappingKey.

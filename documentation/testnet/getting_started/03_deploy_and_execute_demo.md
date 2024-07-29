@@ -26,12 +26,12 @@ Make sure you have both Leo and snarkOS installed on your machine.
 
 **Note**:
 
-* You can find instructions to install Leo on your machine [here](https://github.com/AleoHQ/leo) and snarkOS [here](https://github.com/AleoHQ/snarkos)
+* You can find instructions to install Leo on your machine [here](https://github.com/ProvableHQ/leo) and snarkOS [here](https://github.com/AleoHQ/snarkos)
 * Make sure to pull the latest versions of `snarkos` and `leo` from GitHub to your local machine
 
 ### 2. Generate your test keys and wallet address
 
-* In your favorite browser, navigate to [https://aleo.tools/](https://aleo.tools/) and click the **Generate** button
+* In your favorite browser, navigate to [provable.tools](https://www.provable.tools/) and click the **Generate** button
 * Save your **Address**, **View Key**, and **Private Key** in a safe place, you'll need them later
 
 ### 3a. Seeding your wallet with credits
@@ -106,7 +106,7 @@ Alternatively, you can find your execute transaction confirmation by going to [t
 
 ### 5. Obtain your records plaintext
 
-* Navigate to [https://aleo.tools/](https://aleo.tools/) and click the **Record** tab in the nav bar at the top of the page
+* Navigate to [provable.tools](https://www.provable.tools/) and click the **Record** tab in the nav bar at the top of the page
 * Place the record ciphertext you copied in the previous step in the `Record (Ciphertext)` field
 * Place your view key in the `View Key` field
 * Copy the plaintext record provided. If you do not see it, it's likely you copied the wrong ciphertext record in step 4. Consider revisiting or reach out to `hello@aleo.org`.
@@ -139,7 +139,7 @@ RECORD=""
 * Deploy your Leo application (if all your variables were assigned correctly, you should be able to copy/paste the following
 
 ```
-snarkos developer deploy "${APPNAME}.aleo" --private-key "${PRIVATEKEY}" --query "https://api.explorer.aleo.org/v1" --path "./${APPNAME}/build/" --broadcast "https://api.explorer.aleo.org/v1/testnet3/transaction/broadcast" --fee 1000000 --record "${RECORD}"
+snarkos developer deploy "${APPNAME}.aleo" --private-key "${PRIVATEKEY}" --query "https://api.explorer.aleo.org/v1" --path "./${APPNAME}/build/" --broadcast "https://api.explorer.aleo.org/v1/testnet/transaction/broadcast" --fee 1000000 --record "${RECORD}"
 ```
 
 You should have seen a confirmation that your Aleo application was deployed in the form of a transaction ID that looks like the following `at1rkkpqu5k4rt86zzccczw6cxeyvrl7hxydvvv7dhl7zr7p9w40c8s70kwm8`. Make sure to copy this string as you'll need it for the last step.
@@ -149,9 +149,9 @@ You should have seen a confirmation that your Aleo application was deployed in t
 
 Finally, it is time to execute the application you just deployed!
 
-* You'll need to update the `--record` flag with the latest transaction linked to your wallet balance. In this case, you can obtain that by going to the following URL: https://api.explorer.aleo.org/v1/testnet3/transaction/$DEPLOY_TX_ID but replace $DEPLOY_TX_ID with the transaction ID provided to you once your application was deployed (or from the most recent transaction linked to your wallet address). An example URL looks like so: https://api.explorer.aleo.org/v1/testnet3/transaction/at1rkkpqu5k4rt86zzccczw6cxeyvrl7hxydvvv7dhl7zr7p9w40c8s70kwm8
-* In the JSON object provided at https://api.explorer.aleo.org/v1/testnet3/transaction/$DEPLOY_TX_ID, navigate to: `object.fee.transition.outputs[0].value` and copy the record ciphertext value.
-* Head to [aleo.tools](https://aleo.tools/) and navigate to the **Record** tab and paste the record ciphertext you just copied as well as your wallet's view key
+* You'll need to update the `--record` flag with the latest transaction linked to your wallet balance. In this case, you can obtain that by going to the following URL: https://api.explorer.aleo.org/v1/testnet/transaction/$DEPLOY_TX_ID but replace $DEPLOY_TX_ID with the transaction ID provided to you once your application was deployed (or from the most recent transaction linked to your wallet address). An example URL looks like so: https://api.explorer.aleo.org/v1/testnet/transaction/at1rkkpqu5k4rt86zzccczw6cxeyvrl7hxydvvv7dhl7zr7p9w40c8s70kwm8
+* In the JSON object provided at https://api.explorer.aleo.org/v1/testnet/transaction/$DEPLOY_TX_ID, navigate to: `object.fee.transition.outputs[0].value` and copy the record ciphertext value.
+* Head to [provable.tools](https://www.provable.tools/) and navigate to the **Record** tab and paste the record ciphertext you just copied as well as your wallet's view key
 * Similar to the steps we followed for a deploy transaction, update your `RECORD` variable with the record plaintext you just decrypted by doing the following:
 
 <!-- markdown-link-check-enable -->
@@ -165,7 +165,7 @@ RECORD=""
 Then just paste the following command in your terminal
 
 ```
-snarkos developer execute "${APPNAME}.aleo" "main" "1u32" "2u32" --private-key "${PRIVATEKEY}" --query "https://api.explorer.aleo.org/v1" --broadcast "https://api.explorer.aleo.org/v1/testnet3/transaction/broadcast" --fee 1000000 --record "${RECORD}"
+snarkos developer execute "${APPNAME}.aleo" "main" "1u32" "2u32" --private-key "${PRIVATEKEY}" --query "https://api.explorer.aleo.org/v1" --broadcast "https://api.explorer.aleo.org/v1/testnet/transaction/broadcast" --fee 1000000 --record "${RECORD}"
 ```
 
 Awesome! You have successfully deployed and executed a Leo application to Testnet III, how exciting 🎉

@@ -5,7 +5,7 @@ sidebar_label: Get Memory Pool Transactions
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/memoryPool/transactions
+GET /testnet/memoryPool/transactions
 ```
 
 Returns the transactions in the memory pool.

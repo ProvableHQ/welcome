@@ -5,7 +5,7 @@ sidebar_label: Get Peers All
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/peers/all
+GET /testnet/peers/all
 ```
 
 Returns the peers connected to the node.

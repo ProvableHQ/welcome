@@ -5,7 +5,7 @@ sidebar_label: Get Height
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/height/{blockHash}
+GET /testnet/height/{blockHash}
 ```
 
 Returns the height for the given block hash.

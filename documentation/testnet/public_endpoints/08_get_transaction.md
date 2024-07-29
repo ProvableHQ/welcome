@@ -5,7 +5,7 @@ sidebar_label: Get Transaction
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/transaction/{transactionID}
+GET /testnet/transaction/{transactionID}
 ```
 
 Returns the transaction for the given transaction ID.
