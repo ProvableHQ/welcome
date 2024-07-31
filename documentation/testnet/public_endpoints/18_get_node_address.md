@@ -5,7 +5,7 @@ sidebar_label: Get Node Address
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/node/address
+GET /testnet/node/address
 ```
 
 Returns the address of the node.

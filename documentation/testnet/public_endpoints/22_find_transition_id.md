@@ -5,7 +5,7 @@ sidebar_label: Find Transition ID
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/find/transitionID/{inputOrOutputID}
+GET /testnet/find/transitionID/{inputOrOutputID}
 ```
 
 Returns the transition ID of the transition corresponding to the ID of the input or output.
