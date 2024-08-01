@@ -86,7 +86,7 @@ Record private data is encoded as a list of field elements which is encrypted wi
 
 This process enables users to securely and privately transfer data and values across the network. A key aspect of this system is that only the sender and receiver, who each possess their respective view keys, can unlock and access the contents of these records. This safeguard ensures that sensitive information is protected from unauthorized access while maintaining transparency and trust in the transaction process, providing a robust foundation for secure communications.
 
-The code for encryption and decryption is available in the snarkVM sections, which can be accessed at the [encrypt](https://github.com/AleoHQ/snarkVM/blob/testnet3/circuit/program/src/data/record/encrypt.rs) and [decrypt](https://github.com/AleoHQ/snarkVM/blob/testnet3/circuit/program/src/data/record/decrypt.rs) pages, respectively.
+The code for encryption and decryption is available in the snarkVM sections, which can be accessed at the [encrypt](https://github.com/AleoNet/snarkVM/blob/mainnet/circuit/program/src/data/record/encrypt.rs) and [decrypt](https://github.com/AleoNet/snarkVM/blob/mainnet/circuit/program/src/data/record/decrypt.rs) pages, respectively.
 
 Additionally, users can decrypt their encrypted records using their view key via a web interface available at [Provable Tools](https://www.provable.tools/record). This feature allows for the practical application of decryption processes directly through a browser.
 

@@ -94,7 +94,7 @@ PATHTOAPP=$(realpath -q $APPNAME)
 
 By this point, the Aleo faucet should have sent your wallet credits. Next, you'll need to verify your credit balance by decrypting the ciphertext record for the execute transfer that was sent to you. 
 
-If you requested credits by texting with your phone number, you should also receive a confirmation with a URL that has a prefix of `vm.aleo.org/api/testnet3/transaction...` 
+If you requested credits by texting with your phone number, you should also receive a confirmation with a URL that has a prefix of `explorer.aleo.org/transaction...` 
 
 <!-- markdown-link-check-disable -->
 

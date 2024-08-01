@@ -70,7 +70,7 @@ With player 1's private key, they initialize the board with the placement of 4 s
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpGKaJY47BXb6knSqmT3JZnBUEGBDFAWz2nMVSsjwYpJmm
 " > .env
 
@@ -157,7 +157,7 @@ We switch our .env to player 2's private key and similarly run initialize_board 
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp86FNGdKxjgAdgQZ967bqBanjuHkAaoRe19RK24ZCGsHH
 " > .env
 
@@ -249,7 +249,7 @@ We switch the .env back to player 1, and we run the transition function play.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpGKaJY47BXb6knSqmT3JZnBUEGBDFAWz2nMVSsjwYpJmm
 " > .env
 
@@ -305,7 +305,7 @@ We switch the .env back to player 2, and we run the transition function play.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp86FNGdKxjgAdgQZ967bqBanjuHkAaoRe19RK24ZCGsHH
 " > .env
 
@@ -366,7 +366,7 @@ We switch the .env back to player 1, and we run the transition function play.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpGKaJY47BXb6knSqmT3JZnBUEGBDFAWz2nMVSsjwYpJmm
 " > .env
 
@@ -434,7 +434,7 @@ We switch the .env back to player 2, and we run the transition function play.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp86FNGdKxjgAdgQZ967bqBanjuHkAaoRe19RK24ZCGsHH
 " > .env
 

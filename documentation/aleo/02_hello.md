@@ -250,7 +250,7 @@ You can find your development application address inside the `.env` file:
 
 ```json
 {
-    NETWORK=testnet3
+    NETWORK=testnet
     PRIVATE_KEY=APrivateKey1zkpFsQNXJwdvjKs9bRsM91KcwJW1gW4CDtF3FJbgVBAvPds
 }
 ```

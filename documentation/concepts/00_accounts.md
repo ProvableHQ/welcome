@@ -96,7 +96,7 @@ a sequence of field elements and outputs a field element. The output is uniforml
 ### HashToScalar
 
 An instantiation of HashToField that output elements in the scalar field <code>F<sub>scalar</sub></code>.
-[source code](https://github.com/AleoHQ/snarkVM/blob/testnet3/console/algorithms/src/poseidon/hash_to_scalar.rs#L24)
+[source code](https://github.com/AleoNet/snarkVM/blob/mainnet/console/algorithms/src/poseidon/hash_to_scalar.rs#L24)
 
 ### EncodeToF
 
@@ -147,7 +147,7 @@ Given global instantiated Aleo parameters and subroutines.
 
 3.`private_key` = (`seed`, (`sk_sig`, `r_sig`))
 
-[source code](https://github.com/AleoHQ/snarkVM/blob/testnet3/console/account/src/private_key/try_from.rs)
+[source code](https://github.com/AleoNet/snarkVM/blob/mainnet/console/account/src/private_key/try_from.rs)
 
 #### Generate a View Key
 1. `(sk_sig, r_sig)` = `private_key`

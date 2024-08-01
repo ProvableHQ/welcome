@@ -74,7 +74,7 @@ Let's propose a new ballot. Take on the role of the proposer and run the propose
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8wKHF9zFX1j4YJrK3JhxtyKDmPbRu9LrnEW8Ki56UQ3G
 " > .env
 
@@ -93,7 +93,7 @@ Let's create a new private ticket to make a vote. Take on the role of voter 1 an
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpHmSu9zuhyuCJqVfQE8p82HXpCTLVa8Z2HUNaiy9mrug2
 " > .env
 
@@ -118,7 +118,7 @@ Let's create a new private ticket for voter 2. Take on the role of voter 1 and r
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp6NHwbT7PkpnEFeBidz5ZkZ14W8WXZmJ6kjKbEHYdMmf2
 " > .env
 

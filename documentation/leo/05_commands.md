@@ -172,7 +172,7 @@ Use this command to add a dependency to your program. This is a precursor to bei
 To add an already deployed program as a project dependency.
 `{$PROGRAM}` should be the name of the program to add as a dependency.
 ```bash
-leo add {$PROGRAM} // {$NETWORK} defaults to `testnet3`.
+leo add {$PROGRAM} // {$NETWORK} defaults to `testnet`.
 leo add -n {$NETWORK} {$PROGRAM} // To pull from a custom network. 
 ```
 

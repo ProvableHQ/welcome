@@ -71,7 +71,7 @@ Let's make some bank transactions. We'll take the role of the bank and issue 100
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 " > .env
 
@@ -84,7 +84,7 @@ Now, let's have the user deposit 50 of their tokens with the bank. We'll take th
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp75cpr5NNQpVWc5mfsD9Uf2wg6XvHknf82iwB636q3rtc
 " > .env
 
@@ -109,7 +109,7 @@ Now, let's have the bank withdraw all tokens after 15 periods. Let's switch to t
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 " > .env
 

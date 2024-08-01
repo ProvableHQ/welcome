@@ -52,8 +52,8 @@ Clone the `snarkOS` repository
 git clone https://github.com/AleoHQ/snarkOS.git --depth 1
 cd snarkOS
 
-# Switch to the testnet3 branch
-git checkout testnet3
+# Switch to the mainnet branch
+git checkout mainnet 
 
 [For Ubuntu users] A helper script to install dependencies is available. From the snarkOS directory, run:
 
@@ -325,7 +325,7 @@ Although this command is used to run a function, it also builds your program.
 ## Deploy
 
 ```
-snarkos developer deploy {$PROGRAM_NAME} --private-key {$PRIVATE_KEY} --query "https://api.explorer.aleo.org/v1" --path ".build/" --broadcast "https://api.explorer.aleo.org/v1/testnet3/transaction/broadcast" --priority-fee 0
+snarkos developer deploy {$PROGRAM_NAME} --private-key {$PRIVATE_KEY} --query "https://api.explorer.aleo.org/v1" --path ".build/" --broadcast "https://api.explorer.aleo.org/v1/testnet/transaction/broadcast" --priority-fee 0
 ```
 If successful, it should look something like
 ![Deploy confirmation](./images/deploy-confirmation.png)
@@ -334,7 +334,7 @@ The hash at the bottom of the image represents the transaction hash, which you c
 
 ## Execute
 ```
-snarkos developer execute {$PROGRAM_NAME} {$TRANSITION_NAME} {$INPUT_ARGUMENTS} --private-key {$PRIVATE_KEY} --query "https://api.explorer.aleo.org/v1" --broadcast "https://api.explorer.aleo.org/v1/testnet3/transaction/broadcast"
+snarkos developer execute {$PROGRAM_NAME} {$TRANSITION_NAME} {$INPUT_ARGUMENTS} --private-key {$PRIVATE_KEY} --query "https://api.explorer.aleo.org/v1" --broadcast "https://api.explorer.aleo.org/v1/testnet/transaction/broadcast"
 ```
 If successful, it should look something like
 ![Execute confirmation](./images/execute-confirmation.png)

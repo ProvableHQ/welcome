@@ -16,7 +16,7 @@ This repository serves as a guide for getting started with building on Aleo. Her
 - [🦁 Leo](https://leo-lang.org/) - A programming language for zero-knowledge proofs.
 - [🛝 Leo Playground](http://play.leo-lang.org) - A browser interface to the Leo compiler for rapid ZK development and testing.
 - [🧰 Aleo SDK](https://provable.tools/) - A Software Development Kit (SDK) for Zero-Knowledge Transactions.
-- [🔭 Aleo Explorer](https://aleo.network) - Validate and broadcast on Aleo Testnet III
+- [🔭 Aleo Explorer](https://explorer.aleo.org) - Validate and broadcast on Aleo Testnet Beta
 
 For help setting up, join us on [Discord](https://discord.com/invite/aleo) to ask questions and help others answer their questions.
 
