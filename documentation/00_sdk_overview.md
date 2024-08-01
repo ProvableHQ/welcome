@@ -32,7 +32,7 @@ first zero knowledge web app.
 #### Source: [`sdk/sdk`](https://github.com/AleoHQ/sdk/tree/testnet3/sdk)
 
 
-## 2. [Create-leo-App](./sdk/create-aleo-app/00_app_installation.md) - Zero-Knowledge Web App Examples
+## 2. [Create-leo-App](./sdk/create-leo-app/00_app_installation.md) - Zero-Knowledge Web App Examples
 
 <a href="https://www.npmjs.com/package/create-leo-app"> <img alt="Create Leo App" src="https://img.shields.io/npm/l/create-aleo-app?label=NPM%20-%20Create-Leo-App&labelColor=green&color=blue" /></a>
 
