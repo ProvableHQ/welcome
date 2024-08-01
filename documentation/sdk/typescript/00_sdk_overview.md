@@ -32,7 +32,7 @@ The Aleo SDK provides the following functionality (Click to see examples):
 * [Installation](#Installation)
 * [Usage](#Usage)
     * [Zero Knowledge Web App Examples](#Zero-Knowledge-Web-App-Examples)
-        * [Create Aleo App](#create-aleo-app)
+        * [Create Leo App](#create-leo-app)
         * [provable.tools](#provabletools)
     * [Create An Aleo Account](#1-create-an-aleo-account)
     * [Execute Aleo Programs](#2-execute-aleo-programs)
@@ -75,9 +75,9 @@ To build the project from source, go to this project's root and execute:
 
 ## Zero Knowledge Web App Examples
 
-### Create Aleo App
+### Create Leo App
 A set of fully functional examples of zero knowledge web apps can be found in
-[create-aleo-app](https://github.com/AleoHQ/sdk/tree/testnet3/create-aleo-app). Create-aleo-app provides several web-app
+[create-leo-app](https://github.com/AleoHQ/sdk/tree/testnet3/create-leo-app). Create-aleo-app provides several web-app
 templates in common web frameworks such as React that can be used as a starting point for building zero knowledge web apps.
 
 Developers can get started immediately with create-react-app by running:
@@ -663,7 +663,7 @@ Make sure that you included custom types in your `tsconfig` file.
 </details>
 
 
-A full example of this implementation can be found [here](https://github.com/AleoHQ/sdk/blob/testnet3/create-aleo-app/template-react-leo/src/App.jsx)
+A full example of this implementation can be found [here](https://github.com/AleoHQ/sdk/blob/testnet3/create-leo-app/template-react-leo/src/App.jsx)
 
 ## 3. Aleo Credit Transfers
 

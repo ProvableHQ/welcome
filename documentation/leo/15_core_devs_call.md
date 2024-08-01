@@ -15,11 +15,15 @@ We welcome everyone to join!
 ### When
 **Every Tuesday 9-10AM PT, starting on 5/21/24**
 
+<!-- markdown-link-check-disable -->
+
 ### Where
 **Google Meet**
 - Video call link: https://meet.google.com/eup-twjf-zbv
 - Or dial: (US) +1 409-263-1346, PIN: 181 961#
 - More phone numbers: https://tel.meet/eup-twjf-zbv?pin=7908874492618
+
+<!-- markdown-link-check-enable -->
 
 ### Agenda 
 - Team Updates:
