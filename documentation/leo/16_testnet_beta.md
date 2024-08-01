@@ -266,7 +266,7 @@ Extensive information on deployed programs, mapping values, blocks, transactions
 
 ```
 leo query program credits.aleo --mapping-value account aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px                                  
-       Leo ✅ Successfully retrieved data from 'http://api.explorer.aleo.org/v1/testnet3/program/credits.aleo/mapping/account/aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px'.
+       Leo ✅ Successfully retrieved data from 'http://api.explorer.aleo.org/v1/testnet/program/credits.aleo/mapping/account/aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px'.
 
 "10331249u64"
 ```

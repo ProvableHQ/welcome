@@ -202,9 +202,9 @@ Reducing the source code that caused the issue to a bare minimum is always very 
 
 ## Make a Pull Request
 
-Start by forking off of the `testnet3` branch to make your changes. Commit messages should clearly explain why and what you changed.
+Start by forking off of the `mainnet` branch to make your changes. Commit messages should clearly explain why and what you changed.
 
-If you need to pull in any changes from the `testnet3` branch after making your fork (for example, to resolve potential merge conflicts),
+If you need to pull in any changes from the `mainnet` branch after making your fork (for example, to resolve potential merge conflicts),
 please avoid using git merge and instead, git rebase your branch. Rebasing will help us review your changes easily.
 
 ### Tools Required

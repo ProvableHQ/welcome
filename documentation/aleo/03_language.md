@@ -656,7 +656,7 @@ The `self.caller` command returns the address of the immediate caller of the pro
 The examples in this section will use the following environment.
 
 ```bash title=".env"
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpE37QxQynZuEGg3XxYrTuvhzWbkVaN5NgzCdEGzS43Ms5 # user private key
 ADDRESS=aleo1p2h0p8mr2pwrvd0llf2rz6gvtunya8alc49xldr8ajmk3p2c0sqs4fl5mm # user address
 ```

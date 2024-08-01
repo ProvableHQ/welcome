@@ -206,9 +206,9 @@ snarkos developer transfer <AMOUNT_TO_TRANSFER> --input-record <INPUT_RECORD> --
 ```
 
 
-## Usage on Testnet 3 (Phase 2)
+## Usage on Testnet Beta 
 
-To deploy and execute programs on Testnet3
+To deploy and execute programs on Testnet Beta
 <!-- markdown-link-check-disable -->
 
 1. Replace [step 3](#3-scan-the-node-for-spendable-records) with the Aleo faucet to obtain spendable credits. You can request credits from [the faucet](https://faucet.aleo.org/)

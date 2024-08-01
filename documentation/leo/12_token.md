@@ -48,7 +48,7 @@ Let's play Alice. Swap in her private key and publicly mint 100 tokens.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
 " > .env
 
@@ -63,7 +63,7 @@ Now let's privately mint 100 tokens for Bob. Switch to Bob's private key and pri
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF
 " > .env
 
@@ -78,7 +78,7 @@ Let's publicly transfer 10 tokens from Alice to Bob. Swap the private key back t
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
 " > .env
 
@@ -93,7 +93,7 @@ Let's privately transfer 20 tokens from Bob to Alice. Switch to Bob's private ke
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF
 " > .env
 
@@ -112,7 +112,7 @@ Let's convert 30 of Alice's public tokens into 30 private tokens for Bob. Switch
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
 " > .env
 
@@ -127,7 +127,7 @@ Let's convert 40 of Bob's private tokens into 40 public tokens for Alice. Switch
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF
 " > .env
 
