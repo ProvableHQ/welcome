@@ -56,11 +56,11 @@ An index of all pages available in this documentation.
 - [Blocks](./concepts/05_blocks.md)
 - [Public vs. Private State](./concepts/06_public_private.md)
 
-## Testnet III
+## Testnet
 
 ### Chapter 5: Getting Started
 
-- [Testnet III.](./testnet/getting_started/00_overview.md)
+- [Testnet](./testnet/getting_started/00_overview.md)
 
 ### Chapter 6: API Reference
 
@@ -78,7 +78,7 @@ An index of all pages available in this documentation.
 - [Get Mapping Names](./testnet/public_endpoints/11_get_mapping_names.md)
 - [Get Mapping Value](./testnet/public_endpoints/12_get_mapping_value.md)
 - [Get State Path for Commitment](./testnet/public_endpoints/13_get_state_path_for_commitment.md)
-- [Get Beacons](./testnet/public_endpoints/14_get_beacons.md)
+- [Get Committee](./testnet/public_endpoints/14_get_committee.md)
 - [Get Peers Count](./testnet/public_endpoints/15_get_peers_count.md)
 - [Get Peers All](./testnet/public_endpoints/16_get_peers_all.md)
 - [Get Peers All Metrics](./testnet/public_endpoints/17_get_peers_all_metrics.md)

@@ -5,7 +5,7 @@ sidebar_label: Find Transaction ID from Transition ID
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/find/transactionID/{transitionID}
+GET /testnet/find/transactionID/{transitionID}
 ```
 
 Returns the transaction ID of the transaction containing the given transition ID.

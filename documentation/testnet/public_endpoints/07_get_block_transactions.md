@@ -5,7 +5,7 @@ sidebar_label: Get Block Transactions
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/block/{height}/transactions
+GET /testnet/block/{height}/transactions
 ```
 
 Returns the transactions for the given block height.

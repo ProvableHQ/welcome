@@ -5,7 +5,7 @@ sidebar_label: Get Mapping Names
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/program/{programID}/mappings
+GET /testnet/program/{programID}/mappings
 ```
 
 Returns the names of the mappings in a program for the given program ID.

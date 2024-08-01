@@ -8,7 +8,7 @@ This toolkit works best with a MacOS machine from 2021 or newer. You can check y
 
 ## Leo
 ### Download and install Leo
-- You can find the latest version of Leo [here](https://github.com/AleoHQ/leo/releases/latest).
+- You can find the latest version of Leo [here](https://github.com/ProvableHQ/leo/releases/latest).
 - After downloading the version that works for your machine, double-click the zip file to open it.
 - Then install Leo by moving it to `/usr/local/bin` on your machine, which you can do by dragging it to that location or via terminal (`sudo mv leo /usr/local/bin`); in both cases, you will need to enter your computer password.
 
@@ -140,7 +140,7 @@ This section refers to the guide created by GitHub [here](https://docs.github.co
 Check out the following resources:
 
 - [Our developer docs](https://developer.aleo.org/getting_started/)
-- See Aleo's SDK in action at [provable.tools](https://provable.tools)
+- See the SDK in action at [provable.tools](https://www.provable.tools/)
 - Play around with Leo in the browser with [Leo Playground](https://play.leo-lang.org/)
 - Learn Leo syntax, functions, and best practices with the [Leo's language guide](https://developer.aleo.org/leo/language)
 - Deploy and Execute Leo applications on-chain with our [Deploy and Execute Demo](https://developer.aleo.org/testnet/getting_started/deploy_execute_demo)

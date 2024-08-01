@@ -5,7 +5,7 @@ sidebar_label: Find Block Hash
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/find/blockHash/{transactionID}
+GET /testnet/find/blockHash/{transactionID}
 ```
 
 Returns the block hash of the block containing the given transaction ID.

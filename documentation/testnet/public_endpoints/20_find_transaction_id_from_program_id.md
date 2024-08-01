@@ -5,7 +5,7 @@ sidebar_label: Find Transaction ID from Program ID
 ---
 
 ```bash title=ENDPOINT
-GET /testnet3/find/transactionID/deployment/{programID}
+GET /testnet/find/transactionID/deployment/{programID}
 ```
 
 Returns the transaction ID of the transaction containing the given program ID.
