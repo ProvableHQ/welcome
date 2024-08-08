@@ -16,7 +16,7 @@ sidebar_label: Installation
 With NPM:
 
 ```bash
-npm create aleo-app@latest
+npm create leo-app@latest
 ```
 
 1. Enter the project name.
