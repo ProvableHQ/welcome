@@ -70,9 +70,9 @@ If you're interested in learning more about Aleo:
 
 <!-- markdown-link-check-disable -->
 [//]: # (disabling markdown checks for twitter links)
-🐦 | X (Twitter) ~ @AleoHQ ~ **https://twitter.com/AleoHQ**
+🐦 | X (Twitter) ~ @AleoHQ ~ **https://x.com/AleoHQ**
 
-🤝 | Community X (Twitter) ~ @aleocommunity ~ **https://twitter.com/aleocommunity**
+🤝 | Community X (Twitter) ~ @aleocommunity ~ **https://x.com/aleocommunity**
 
 <!-- markdown-link-check-enable -->
 
