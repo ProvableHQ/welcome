@@ -39,10 +39,10 @@ For each of the breaking changes above, we've provided instructions on how to up
 ### API Endpoints
 If you are using API endpoints, you will likely **need to update the URL** to point to the new Testnet Beta endpoint. 
 
-**The official endpoint is `https://api.explorer.aleo.org/v1/testnet`.**
+**The official endpoint is `https://api.explorer.provable.com/v1/testnet`.**
 If you are using a custom endpoint, you will just need to update `testnet3` to `testnet` in the URL.
 
-The [Explorer](https://explorer.aleo.org/) is pointed to Testnet Beta.
+The [Explorer](https://explorer.provable.com/) is pointed to Testnet Beta.
 
 ### Finalization
 The `finalize` programming model for on-chain code has been replaced with a new `async/await` model. See [this](#An-Async-Programming-Model) section for a detailed breakdown.
@@ -266,7 +266,7 @@ Extensive information on deployed programs, mapping values, blocks, transactions
 
 ```
 leo query program credits.aleo --mapping-value account aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px                                  
-       Leo ✅ Successfully retrieved data from 'http://api.explorer.aleo.org/v1/testnet/program/credits.aleo/mapping/account/aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px'.
+       Leo ✅ Successfully retrieved data from 'http://api.explorer.provable.com/v1/testnet/program/credits.aleo/mapping/account/aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px'.
 
 "10331249u64"
 ```

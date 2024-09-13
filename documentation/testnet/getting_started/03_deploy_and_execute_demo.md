@@ -151,7 +151,7 @@ You should have seen a confirmation that your Aleo application was deployed in t
 Finally, it is time to execute the application you just deployed!
 
 * You'll need to update the `--record` flag with the latest transaction linked to your wallet balance. In this case, you can obtain that by going to the following URL: https://api.explorer.aleo.org/v1/testnet/transaction/$DEPLOY_TX_ID but replace $DEPLOY_TX_ID with the transaction ID provided to you once your application was deployed (or from the most recent transaction linked to your wallet address). An example URL looks like so: https://api.explorer.aleo.org/v1/testnet/transaction/at1rkkpqu5k4rt86zzccczw6cxeyvrl7hxydvvv7dhl7zr7p9w40c8s70kwm8
-* In the JSON object provided at https://api.explorer.aleo.org/v1/testnet/transaction/$DEPLOY_TX_ID, navigate to: `object.fee.transition.outputs[0].value` and copy the record ciphertext value.
+* In the JSON object provided at https://api.explorer.provable.com/v1/testnet/transaction/$DEPLOY_TX_ID, navigate to: `object.fee.transition.outputs[0].value` and copy the record ciphertext value.
 * Head to [provable.tools](https://www.provable.tools/) and navigate to the **Record** tab and paste the record ciphertext you just copied as well as your wallet's view key
 * Similar to the steps we followed for a deploy transaction, update your `RECORD` variable with the record plaintext you just decrypted by doing the following:
 
@@ -166,7 +166,7 @@ RECORD=""
 Then just paste the following command in your terminal
 
 ```
-snarkos developer execute "${APPNAME}.aleo" "main" "1u32" "2u32" --private-key "${PRIVATEKEY}" --query "https://api.explorer.aleo.org/v1" --broadcast "https://api.explorer.aleo.org/v1/testnet/transaction/broadcast" --fee 1000000 --record "${RECORD}"
+snarkos developer execute "${APPNAME}.aleo" "main" "1u32" "2u32" --private-key "${PRIVATEKEY}" --query "https://api.explorer.provable.com/v1" --broadcast "https://api.explorer.provable.com/v1/testnet/transaction/broadcast" --fee 1000000 --record "${RECORD}"
 ```
 
 Awesome! You have successfully deployed and executed a Leo application to Testnet, how exciting 🎉

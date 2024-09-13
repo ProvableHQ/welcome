@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Testnet.
+title: Testnet
 sidebar_label: Overview
 ---
 
@@ -31,9 +31,9 @@ To connect to the network, make a request to an Aleo Testnet bootnode.
 
 | URL              |
 |------------------|
-| [https://api.explorer.aleo.org/v1/testnet](https://api.explorer.aleo.org/v1/testnet/) |
+| [https://api.explorer.provable.com/v1/testnet](https://api.explorer.provable.com/v1/testnet/) |
 
-For example, you can [retrieve the current block height](https://api.explorer.aleo.org/v1/testnet/latest/height). 
+For example, you can [retrieve the current block height](https://api.explorer.provable.com/v1/testnet/latest/height). 
 
 With a local instance of `snarkos`, you can launch a client node with:
 
