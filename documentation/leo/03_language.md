@@ -156,7 +156,7 @@ The body of the program is delimited by curly braces `{}`.
 import foo.aleo;
 
 program hello.aleo {
-    mapping balances: address => u64;
+    mapping account: address => u64;
 
     record token {
         owner: address,
