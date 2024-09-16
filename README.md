@@ -70,6 +70,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/actions"><img src="https://avatars.githubusercontent.com/u/65916846?v=4?s=100" width="100px;" alt="actions-user"/><br /><sub><b>actions-user</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=actions-user" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/aleosys"><img src="https://avatars.githubusercontent.com/u/60269885?v=4?s=100" width="100px;" alt="aleosys"/><br /><sub><b>aleosys</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=aleosys" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jackllh"><img src="https://avatars.githubusercontent.com/u/60269999?v=5?s=168" width="100px;" alt="jackllh"/><br /><sub><b>jackllh</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=jackllh" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://discord.com"><img src="https://avatars.githubusercontent.com/u/60269999?v=5?s=168" width="100px;" alt="jackllh's discord"/><br /><sub><b>jack's discord id :441037656281841665</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=jackllh" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://x.com/@jack_l1"><img src="https://avatars.githubusercontent.com/u/60269999?v=5?s=168" width="100px;" alt="jackllh's discord"/><br /><sub><b>jack's twitter:@jack_l1</b></sub></a><br /><a href="https://github.com/AleoHQ/welcome/commits?author=jackllh" title="Documentation">📖</a></td>
+        
     </tr>
   </tbody>
   <tfoot>
