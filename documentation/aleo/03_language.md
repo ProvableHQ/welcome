@@ -102,7 +102,7 @@ sign.verify sign069ju4e8s66unu25celqycvsv3k9chdyz4n4sy62tx6wxj0u25vqp58hgu9hwyqc
 
 ## Layout of an Aleo Program
 
-An Aleo program contains declarations of a [Program ID](#programid), [Imports](#import), [Functions](#function), [Closures](#closure), [Structs](#struct), [Records](#record),
+An Aleo program contains declarations of a [Program ID](#programid), [Imports](#import), [Functions](#function), [Closures](#closure), [Structs](#struct), [Arrays](#array), [Records](#record),
 [Mappings](#mapping), and [Finalize](#finalize). Ordering is only enforced for imports which must be at the top of file.
 Declarations are locally accessible within a program file.
 If you need a declaration from another program file, you must import it.
