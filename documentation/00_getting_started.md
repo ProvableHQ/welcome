@@ -33,7 +33,7 @@ to compile, execute, and finalize its state autonomously.
 ### 1.3 Install Leo
 
 ```bash
-curl -L https://raw.githubusercontent.com/AleoHQ/workshop/master/install.sh | sh
+curl -L https://raw.githubusercontent.com/ProvableHQ/workshop/master/install.sh | sh
 ```
 
 Learning Leo is the fastest way to develop private applications on Aleo.
