@@ -76,7 +76,7 @@ If you're interested in learning more about Aleo:
 
 <!-- markdown-link-check-enable -->
 
-🐙 | GitHub ~ **https://github.com/AleoHQ**
+🐙 | GitHub ~ **https://github.com/AleoNet**
 
 📄 | Developer Documentation ~ **https://developer.aleo.org/**
 
