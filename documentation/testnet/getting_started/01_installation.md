@@ -34,30 +34,33 @@ which verifies transactions and stores the encrypted state applications in a pub
 ### 2.1 Requirements
 
 The following are **minimum** requirements to run an Aleo node:
- - **OS**: 64-bit architectures only, latest up-to-date for security
-    - Clients: Ubuntu 20.04, macOS Ventura or later, Windows 11 or later
-    - Provers: Ubuntu 20.04, macOS Ventura or later
-    - Validators: Ubuntu 20.04
- - **CPU**: 64-bit architectures only
-    - Clients: 32-cores
-    - Provers: 32-cores (64-cores preferred)
-    - Validators: 32-cores (64-cores preferred)
- - **RAM**: DDR4 or better
-    - Clients: 32GB of memory
-    - Provers: 32GB of memory (64GB or larger preferred)
-    - Validators: 64GB of memory (128GB or larger preferred)
- - **Storage**: PCIe Gen 3 x4, PCIe Gen 4 x2 NVME SSD, or better
-    - Clients: 300GB of disk space
-    - Provers: 32GB of disk space
-    - Validators: 2TB of disk space (4TB or larger preferred)
- - **Network**: Symmetric, commercial, always-on
-    - Clients: 100Mbps of upload **and** download bandwidth
-    - Provers: 500Mbps of upload **and** download bandwidth
-    - Validators: 1000Mbps of upload **and** download bandwidth
-- **GPU**:
-    - Clients: Not required at this time
-    - Provers: CUDA-enabled GPU (optional)
-    - Validators: Not required at this time
+
+### Clients
+
+- **OS**: 64-bit architectures only, latest up-to-date for security, Ubuntu 20.04, macOS Ventura or later, Windows 11 or later
+- **CPU**: 64-bit architectures only 32-cores
+- **RAM**: DDR4 or better, 32GB of memory
+- **Storage**: PCIe Gen 3 x4, PCIe Gen 4 x2 NVME SSD, or better, 300GB of disk space
+- **Network**: Symmetric, commercial, always-on, 100Mbps of upload **and** download bandwidth
+- **GPU**: Not required at this time
+
+### Provers
+
+- **OS**: 64-bit architectures only, latest up-to-date for security, Ubuntu 20.04, macOS Ventura or later
+- **CPU**: 64-bit architectures only, 32-cores (64-cores preferred)
+- **RAM**: DDR4 or better, 32GB of memory (64GB or larger preferred)
+- **Storage**: PCIe Gen 3 x4, PCIe Gen 4 x2 NVME SSD, or better, 32GB of disk space
+- **Network**: Symmetric, commercial, always-on, 500Mbps of upload **and** download bandwidth
+- **GPU**: CUDA-enabled GPU (optional)
+
+### Validators
+
+ - **OS**: 64-bit architectures only, latest up-to-date for security, Validators: Ubuntu 20.04
+ - **CPU**: 64-bit architectures only, 32-cores (64-cores preferred)
+ - **RAM**: DDR4 or better, 64GB of memory (128GB or larger preferred)
+ - **Storage**: PCIe Gen 3 x4, PCIe Gen 4 x2 NVME SSD, or better, 2TB of disk space (4TB or larger preferred)
+ - **Network**: Symmetric, commercial, always-on, 1000Mbps of upload **and** download bandwidth
+- **GPU**: Not required at this time
 
 Please note to run an Aleo Prover that is **competitive**, the machine will require more than these requirements.
 
